@@ -1,7 +1,7 @@
 {
  "project": "テロップ見本集.prproj",
  "sequence": "テロップ見本集",
- "duration_sec": 1306.0,
+ "duration_sec": 1319.28,
  "font_swap": [
   [
    "HiraKakuStdN-W8",
@@ -4120,6 +4120,27 @@
    "family": "黒い板（大）",
    "pattern": "図解",
    "note": "図解の土台。画面の95%。部品が多い図、ぼかし（E016）と重ねる時（09_図解）"
+  },
+  {
+   "section": "H",
+   "id": "T203",
+   "start": 1306.0047,
+   "end": 1319.2846,
+   "source": {
+    "project": "ワークの完全解説（小川さんが直した v002）",
+    "sequence": "ワークの完全解説_v002",
+    "track": "V8",
+    "start": 327.827,
+    "end": 341.107,
+    "orig_track": "V7"
+   },
+   "text": "ChatGPT Workの実演",
+   "animation": "元のまま",
+   "count": 1,
+   "with": [],
+   "family": "実演の札（左上・青背景）",
+   "pattern": "07 demo_label",
+   "note": "画面で実演している間、左上に何をしているかを出す札（「ChatGPT Workの実演」「Codexの実演」など。文言は AI が決める）。ワークの完全解説で小川さんが作った"
   }
  ]
 }

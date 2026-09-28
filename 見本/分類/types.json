@@ -16867,6 +16867,27 @@
    "adjust_with": {},
    "se_with": {},
    "note": "常識を引っ張る代弁で、誰の役かを出す札（役のイラストと一緒）"
+  },
+  {
+   "id": "T203",
+   "count": 1,
+   "styles": [
+    "青背景（左上の札）"
+   ],
+   "family": "実演の札（左上・青背景）",
+   "pattern": "07 demo_label",
+   "rep": {
+    "track": "V7",
+    "start": 327.827,
+    "end": 341.107,
+    "text": "ChatGPT Workの実演"
+   },
+   "source_project": "ワークの完全解説（小川さんが直した v002）",
+   "source_sequence": "ワークの完全解説_v002",
+   "animation": "元のまま",
+   "adjust_with": {},
+   "se_with": {},
+   "note": "画面で実演している間、左上に何をしているかを出す札（「ChatGPT Workの実演」「Codexの実演」など。文言は AI が決める）。ワークの完全解説で小川さんが作った"
   }
  ],
  "screen_effects": [
