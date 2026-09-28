@@ -1,0 +1,84 @@
+{
+ "project": "/Users/yoshizawakouichi/Downloads/コピー_AI時代に消える仕事残る仕事/AI時代に消える仕事残る仕事.prproj",
+ "sequence": "後半_無音カット前_0910",
+ "frame_ticks": 4236478848,
+ "fps": 59.9592277251469,
+ "tracks": {
+  "V1": [
+   {
+    "start_f": 0,
+    "end_f": 105077,
+    "start_ticks": 0,
+    "end_ticks": 445156487911296,
+    "name": "IMG_1599.MOV",
+    "in_ticks": 0,
+    "out_ticks": 445156487911296,
+    "muted": false,
+    "object_id": "3093"
+   },
+   {
+    "start_f": 105077,
+    "end_f": 131953,
+    "start_ticks": 445156487911296,
+    "end_ticks": 559016093430144,
+    "name": "IMG_1600.MOV",
+    "in_ticks": 0,
+    "out_ticks": 113859605518848,
+    "muted": false,
+    "object_id": "3095"
+   },
+   {
+    "start_f": 131953,
+    "end_f": 154120,
+    "start_ticks": 559016093430144,
+    "end_ticks": 652926120053760,
+    "name": "IMG_1602.MOV",
+    "in_ticks": 0,
+    "out_ticks": 93910026623616,
+    "muted": false,
+    "object_id": "3097"
+   }
+  ],
+  "V2": [],
+  "V3": [],
+  "A1": [
+   {
+    "start_f": 0,
+    "end_f": 105077,
+    "start_ticks": 0,
+    "end_ticks": 445156487911296,
+    "name": "IMG_1599.MOV",
+    "in_ticks": 0,
+    "out_ticks": 445156487911296,
+    "muted": false,
+    "object_id": "3094"
+   },
+   {
+    "start_f": 105077,
+    "end_f": 131953,
+    "start_ticks": 445156487911296,
+    "end_ticks": 559016093430144,
+    "name": "IMG_1600.MOV",
+    "in_ticks": 0,
+    "out_ticks": 113859605518848,
+    "muted": false,
+    "object_id": "3096"
+   },
+   {
+    "start_f": 131953,
+    "end_f": 154120,
+    "start_ticks": 559016093430144,
+    "end_ticks": 652926120053760,
+    "name": "IMG_1602.MOV",
+    "in_ticks": 0,
+    "out_ticks": 93910026623616,
+    "muted": false,
+    "object_id": "3098"
+   }
+  ],
+  "A2": [],
+  "A3": []
+ },
+ "end_ticks": 652926120053760,
+ "end_f": 154120
+}

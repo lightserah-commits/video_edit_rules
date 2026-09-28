@@ -1,0 +1,17 @@
+# 案件は各 Mac の ~/Desktop/みかみ案件依頼書/ に置く（Git に入れない）。work は前のやり方の置き場へのリンク
+work
+work/
+みかみ案件/
+# Mac ごとのもの
+.DS_Store
+.claude/settings.local.json
+.claude/addness/*
+!.claude/addness/goals.json
+# 確認の画像・控え・キャッシュ
+見本/確認/
+見本/_backup/
+**/Adobe Premiere Pro Auto-Save/
+**/Adobe Premiere Pro Audio Previews/
+**/Adobe Adobe Media Encoder Audio Previews/
+__pycache__/
+*.pyc

@@ -1,0 +1,4711 @@
+[
+ {
+  "key": "2e99755f4b",
+  "count_all": 673,
+  "count_main_enabled": 605,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "L12",
+   "S08",
+   "S19"
+  ],
+  "tracks": {
+   "V8": 599,
+   "V7": 4,
+   "V9": 1,
+   "V10": 1
+  },
+  "positions": {
+   "0.5,1.0": 604,
+   "0.5,0.9": 1
+  },
+  "animated": 0,
+  "rep_number": 406,
+  "rep_text": "AIが一旦投げるやん",
+  "examples": [
+   "トイレ行ってるときにスマホから",
+   "｢○○やっといてよろしく」 って言うだけで",
+   "もう今は設定をどうこうとか",
+   "もう今は設定をどうこうとか 自動化をどうこうとか",
+   "（AI使ってても） ダメになるやつの典型的なパターンは…",
+   "どうも                           のみかみです"
+  ],
+  "look_id": "L001",
+  "render_start_frame": 0
+ },
+ {
+  "key": "f32806a0d1",
+  "count_all": 175,
+  "count_main_enabled": 131,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   95.4
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "L01"
+  ],
+  "tracks": {
+   "V6": 131
+  },
+  "positions": {
+   "0.5,0.5": 131
+  },
+  "animated": 0,
+  "rep_number": 185,
+  "rep_text": "AI使いこなす習慣7選",
+  "examples": [
+   "AI使いこなす習慣7選",
+   "AI使いこなす習慣7選",
+   "AI使いこなす習慣7選",
+   "AI使いこなす習慣7選",
+   "AI使いこなす習慣7選",
+   "AI使いこなす習慣7選"
+  ],
+  "look_id": "L002",
+  "render_start_frame": 60
+ },
+ {
+  "key": "7e0c332735",
+  "count_all": 171,
+  "count_main_enabled": 127,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   65.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "L02"
+  ],
+  "tracks": {
+   "V5": 127
+  },
+  "positions": {
+   "0.5,0.5": 76,
+   "0.3,0.5": 51
+  },
+  "animated": 0,
+  "rep_number": 14,
+  "rep_text": "習慣って本当に必要？",
+  "examples": [
+   "習慣って本当に必要？",
+   "習慣って本当に必要？",
+   "習慣って本当に必要？",
+   "習慣って本当に必要？",
+   "習慣って本当に必要？",
+   "習慣って本当に必要？"
+  ],
+  "look_id": "L003",
+  "render_start_frame": 120
+ },
+ {
+  "key": "eb3930956a",
+  "count_all": 130,
+  "count_main_enabled": 125,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S09"
+  ],
+  "tracks": {
+   "V9": 117,
+   "V8": 8
+  },
+  "positions": {
+   "0.5,1.0": 125
+  },
+  "animated": 0,
+  "rep_number": 1293,
+  "rep_text": "そう考えたらほんとに",
+  "examples": [
+   "多分みかみさんが見えてるもの 全く見えてないです",
+   "特に昔だったらもっと顕著に",
+   "特に昔だったらもっと顕著に IQの差が必要だったじゃないですか",
+   "AIによってそこはある程度 担保できるのかなって思ってて",
+   "ちゃんと使い方とか",
+   "そういうのを学んでいく方が"
+  ],
+  "look_id": "L004",
+  "render_start_frame": 180
+ },
+ {
+  "key": "f0bc17671a",
+  "count_all": 25,
+  "count_main_enabled": 23,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "L12",
+   "S19"
+  ],
+  "tracks": {
+   "V8": 23
+  },
+  "positions": {
+   "0.5,1.0": 23
+  },
+  "animated": 0,
+  "rep_number": 516,
+  "rep_text": "工場を持つ側になって",
+  "examples": [
+   "工場を持つ側になって",
+   "実際に僕が普段からやってる習慣を7個 紹介したいと思います",
+   "ここで重要なのって コンテキストなんだよね",
+   "こういうことをやるのが 本当は1番クリティカル",
+   "あとはMCPにつなげられるってのが1つ",
+   "Google Chromeで 開けるシステムの情報にはアクセスできる"
+  ],
+  "look_id": "L005",
+  "render_start_frame": 240
+ },
+ {
+  "key": "a11582a5ea",
+  "count_all": 14,
+  "count_main_enabled": 14,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "L12",
+   "S04",
+   "S19"
+  ],
+  "tracks": {
+   "V8": 14
+  },
+  "positions": {
+   "0.5,1.0": 14
+  },
+  "animated": 0,
+  "rep_number": 965,
+  "rep_text": "パソコンは閉じちゃダメ",
+  "examples": [
+   "ガシャコンガシャコンか〜！",
+   "これは絶対に習慣にすべき",
+   "それもAIと完全に共有してる",
+   "成果を上げるうえでの ボトルネックを洗い出す",
+   "構造だけ覚えとけば変にはならん",
+   "コンテキストを渡せる限界量が 決まってる"
+  ],
+  "look_id": "L006",
+  "render_start_frame": 300
+ },
+ {
+  "key": "fd7c922f6d",
+  "count_all": 12,
+  "count_main_enabled": 12,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   156.3
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 12
+  },
+  "positions": {
+   "0.5,1.0": 12
+  },
+  "animated": 0,
+  "rep_number": 507,
+  "rep_text": "そういうのは俺がやる",
+  "examples": [
+   "これやってないやつは 使いこなせてない",
+   "AIに弾道計算させてる やつが多すぎる",
+   "そういうのは俺がやる",
+   "ハグれものだよ絶対",
+   "いや俺頭悪いから無理だわ",
+   "カレーライス 作ろうとするんだよw"
+  ],
+  "look_id": "L007",
+  "render_start_frame": 360
+ },
+ {
+  "key": "333b314604",
+  "count_all": 12,
+  "count_main_enabled": 12,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   114.2
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 12
+  },
+  "positions": {
+   "0.5,0.5": 12
+  },
+  "animated": 0,
+  "rep_number": 493,
+  "rep_text": "動いてるか見張る係な",
+  "examples": [
+   "お前もう職人とかせんでええけん",
+   "ボタン押しておいて",
+   "ガシャコンガシャコンして",
+   "壊れたら直すって係して",
+   "動いてるか見張る係な",
+   "箱詰めなよろしく"
+  ],
+  "look_id": "L008",
+  "render_start_frame": 420
+ },
+ {
+  "key": "6688e1c4c9",
+  "count_all": 11,
+  "count_main_enabled": 11,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   159.4
+  ],
+  "strokes": 1,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S11"
+  ],
+  "tracks": {
+   "V8": 9,
+   "V9": 1,
+   "V10": 1
+  },
+  "positions": {
+   "0.5,1.0": 11
+  },
+  "animated": 0,
+  "rep_number": 1210,
+  "rep_text": "過去の動画も観てね!",
+  "examples": [
+   "そいつらが金持ちになる",
+   "絶対自動化する",
+   "Ultraにすると めっちゃ長く動く",
+   "寝る時間もちゃんと AIに働いてもらう",
+   "24時間労働",
+   "会議な気持ちで喋る"
+  ],
+  "look_id": "L009",
+  "render_start_frame": 480
+ },
+ {
+  "key": "99febb8724",
+  "count_all": 9,
+  "count_main_enabled": 9,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   68.1,
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text",
+   "text"
+  ],
+  "styles": [
+   "L03",
+   "L12",
+   "S21"
+  ],
+  "tracks": {
+   "V9": 3,
+   "V10": 3,
+   "V8": 2,
+   "V7": 1
+  },
+  "positions": {
+   "0.5,0.5": 6,
+   "0.6,0.5": 2,
+   "0.5,0.6": 1
+  },
+  "animated": 0,
+  "rep_number": 1407,
+  "rep_text": "コンテキストとは… / その物事の背景や知識など前提条件のこと",
+  "examples": [
+   "ポイント / AIが頭が良いからといって 使い方次第では逆に非効率になる",
+   "ポイント / 革命で遅れて気付いた人は工場で 働かされるだけなので早く気づく必要がある",
+   "ポイント / タスクの作り方・細かいやり方 ツールの紹介などは動画の後半で紹介します",
+   "みかみの未来予測 / 1〜2年後のAIで世界を変えるような ガチですごいのが出た時に必ず飛びつくべし",
+   "ポイント / 定常業務は一旦AIにやらせてみて クオリティが低かったら修正を繰り返す",
+   "ポイント / Ultraにすると推論レベルが高いので 寝る前に指示するだけで全自動でできる"
+  ],
+  "look_id": "L010",
+  "render_start_frame": 540
+ },
+ {
+  "key": "7824dde7c0",
+  "count_all": 9,
+  "count_main_enabled": 9,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "L12",
+   "S19"
+  ],
+  "tracks": {
+   "V8": 9
+  },
+  "positions": {
+   "0.5,0.4": 4,
+   "0.5,0.5": 2,
+   "0.5,0.3": 1
+  },
+  "animated": 0,
+  "rep_number": 456,
+  "rep_text": "これ来るのよ（？）",
+  "examples": [
+   "いやほんまにそう",
+   "成果出すのが上手い人って",
+   "フィードバックループを回すやつは",
+   "こういうのわかってないよね〜",
+   "これ来るのよ（？）",
+   "全然そうでしょ！"
+  ],
+  "look_id": "L011",
+  "render_start_frame": 600
+ },
+ {
+  "key": "126a86b129",
+  "count_all": 12,
+  "count_main_enabled": 7,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S17"
+  ],
+  "tracks": {
+   "V4": 7
+  },
+  "positions": {
+   "0.0,-0.3": 7
+  },
+  "animated": 0,
+  "rep_number": 1,
+  "rep_text": "耳かきを机にのせるゲーム",
+  "examples": [
+   "耳かきを机にのせるゲーム",
+   "耳かきを机にのせるゲーム",
+   "耳かきを机にのせるゲーム",
+   "耳かきを机にのせるゲーム",
+   "耳かきを机にのせるゲーム",
+   "耳かきを机にのせるゲーム"
+  ],
+  "look_id": "L012",
+  "render_start_frame": 660
+ },
+ {
+  "key": "df224fb8d6",
+  "count_all": 7,
+  "count_main_enabled": 7,
+  "fonts": [
+   "PA1GothicStd-Bold",
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   60.0,
+   63.7
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text",
+   "GraphicAndShape",
+   "text",
+   "GraphicAndShape",
+   "GraphicAndShape"
+  ],
+  "styles": [
+   "L04"
+  ],
+  "tracks": {
+   "V9": 7
+  },
+  "positions": {
+   "0.5,0.5": 7
+  },
+  "animated": 0,
+  "rep_number": 1266,
+  "rep_text": "AIを使いこなす習慣① / 7つの習慣",
+  "examples": [
+   "AIを使いこなす習慣① / 7つの習慣",
+   "AIを使いこなす習慣② / 7つの習慣",
+   "AIを使いこなす習慣③ / 7つの習慣",
+   "AIを使いこなす習慣④ / 7つの習慣",
+   "AIを使いこなす習慣⑤ / 7つの習慣",
+   "AIを使いこなす習慣⑥ / 7つの習慣"
+  ],
+  "look_id": "L013",
+  "render_start_frame": 720
+ },
+ {
+  "key": "d5f4f7272e",
+  "count_all": 6,
+  "count_main_enabled": 6,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   77.7,
+   85.5
+  ],
+  "strokes": 2,
+  "layers": [
+   "basic",
+   "group",
+   "text",
+   "GraphicAndShape",
+   "text"
+  ],
+  "styles": [
+   "L03",
+   "S19"
+  ],
+  "tracks": {
+   "V10": 6
+  },
+  "positions": {
+   "0.5,0.8": 6
+  },
+  "animated": 6,
+  "rep_number": 1406,
+  "rep_text": "ポイント / 特定の領域で コンテキストをたくさん貯める",
+  "examples": [
+   "ポイント / 作ったタスクリストを AIとしっかり共有することが大事",
+   "ポイント / 特定の領域で コンテキストをたくさん貯める",
+   "ポイント / チャットを変えることで 参照するコンテキストを変えることができる",
+   "ポイント / コンピューターを使用（computer use)を オンにすることが重要",
+   "ポイント / AIに対してあらゆるデータへの アクセス権を解放する",
+   "ポイント / AIが出力したことを 鵜呑みにしない習慣を身に付ける"
+  ],
+  "look_id": "L014",
+  "render_start_frame": 780
+ },
+ {
+  "key": "c8bca3bb72",
+  "count_all": 6,
+  "count_main_enabled": 6,
+  "fonts": [
+   "HiraKakuStdN-W8"
+  ],
+  "sizes": [
+   70.1
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S14"
+  ],
+  "tracks": {
+   "V10": 6
+  },
+  "positions": {
+   "0.5,0.9": 6
+  },
+  "animated": 0,
+  "rep_number": 1415,
+  "rep_text": "寝てる間もAIを動かす",
+  "examples": [
+   "AIエージェントと情報を繋げる",
+   "ルーティンワークに敏感になる",
+   "寝てる間もAIを動かす",
+   "スマホからAIを動かす",
+   "普段使っていないAIを使う",
+   "AIを信じないこと"
+  ],
+  "look_id": "L015",
+  "render_start_frame": 840
+ },
+ {
+  "key": "6410310c50",
+  "count_all": 5,
+  "count_main_enabled": 5,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S17"
+  ],
+  "tracks": {
+   "V8": 2,
+   "V9": 2,
+   "V10": 1
+  },
+  "positions": {
+   "0.2,0.5": 2,
+   "0.2,0.4": 1,
+   "0.1,0.4": 1
+  },
+  "animated": 0,
+  "rep_number": 1252,
+  "rep_text": "AIが椅子を作ってくれる",
+  "examples": [
+   "AIがAmazonの配達してくれる",
+   "AIが作った映画がめっちゃ人気になる",
+   "AIが椅子を作ってくれる",
+   "AIが作ったゲームがめっちゃ人気になる",
+   "耳かきを机にのせるゲーム"
+  ],
+  "look_id": "L016",
+  "render_start_frame": 900
+ },
+ {
+  "key": "09cef7c261",
+  "count_all": 5,
+  "count_main_enabled": 5,
+  "fonts": [
+   "HiraKakuStdN-W8"
+  ],
+  "sizes": [
+   156.3
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S13"
+  ],
+  "tracks": {
+   "V8": 5
+  },
+  "positions": {
+   "0.5,1.0": 5
+  },
+  "animated": 0,
+  "rep_number": 780,
+  "rep_text": "どう足掻いても無理",
+  "examples": [
+   "全部じゃんw",
+   "どう足掻いても無理",
+   "慣れ慣れ慣れ慣れ",
+   "これは結構ガチャｗ",
+   "みんなそうやってんだよ?"
+  ],
+  "look_id": "L017",
+  "render_start_frame": 960
+ },
+ {
+  "key": "28017ae268",
+  "count_all": 5,
+  "count_main_enabled": 4,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   68.1,
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text",
+   "text"
+  ],
+  "styles": [
+   "L03",
+   "L04",
+   "S21"
+  ],
+  "tracks": {
+   "V7": 2,
+   "V8": 1,
+   "V9": 1
+  },
+  "positions": {
+   "0.1,0.8": 4
+  },
+  "animated": 0,
+  "rep_number": 372,
+  "rep_text": "ポイント / AIを使いこなすためには “習慣”でかなり変わってくる",
+  "examples": [
+   "ポイント / 抽象的なことではなく具体的な内容なので そのまま参考に真似してOK！",
+   "ポイント / AIを使いこなすためには “習慣”でかなり変わってくる",
+   "ポイント / 産業革命の本質は織物などを 大量生産できる機械・工場ができたこと",
+   "ポイント / 早く気付いて波に乗ったかのほんの少しの 違いで大きく成果が変わってくる"
+  ],
+  "look_id": "L018",
+  "render_start_frame": 1020
+ },
+ {
+  "key": "47ebd675fa",
+  "count_all": 4,
+  "count_main_enabled": 4,
+  "fonts": [
+   "ReggaeOne-Regular"
+  ],
+  "sizes": [
+   155.0
+  ],
+  "strokes": 1,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S07"
+  ],
+  "tracks": {
+   "V8": 3,
+   "V9": 1
+  },
+  "positions": {
+   "0.5,1.0": 4
+  },
+  "animated": 0,
+  "rep_number": 521,
+  "rep_text": "なんもわかっとらんやん",
+  "examples": [
+   "なんもわかっとらんやん",
+   "バカかって言うもん",
+   "｢わかってないな｣ってなる",
+   "自分で見つけれる人の方が 珍しくないですか？"
+  ],
+  "look_id": "L019",
+  "render_start_frame": 1080
+ },
+ {
+  "key": "e0f861f571",
+  "count_all": 4,
+  "count_main_enabled": 4,
+  "fonts": [
+   "NotoSerifJP-Black"
+  ],
+  "sizes": [
+   200.0
+  ],
+  "strokes": 0,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S12"
+  ],
+  "tracks": {
+   "V8": 4
+  },
+  "positions": {
+   "0.5,1.0": 4
+  },
+  "animated": 0,
+  "rep_number": 962,
+  "rep_text": "セットアップ完了",
+  "examples": [
+   "これでWワーク",
+   "セットアップ完了",
+   "いい質問だね",
+   "無料で使えます"
+  ],
+  "look_id": "L020",
+  "render_start_frame": 1140
+ },
+ {
+  "key": "93a3a0828f",
+  "count_all": 6,
+  "count_main_enabled": 3,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S19"
+  ],
+  "tracks": {
+   "V8": 3
+  },
+  "positions": {
+   "0.2,1.0": 3
+  },
+  "animated": 0,
+  "rep_number": 379,
+  "rep_text": "これやってないと",
+  "examples": [
+   "これやってないと",
+   "コンテキストっていうのは",
+   "定常業務からやる"
+  ],
+  "look_id": "L021",
+  "render_start_frame": 1200
+ },
+ {
+  "key": "82cae0ebbc",
+  "count_all": 5,
+  "count_main_enabled": 3,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "basic",
+   "text"
+  ],
+  "styles": [
+   "S17"
+  ],
+  "tracks": {
+   "V9": 1,
+   "V10": 1,
+   "V11": 1
+  },
+  "positions": {
+   "0.5,1.0": 3
+  },
+  "animated": 0,
+  "rep_number": 1361,
+  "rep_text": "①ヒアリングスキル",
+  "examples": [
+   "①ヒアリングスキル",
+   "②比較検討スキル",
+   "③フィードバックスキル"
+  ],
+  "look_id": "L022",
+  "render_start_frame": 1260
+ },
+ {
+  "key": "bcbdb71b97",
+  "count_all": 4,
+  "count_main_enabled": 3,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   134.7
+  ],
+  "strokes": 0,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S06"
+  ],
+  "tracks": {
+   "V8": 3
+  },
+  "positions": {
+   "0.5,1.0": 3
+  },
+  "animated": 0,
+  "rep_number": 472,
+  "rep_text": "くろーどこーど…？",
+  "examples": [
+   "くろーどこーど…？",
+   "ドラえもんが歩いてる感じなる",
+   "もしくはカレーライスのこと ばっかり考えてる"
+  ],
+  "look_id": "L023",
+  "render_start_frame": 1320
+ },
+ {
+  "key": "67411dbe5f",
+  "count_all": 3,
+  "count_main_enabled": 3,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "L12"
+  ],
+  "tracks": {
+   "V8": 3
+  },
+  "positions": {
+   "0.1,1.0": 3
+  },
+  "animated": 0,
+  "rep_number": 603,
+  "rep_text": "マジでタスクは",
+  "examples": [
+   "マジで",
+   "マジでタスクは",
+   "マジでタスクは絶対作った方がいい"
+  ],
+  "look_id": "L024",
+  "render_start_frame": 1380
+ },
+ {
+  "key": "39c096aa72",
+  "count_all": 3,
+  "count_main_enabled": 3,
+  "fonts": [
+   "SourceHanSans-Heavy"
+  ],
+  "sizes": [
+   73.4,
+   77.0,
+   92.6,
+   128.5
+  ],
+  "strokes": 0,
+  "layers": [
+   "group",
+   "GraphicAndShape",
+   "text",
+   "text",
+   "GraphicAndShape"
+  ],
+  "styles": [
+   "L09"
+  ],
+  "tracks": {
+   "V14": 3
+  },
+  "positions": {
+   "0.5,0.4": 3
+  },
+  "animated": 0,
+  "rep_number": 1432,
+  "rep_text": "⬆︎⬆︎⬆︎ / プレゼント受け取りは こちらから！",
+  "examples": [
+   "⬆︎⬆︎⬆︎ / 1on1個別コンサルは こちらをクリック！",
+   "⬆︎⬆︎⬆︎ / プレゼント受け取りは こちらから！",
+   "⬆︎⬆︎⬆︎ / 1on1個別コンサルは こちらをクリック！"
+  ],
+  "look_id": "L025",
+  "render_start_frame": 1440
+ },
+ {
+  "key": "2b9a9051d3",
+  "count_all": 3,
+  "count_main_enabled": 3,
+  "fonts": [
+   "SourceHanSans-Heavy"
+  ],
+  "sizes": [
+   128.5
+  ],
+  "strokes": 0,
+  "layers": [
+   "basic",
+   "group",
+   "text",
+   "text",
+   "GraphicAndShape"
+  ],
+  "styles": [
+   "L09"
+  ],
+  "tracks": {
+   "V15": 3
+  },
+  "positions": {
+   "0.5,0.4": 3
+  },
+  "animated": 0,
+  "rep_number": 1435,
+  "rep_text": "⬆︎⬆︎⬆︎ / 公式LINEを 登録する！",
+  "examples": [
+   "⬆︎⬆︎⬆︎ / 公式LINEを 登録する！",
+   "⬆︎⬆︎⬆︎ / 公式LINEを 登録する！",
+   "⬆︎⬆︎⬆︎ / 公式LINEを 登録する！"
+  ],
+  "look_id": "L026",
+  "render_start_frame": 1500
+ },
+ {
+  "key": "852db47cc1",
+  "count_all": 2,
+  "count_main_enabled": 2,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   208.6
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S05"
+  ],
+  "tracks": {
+   "V8": 1,
+   "V9": 1
+  },
+  "positions": {
+   "0.4,0.5": 1,
+   "0.6,0.5": 1
+  },
+  "animated": 0,
+  "rep_number": 422,
+  "rep_text": "習慣",
+  "examples": [
+   "習慣",
+   "癖"
+  ],
+  "look_id": "L027",
+  "render_start_frame": 1560
+ },
+ {
+  "key": "12e95a9c25",
+  "count_all": 2,
+  "count_main_enabled": 2,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   114.2
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 2
+  },
+  "positions": {
+   "0.5,0.5": 2
+  },
+  "animated": 0,
+  "rep_number": 513,
+  "rep_text": "なんか始まるときは教えて",
+  "examples": [
+   "なんか始まるときは教えて",
+   "ガシャコンする時の土地とか抑えるわ"
+  ],
+  "look_id": "L028",
+  "render_start_frame": 1620
+ },
+ {
+  "key": "2c54f3a133",
+  "count_all": 2,
+  "count_main_enabled": 2,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   114.2
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 2
+  },
+  "positions": {
+   "0.5,0.5": 2
+  },
+  "animated": 0,
+  "rep_number": 534,
+  "rep_text": "すごいですね職人の〇〇さん！",
+  "examples": [
+   "うわあこんな素敵な机を作れるなんて",
+   "すごいですね職人の〇〇さん！"
+  ],
+  "look_id": "L029",
+  "render_start_frame": 1680
+ },
+ {
+  "key": "1c900c4fbd",
+  "count_all": 2,
+  "count_main_enabled": 2,
+  "fonts": [
+   "Ruika-09",
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0,
+   195.2
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S19"
+  ],
+  "tracks": {
+   "V8": 1,
+   "V9": 1
+  },
+  "positions": {
+   "0.5,1.0": 2
+  },
+  "animated": 0,
+  "rep_number": 1267,
+  "rep_text": "超大事な習慣",
+  "examples": [
+   "全部AIと共有しておくっていうのは",
+   "超大事な習慣"
+  ],
+  "look_id": "L030",
+  "render_start_frame": 1740
+ },
+ {
+  "key": "28de1aaf5a",
+  "count_all": 2,
+  "count_main_enabled": 2,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S19"
+  ],
+  "tracks": {
+   "V8": 2
+  },
+  "positions": {
+   "0.5,1.0": 2
+  },
+  "animated": 0,
+  "rep_number": 619,
+  "rep_text": "これをボトルネックって言うんだけど",
+  "examples": [
+   "まず成果っていうのを 定義しなきゃいけない",
+   "これをボトルネックって言うんだけど"
+  ],
+  "look_id": "L031",
+  "render_start_frame": 1800
+ },
+ {
+  "key": "06ac6a4df4",
+  "count_all": 2,
+  "count_main_enabled": 2,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   125.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S05"
+  ],
+  "tracks": {
+   "V8": 2
+  },
+  "positions": {
+   "0.5,1.0": 2
+  },
+  "animated": 0,
+  "rep_number": 742,
+  "rep_text": "パソコンのフォルダの中も アクセスできる",
+  "examples": [
+   "パソコンのフォルダの中も アクセスできる",
+   "AIがアクセスできるように するだけでOK"
+  ],
+  "look_id": "L032",
+  "render_start_frame": 1860
+ },
+ {
+  "key": "013ca4322c",
+  "count_all": 2,
+  "count_main_enabled": 2,
+  "fonts": [
+   "ReggaeOne-Regular"
+  ],
+  "sizes": [
+   315.4
+  ],
+  "strokes": 1,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S07"
+  ],
+  "tracks": {
+   "V8": 1,
+   "V9": 1
+  },
+  "positions": {
+   "0.5,0.4": 2
+  },
+  "animated": 0,
+  "rep_number": 799,
+  "rep_text": "いやー！",
+  "examples": [
+   "いやー！",
+   "いやー！"
+  ],
+  "look_id": "L033",
+  "render_start_frame": 1920
+ },
+ {
+  "key": "1ce5fa7892",
+  "count_all": 2,
+  "count_main_enabled": 2,
+  "fonts": [
+   "HiraKakuStdN-W8"
+  ],
+  "sizes": [
+   92.4
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S13"
+  ],
+  "tracks": {
+   "V8": 2
+  },
+  "positions": {
+   "0.1,1.0": 2
+  },
+  "animated": 0,
+  "rep_number": 1063,
+  "rep_text": "AIが言ったことのうち",
+  "examples": [
+   "AIが言ったことのうち",
+   "AIが言ったことのうち理解できないことを"
+  ],
+  "look_id": "L034",
+  "render_start_frame": 1980
+ },
+ {
+  "key": "6f538be8c6",
+  "count_all": 2,
+  "count_main_enabled": 2,
+  "fonts": [
+   "HiraKakuStdN-W8"
+  ],
+  "sizes": [],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S13"
+  ],
+  "tracks": {
+   "V9": 2
+  },
+  "positions": {
+   "-0.1,0.7": 2
+  },
+  "animated": 0,
+  "rep_number": 1300,
+  "rep_text": "※音声入力中",
+  "examples": [
+   "※音声入力中",
+   "※音声入力中"
+  ],
+  "look_id": "L035",
+  "render_start_frame": 2040
+ },
+ {
+  "key": "551d49949b",
+  "count_all": 2,
+  "count_main_enabled": 2,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S09"
+  ],
+  "tracks": {
+   "V9": 2
+  },
+  "positions": {
+   "0.5,1.0": 2
+  },
+  "animated": 0,
+  "rep_number": 1386,
+  "rep_text": "流し聞きするのがいいのかなと思って",
+  "examples": [
+   "一旦 最先端の情報を僕らから 学んでほしいなって思うんで",
+   "流し聞きするのがいいのかなと思って"
+  ],
+  "look_id": "L036",
+  "render_start_frame": 2100
+ },
+ {
+  "key": "e7f9b46885",
+  "count_all": 2,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text",
+   "text"
+  ],
+  "styles": [
+   "L13",
+   "S19"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.3,0.9": 1
+  },
+  "animated": 0,
+  "rep_number": 746,
+  "rep_text": "これこれ",
+  "examples": [
+   "これこれ"
+  ],
+  "look_id": "L037",
+  "render_start_frame": 2160
+ },
+ {
+  "key": "5ef571f07e",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   116.4,
+   123.6,
+   124.6,
+   139.8,
+   152.4,
+   158.8,
+   162.6,
+   165.5
+  ],
+  "strokes": 0,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S06"
+  ],
+  "tracks": {
+   "V5": 1
+  },
+  "positions": {
+   "0.0,0.3": 1
+  },
+  "animated": 0,
+  "rep_number": 13,
+  "rep_text": "稼ぎに10倍差がつく 年商25億社長のAI習慣7選",
+  "examples": [
+   "稼ぎに10倍差がつく 年商25億社長のAI習慣7選"
+  ],
+  "look_id": "L038",
+  "render_start_frame": 2220
+ },
+ {
+  "key": "65a8958dbd",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   232.8,
+   262.3
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S05"
+  ],
+  "tracks": {
+   "V7": 1
+  },
+  "positions": {
+   "0.5,0.9": 1
+  },
+  "animated": 0,
+  "rep_number": 363,
+  "rep_text": "Wワーク",
+  "examples": [
+   "Wワーク"
+  ],
+  "look_id": "L039",
+  "render_start_frame": 2280
+ },
+ {
+  "key": "6da0404e46",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   139.4
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V7": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 366,
+  "rep_text": "そういうこと考えなくていい",
+  "examples": [
+   "そういうこと考えなくていい"
+  ],
+  "look_id": "L040",
+  "render_start_frame": 2340
+ },
+ {
+  "key": "636eb277d7",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   100.3
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S19"
+  ],
+  "tracks": {
+   "V7": 1
+  },
+  "positions": {
+   "0.7,0.5": 1
+  },
+  "animated": 0,
+  "rep_number": 371,
+  "rep_text": "しっかりと前提を教えた Sonnet5",
+  "examples": [
+   "しっかりと前提を教えた Sonnet5"
+  ],
+  "look_id": "L041",
+  "render_start_frame": 2400
+ },
+ {
+  "key": "1f69c9bd41",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   160.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "crop",
+   "text"
+  ],
+  "styles": [
+   "S19"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.1,1.0": 1
+  },
+  "animated": 1,
+  "rep_number": 375,
+  "rep_text": "あいかがさ",
+  "examples": [
+   "あいかがさ"
+  ],
+  "look_id": "L042",
+  "render_start_frame": 2460
+ },
+ {
+  "key": "aa0a7eeb42",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "ReggaeOne-Regular",
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0,
+   159.4
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S19"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.2,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 380,
+  "rep_text": "これやってないと ダメ",
+  "examples": [
+   "これやってないと ダメ"
+  ],
+  "look_id": "L043",
+  "render_start_frame": 2520
+ },
+ {
+  "key": "a8086ba351",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   156.3
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "crop",
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,0.6": 1
+  },
+  "animated": 1,
+  "rep_number": 395,
+  "rep_text": "どれくらいの角度が1番ベストか？",
+  "examples": [
+   "どれくらいの角度が1番ベストか？"
+  ],
+  "look_id": "L044",
+  "render_start_frame": 2580
+ },
+ {
+  "key": "057ea2f8fa",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   156.3
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "crop",
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,0.7": 1
+  },
+  "animated": 1,
+  "rep_number": 396,
+  "rep_text": "どれくらいの力で押し出すのがベストか？",
+  "examples": [
+   "どれくらいの力で押し出すのがベストか？"
+  ],
+  "look_id": "L045",
+  "render_start_frame": 2640
+ },
+ {
+  "key": "3697199880",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   156.3
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "crop",
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,0.7": 1
+  },
+  "animated": 1,
+  "rep_number": 397,
+  "rep_text": "風を測る",
+  "examples": [
+   "風を測る"
+  ],
+  "look_id": "L046",
+  "render_start_frame": 2700
+ },
+ {
+  "key": "c501f97c01",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   156.3
+  ],
+  "strokes": 2,
+  "layers": [
+   "crop",
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 1,
+  "rep_number": 400,
+  "rep_text": "ビビビビビビビ",
+  "examples": [
+   "ビビビビビビビ"
+  ],
+  "look_id": "L047",
+  "render_start_frame": 2760
+ },
+ {
+  "key": "e54b93649f",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   159.4
+  ],
+  "strokes": 1,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S11"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,0.4": 1
+  },
+  "animated": 0,
+  "rep_number": 414,
+  "rep_text": "これ！！！",
+  "examples": [
+   "これ！！！"
+  ],
+  "look_id": "L048",
+  "render_start_frame": 2820
+ },
+ {
+  "key": "4bc6bd7caf",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   228.0
+  ],
+  "strokes": 1,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S11"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 415,
+  "rep_text": "この違い！",
+  "examples": [
+   "この違い！"
+  ],
+  "look_id": "L049",
+  "render_start_frame": 2880
+ },
+ {
+  "key": "638958ba2b",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   231.7
+  ],
+  "strokes": 1,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S11"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 429,
+  "rep_text": "簡単やん！",
+  "examples": [
+   "簡単やん！"
+  ],
+  "look_id": "L050",
+  "render_start_frame": 2940
+ },
+ {
+  "key": "c9e8383d28",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   125.0,
+   187.3
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S05"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 432,
+  "rep_text": "それを真似さえしてもらえれば レベルは上がる",
+  "examples": [
+   "それを真似さえしてもらえれば レベルは上がる"
+  ],
+  "look_id": "L051",
+  "render_start_frame": 3000
+ },
+ {
+  "key": "2f5e8c4de0",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S04"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,0.4": 1
+  },
+  "animated": 0,
+  "rep_number": 437,
+  "rep_text": "1〜2年後に世界がガチで AIを使えるようになるのは",
+  "examples": [
+   "1〜2年後に世界がガチで AIを使えるようになるのは"
+  ],
+  "look_id": "L052",
+  "render_start_frame": 3060
+ },
+ {
+  "key": "b60c9bf46e",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   142.8
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 442,
+  "rep_text": "Webサイトで飯食えんからね",
+  "examples": [
+   "Webサイトで飯食えんからね"
+  ],
+  "look_id": "L053",
+  "render_start_frame": 3120
+ },
+ {
+  "key": "9204b09fb0",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   201.5
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 448,
+  "rep_text": "ガチですごいのが 今後絶対に出る",
+  "examples": [
+   "ガチですごいのが 今後絶対に出る"
+  ],
+  "look_id": "L054",
+  "render_start_frame": 3180
+ },
+ {
+  "key": "e566178d3f",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "NotoSerifJP-Black"
+  ],
+  "sizes": [
+   170.8
+  ],
+  "strokes": 0,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S12"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 450,
+  "rep_text": "そこに最初に 飛びついたやつは勝つ",
+  "examples": [
+   "そこに最初に 飛びついたやつは勝つ"
+  ],
+  "look_id": "L055",
+  "render_start_frame": 3240
+ },
+ {
+  "key": "4c7b176c5d",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   113.9
+  ],
+  "strokes": 0,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S06"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 451,
+  "rep_text": "視聴者ついていけてないです…",
+  "examples": [
+   "視聴者ついていけてないです…"
+  ],
+  "look_id": "L056",
+  "render_start_frame": 3300
+ },
+ {
+  "key": "678d679ac7",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "NotoSerifJP-Black"
+  ],
+  "sizes": [
+   159.4
+  ],
+  "strokes": 0,
+  "layers": [
+   "crop",
+   "text"
+  ],
+  "styles": [
+   "S12"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 1,
+  "rep_number": 469,
+  "rep_text": "本当の革命に 目を向けておいてほしい",
+  "examples": [
+   "本当の革命に 目を向けておいてほしい"
+  ],
+  "look_id": "L057",
+  "render_start_frame": 3360
+ },
+ {
+  "key": "f532964ff1",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   192.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 477,
+  "rep_text": "本当にここからだと 思ってないよね",
+  "examples": [
+   "本当にここからだと 思ってないよね"
+  ],
+  "look_id": "L058",
+  "render_start_frame": 3420
+ },
+ {
+  "key": "78905699ac",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   156.3
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,0.5": 1
+  },
+  "animated": 0,
+  "rep_number": 487,
+  "rep_text": "工場で働かされるだけ",
+  "examples": [
+   "工場で働かされるだけ"
+  ],
+  "look_id": "L059",
+  "render_start_frame": 3480
+ },
+ {
+  "key": "c770d96f60",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   192.3
+  ],
+  "strokes": 0,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S06"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 495,
+  "rep_text": "そうなっちゃうよ",
+  "examples": [
+   "そうなっちゃうよ"
+  ],
+  "look_id": "L060",
+  "render_start_frame": 3540
+ },
+ {
+  "key": "7fc62bc835",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   103.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,0.5": 1
+  },
+  "animated": 0,
+  "rep_number": 502,
+  "rep_text": "ガシャコンガシャコンした方が良くない？",
+  "examples": [
+   "ガシャコンガシャコンした方が良くない？"
+  ],
+  "look_id": "L061",
+  "render_start_frame": 3600
+ },
+ {
+  "key": "9c74448ce1",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   114.2
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,0.5": 1
+  },
+  "animated": 0,
+  "rep_number": 511,
+  "rep_text": "ああ〜そんなことできるんかおもろいな",
+  "examples": [
+   "ああ〜そんなことできるんかおもろいな"
+  ],
+  "look_id": "L062",
+  "render_start_frame": 3660
+ },
+ {
+  "key": "7074041732",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   156.3
+  ],
+  "strokes": 2,
+  "layers": [
+   "crop",
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 1,
+  "rep_number": 539,
+  "rep_text": "絶対そいついじめられてる",
+  "examples": [
+   "絶対そいついじめられてる"
+  ],
+  "look_id": "L063",
+  "render_start_frame": 3720
+ },
+ {
+  "key": "caf990e6fb",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   150.9
+  ],
+  "strokes": 1,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S11"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 551,
+  "rep_text": "ハイリスクハイリターン！",
+  "examples": [
+   "ハイリスクハイリターン！"
+  ],
+  "look_id": "L064",
+  "render_start_frame": 3780
+ },
+ {
+  "key": "9712dc7198",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   125.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S05"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,0.3": 1
+  },
+  "animated": 0,
+  "rep_number": 553,
+  "rep_text": "どんだけ順応するか",
+  "examples": [
+   "どんだけ順応するか"
+  ],
+  "look_id": "L065",
+  "render_start_frame": 3840
+ },
+ {
+  "key": "31ebfe9478",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "NotoSerifJP-Black"
+  ],
+  "sizes": [
+   136.0
+  ],
+  "strokes": 0,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S12"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 557,
+  "rep_text": "その環境に最も適応したものだ",
+  "examples": [
+   "その環境に最も適応したものだ"
+  ],
+  "look_id": "L066",
+  "render_start_frame": 3900
+ },
+ {
+  "key": "89cb6fe9a6",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraKakuStdN-W8"
+  ],
+  "sizes": [
+   159.3
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S14"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 608,
+  "rep_text": "何のためにそれやるの？",
+  "examples": [
+   "何のためにそれやるの？"
+  ],
+  "look_id": "L067",
+  "render_start_frame": 3960
+ },
+ {
+  "key": "81ed2c9783",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   136.8
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 636,
+  "rep_text": "いや私地頭悪いから無理だわ",
+  "examples": [
+   "いや私地頭悪いから無理だわ"
+  ],
+  "look_id": "L068",
+  "render_start_frame": 4020
+ },
+ {
+  "key": "f29c7b61e9",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.7
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S19"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.2,0.5": 1
+  },
+  "animated": 0,
+  "rep_number": 642,
+  "rep_text": "全く前提を教えてない Fable5",
+  "examples": [
+   "全く前提を教えてない Fable5"
+  ],
+  "look_id": "L069",
+  "render_start_frame": 4080
+ },
+ {
+  "key": "4d32090437",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   64.4
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "Lumetri",
+   "text"
+  ],
+  "styles": [
+   "S19"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.2,0.5": 1
+  },
+  "animated": 0,
+  "rep_number": 643,
+  "rep_text": "全く前提を教えてない Fable5",
+  "examples": [
+   "全く前提を教えてない Fable5"
+  ],
+  "look_id": "L070",
+  "render_start_frame": 4140
+ },
+ {
+  "key": "14e029b125",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S19"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.2,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 666,
+  "rep_text": "コンテキストっていうのは知識",
+  "examples": [
+   "コンテキストっていうのは知識"
+  ],
+  "look_id": "L071",
+  "render_start_frame": 4200
+ },
+ {
+  "key": "1843fcdb0a",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   119.7
+  ],
+  "strokes": 1,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S11"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 702,
+  "rep_text": "AIがアクセスできないところに 情報を置かない",
+  "examples": [
+   "AIがアクセスできないところに 情報を置かない"
+  ],
+  "look_id": "L072",
+  "render_start_frame": 4260
+ },
+ {
+  "key": "a1cd358ff3",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   150.8
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S05"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 711,
+  "rep_text": "AIは必ずわかってくれる",
+  "examples": [
+   "AIは必ずわかってくれる"
+  ],
+  "look_id": "L073",
+  "render_start_frame": 4320
+ },
+ {
+  "key": "d493853205",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   143.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 714,
+  "rep_text": "明らかにコンテキストが悪い",
+  "examples": [
+   "明らかにコンテキストが悪い"
+  ],
+  "look_id": "L074",
+  "render_start_frame": 4380
+ },
+ {
+  "key": "710e49eb0a",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   125.4
+  ],
+  "strokes": 1,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S11"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 718,
+  "rep_text": "全てのシステムにも AIがアクセスできるようにする",
+  "examples": [
+   "全てのシステムにも AIがアクセスできるようにする"
+  ],
+  "look_id": "L075",
+  "render_start_frame": 4440
+ },
+ {
+  "key": "3bfee4114d",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S19"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 720,
+  "rep_text": "例えばCodexだったら",
+  "examples": [
+   "例えばCodexだったら"
+  ],
+  "look_id": "L076",
+  "render_start_frame": 4500
+ },
+ {
+  "key": "c3e7cbb8fa",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S19"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 762,
+  "rep_text": "ChatGPTもプラグインがあって",
+  "examples": [
+   "ChatGPTもプラグインがあって"
+  ],
+  "look_id": "L077",
+  "render_start_frame": 4560
+ },
+ {
+  "key": "fafa2c1561",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   148.5
+  ],
+  "strokes": 1,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S11"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 809,
+  "rep_text": "ルーティン業務が1番",
+  "examples": [
+   "ルーティン業務が1番"
+  ],
+  "look_id": "L078",
+  "render_start_frame": 4620
+ },
+ {
+  "key": "63351f03bb",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   174.4
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S05"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 824,
+  "rep_text": "全部完全にやる",
+  "examples": [
+   "全部完全にやる"
+  ],
+  "look_id": "L079",
+  "render_start_frame": 4680
+ },
+ {
+  "key": "39fb0edb53",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "ReggaeOne-Regular"
+  ],
+  "sizes": [
+   201.2
+  ],
+  "strokes": 1,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S07"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 849,
+  "rep_text": "自動化しないのは罪",
+  "examples": [
+   "自動化しないのは罪"
+  ],
+  "look_id": "L080",
+  "render_start_frame": 4740
+ },
+ {
+  "key": "e315d55e9b",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   145.4
+  ],
+  "strokes": 1,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S11"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 912,
+  "rep_text": "必ず動画下の概要欄から 1on1を受けてください",
+  "examples": [
+   "必ず動画下の概要欄から 1on1を受けてください"
+  ],
+  "look_id": "L081",
+  "render_start_frame": 4800
+ },
+ {
+  "key": "2a87146d9a",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Corporate-Logo-Rounded-Bold-ver3"
+  ],
+  "sizes": [
+   156.3
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S13"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 945,
+  "rep_text": "本当に影分身",
+  "examples": [
+   "本当に影分身"
+  ],
+  "look_id": "L082",
+  "render_start_frame": 4860
+ },
+ {
+  "key": "5a72186e7e",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "NotoSerifJP-Black"
+  ],
+  "sizes": [
+   150.1
+  ],
+  "strokes": 0,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S12"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.3,0.6": 1
+  },
+  "animated": 0,
+  "rep_number": 966,
+  "rep_text": "その通り!",
+  "examples": [
+   "その通り!"
+  ],
+  "look_id": "L083",
+  "render_start_frame": 4920
+ },
+ {
+  "key": "a71c9b93eb",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   192.1
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S05"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 975,
+  "rep_text": "万全の体制",
+  "examples": [
+   "万全の体制"
+  ],
+  "look_id": "L084",
+  "render_start_frame": 4980
+ },
+ {
+  "key": "ae38254bcf",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   199.9
+  ],
+  "strokes": 1,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S11"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 983,
+  "rep_text": "音声入力",
+  "examples": [
+   "音声入力"
+  ],
+  "look_id": "L085",
+  "render_start_frame": 5040
+ },
+ {
+  "key": "110911c8c2",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "NotoSerifJP-Black"
+  ],
+  "sizes": [
+   165.4
+  ],
+  "strokes": 0,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S12"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 996,
+  "rep_text": "音声入力は非常に大事",
+  "examples": [
+   "音声入力は非常に大事"
+  ],
+  "look_id": "L086",
+  "render_start_frame": 5100
+ },
+ {
+  "key": "ca45758b9e",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   165.1
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S05"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1005,
+  "rep_text": "お話するように喋る",
+  "examples": [
+   "お話するように喋る"
+  ],
+  "look_id": "L087",
+  "render_start_frame": 5160
+ },
+ {
+  "key": "e5e2f9e986",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   162.6
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S05"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1022,
+  "rep_text": "これは結構オススメ",
+  "examples": [
+   "これは結構オススメ"
+  ],
+  "look_id": "L088",
+  "render_start_frame": 5220
+ },
+ {
+  "key": "98aa14fc04",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   143.3
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1029,
+  "rep_text": "Geminiだけあんま使わない",
+  "examples": [
+   "Geminiだけあんま使わない"
+  ],
+  "look_id": "L089",
+  "render_start_frame": 5280
+ },
+ {
+  "key": "3cd0ae1e23",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraKakuStdN-W8"
+  ],
+  "sizes": [
+   137.4
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S13"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1057,
+  "rep_text": "これが成り立つのは最初だけ",
+  "examples": [
+   "これが成り立つのは最初だけ"
+  ],
+  "look_id": "L090",
+  "render_start_frame": 5340
+ },
+ {
+  "key": "29c724047e",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraKakuStdN-W8"
+  ],
+  "sizes": [
+   92.4
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S13"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1065,
+  "rep_text": "AIが言ったことのうち理解できないことを ｢わかった｣ってやっちゃダメ",
+  "examples": [
+   "AIが言ったことのうち理解できないことを ｢わかった｣ってやっちゃダメ"
+  ],
+  "look_id": "L091",
+  "render_start_frame": 5400
+ },
+ {
+  "key": "8326690842",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   181.7
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1134,
+  "rep_text": "｢お前いらなくね？｣",
+  "examples": [
+   "｢お前いらなくね？｣"
+  ],
+  "look_id": "L092",
+  "render_start_frame": 5460
+ },
+ {
+  "key": "79d6ee384b",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   187.2
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S19"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1146,
+  "rep_text": "Addness",
+  "examples": [
+   "Addness"
+  ],
+  "look_id": "L093",
+  "render_start_frame": 5520
+ },
+ {
+  "key": "5b6547aa81",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   87.9
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S19"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,0.3": 1
+  },
+  "animated": 0,
+  "rep_number": 1161,
+  "rep_text": "タスクリストをAIに理解させるっていうのが",
+  "examples": [
+   "タスクリストをAIに理解させるっていうのが"
+  ],
+  "look_id": "L094",
+  "render_start_frame": 5580
+ },
+ {
+  "key": "e297e686de",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   163.2
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S05"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1164,
+  "rep_text": "マジで根本から変わる",
+  "examples": [
+   "マジで根本から変わる"
+  ],
+  "look_id": "L095",
+  "render_start_frame": 5640
+ },
+ {
+  "key": "81c3148284",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "NotoSerifJP-Black"
+  ],
+  "sizes": [
+   156.2
+  ],
+  "strokes": 0,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S12"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1168,
+  "rep_text": "そしたら世界が変わる",
+  "examples": [
+   "そしたら世界が変わる"
+  ],
+  "look_id": "L096",
+  "render_start_frame": 5700
+ },
+ {
+  "key": "b699a497bd",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   182.1
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S05"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1181,
+  "rep_text": "タスク化完了",
+  "examples": [
+   "タスク化完了"
+  ],
+  "look_id": "L097",
+  "render_start_frame": 5760
+ },
+ {
+  "key": "eda93fb75a",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   148.0
+  ],
+  "strokes": 1,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S11"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1197,
+  "rep_text": "ぜひ習得してください",
+  "examples": [
+   "ぜひ習得してください"
+  ],
+  "look_id": "L098",
+  "render_start_frame": 5820
+ },
+ {
+  "key": "6126c968a7",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "NotoSerifJP-Black"
+  ],
+  "sizes": [
+   155.0
+  ],
+  "strokes": 0,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S12"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1214,
+  "rep_text": "本質しか大事じゃないから",
+  "examples": [
+   "本質しか大事じゃないから"
+  ],
+  "look_id": "L099",
+  "render_start_frame": 5880
+ },
+ {
+  "key": "51e5f6f12f",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   167.6
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S05"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1218,
+  "rep_text": "変わらない本質を きちんと学んでほしい",
+  "examples": [
+   "変わらない本質を きちんと学んでほしい"
+  ],
+  "look_id": "L100",
+  "render_start_frame": 5940
+ },
+ {
+  "key": "19fbff6dd6",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   144.1
+  ],
+  "strokes": 1,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S11"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1222,
+  "rep_text": "意地でも適応した方がいい",
+  "examples": [
+   "意地でも適応した方がいい"
+  ],
+  "look_id": "L101",
+  "render_start_frame": 6000
+ },
+ {
+  "key": "fe607d3776",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   129.8
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S18"
+  ],
+  "tracks": {
+   "V8": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1225,
+  "rep_text": "概要欄からAIの活用のための 1on1を受けられます",
+  "examples": [
+   "概要欄からAIの活用のための 1on1を受けられます"
+  ],
+  "look_id": "L102",
+  "render_start_frame": 6060
+ },
+ {
+  "key": "c77ddb3c4f",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "NotoSerifJP-Black"
+  ],
+  "sizes": [
+   152.9,
+   178.8,
+   184.6,
+   204.5
+  ],
+  "strokes": 0,
+  "layers": [
+   "group",
+   "text",
+   "text"
+  ],
+  "styles": [
+   "S12"
+  ],
+  "tracks": {
+   "V9": 1
+  },
+  "positions": {
+   "0.5,0.4": 1
+  },
+  "animated": 0,
+  "rep_number": 1234,
+  "rep_text": "実際のAI習慣7選 / 年商25億AI社長の",
+  "examples": [
+   "実際のAI習慣7選 / 年商25億AI社長の"
+  ],
+  "look_id": "L103",
+  "render_start_frame": 6120
+ },
+ {
+  "key": "3e6a64bafc",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   132.2,
+   202.3
+  ],
+  "strokes": 1,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S11"
+  ],
+  "tracks": {
+   "V9": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1237,
+  "rep_text": "ガチでAI使いこなしてる人の 習慣7選",
+  "examples": [
+   "ガチでAI使いこなしてる人の 習慣7選"
+  ],
+  "look_id": "L104",
+  "render_start_frame": 6180
+ },
+ {
+  "key": "921d20cf40",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S09"
+  ],
+  "tracks": {
+   "V9": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1241,
+  "rep_text": "使い方によっても レベルがどんどん広がっている",
+  "examples": [
+   "使い方によっても レベルがどんどん広がっている"
+  ],
+  "look_id": "L105",
+  "render_start_frame": 6240
+ },
+ {
+  "key": "e66b4cc56c",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraMinProN-W6"
+  ],
+  "sizes": [
+   347.1
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S03"
+  ],
+  "tracks": {
+   "V9": 1
+  },
+  "positions": {
+   "0.5,0.5": 1
+  },
+  "animated": 0,
+  "rep_number": 1255,
+  "rep_text": "？",
+  "examples": [
+   "？"
+  ],
+  "look_id": "L106",
+  "render_start_frame": 6300
+ },
+ {
+  "key": "63aa2b9154",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   68.1,
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text",
+   "text"
+  ],
+  "styles": [
+   "L03",
+   "S21"
+  ],
+  "tracks": {
+   "V9": 1
+  },
+  "positions": {
+   "0.4,0.5": 1
+  },
+  "animated": 0,
+  "rep_number": 1283,
+  "rep_text": "ポイント / 限られた100万トークンの中でどんな 知識を渡すかでAIのアウトプット精度が変わる",
+  "examples": [
+   "ポイント / 限られた100万トークンの中でどんな 知識を渡すかでAIのアウトプット精度が変わる"
+  ],
+  "look_id": "L107",
+  "render_start_frame": 6360
+ },
+ {
+  "key": "29b0206947",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "SourceHanSans-Heavy"
+  ],
+  "sizes": [
+   41.3
+  ],
+  "strokes": 0,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S02"
+  ],
+  "tracks": {
+   "V9": 1
+  },
+  "positions": {
+   "0.5,0.1": 1
+  },
+  "animated": 0,
+  "rep_number": 1286,
+  "rep_text": "※MCPとは 外部のデータやアプリ データベースと安全かつ 簡単につながるための規格",
+  "examples": [
+   "※MCPとは 外部のデータやアプリ データベースと安全かつ 簡単につながるための規格"
+  ],
+  "look_id": "L108",
+  "render_start_frame": 6420
+ },
+ {
+  "key": "444c29dcc9",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   68.1,
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text",
+   "text"
+  ],
+  "styles": [
+   "L03",
+   "L12"
+  ],
+  "tracks": {
+   "V9": 1
+  },
+  "positions": {
+   "0.5,0.5": 1
+  },
+  "animated": 0,
+  "rep_number": 1287,
+  "rep_text": "ポイント / コンピューターの使用（Computer use)に アクセスしておけばほとんどアクセス可能",
+  "examples": [
+   "ポイント / コンピューターの使用（Computer use)に アクセスしておけばほとんどアクセス可能"
+  ],
+  "look_id": "L109",
+  "render_start_frame": 6480
+ },
+ {
+  "key": "05128e9490",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S19"
+  ],
+  "tracks": {
+   "V9": 1
+  },
+  "positions": {
+   "0.2,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1307,
+  "rep_text": "これ絶対",
+  "examples": [
+   "これ絶対"
+  ],
+  "look_id": "L110",
+  "render_start_frame": 6540
+ },
+ {
+  "key": "3a32ecbc21",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   43.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S01"
+  ],
+  "tracks": {
+   "V9": 1
+  },
+  "positions": {
+   "0.2,0.4": 1
+  },
+  "animated": 0,
+  "rep_number": 1358,
+  "rep_text": "アンドレア・カーパシー (現在Anthropic社)",
+  "examples": [
+   "アンドレア・カーパシー (現在Anthropic社)"
+  ],
+  "look_id": "L111",
+  "render_start_frame": 6600
+ },
+ {
+  "key": "098add0c12",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "NotoSerifJP-Black"
+  ],
+  "sizes": [
+   140.8,
+   172.5
+  ],
+  "strokes": 0,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S12"
+  ],
+  "tracks": {
+   "V9": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1372,
+  "rep_text": "超スムーズにできる",
+  "examples": [
+   "超スムーズにできる"
+  ],
+  "look_id": "L112",
+  "render_start_frame": 6660
+ },
+ {
+  "key": "45a7a7935d",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraKakuStdN-W8"
+  ],
+  "sizes": [],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S13"
+  ],
+  "tracks": {
+   "V9": 1
+  },
+  "positions": {
+   "0.8,0.6": 1
+  },
+  "animated": 0,
+  "rep_number": 1380,
+  "rep_text": "※音声入力中",
+  "examples": [
+   "※音声入力中"
+  ],
+  "look_id": "L113",
+  "render_start_frame": 6720
+ },
+ {
+  "key": "de963fe50b",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   68.1,
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text",
+   "text"
+  ],
+  "styles": [
+   "L09",
+   "S21"
+  ],
+  "tracks": {
+   "V9": 1
+  },
+  "positions": {
+   "0.5,0.5": 1
+  },
+  "animated": 0,
+  "rep_number": 1381,
+  "rep_text": "本質のAI活用まとめの受け取り方 / 「0727タスク」と概要欄にある 公式LINEのメッセージに送付してください",
+  "examples": [
+   "本質のAI活用まとめの受け取り方 / 「0727タスク」と概要欄にある 公式LINEのメッセージに送付してください"
+  ],
+  "look_id": "L114",
+  "render_start_frame": 6780
+ },
+ {
+  "key": "db4bc50311",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   82.8
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S19"
+  ],
+  "tracks": {
+   "V10": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1395,
+  "rep_text": "ってやっちゃう人",
+  "examples": [
+   "ってやっちゃう人"
+  ],
+  "look_id": "L115",
+  "render_start_frame": 6840
+ },
+ {
+  "key": "a80a40d6c8",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   200.0
+  ],
+  "strokes": 1,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S11"
+  ],
+  "tracks": {
+   "V10": 1
+  },
+  "positions": {
+   "0.5,1.0": 1
+  },
+  "animated": 0,
+  "rep_number": 1396,
+  "rep_text": "全然違う",
+  "examples": [
+   "全然違う"
+  ],
+  "look_id": "L116",
+  "render_start_frame": 6900
+ },
+ {
+  "key": "9656852b08",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   120.1
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S05"
+  ],
+  "tracks": {
+   "V10": 1
+  },
+  "positions": {
+   "0.5,0.5": 1
+  },
+  "animated": 0,
+  "rep_number": 1398,
+  "rep_text": "フィードバックループを回してる",
+  "examples": [
+   "フィードバックループを回してる"
+  ],
+  "look_id": "L117",
+  "render_start_frame": 6960
+ },
+ {
+  "key": "184b63e1fd",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   134.7
+  ],
+  "strokes": 0,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S15"
+  ],
+  "tracks": {
+   "V10": 1
+  },
+  "positions": {
+   "0.5,0.5": 1
+  },
+  "animated": 0,
+  "rep_number": 1400,
+  "rep_text": "AIに投げる弾道を計算させる",
+  "examples": [
+   "AIに投げる弾道を計算させる"
+  ],
+  "look_id": "L118",
+  "render_start_frame": 7020
+ },
+ {
+  "key": "7728901f5d",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "HiraKakuStdN-W8"
+  ],
+  "sizes": [
+   76.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S14"
+  ],
+  "tracks": {
+   "V10": 1
+  },
+  "positions": {
+   "0.5,0.9": 1
+  },
+  "animated": 0,
+  "rep_number": 1402,
+  "rep_text": "タスクファーストを習慣にする",
+  "examples": [
+   "タスクファーストを習慣にする"
+  ],
+  "look_id": "L119",
+  "render_start_frame": 7080
+ },
+ {
+  "key": "cc19767475",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text",
+   "GraphicAndShape"
+  ],
+  "styles": [
+   "L12"
+  ],
+  "tracks": {
+   "V10": 1
+  },
+  "positions": {
+   "0.5,0.5": 1
+  },
+  "animated": 0,
+  "rep_number": 1417,
+  "rep_text": "ココ!",
+  "examples": [
+   "ココ!"
+  ],
+  "look_id": "L120",
+  "render_start_frame": 7140
+ },
+ {
+  "key": "d51250a738",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   77.7,
+   85.5
+  ],
+  "strokes": 2,
+  "layers": [
+   "basic",
+   "group",
+   "text",
+   "GraphicAndShape",
+   "text"
+  ],
+  "styles": [
+   "L03",
+   "S19"
+  ],
+  "tracks": {
+   "V10": 1
+  },
+  "positions": {
+   "0.5,0.8": 1
+  },
+  "animated": 1,
+  "rep_number": 1418,
+  "rep_text": "ポイント / 指示のスピードが変わることより 頭の使い方が変わることが重要",
+  "examples": [
+   "ポイント / 指示のスピードが変わることより 頭の使い方が変わることが重要"
+  ],
+  "look_id": "L121",
+  "render_start_frame": 7200
+ },
+ {
+  "key": "f8184cdc98",
+  "count_all": 1,
+  "count_main_enabled": 1,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   60.5,
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "basic",
+   "group",
+   "text",
+   "text"
+  ],
+  "styles": [
+   "L03",
+   "S21"
+  ],
+  "tracks": {
+   "V11": 1
+  },
+  "positions": {
+   "0.5,0.5": 1
+  },
+  "animated": 0,
+  "rep_number": 1424,
+  "rep_text": "ポイント / ボトルネックを潰すためにやること＝タスク",
+  "examples": [
+   "ポイント / ボトルネックを潰すためにやること＝タスク"
+  ],
+  "look_id": "L122",
+  "render_start_frame": 7260
+ },
+ {
+  "key": "569d031404",
+  "count_all": 5,
+  "count_main_enabled": 0,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "basic",
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S17"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 1447,
+  "rep_text": "ボトルネック",
+  "examples": [],
+  "look_id": "L123",
+  "render_start_frame": 7320
+ },
+ {
+  "key": "870dabbfce",
+  "count_all": 3,
+  "count_main_enabled": 0,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   261.6
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S08"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 1425,
+  "rep_text": "CTA",
+  "examples": [],
+  "look_id": "L124",
+  "render_start_frame": 7380
+ },
+ {
+  "key": "2dab40750f",
+  "count_all": 3,
+  "count_main_enabled": 0,
+  "fonts": [
+   "AbrilFatface-Regular"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "opacity",
+   "text"
+  ],
+  "styles": [
+   "S20"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 1439,
+  "rep_text": "We can never",
+  "examples": [],
+  "look_id": "L125",
+  "render_start_frame": 7440
+ },
+ {
+  "key": "0b7d9b8b58",
+  "count_all": 3,
+  "count_main_enabled": 0,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   65.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S18"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 1443,
+  "rep_text": "でも私たちはいかなる時も",
+  "examples": [],
+  "look_id": "L126",
+  "render_start_frame": 7500
+ },
+ {
+  "key": "dc5a837acd",
+  "count_all": 2,
+  "count_main_enabled": 0,
+  "fonts": [],
+  "sizes": [],
+  "strokes": 0,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "L13",
+   "S19"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 479,
+  "rep_text": "",
+  "examples": [],
+  "look_id": "L127",
+  "render_start_frame": 7560
+ },
+ {
+  "key": "609486465f",
+  "count_all": 2,
+  "count_main_enabled": 0,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   72.7
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "L07"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 1455,
+  "rep_text": "材料が足りない",
+  "examples": [],
+  "look_id": "L128",
+  "render_start_frame": 7620
+ },
+ {
+  "key": "0edba20f03",
+  "count_all": 1,
+  "count_main_enabled": 0,
+  "fonts": [
+   "NotoSerifJP-Black"
+  ],
+  "sizes": [
+   164.7,
+   198.5,
+   204.4,
+   205.2,
+   219.1
+  ],
+  "strokes": 0,
+  "layers": [
+   "group",
+   "Gaussian Blur",
+   "text"
+  ],
+  "styles": [
+   "L10"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 1,
+  "rep_number": 360,
+  "rep_text": "年商25億AI社長の",
+  "examples": [],
+  "look_id": "L129",
+  "render_start_frame": 7680
+ },
+ {
+  "key": "4b0828045a",
+  "count_all": 1,
+  "count_main_enabled": 0,
+  "fonts": [
+   "NotoSerifJP-Black"
+  ],
+  "sizes": [
+   143.3,
+   164.7,
+   197.1,
+   211.0,
+   243.4
+  ],
+  "strokes": 0,
+  "layers": [
+   "group",
+   "Gaussian Blur",
+   "text"
+  ],
+  "styles": [
+   "L10"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 1,
+  "rep_number": 373,
+  "rep_text": "実際のAI習慣7選",
+  "examples": [],
+  "look_id": "L130",
+  "render_start_frame": 7740
+ },
+ {
+  "key": "848d842f68",
+  "count_all": 1,
+  "count_main_enabled": 0,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   165.7
+  ],
+  "strokes": 1,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S11"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 907,
+  "rep_text": "AI活用の1on1を やっています",
+  "examples": [],
+  "look_id": "L131",
+  "render_start_frame": 7800
+ },
+ {
+  "key": "d355a74515",
+  "count_all": 1,
+  "count_main_enabled": 0,
+  "fonts": [
+   "NotoSerifJP-Black"
+  ],
+  "sizes": [
+   139.8
+  ],
+  "strokes": 0,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S12"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 908,
+  "rep_text": "動画下の概要欄の方から 受け取ってください",
+  "examples": [],
+  "look_id": "L132",
+  "render_start_frame": 7860
+ },
+ {
+  "key": "14735c2f04",
+  "count_all": 1,
+  "count_main_enabled": 0,
+  "fonts": [
+   "HiraKakuStdN-W8"
+  ],
+  "sizes": [],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S13"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 1301,
+  "rep_text": "※音声入力中",
+  "examples": [],
+  "look_id": "L133",
+  "render_start_frame": 7920
+ },
+ {
+  "key": "756db1e5c8",
+  "count_all": 1,
+  "count_main_enabled": 0,
+  "fonts": [
+   "SourceHanSans-Heavy"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "basic",
+   "text"
+  ],
+  "styles": [
+   "L11"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 1309,
+  "rep_text": "社外秘",
+  "examples": [],
+  "look_id": "L134",
+  "render_start_frame": 7980
+ },
+ {
+  "key": "5d5add0eed",
+  "count_all": 1,
+  "count_main_enabled": 0,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   111.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "basic",
+   "text"
+  ],
+  "styles": [
+   "S08"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 1429,
+  "rep_text": "手放し運転",
+  "examples": [],
+  "look_id": "L135",
+  "render_start_frame": 8040
+ },
+ {
+  "key": "80917acd43",
+  "count_all": 1,
+  "count_main_enabled": 0,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   111.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S08"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 1430,
+  "rep_text": "ゴミ完成",
+  "examples": [],
+  "look_id": "L136",
+  "render_start_frame": 8100
+ },
+ {
+  "key": "6aaa79ad89",
+  "count_all": 1,
+  "count_main_enabled": 0,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   99.5
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S08"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 1434,
+  "rep_text": "AIが使いこなせていない人",
+  "examples": [],
+  "look_id": "L137",
+  "render_start_frame": 8160
+ },
+ {
+  "key": "c07b1dd568",
+  "count_all": 1,
+  "count_main_enabled": 0,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   65.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "text"
+  ],
+  "styles": [
+   "S18"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 1444,
+  "rep_text": "でも私たちはいかなる時も 理解することだけは外注できません",
+  "examples": [],
+  "look_id": "L138",
+  "render_start_frame": 8220
+ },
+ {
+  "key": "98240bfe8d",
+  "count_all": 1,
+  "count_main_enabled": 0,
+  "fonts": [
+   "Ruika-09"
+  ],
+  "sizes": [
+   90.0
+  ],
+  "strokes": 2,
+  "layers": [
+   "basic",
+   "group",
+   "text"
+  ],
+  "styles": [
+   "S19"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 1450,
+  "rep_text": "どっち?",
+  "examples": [],
+  "look_id": "L139",
+  "render_start_frame": 8280
+ },
+ {
+  "key": "acbb900f91",
+  "count_all": 1,
+  "count_main_enabled": 0,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   87.1
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "L07"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 1454,
+  "rep_text": "ボトルネック",
+  "examples": [],
+  "look_id": "L140",
+  "render_start_frame": 8340
+ },
+ {
+  "key": "5c5fddee13",
+  "count_all": 1,
+  "count_main_enabled": 0,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   87.1
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text"
+  ],
+  "styles": [
+   "L07"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 1456,
+  "rep_text": "タスク",
+  "examples": [],
+  "look_id": "L141",
+  "render_start_frame": 8400
+ },
+ {
+  "key": "dbc07bcc20",
+  "count_all": 1,
+  "count_main_enabled": 0,
+  "fonts": [
+   "WanpakuRuika-08"
+  ],
+  "sizes": [
+   78.6,
+   107.4
+  ],
+  "strokes": 2,
+  "layers": [
+   "group",
+   "text",
+   "text"
+  ],
+  "styles": [
+   "L07"
+  ],
+  "tracks": {},
+  "positions": {},
+  "animated": 0,
+  "rep_number": 1458,
+  "rep_text": "成果（目標） / 美味しいカレー",
+  "examples": [],
+  "look_id": "L142",
+  "render_start_frame": 8460
+ }
+]

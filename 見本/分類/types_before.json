@@ -1,0 +1,9351 @@
+{
+ "source": "みかみさんCH0726_最終.prproj",
+ "sequence": "AI使いこなす習慣7選",
+ "telop_types": [
+  {
+   "look_key": "2f74933de7",
+   "anim_key": "97d170e155",
+   "count": 603,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 597,
+    "V7": 4,
+    "V9": 1,
+    "V10": 1
+   },
+   "duration_median": 1.7,
+   "rep": {
+    "track": "V7",
+    "start": 6.44,
+    "end": 7.674,
+    "text": "トイレ行ってるときにスマホから"
+   },
+   "examples": [
+    {
+     "track": "V7",
+     "start": 6.44,
+     "text": "トイレ行ってるときにスマホから"
+    },
+    {
+     "track": "V7",
+     "start": 7.674,
+     "text": " ｢○○やっといてよろしく」 って言うだけで"
+    },
+    {
+     "track": "V7",
+     "start": 10.077,
+     "text": "もう今は設定をどうこうとか "
+    },
+    {
+     "track": "V7",
+     "start": 11.612,
+     "text": "もう今は設定をどうこうとか 自動化をどうこうとか"
+    },
+    {
+     "track": "V8",
+     "start": 3.17,
+     "text": "（AI使ってても） ダメになるやつの典型的なパターンは…"
+    },
+    {
+     "track": "V8",
+     "start": 16.316,
+     "text": "どうも                           のみかみです"
+    },
+    {
+     "track": "V8",
+     "start": 24.658,
+     "text": "やっていきましょう"
+    },
+    {
+     "track": "V8",
+     "start": 25.459,
+     "text": "ガチで（AIを）使いこなせてるなら"
+    }
+   ],
+   "se_with": {
+    "cursor1.wav": 10,
+    "ピピ.mp3": 9,
+    "クリック.mp3": 4,
+    "キーン（ポイント）.wav": 4,
+    "決定、ボタン押下22.wav": 3,
+    "【キラッ✨,短い】キランッッ!!.wav": 1
+   },
+   "id": "T001",
+   "adjust_with": {
+    "E005": 2,
+    "E004": 1,
+    "E010": 1,
+    "E001": 1,
+    "E012": 1
+   }
+  },
+  {
+   "look_key": "b945791ac7",
+   "anim_key": "97d170e155",
+   "count": 141,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V6": 141
+   },
+   "duration_median": 6.97,
+   "rep": {
+    "track": "V6",
+    "start": 25.459,
+    "end": 28.762,
+    "text": "AI使いこなす習慣7選"
+   },
+   "examples": [
+    {
+     "track": "V6",
+     "start": 25.459,
+     "text": "AI使いこなす習慣7選"
+    },
+    {
+     "track": "V6",
+     "start": 30.831,
+     "text": "AI使いこなす習慣7選"
+    },
+    {
+     "track": "V6",
+     "start": 47.648,
+     "text": "AI使いこなす習慣7選"
+    },
+    {
+     "track": "V6",
+     "start": 64.331,
+     "text": "AI使いこなす習慣7選"
+    },
+    {
+     "track": "V6",
+     "start": 86.32,
+     "text": "AI使いこなす習慣7選"
+    },
+    {
+     "track": "V6",
+     "start": 89.79,
+     "text": "AI使いこなす習慣7選"
+    },
+    {
+     "track": "V6",
+     "start": 97.097,
+     "text": "AI使いこなす習慣7選"
+    },
+    {
+     "track": "V6",
+     "start": 100.167,
+     "text": "AI使いこなす習慣7選"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 10,
+    "cursor1.wav": 4,
+    "ピピ.mp3": 4,
+    "【キラッ✨,短い】キランッッ!!.wav": 1
+   },
+   "id": "T002",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "2a2f12214d",
+   "anim_key": "97d170e155",
+   "count": 125,
+   "styles": [
+    "質問者テロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V9": 117,
+    "V8": 8
+   },
+   "duration_median": 1.94,
+   "rep": {
+    "track": "V9",
+    "start": 740.607,
+    "end": 742.141,
+    "text": "それは無限にあるっていうよりかは"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 216.016,
+     "text": "多分みかみさんが見えてるもの 全く見えてないです"
+    },
+    {
+     "track": "V8",
+     "start": 382.716,
+     "text": "特に昔だったらもっと顕著に "
+    },
+    {
+     "track": "V8",
+     "start": 384.885,
+     "text": "特に昔だったらもっと顕著に IQの差が必要だったじゃないですか"
+    },
+    {
+     "track": "V8",
+     "start": 387.087,
+     "text": "AIによってそこはある程度 担保できるのかなって思ってて"
+    },
+    {
+     "track": "V8",
+     "start": 391.191,
+     "text": "ちゃんと使い方とか"
+    },
+    {
+     "track": "V8",
+     "start": 392.659,
+     "text": "そういうのを学んでいく方が"
+    },
+    {
+     "track": "V8",
+     "start": 394.628,
+     "text": "頭悪くてもできるんじゃないかな って思ってて"
+    },
+    {
+     "track": "V8",
+     "start": 1484.183,
+     "text": " 信じたらダメなんですね"
+    }
+   ],
+   "se_with": {},
+   "id": "T003",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "ea293d46c1",
+   "anim_key": "97d170e155",
+   "count": 28,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V5": 28
+   },
+   "duration_median": 7.56,
+   "rep": {
+    "track": "V5",
+    "start": 481.781,
+    "end": 509.009,
+    "text": "①タスクファースト"
+   },
+   "examples": [
+    {
+     "track": "V5",
+     "start": 481.781,
+     "text": "①タスクファースト"
+    },
+    {
+     "track": "V5",
+     "start": 509.009,
+     "text": "①タスクファースト"
+    },
+    {
+     "track": "V5",
+     "start": 509.743,
+     "text": "①タスクファースト"
+    },
+    {
+     "track": "V5",
+     "start": 537.771,
+     "text": "①タスクファースト"
+    },
+    {
+     "track": "V5",
+     "start": 562.195,
+     "text": "①タスクファースト"
+    },
+    {
+     "track": "V5",
+     "start": 571.037,
+     "text": "①タスクファースト"
+    },
+    {
+     "track": "V5",
+     "start": 612.912,
+     "text": "①タスクファースト"
+    },
+    {
+     "track": "V5",
+     "start": 618.485,
+     "text": "①タスクファースト"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 3,
+    "cursor1.wav": 1
+   },
+   "id": "T004",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "e56cb6ee36",
+   "anim_key": "97d170e155",
+   "count": 27,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V5": 27
+   },
+   "duration_median": 4.54,
+   "rep": {
+    "track": "V5",
+    "start": 158.725,
+    "end": 165.999,
+    "text": "AIを使いこなした先の未来予測"
+   },
+   "examples": [
+    {
+     "track": "V5",
+     "start": 158.725,
+     "text": "AIを使いこなした先の未来予測"
+    },
+    {
+     "track": "V5",
+     "start": 165.999,
+     "text": "AIを使いこなした先の未来予測"
+    },
+    {
+     "track": "V5",
+     "start": 178.545,
+     "text": "AIを使いこなした先の未来予測"
+    },
+    {
+     "track": "V5",
+     "start": 197.798,
+     "text": "AIを使いこなした先の未来予測"
+    },
+    {
+     "track": "V5",
+     "start": 216.016,
+     "text": "AIを使いこなした先の未来予測"
+    },
+    {
+     "track": "V5",
+     "start": 261.194,
+     "text": "AIを使いこなした先の未来予測"
+    },
+    {
+     "track": "V5",
+     "start": 266.5,
+     "text": "AIを使いこなした先の未来予測"
+    },
+    {
+     "track": "V5",
+     "start": 275.408,
+     "text": "AIを使いこなした先の未来予測"
+    }
+   ],
+   "se_with": {
+    "cursor1.wav": 3,
+    "ピピ.mp3": 2,
+    "キーン（ポイント）.wav": 1
+   },
+   "id": "T005",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "04d7104364",
+   "anim_key": "97d170e155",
+   "count": 23,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 23
+   },
+   "duration_median": 2.3,
+   "rep": {
+    "track": "V8",
+    "start": 634.767,
+    "end": 635.602,
+    "text": "ここで重要なのって コンテキストなんだよね"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 352.686,
+     "text": "工場を持つ側になって"
+    },
+    {
+     "track": "V8",
+     "start": 466.466,
+     "text": "実際に僕が普段からやってる習慣を7個 紹介したいと思います"
+    },
+    {
+     "track": "V8",
+     "start": 634.767,
+     "text": "ここで重要なのって コンテキストなんだよね"
+    },
+    {
+     "track": "V8",
+     "start": 676.075,
+     "text": "こういうことをやるのが 本当は1番クリティカル"
+    },
+    {
+     "track": "V8",
+     "start": 851.384,
+     "text": "あとはMCPにつなげられるってのが1つ"
+    },
+    {
+     "track": "V8",
+     "start": 874.807,
+     "text": "Google Chromeで 開けるシステムの情報にはアクセスできる"
+    },
+    {
+     "track": "V8",
+     "start": 884.517,
+     "text": "ChatGPTだったら っていうようにするね"
+    },
+    {
+     "track": "V8",
+     "start": 890.256,
+     "text": "プラグインを探すってやって"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 9,
+    "cursor1.wav": 4,
+    "キーン（ポイント）.wav": 2,
+    "クリック.mp3": 1
+   },
+   "id": "T006",
+   "adjust_with": {
+    "E014": 1
+   }
+  },
+  {
+   "look_key": "87d97ed11d",
+   "anim_key": "97d170e155",
+   "count": 22,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V5": 22
+   },
+   "duration_median": 11.28,
+   "rep": {
+    "track": "V5",
+    "start": 1081.847,
+    "end": 1119.385,
+    "text": "④睡眠中もAIを動かす"
+   },
+   "examples": [
+    {
+     "track": "V5",
+     "start": 1081.847,
+     "text": "④睡眠中もAIを動かす"
+    },
+    {
+     "track": "V5",
+     "start": 1121.587,
+     "text": "④睡眠中もAIを動かす"
+    },
+    {
+     "track": "V5",
+     "start": 1135.334,
+     "text": "④睡眠中もAIを動かす"
+    },
+    {
+     "track": "V5",
+     "start": 1140.406,
+     "text": "④睡眠中もAIを動かす"
+    },
+    {
+     "track": "V5",
+     "start": 1143.342,
+     "text": "④睡眠中もAIを動かす"
+    },
+    {
+     "track": "V5",
+     "start": 1148.948,
+     "text": "④睡眠中もAIを動かす"
+    },
+    {
+     "track": "V5",
+     "start": 1183.883,
+     "text": "④睡眠中もAIを動かす"
+    },
+    {
+     "track": "V5",
+     "start": 1190.89,
+     "text": "④睡眠中もAIを動かす"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 2
+   },
+   "id": "T007",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "955add22db",
+   "anim_key": "97d170e155",
+   "count": 15,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V5": 15
+   },
+   "duration_median": 7.34,
+   "rep": {
+    "track": "V5",
+    "start": 33.834,
+    "end": 47.014,
+    "text": "習慣って本当に必要？"
+   },
+   "examples": [
+    {
+     "track": "V5",
+     "start": 33.834,
+     "text": "習慣って本当に必要？"
+    },
+    {
+     "track": "V5",
+     "start": 47.648,
+     "text": "習慣って本当に必要？"
+    },
+    {
+     "track": "V5",
+     "start": 64.331,
+     "text": "習慣って本当に必要？"
+    },
+    {
+     "track": "V5",
+     "start": 86.32,
+     "text": "習慣って本当に必要？"
+    },
+    {
+     "track": "V5",
+     "start": 89.79,
+     "text": "習慣って本当に必要？"
+    },
+    {
+     "track": "V5",
+     "start": 97.097,
+     "text": "習慣って本当に必要？"
+    },
+    {
+     "track": "V5",
+     "start": 100.167,
+     "text": "習慣って本当に必要？"
+    },
+    {
+     "track": "V5",
+     "start": 109.109,
+     "text": "習慣って本当に必要？"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 3
+   },
+   "id": "T008",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "b22027743b",
+   "anim_key": "97d170e155",
+   "count": 12,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 12
+   },
+   "duration_median": 1.74,
+   "rep": {
+    "track": "V8",
+    "start": 307.14,
+    "end": 308.275,
+    "text": "ガシャコンガシャコンして"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 302.369,
+     "text": "お前もう職人とかせんでええけん"
+    },
+    {
+     "track": "V8",
+     "start": 305.639,
+     "text": "ボタン押しておいて"
+    },
+    {
+     "track": "V8",
+     "start": 307.14,
+     "text": "ガシャコンガシャコンして"
+    },
+    {
+     "track": "V8",
+     "start": 308.275,
+     "text": "壊れたら直すって係して"
+    },
+    {
+     "track": "V8",
+     "start": 311.178,
+     "text": "動いてるか見張る係な"
+    },
+    {
+     "track": "V8",
+     "start": 312.279,
+     "text": "箱詰めなよろしく"
+    },
+    {
+     "track": "V8",
+     "start": 318.718,
+     "text": "え？これめちゃくちゃすごくない？"
+    },
+    {
+     "track": "V8",
+     "start": 320.187,
+     "text": "この蒸気機関車やばくない？"
+    }
+   ],
+   "se_with": {},
+   "id": "T009",
+   "adjust_with": {
+    "E003": 3
+   }
+  },
+  {
+   "look_key": "cd15477d4e",
+   "anim_key": "97d170e155",
+   "count": 12,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 12
+   },
+   "duration_median": 1.69,
+   "rep": {
+    "track": "V8",
+    "start": 333.567,
+    "end": 336.102,
+    "text": "そういうのは俺がやる"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 28.762,
+     "text": "これやってないやつは 使いこなせてない"
+    },
+    {
+     "track": "V8",
+     "start": 121.121,
+     "text": " AIに弾道計算させてる やつが多すぎる"
+    },
+    {
+     "track": "V8",
+     "start": 333.567,
+     "text": "そういうのは俺がやる"
+    },
+    {
+     "track": "V8",
+     "start": 415.615,
+     "text": "ハグれものだよ絶対"
+    },
+    {
+     "track": "V8",
+     "start": 630.363,
+     "text": "いや俺頭悪いから無理だわ"
+    },
+    {
+     "track": "V8",
+     "start": 718.618,
+     "text": "カレーライス 作ろうとするんだよw"
+    },
+    {
+     "track": "V8",
+     "start": 905.872,
+     "text": "つながってないだけ"
+    },
+    {
+     "track": "V8",
+     "start": 1120.319,
+     "text": "うまくいったり うまくいかなかったり"
+    }
+   ],
+   "se_with": {
+    "【汎用,鈴】しゃん.wav": 4,
+    "【間抜け,アホ】ピコンッ.wav": 2,
+    "【チーン,シュール】チーン.wav": 1,
+    "【間抜け,アホ】ポカン.wav": 1,
+    "【汎用,鈴】シャーン.wav": 1,
+    "【ツッコミ】グキッ.wav": 1,
+    "【ツッコミ,シュール】ピアノの単音.wav": 1
+   },
+   "id": "T010",
+   "adjust_with": {
+    "E002": 6
+   }
+  },
+  {
+   "look_key": "244dfe1e9f",
+   "anim_key": "97d170e155",
+   "count": 11,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V5": 11
+   },
+   "duration_median": 7.61,
+   "rep": {
+    "track": "V5",
+    "start": 965.865,
+    "end": 971.17,
+    "text": "③定常業務に敏感になる"
+   },
+   "examples": [
+    {
+     "track": "V5",
+     "start": 965.865,
+     "text": "③定常業務に敏感になる"
+    },
+    {
+     "track": "V5",
+     "start": 972.171,
+     "text": "③定常業務に敏感になる"
+    },
+    {
+     "track": "V5",
+     "start": 988.955,
+     "text": "③定常業務に敏感になる"
+    },
+    {
+     "track": "V5",
+     "start": 1017.717,
+     "text": "③定常業務に敏感になる"
+    },
+    {
+     "track": "V5",
+     "start": 1021.02,
+     "text": "③定常業務に敏感になる"
+    },
+    {
+     "track": "V5",
+     "start": 1025.691,
+     "text": "③定常業務に敏感になる"
+    },
+    {
+     "track": "V5",
+     "start": 1035.067,
+     "text": "③定常業務に敏感になる"
+    },
+    {
+     "track": "V5",
+     "start": 1047.68,
+     "text": "③定常業務に敏感になる"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 2
+   },
+   "id": "T011",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "bec5caa53d",
+   "anim_key": "97d170e155",
+   "count": 11,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V5": 11
+   },
+   "duration_median": 3.24,
+   "rep": {
+    "track": "V5",
+    "start": 1708.207,
+    "end": 1722.854,
+    "text": "AIを使いこなすための本質とまとめ"
+   },
+   "examples": [
+    {
+     "track": "V5",
+     "start": 1708.207,
+     "text": "AIを使いこなすための本質とまとめ"
+    },
+    {
+     "track": "V5",
+     "start": 1726.692,
+     "text": "AIを使いこなすための本質とまとめ"
+    },
+    {
+     "track": "V5",
+     "start": 1728.56,
+     "text": "AIを使いこなすための本質とまとめ"
+    },
+    {
+     "track": "V5",
+     "start": 1730.329,
+     "text": "AIを使いこなすための本質とまとめ"
+    },
+    {
+     "track": "V5",
+     "start": 1744.309,
+     "text": "AIを使いこなすための本質とまとめ"
+    },
+    {
+     "track": "V5",
+     "start": 1747.546,
+     "text": "AIを使いこなすための本質とまとめ"
+    },
+    {
+     "track": "V5",
+     "start": 1752.217,
+     "text": "AIを使いこなすための本質とまとめ"
+    },
+    {
+     "track": "V5",
+     "start": 1763.128,
+     "text": "AIを使いこなすための本質とまとめ"
+    }
+   ],
+   "se_with": {},
+   "id": "T012",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "2486eaae55",
+   "anim_key": "97d170e155",
+   "count": 11,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V5": 11
+   },
+   "duration_median": 5.67,
+   "rep": {
+    "track": "V5",
+    "start": 1782.047,
+    "end": 1782.814,
+    "text": "AIを使いこなすための本質とまとめ"
+   },
+   "examples": [
+    {
+     "track": "V5",
+     "start": 1782.047,
+     "text": "AIを使いこなすための本質とまとめ"
+    },
+    {
+     "track": "V5",
+     "start": 1782.814,
+     "text": "AIを使いこなすための本質とまとめ"
+    },
+    {
+     "track": "V5",
+     "start": 1792.391,
+     "text": "AIを使いこなすための本質とまとめ"
+    },
+    {
+     "track": "V5",
+     "start": 1820.485,
+     "text": "AIを使いこなすための本質とまとめ"
+    },
+    {
+     "track": "V5",
+     "start": 1860.726,
+     "text": "AIを使いこなすための本質とまとめ"
+    },
+    {
+     "track": "V5",
+     "start": 1906.538,
+     "text": "AIを使いこなすための本質とまとめ"
+    },
+    {
+     "track": "V5",
+     "start": 1913.311,
+     "text": "AIを使いこなすための本質とまとめ"
+    },
+    {
+     "track": "V5",
+     "start": 1915.38,
+     "text": "AIを使いこなすための本質とまとめ"
+    }
+   ],
+   "se_with": {},
+   "id": "T013",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "1abc8e4386",
+   "anim_key": "97d170e155",
+   "count": 7,
+   "styles": [
+    "青背景"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V4": 7
+   },
+   "duration_median": 2.87,
+   "rep": {
+    "track": "V4",
+    "start": 76.677,
+    "end": 81.415,
+    "text": "耳かきを机にのせるゲーム"
+   },
+   "examples": [
+    {
+     "track": "V4",
+     "start": 76.677,
+     "text": "耳かきを机にのせるゲーム"
+    },
+    {
+     "track": "V4",
+     "start": 86.32,
+     "text": "耳かきを机にのせるゲーム"
+    },
+    {
+     "track": "V4",
+     "start": 89.79,
+     "text": "耳かきを机にのせるゲーム"
+    },
+    {
+     "track": "V4",
+     "start": 92.659,
+     "text": "耳かきを机にのせるゲーム"
+    },
+    {
+     "track": "V4",
+     "start": 97.097,
+     "text": "耳かきを机にのせるゲーム"
+    },
+    {
+     "track": "V4",
+     "start": 100.167,
+     "text": "耳かきを机にのせるゲーム"
+    },
+    {
+     "track": "V4",
+     "start": 109.109,
+     "text": "耳かきを机にのせるゲーム"
+    }
+   ],
+   "se_with": {},
+   "id": "T014",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "0b45f7e7c9",
+   "anim_key": "3b34a5366a",
+   "count": 7,
+   "styles": [],
+   "fonts": [
+    "PA1GothicStd-Bold",
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "シェイプ",
+    "グループ",
+    "テキスト",
+    "シェイプ",
+    "シェイプ"
+   ],
+   "animation": "指向性ブラー (レガシー)（ブラーの長さ、0.20秒） + トランスフォーム（位置、0.20秒）",
+   "effects": [
+    "指向性ブラー (レガシー)",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V9": 7
+   },
+   "duration_median": 4.0,
+   "rep": {
+    "track": "V9",
+    "start": 477.844,
+    "end": 481.781,
+    "text": "AIを使いこなす習慣① / 7つの習慣"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 477.844,
+     "text": "AIを使いこなす習慣① / 7つの習慣"
+    },
+    {
+     "track": "V9",
+     "start": 768.034,
+     "text": "AIを使いこなす習慣② / 7つの習慣"
+    },
+    {
+     "track": "V9",
+     "start": 961.894,
+     "text": "AIを使いこなす習慣③ / 7つの習慣"
+    },
+    {
+     "track": "V9",
+     "start": 1077.843,
+     "text": "AIを使いこなす習慣④ / 7つの習慣"
+    },
+    {
+     "track": "V9",
+     "start": 1217.349,
+     "text": "AIを使いこなす習慣⑤ / 7つの習慣"
+    },
+    {
+     "track": "V9",
+     "start": 1431.163,
+     "text": "AIを使いこなす習慣⑥ / 7つの習慣"
+    },
+    {
+     "track": "V9",
+     "start": 1480.279,
+     "text": "AIを使いこなす習慣⑦ / 7つの習慣"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 7,
+    "キーン（ポイント）.wav": 1
+   },
+   "id": "T015",
+   "adjust_with": {
+    "E001": 7
+   }
+  },
+  {
+   "look_key": "8369e13841",
+   "anim_key": "97d170e155",
+   "count": 7,
+   "styles": [
+    "基本テロップ赤"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 7
+   },
+   "duration_median": 2.5,
+   "rep": {
+    "track": "V8",
+    "start": 608.308,
+    "end": 610.21,
+    "text": "構造だけ覚えとけば変にはならん"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 431.197,
+     "text": "ガシャコンガシャコンか〜！"
+    },
+    {
+     "track": "V8",
+     "start": 507.507,
+     "text": "これは絶対に習慣にすべき"
+    },
+    {
+     "track": "V8",
+     "start": 519.719,
+     "text": "それもAIと完全に共有してる"
+    },
+    {
+     "track": "V8",
+     "start": 589.456,
+     "text": "成果を上げるうえでの ボトルネックを洗い出す"
+    },
+    {
+     "track": "V8",
+     "start": 608.308,
+     "text": "構造だけ覚えとけば変にはならん"
+    },
+    {
+     "track": "V8",
+     "start": 746.312,
+     "text": "コンテキストを渡せる限界量が 決まってる"
+    },
+    {
+     "track": "V8",
+     "start": 1486.919,
+     "text": "AIに丸投げして 自分がついていくのをやめてはならない"
+    }
+   ],
+   "se_with": {
+    "cursor1.wav": 4,
+    "決定、ボタン押下22.wav": 1
+   },
+   "id": "T016",
+   "adjust_with": {
+    "E004": 1
+   }
+  },
+  {
+   "look_key": "5c362455e6",
+   "anim_key": "97d170e155",
+   "count": 7,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V5": 7
+   },
+   "duration_median": 6.44,
+   "rep": {
+    "track": "V5",
+    "start": 1484.183,
+    "end": 1490.622,
+    "text": "⑦AIを信じない"
+   },
+   "examples": [
+    {
+     "track": "V5",
+     "start": 1484.183,
+     "text": "⑦AIを信じない"
+    },
+    {
+     "track": "V5",
+     "start": 1494.46,
+     "text": "⑦AIを信じない"
+    },
+    {
+     "track": "V5",
+     "start": 1512.378,
+     "text": "⑦AIを信じない"
+    },
+    {
+     "track": "V5",
+     "start": 1523.956,
+     "text": "⑦AIを信じない"
+    },
+    {
+     "track": "V5",
+     "start": 1528.127,
+     "text": "⑦AIを信じない"
+    },
+    {
+     "track": "V5",
+     "start": 1537.736,
+     "text": "⑦AIを信じない"
+    },
+    {
+     "track": "V5",
+     "start": 1547.279,
+     "text": "⑦AIを信じない"
+    }
+   ],
+   "se_with": {},
+   "id": "T017",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "4cb054d88a",
+   "anim_key": "e1791b3a05",
+   "count": 6,
+   "styles": [
+    "対談用_質問者テロップ"
+   ],
+   "fonts": [
+    "HiraKakuStdN-W8"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置・不透明度、0.33秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V10": 6
+   },
+   "duration_median": 2.67,
+   "rep": {
+    "track": "V10",
+    "start": 1079.245,
+    "end": 1081.847,
+    "text": "寝てる間もAIを動かす"
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 769.969,
+     "text": "AIエージェントと情報を繋げる"
+    },
+    {
+     "track": "V10",
+     "start": 963.462,
+     "text": "ルーティンワークに敏感になる"
+    },
+    {
+     "track": "V10",
+     "start": 1079.245,
+     "text": "寝てる間もAIを動かす"
+    },
+    {
+     "track": "V10",
+     "start": 1221.287,
+     "text": "スマホからAIを動かす"
+    },
+    {
+     "track": "V10",
+     "start": 1433.265,
+     "text": "普段使っていないAIを使う"
+    },
+    {
+     "track": "V10",
+     "start": 1481.613,
+     "text": "AIを信じないこと"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 6
+   },
+   "id": "T018",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "36318732e6",
+   "anim_key": "25c18b936f",
+   "count": 5,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "シェイプ",
+    "テキスト"
+   ],
+   "animation": "モーション（位置、0.33秒）",
+   "effects": [
+    "クリップ"
+   ],
+   "tracks": {
+    "V10": 5
+   },
+   "duration_median": 3.8,
+   "rep": {
+    "track": "V10",
+    "start": 725.491,
+    "end": 729.996,
+    "text": "ポイント / チャットを変えることで 参照するコンテキストを変えることができる"
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 725.491,
+     "text": "ポイント / チャットを変えることで 参照するコンテキストを変えることができる"
+    },
+    {
+     "track": "V10",
+     "start": 860.893,
+     "text": "ポイント / コンピューターを使用（computer use)を オンにすることが重要"
+    },
+    {
+     "track": "V10",
+     "start": 923.856,
+     "text": "ポイント / AIに対してあらゆるデータへの アクセス権を解放する"
+    },
+    {
+     "track": "V10",
+     "start": 1589.421,
+     "text": "ポイント / AIが出力したことを 鵜呑みにしない習慣を身に付ける"
+    },
+    {
+     "track": "V10",
+     "start": 2193.958,
+     "text": "ポイント / チャットを変えることで 参照するコンテキストを変えることができる"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 5
+   },
+   "id": "T019",
+   "adjust_with": {
+    "E001": 3
+   }
+  },
+  {
+   "look_key": "05d2903cbf",
+   "anim_key": "97d170e155",
+   "count": 5,
+   "styles": [
+    "ヒラギノ白シャドウ"
+   ],
+   "fonts": [
+    "HiraKakuStdN-W8"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 5
+   },
+   "duration_median": 1.1,
+   "rep": {
+    "track": "V8",
+    "start": 922.522,
+    "end": 923.856,
+    "text": "どう足掻いても無理"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 876.342,
+     "text": "全部じゃんw"
+    },
+    {
+     "track": "V8",
+     "start": 922.522,
+     "text": "どう足掻いても無理"
+    },
+    {
+     "track": "V8",
+     "start": 948.147,
+     "text": "慣れ慣れ慣れ慣れ"
+    },
+    {
+     "track": "V8",
+     "start": 1119.385,
+     "text": "これは結構ガチャｗ"
+    },
+    {
+     "track": "V8",
+     "start": 1332.464,
+     "text": "みんなそうやってんだよ?"
+    }
+   ],
+   "se_with": {
+    "【間抜け,アホ】ポカン.wav": 3,
+    "【汎用,鈴】しゃん.wav": 2
+   },
+   "id": "T020",
+   "adjust_with": {
+    "E002": 2,
+    "E011": 1,
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "39c56017df",
+   "anim_key": "97d170e155",
+   "count": 4,
+   "styles": [],
+   "fonts": [
+    "SourceHanSans-Heavy"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "シェイプ",
+    "テキスト",
+    "テキスト",
+    "シェイプ"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V14": 4
+   },
+   "duration_median": 5.11,
+   "rep": {
+    "track": "V14",
+    "start": 1184.517,
+    "end": 1190.89,
+    "text": "⬆︎⬆︎⬆︎ / 1on1個別コンサルは こちらをクリック！"
+   },
+   "examples": [
+    {
+     "track": "V14",
+     "start": 1184.517,
+     "text": "⬆︎⬆︎⬆︎ / 1on1個別コンサルは こちらをクリック！"
+    },
+    {
+     "track": "V14",
+     "start": 1836.802,
+     "text": "⬆︎⬆︎⬆︎ / プレゼント受け取りは こちらから！"
+    },
+    {
+     "track": "V14",
+     "start": 1931.797,
+     "text": "⬆︎⬆︎⬆︎ / 1on1個別コンサルは こちらをクリック！"
+    },
+    {
+     "track": "V14",
+     "start": 2199.097,
+     "text": "⬆︎⬆︎⬆︎ / 1on1個別コンサルは こちらをクリック！"
+    }
+   ],
+   "se_with": {},
+   "id": "T021",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "a843bee223",
+   "anim_key": "97d170e155",
+   "count": 3,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1,
+    "V9": 1,
+    "V10": 1
+   },
+   "duration_median": 1.37,
+   "rep": {
+    "track": "V10",
+    "start": 95.729,
+    "end": 97.097,
+    "text": "AIに一旦投げさせる"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1108.674,
+     "text": "Ultraにすると めっちゃ長く動く"
+    },
+    {
+     "track": "V9",
+     "start": 457.657,
+     "text": "適応しないと！！！"
+    },
+    {
+     "track": "V10",
+     "start": 95.729,
+     "text": "AIに一旦投げさせる"
+    }
+   ],
+   "se_with": {
+    "【汎用,太鼓】太鼓(ドン).wav": 1,
+    "【汎用,太鼓】太鼓(カカッ).wav": 1,
+    "【汎用,拍子木】キッ.wav": 1
+   },
+   "id": "T022",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "0b7109cd42",
+   "anim_key": "97d170e155",
+   "count": 3,
+   "styles": [
+    "白テキ"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 3
+   },
+   "duration_median": 1.9,
+   "rep": {
+    "track": "V8",
+    "start": 273.006,
+    "end": 275.408,
+    "text": "ドラえもんが歩いてる感じなる"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 264.598,
+     "text": "くろーどこーど…？"
+    },
+    {
+     "track": "V8",
+     "start": 273.006,
+     "text": "ドラえもんが歩いてる感じなる"
+    },
+    {
+     "track": "V8",
+     "start": 801.801,
+     "text": "もしくはカレーライスのこと ばっかり考えてる"
+    }
+   ],
+   "se_with": {
+    "【間抜け,アホ】ポカン.wav": 1,
+    "【間抜け,アホ】ピコンッ.wav": 1
+   },
+   "id": "T023",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "795ebdf78e",
+   "anim_key": "257e2d65d5",
+   "count": 3,
+   "styles": [
+    "テキストスタイル"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V7": 2,
+    "V9": 1
+   },
+   "duration_median": 5.44,
+   "rep": {
+    "track": "V7",
+    "start": 471.805,
+    "end": 475.008,
+    "text": "ポイント / 抽象的なことではなく具体的な内容なので そのまま参考に真似してOK！"
+   },
+   "examples": [
+    {
+     "track": "V7",
+     "start": 471.805,
+     "text": "ポイント / 抽象的なことではなく具体的な内容なので そのまま参考に真似してOK！"
+    },
+    {
+     "track": "V7",
+     "start": 949.248,
+     "text": "ポイント / AIを使いこなすためには “習慣”でかなり変わってくる"
+    },
+    {
+     "track": "V9",
+     "start": 358.391,
+     "text": "ポイント / 早く気付いて波に乗ったかのほんの少しの 違いで大きく成果が変わってくる"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 3
+   },
+   "id": "T024",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "0ac9449b5f",
+   "anim_key": "97d170e155",
+   "count": 3,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 3
+   },
+   "duration_median": 0.73,
+   "rep": {
+    "track": "V8",
+    "start": 560.627,
+    "end": 561.461,
+    "text": "マジでタスクは"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 559.993,
+     "text": "マジで"
+    },
+    {
+     "track": "V8",
+     "start": 560.627,
+     "text": "マジでタスクは"
+    },
+    {
+     "track": "V8",
+     "start": 561.461,
+     "text": "マジでタスクは絶対作った方がいい"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T025",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "41e837c3bf",
+   "anim_key": "15cc7ae8bc",
+   "count": 3,
+   "styles": [],
+   "fonts": [
+    "SourceHanSans-Heavy"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト",
+    "シェイプ"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V15": 3
+   },
+   "duration_median": 3.84,
+   "rep": {
+    "track": "V15",
+    "start": 1184.517,
+    "end": 1190.89,
+    "text": "⬆︎⬆︎⬆︎ / 公式LINEを 登録する！"
+   },
+   "examples": [
+    {
+     "track": "V15",
+     "start": 1184.517,
+     "text": "⬆︎⬆︎⬆︎ / 公式LINEを 登録する！"
+    },
+    {
+     "track": "V15",
+     "start": 1836.802,
+     "text": "⬆︎⬆︎⬆︎ / 公式LINEを 登録する！"
+    },
+    {
+     "track": "V15",
+     "start": 1931.797,
+     "text": "⬆︎⬆︎⬆︎ / 公式LINEを 登録する！"
+    }
+   ],
+   "se_with": {},
+   "id": "T026",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "42568bbb4f",
+   "anim_key": "97d170e155",
+   "count": 3,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V5": 3
+   },
+   "duration_median": 14.51,
+   "rep": {
+    "track": "V5",
+    "start": 1666.465,
+    "end": 1682.848,
+    "text": "比較検討はAIに丸投げした方が良い…？"
+   },
+   "examples": [
+    {
+     "track": "V5",
+     "start": 1666.465,
+     "text": "比較検討はAIに丸投げした方が良い…？"
+    },
+    {
+     "track": "V5",
+     "start": 1682.848,
+     "text": "比較検討はAIに丸投げした方が良い…？"
+    },
+    {
+     "track": "V5",
+     "start": 1691.123,
+     "text": "比較検討はAIに丸投げした方が良い…？"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,短い】キランッッ!!.wav": 1
+   },
+   "id": "T027",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "504b81fd33",
+   "anim_key": "257e2d65d5",
+   "count": 2,
+   "styles": [
+    "テキストスタイル"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V7": 2
+   },
+   "duration_median": 5.19,
+   "rep": {
+    "track": "V7",
+    "start": 113.78,
+    "end": 119.853,
+    "text": "ポイント / AIが頭が良いからといって 使い方次第では逆に非効率になる"
+   },
+   "examples": [
+    {
+     "track": "V7",
+     "start": 113.78,
+     "text": "ポイント / AIが頭が良いからといって 使い方次第では逆に非効率になる"
+    },
+    {
+     "track": "V7",
+     "start": 2189.654,
+     "text": "ポイント / AIが頭が良いからといって 使い方次第では逆に非効率になる"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 2
+   },
+   "id": "T028",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "fefd1c5e48",
+   "anim_key": "c7ea1d7bef",
+   "count": 2,
+   "styles": [
+    "ゴージャス金"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "VR フラクタルノイズ（展開、4.87秒） + プロセスアンプ（明度、0.67秒）",
+   "effects": [
+    "VR フラクタルノイズ",
+    "プロセスアンプ"
+   ],
+   "tracks": {
+    "V8": 2
+   },
+   "duration_median": 3.04,
+   "rep": {
+    "track": "V8",
+    "start": 147.047,
+    "end": 150.083,
+    "text": "それを真似さえしてもらえれば レベルは上がる"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 147.047,
+     "text": "それを真似さえしてもらえれば レベルは上がる"
+    },
+    {
+     "track": "V8",
+     "start": 2182.313,
+     "text": "それを真似さえしてもらえれば レベルは上がる"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,長い】シャラーーン.wav": 2
+   },
+   "id": "T029",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "0e85c2959e",
+   "anim_key": "91198cbc27",
+   "count": 2,
+   "styles": [
+    "青背景"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.50秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 2
+   },
+   "duration_median": 5.66,
+   "rep": {
+    "track": "V8",
+    "start": 165.999,
+    "end": 172.139,
+    "text": "AIがAmazonの配達してくれる"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 165.999,
+     "text": "AIがAmazonの配達してくれる"
+    },
+    {
+     "track": "V8",
+     "start": 2172.137,
+     "text": "AIがAmazonの配達してくれる"
+    }
+   ],
+   "se_with": {
+    "cursor1.wav": 2
+   },
+   "id": "T030",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "01e1decc6d",
+   "anim_key": "91198cbc27",
+   "count": 2,
+   "styles": [
+    "青背景"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.50秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V9": 2
+   },
+   "duration_median": 3.39,
+   "rep": {
+    "track": "V9",
+    "start": 168.268,
+    "end": 172.139,
+    "text": "AIが椅子を作ってくれる"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 168.268,
+     "text": "AIが椅子を作ってくれる"
+    },
+    {
+     "track": "V9",
+     "start": 2174.406,
+     "text": "AIが椅子を作ってくれる"
+    }
+   ],
+   "se_with": {
+    "cursor1.wav": 2
+   },
+   "id": "T031",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "fd90bad6ba",
+   "anim_key": "97d170e155",
+   "count": 2,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 2
+   },
+   "duration_median": 2.9,
+   "rep": {
+    "track": "V8",
+    "start": 344.945,
+    "end": 347.581,
+    "text": "なんか始まるときは教えて"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 344.945,
+     "text": "なんか始まるときは教えて"
+    },
+    {
+     "track": "V8",
+     "start": 347.581,
+     "text": "ガシャコンする時の土地とか抑えるわ"
+    }
+   ],
+   "se_with": {},
+   "id": "T032",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "f5a7dea8de",
+   "anim_key": "97d170e155",
+   "count": 2,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 2
+   },
+   "duration_median": 2.6,
+   "rep": {
+    "track": "V8",
+    "start": 405.872,
+    "end": 408.341,
+    "text": "うわあこんな素敵な机を作れるなんて"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 405.872,
+     "text": "うわあこんな素敵な机を作れるなんて"
+    },
+    {
+     "track": "V8",
+     "start": 408.341,
+     "text": "すごいですね職人の〇〇さん！"
+    }
+   ],
+   "se_with": {},
+   "id": "T033",
+   "adjust_with": {
+    "E004": 1
+   }
+  },
+  {
+   "look_key": "787164dd55",
+   "anim_key": "97d170e155",
+   "count": 2,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 2
+   },
+   "duration_median": 1.97,
+   "rep": {
+    "track": "V8",
+    "start": 564.164,
+    "end": 566.9,
+    "text": "まず成果っていうのを 定義しなきゃいけない"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 564.164,
+     "text": "まず成果っていうのを 定義しなきゃいけない"
+    },
+    {
+     "track": "V8",
+     "start": 588.254,
+     "text": "これをボトルネックって言うんだけど"
+    }
+   ],
+   "se_with": {
+    "cursor1.wav": 1
+   },
+   "id": "T034",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "4747fea1a9",
+   "anim_key": "97d170e155",
+   "count": 2,
+   "styles": [
+    "質問者テロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V9": 2
+   },
+   "duration_median": 2.37,
+   "rep": {
+    "track": "V9",
+    "start": 1210.042,
+    "end": 1212.978,
+    "text": "一旦 最先端の情報を僕らから 学んでほしいなって思うんで"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 1210.042,
+     "text": "一旦 最先端の情報を僕らから 学んでほしいなって思うんで"
+    },
+    {
+     "track": "V9",
+     "start": 1879.411,
+     "text": "流し聞きするのがいいのかなと思って"
+    }
+   ],
+   "se_with": {},
+   "id": "T035",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "e0839ff743",
+   "anim_key": "97d170e155",
+   "count": 2,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 2
+   },
+   "duration_median": 1.23,
+   "rep": {
+    "track": "V8",
+    "start": 1439.371,
+    "end": 1441.006,
+    "text": "使っているAIを使うのは当たり前だから"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1439.371,
+     "text": "使っているAIを使うのは当たり前だから"
+    },
+    {
+     "track": "V8",
+     "start": 1441.006,
+     "text": "例えば俺だったらね"
+    }
+   ],
+   "se_with": {},
+   "id": "T036",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "d7b4ab2da0",
+   "anim_key": "97d170e155",
+   "count": 2,
+   "styles": [
+    "ヒラギノ白シャドウ"
+   ],
+   "fonts": [
+    "HiraKakuStdN-W8"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 2
+   },
+   "duration_median": 1.35,
+   "rep": {
+    "track": "V8",
+    "start": 1533.399,
+    "end": 1534.967,
+    "text": "AIが言ったことのうち "
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1533.399,
+     "text": "AIが言ったことのうち "
+    },
+    {
+     "track": "V8",
+     "start": 1534.967,
+     "text": "AIが言ったことのうち理解できないことを "
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 2
+   },
+   "id": "T037",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "d9d10307a7",
+   "anim_key": "97d170e155",
+   "count": 2,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V5": 2
+   },
+   "duration_median": 26.59,
+   "rep": {
+    "track": "V5",
+    "start": 1593.158,
+    "end": 1613.679,
+    "text": "AI使いのプロはスキルを使いこなす"
+   },
+   "examples": [
+    {
+     "track": "V5",
+     "start": 1593.158,
+     "text": "AI使いのプロはスキルを使いこなす"
+    },
+    {
+     "track": "V5",
+     "start": 1614.813,
+     "text": "AI使いのプロはスキルを使いこなす"
+    }
+   ],
+   "se_with": {},
+   "id": "T038",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "d7d70b59ff",
+   "anim_key": "18bb63c296",
+   "count": 1,
+   "styles": [
+    "ゴージャス青"
+   ],
+   "fonts": [
+    "NotoSerifJP-Black"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "VR フラクタルノイズ（展開、4.87秒） + プロセスアンプ（明度、0.67秒）",
+   "effects": [
+    "VR フラクタルノイズ",
+    "プロセスアンプ"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 3.17,
+   "rep": {
+    "track": "V9",
+    "start": 0.0,
+    "end": 3.17,
+    "text": "実際のAI習慣7選 / 年商25億AI社長の 　　"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 0.0,
+     "text": "実際のAI習慣7選 / 年商25億AI社長の 　　"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,長い】シャラーーン.wav": 1
+   },
+   "id": "T039",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "5743b12815",
+   "anim_key": "a6c24a47a7",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "クロップ（右、0.70秒）",
+   "effects": [
+    "クロップ",
+    "モザイク (レガシー)"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.4,
+   "rep": {
+    "track": "V8",
+    "start": 5.038,
+    "end": 6.44,
+    "text": "あいかがさ"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 5.038,
+     "text": "あいかがさ"
+    }
+   ],
+   "se_with": {
+    "ピロリロ中.mp3": 1
+   },
+   "id": "T040",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "de46233095",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 0.57,
+   "rep": {
+    "track": "V10",
+    "start": 5.873,
+    "end": 6.44,
+    "text": "ってやっちゃう人"
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 5.873,
+     "text": "ってやっちゃう人"
+    }
+   ],
+   "se_with": {},
+   "id": "T041",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "be3a50dc04",
+   "anim_key": "55d2153198",
+   "count": 1,
+   "styles": [
+    "ゴージャス金"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "ストロボ（元の画像とブレンド、0.19秒）",
+   "effects": [
+    "ストロボ"
+   ],
+   "tracks": {
+    "V7": 1
+   },
+   "duration_median": 0.7,
+   "rep": {
+    "track": "V7",
+    "start": 9.376,
+    "end": 10.077,
+    "text": "Wワーク"
+   },
+   "examples": [
+    {
+     "track": "V7",
+     "start": 9.376,
+     "text": "Wワーク"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,短い】キランッッ!!.wav": 1
+   },
+   "id": "T042",
+   "adjust_with": {
+    "E009": 1
+   }
+  },
+  {
+   "look_key": "733e22d94e",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V7": 1
+   },
+   "duration_median": 1.07,
+   "rep": {
+    "track": "V7",
+    "start": 12.646,
+    "end": 13.714,
+    "text": "そういうこと考えなくていい"
+   },
+   "examples": [
+    {
+     "track": "V7",
+     "start": 12.646,
+     "text": "そういうこと考えなくていい"
+    }
+   ],
+   "se_with": {
+    "【汎用,鈴】シャーン.wav": 1
+   },
+   "id": "T043",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "b802e11139",
+   "anim_key": "3b74882295",
+   "count": 1,
+   "styles": [
+    "白テキ"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.37秒） + トランスフォーム（スケール (高さ)・不透明度、0.24秒）",
+   "effects": [
+    "トランスフォーム",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V5": 1
+   },
+   "duration_median": 2.6,
+   "rep": {
+    "track": "V5",
+    "start": 13.714,
+    "end": 16.316,
+    "text": "稼ぎに10倍差がつく 年商25億社長のAI習慣7選"
+   },
+   "examples": [
+    {
+     "track": "V5",
+     "start": 13.714,
+     "text": "稼ぎに10倍差がつく 年商25億社長のAI習慣7選"
+    }
+   ],
+   "se_with": {
+    "パチンっ指鳴らし.wav": 1
+   },
+   "id": "T044",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "bebe1f5f96",
+   "anim_key": "6468d9caab",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.37秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 4.4,
+   "rep": {
+    "track": "V9",
+    "start": 20.254,
+    "end": 24.658,
+    "text": "ガチでAI使いこなしてる人の 習慣7選"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 20.254,
+     "text": "ガチでAI使いこなしてる人の 習慣7選"
+    }
+   ],
+   "se_with": {
+    "【汎用,太鼓】太鼓(ドドン).wav": 1
+   },
+   "id": "T045",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "0b5cf3ffc4",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.1,
+   "rep": {
+    "track": "V8",
+    "start": 27.294,
+    "end": 28.395,
+    "text": "これやってないと"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 27.294,
+     "text": "これやってないと"
+    }
+   ],
+   "se_with": {},
+   "id": "T046",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "d74c605194",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "ReggaeOne-Regular",
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 0.37,
+   "rep": {
+    "track": "V8",
+    "start": 28.395,
+    "end": 28.762,
+    "text": "これやってないと ダメ"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 28.395,
+     "text": "これやってないと ダメ"
+    }
+   ],
+   "se_with": {
+    "【ツッコミ】ドスッ.wav": 1
+   },
+   "id": "T047",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "22a353a745",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "質問者テロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 2.64,
+   "rep": {
+    "track": "V9",
+    "start": 38.305,
+    "end": 40.941,
+    "text": "使い方によっても レベルがどんどん広がっている"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 38.305,
+     "text": "使い方によっても レベルがどんどん広がっている"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 1
+   },
+   "id": "T048",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "8ba08e2ef4",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 0.63,
+   "rep": {
+    "track": "V10",
+    "start": 47.014,
+    "end": 47.648,
+    "text": "全然違う"
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 47.014,
+     "text": "全然違う"
+    }
+   ],
+   "se_with": {
+    "【汎用,拍子木】キッ.wav": 1
+   },
+   "id": "T049",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "50dcab1c01",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.77,
+   "rep": {
+    "track": "V8",
+    "start": 59.393,
+    "end": 61.161,
+    "text": "いやほんまにそう"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 59.393,
+     "text": "いやほんまにそう"
+    }
+   ],
+   "se_with": {},
+   "id": "T050",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "658041230e",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 3.17,
+   "rep": {
+    "track": "V8",
+    "start": 61.161,
+    "end": 64.331,
+    "text": "成果出すのが上手い人って "
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 61.161,
+     "text": "成果出すのが上手い人って "
+    }
+   ],
+   "se_with": {},
+   "id": "T051",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "000c7921e7",
+   "anim_key": "f99a966a19",
+   "count": 1,
+   "styles": [
+    "ゴージャス金"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "ストロボ（元の画像とブレンド、0.48秒）",
+   "effects": [
+    "ストロボ"
+   ],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 1.67,
+   "rep": {
+    "track": "V10",
+    "start": 62.663,
+    "end": 64.331,
+    "text": "フィードバックループを回してる"
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 62.663,
+     "text": "フィードバックループを回してる"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,短い】キラ.wav": 1
+   },
+   "id": "T052",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "a32e4a032c",
+   "anim_key": "3a2ef18107",
+   "count": 1,
+   "styles": [
+    "青背景"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.50秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 3.94,
+   "rep": {
+    "track": "V10",
+    "start": 72.739,
+    "end": 76.677,
+    "text": "耳かきを机にのせるゲーム"
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 72.739,
+     "text": "耳かきを机にのせるゲーム"
+    }
+   ],
+   "se_with": {
+    "cursor1.wav": 1
+   },
+   "id": "T053",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "64b99f7443",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "白テキ"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 2.27,
+   "rep": {
+    "track": "V10",
+    "start": 79.146,
+    "end": 81.415,
+    "text": "AIに投げる弾道を計算させる"
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 79.146,
+     "text": "AIに投げる弾道を計算させる"
+    }
+   ],
+   "se_with": {},
+   "id": "T054",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "f5274df922",
+   "anim_key": "65badcca63",
+   "count": 1,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "クロップ（右、1.37秒）",
+   "effects": [
+    "クロップ"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.07,
+   "rep": {
+    "track": "V8",
+    "start": 81.415,
+    "end": 83.483,
+    "text": "どれくらいの角度が1番ベストか？"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 81.415,
+     "text": "どれくらいの角度が1番ベストか？"
+    }
+   ],
+   "se_with": {},
+   "id": "T055",
+   "adjust_with": {
+    "E003": 1
+   }
+  },
+  {
+   "look_key": "d2f43f9bd5",
+   "anim_key": "6ed2e42689",
+   "count": 1,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "クロップ（右、1.47秒）",
+   "effects": [
+    "クロップ"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.94,
+   "rep": {
+    "track": "V8",
+    "start": 83.483,
+    "end": 85.419,
+    "text": "どれくらいの力で押し出すのがベストか？"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 83.483,
+     "text": "どれくらいの力で押し出すのがベストか？"
+    }
+   ],
+   "se_with": {},
+   "id": "T056",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "d2f43f9bd5",
+   "anim_key": "8cc622343d",
+   "count": 1,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "クロップ（右、0.67秒）",
+   "effects": [
+    "クロップ"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 0.9,
+   "rep": {
+    "track": "V8",
+    "start": 85.419,
+    "end": 86.32,
+    "text": "風を測る"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 85.419,
+     "text": "風を測る"
+    }
+   ],
+   "se_with": {},
+   "id": "T057",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "cd15477d4e",
+   "anim_key": "c786f21e65",
+   "count": 1,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "クロップ（右、0.87秒）",
+   "effects": [
+    "クロップ"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.03,
+   "rep": {
+    "track": "V8",
+    "start": 88.755,
+    "end": 89.79,
+    "text": "ビビビビビビビ"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 88.755,
+     "text": "ビビビビビビビ"
+    }
+   ],
+   "se_with": {},
+   "id": "T058",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "5a47a449a9",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.94,
+   "rep": {
+    "track": "V8",
+    "start": 94.161,
+    "end": 97.097,
+    "text": "フィードバックループを回すやつは"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 94.161,
+     "text": "フィードバックループを回すやつは"
+    }
+   ],
+   "se_with": {},
+   "id": "T059",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "ed00dfc864",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 0.63,
+   "rep": {
+    "track": "V8",
+    "start": 111.712,
+    "end": 112.346,
+    "text": "これ！！！"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 111.712,
+     "text": "これ！！！"
+    }
+   ],
+   "se_with": {
+    "【汎用,太鼓】太鼓(ドドン).wav": 1
+   },
+   "id": "T060",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "8223c19005",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.43,
+   "rep": {
+    "track": "V8",
+    "start": 112.346,
+    "end": 113.78,
+    "text": "この違い！"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 112.346,
+     "text": "この違い！"
+    }
+   ],
+   "se_with": {},
+   "id": "T061",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "8f2b48c712",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.77,
+   "rep": {
+    "track": "V8",
+    "start": 118.085,
+    "end": 119.853,
+    "text": "こういうのわかってないよね〜"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 118.085,
+     "text": "こういうのわかってないよね〜"
+    }
+   ],
+   "se_with": {},
+   "id": "T062",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "cfe2cb9e80",
+   "anim_key": "91eb84634f",
+   "count": 1,
+   "styles": [
+    "ゴージャス金"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "ストロボ（元の画像とブレンド、0.52秒） + トランスフォーム（位置、0.50秒）",
+   "effects": [
+    "ストロボ",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.84,
+   "rep": {
+    "track": "V8",
+    "start": 126.093,
+    "end": 127.928,
+    "text": "習慣"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 126.093,
+     "text": "習慣"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,短い】キランッッ!!.wav": 1
+   },
+   "id": "T063",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "d915b06598",
+   "anim_key": "6918a46618",
+   "count": 1,
+   "styles": [
+    "ゴージャス金"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "ストロボ（元の画像とブレンド、0.24秒） + トランスフォーム（位置、0.50秒）",
+   "effects": [
+    "ストロボ",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 0.83,
+   "rep": {
+    "track": "V9",
+    "start": 127.094,
+    "end": 127.928,
+    "text": "癖"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 127.094,
+     "text": "癖"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,短い】キランッッ!!.wav": 1
+   },
+   "id": "T064",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "3780c80e16",
+   "anim_key": "fb1c8fd77b",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.12秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.03,
+   "rep": {
+    "track": "V8",
+    "start": 141.775,
+    "end": 142.809,
+    "text": "簡単やん！"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 141.775,
+     "text": "簡単やん！"
+    }
+   ],
+   "se_with": {
+    "【汎用,太鼓】太鼓(カカッ).wav": 1
+   },
+   "id": "T065",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "f33abb1a67",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "基本テロップ赤"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 4.2,
+   "rep": {
+    "track": "V8",
+    "start": 160.16,
+    "end": 164.364,
+    "text": "1〜2年後に世界がガチで AIを使えるようになるのは"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 160.16,
+     "text": "1〜2年後に世界がガチで AIを使えるようになるのは"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T066",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "fafbe1d6cf",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.37,
+   "rep": {
+    "track": "V8",
+    "start": 176.176,
+    "end": 178.545,
+    "text": "Webサイトで飯食えんからね"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 176.176,
+     "text": "Webサイトで飯食えんからね"
+    }
+   ],
+   "se_with": {
+    "【汎用,鈴】しゃん.wav": 1
+   },
+   "id": "T067",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "f77ed81632",
+   "anim_key": "3a2ef18107",
+   "count": 1,
+   "styles": [
+    "青背景"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.50秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 7.47,
+   "rep": {
+    "track": "V8",
+    "start": 178.545,
+    "end": 186.019,
+    "text": "AIが作った映画がめっちゃ人気になる"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 178.545,
+     "text": "AIが作った映画がめっちゃ人気になる"
+    }
+   ],
+   "se_with": {
+    "cursor1.wav": 1
+   },
+   "id": "T068",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "b0242da1cc",
+   "anim_key": "3a2ef18107",
+   "count": 1,
+   "styles": [
+    "青背景"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.50秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 3.9,
+   "rep": {
+    "track": "V9",
+    "start": 182.115,
+    "end": 186.019,
+    "text": "AIが作ったゲームがめっちゃ人気になる"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 182.115,
+     "text": "AIが作ったゲームがめっちゃ人気になる"
+    }
+   ],
+   "se_with": {
+    "cursor1.wav": 1
+   },
+   "id": "T069",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "7e1b1cfd8d",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.47,
+   "rep": {
+    "track": "V8",
+    "start": 195.328,
+    "end": 197.798,
+    "text": "ガチですごいのが 今後絶対に出る"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 195.328,
+     "text": "ガチですごいのが 今後絶対に出る"
+    }
+   ],
+   "se_with": {
+    "【汎用,鈴】シャーン.wav": 1
+   },
+   "id": "T070",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "73ad66c580",
+   "anim_key": "257e2d65d5",
+   "count": 1,
+   "styles": [
+    "テキストスタイル"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 5.71,
+   "rep": {
+    "track": "V9",
+    "start": 197.798,
+    "end": 203.503,
+    "text": "みかみの未来予測 / 1〜2年後のAIで世界を変えるような ガチですごいのが出た時に必ず飛びつくべし"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 197.798,
+     "text": "みかみの未来予測 / 1〜2年後のAIで世界を変えるような ガチですごいのが出た時に必ず飛びつくべし"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T071",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "6c5b6c1ff9",
+   "anim_key": "e557347285",
+   "count": 1,
+   "styles": [
+    "ゴージャス青"
+   ],
+   "fonts": [
+    "NotoSerifJP-Black"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "ストロボ（元の画像とブレンド、0.93秒） + トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "ストロボ",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 3.24,
+   "rep": {
+    "track": "V8",
+    "start": 203.503,
+    "end": 206.74,
+    "text": "そこに最初に 飛びついたやつは勝つ"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 203.503,
+     "text": "そこに最初に 飛びついたやつは勝つ"
+    }
+   ],
+   "se_with": {
+    "【汎用,拍子木】キキッ.wav": 1
+   },
+   "id": "T072",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "03a6d2d14f",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 5.57,
+   "rep": {
+    "track": "V9",
+    "start": 207.641,
+    "end": 213.213,
+    "text": "？"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 207.641,
+     "text": "？"
+    }
+   ],
+   "se_with": {},
+   "id": "T073",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "c9b430f237",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "白テキ"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.8,
+   "rep": {
+    "track": "V8",
+    "start": 213.213,
+    "end": 216.016,
+    "text": "視聴者ついていけてないです…"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 213.213,
+     "text": "視聴者ついていけてないです…"
+    }
+   ],
+   "se_with": {
+    "【汎用,鈴】シャーン.wav": 1
+   },
+   "id": "T074",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "70ed4989f0",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.13,
+   "rep": {
+    "track": "V8",
+    "start": 226.66,
+    "end": 227.794,
+    "text": "これ来るのよ（？）"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 226.66,
+     "text": "これ来るのよ（？）"
+    }
+   ],
+   "se_with": {},
+   "id": "T075",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "44a0f3042d",
+   "anim_key": "257e2d65d5",
+   "count": 1,
+   "styles": [
+    "テキストスタイル"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 9.44,
+   "rep": {
+    "track": "V8",
+    "start": 237.237,
+    "end": 246.68,
+    "text": "ポイント / 産業革命の本質は織物などを 大量生産できる機械・工場ができたこと"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 237.237,
+     "text": "ポイント / 産業革命の本質は織物などを 大量生産できる機械・工場ができたこと"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T076",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "062efe3278",
+   "anim_key": "60f1c1a7c6",
+   "count": 1,
+   "styles": [
+    "ゴージャス青"
+   ],
+   "fonts": [
+    "NotoSerifJP-Black"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "クロップ（右、1.37秒） + ストロボ（元の画像とブレンド、1.37秒）",
+   "effects": [
+    "クロップ",
+    "ストロボ"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 3.47,
+   "rep": {
+    "track": "V8",
+    "start": 257.724,
+    "end": 261.194,
+    "text": "本当の革命に 目を向けておいてほしい"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 257.724,
+     "text": "本当の革命に 目を向けておいてほしい"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,長い】ピラリーーン.wav": 1
+   },
+   "id": "T077",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "c73b34c798",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.04,
+   "rep": {
+    "track": "V8",
+    "start": 270.971,
+    "end": 273.006,
+    "text": "本当にここからだと 思ってないよね"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 270.971,
+     "text": "本当にここからだと 思ってないよね"
+    }
+   ],
+   "se_with": {
+    "【ツッコミ,シュール】ピアノの単音.wav": 1
+   },
+   "id": "T078",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "1445b75178",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.27,
+   "rep": {
+    "track": "V8",
+    "start": 298.031,
+    "end": 299.299,
+    "text": "工場で働かされるだけ"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 298.031,
+     "text": "工場で働かされるだけ"
+    }
+   ],
+   "se_with": {
+    "【チーン,シュール】チーン.wav": 1
+   },
+   "id": "T079",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "cccbf72945",
+   "anim_key": "257e2d65d5",
+   "count": 1,
+   "styles": [
+    "テキストスタイル"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 3.07,
+   "rep": {
+    "track": "V8",
+    "start": 299.299,
+    "end": 302.369,
+    "text": "ポイント / 革命で遅れて気付いた人は工場で 働かされるだけなので早く気づく必要がある"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 299.299,
+     "text": "ポイント / 革命で遅れて気付いた人は工場で 働かされるだけなので早く気づく必要がある"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T080",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "5017a1cc52",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "白テキ"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.97,
+   "rep": {
+    "track": "V8",
+    "start": 314.548,
+    "end": 316.516,
+    "text": "そうなっちゃうよ"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 314.548,
+     "text": "そうなっちゃうよ"
+    }
+   ],
+   "se_with": {
+    "【ツッコミ】ドスッ.wav": 1
+   },
+   "id": "T081",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "30ae309094",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.87,
+   "rep": {
+    "track": "V8",
+    "start": 324.324,
+    "end": 326.193,
+    "text": "ガシャコンガシャコンした方が良くない？"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 324.324,
+     "text": "ガシャコンガシャコンした方が良くない？"
+    }
+   ],
+   "se_with": {},
+   "id": "T082",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "5ad1b30f7e",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.37,
+   "rep": {
+    "track": "V8",
+    "start": 340.44,
+    "end": 342.809,
+    "text": "ああ〜そんなことできるんかおもろいな"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 340.44,
+     "text": "ああ〜そんなことできるんかおもろいな"
+    }
+   ],
+   "se_with": {},
+   "id": "T083",
+   "adjust_with": {
+    "E004": 1
+   }
+  },
+  {
+   "look_key": "a843bee223",
+   "anim_key": "8f02c542d3",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "プロセスアンプ（明度、0.50秒） + ズーム (レガシー)（拡大率・不透明度、0.67秒）",
+   "effects": [
+    "プロセスアンプ",
+    "ズーム (レガシー)"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.94,
+   "rep": {
+    "track": "V8",
+    "start": 355.455,
+    "end": 358.391,
+    "text": "そいつらが金持ちになる"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 355.455,
+     "text": "そいつらが金持ちになる"
+    }
+   ],
+   "se_with": {
+    "【汎用,太鼓】太鼓(ドン).wav": 1
+   },
+   "id": "T084",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "88f198c7b3",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 0.9,
+   "rep": {
+    "track": "V8",
+    "start": 379.012,
+    "end": 379.913,
+    "text": "全然そうでしょ！"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 379.012,
+     "text": "全然そうでしょ！"
+    }
+   ],
+   "se_with": {},
+   "id": "T085",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "3aa5c01dd4",
+   "anim_key": "612a25350a",
+   "count": 1,
+   "styles": [
+    "ツッコミ"
+   ],
+   "fonts": [
+    "ReggaeOne-Regular"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.20秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.23,
+   "rep": {
+    "track": "V8",
+    "start": 381.481,
+    "end": 382.716,
+    "text": "なんもわかっとらんやん"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 381.481,
+     "text": "なんもわかっとらんやん"
+    }
+   ],
+   "se_with": {
+    "【ツッコミ】グキッ.wav": 1
+   },
+   "id": "T086",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "cd15477d4e",
+   "anim_key": "572fcdee44",
+   "count": 1,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "クロップ（右、1.27秒）",
+   "effects": [
+    "クロップ"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 3.44,
+   "rep": {
+    "track": "V8",
+    "start": 416.783,
+    "end": 420.22,
+    "text": "絶対そいついじめられてる"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 416.783,
+     "text": "絶対そいついじめられてる"
+    }
+   ],
+   "se_with": {},
+   "id": "T087",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "3aa5c01dd4",
+   "anim_key": "655c191269",
+   "count": 1,
+   "styles": [
+    "ツッコミ"
+   ],
+   "fonts": [
+    "ReggaeOne-Regular"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.20秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.17,
+   "rep": {
+    "track": "V8",
+    "start": 422.656,
+    "end": 424.824,
+    "text": "バカかって言うもん"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 422.656,
+     "text": "バカかって言うもん"
+    }
+   ],
+   "se_with": {
+    "【ツッコミ】ドスッ.wav": 1
+   },
+   "id": "T088",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "cbd5ad267e",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.13,
+   "rep": {
+    "track": "V8",
+    "start": 442.842,
+    "end": 443.977,
+    "text": "ハイリスクハイリターン！"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 442.842,
+     "text": "ハイリスクハイリターン！"
+    }
+   ],
+   "se_with": {
+    "【汎用,太鼓】太鼓(ドン).wav": 1
+   },
+   "id": "T089",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "a2a3dee959",
+   "anim_key": "0bf0211540",
+   "count": 1,
+   "styles": [
+    "ゴージャス金"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.17,
+   "rep": {
+    "track": "V8",
+    "start": 445.745,
+    "end": 446.913,
+    "text": "どんだけ順応するか"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 445.745,
+     "text": "どんだけ順応するか"
+    }
+   ],
+   "se_with": {
+    "【汎用,太鼓】太鼓(カカッ).wav": 1
+   },
+   "id": "T090",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "476ea115dc",
+   "anim_key": "5c6f0a3923",
+   "count": 1,
+   "styles": [
+    "ゴージャス青"
+   ],
+   "fonts": [
+    "NotoSerifJP-Black"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "ストロボ（元の画像とブレンド、0.76秒）",
+   "effects": [
+    "ストロボ"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.67,
+   "rep": {
+    "track": "V8",
+    "start": 452.152,
+    "end": 454.821,
+    "text": "その環境に最も適応したものだ"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 452.152,
+     "text": "その環境に最も適応したものだ"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,長い】ピラリーーン.wav": 1
+   },
+   "id": "T091",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "324bc4e4ea",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.77,
+   "rep": {
+    "track": "V8",
+    "start": 455.822,
+    "end": 458.591,
+    "text": "今この世界に  "
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 455.822,
+     "text": "今この世界に  "
+    }
+   ],
+   "se_with": {},
+   "id": "T092",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "94de6b2f11",
+   "anim_key": "e1791b3a05",
+   "count": 1,
+   "styles": [
+    "対談用_質問者テロップ"
+   ],
+   "fonts": [
+    "HiraKakuStdN-W8"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置・不透明度、0.33秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 2.44,
+   "rep": {
+    "track": "V10",
+    "start": 479.346,
+    "end": 481.781,
+    "text": "タスクファーストを習慣にする"
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 479.346,
+     "text": "タスクファーストを習慣にする"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 1
+   },
+   "id": "T093",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "b63fae9c7b",
+   "anim_key": "25c18b936f",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "シェイプ",
+    "テキスト"
+   ],
+   "animation": "モーション（位置、0.33秒）",
+   "effects": [
+    "クリップ"
+   ],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 3.87,
+   "rep": {
+    "track": "V10",
+    "start": 509.743,
+    "end": 513.613,
+    "text": "ポイント / 作ったタスクリストを AIとしっかり共有することが大事"
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 509.743,
+     "text": "ポイント / 作ったタスクリストを AIとしっかり共有することが大事"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 1
+   },
+   "id": "T094",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "356a5cf75c",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [],
+   "fonts": [],
+   "layers": [
+    "シェイプ"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 3.94,
+   "rep": {
+    "track": "V10",
+    "start": 513.613,
+    "end": 517.55,
+    "text": ""
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 513.613,
+     "text": ""
+    }
+   ],
+   "se_with": {
+    "決定、ボタン押下22.wav": 1
+   },
+   "id": "T095",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "90e5013a01",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 0.8,
+   "rep": {
+    "track": "V8",
+    "start": 532.565,
+    "end": 533.366,
+    "text": "これも決まってるわけ"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 532.565,
+     "text": "これも決まってるわけ"
+    }
+   ],
+   "se_with": {},
+   "id": "T096",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "3dbc992a50",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "Ruika-09",
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.77,
+   "rep": {
+    "track": "V8",
+    "start": 535.001,
+    "end": 537.771,
+    "text": "全部AIと共有しておくっていうのは  "
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 535.001,
+     "text": "全部AIと共有しておくっていうのは  "
+    }
+   ],
+   "se_with": {},
+   "id": "T097",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "3dbc992a50",
+   "anim_key": "eab11450ca",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "Ruika-09",
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.23秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 1.47,
+   "rep": {
+    "track": "V9",
+    "start": 536.302,
+    "end": 537.771,
+    "text": " 超大事な習慣"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 536.302,
+     "text": " 超大事な習慣"
+    }
+   ],
+   "se_with": {
+    "【汎用,拍子木】キッ.wav": 1
+   },
+   "id": "T098",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "fdf0e8c705",
+   "anim_key": "257e2d65d5",
+   "count": 1,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 7.44,
+   "rep": {
+    "track": "V8",
+    "start": 550.65,
+    "end": 558.091,
+    "text": "ポイント / タスクの作り方・細かいやり方 ツールの紹介などは動画の後半で紹介します"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 550.65,
+     "text": "ポイント / タスクの作り方・細かいやり方 ツールの紹介などは動画の後半で紹介します"
+    }
+   ],
+   "se_with": {
+    "決定、ボタン押下22.wav": 1
+   },
+   "id": "T099",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "166d53c5e9",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "対談用_質問者テロップ"
+   ],
+   "fonts": [
+    "HiraKakuStdN-W8"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.87,
+   "rep": {
+    "track": "V8",
+    "start": 569.169,
+    "end": 571.037,
+    "text": "何のためにそれやるの？"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 569.169,
+     "text": "何のためにそれやるの？"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T100",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "7d0ebff9e3",
+   "anim_key": "62a78cb20b",
+   "count": 1,
+   "styles": [
+    "テキストスタイル"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V11": 1
+   },
+   "duration_median": 3.77,
+   "rep": {
+    "track": "V11",
+    "start": 604.537,
+    "end": 608.308,
+    "text": "ポイント / ボトルネックを潰すためにやること＝タスク"
+   },
+   "examples": [
+    {
+     "track": "V11",
+     "start": 604.537,
+     "text": "ポイント / ボトルネックを潰すためにやること＝タスク"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 1
+   },
+   "id": "T101",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "3aa5c01dd4",
+   "anim_key": "1f32e1b754",
+   "count": 1,
+   "styles": [
+    "ツッコミ"
+   ],
+   "fonts": [
+    "ReggaeOne-Regular"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.20秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 2.5,
+   "rep": {
+    "track": "V9",
+    "start": 615.348,
+    "end": 617.851,
+    "text": "自分で見つけれる人の方が 珍しくないですか？"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 615.348,
+     "text": "自分で見つけれる人の方が 珍しくないですか？"
+    }
+   ],
+   "se_with": {
+    "【ツッコミ】ドスッ.wav": 1
+   },
+   "id": "T102",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "8bb97ef91b",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.87,
+   "rep": {
+    "track": "V8",
+    "start": 628.495,
+    "end": 630.363,
+    "text": "いや私地頭悪いから無理だわ"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 628.495,
+     "text": "いや私地頭悪いから無理だわ"
+    }
+   ],
+   "se_with": {
+    "【汎用,鈴】しゃん.wav": 1
+   },
+   "id": "T103",
+   "adjust_with": {
+    "E002": 1
+   }
+  },
+  {
+   "look_key": "4dd540ea99",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 3.3,
+   "rep": {
+    "track": "V8",
+    "start": 636.603,
+    "end": 639.906,
+    "text": "全く前提を教えてない Fable5"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 636.603,
+     "text": "全く前提を教えてない Fable5"
+    }
+   ],
+   "se_with": {
+    "cursor1.wav": 1
+   },
+   "id": "T104",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "cbf5daa1cb",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V7": 1
+   },
+   "duration_median": 3.94,
+   "rep": {
+    "track": "V7",
+    "start": 639.906,
+    "end": 643.843,
+    "text": "しっかりと前提を教えた Sonnet5"
+   },
+   "examples": [
+    {
+     "track": "V7",
+     "start": 639.906,
+     "text": "しっかりと前提を教えた Sonnet5"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 1
+   },
+   "id": "T105",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "01faa84f47",
+   "anim_key": "db8f66c413",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [
+    "Lumetri カラー"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 3.94,
+   "rep": {
+    "track": "V8",
+    "start": 639.906,
+    "end": 643.843,
+    "text": "全く前提を教えてない Fable5"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 639.906,
+     "text": "全く前提を教えてない Fable5"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 1
+   },
+   "id": "T106",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "b0afc22774",
+   "anim_key": "25c18b936f",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "シェイプ",
+    "テキスト"
+   ],
+   "animation": "モーション（位置、0.33秒）",
+   "effects": [
+    "クリップ"
+   ],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 3.27,
+   "rep": {
+    "track": "V10",
+    "start": 666.399,
+    "end": 669.669,
+    "text": "ポイント / 特定の領域で コンテキストをたくさん貯める"
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 666.399,
+     "text": "ポイント / 特定の領域で コンテキストをたくさん貯める"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 1
+   },
+   "id": "T107",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "4400177ed3",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.33,
+   "rep": {
+    "track": "V8",
+    "start": 685.685,
+    "end": 687.02,
+    "text": "コンテキストっていうのは"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 685.685,
+     "text": "コンテキストっていうのは"
+    }
+   ],
+   "se_with": {},
+   "id": "T108",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "33e3b9c88b",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 0.7,
+   "rep": {
+    "track": "V8",
+    "start": 687.02,
+    "end": 687.72,
+    "text": "コンテキストっていうのは知識"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 687.02,
+     "text": "コンテキストっていうのは知識"
+    }
+   ],
+   "se_with": {},
+   "id": "T109",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "870976f89f",
+   "anim_key": "6f65114847",
+   "count": 1,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 5.27,
+   "rep": {
+    "track": "V10",
+    "start": 701.968,
+    "end": 707.24,
+    "text": "コンテキストとはaa… / その物事の背景や知識など前提条件のこと "
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 701.968,
+     "text": "コンテキストとはaa… / その物事の背景や知識など前提条件のこと "
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T110",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "c64f7b8534",
+   "anim_key": "257e2d65d5",
+   "count": 1,
+   "styles": [
+    "テキストスタイル"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 4.27,
+   "rep": {
+    "track": "V10",
+    "start": 736.336,
+    "end": 740.607,
+    "text": "ポイント / AIに適切なコンテキストを与えて おくことによりAIが賢くなる"
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 736.336,
+     "text": "ポイント / AIに適切なコンテキストを与えて おくことによりAIが賢くなる"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T111",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "c52d3265a4",
+   "anim_key": "257e2d65d5",
+   "count": 1,
+   "styles": [
+    "テキストスタイル"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 3.7,
+   "rep": {
+    "track": "V9",
+    "start": 758.992,
+    "end": 762.695,
+    "text": "ポイント / 限られた100万トークンの中でどんな 知識を渡すかでAIのアウトプット精度が変わる"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 758.992,
+     "text": "ポイント / 限られた100万トークンの中でどんな 知識を渡すかでAIのアウトプット精度が変わる"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T112",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "6982fe7e0d",
+   "anim_key": "f8c3f39517",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.23秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 3.27,
+   "rep": {
+    "track": "V8",
+    "start": 774.34,
+    "end": 777.61,
+    "text": "AIがアクセスできないところに 情報を置かない"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 774.34,
+     "text": "AIがアクセスできないところに 情報を置かない"
+    }
+   ],
+   "se_with": {
+    "【汎用,拍子木】キッ.wav": 1
+   },
+   "id": "T113",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "3aa5c01dd4",
+   "anim_key": "5d9833e9cc",
+   "count": 1,
+   "styles": [
+    "ツッコミ"
+   ],
+   "fonts": [
+    "ReggaeOne-Regular"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置・スケール (高さ)、0.20秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.0,
+   "rep": {
+    "track": "V8",
+    "start": 785.118,
+    "end": 786.119,
+    "text": "｢わかってないな｣ってなる"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 785.118,
+     "text": "｢わかってないな｣ってなる"
+    }
+   ],
+   "se_with": {
+    "【ツッコミ】ドスッ.wav": 1
+   },
+   "id": "T114",
+   "adjust_with": {
+    "E006": 1
+   }
+  },
+  {
+   "look_key": "d46d269601",
+   "anim_key": "b7a0ecff7e",
+   "count": 1,
+   "styles": [
+    "ゴージャス金"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "色かぶり補正（色合いの量、0.30秒） + トランスフォーム（不透明度、0.17秒） + トランスフォーム（スケール (幅)、0.22秒）",
+   "effects": [
+    "色かぶり補正",
+    "トランスフォーム",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.4,
+   "rep": {
+    "track": "V8",
+    "start": 792.325,
+    "end": 793.726,
+    "text": "AIは必ずわかってくれる"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 792.325,
+     "text": "AIは必ずわかってくれる"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,短い】キランッッ!!.wav": 1
+   },
+   "id": "T115",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "eeb56722b7",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.14,
+   "rep": {
+    "track": "V8",
+    "start": 797.964,
+    "end": 800.099,
+    "text": "明らかにコンテキストが悪い"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 797.964,
+     "text": "明らかにコンテキストが悪い"
+    }
+   ],
+   "se_with": {
+    "【汎用,鈴】しゃん.wav": 1
+   },
+   "id": "T116",
+   "adjust_with": {
+    "E002": 1
+   }
+  },
+  {
+   "look_key": "122063b315",
+   "anim_key": "0b27efd511",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.37秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 3.6,
+   "rep": {
+    "track": "V8",
+    "start": 804.871,
+    "end": 808.474,
+    "text": "全てのシステムにも AIがアクセスできるようにする"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 804.871,
+     "text": "全てのシステムにも AIがアクセスできるようにする"
+    }
+   ],
+   "se_with": {
+    "【汎用,拍子木】キッ.wav": 1
+   },
+   "id": "T117",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "e8d427cf0a",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.94,
+   "rep": {
+    "track": "V8",
+    "start": 812.278,
+    "end": 815.214,
+    "text": "例えばCodexだったら"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 812.278,
+     "text": "例えばCodexだったら"
+    }
+   ],
+   "se_with": {},
+   "id": "T118",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "5ce819bb87",
+   "anim_key": "a8f7e53cae",
+   "count": 1,
+   "styles": [],
+   "fonts": [],
+   "layers": [
+    "シェイプ"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 0.33,
+   "rep": {
+    "track": "V10",
+    "start": 815.281,
+    "end": 815.615,
+    "text": ""
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 815.281,
+     "text": ""
+    }
+   ],
+   "se_with": {
+    "cursor1.wav": 1
+   },
+   "id": "T119",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "315389e2f8",
+   "anim_key": "754612deed",
+   "count": 1,
+   "styles": [],
+   "fonts": [],
+   "layers": [
+    "シェイプ"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 0.4,
+   "rep": {
+    "track": "V9",
+    "start": 819.352,
+    "end": 819.752,
+    "text": ""
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 819.352,
+     "text": ""
+    }
+   ],
+   "se_with": {
+    "クリック.mp3": 1
+   },
+   "id": "T120",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "b129c34b66",
+   "anim_key": "63b0a6bf99",
+   "count": 1,
+   "styles": [
+    "ゴージャス金"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "色かぶり補正（色合いの量、0.30秒） + トランスフォーム（不透明度、0.17秒） + トランスフォーム（位置、0.13秒）",
+   "effects": [
+    "色かぶり補正",
+    "トランスフォーム",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.07,
+   "rep": {
+    "track": "V8",
+    "start": 847.28,
+    "end": 849.348,
+    "text": "パソコンのフォルダの中も アクセスできる"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 847.28,
+     "text": "パソコンのフォルダの中も アクセスできる"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,短い】キランッッ!!.wav": 1
+   },
+   "id": "T121",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "2975ef020b",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.6,
+   "rep": {
+    "track": "V8",
+    "start": 856.956,
+    "end": 858.558,
+    "text": "これこれ"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 856.956,
+     "text": "これこれ"
+    }
+   ],
+   "se_with": {},
+   "id": "T122",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "c5b41266c8",
+   "anim_key": "4e1b1f2630",
+   "count": 1,
+   "styles": [],
+   "fonts": [],
+   "layers": [
+    "ベクトルモーション",
+    "シェイプ",
+    "シェイプ"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 6.14,
+   "rep": {
+    "track": "V9",
+    "start": 858.558,
+    "end": 864.697,
+    "text": ""
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 858.558,
+     "text": ""
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T123",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "724533b9eb",
+   "anim_key": "257e2d65d5",
+   "count": 1,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 3.24,
+   "rep": {
+    "track": "V9",
+    "start": 877.243,
+    "end": 880.48,
+    "text": "ポイント / コンピューターの使用（Computer use)に アクセスしておけばほとんどアクセス可能"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 877.243,
+     "text": "ポイント / コンピューターの使用（Computer use)に アクセスしておけばほとんどアクセス可能"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 1
+   },
+   "id": "T124",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "df7570bf72",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.14,
+   "rep": {
+    "track": "V8",
+    "start": 886.519,
+    "end": 888.654,
+    "text": "ChatGPTもプラグインがあって"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 886.519,
+     "text": "ChatGPTもプラグインがあって"
+    }
+   ],
+   "se_with": {},
+   "id": "T125",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "587fca6121",
+   "anim_key": "451bfab272",
+   "count": 1,
+   "styles": [],
+   "fonts": [],
+   "layers": [
+    "シェイプ"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V11": 1
+   },
+   "duration_median": 1.03,
+   "rep": {
+    "track": "V11",
+    "start": 929.929,
+    "end": 930.963,
+    "text": ""
+   },
+   "examples": [
+    {
+     "track": "V11",
+     "start": 929.929,
+     "text": ""
+    }
+   ],
+   "se_with": {
+    "cursor1.wav": 1
+   },
+   "id": "T126",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "b129c34b66",
+   "anim_key": "7c214afea3",
+   "count": 1,
+   "styles": [
+    "ゴージャス金"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "色かぶり補正（色合いの量、0.30秒） + トランスフォーム（不透明度、0.17秒） + トランスフォーム（スケール (幅)、0.22秒）",
+   "effects": [
+    "色かぶり補正",
+    "トランスフォーム",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.1,
+   "rep": {
+    "track": "V8",
+    "start": 958.257,
+    "end": 960.359,
+    "text": "AIがアクセスできるように するだけでOK"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 958.257,
+     "text": "AIがアクセスできるように するだけでOK"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,長い】キラーー.wav": 1
+   },
+   "id": "T127",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "3da9f892c0",
+   "anim_key": "b2618536d7",
+   "count": 1,
+   "styles": [
+    "ツッコミ"
+   ],
+   "fonts": [
+    "ReggaeOne-Regular"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [
+    "波形ワープ"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.0,
+   "rep": {
+    "track": "V8",
+    "start": 971.17,
+    "end": 972.171,
+    "text": "いやー！"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 971.17,
+     "text": "いやー！"
+    }
+   ],
+   "se_with": {
+    "【ツッコミ】グキッ.wav": 1
+   },
+   "id": "T128",
+   "adjust_with": {
+    "E006": 1
+   }
+  },
+  {
+   "look_key": "3da9f892c0",
+   "anim_key": "a76fbdefa0",
+   "count": 1,
+   "styles": [
+    "ツッコミ"
+   ],
+   "fonts": [
+    "ReggaeOne-Regular"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（スケール (高さ)・不透明度、1.83秒）",
+   "effects": [
+    "トランスフォーム",
+    "トランスフォーム",
+    "波形ワープ"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 1.0,
+   "rep": {
+    "track": "V9",
+    "start": 971.17,
+    "end": 972.171,
+    "text": "いやー！"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 971.17,
+     "text": "いやー！"
+    }
+   ],
+   "se_with": {
+    "【ツッコミ】グキッ.wav": 1
+   },
+   "id": "T129",
+   "adjust_with": {
+    "E006": 1
+   }
+  },
+  {
+   "look_key": "2ab93bb56b",
+   "anim_key": "257e2d65d5",
+   "count": 1,
+   "styles": [
+    "テキストスタイル"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 5.04,
+   "rep": {
+    "track": "V10",
+    "start": 974.44,
+    "end": 979.479,
+    "text": "ポイント / 繰り返し同じ業務をやってるかを常に 意識し「AIでできないか？」を習慣にする"
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 974.44,
+     "text": "ポイント / 繰り返し同じ業務をやってるかを常に 意識し「AIでできないか？」を習慣にする"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T130",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "5184640758",
+   "anim_key": "73c200fc69",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "指向性ブラー (レガシー)（ブラーの長さ、0.20秒） + トランスフォーム（位置、0.20秒）",
+   "effects": [
+    "指向性ブラー (レガシー)",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.13,
+   "rep": {
+    "track": "V8",
+    "start": 987.82,
+    "end": 988.955,
+    "text": "ルーティン業務が1番"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 987.82,
+     "text": "ルーティン業務が1番"
+    }
+   ],
+   "se_with": {
+    "【汎用,太鼓】太鼓(ドン).wav": 1
+   },
+   "id": "T131",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "b03f980822",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "ヒラギノ白シャドウ"
+   ],
+   "fonts": [
+    "HiraKakuStdN-W8"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 3.37,
+   "rep": {
+    "track": "V9",
+    "start": 1003.636,
+    "end": 1007.006,
+    "text": "※音声入力中"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 1003.636,
+     "text": "※音声入力中"
+    }
+   ],
+   "se_with": {
+    "決定、ボタン押下22.wav": 1
+   },
+   "id": "T132",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "5019e252b8",
+   "anim_key": "405bc496b4",
+   "count": 1,
+   "styles": [
+    "ゴージャス金"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "色かぶり補正（色合いの量、0.30秒） + トランスフォーム（不透明度、0.17秒） + トランスフォーム（位置、0.23秒）",
+   "effects": [
+    "色かぶり補正",
+    "トランスフォーム",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.1,
+   "rep": {
+    "track": "V8",
+    "start": 1016.616,
+    "end": 1017.717,
+    "text": "全部完全にやる"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1016.616,
+     "text": "全部完全にやる"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,短い】キランッッ!!.wav": 1
+   },
+   "id": "T133",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "b7b105cef9",
+   "anim_key": "257e2d65d5",
+   "count": 1,
+   "styles": [
+    "テキストスタイル"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 4.67,
+   "rep": {
+    "track": "V9",
+    "start": 1021.02,
+    "end": 1025.691,
+    "text": "ポイント / 定常業務は一旦AIにやらせてみて クオリティが低かったら修正を繰り返す"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 1021.02,
+     "text": "ポイント / 定常業務は一旦AIにやらせてみて クオリティが低かったら修正を繰り返す"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T134",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "b7b105cef9",
+   "anim_key": "4cfbe77b5d",
+   "count": 1,
+   "styles": [
+    "テキストスタイル"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 3.2,
+   "rep": {
+    "track": "V9",
+    "start": 1025.691,
+    "end": 1028.895,
+    "text": "ポイント / 定常業務は一旦AIにやらせてみて クオリティが低かったら修正を繰り返す"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 1025.691,
+     "text": "ポイント / 定常業務は一旦AIにやらせてみて クオリティが低かったら修正を繰り返す"
+    }
+   ],
+   "se_with": {},
+   "id": "T135",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "b08ecbf928",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.77,
+   "rep": {
+    "track": "V8",
+    "start": 1033.299,
+    "end": 1035.067,
+    "text": "定常業務からやる"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1033.299,
+     "text": "定常業務からやる"
+    }
+   ],
+   "se_with": {},
+   "id": "T136",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "1bf2311419",
+   "anim_key": "693341f4b1",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "指向性ブラー (レガシー)（ブラーの長さ、0.20秒） + トランスフォーム（位置、0.20秒）",
+   "effects": [
+    "指向性ブラー (レガシー)",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 0.63,
+   "rep": {
+    "track": "V9",
+    "start": 1034.433,
+    "end": 1035.067,
+    "text": "　　　　　　　　これ絶対"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 1034.433,
+     "text": "　　　　　　　　これ絶対"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T137",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "f9cf5d845d",
+   "anim_key": "5c30526018",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（スケール (高さ)・不透明度、0.24秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 0.87,
+   "rep": {
+    "track": "V8",
+    "start": 1036.802,
+    "end": 1037.67,
+    "text": "そうそうそうそう"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1036.802,
+     "text": "そうそうそうそう"
+    }
+   ],
+   "se_with": {},
+   "id": "T138",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "a843bee223",
+   "anim_key": "212d02978d",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.23秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.27,
+   "rep": {
+    "track": "V8",
+    "start": 1059.759,
+    "end": 1061.027,
+    "text": "絶対自動化する"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1059.759,
+     "text": "絶対自動化する"
+    }
+   ],
+   "se_with": {
+    "【汎用,拍子木】キッ.wav": 1
+   },
+   "id": "T139",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "7b823eeaeb",
+   "anim_key": "6aeabddded",
+   "count": 1,
+   "styles": [
+    "ツッコミ"
+   ],
+   "fonts": [
+    "ReggaeOne-Regular"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置・スケール (高さ)、0.20秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.43,
+   "rep": {
+    "track": "V8",
+    "start": 1065.364,
+    "end": 1066.799,
+    "text": "自動化しないのは罪"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1065.364,
+     "text": "自動化しないのは罪"
+    }
+   ],
+   "se_with": {
+    "【ツッコミ】グキッ.wav": 1
+   },
+   "id": "T140",
+   "adjust_with": {
+    "E007": 1
+   }
+  },
+  {
+   "look_key": "6bfb500f78",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [],
+   "fonts": [],
+   "layers": [
+    "ベクトルモーション",
+    "シェイプ"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 1.43,
+   "rep": {
+    "track": "V10",
+    "start": 1107.239,
+    "end": 1108.674,
+    "text": ""
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 1107.239,
+     "text": ""
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T141",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "2fc8e7b4ba",
+   "anim_key": "257e2d65d5",
+   "count": 1,
+   "styles": [
+    "テキストスタイル"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 5.07,
+   "rep": {
+    "track": "V9",
+    "start": 1114.313,
+    "end": 1119.385,
+    "text": "ポイント / Ultraにすると推論レベルが高いので 寝る前に指示するだけで全自動でできる"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 1114.313,
+     "text": "ポイント / Ultraにすると推論レベルが高いので 寝る前に指示するだけで全自動でできる"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 1
+   },
+   "id": "T142",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "a843bee223",
+   "anim_key": "9a7e5a24f3",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.37秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 3.07,
+   "rep": {
+    "track": "V8",
+    "start": 1132.264,
+    "end": 1135.334,
+    "text": "寝る時間もちゃんと AIに働いてもらう"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1132.264,
+     "text": "寝る時間もちゃんと AIに働いてもらう"
+    }
+   ],
+   "se_with": {
+    "【汎用,拍子木】キッ.wav": 1
+   },
+   "id": "T143",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "7b8be1b852",
+   "anim_key": "f4a654073b",
+   "count": 1,
+   "styles": [
+    "ゴージャス青"
+   ],
+   "fonts": [
+    "NotoSerifJP-Black"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "レンズフレア（光源の位置、2.00秒）",
+   "effects": [
+    "レンズフレア"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.07,
+   "rep": {
+    "track": "V8",
+    "start": 1146.879,
+    "end": 1148.948,
+    "text": "これでWワーク"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1146.879,
+     "text": "これでWワーク"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,短い】キランッッ!!.wav": 1
+   },
+   "id": "T144",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "77c257ac1e",
+   "anim_key": "9db637b886",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "指向性ブラー (レガシー)（ブラーの長さ、0.20秒） + トランスフォーム（位置、0.20秒）",
+   "effects": [
+    "指向性ブラー (レガシー)",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.14,
+   "rep": {
+    "track": "V8",
+    "start": 1213.946,
+    "end": 1216.082,
+    "text": "必ず動画下の概要欄から 1on1を受けてください"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1213.946,
+     "text": "必ず動画下の概要欄から 1on1を受けてください"
+    }
+   ],
+   "se_with": {
+    "決定、ボタン押下22.wav": 1
+   },
+   "id": "T145",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "4facfa7e02",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "シェイプ"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 3.07,
+   "rep": {
+    "track": "V10",
+    "start": 1233.365,
+    "end": 1236.435,
+    "text": "ココ!"
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 1233.365,
+     "text": "ココ!"
+    }
+   ],
+   "se_with": {
+    "cursor1.wav": 1
+   },
+   "id": "T146",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "a843bee223",
+   "anim_key": "68044c2d46",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.37秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 0.9,
+   "rep": {
+    "track": "V8",
+    "start": 1254.62,
+    "end": 1255.521,
+    "text": "24時間労働"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1254.62,
+     "text": "24時間労働"
+    }
+   ],
+   "se_with": {
+    "【汎用,太鼓】太鼓(ドドン).wav": 1
+   },
+   "id": "T147",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "dde30f7a20",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "ヒラギノ白シャドウ"
+   ],
+   "fonts": [
+    "Corporate-Logo-Rounded-Bold-ver3"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.47,
+   "rep": {
+    "track": "V8",
+    "start": 1275.708,
+    "end": 1278.177,
+    "text": "本当に影分身"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1275.708,
+     "text": "本当に影分身"
+    }
+   ],
+   "se_with": {
+    "【汎用,鈴】シャーン.wav": 1
+   },
+   "id": "T148",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "8c1362ba18",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [],
+   "fonts": [],
+   "layers": [
+    "シェイプ"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 2.07,
+   "rep": {
+    "track": "V10",
+    "start": 1287.887,
+    "end": 1289.955,
+    "text": ""
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 1287.887,
+     "text": ""
+    }
+   ],
+   "se_with": {},
+   "id": "T149",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "fc422008f1",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [],
+   "fonts": [],
+   "layers": [
+    "シェイプ"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 2.4,
+   "rep": {
+    "track": "V9",
+    "start": 1292.658,
+    "end": 1295.06,
+    "text": ""
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 1292.658,
+     "text": ""
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T150",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "8633798edd",
+   "anim_key": "d24a2fbb39",
+   "count": 1,
+   "styles": [],
+   "fonts": [],
+   "layers": [
+    "シェイプ"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 1.33,
+   "rep": {
+    "track": "V10",
+    "start": 1300.666,
+    "end": 1302.001,
+    "text": ""
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 1300.666,
+     "text": ""
+    }
+   ],
+   "se_with": {
+    "cursor1.wav": 1
+   },
+   "id": "T151",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "7b8be1b852",
+   "anim_key": "2239352ede",
+   "count": 1,
+   "styles": [
+    "ゴージャス青"
+   ],
+   "fonts": [
+    "NotoSerifJP-Black"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（スケール (幅)、0.21秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 0.87,
+   "rep": {
+    "track": "V8",
+    "start": 1311.677,
+    "end": 1312.545,
+    "text": "セットアップ完了"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1311.677,
+     "text": "セットアップ完了"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,短い】キラ.wav": 1
+   },
+   "id": "T152",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "8369e13841",
+   "anim_key": "73c200fc69",
+   "count": 1,
+   "styles": [
+    "基本テロップ赤"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "指向性ブラー (レガシー)（ブラーの長さ、0.20秒） + トランスフォーム（位置、0.20秒）",
+   "effects": [
+    "指向性ブラー (レガシー)",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.77,
+   "rep": {
+    "track": "V8",
+    "start": 1317.349,
+    "end": 1319.118,
+    "text": "パソコンは閉じちゃダメ"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1317.349,
+     "text": "パソコンは閉じちゃダメ"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T153",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "3dfb2aa130",
+   "anim_key": "5e21f4147c",
+   "count": 1,
+   "styles": [
+    "ゴージャス青"
+   ],
+   "fonts": [
+    "NotoSerifJP-Black"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（スケール (幅)、0.22秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.17,
+   "rep": {
+    "track": "V8",
+    "start": 1324.99,
+    "end": 1326.158,
+    "text": "その通り!"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1324.99,
+     "text": "その通り!"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,短い】キランッッ!!.wav": 1
+   },
+   "id": "T154",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "90ccd88290",
+   "anim_key": "c8d6e3eb8f",
+   "count": 1,
+   "styles": [
+    "ゴージャス金"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.37秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 0.97,
+   "rep": {
+    "track": "V8",
+    "start": 1342.942,
+    "end": 1343.909,
+    "text": "万全の体制"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1342.942,
+     "text": "万全の体制"
+    }
+   ],
+   "se_with": {
+    "【汎用,太鼓】太鼓(ドドン).wav": 1
+   },
+   "id": "T155",
+   "adjust_with": {
+    "E013": 1
+   }
+  },
+  {
+   "look_key": "71017c52c2",
+   "anim_key": "3773b2d487",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.23秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.23,
+   "rep": {
+    "track": "V8",
+    "start": 1360.96,
+    "end": 1362.194,
+    "text": "音声入力"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1360.96,
+     "text": "音声入力"
+    }
+   ],
+   "se_with": {
+    "【汎用,拍子木】キッ.wav": 1
+   },
+   "id": "T156",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "3b7eca1ecc",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "ヒラギノ白シャドウ"
+   ],
+   "fonts": [
+    "HiraKakuStdN-W8"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 13.31,
+   "rep": {
+    "track": "V9",
+    "start": 1370.436,
+    "end": 1383.749,
+    "text": "※音声入力中"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 1370.436,
+     "text": "※音声入力中"
+    }
+   ],
+   "se_with": {},
+   "id": "T157",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "39557f982b",
+   "anim_key": "86a22b7353",
+   "count": 1,
+   "styles": [
+    "ゴージャス青"
+   ],
+   "fonts": [
+    "NotoSerifJP-Black"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "レンズフレア（光源の位置、2.00秒） + トランスフォーム（スケール (幅)、0.22秒）",
+   "effects": [
+    "レンズフレア",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.23,
+   "rep": {
+    "track": "V8",
+    "start": 1383.749,
+    "end": 1384.984,
+    "text": "音声入力は非常に大事"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1383.749,
+     "text": "音声入力は非常に大事"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,長い】キラーー.wav": 1
+   },
+   "id": "T158",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "8369e13841",
+   "anim_key": "c39698e66f",
+   "count": 1,
+   "styles": [
+    "基本テロップ赤"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "指向性ブラー (レガシー)（ブラーの長さ、0.20秒） + トランスフォーム（位置、0.20秒）",
+   "effects": [
+    "指向性ブラー (レガシー)",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.33,
+   "rep": {
+    "track": "V8",
+    "start": 1389.555,
+    "end": 1390.889,
+    "text": "習得必須の習慣です"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1389.555,
+     "text": "習得必須の習慣です"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T159",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "e4192b846f",
+   "anim_key": "4db9dc91c0",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "シェイプ",
+    "テキスト"
+   ],
+   "animation": "モーション（位置、0.33秒）",
+   "effects": [
+    "クリップ"
+   ],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 4.24,
+   "rep": {
+    "track": "V10",
+    "start": 1396.495,
+    "end": 1400.733,
+    "text": "ポイント / 指示のスピードが変わることより 頭の使い方が変わることが重要"
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 1396.495,
+     "text": "ポイント / 指示のスピードが変わることより 頭の使い方が変わることが重要"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 1
+   },
+   "id": "T160",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "e35def26ef",
+   "anim_key": "238fdea272",
+   "count": 1,
+   "styles": [
+    "ゴージャス金"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "色かぶり補正（色合いの量、0.30秒） + トランスフォーム（不透明度、0.17秒） + トランスフォーム（スケール (幅)、0.22秒）",
+   "effects": [
+    "色かぶり補正",
+    "トランスフォーム",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.5,
+   "rep": {
+    "track": "V8",
+    "start": 1403.002,
+    "end": 1404.503,
+    "text": "お話するように喋る"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1403.002,
+     "text": "お話するように喋る"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,短い】キランッッ!!.wav": 1
+   },
+   "id": "T161",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "a843bee223",
+   "anim_key": "6eff54a93c",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "指向性ブラー (レガシー)（ブラーの長さ、0.20秒） + トランスフォーム（位置、0.20秒）",
+   "effects": [
+    "指向性ブラー (レガシー)",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.47,
+   "rep": {
+    "track": "V8",
+    "start": 1416.815,
+    "end": 1418.284,
+    "text": "会議な気持ちで喋る"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1416.815,
+     "text": "会議な気持ちで喋る"
+    }
+   ],
+   "se_with": {
+    "【汎用,拍子木】キッ.wav": 1
+   },
+   "id": "T162",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "ef3e112671",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 3.07,
+   "rep": {
+    "track": "V8",
+    "start": 1425.858,
+    "end": 1428.928,
+    "text": "そうそうそうそうそうそうそうそうそうそう"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1425.858,
+     "text": "そうそうそうそうそうそうそうそうそうそう"
+    }
+   ],
+   "se_with": {},
+   "id": "T163",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "d16d9533d7",
+   "anim_key": "d38aeeb006",
+   "count": 1,
+   "styles": [
+    "ゴージャス金"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "色かぶり補正（色合いの量、0.30秒） + トランスフォーム（不透明度、0.17秒） + トランスフォーム（スケール (幅)、0.21秒）",
+   "effects": [
+    "色かぶり補正",
+    "トランスフォーム",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.2,
+   "rep": {
+    "track": "V8",
+    "start": 1436.001,
+    "end": 1437.202,
+    "text": "これは結構オススメ"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1436.001,
+     "text": "これは結構オススメ"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,長い】ピラリーーン.wav": 1
+   },
+   "id": "T164",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "64984f6e18",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.47,
+   "rep": {
+    "track": "V8",
+    "start": 1451.617,
+    "end": 1453.085,
+    "text": "Geminiだけあんま使わない"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1451.617,
+     "text": "Geminiだけあんま使わない"
+    }
+   ],
+   "se_with": {
+    "【汎用,鈴】しゃん.wav": 1
+   },
+   "id": "T165",
+   "adjust_with": {
+    "E002": 1
+   }
+  },
+  {
+   "look_key": "8369e13841",
+   "anim_key": "f18001e7ac",
+   "count": 1,
+   "styles": [
+    "基本テロップ赤"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "指向性ブラー (レガシー)（ブラーの長さ、0.20秒） + トランスフォーム（位置、0.20秒）",
+   "effects": [
+    "指向性ブラー (レガシー)",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.74,
+   "rep": {
+    "track": "V8",
+    "start": 1461.593,
+    "end": 1464.33,
+    "text": "ちゃんと使ってる人とかは 共感してくれるんじゃないかな"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1461.593,
+     "text": "ちゃんと使ってる人とかは 共感してくれるんじゃないかな"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T166",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "b762fae13e",
+   "anim_key": "d899dda1e2",
+   "count": 1,
+   "styles": [
+    "白ベース"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "指向性ブラー (レガシー)（ブラーの長さ、0.20秒） + トランスフォーム（位置、0.20秒）",
+   "effects": [
+    "指向性ブラー (レガシー)",
+    "トランスフォーム",
+    "クリップ"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 3.84,
+   "rep": {
+    "track": "V9",
+    "start": 1490.622,
+    "end": 1494.46,
+    "text": "アンドレア・カーパシー (現在Anthropic社)"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 1490.622,
+     "text": "アンドレア・カーパシー (現在Anthropic社)"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T167",
+   "adjust_with": {
+    "E014": 1
+   }
+  },
+  {
+   "look_key": "794b5c1add",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "ヒラギノ白シャドウ"
+   ],
+   "fonts": [
+    "HiraKakuStdN-W8"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.67,
+   "rep": {
+    "track": "V8",
+    "start": 1522.287,
+    "end": 1523.956,
+    "text": "これが成り立つのは最初だけ"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1522.287,
+     "text": "これが成り立つのは最初だけ"
+    }
+   ],
+   "se_with": {
+    "【間抜け,アホ】ポカン.wav": 1
+   },
+   "id": "T168",
+   "adjust_with": {
+    "E002": 1
+   }
+  },
+  {
+   "look_key": "19ffb94a7e",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "ヒラギノ白シャドウ"
+   ],
+   "fonts": [
+    "HiraKakuStdN-W8"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.63,
+   "rep": {
+    "track": "V8",
+    "start": 1536.101,
+    "end": 1537.736,
+    "text": "AIが言ったことのうち理解できないことを ｢わかった｣ってやっちゃダメ"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1536.101,
+     "text": "AIが言ったことのうち理解できないことを ｢わかった｣ってやっちゃダメ"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 1
+   },
+   "id": "T169",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "8369e13841",
+   "anim_key": "c5087dc487",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "指向性ブラー (レガシー)（ブラーの長さ、0.20秒） + トランスフォーム（位置、0.20秒）",
+   "effects": [
+    "指向性ブラー (レガシー)",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.47,
+   "rep": {
+    "track": "V8",
+    "start": 1572.204,
+    "end": 1573.672,
+    "text": "修正フィードバックスキル"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1572.204,
+     "text": "修正フィードバックスキル"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T170",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "8369e13841",
+   "anim_key": "4573b4f005",
+   "count": 1,
+   "styles": [
+    "基本テロップ赤"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "指向性ブラー (レガシー)（ブラーの長さ、0.20秒） + トランスフォーム（位置、0.20秒）",
+   "effects": [
+    "指向性ブラー (レガシー)",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.57,
+   "rep": {
+    "track": "V8",
+    "start": 1619.985,
+    "end": 1622.554,
+    "text": "AIが何すればいいかを 思い出せるようになる"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1619.985,
+     "text": "AIが何すればいいかを 思い出せるようになる"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T171",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "f2f87d61a1",
+   "anim_key": "5f6d1081f8",
+   "count": 1,
+   "styles": [
+    "青背景"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 18.99,
+   "rep": {
+    "track": "V9",
+    "start": 1647.479,
+    "end": 1666.465,
+    "text": "①ヒアリングスキル"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 1647.479,
+     "text": "①ヒアリングスキル"
+    }
+   ],
+   "se_with": {
+    "cursor1.wav": 1
+   },
+   "id": "T172",
+   "adjust_with": {
+    "E015": 1
+   }
+  },
+  {
+   "look_key": "f2f87d61a1",
+   "anim_key": "a5ab9ecc76",
+   "count": 1,
+   "styles": [
+    "青背景"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V10": 1
+   },
+   "duration_median": 14.25,
+   "rep": {
+    "track": "V10",
+    "start": 1652.217,
+    "end": 1666.465,
+    "text": "②比較検討スキル"
+   },
+   "examples": [
+    {
+     "track": "V10",
+     "start": 1652.217,
+     "text": "②比較検討スキル"
+    }
+   ],
+   "se_with": {
+    "cursor1.wav": 1
+   },
+   "id": "T173",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "37caa1f7e2",
+   "anim_key": "174693a31b",
+   "count": 1,
+   "styles": [
+    "青背景"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V11": 1
+   },
+   "duration_median": 7.04,
+   "rep": {
+    "track": "V11",
+    "start": 1659.424,
+    "end": 1666.465,
+    "text": "③フィードバックスキル"
+   },
+   "examples": [
+    {
+     "track": "V11",
+     "start": 1659.424,
+     "text": "③フィードバックスキル"
+    }
+   ],
+   "se_with": {
+    "cursor1.wav": 1
+   },
+   "id": "T174",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "7b8be1b852",
+   "anim_key": "5226aebdf0",
+   "count": 1,
+   "styles": [
+    "ゴージャス青"
+   ],
+   "fonts": [
+    "NotoSerifJP-Black"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（スケール (幅)、0.22秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 0.9,
+   "rep": {
+    "track": "V8",
+    "start": 1681.947,
+    "end": 1682.848,
+    "text": "いい質問だね"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1681.947,
+     "text": "いい質問だね"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,短い】キランッッ!!.wav": 1
+   },
+   "id": "T175",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "50d598493c",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "シュールテロップ"
+   ],
+   "fonts": [
+    "HiraMinProN-W6"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.13,
+   "rep": {
+    "track": "V8",
+    "start": 1689.988,
+    "end": 1691.123,
+    "text": "｢お前いらなくね？｣"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1689.988,
+     "text": "｢お前いらなくね？｣"
+    }
+   ],
+   "se_with": {
+    "【ツッコミ,シュール】ピアノの単音.wav": 1
+   },
+   "id": "T176",
+   "adjust_with": {
+    "E002": 1
+   }
+  },
+  {
+   "look_key": "a843bee223",
+   "anim_key": "55d678ee63",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.37秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.57,
+   "rep": {
+    "track": "V8",
+    "start": 1705.637,
+    "end": 1708.207,
+    "text": "物事を理解する人間に なんなきゃいけない"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1705.637,
+     "text": "物事を理解する人間に なんなきゃいけない"
+    }
+   ],
+   "se_with": {
+    "【汎用,拍子木】キキッ.wav": 1
+   },
+   "id": "T177",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "0306971308",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.0,
+   "rep": {
+    "track": "V8",
+    "start": 1722.854,
+    "end": 1723.855,
+    "text": "Addness"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1722.854,
+     "text": "Addness"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T178",
+   "adjust_with": {
+    "E016": 1
+   }
+  },
+  {
+   "look_key": "7b8be1b852",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "ゴージャス青"
+   ],
+   "fonts": [
+    "NotoSerifJP-Black"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 0.77,
+   "rep": {
+    "track": "V8",
+    "start": 1725.924,
+    "end": 1726.692,
+    "text": "無料で使えます"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1725.924,
+     "text": "無料で使えます"
+    }
+   ],
+   "se_with": {
+    "【汎用,拍子木】キッ.wav": 1
+   },
+   "id": "T179",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "8369e13841",
+   "anim_key": "c48e4ea965",
+   "count": 1,
+   "styles": [
+    "基本テロップ赤"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "指向性ブラー (レガシー)（ブラーの長さ、0.20秒） + トランスフォーム（位置、0.20秒）",
+   "effects": [
+    "指向性ブラー (レガシー)",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 5.24,
+   "rep": {
+    "track": "V8",
+    "start": 1739.071,
+    "end": 1744.309,
+    "text": "何のためにやってるのか つながってないと意味がない"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1739.071,
+     "text": "何のためにやってるのか つながってないと意味がない"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T180",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "8369e13841",
+   "anim_key": "01d8c38b23",
+   "count": 1,
+   "styles": [
+    "基本テロップ赤"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "指向性ブラー (レガシー)（ブラーの長さ、0.20秒） + トランスフォーム（位置、0.20秒）",
+   "effects": [
+    "指向性ブラー (レガシー)",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 3.34,
+   "rep": {
+    "track": "V8",
+    "start": 1748.88,
+    "end": 1752.217,
+    "text": "会社のデータが 全部Addnessにつながってるから"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1748.88,
+     "text": "会社のデータが 全部Addnessにつながってるから"
+    }
+   ],
+   "se_with": {
+    "決定、ボタン押下22.wav": 1
+   },
+   "id": "T181",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "8095a4d8a4",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "みかみテロップ"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 5.44,
+   "rep": {
+    "track": "V8",
+    "start": 1757.689,
+    "end": 1763.128,
+    "text": "タスクリストをAIに理解させるっていうのが"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1757.689,
+     "text": "タスクリストをAIに理解させるっていうのが"
+    }
+   ],
+   "se_with": {},
+   "id": "T182",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "93f6c91f53",
+   "anim_key": "5bc7d88b55",
+   "count": 1,
+   "styles": [
+    "ゴージャス青"
+   ],
+   "fonts": [
+    "NotoSerifJP-Black"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "ストロボ（元の画像とブレンド、0.66秒）",
+   "effects": [
+    "ストロボ"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 2.3,
+   "rep": {
+    "track": "V9",
+    "start": 1760.826,
+    "end": 1763.128,
+    "text": "超スムーズにできる"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 1760.826,
+     "text": "超スムーズにできる"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,短い】キランッッ!!.wav": 1
+   },
+   "id": "T183",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "d6ce0146e5",
+   "anim_key": "02f25a75ca",
+   "count": 1,
+   "styles": [
+    "ゴージャス金"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "色かぶり補正（色合いの量、0.30秒） + トランスフォーム（不透明度、0.17秒） + トランスフォーム（スケール (幅)、0.21秒）",
+   "effects": [
+    "色かぶり補正",
+    "トランスフォーム",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.43,
+   "rep": {
+    "track": "V8",
+    "start": 1772.971,
+    "end": 1774.406,
+    "text": "マジで根本から変わる"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1772.971,
+     "text": "マジで根本から変わる"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,長い】ピラリーーン.wav": 1
+   },
+   "id": "T184",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "a843bee223",
+   "anim_key": "8be13c2a4d",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.12秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 3.37,
+   "rep": {
+    "track": "V8",
+    "start": 1777.509,
+    "end": 1780.879,
+    "text": " Addnessを すごいヤツにしたい"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1777.509,
+     "text": " Addnessを すごいヤツにしたい"
+    }
+   ],
+   "se_with": {
+    "【汎用,拍子木】キキッ.wav": 1
+   },
+   "id": "T185",
+   "adjust_with": {
+    "E017": 1
+   }
+  },
+  {
+   "look_key": "c6799c9d22",
+   "anim_key": "76b34f06b5",
+   "count": 1,
+   "styles": [
+    "ゴージャス青"
+   ],
+   "fonts": [
+    "NotoSerifJP-Black"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "VR フラクタルノイズ（展開・不透明度、1.91秒）",
+   "effects": [
+    "VR フラクタルノイズ"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.17,
+   "rep": {
+    "track": "V8",
+    "start": 1780.879,
+    "end": 1782.047,
+    "text": "そしたら世界が変わる"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1780.879,
+     "text": "そしたら世界が変わる"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,長い】シャラーーン.wav": 1
+   },
+   "id": "T186",
+   "adjust_with": {
+    "E018": 1
+   }
+  },
+  {
+   "look_key": "6406f32a41",
+   "anim_key": "97d170e155",
+   "count": 1,
+   "styles": [
+    "ヒラギノ白シャドウ"
+   ],
+   "fonts": [
+    "HiraKakuStdN-W8"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "なし",
+   "effects": [],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 19.45,
+   "rep": {
+    "track": "V9",
+    "start": 1799.364,
+    "end": 1818.817,
+    "text": "※音声入力中"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 1799.364,
+     "text": "※音声入力中"
+    }
+   ],
+   "se_with": {
+    "決定、ボタン押下22.wav": 1
+   },
+   "id": "T187",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "bf2be28520",
+   "anim_key": "76908d9c04",
+   "count": 1,
+   "styles": [
+    "ゴージャス金"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "色かぶり補正（色合いの量、0.30秒） + トランスフォーム（不透明度、0.17秒） + トランスフォーム（スケール (幅)、0.22秒）",
+   "effects": [
+    "色かぶり補正",
+    "トランスフォーム",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.67,
+   "rep": {
+    "track": "V8",
+    "start": 1818.817,
+    "end": 1820.485,
+    "text": "タスク化完了"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1818.817,
+     "text": "タスク化完了"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,短い】キランッッ!!.wav": 1
+   },
+   "id": "T188",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "c42b6ca81e",
+   "anim_key": "6f65114847",
+   "count": 1,
+   "styles": [
+    "テキストスタイル"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 6.51,
+   "rep": {
+    "track": "V9",
+    "start": 1839.171,
+    "end": 1845.677,
+    "text": "本質のAI活用まとめの受け取り方 / 「0727タスク」と概要欄にある 公式LINEのメッセージに送付してください"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 1839.171,
+     "text": "本質のAI活用まとめの受け取り方 / 「0727タスク」と概要欄にある 公式LINEのメッセージに送付してください"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T189",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "f9e86e1d6a",
+   "anim_key": "4d27bb2013",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.37秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.53,
+   "rep": {
+    "track": "V8",
+    "start": 1859.191,
+    "end": 1860.726,
+    "text": "ぜひ習得してください"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1859.191,
+     "text": "ぜひ習得してください"
+    }
+   ],
+   "se_with": {
+    "【汎用,太鼓】太鼓(ドン).wav": 1
+   },
+   "id": "T190",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "a843bee223",
+   "anim_key": "a3c2c1fbdd",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.37秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 0.83,
+   "rep": {
+    "track": "V8",
+    "start": 1905.704,
+    "end": 1906.538,
+    "text": "過去の動画も観てね!"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1905.704,
+     "text": "過去の動画も観てね!"
+    }
+   ],
+   "se_with": {
+    "【汎用,拍子木】キッ.wav": 1
+   },
+   "id": "T191",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "9d08a6bcf6",
+   "anim_key": "27da83d64c",
+   "count": 1,
+   "styles": [
+    "ゴージャス青"
+   ],
+   "fonts": [
+    "NotoSerifJP-Black"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "色かぶり補正（色合いの量、0.30秒） + トランスフォーム（不透明度、0.17秒） + トランスフォーム（スケール (幅)、0.22秒）",
+   "effects": [
+    "色かぶり補正",
+    "トランスフォーム",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.3,
+   "rep": {
+    "track": "V8",
+    "start": 1912.01,
+    "end": 1913.311,
+    "text": "本質しか大事じゃないから"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1912.01,
+     "text": "本質しか大事じゃないから"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,短い】キランッッ!!.wav": 1
+   },
+   "id": "T192",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "8d4d631801",
+   "anim_key": "429beb95b2",
+   "count": 1,
+   "styles": [
+    "ゴージャス金"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "色かぶり補正（色合いの量、0.30秒） + トランスフォーム（不透明度、0.17秒） + トランスフォーム（位置、0.23秒）",
+   "effects": [
+    "色かぶり補正",
+    "トランスフォーム",
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 2.64,
+   "rep": {
+    "track": "V8",
+    "start": 1918.617,
+    "end": 1921.253,
+    "text": "変わらない本質を きちんと学んでほしい"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1918.617,
+     "text": "変わらない本質を きちんと学んでほしい"
+    }
+   ],
+   "se_with": {
+    "【キラッ✨,長い】ピラリーーン.wav": 1
+   },
+   "id": "T193",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "00b6386377",
+   "anim_key": "67db1a3823",
+   "count": 1,
+   "styles": [
+    "強調赤黄"
+   ],
+   "fonts": [
+    "Ruika-09"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.23秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 0.93,
+   "rep": {
+    "track": "V8",
+    "start": 1926.925,
+    "end": 1927.859,
+    "text": "意地でも適応した方がいい"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1926.925,
+     "text": "意地でも適応した方がいい"
+    }
+   ],
+   "se_with": {
+    "【汎用,太鼓】太鼓(ドン).wav": 1
+   },
+   "id": "T194",
+   "adjust_with": {
+    "E007": 1
+   }
+  },
+  {
+   "look_key": "14291555ef",
+   "anim_key": "45358ae4da",
+   "count": 1,
+   "styles": [
+    "黄色見出し"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.13秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 4.47,
+   "rep": {
+    "track": "V8",
+    "start": 1931.163,
+    "end": 1935.634,
+    "text": "概要欄からAIの活用のための 1on1を受けられます"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 1931.163,
+     "text": "概要欄からAIの活用のための 1on1を受けられます"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 1
+   },
+   "id": "T195",
+   "adjust_with": {
+    "E001": 1
+   }
+  },
+  {
+   "look_key": "b7b105cef9",
+   "anim_key": "6f65114847",
+   "count": 1,
+   "styles": [
+    "テキストスタイル"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V9": 1
+   },
+   "duration_median": 4.67,
+   "rep": {
+    "track": "V9",
+    "start": 2177.308,
+    "end": 2181.98,
+    "text": "ポイント / 定常業務は一旦AIにやらせてみて クオリティが低かったら修正を繰り返す"
+   },
+   "examples": [
+    {
+     "track": "V9",
+     "start": 2177.308,
+     "text": "ポイント / 定常業務は一旦AIにやらせてみて クオリティが低かったら修正を繰り返す"
+    }
+   ],
+   "se_with": {
+    "ピピ.mp3": 1
+   },
+   "id": "T196",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "504b81fd33",
+   "anim_key": "6f65114847",
+   "count": 1,
+   "styles": [
+    "テキストスタイル"
+   ],
+   "fonts": [
+    "WanpakuRuika-08"
+   ],
+   "layers": [
+    "ベクトルモーション",
+    "テキスト",
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置、0.17秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V7": 1
+   },
+   "duration_median": 4.3,
+   "rep": {
+    "track": "V7",
+    "start": 2185.35,
+    "end": 2189.654,
+    "text": "ポイント / AIが頭が良いからといって 使い方次第では逆に非効率になる"
+   },
+   "examples": [
+    {
+     "track": "V7",
+     "start": 2185.35,
+     "text": "ポイント / AIが頭が良いからといって 使い方次第では逆に非効率になる"
+    }
+   ],
+   "se_with": {
+    "キーン（ポイント）.wav": 1
+   },
+   "id": "T197",
+   "adjust_with": {}
+  },
+  {
+   "look_key": "7b823eeaeb",
+   "anim_key": "367a79e0dd",
+   "count": 1,
+   "styles": [
+    "ツッコミ"
+   ],
+   "fonts": [
+    "ReggaeOne-Regular"
+   ],
+   "layers": [
+    "テキスト"
+   ],
+   "animation": "トランスフォーム（位置・スケール、0.20秒）",
+   "effects": [
+    "トランスフォーム"
+   ],
+   "tracks": {
+    "V8": 1
+   },
+   "duration_median": 1.43,
+   "rep": {
+    "track": "V8",
+    "start": 2205.47,
+    "end": 2206.905,
+    "text": "自動化しないのは罪"
+   },
+   "examples": [
+    {
+     "track": "V8",
+     "start": 2205.47,
+     "text": "自動化しないのは罪"
+    }
+   ],
+   "se_with": {
+    "【ツッコミ】グキッ.wav": 1
+   },
+   "id": "T198",
+   "adjust_with": {
+    "E019": 1
+   }
+  }
+ ],
+ "screen_effects": [
+  {
+   "key": "fc1a161b9a",
+   "count": 41,
+   "summary": "トランスフォーム スケール120.% 位置0.5:0.5",
+   "animation": "なし",
+   "tracks": {
+    "V7": 41
+   },
+   "duration_median": 2.57,
+   "rep": {
+    "track": "V7",
+    "start": 477.844,
+    "end": 481.781
+   },
+   "id": "E001"
+  },
+  {
+   "key": "82d21c7c09",
+   "count": 13,
+   "summary": "トランスフォーム スケール70.% 位置0.5:0.5",
+   "animation": "なし",
+   "tracks": {
+    "V7": 13
+   },
+   "duration_median": 1.67,
+   "rep": {
+    "track": "V7",
+    "start": 28.762,
+    "end": 30.831
+   },
+   "id": "E002"
+  },
+  {
+   "key": "36d07e9d80",
+   "count": 4,
+   "summary": "クロップ 上12. 下14.",
+   "animation": "なし",
+   "tracks": {
+    "V3": 4
+   },
+   "duration_median": 6.19,
+   "rep": {
+    "track": "V3",
+    "start": 81.415,
+    "end": 86.32
+   },
+   "id": "E003"
+  },
+  {
+   "key": "77251f6d88",
+   "count": 4,
+   "summary": "水平反転 + クロップ 上12. 下14.",
+   "animation": "なし",
+   "tracks": {
+    "V3": 1,
+    "V4": 3
+   },
+   "duration_median": 3.85,
+   "rep": {
+    "track": "V3",
+    "start": 340.44,
+    "end": 350.75
+   },
+   "id": "E004"
+  },
+  {
+   "key": "97d170e155",
+   "count": 4,
+   "summary": "（エフェクトなし）",
+   "animation": "なし",
+   "tracks": {
+    "V11": 4
+   },
+   "duration_median": 0.82,
+   "rep": {
+    "track": "V11",
+    "start": 15.515,
+    "end": 16.316
+   },
+   "id": "E005"
+  },
+  {
+   "key": "7d430ea0e1",
+   "count": 2,
+   "summary": "トランスフォーム スケール150.% 位置0.5:0.5",
+   "animation": "なし",
+   "tracks": {
+    "V7": 2
+   },
+   "duration_median": 1.0,
+   "rep": {
+    "track": "V7",
+    "start": 785.118,
+    "end": 786.119
+   },
+   "id": "E006"
+  },
+  {
+   "key": "bbd24e646a",
+   "count": 2,
+   "summary": "トランスフォーム スケール150.% 位置0.5:0.5",
+   "animation": "なし",
+   "tracks": {
+    "V7": 2
+   },
+   "duration_median": 1.18,
+   "rep": {
+    "track": "V7",
+    "start": 1065.364,
+    "end": 1066.799
+   },
+   "id": "E007"
+  },
+  {
+   "key": "e0e9fc5ee9",
+   "count": 2,
+   "summary": "トランスフォーム スケール150.% 位置0.5:0.5",
+   "animation": "なし",
+   "tracks": {
+    "V7": 2
+   },
+   "duration_median": 2.07,
+   "rep": {
+    "track": "V7",
+    "start": 1188.821,
+    "end": 1190.89
+   },
+   "id": "E008"
+  },
+  {
+   "key": "8d0c3c1ca5",
+   "count": 1,
+   "summary": "トランスフォーム スケール153.% 位置0.535:0.609",
+   "animation": "なし",
+   "tracks": {
+    "V6": 1
+   },
+   "duration_median": 0.7,
+   "rep": {
+    "track": "V6",
+    "start": 9.376,
+    "end": 10.077
+   },
+   "id": "E009"
+  },
+  {
+   "key": "54f04e6ed9",
+   "count": 1,
+   "summary": "トランスフォーム スケール130.% 位置0.617:0.5",
+   "animation": "なし",
+   "tracks": {
+    "V7": 1
+   },
+   "duration_median": 31.5,
+   "rep": {
+    "track": "V7",
+    "start": 581.414,
+    "end": 612.912
+   },
+   "id": "E010"
+  },
+  {
+   "key": "949bcd454d",
+   "count": 1,
+   "summary": "トランスフォーム スケール150.% 位置0.5:0.617",
+   "animation": "なし",
+   "tracks": {
+    "V7": 1
+   },
+   "duration_median": 0.9,
+   "rep": {
+    "track": "V7",
+    "start": 876.342,
+    "end": 877.243
+   },
+   "id": "E011"
+  },
+  {
+   "key": "b8da98afdd",
+   "count": 1,
+   "summary": "ブラー (ガウス) (レガシ) + モザイク (レガシー)",
+   "animation": "なし",
+   "tracks": {
+    "V7": 1
+   },
+   "duration_median": 5.0,
+   "rep": {
+    "track": "V7",
+    "start": 1042.675,
+    "end": 1047.68
+   },
+   "id": "E012"
+  },
+  {
+   "key": "e88c9cddbc",
+   "count": 1,
+   "summary": "トランスフォーム スケール150.% 位置0.5:0.5",
+   "animation": "なし",
+   "tracks": {
+    "V7": 1
+   },
+   "duration_median": 0.97,
+   "rep": {
+    "track": "V7",
+    "start": 1342.942,
+    "end": 1343.909
+   },
+   "id": "E013"
+  },
+  {
+   "key": "502324247e",
+   "count": 1,
+   "summary": "トランスフォーム スケール130.% 位置0.617:0.5",
+   "animation": "なし",
+   "tracks": {
+    "V7": 1
+   },
+   "duration_median": 3.84,
+   "rep": {
+    "track": "V7",
+    "start": 1490.622,
+    "end": 1494.46
+   },
+   "id": "E014"
+  },
+  {
+   "key": "3bd5156552",
+   "count": 1,
+   "summary": "トランスフォーム スケール130.% 位置0.617:0.5",
+   "animation": "なし",
+   "tracks": {
+    "V7": 1
+   },
+   "duration_median": 18.99,
+   "rep": {
+    "track": "V7",
+    "start": 1647.479,
+    "end": 1666.465
+   },
+   "id": "E015"
+  },
+  {
+   "key": "a6d805d3a5",
+   "count": 1,
+   "summary": "トランスフォーム スケール120.% 位置0.5:0.5 + ブラー (ガウス) (レガシ) + Lumetri カラー",
+   "animation": "なし",
+   "tracks": {
+    "V7": 1
+   },
+   "duration_median": 3.84,
+   "rep": {
+    "track": "V7",
+    "start": 1722.854,
+    "end": 1726.692
+   },
+   "id": "E016"
+  },
+  {
+   "key": "f4813f2ded",
+   "count": 1,
+   "summary": "トランスフォーム スケール130.% 位置0.51:0.456",
+   "animation": "なし",
+   "tracks": {
+    "V7": 1
+   },
+   "duration_median": 3.37,
+   "rep": {
+    "track": "V7",
+    "start": 1777.509,
+    "end": 1780.879
+   },
+   "id": "E017"
+  },
+  {
+   "key": "76e1cc1200",
+   "count": 1,
+   "summary": "トランスフォーム スケール150.% 位置0.5:0.5",
+   "animation": "なし",
+   "tracks": {
+    "V7": 1
+   },
+   "duration_median": 1.17,
+   "rep": {
+    "track": "V7",
+    "start": 1780.879,
+    "end": 1782.047
+   },
+   "id": "E018"
+  },
+  {
+   "key": "5e5234ad19",
+   "count": 1,
+   "summary": "トランスフォーム スケール150.% 位置0.5:0.5",
+   "animation": "なし",
+   "tracks": {
+    "V7": 1
+   },
+   "duration_median": 1.43,
+   "rep": {
+    "track": "V7",
+    "start": 2205.47,
+    "end": 2206.905
+   },
+   "id": "E019"
+  }
+ ],
+ "se": [
+  {
+   "file": "ピピ.mp3",
+   "gain_db": -9.81,
+   "count": 42,
+   "tracks": {
+    "A2": 42
+   },
+   "rep": {
+    "track": "A2",
+    "start": 16.316,
+    "end": 16.95
+   },
+   "id": "S001"
+  },
+  {
+   "file": "cursor1.wav",
+   "gain_db": -2.33,
+   "count": 34,
+   "tracks": {
+    "A2": 34
+   },
+   "rep": {
+    "track": "A2",
+    "start": 72.739,
+    "end": 73.807
+   },
+   "id": "S002"
+  },
+  {
+   "file": "キーン（ポイント）.wav",
+   "gain_db": -5.62,
+   "count": 27,
+   "tracks": {
+    "A2": 27
+   },
+   "rep": {
+    "track": "A2",
+    "start": 38.305,
+    "end": 39.506
+   },
+   "id": "S003"
+  },
+  {
+   "file": "【キラッ✨,短い】キランッッ!!.wav",
+   "gain_db": -0.95,
+   "count": 14,
+   "tracks": {
+    "A2": 14
+   },
+   "rep": {
+    "track": "A2",
+    "start": 9.376,
+    "end": 10.577
+   },
+   "id": "S004"
+  },
+  {
+   "file": "ピピ.mp3",
+   "gain_db": -7.0,
+   "count": 12,
+   "tracks": {
+    "A2": 10,
+    "A4": 2
+   },
+   "rep": {
+    "track": "A2",
+    "start": 197.798,
+    "end": 198.398
+   },
+   "id": "S005"
+  },
+  {
+   "file": "【汎用,拍子木】キッ.wav",
+   "gain_db": 0.85,
+   "count": 11,
+   "tracks": {
+    "A2": 11
+   },
+   "rep": {
+    "track": "A2",
+    "start": 47.014,
+    "end": 47.681
+   },
+   "id": "S006"
+  },
+  {
+   "file": "キーン（ポイント）.wav",
+   "gain_db": 0.0,
+   "count": 10,
+   "tracks": {
+    "A2": 6,
+    "A4": 1,
+    "A6": 1,
+    "A7": 2
+   },
+   "rep": {
+    "track": "A2",
+    "start": 113.78,
+    "end": 114.982
+   },
+   "id": "S007"
+  },
+  {
+   "file": "【汎用,鈴】しゃん.wav",
+   "gain_db": -1.22,
+   "count": 10,
+   "tracks": {
+    "A2": 10
+   },
+   "rep": {
+    "track": "A2",
+    "start": 121.121,
+    "end": 122.055
+   },
+   "id": "S008"
+  },
+  {
+   "file": "クリック.mp3",
+   "gain_db": -8.83,
+   "count": 9,
+   "tracks": {
+    "A2": 9
+   },
+   "rep": {
+    "track": "A2",
+    "start": 521.654,
+    "end": 521.855
+   },
+   "id": "S009"
+  },
+  {
+   "file": "決定、ボタン押下22.wav",
+   "gain_db": -4.64,
+   "count": 7,
+   "tracks": {
+    "A2": 7
+   },
+   "rep": {
+    "track": "A2",
+    "start": 513.613,
+    "end": 514.514
+   },
+   "id": "S010"
+  },
+  {
+   "file": "【ツッコミ】ドスッ.wav",
+   "gain_db": -1.16,
+   "count": 6,
+   "tracks": {
+    "A2": 6
+   },
+   "rep": {
+    "track": "A2",
+    "start": 28.395,
+    "end": 28.762
+   },
+   "id": "S011"
+  },
+  {
+   "file": "【間抜け,アホ】ポカン.wav",
+   "gain_db": -1.78,
+   "count": 6,
+   "tracks": {
+    "A2": 6
+   },
+   "rep": {
+    "track": "A2",
+    "start": 264.598,
+    "end": 264.865
+   },
+   "id": "S012"
+  },
+  {
+   "file": "【汎用,太鼓】太鼓(ドン).wav",
+   "gain_db": -3.75,
+   "count": 6,
+   "tracks": {
+    "A2": 6
+   },
+   "rep": {
+    "track": "A2",
+    "start": 355.455,
+    "end": 358.391
+   },
+   "id": "S013"
+  },
+  {
+   "file": "【汎用,鈴】シャーン.wav",
+   "gain_db": -3.32,
+   "count": 5,
+   "tracks": {
+    "A2": 5
+   },
+   "rep": {
+    "track": "A2",
+    "start": 12.646,
+    "end": 13.714
+   },
+   "id": "S014"
+  },
+  {
+   "file": "【キラッ✨,長い】ピラリーーン.wav",
+   "gain_db": -0.5,
+   "count": 5,
+   "tracks": {
+    "A2": 5
+   },
+   "rep": {
+    "track": "A2",
+    "start": 257.724,
+    "end": 258.592
+   },
+   "id": "S015"
+  },
+  {
+   "file": "【ツッコミ】グキッ.wav",
+   "gain_db": 0.49,
+   "count": 5,
+   "tracks": {
+    "A2": 5
+   },
+   "rep": {
+    "track": "A2",
+    "start": 381.481,
+    "end": 382.449
+   },
+   "id": "S016"
+  },
+  {
+   "file": "【キラッ✨,長い】シャラーーン.wav",
+   "gain_db": -2.61,
+   "count": 4,
+   "tracks": {
+    "A2": 4
+   },
+   "rep": {
+    "track": "A2",
+    "start": 0.0,
+    "end": 1.935
+   },
+   "id": "S017"
+  },
+  {
+   "file": "【汎用,太鼓】太鼓(ドドン).wav",
+   "gain_db": -3.3,
+   "count": 4,
+   "tracks": {
+    "A2": 4
+   },
+   "rep": {
+    "track": "A2",
+    "start": 20.254,
+    "end": 21.822
+   },
+   "id": "S018"
+  },
+  {
+   "file": "【間抜け,アホ】ピコンッ.wav",
+   "gain_db": -1.07,
+   "count": 4,
+   "tracks": {
+    "A2": 4
+   },
+   "rep": {
+    "track": "A2",
+    "start": 277.577,
+    "end": 278.445
+   },
+   "id": "S019"
+  },
+  {
+   "file": "【キラッ✨,短い】キラ.wav",
+   "gain_db": -2.11,
+   "count": 3,
+   "tracks": {
+    "A2": 3
+   },
+   "rep": {
+    "track": "A2",
+    "start": 62.663,
+    "end": 63.664
+   },
+   "id": "S020"
+  },
+  {
+   "file": "【汎用,太鼓】太鼓(カカッ).wav",
+   "gain_db": -0.03,
+   "count": 3,
+   "tracks": {
+    "A2": 3
+   },
+   "rep": {
+    "track": "A2",
+    "start": 141.775,
+    "end": 142.442
+   },
+   "id": "S021"
+  },
+  {
+   "file": "【汎用,拍子木】キキッ.wav",
+   "gain_db": -1.03,
+   "count": 3,
+   "tracks": {
+    "A2": 3
+   },
+   "rep": {
+    "track": "A2",
+    "start": 203.503,
+    "end": 204.604
+   },
+   "id": "S022"
+  },
+  {
+   "file": "【ツッコミ,シュール】ピアノの単音.wav",
+   "gain_db": 0.59,
+   "count": 3,
+   "tracks": {
+    "A2": 3
+   },
+   "rep": {
+    "track": "A2",
+    "start": 270.971,
+    "end": 272.606
+   },
+   "id": "S023"
+  },
+  {
+   "file": "【チーン,シュール】チーン.wav",
+   "gain_db": 3.8,
+   "count": 2,
+   "tracks": {
+    "A2": 2
+   },
+   "rep": {
+    "track": "A2",
+    "start": 28.762,
+    "end": 30.831
+   },
+   "id": "S024"
+  },
+  {
+   "file": "【キラッ✨,長い】キラーー.wav",
+   "gain_db": -7.82,
+   "count": 2,
+   "tracks": {
+    "A2": 2
+   },
+   "rep": {
+    "track": "A2",
+    "start": 958.257,
+    "end": 959.292
+   },
+   "id": "S025"
+  },
+  {
+   "file": "ピロリロ中.mp3",
+   "gain_db": -2.0,
+   "count": 1,
+   "tracks": {
+    "A2": 1
+   },
+   "rep": {
+    "track": "A2",
+    "start": 5.038,
+    "end": 5.873
+   },
+   "id": "S026"
+  },
+  {
+   "file": "パチンっ指鳴らし.wav",
+   "gain_db": -2.0,
+   "count": 1,
+   "tracks": {
+    "A2": 1
+   },
+   "rep": {
+    "track": "A2",
+    "start": 13.714,
+    "end": 14.715
+   },
+   "id": "S027"
+  }
+ ]
+}

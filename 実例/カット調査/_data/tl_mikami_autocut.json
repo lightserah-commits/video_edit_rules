@@ -1,0 +1,35 @@
+{
+ "project": "/Users/yoshizawakouichi/Downloads/コピー_みかみさんCH0726_1/みかみさんCH0726_最終.prproj",
+ "sequence": "シーケンス_3_parallel_autocut_Sub_01",
+ "frame_ticks": 8475667200,
+ "fps": 29.97002997002997,
+ "tracks": {
+  "V1": [],
+  "V2": [],
+  "V3": [
+   {
+    "start_f": 0,
+    "end_f": 47,
+    "start_ticks": 0,
+    "end_ticks": 398356358400,
+    "name": "自分がいつもやってる仕事とかを",
+    "in_ticks": 298758793132800,
+    "out_ticks": 299157149491200,
+    "muted": false,
+    "object_id": "28668",
+    "texts": [
+     "ポイント",
+     "「指示を送る」をクリックすると\rAIが動いてる最中でも割り込んで指示できる"
+    ]
+   }
+  ],
+  "V4": [],
+  "V5": [],
+  "A1": [],
+  "A2": [],
+  "A3": [],
+  "A4": []
+ },
+ "end_ticks": 398356358400,
+ "end_f": 47
+}

@@ -1,0 +1,152 @@
+# テロップのアニメーション（出方の動き）
+# 根拠: みかみさんCH0726_最終.prproj / AI使いこなす習慣7選。有効なテロップ・演出クリップ1,383個のうち、動き（キーフレーム）があるのは130個（約9%）。
+# 全件の一覧: 実例/みかみCH0726/アニメーション.csv（時刻・トラック・スタイル・動き・同時に鳴ったSE・本文）
+# 動きはほぼすべて「出てくる瞬間」だけ。消えるときの動きは使っていない。動いている時間は0.1〜0.5秒と短い。
+
+version: 0.1
+status: 暫定（1本分の観測）
+
+principle:
+  - 通常字幕は動かさない（約600件中、動きがあるのは数件）
+  - 強調テロップ（金・青・赤黄・ツッコミ）は、ほぼ必ず出方に動きを付ける。動きの種類はテロップの種類で決まる
+  - 構造のテロップ（ポイントボード・章見出し・項目名カード・列挙ラベル）は、種類ごとに毎回同じ動き
+  - シュール（明朝）は基本動かさない。冷めた空気を動きで壊さない
+
+# テロップの種類（02_演出パターン.yaml のパターン）→ 動き
+by_telop:
+  - telop: ゴージャス金（S05）／P02 成果・ポジティブ
+    observed: 16件中16件に動き
+    animation: [POP_FLASH, STROBE_IN, STROBE_SLIDE_UP]
+    default: POP_FLASH
+  - telop: ゴージャス青（S12）／P03 名言・肯定
+    observed: 13件中12件
+    animation: [POP, STROBE_IN, GLOW]
+    default: POP
+  - telop: 強調赤黄（S11）／P01 決め・断言
+    observed: 24件中17件
+    animation: [JUMP_UP, SHAKE, SLIDE_BLUR_RIGHT]
+    default: JUMP_UP
+    note: 強い否定・インパクトはSHAKE。落ちて弾む（JUMP_UP）が最多
+  - telop: ツッコミ（S07）／P06
+    observed: 7件中6件
+    animation: [SHAKE, SHAKE_SCALE_IN]
+    default: SHAKE
+  - telop: シュールテロップ（S03）／P04
+    observed: 45件中5件
+    animation: [NONE, WIPE_RIGHT]
+    default: NONE
+  - telop: 基本テロップ赤（S04）／P08
+    observed: 6件
+    animation: [SLIDE_BLUR_RIGHT]
+    default: SLIDE_BLUR_RIGHT
+  - telop: ポイントボード（S21＋枠）／P09
+    observed: 13件中13件
+    animation: [SLIDE_RIGHT]
+    default: SLIDE_RIGHT
+  - telop: 章見出し（番号ボード）／P10
+    observed: 7件中7件
+    animation: [SLIDE_BLUR_RIGHT]
+    default: SLIDE_BLUR_RIGHT
+  - telop: 項目名カード（S14）／P10
+    observed: 7件中7件
+    animation: [FADE_MOVE]
+    default: FADE_MOVE
+  - telop: 列挙ラベル（青背景 S17）／P11
+    observed: 5件
+    animation: [SLIDE_LEFT]
+    default: SLIDE_LEFT
+    note: 並べる座布団（02 の P11）。3つ並び（T172〜T174）は動きなし。2本目の赤背景（T199）・白背景（T200）・見出し（T201）は見本の動きのまま置く（2026-09-26 追加）
+  - telop: 代弁のセリフ（白い明朝 T009）／P16
+    observed: 完成版8場面
+    animation: [NONE]
+    default: NONE
+    note: 黒帯（E003）・左右反転（E004）の調整レイヤーにも動きは付けない。常識を引っ張る代弁の白背景の札・役名ラベルは見本の動きのまま
+  - telop: CTAの矢印（⬆︎⬆︎⬆︎）／P14
+    observed: 3件
+    animation: [FLOAT_LOOP]
+    default: FLOAT_LOOP
+  - telop: 通常字幕（みかみテロップ S19・質問者テロップ S09）
+    animation: [NONE]
+    default: NONE
+
+# 動きの定義（値は完成版のキーフレームの実測。位置は画面比 0〜1、時間は秒）
+animations:
+  NONE: {what: 動かさない}
+  SLIDE_RIGHT:
+    what: 右の画面外から中央へスライドして止まる
+    effect: トランスフォーム
+    keys: {位置: [[0.0, "1.3125:0.5"], [0.167, "0.5:0.5"]]}
+    count: 19
+  SLIDE_LEFT:
+    what: 左の画面外からスライドして止まる
+    effect: トランスフォーム
+    keys: {位置: "左の画面外 → 定位置（0.17秒）"}
+    count: 5
+  SLIDE_BLUR_RIGHT:
+    what: 右からスライド＋動きのブレ（ブラー）が消えながら止まる
+    effect: [トランスフォーム, 指向性ブラー (レガシー)]
+    keys: {位置: [[0.0, "1.3125:0.5"], [0.167, "0.5:0.5"]], ブラーの長さ: [[0.0, 90], [0.2, 0]]}
+    count: 19
+  POP:
+    what: 横幅が0から膨らみ、少し行き過ぎて戻る（弾む）
+    effect: トランスフォーム
+    keys: {スケール (幅): [[0.0, 0], [0.022, 59], [0.043, 92], [0.065, 103], [0.086, 104], [0.108, 103], [0.129, 101], [0.151, 100], [0.172, 99], [0.194, 100], [0.216, 100]]}
+  POP_FLASH:
+    what: POP＋フェードイン＋色のフラッシュ（出た瞬間だけ色が飛ぶ）
+    effect: [トランスフォーム, 色かぶり補正]
+    keys: {スケール (幅): POP と同じ, 不透明度: [[0.0, 0], [0.167, 100]], 色合いの量: [[0.0, 100], [0.3, 0]]}
+    count: 7
+  JUMP_UP:
+    what: 画面下から飛び出し、少し行き過ぎて定位置で止まる
+    effect: トランスフォーム
+    keys: {位置: [[0.0, "0.5:0.932"], [0.076, "0.5:0.478"], [0.121, "0.5:0.5"]]}
+    note: 長いものは落ちて2回弾む（0.5:0.380 → 0.519 → 0.481 → 0.509 → 0.5、0.37秒。オープニングのタイトル）
+    count: 10
+  SHAKE:
+    what: 定位置で小刻みに揺れる（驚き・否定・ツッコミ）
+    effect: トランスフォーム
+    keys: {位置: [[0.0, "0.5:0.5"], [0.033, "0.495:0.49"], [0.067, "0.505:0.51"], [0.1, "0.508:0.481"], [0.133, "0.497:0.51"], [0.167, "0.495:0.49"], [0.2, "0.5:0.5"]]}
+    variant: 縦だけの揺れ（0.481 → 0.514 → 0.491 → 0.514 → 0.5、0.2秒）
+    count: 12
+  SHAKE_SCALE_IN:
+    what: 小さく出て拡大しながら揺れる
+    effect: トランスフォーム
+    keys: {スケール (高さ): [[0.0, 25], [0.067, 100]], 位置: SHAKE と同じ}
+  STROBE_IN:
+    what: 点滅しながら出る
+    effect: ストロボ
+    keys: {元の画像とブレンド: [[0.0, 0], [0.2, 100]]}
+  STROBE_SLIDE_UP:
+    what: 点滅しながら下からせり上がる
+    effect: [ストロボ, トランスフォーム]
+    keys: {元の画像とブレンド: [[0.0, 0], [0.524, 100]], 位置: [[0.0, "0.5:0.870"], [0.501, "0.5:0.5"]]}
+  GLOW:
+    what: 光る・ノイズが走る（明るさが落ち着く）
+    effect: [プロセスアンプ, VR フラクタルノイズ]
+    keys: {明度: [[0.0, 60], [0.667, 0]]}
+  WIPE_RIGHT:
+    what: 左から右へ文字が現れる（書いていくような出方）
+    effect: クロップ
+    keys: {右: [[0.0, 100], [1.37, 0]]}
+    count: 6
+  FADE_MOVE:
+    what: フェードインしながら少し動いて止まる
+    effect: トランスフォーム
+    keys: {不透明度: [[0.0, 0], [0.167, 100]], 位置: 少し移動して定位置へ}
+    count: 7
+  FLOAT_LOOP:
+    what: 上下にふわふわ動き続ける（CTAの矢印）
+    effect: ベクトルモーション
+    keys: {位置: "約0.67秒ごとに上下を繰り返す"}
+    count: 3
+
+implementation:
+  xml: |
+    動きの多くは Premiere 専用のエフェクト（トランスフォーム・指向性ブラー・色かぶり補正・ストロボ）で作られていて、
+    Final Cut Pro 7 XML には載らない（書き出したXMLから消えている）。XMLだけでは再現できない。
+  plan: |
+    XMLで読み込んだ後、Premiere内の MCP Bridge（tools/premiere_bridge.py）から、該当クリップにエフェクトを足してキーフレームを打つ。
+    位置・拡大・不透明度だけの動き（SLIDE_RIGHT／SLIDE_LEFT／JUMP_UP／SHAKE／FADE_MOVE）は、XMLのモーション・不透明度のキーフレームでも代用できる可能性がある。
+  status: |
+    2026-09-25 動作確認済み：JUMP_UP・SHAKE・SLIDE_RIGHT・POP_FLASH・STROBE_IN（work/telop_prototype/v002_anim/結果.md）。
+    ツールは tools/telop_animate.py（プリセット名で指定）。未確認：SLIDE_BLUR_RIGHT・WIPE_RIGHT・FADE_MOVE・FLOAT_LOOP。

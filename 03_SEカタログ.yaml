@@ -1,0 +1,432 @@
+# SEカタログ（このチャンネルで固定で使うSE 26種）
+#
+# file        … このフォルダの 素材/SE/ にあるファイル（元のファイル名のまま）
+# atlas_id    … ~/Desktop/担当2/03_編集ルール定義/演出図鑑/音源 の番号（同じ音）
+# gain_db     … 完成プロジェクトで設定されていたクリップゲイン。この値で置けば同じ音量感になる
+# duration_s  … ファイルの長さ / lead_s … ファイル先頭の無音（ほぼ0なので、置いた位置＝鳴る位置）
+# peak_dbtp   … ファイル自体のトゥルーピーク
+# uses        … 完成動画（33分）で実際に鳴っていた回数（無効化クリップを除く）
+# 重複ファイル: ピピ_001.mp3 = ピピ.mp3、キーン（ポイント）_001/_002.wav = キーン（ポイント）.wav（中身が同一）。1つにまとめた。
+#
+# タイミングの共通ルール:
+#   SEは「そのSEが担当するテロップの開始フレーム」に置く（完成動画ではほぼ全件、ずれ0フレーム）。
+#   テロップの開始＝その一言の発声開始（カット点）なので、結果的に語頭に合う。
+#   テロップを動かしたらSEも一緒に動かす。強調をやめたらSEも消す。
+#
+# 音量（2026-09-26 画面解説の案件で分かったこと）:
+#   gain_db は、完成版の「声のクリップに +17dB」を掛けた声に対する値。声の大きさが完成版と違う時は、SE も BGM と同じだけ動かす
+#   （04 の bgm.balance）。画面解説の案件は声が -34.9 LUFS でピークに余裕が無く上げられないため、SE と BGM を -12dB にした。
+#   同じ瞬間に2つの SE が重なる時は1つにする。強調・章・ボードの SE を優先し、画面の赤枠の小さい音は鳴らさない。
+#   画面の赤枠（07 の read_frame）の音はクリック（-8.83dB）をさらに 4dB 下げる（ユーザー指示「うるさくないもの」）。
+
+version: 0.1
+source: みかみさんCH0726_最終.prproj / AI使いこなす習慣7選
+
+families:
+  打楽器（決め）: [SE_HYOSHIGI_KI, SE_HYOSHIGI_KIKI, SE_TAIKO_DON, SE_TAIKO_DODON, SE_TAIKO_KAKA]
+  キラッ（ポジティブ）: [SE_KIRA_KIRAN, SE_KIRA_KIRA, SE_KIRA_PIRARIN, SE_KIRA_SHARAAN, SE_KIRA_KIRAA]
+  シュール・本音: [SE_SUZU_SHAN, SE_SUZU_SHAAN, SE_PIANO, SE_CHIIN, SE_NAMIDA]
+  間抜け・ツッコミ: [SE_POKAN, SE_PIKON, SE_DOSU, SE_GUKI]
+  情報・構造: [SE_PIPI, SE_CURSOR, SE_CLICK, SE_KETTEI, SE_KIIN]
+  オープニング用: [SE_PIRORIRO, SE_PACHIN]
+# 上司の方法セット（60_SE・一言動画編集/config/se_nuance_dictionary.json）の「SEの意味名」11種と、このチャンネルの実際の音の対応。
+# 上司版は意味名だけ決まっていて実音は未割当（unassigned_until_audition）だった。ここで完成動画の実配置から割り当てる。
+intent_map:
+  SE_INTENT_KEY_INSIGHT:    {name: 要点・理解,     se: [SE_KIIN, SE_PIPI], note: ポイントボード＝キーン、字幕の中の要点＝ピピ}
+  SE_INTENT_BENEFIT:        {name: 成果・好意,     se: [SE_KIRA_KIRAN, SE_KIRA_PIRARIN, SE_KIRA_KIRA, SE_KIRA_KIRAA, SE_KIRA_SHARAAN]}
+  SE_INTENT_CAUTION:        {name: 注意・引き締め, se: [SE_HYOSHIGI_KI], note: 観測は少ない。「〜しない」「絶対〜する」の引き締めに拍子木が使われていた}
+  SE_INTENT_SURPRISE:       {name: 意外性・驚き,   se: [SE_SUZU_SHAAN, SE_TAIKO_DODON], note: 困惑・場が止まる驚き＝シャーン、良い意味の驚き・答えの提示＝ドドン}
+  SE_INTENT_PLAYFUL_RETORT: {name: 軽いツッコミ,   se: [SE_POKAN, SE_PIKON, SE_DOSU, SE_GUKI, SE_PIANO], note: 呆れ＝ポカン、抜け＝ピコンッ、否定＝ドスッ、痛い指摘＝グキッ、冷静＝ピアノ}
+  SE_INTENT_RELIEF:         {name: 安心・納得,     se: [SE_KIRA_KIRA], note: 観測なし。候補として控えめなキラ}
+  SE_INTENT_ITEM_BEAT:      {name: 項目追加・進行, se: [SE_CURSOR, SE_PIPI, SE_CLICK], note: 列挙＝cursor1、段階表示＝ピピ、画像の連続＝クリック}
+  SE_INTENT_CONTRAST:       {name: 対比・転換,     se: [], note: この動画では専用の音は使われていない。必要なら SE_NONE か要相談}
+  SE_INTENT_SECTION:        {name: 話題導入,       se: [SE_PIPI, SE_KIIN], note: 章の番号見出し＝ピピ、項目名カード＝キーン（P10）}
+  SE_INTENT_ACTION:         {name: 行動案内,       se: [SE_KETTEI, SE_KIIN], note: CTA枠＝キーン、誘導の言い切り＝決定音（P14）}
+  SE_NONE:                  {name: 音を足さない,   se: [], note: 通常字幕の約9割}
+  # 上司版の11種に無く、このチャンネルで多用されている意味
+  決め・断言（このチャンネル独自）:   {se: [SE_HYOSHIGI_KI, SE_HYOSHIGI_KIKI, SE_TAIKO_DON, SE_TAIKO_DODON, SE_TAIKO_KAKA], note: P01}
+  本音・皮肉・残念（このチャンネル独自）: {se: [SE_SUZU_SHAN, SE_SUZU_SHAAN, SE_PIANO, SE_CHIIN, SE_NAMIDA], note: P04。BGM停止とセット}
+
+family_bgm_rule:
+  BGMを止めることがある: [シュール・本音, 間抜け・ツッコミ]   # 観測: 鈴8/15・間抜け4/10・ピアノ3/3・ツッコミ2/10・チーン1/2
+  BGMを止めない: [打楽器（決め）, キラッ（ポジティブ）, 情報・構造]   # 観測: キラッ0/27・拍子木0/14・ピピ0/53・キーン0/33・cursor0/32（太鼓は「これ！！！」の1回だけ）
+
+se:
+  # ───────── 打楽器（決め）: 強調赤黄 S11 とセット。寄りズーム。BGMは継続。
+  - id: SE_HYOSHIGI_KI
+    file: 素材/SE/【汎用,拍子木】キッ.wav
+    atlas_id: SE15
+    character: 乾いた短い一打。小気味よい
+    meaning: 短い言い切り・行動の宣言・要点の着地
+    use_when: 「全然違う」「絶対自動化する」「情報を置かない」のような、短くスパッと言い切る一言
+    avoid: 重い結論（→太鼓ドン）、ポジティブな成果（→キラッ）
+    pairs_with: 強調赤黄 S11（9/11）
+    zoom: 寄り（11/11）
+    gain_db: 0.85
+    duration_s: 0.68
+    lead_s: 0.0
+    peak_dbtp: -18.7
+    uses: 11
+    examples: ["00:47.01 全然違う", "01:35.73 AIに一旦投げさせる", "12:54.34 AIがアクセスできないところに情報を置かない", "17:39.76 絶対自動化する", "22:40.96 音声入力", "28:45.92 無料で使えます"]
+
+  - id: SE_HYOSHIGI_KIKI
+    file: 素材/SE/【汎用,拍子木】キキッ.wav
+    atlas_id: SE14
+    character: 拍子木の二打
+    meaning: 二段の言い切り・未来や勝負の断言
+    use_when: 「〜したやつは勝つ」「〜にならなきゃいけない」のように、少し長めで格のある断言
+    pairs_with: 強調赤黄 S11 / ゴージャス青 S12
+    zoom: 寄り（3/3）
+    gain_db: -1.03
+    duration_s: 1.12
+    lead_s: 0.0
+    peak_dbtp: -16.6
+    uses: 3
+    examples: ["03:23.50 そこに最初に飛びついたやつは勝つ", "28:25.64 物事を理解する人間になんなきゃいけない", "29:37.51 Addnessをすごいヤツにしたい"]
+
+  - id: SE_TAIKO_DON
+    file: 素材/SE/【汎用,太鼓】太鼓(ドン).wav
+    atlas_id: SE13
+    character: 太鼓の重い一打（余韻が長い）
+    meaning: 重い結論・お金/リスク/人生の話・締めの呼びかけ
+    use_when: 「そいつらが金持ちになる」「ハイリスクハイリターン！」「ぜひ習得してください」
+    avoid: 軽いノリの一言（→カカッ）
+    pairs_with: 強調赤黄 S11（6/6）
+    zoom: 寄り〜強い寄り（寄り3・強い寄り3）
+    gain_db: -3.75
+    duration_s: 3.34
+    lead_s: 0.0
+    peak_dbtp: -14.2
+    uses: 6
+    examples: ["05:55.45 そいつらが金持ちになる", "07:22.84 ハイリスクハイリターン！", "16:27.82 ルーティン業務が1番", "30:59.19 ぜひ習得してください", "32:06.92 意地でも適応した方がいい"]
+
+  - id: SE_TAIKO_DODON
+    file: 素材/SE/【汎用,太鼓】太鼓(ドドン).wav
+    atlas_id: SE12
+    character: 太鼓の二打。一番大きな決め
+    meaning: 大きな宣言・テーマ提示・「これ！」という答えの提示
+    use_when: 動画のテーマを言い切る、1本で数回の山場
+    avoid: CTA（完成版では無効化されていた）
+    pairs_with: 強調赤黄 S11 / ゴージャス金 S05
+    zoom: 寄り〜強い寄り
+    gain_db: -3.3
+    duration_s: 1.55
+    lead_s: 0.0
+    peak_dbtp: -14.7
+    uses: 4
+    examples: ["00:20.25 習慣7選 ガチでAI使いこなしてる人の", "01:51.71 これ！！！（BGMも止める）", "20:54.62 24時間労働", "22:22.94 万全の体制"]
+
+  - id: SE_TAIKO_KAKA
+    file: 素材/SE/【汎用,太鼓】太鼓(カカッ).wav
+    atlas_id: SE11
+    character: 太鼓の縁を叩く軽い音
+    meaning: 勢い・ノリ・テンポの良いツッコミ気味の断言
+    use_when: 「簡単やん！」「適応しないと！！！」
+    pairs_with: 強調赤黄 S11 / ゴージャス金 S05
+    zoom: 寄り（3/3）
+    gain_db: -0.03
+    duration_s: 0.7
+    lead_s: 0.0
+    peak_dbtp: -17.8
+    uses: 3
+    examples: ["02:21.78 簡単やん！", "07:25.75 どんだけ順応するか", "07:37.66 適応しないと！！！"]
+
+  # ───────── キラッ（ポジティブ）: ゴージャス金 S05 / ゴージャス青 S12 とセット。寄りズーム。BGMは継続。
+  - id: SE_KIRA_KIRAN
+    file: 素材/SE/【キラッ✨,短い】キランッッ!!.wav
+    atlas_id: SE03
+    character: 短いきらめき
+    meaning: ポジティブな気づき・肯定・完了・褒め（キラッ系の標準）
+    use_when: 「AIは必ずわかってくれる」「全部完全にやる」「その通り!」「いい質問だね」「タスク化完了」
+    pairs_with: ゴージャス金 S05（8）/ ゴージャス青 S12（5）
+    zoom: 寄り（寄り9・強い寄り1・なし4）
+    gain_db: -0.95
+    duration_s: 1.25
+    lead_s: 0.006
+    peak_dbtp: -17.0
+    uses: 14
+    examples: ["02:06.09 習慣", "13:12.33 AIは必ずわかってくれる", "16:56.62 全部完全にやる", "22:04.99 その通り!", "28:01.95 いい質問だね", "30:18.82 タスク化完了"]
+
+  - id: SE_KIRA_KIRA
+    file: 素材/SE/【キラッ✨,短い】キラ.wav
+    atlas_id: SE02
+    character: キランッより控えめ
+    meaning: 控えめな肯定・完了
+    pairs_with: ゴージャス金 S05 / ゴージャス青 S12
+    gain_db: -2.11
+    duration_s: 1.02
+    lead_s: 0.0
+    peak_dbtp: -15.8
+    uses: 3
+    examples: ["01:02.66 フィードバックループを回してる", "21:51.68 セットアップ完了"]
+
+  - id: SE_KIRA_PIRARIN
+    file: 素材/SE/【キラッ✨,長い】ピラリーーン.wav
+    atlas_id: SE06
+    character: 上がっていく長めのきらめき
+    meaning: 大きな変化・おすすめ・名言の余韻
+    use_when: 「マジで根本から変わる」「これは結構オススメ」「その環境に最も適応したものだ」
+    pairs_with: ゴージャス金 S05（3）/ ゴージャス青 S12（2）
+    zoom: 寄り（5/5）
+    gain_db: -0.5
+    duration_s: 0.9
+    lead_s: 0.0
+    peak_dbtp: -17.5
+    uses: 5
+    examples: ["04:17.72 本当の革命に目を向けておいてほしい", "07:32.15 その環境に最も適応したものだ", "23:56.00 これは結構オススメ", "29:32.97 マジで根本から変わる"]
+
+  - id: SE_KIRA_SHARAAN
+    file: 素材/SE/【キラッ✨,長い】シャラーーン.wav
+    atlas_id: SE05
+    character: 一番華やかで長い
+    meaning: 世界が変わる級の大きな話・冒頭タイトル
+    use_when: 動画の最初のタイトル、「そしたら世界が変わる」。1本で数回まで
+    pairs_with: ゴージャス青 S12 / ゴージャス金 S05
+    gain_db: -2.61
+    duration_s: 1.95
+    lead_s: 0.011
+    peak_dbtp: -15.4
+    uses: 3
+    examples: ["00:00.00 冒頭タイトル（年商25億AI社長の AI習慣7選）", "02:27.05 レベルは上がる それを真似さえしてもらえれば", "29:40.88 そしたら世界が変わる"]
+
+  - id: SE_KIRA_KIRAA
+    file: 素材/SE/【キラッ✨,長い】キラーー.wav
+    atlas_id: SE04
+    character: 伸びるきらめき（ファイル自体が大きいのでゲインを下げている）
+    meaning: 解決策の提示「〜するだけでOK」「〜は非常に大事」
+    gain_db: -7.82
+    duration_s: 1.02
+    lead_s: 0.009
+    peak_dbtp: -10.2
+    uses: 2
+    examples: ["15:58.26 AIがアクセスできるようにするだけでOK", "23:03.75 音声入力は非常に大事"]
+
+  # ───────── シュール・本音: シュールテロップ S03（明朝）とセット。引きズーム（70〜85%）。BGMを止めることが多い。
+  - id: SE_SUZU_SHAN
+    file: 素材/SE/【汎用,鈴】しゃん.wav
+    atlas_id: SE16
+    character: 鈴の短い一振り。冷めた・乾いた空気
+    meaning: 皮肉・冷めた本音・身もふたもない現実（シュール系の標準）
+    use_when: 「AIに弾道計算させてるやつが多すぎる」「Webサイトで飯食えんからね」「明らかにコンテキストが悪い」
+    pairs_with: シュールテロップ S03（8）/ ヒラギノ白シャドウ S13（2）
+    zoom: 引き（9/10）
+    bgm: 止めることが多い（BGM停止区間内 8/15 ※鈴2種の合計）
+    gain_db: -1.22
+    duration_s: 0.97
+    lead_s: 0.0
+    peak_dbtp: -16.3
+    uses: 10
+    examples: ["02:01.12 AIに弾道計算させてるやつが多すぎる", "02:56.18 Webサイトで飯食えんからね", "06:55.62 ハグれものだよ絶対", "10:28.50 いや私地頭悪いから無理だわ", "13:17.96 明らかにコンテキストが悪い", "22:34.95 スマホじゃ厳しい"]
+
+  - id: SE_SUZU_SHAAN
+    file: 素材/SE/【汎用,鈴】シャーン.wav
+    atlas_id: SE17
+    character: 鈴の長い響き。場が止まる
+    meaning: 重めの本音・予言・空気を変える一言・聞き手の困惑
+    use_when: 「そういうこと考えなくていい」「ガチですごいのが今後絶対に出る」「視聴者ついていけてないです…」
+    pairs_with: シュールテロップ S03（3）/ 白テキ S06 / ヒラギノ白シャドウ S13
+    gain_db: -3.32
+    duration_s: 1.53
+    lead_s: 0.049
+    peak_dbtp: -14.0
+    uses: 5
+    examples: ["00:12.65 そういうこと考えなくていい", "03:15.33 ガチですごいのが今後絶対に出る", "03:33.21 視聴者ついていけてないです…", "18:40.32 うまくいったりうまくいかなかったり"]
+
+  - id: SE_PIANO
+    file: 素材/SE/【ツッコミ,シュール】ピアノの単音.wav
+    atlas_id: SE08
+    character: ピアノの低い単音。気まずい間
+    meaning: 冷静なツッコミ・シュールな一言・気まずさ
+    use_when: 「本当にここからだと思ってないよね」「どんどんダメになる」「お前いらなくね？」
+    pairs_with: シュールテロップ S03（3/3）
+    zoom: 引き（3/3）
+    bgm: 必ず止める（3/3）
+    gain_db: 0.59
+    duration_s: 1.67
+    lead_s: 0.012
+    peak_dbtp: -18.6
+    uses: 3
+    examples: ["04:30.97 本当にここからだと思ってないよね", "25:46.31 どんどんダメになる", "28:09.99 「お前いらなくね？」"]
+
+  - id: SE_CHIIN
+    file: 素材/SE/【チーン,シュール】チーン.wav
+    atlas_id: SE07
+    character: おりんの「チーン」。終わった感（ファイルが小さいのでゲインを上げている）
+    meaning: 残念な結末・「終わってる」・脱落
+    use_when: 「これやってないやつは使いこなせてない」「工場で働かされるだけ」
+    avoid: 本当に深刻な失敗談・人の不幸
+    pairs_with: シュールテロップ S03（2/2）
+    zoom: 引き（2/2）
+    bgm: 止める
+    gain_db: 3.8
+    duration_s: 3.47
+    lead_s: 0.007
+    peak_dbtp: -21.4
+    uses: 2
+    examples: ["00:28.76 これやってないやつは使いこなせてない", "04:58.03 工場で働かされるだけ"]
+
+  - id: SE_NAMIDA
+    file: 素材/SE/【チーン,シュール】涙のしずく.wav
+    atlas_id: null
+    character: しずくが落ちる音
+    meaning: 悲しい・切ない・残念（チーンより静か）
+    note: この動画では未使用。素材セットに含まれるので登録だけしておく
+    duration_s: 1.73
+    peak_dbtp: -11.3
+    uses: 0
+
+  # ───────── 間抜け・ツッコミ
+  - id: SE_POKAN
+    file: 素材/SE/【間抜け,アホ】ポカン.wav
+    atlas_id: SE19
+    character: 気の抜けた短い音
+    meaning: 呆れ・笑い（「w」が付く一言）・ボケ・困惑
+    use_when: 「これは結構ガチャｗ」「慣れ慣れ慣れ慣れ」「カレーライス作ろうとするんだよw」「くろーどこーど…？」
+    pairs_with: ヒラギノ白シャドウ S13（4）/ 白テキ S06 / シュールテロップ S03
+    zoom: 引き（4/6）
+    bgm: 止めることがある
+    gain_db: -1.78
+    duration_s: 0.3
+    lead_s: 0.0
+    peak_dbtp: -14.5
+    uses: 6
+    examples: ["04:24.60 くろーどこーど…？", "11:58.62 カレーライス作ろうとするんだよw", "15:48.15 慣れ慣れ慣れ慣れ", "18:39.38 これは結構ガチャｗ", "22:12.46 みんなそうやってんだよ?"]
+
+  - id: SE_PIKON
+    file: 素材/SE/【間抜け,アホ】ピコンッ.wav
+    atlas_id: SE18
+    character: 軽い電子音のボケ
+    meaning: 抜けている・うっかり・「〜だけ」
+    use_when: 「つながってないだけ」「指示を忘れちゃう」「カレーライスのことばっかり考えてる」
+    pairs_with: シュールテロップ S03 / 白テキ S06
+    gain_db: -1.07
+    duration_s: 0.9
+    lead_s: 0.01
+    peak_dbtp: -16.8
+    uses: 4
+    examples: ["13:21.80 もしくはカレーライスのことばっかり考えてる", "15:05.87 つながってないだけ", "26:53.68 指示を忘れちゃう"]
+
+  - id: SE_DOSU
+    file: 素材/SE/【ツッコミ】ドスッ.wav
+    atlas_id: SE10
+    character: 鈍い打撃音
+    meaning: 否定・ダメ出し・鋭い指摘
+    use_when: 「ダメ」「バカかって言うもん」「〜珍しくないですか？」「わかってないなってなる」
+    pairs_with: ツッコミ S07（3）/ 部分強調（一語だけReggaeOne）/ 白テキ S06
+    zoom: 強い寄り〜寄り
+    gain_db: -1.16
+    duration_s: 0.9
+    lead_s: 0.0
+    peak_dbtp: -16.8
+    uses: 6
+    examples: ["00:28.39 これやってないと ダメ", "05:14.55 そうなっちゃうよ", "07:02.66 バカかって言うもん", "10:15.35 自分で見つけれる人の方が珍しくないですか？", "13:05.12 「わかってないな」ってなる"]
+
+  - id: SE_GUKI
+    file: 素材/SE/【ツッコミ】グキッ.wav
+    atlas_id: SE09
+    character: 関節が鳴るような痛い音
+    meaning: 痛いところを突く・罪・「なんもわかっとらん」・悲鳴
+    use_when: 「なんもわかっとらんやん」「いやー！」「自動化しないのは罪」
+    pairs_with: ツッコミ S07（3）/ シュールテロップ S03
+    zoom: 強い寄り（2）・寄り・引き
+    gain_db: 0.49
+    duration_s: 0.98
+    lead_s: 0.0
+    peak_dbtp: -18.5
+    uses: 4
+    examples: ["06:21.48 なんもわかっとらんやん", "16:11.17 いやー！", "17:45.36 自動化しないのは罪", "25:27.16 絶対どっかでおかしくなる"]
+
+  # ───────── 情報・構造: 通常字幕・ボード・画面操作。ズームなしが多い。BGMは止めない。
+  - id: SE_PIPI
+    file: 素材/SE/ピピ.mp3
+    atlas_id: SE23
+    character: 小さな電子音2つ
+    meaning: 軽い注意喚起（一番よく使う・一番小さい）
+    use_when:
+      - 章の番号見出し（習慣①〜⑦）
+      - 通常字幕のまま一瞬引っかけたい一言（「マジで」「これ絶対」「パソコンは閉じちゃダメ」）
+      - 基本テロップ赤 S04 の要点
+      - 画像・ロゴの挿入、図の段階表示（成果→ボトルネック→タスク）
+      - ポイントボード（小さめのまとめ）
+    gain_db: "-9.81（標準）／-7.0（ポイントボード・受け取り方ボードのとき）"
+    duration_s: 0.63
+    lead_s: 0.028
+    peak_dbtp: -7.9
+    uses: 53
+    examples: ["07:57.84 AIを使いこなす習慣①（章見出し）", "10:10.21 成果 → 10:10.54 ボトルネック → 10:11.14 タスク（段階表示）", "13:45〜13:48 Googleドライブ・Slack・GitHubのロゴを1つずつ", "21:57.35 パソコンは閉じちゃダメ"]
+
+  - id: SE_CURSOR
+    file: 素材/SE/cursor1.wav
+    atlas_id: SE01
+    character: カーソル移動の電子音
+    meaning: 列挙の1項目・画面上の項目を選ぶ
+    use_when:
+      - 同じ階層の例を1つずつ挙げる（同じ音を反復してよい）
+      - 画面操作（「設定を開く」「オンにして」「接続を追加」）
+      - 番号付きのスキル名などを順に出す（①ヒアリング ②比較検討 ③フィードバック）
+    pairs_with: 青背景 S17（8）/ 通常字幕（16）/ 基本テロップ赤 S04（4）
+    gain_db: -2.33
+    duration_s: 1.08
+    lead_s: 0.0
+    peak_dbtp: -15.6
+    uses: 32
+    examples: ["02:46.00 AIがAmazonの配達してくれる → 02:48.27 AIが椅子を作ってくれる → 02:58.54 … → 03:02.12 …（列挙）", "13:35.21 セッティングって開くじゃん", "16:42.00 こうやってオンにして", "27:27.48 ①ヒアリングスキル → 27:32.22 ② → 27:39.42 ③"]
+
+  - id: SE_CLICK
+    file: 素材/SE/クリック.mp3
+    atlas_id: SE21
+    character: マウスのクリック音（とても短い）
+    meaning: クリック操作・画像を連続でポン出し
+    use_when: 画面録画のクリック、スクショ画像を1枚ずつ出す（08:41〜08:45 に4連続）
+    gain_db: -8.83
+    duration_s: 0.22
+    lead_s: 0.023
+    peak_dbtp: -8.5
+    uses: 9
+
+  - id: SE_KETTEI
+    file: 素材/SE/決定、ボタン押下22.wav
+    atlas_id: SE25
+    character: ボタンを押した決定音
+    meaning: 実演の開始・決定・注釈の表示・CTAの誘導
+    use_when: 「僕だったらまさにこんな感じで」（実演へ）、「※音声入力中」の注釈、「必ず概要欄から1on1を受けてください」
+    gain_db: -4.64
+    duration_s: 0.88
+    lead_s: 0.0
+    peak_dbtp: -13.3
+    uses: 7
+
+  - id: SE_KIIN
+    file: 素材/SE/キーン（ポイント）.wav
+    atlas_id: SE20
+    character: 高い「キーン」。ポイント提示の合図
+    meaning: ポイントボード・項目名カード・CTA枠の出現
+    use_when:
+      - 「ポイント」ボードが出る瞬間（1ボード1回）
+      - 章の項目名カード（例「タスクファーストを習慣にする」）が出る瞬間
+      - CTA枠が出る瞬間
+    avoid: 「ポイントは」という前置きで先に鳴らさない。ボードの見出しと本文で2回鳴らさない
+    gain_db: -5.62
+    duration_s: 1.23
+    lead_s: 0.0
+    peak_dbtp: -12.2
+    uses: 33
+
+  # ───────── オープニング用
+  - id: SE_PIRORIRO
+    file: 素材/SE/ピロリロ中.mp3
+    atlas_id: SE24
+    meaning: スマホで入力・操作している最中の表現（冒頭ダイジェストで使用）
+    gain_db: -2.0
+    duration_s: 2.18
+    lead_s: 0.11
+    uses: 1
+
+  - id: SE_PACHIN
+    file: 素材/SE/パチンっ指鳴らし.wav
+    atlas_id: SE22
+    meaning: ダイジェストからタイトルコールへの切り替え（この後2.6秒BGMなし）
+    gain_db: -2.0
+    duration_s: 1.0
+    lead_s: 0.052
+    uses: 1

@@ -1,0 +1,51 @@
+# イラストの一覧（役×気持ちで選ぶ）
+#
+# 根拠: 2本目（~/Downloads/コピー_AI時代に消える仕事残る仕事/）で実際に使われたイラスト（いらすとや）24枚をコピーしたもの。
+#       その動画専用のもの（ニュースのスクショ・企業ロゴ・出どころの分からない写真風の画像）は入れていない。
+# 決めた日: 2026-09-26（ユーザー確認。「イラストを1枚ずつ定義するのは大変なので、役と気持ちで選べるようにする」）
+#
+# 使い方:
+#   1. 何を見せたいかを「役」と「気持ち」の2つで決める（例：会社員男性×疑問）
+#   2. 下の表から一番近いものを選ぶ。役が合って気持ちが違うなら、気持ちの近いもの（疑問≒困り、喜び≒笑顔）で代える
+#   3. 合うものが無い時は、いらすとやで探した候補（ファイル名・ページ・大きさ）をユーザーに見せ、ダウンロードの許可をもらってから
+#      このフォルダに足し、この表に1行足す（CLAUDE.md：無断で外部から取らない）
+#   使う所: 常識を引っ張る代弁（02 の P16）の役の絵、図解（09_図解.md）の人物・もの
+#   置き方: 静止画として Premiere で読み込んで置く（テロップの中に埋め込まない。役ごとに替えられるように）
+
+version: 0.1
+
+people:   # 人物（役 × 気持ち）
+  - {file: business_man3_1_question.png, role: 会社員男性, feeling: 疑問, note: 頭に？}
+  - {file: businessman5_ureshii.png, role: 会社員男性, feeling: 喜び, note: ガッツポーズ}
+  - {file: kaisya_man_bad.png, role: 会社員男性, feeling: 困り, note: パソコンの前でうまくいかない}
+  - {file: pose_ochikomu_businessman.png, role: 会社員男性, feeling: 落ち込み, note: うなだれる}
+  - {file: パソコン業務.png, role: 会社員男性, feeling: 普通, note: パソコン作業中}
+  - {file: sales_eigyou_man.png, role: 営業, feeling: 案内, note: 手を差し出して説明。「〜できますよ」と売り込む人}
+  - {file: suit_woman_laugh.png, role: 会社員女性, feeling: 笑顔, note: 2本目の「経理担当」で使った絵}
+  - {file: computer_programming_man.png, role: エンジニア, feeling: 普通, note: コードを書いている}
+  - {file: computer_mob_programming.png, role: エンジニアのチーム, feeling: 普通, note: みんなで1つの画面}
+  - {file: shimekiri_report_schoolboy.png, role: 学生, feeling: 焦り, note: 締め切りに追われる。2本目「頑張ってるつもり」}
+  - {file: syukudai_natsuyasumi_boy.png, role: 学生, feeling: 集中, note: 机で勉強。2本目「正しく頑張る」}
+  - {file: question_head_boy.png, role: 学生, feeling: 疑問, note: 頭に？}
+  - {file: bikkuri_me_tobideru_man.png, role: 男性, feeling: 驚き, note: 目が飛び出る}
+  - {file: hirameki_man.png, role: 男性, feeling: ひらめき, note: 電球}
+
+ai:   # AI（ロボット）
+  - {file: ai_character08_think.png, role: AI, feeling: 考える}
+  - {file: ai_character09_question.png, role: AI, feeling: 疑問}
+
+things:   # もの（図解で使う）
+  - {file: building_kaisya.png, what: 会社（ビル）}
+  - {file: company_character2_wakai.png, what: 会社（元気・若い）, note: 会社を人に見立てた絵}
+  - {file: company_character5_shinisou.png, what: 会社（死にそう・古い）, note: 会社を人に見立てた絵}
+  - {file: graph_up.png, what: 伸びるグラフ}
+  - {file: figure_fight_war_1vs1.png, what: 1対1の対立}
+  - {file: game_ken.png, what: 剣（攻め）}
+  - {file: game_tate.png, what: 盾（守り）}
+  - {file: 吹き出し1.png, what: 吹き出し（考えごと）}
+
+missing_roles:   # まだ無い役（必要になったら許可をもらって足す）
+  - 上司・社長
+  - お客さん
+  - 経理担当（男性）
+  - 初心者（年配）
