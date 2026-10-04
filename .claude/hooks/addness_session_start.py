@@ -24,7 +24,7 @@ def main():
     goals = load_goals()
     last = load_json(LAST_WRITE_JSON, {})
 
-    lines = ["【Addness】このフォルダの仕事は Addness に残す（CLAUDE.md「Addnessと働く」）。"]
+    lines = ["【Addness】このフォルダの仕事は Addness に残す（Addnessと働く.md）。"]
     root = goals.get("root_goal") or {}
     if root.get("id"):
         lines.append(f"- 全体のゴール：{root.get('title', '')}（{root['id']}）")
@@ -96,4 +96,4 @@ if __name__ == "__main__":
     try:
         main()
     except Exception as e:  # フックの失敗で作業を止めない
-        print(f"【Addness】案内の作成に失敗（{e}）。CLAUDE.md の「Addnessと働く」に従う。")
+        print(f"【Addness】案内の作成に失敗（{e}）。Addnessと働く.md に従う。")

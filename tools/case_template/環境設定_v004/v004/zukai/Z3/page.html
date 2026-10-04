@@ -1,0 +1,144 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+  /* Z3「Slack・LINE は自分のだけ／Addness はみんなの今」。座標は 1920×1080 の絶対の px */
+  .abs { position: absolute; }
+  .person { width: 226px; height: 345px; }
+  .person .lab { position: absolute; top: 0; left: 0; width: 226px; display: flex; justify-content: center; }
+  .person img { position: absolute; top: 72px; left: 20px; height: 270px; }
+  .chat { position: relative; width: 230px; height: 80px; border-radius: 22px; display: flex; align-items: center; justify-content: center;
+          font-family: Lbl; font-size: 54px; color: #fff; box-sizing: border-box; padding-bottom: 6px; }
+  .chat .tail { position: absolute; left: -26px; top: 22px; width: 0; height: 0; border-style: solid; border-width: 14px 30px 14px 0; }
+  .msg { position: relative; width: 116px; height: 42px; background: #fff; border-radius: 12px; }
+  .msg .b { position: absolute; left: 14px; height: 7px; border-radius: 4px; background: #9a9a9a; }
+  .msg .t { position: absolute; left: 12px; bottom: -12px; width: 0; height: 0; border-style: solid; border-width: 14px 12px 0 0; border-color: #fff transparent transparent transparent; }
+  .icon { width: 200px; height: 252px; }
+  .icon .nm { position: absolute; top: 184px; left: -40px; width: 280px; display: flex; justify-content: center; }
+  #bandbox { position: relative; width: 1800px; height: 90px; background: #fae65f; border-radius: 10px; overflow: hidden; }
+  #bandbox .txt { position: absolute; left: 0; width: 100%; text-align: center; top: 6px; font-family: Lbl; font-size: 64px; line-height: 1.15; color: #111; white-space: nowrap; }
+  #sweep { position: absolute; top: 0; width: 320px; height: 90px; display: none;
+           background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0) 100%); }
+  .cc { position: absolute; left: 0; top: 64px; width: 220px; height: 140px; border-radius: 24px; background: #d97757;
+        display: flex; align-items: center; justify-content: center; text-align: center;
+        font-family: Lbl; font-size: 48px; line-height: 1.05; color: #fff; box-shadow: 0 0 0 4px #fff inset; }
+</style></head><body>
+<div id="board"></div>
+
+<!-- 下の帯：Addness（最初から。答え「みんなの今」も最初から出す） -->
+<div class="part" id="band" data-f0="0" style="left:60px;top:570px"><div class="in"><div id="bandbox"><div id="sweep"></div><div class="txt">Addness：みんなの今</div></div></div></div>
+
+<!-- 左：三上さん側 -->
+<div class="part" id="mikami" data-f0="80" style="left:75px;top:128px"><div class="in person" id="mikami_in"></div></div>
+<div class="part" id="slack" data-f0="137" style="left:312px;top:205px"><div class="in"><div class="chat" style="background:#4a154b">Slack<div class="tail" style="border-color:transparent #4a154b transparent transparent"></div></div></div></div>
+<div class="part" id="line" data-f0="190" style="left:312px;top:302px"><div class="in"><div class="chat" style="background:#06c755">LINE<div class="tail" style="border-color:transparent #06c755 transparent transparent"></div></div></div></div>
+<!-- 積み上がるメッセージ（字の無い吹き出し 6枚。下の段から） -->
+<div class="part" id="m1" data-f0="258" data-m="bounce" data-dur="5" style="left:312px;top:150px"><div class="in"><div class="msg" style="transform:rotate(-2deg)"><div class="b" style="top:10px;width:84px"></div><div class="b" style="top:24px;width:58px"></div><div class="t"></div></div></div></div>
+<div class="part" id="m2" data-f0="263" data-m="bounce" data-dur="5" style="left:444px;top:148px"><div class="in"><div class="msg" style="transform:rotate(3deg)"><div class="b" style="top:10px;width:72px"></div><div class="b" style="top:24px;width:88px"></div><div class="t"></div></div></div></div>
+<div class="part" id="m3" data-f0="268" data-m="bounce" data-dur="5" style="left:326px;top:99px"><div class="in"><div class="msg" style="transform:rotate(2deg)"><div class="b" style="top:10px;width:88px"></div><div class="b" style="top:24px;width:50px"></div><div class="t"></div></div></div></div>
+<div class="part" id="m4" data-f0="273" data-m="bounce" data-dur="5" style="left:456px;top:97px"><div class="in"><div class="msg" style="transform:rotate(-3deg)"><div class="b" style="top:10px;width:64px"></div><div class="b" style="top:24px;width:86px"></div><div class="t"></div></div></div></div>
+<div class="part" id="m5" data-f0="278" data-m="bounce" data-dur="5" style="left:316px;top:54px"><div class="in"><div class="msg" style="transform:rotate(-1deg)"><div class="b" style="top:10px;width:80px"></div><div class="b" style="top:24px;width:66px"></div><div class="t"></div></div></div></div>
+<div class="part" id="m6" data-f0="283" data-m="bounce" data-dur="5" style="left:448px;top:53px"><div class="in"><div class="msg" style="transform:rotate(2deg)"><div class="b" style="top:10px;width:86px"></div><div class="b" style="top:24px;width:60px"></div><div class="t"></div></div></div></div>
+
+<!-- 右：創太くん側 -->
+<div class="part" id="souta" data-f0="309" style="left:1030px;top:128px"><div class="in person" id="souta_in"></div></div>
+<div class="part" id="souta_lab" data-f0="395" style="left:1030px;top:128px"><div class="in person" style="height:70px" id="souta_lab_in"></div></div>
+
+<!-- 壁（上から落ちてくる。ZUKAI.custom）と赤い札 -->
+<div class="part" id="wall" data-f0="363" data-m="none" style="left:925px;top:60px"><div class="in" id="wall_in"></div></div>
+<div class="part" id="jibun" data-f0="364" data-m="bounce" style="left:636px;top:58px"><div class="in" id="jibun_in"></div></div>
+
+<div class="part" id="cal" data-f0="480" style="left:1300px;top:168px"><div class="in icon" id="cal_in"></div></div>
+<div class="part" id="cc" data-f0="516" data-m="slideL" style="left:580px;top:186px"><div class="in" id="cc_in" style="width:220px;height:204px"></div></div>
+<div class="part" id="a1" data-f0="536" data-m="grow" style="left:802px;top:256px"><div class="in" id="a1_in"></div></div>
+<div class="part" id="x1" data-f0="545" data-m="bounce" style="left:931px;top:246px"><div class="in" id="x1_in"></div></div>
+<div class="part" id="gmail" data-f0="606" style="left:1580px;top:168px"><div class="in icon" id="gmail_in"></div></div>
+<div class="part" id="a2" data-f0="610" data-m="grow" style="left:802px;top:332px"><div class="in" id="a2_in"></div></div>
+<div class="part" id="x2" data-f0="619" data-m="bounce" style="left:931px;top:322px"><div class="in" id="x2_in"></div></div>
+
+<!-- 締め：2人の足元から帯へ白い線 -->
+<div class="part" id="l1" data-f0="637" data-m="draw" data-dur="8" style="left:175px;top:466px"><div class="in"><svg width="20" height="104" style="display:block;overflow:visible"><path class="draw" d="M10,12 L10,94" stroke="#fff" stroke-width="20" stroke-linecap="round" fill="none"/></svg></div></div>
+<div class="part" id="l2" data-f0="637" data-m="draw" data-dur="8" style="left:1133px;top:466px"><div class="in"><svg width="20" height="104" style="display:block;overflow:visible"><path class="draw" d="M10,12 L10,94" stroke="#fff" stroke-width="20" stroke-linecap="round" fill="none"/></svg></div></div>
+<div class="part" id="d1" data-f0="645" data-m="bounce" style="left:167px;top:543px"><div class="in"><svg width="36" height="36" style="display:block"><circle cx="18" cy="18" r="16" fill="#fff" stroke="#111" stroke-width="3"/></svg></div></div>
+<div class="part" id="d2" data-f0="645" data-m="bounce" style="left:1125px;top:543px"><div class="in"><svg width="36" height="36" style="display:block"><circle cx="18" cy="18" r="16" fill="#fff" stroke="#111" stroke-width="3"/></svg></div></div>
+
+<script>
+window.ZUKAI = { frames: 674 };
+const $ = (id) => document.getElementById(id);
+const PC = Z.ILLUST + encodeURIComponent("パソコン業務.png");
+const namePlate = (t) => Z.plate(t, { size: 48, bg: "#fff", fg: "#111", pad: "4px 18px 10px", radius: 8 });
+
+// 人（あなたと同じ絵。創太くんは左右反転）
+$("mikami_in").innerHTML = `<div class="lab">${namePlate("三上さん")}</div><img src="${PC}">`;
+$("souta_in").innerHTML = `<img src="${PC}" style="transform:scaleX(-1)">`;
+$("souta_lab_in").innerHTML = `<div class="lab">${namePlate("創太くん")}</div>`;
+
+// 壁（灰色のレンガ。x925〜1005・y60〜500。1段にレンガ2つを互い違いに積む・縁は濃く）
+(() => {
+  const W = 80, H = 440, R = 40, B = 6;
+  let s = `<svg width="${W}" height="${H}" style="display:block"><rect x="0" y="0" width="${W}" height="${H}" rx="6" fill="#3c3c3c"/>`;
+  const brick = (x0, y0, x1, y1) => {
+    const a = Math.max(x0, B), b = Math.min(x1, W - B);
+    if (b - a < 6) return "";
+    return `<rect x="${a + 2}" y="${y0 + 2}" width="${b - a - 4}" height="${y1 - y0 - 4}" rx="3" fill="#a3a3a3"/>` +
+           `<rect x="${a + 2}" y="${y0 + 2}" width="${b - a - 4}" height="5" rx="2" fill="#c9c9c9"/>`;
+  };
+  for (let y = B, r = 0; y < H - B; y += R, r++) {
+    const y1 = Math.min(H - B, y + R);
+    if (r % 2 === 0) { s += brick(0, y, W / 2, y1) + brick(W / 2, y, W, y1); }
+    else { s += brick(0, y, W / 4, y1) + brick(W / 4, y, W * 3 / 4, y1) + brick(W * 3 / 4, y, W, y1); }
+  }
+  s += `<rect x="2.5" y="2.5" width="${W - 5}" height="${H - 5}" rx="6" fill="none" stroke="#111" stroke-width="5"/>`;
+  $("wall_in").innerHTML = s + `</svg>`;
+})();
+$("jibun_in").innerHTML = Z.plate("自分のだけ", { size: 50, bg: "#d90a0a", fg: "#fff", pad: "4px 16px 10px" });
+
+// カレンダー（ロゴは使わない）
+$("cal_in").innerHTML = `<svg width="200" height="180" style="position:absolute;left:0;top:0">
+  <rect x="4" y="16" width="192" height="160" rx="16" fill="#fff" stroke="#222" stroke-width="4"/>
+  <path d="M4,32 a16,16 0 0 1 16,-16 h160 a16,16 0 0 1 16,16 v34 h-192 z" fill="#d90a0a" stroke="#222" stroke-width="4"/>
+  <rect x="48" y="2" width="16" height="32" rx="8" fill="#444"/><rect x="136" y="2" width="16" height="32" rx="8" fill="#444"/>
+  ${[0, 1, 2].map(r => [0, 1, 2, 3].map(c => `<rect x="${20 + c * 42}" y="${80 + r * 30}" width="32" height="22" rx="4" fill="${r === 1 && c === 2 ? '#1b5fd1' : '#d6d6d6'}"/>`).join("")).join("")}
+</svg><div class="nm">${Z.stk("カレンダー", { size: 48 })}</div>`;
+
+// Gmail（封筒と鍵の絵。ロゴは使わない）
+$("gmail_in").innerHTML = `<svg width="200" height="180" style="position:absolute;left:0;top:0">
+  <rect x="4" y="24" width="186" height="128" rx="10" fill="#fff" stroke="#222" stroke-width="4"/>
+  <polyline points="8,30 97,96 186,30" fill="none" stroke="#8a8a8a" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M138,118 v-16 a20,20 0 0 1 40,0 v16" fill="none" stroke="#444" stroke-width="10"/>
+  <rect x="124" y="114" width="68" height="58" rx="9" fill="#f2b600" stroke="#222" stroke-width="4"/>
+  <circle cx="158" cy="137" r="7" fill="#222"/><rect x="155" y="140" width="6" height="16" rx="2" fill="#222"/>
+</svg><div class="nm">${Z.stk("Gmail", { size: 48 })}</div>`;
+
+// 俺の Claude Code（共通のオレンジの角丸の四角に白い字）
+$("cc_in").innerHTML = `<div class="abs" style="left:0;top:0">${Z.stk("俺の", { size: 52 })}</div><div class="cc">Claude<br>Code</div>`;
+
+// AI の点線の矢印（白。壁で止まる）。zukai.js の grow が動かす形（svg.arr・.clip・.head）
+let __da = 0;
+function dashArrow(len) {
+  const hl = 34, hw = 48, id = "z3da" + (++__da);
+  return `<svg class="arr" data-len="${len}" data-hl="${hl}" data-v="0" width="${len}" height="${hw}" style="overflow:visible;display:block">` +
+    `<defs><clipPath id="${id}"><rect class="clip" x="0" y="0" width="0" height="${hw}"/></clipPath></defs>` +
+    `<g clip-path="url(#${id})"><line x1="0" y1="${hw / 2}" x2="${len - hl + 2}" y2="${hw / 2}" stroke="#fff" stroke-width="10" stroke-dasharray="16 10"/></g>` +
+    `<g class="head"><polygon points="${len - hl},0 ${len},${hw / 2} ${len - hl},${hw}" fill="#fff"/></g></svg>`;
+}
+$("a1_in").innerHTML = dashArrow(115);
+$("a2_in").innerHTML = dashArrow(115);
+const X = `<svg width="68" height="68" style="display:block;overflow:visible"><path d="M12,12 L56,56 M56,12 L12,56" stroke="#fff" stroke-width="26" stroke-linecap="round"/><path d="M12,12 L56,56 M56,12 L12,56" stroke="#e60000" stroke-width="15" stroke-linecap="round"/></svg>`;
+$("x1_in").innerHTML = X;
+$("x2_in").innerHTML = X;
+
+// ページ独自の動き：壁が上から落ちる（f363〜368）・締めに帯が1回光る（f645〜）
+const WALL_Y = [-440, -290, -140, 0, -14, 0];
+window.ZUKAI.custom = (f) => {
+  const k = f - 363;
+  const y = (k >= 0 && k < WALL_Y.length) ? WALL_Y[k] : 0;
+  $("wall_in").style.transform = y ? `translateY(${y}px)` : "none";
+  const g = f - 645, sw = $("sweep");
+  let sig = "w" + y;
+  if (g >= 0 && g < 16) { sw.style.display = "block"; sw.style.left = (-320 + g * (2120 / 15)).toFixed(1) + "px"; sig += "s" + g; }
+  else sw.style.display = "none";
+  const h = (g >= 0 && g < 24) ? Math.sin(Math.PI * Math.min(1, (g + 1) / 24)) : 0;
+  $("bandbox").style.boxShadow = h > 0 ? `0 0 ${(50 * h).toFixed(1)}px ${(14 * h).toFixed(1)}px rgba(250,230,95,${(0.9 * h).toFixed(3)})` : "none";
+  return sig + "h" + h.toFixed(3);
+};
+</script></body></html>

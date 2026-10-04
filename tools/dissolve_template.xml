@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='utf-8'?>
+<DissolveTemplate source="cowork_v003.prproj V3 10295"><VideoTransitionTrackItem ObjectID="10295" ClassID="3eeaed31-f78e-4144-b8e8-077656517181" Version="6">
+		<TransitionTrackItem Version="3">
+			<TrackItem Version="4">
+				<Start>112895887104000</Start>
+				<End>113107778784000</End>
+			</TrackItem>
+			<HasOutgoingClip>true</HasOutgoingClip>
+			<HasIncomingClip>false</HasIncomingClip>
+			<DisplayName>クロスディゾルブ</DisplayName>
+			<MatchName>AE.AE_Impact_Dissolve</MatchName>
+			<Alignment>211891680000</Alignment>
+		</TransitionTrackItem>
+		<VideoFilterComponent ObjectRef="28739" />
+	</VideoTransitionTrackItem>
+	<VideoFilterComponent ObjectID="28739" ClassID="d10da199-beea-4dd1-b941-ed3a78766d50" Version="9">
+		<Component Version="7">
+			<Params Version="1">
+				<Param Index="0" ObjectRef="49893" />
+				<Param Index="1" ObjectRef="49894" />
+				<Param Index="2" ObjectRef="49895" />
+				<Param Index="3" ObjectRef="49896" />
+				<Param Index="4" ObjectRef="49897" />
+				<Param Index="5" ObjectRef="49898" />
+				<Param Index="6" ObjectRef="49899" />
+				<Param Index="7" ObjectRef="49900" />
+				<Param Index="8" ObjectRef="49901" />
+				<Param Index="9" ObjectRef="49902" />
+				<Param Index="10" ObjectRef="49903" />
+				<Param Index="11" ObjectRef="49904" />
+				<Param Index="12" ObjectRef="49905" />
+				<Param Index="13" ObjectRef="49906" />
+				<Param Index="14" ObjectRef="49907" />
+				<Param Index="15" ObjectRef="49908" />
+				<Param Index="16" ObjectRef="49909" />
+				<Param Index="17" ObjectRef="49910" />
+				<Param Index="18" ObjectRef="49911" />
+				<Param Index="19" ObjectRef="49912" />
+				<Param Index="20" ObjectRef="49913" />
+				<Param Index="21" ObjectRef="49914" />
+				<Param Index="22" ObjectRef="49915" />
+				<Param Index="23" ObjectRef="49916" />
+				<Param Index="24" ObjectRef="49917" />
+				<Param Index="25" ObjectRef="49918" />
+				<Param Index="26" ObjectRef="49919" />
+				<Param Index="27" ObjectRef="49920" />
+				<Param Index="28" ObjectRef="49921" />
+				<Param Index="29" ObjectRef="49922" />
+			</Params>
+			<DisplayName>クロスディゾルブ</DisplayName>
+		</Component>
+		<VideoFilterType>2</VideoFilterType>
+		<MatchName>AE.AE_Impact_Dissolve</MatchName>
+	</VideoFilterComponent>
+	<VideoComponentParam ObjectID="49922" ClassID="a4ff2d6e-7ac2-44f8-9d52-17d9ca50e542" Version="10">
+		<Name>_ Sequence Pixel Ratio</Name>
+		<ParameterID>9042</ParameterID>
+		<StartKeyframe>-91445760000000000,-1.,0,0,0,0,0,0</StartKeyframe>
+		<LowerBound>-1</LowerBound>
+		<UpperBound>1000000000</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49921" ClassID="a4ff2d6e-7ac2-44f8-9d52-17d9ca50e542" Version="10">
+		<Name>_ Sequence Height</Name>
+		<ParameterID>9041</ParameterID>
+		<StartKeyframe>-91445760000000000,-1.,0,0,0,0,0,0</StartKeyframe>
+		<LowerBound>-1</LowerBound>
+		<UpperBound>1000000000</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49920" ClassID="a4ff2d6e-7ac2-44f8-9d52-17d9ca50e542" Version="10">
+		<Name>_ Sequence Width</Name>
+		<ParameterID>9040</ParameterID>
+		<StartKeyframe>-91445760000000000,-1.,0,0,0,0,0,0</StartKeyframe>
+		<LowerBound>-1</LowerBound>
+		<UpperBound>1000000000</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49919" ClassID="cc12343e-f113-4d3b-ae05-b287db77d461" Version="10">
+		<Name>_ Overlay Enabled</Name>
+		<ParameterID>9020</ParameterID>
+		<StartKeyframe>-91445760000000000,false,0,0,0,0,0,0</StartKeyframe>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49918" ClassID="2f2eb0a3-318c-4a93-99fc-f1d319edc864" Version="10">
+		<Name>_ Source B Layer</Name>
+		<ParameterID>9000</ParameterID>
+		<StartKeyframe>-91445760000000000,4294967293,0,0,0,0,0,0</StartKeyframe>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49917" ClassID="a4ff2d6e-7ac2-44f8-9d52-17d9ca50e542" Version="10">
+		<ParameterID>8301</ParameterID>
+		<StartKeyframe>-91445760000000000,0.,0,0,0,0,0,0</StartKeyframe>
+		<LowerBound>0</LowerBound>
+		<UpperBound>16777215</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49916" ClassID="a4ff2d6e-7ac2-44f8-9d52-17d9ca50e542" Version="10">
+		<ParameterID>8300</ParameterID>
+		<StartKeyframe>-91445760000000000,0.,0,0,0,0,0,0</StartKeyframe>
+		<LowerBound>0</LowerBound>
+		<UpperBound>16777215</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49915" ClassID="a4ff2d6e-7ac2-44f8-9d52-17d9ca50e542" Version="10">
+		<Name>_ Applied Version</Name>
+		<ParameterID>24</ParameterID>
+		<StartKeyframe>-91445760000000000,260501.,0,0,0,0,0,0</StartKeyframe>
+		<LowerBound>0</LowerBound>
+		<UpperBound>999999</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49914" ClassID="cc12343e-f113-4d3b-ae05-b287db77d461" Version="10">
+		<ParameterControlType>16</ParameterControlType>
+		<ParameterID>8141</ParameterID>
+		<StartKeyframe>-91445760000000000,false,0,0,0,0,0,0</StartKeyframe>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49913" ClassID="cc12343e-f113-4d3b-ae05-b287db77d461" Version="10">
+		<Name>_ Overlay Info</Name>
+		<ParameterID>8281</ParameterID>
+		<StartKeyframe>-91445760000000000,false,0,0,0,0,0,0</StartKeyframe>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49912" ClassID="6e02e8bb-2569-46b2-8ab1-4ab11c43e9c8" Version="10">
+		<Name>_ Overlay Mode</Name>
+		<DiscontinuousInterpolate>true</DiscontinuousInterpolate>
+		<ParameterID>8280</ParameterID>
+		<StartKeyframe>-91445760000000000,0,0,0,0,0,0,0</StartKeyframe>
+		<LowerBound>0</LowerBound>
+		<UpperBound>2</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49911" ClassID="cc12343e-f113-4d3b-ae05-b287db77d461" Version="10">
+		<Name>コントロール</Name>
+		<ParameterControlType>12</ParameterControlType>
+		<ParameterID>20</ParameterID>
+		<StartKeyframe>-91445760000000000,false,0,0,0,0,0,0</StartKeyframe>
+		<UpperBound>false</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49910" ClassID="cc12343e-f113-4d3b-ae05-b287db77d461" Version="10">
+		<Name>フォーカスを反転</Name>
+		<ParameterID>33</ParameterID>
+		<StartKeyframe>-91445760000000000,false,0,0,0,0,0,0</StartKeyframe>
+	</VideoComponentParam>
+	<PointComponentParam ObjectID="49909" ClassID="ca81d347-309b-44d2-acc7-1c572efb973c" Version="4">
+		<Name>フォーカス位置</Name>
+		<ParameterID>32</ParameterID>
+		<StartKeyframe>-91445760000000000,0.5:0.5,0,0,0,0,0,0,5,4,0,0,0,0</StartKeyframe>
+	</PointComponentParam>
+	<VideoComponentParam ObjectID="49908" ClassID="a4ff2d6e-7ac2-44f8-9d52-17d9ca50e542" Version="10">
+		<Name>フォーカス量</Name>
+		<ParameterID>31</ParameterID>
+		<StartKeyframe>-91445760000000000,0.,0,0,0,0,0,0</StartKeyframe>
+		<LowerBound>0</LowerBound>
+		<UpperBound>100</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49907" ClassID="6e02e8bb-2569-46b2-8ab1-4ab11c43e9c8" Version="10">
+		<Name>タイプ</Name>
+		<DiscontinuousInterpolate>true</DiscontinuousInterpolate>
+		<ParameterID>34</ParameterID>
+		<StartKeyframe>-91445760000000000,0,0,0,0,0,0,0</StartKeyframe>
+		<LowerBound>0</LowerBound>
+		<UpperBound>3</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49906" ClassID="6e02e8bb-2569-46b2-8ab1-4ab11c43e9c8" Version="10">
+		<Name>タイプ</Name>
+		<DiscontinuousInterpolate>true</DiscontinuousInterpolate>
+		<ParameterID>5</ParameterID>
+		<StartKeyframe>-91445760000000000,0,0,0,0,0,0,0</StartKeyframe>
+		<LowerBound>0</LowerBound>
+		<UpperBound>4</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49905" ClassID="cc12343e-f113-4d3b-ae05-b287db77d461" Version="10">
+		<Name>ビジュアルカーブエディター</Name>
+		<ParameterControlType>12</ParameterControlType>
+		<ParameterID>8021</ParameterID>
+		<StartKeyframe>-91445760000000000,false,0,0,0,0,0,0</StartKeyframe>
+		<UpperBound>false</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49904" ClassID="a4ff2d6e-7ac2-44f8-9d52-17d9ca50e542" Version="10">
+		<Name>イーズアウト</Name>
+		<ParameterID>17</ParameterID>
+		<StartKeyframe>-91445760000000000,34.,0,0,0,0,0,0</StartKeyframe>
+		<LowerBound>0</LowerBound>
+		<UpperBound>100</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49903" ClassID="a4ff2d6e-7ac2-44f8-9d52-17d9ca50e542" Version="10">
+		<Name>イーズイン</Name>
+		<ParameterID>16</ParameterID>
+		<StartKeyframe>-91445760000000000,34.,0,0,0,0,0,0</StartKeyframe>
+		<LowerBound>0</LowerBound>
+		<UpperBound>100</UpperBound>
+	</VideoComponentParam>
+	<ArbVideoComponentParam ObjectID="49902" ClassID="313e54d4-6903-49ad-b0bf-8262cdd10f4e" Version="3">
+		<Name>曲線グラフ</Name>
+		<ParameterControlType>9</ParameterControlType>
+		<ParameterID>8022</ParameterID>
+		<StartKeyframePosition>-91445760000000000</StartKeyframePosition>
+	</ArbVideoComponentParam>
+	<VideoComponentParam ObjectID="49901" ClassID="cc12343e-f113-4d3b-ae05-b287db77d461" Version="10">
+		<Name>ビジュアルカーブエディター</Name>
+		<ParameterControlType>11</ParameterControlType>
+		<ParameterID>8020</ParameterID>
+		<StartKeyframe>-91445760000000000,false,0,0,0,0,0,0</StartKeyframe>
+		<UpperBound>false</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49900" ClassID="a4ff2d6e-7ac2-44f8-9d52-17d9ca50e542" Version="10">
+		<Name>シード</Name>
+		<ParameterID>22</ParameterID>
+		<StartKeyframe>-91445760000000000,0.,0,0,0,0,0,0</StartKeyframe>
+		<LowerBound>0</LowerBound>
+		<UpperBound>99999</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49899" ClassID="cc12343e-f113-4d3b-ae05-b287db77d461" Version="10">
+		<ParameterControlType>16</ParameterControlType>
+		<ParameterID>8040</ParameterID>
+		<StartKeyframe>-91445760000000000,false,0,0,0,0,0,0</StartKeyframe>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49898" ClassID="cc12343e-f113-4d3b-ae05-b287db77d461" Version="10">
+		<Name>コントロール</Name>
+		<ParameterControlType>11</ParameterControlType>
+		<ParameterID>19</ParameterID>
+		<StartKeyframe>-91445760000000000,false,0,0,0,0,0,0</StartKeyframe>
+		<UpperBound>false</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49897" ClassID="cc12343e-f113-4d3b-ae05-b287db77d461" Version="10">
+		<Name>トランジションタイミング</Name>
+		<ParameterControlType>12</ParameterControlType>
+		<ParameterID>8121</ParameterID>
+		<StartKeyframe>-91445760000000000,false,0,0,0,0,0,0</StartKeyframe>
+		<UpperBound>false</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49896" ClassID="a4ff2d6e-7ac2-44f8-9d52-17d9ca50e542" Version="10">
+		<Name>終了</Name>
+		<ParameterID>3</ParameterID>
+		<StartKeyframe>-91445760000000000,100.,0,0,0,0,0,0</StartKeyframe>
+		<LowerBound>0</LowerBound>
+		<UpperBound>100</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49895" ClassID="a4ff2d6e-7ac2-44f8-9d52-17d9ca50e542" Version="10">
+		<Name>開始</Name>
+		<ParameterID>2</ParameterID>
+		<StartKeyframe>-91445760000000000,0.,0,0,0,0,0,0</StartKeyframe>
+		<LowerBound>0</LowerBound>
+		<UpperBound>100</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49894" ClassID="cc12343e-f113-4d3b-ae05-b287db77d461" Version="10">
+		<Name>トランジションタイミング</Name>
+		<ParameterControlType>11</ParameterControlType>
+		<ParameterID>8120</ParameterID>
+		<StartKeyframe>-91445760000000000,false,0,0,0,0,0,0</StartKeyframe>
+		<UpperBound>false</UpperBound>
+	</VideoComponentParam>
+	<VideoComponentParam ObjectID="49893" ClassID="cc12343e-f113-4d3b-ae05-b287db77d461" Version="10">
+		<Name>エラーが発生しました</Name>
+		<ParameterControlType>16</ParameterControlType>
+		<ParameterID>8100</ParameterID>
+		<StartKeyframe>-91445760000000000,false,0,0,0,0,0,0</StartKeyframe>
+	</VideoComponentParam>
+	</DissolveTemplate>

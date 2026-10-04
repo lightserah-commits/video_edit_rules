@@ -1,0 +1,28 @@
+{
+ "key": "I12",
+ "title": "Addness",
+ "start_f": 893,
+ "end_f": 1062,
+ "anchor": {
+  "cap": "11",
+  "f": 893
+ },
+ "wipe": {
+  "show": false
+ },
+ "se": [
+  {
+   "f": 0,
+   "se": "ピコンッ",
+   "why": "画像が出る"
+  }
+ ],
+ "hide_caption_ids": [],
+ "removes": "",
+ "checks": [
+  5,
+  84,
+  164
+ ],
+ "story": "聞き手 11「よく動画でも Addnessで環境設定するのがいいとか」12「最近Addnessも結構話題に」。問いの札（下）と重ならない上の方"
+}

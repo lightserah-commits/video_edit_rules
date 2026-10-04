@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- I01（v004 G3）スパイク（横 → 裏のポイント → 平らな底と見比べ）。gen_images.py が作った（手で直さない） -->
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+  .ph { position: relative; background: #fff; border: 14px solid #fff; border-radius: 14px; box-shadow: 0 14px 40px rgba(0,0,0,.6); overflow: hidden; box-sizing: border-box; }
+  .ph img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .ph.contain img { object-fit: contain; background: #fff; }
+  .card { display: flex; align-items: center; gap: 24px; background: #fff; border: 5px solid #000; border-radius: 26px; padding: 16px 40px 16px 22px;
+          box-shadow: 0 8px 22px rgba(0,0,0,.45); box-sizing: border-box; }
+  .card .logo { height: 120px; width: auto; max-width: 420px; display: block; flex: none; }
+  .card .nm { font-family: Lbl; font-size: 80px; line-height: 1.0; color: #111; white-space: nowrap; padding-bottom: 4px; }
+  .card .sub { font-family: Lbl; font-size: 38px; line-height: 1.1; color: #1b5fd1; white-space: nowrap; }
+  .credit { font-family: 'Hiragino Sans'; font-weight: 600; font-size: 22px; color: #fff; text-shadow: 0 0 4px #000, 0 0 2px #000; white-space: nowrap; }
+</style>
+</head><body>
+<div class="part" id="p1" data-f0="0" data-f1="116" data-m="pop" style="left:510px;top:110px"><div class="in"><div class="ph" style="width:900px;height:600px"><img src="../assets/img_spike_side.jpg"></div></div></div>
+<div class="part" id="p2" data-f0="116" data-f1="212" data-m="pop" style="left:735px;top:80px"><div class="in"><div class="ph" style="width:450px;height:600px"><img src="../assets/img_spike_sole.jpg"></div></div></div>
+<div class="part" id="p2L" data-f0="116" data-f1="212" data-m="pop" style="left:960px;top:690px"><div class="in"><div id="p2Lt" style="position:relative;display:inline-block;transform:translateX(-50%)"></div></div></div>
+<div class="part" id="p3" data-f0="212" data-m="pop" style="left:150px;top:150px"><div class="in"><div class="ph" style="width:780px;height:520px"><img src="../assets/img_flat_sole.jpg"></div></div></div>
+<div class="part" id="p3L" data-f0="212" data-m="pop" style="left:540px;top:680px"><div class="in"><div id="p3Lt" style="position:relative;display:inline-block;transform:translateX(-50%)"></div></div></div>
+<div class="part" id="p4" data-f0="342" data-m="pop" style="left:1190px;top:150px"><div class="in"><div class="ph" style="width:330px;height:520px"><img src="../assets/img_spike_sole.jpg" style="object-position:15% 50%"></div></div></div>
+<div class="part" id="p4L" data-f0="342" data-m="pop" style="left:1355px;top:680px"><div class="in"><div id="p4Lt" style="position:relative;display:inline-block;transform:translateX(-50%)"></div></div></div>
+<script>
+window.ZUKAI = { frames: 516 };
+document.getElementById('p2Lt').innerHTML = Z.stk("スパイクの裏", {size: 58});
+document.getElementById('p3Lt').innerHTML = Z.stk("ポイントなし", {size: 58});
+document.getElementById('p4Lt').innerHTML = Z.stk("ポイント付き", {size: 58});
+</script></body></html>

@@ -1,0 +1,33 @@
+{
+ "key": "I02",
+ "title": "Claude Code と Codex の公式ロゴ",
+ "start_f": 4569,
+ "end_f": 4778,
+ "anchor": {
+  "cap": "75",
+  "f": 4569
+ },
+ "wipe": {
+  "show": false
+ },
+ "se": [
+  {
+   "f": 0,
+   "se": "cursor",
+   "why": "画像が出る"
+  },
+  {
+   "f": 69,
+   "se": "cursor",
+   "why": "画像が出る"
+  }
+ ],
+ "hide_caption_ids": [],
+ "removes": "",
+ "checks": [
+  5,
+  104,
+  204
+ ],
+ "story": "75「男は黙ってClaude Code」→ 76「男は黙ってCodex」。L1 と同じ左上のロゴの札。77 の終わりで消す"
+}

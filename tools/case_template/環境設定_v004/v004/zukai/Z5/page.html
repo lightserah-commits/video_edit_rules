@@ -1,0 +1,266 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+#L { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; }
+#L3 { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 40px 40px; }
+.win .body.two { flex-direction: column; gap: 0; font-family: Lbl; line-height: 1.1; }
+.win { position: relative; box-sizing: border-box; border-radius: 14px; overflow: hidden; }
+.win .bar { height: 28px; display: flex; align-items: center; gap: 9px; padding-left: 14px; }
+.win .bar i { width: 14px; height: 14px; border-radius: 50%; display: block; }
+.win .body { display: flex; align-items: center; justify-content: center; gap: 18px; white-space: nowrap; }
+.wW { background: #fff; border: 3px solid #9aa0a8; }
+.wW .bar { background: #e2e4e8; }
+.wW .body { color: #111; }
+.wB { background: #15171b; border: 3px solid #70757d; }
+.wB .bar { background: #30343a; }
+.wB .body { color: #fff; }
+.prompt { font-family: Menlo, Monaco, monospace; font-weight: bold; color: #3ee07a; line-height: 1; }
+.arrw { position: absolute; left: 0; top: 0; transform-origin: 0 50%; }
+.stc { position: absolute; overflow: hidden; }
+.streak { position: absolute; top: 0; display: none; background: linear-gradient(90deg, rgba(245,230,58,0), #f5e63a 35%, #fff7a0 70%, #f5e63a); }
+</style>
+</head><body>
+<div id="board"></div>
+<div id="L"></div>
+<div id="L3"></div>
+<script>
+// Z5 入口がいっぱい vs 入口は1つ（v002 f35970〜f37400。部品のコマ＝絶対のコマ − 35970。tl.py words 1215 1234 で測った語の聞こえ始め）
+const F = {
+  CLI: 11,      // 1215「Codex CLI」f35981
+  APP: 80,      // 1217「Codexデスクトップアプリ」f36050
+  CCA: 127,     // 1218「Claude Codeデスクトップアプリ」f36097
+  WOK: 185,     // 1219「中華鍋」f36156
+  RICE: 271,    // 1220+1「炊飯器」f36241
+  MAKE: 375,    // 1220+2「作る」f36345
+  BUB: 433,     // 1222「なんで」f36404
+  S2: 532,      // 1223「だから俺は」f36504（2コマ前）
+  RCC: 566,     // 1223「Claude Code」f36536
+  DAN: 613,     // 1224「下側は」f36583
+  FABLE: 634,   // 1224「Fable」f36604
+  CDX: 696,     // 1225「Codex CLI」f36666
+  CCCLI: 821,   // 1226「Claude Code CLI」f36791
+  SUB: 914,     // 1227「サブエージェント」f36884
+  ADD: 1040,    // 1228「Addness」f37010
+  MAIL: 1074,   // 1229「メール」f37044
+  RUN: 1143,    // 1230「Fable入口」f37113
+  ONLY: 1203,   // 1231「Claude Codeだけ」f37173
+  Q: 1238,      // 1232（聞き手）「入口は1つの方が」f37208
+  MIY: 1293,    // 1233「見やすい 全然違う」f37263
+  RICE2: 1370,  // 1234「炊飯器」f37340
+  N: 1430
+};
+const DIM = `${F.S2}-${F.Q}:0.45`;               // 場面②の間、左を暗く
+const RD = `${F.Q}-${F.N}:0.45`;                 // 場面③の間、右の灰色の段とその中身を暗く（任せている所。不透明のまま）
+const LW = document.getElementById('L');
+const ILL = (n) => Z.ILLUST + encodeURIComponent(n);
+const ROBOT = ILL('ai_character08_think.png');
+const YELLOW_ADD = '#fae65f';                     // 画面の「ステート層（Addness）」の黄色（画面録画 17:17 の LAYER 6 から取った）
+
+function part(id, f0, x, y, html, o = {}) {
+  const d = document.createElement('div');
+  d.className = 'part'; d.id = id; d.dataset.f0 = f0;
+  if (o.f1 != null) d.dataset.f1 = o.f1;
+  if (o.m) d.dataset.m = o.m;
+  if (o.dur) d.dataset.dur = o.dur;
+  if (o.dim) d.dataset.dim = o.dim;
+  d.style.left = x + 'px'; d.style.top = y + 'px';
+  if (o.z != null) d.style.zIndex = o.z;
+  d.innerHTML = `<div class="in">${html}</div>`;
+  (o.parent || document.body).appendChild(d);
+  return d;
+}
+// 窓：kind 'W'＝白い窓（アプリ）、'B'＝黒い窓に >_（CLI）
+function win(kind, name, w, h, fs = 50) {
+  const pr = kind === 'B' ? `<span class="prompt" style="font-size:${fs}px">&gt;_</span>` : '';
+  const nm = name ? `<span class="wname" style="font-family:Lbl;font-size:${fs}px;line-height:1.1">${name}</span>` : '';
+  return `<div class="win ${kind === 'B' ? 'wB' : 'wW'}" style="width:${w}px;height:${h}px">` +
+    `<div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>` +
+    `<div class="body" style="height:${h - 28 - 6}px">${pr}${nm}</div></div>`;
+}
+// 斜めの矢印（tail (x1,y1) → 先 (x2,y2)）。streak＝黄色の光が走る所を持つ
+function arrowPart(id, f0, x1, y1, x2, y2, o = {}) {
+  const color = o.color || '#e60000', shaft = o.shaft || 24, hl = o.hl || 46, hw = o.hw || 66;
+  const L = Math.hypot(x2 - x1, y2 - y1), a = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+  const svg = Z.arrow({ len: L, dir: 'right', color, shaft, hl, hw });
+  const st = o.streak ? `<div class="stc" style="left:0;top:${(hw - shaft) / 2}px;width:${L - hl + 6}px;height:${shaft}px">` +
+    `<div class="streak ${o.streak === 'R' ? 'sR' : 'sW'}" data-len="${L - hl + 6}" style="height:${shaft}px;width:${o.streak === 'R' ? 70 : 110}px"></div></div>` : '';
+  return part(id, f0, x1, y1 - hw / 2, `<div class="arrw" id="${id}_w" style="width:${L}px;height:${hw}px;transform:rotate(${a.toFixed(2)}deg)">${svg}${st}</div>`,
+    Object.assign({ m: 'grow' }, o.p || {}));
+}
+// 2026-10-04 反証：胴 #2e2e2e・縁 #4a4a4a は黒い板に沈んで鍋と分からない → 明るい鉄の色に。ひと回り大きく
+const WOK = (s = 1) => `<svg width="${260 * s}" height="${150 * s}" viewBox="0 0 260 150" style="display:block;overflow:visible">
+  <rect x="4" y="44" width="100" height="17" rx="8" fill="#8a5a2b" stroke="#000" stroke-width="3" transform="rotate(-8 54 52)"/>
+  <path d="M84 56 Q170 178 256 56 Z" fill="#8a9099" stroke="#000" stroke-width="4"/>
+  <ellipse cx="170" cy="56" rx="86" ry="15" fill="#b8bec5" stroke="#000" stroke-width="4"/>
+  <path d="M100 58 Q170 14 240 58 Z" fill="#f2c94c" stroke="#b88a1c" stroke-width="3"/>
+  <circle cx="148" cy="44" r="5" fill="#4caf50"/><circle cx="184" cy="38" r="5" fill="#e57373"/>
+  <circle cx="206" cy="48" r="4" fill="#4caf50"/><circle cx="166" cy="51" r="4" fill="#e57373"/><circle cx="128" cy="53" r="4" fill="#4caf50"/>
+</svg>`;
+const RICE = (s = 1) => `<svg width="${210 * s}" height="${180 * s}" viewBox="0 0 210 180" style="display:block">
+  <rect x="12" y="60" width="186" height="112" rx="34" fill="#f5f5f5" stroke="#000" stroke-width="4"/>
+  <path d="M22 68 Q22 22 105 22 Q188 22 188 68 Z" fill="#d9d9d9" stroke="#000" stroke-width="4"/>
+  <rect x="84" y="8" width="42" height="18" rx="7" fill="#9e9e9e" stroke="#000" stroke-width="3"/>
+  <rect x="50" y="98" width="110" height="46" rx="10" fill="#5b9bd5" stroke="#000" stroke-width="3"/>
+  <rect x="64" y="112" width="46" height="16" rx="3" fill="#e3f2fd"/>
+  <circle cx="137" cy="121" r="10" fill="#ff8a00" stroke="#000" stroke-width="2"/>
+</svg>`;
+const STEAM = (n, s = 1) => {
+  let p = '';
+  for (let i = 0; i < n; i++) p += `<path class="draw" d="M${22 + i * 40} 118 c -16 -18 16 -32 0 -52 s 16 -32 0 -52" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity="0.85"/>`;
+  return `<svg class="steam" width="${(n * 40 + 4) * s}" height="${124 * s}" viewBox="0 0 ${n * 40 + 4} 124" style="display:block;overflow:visible">${p}</svg>`;
+};
+const MAIL = `<svg width="100" height="70" viewBox="0 0 120 84" style="display:block"><rect x="3" y="3" width="114" height="78" rx="6" fill="#fff" stroke="#000" stroke-width="4"/>
+  <path d="M6 8 L60 50 L114 8" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="round"/></svg>`;
+// 2026-10-04 反証：タブを Z6 の .atab と同じ形に（Lbl 44px・高さ60・角丸16）。箱は 262×90（タブの字が約214px あるので、タブより広く）
+const ADDNESS = `<div style="position:relative;width:262px;height:148px">
+  <div style="position:absolute;left:0;top:0;height:60px;padding:0 14px;background:${YELLOW_ADD};border-radius:16px 16px 0 0;font-family:Lbl;font-size:44px;line-height:60px;color:#111;white-space:nowrap">Addness</div>
+  <div style="position:absolute;left:0;top:58px;width:262px;height:90px;border:8px solid ${YELLOW_ADD};border-radius:0 22px 22px 22px;background:#3b3b3b;box-sizing:border-box;padding:12px 16px">
+    <div style="height:9px;width:130px;background:#ddd;border-radius:4px;margin-bottom:10px"></div>
+    <div style="height:9px;width:190px;background:#ddd;border-radius:4px;margin-bottom:10px"></div>
+    <div style="height:9px;width:100px;background:#ddd;border-radius:4px"></div>
+  </div></div>`;
+
+// ───── 場面① 入口がいっぱい（左。場面②で #L ごと縮めて暗くする。場面③では #L3 の大きい左に替える）
+const P = { parent: LW, dim: DIM, f1: F.Q };
+const PW = P;
+part('L_head', 0, 60, 40, Z.plate('入口が いっぱい', { size: 64, bg: '#1b5fd1' }), P);
+part('L_you', 0, 70, 380, Z.img(ILL('パソコン業務.png'), { h: 290 }), Object.assign({}, P, { f1: F.MAKE }));
+part('L_ase', F.MAKE, 70, 380, `<div style="position:relative;width:200px;height:290px">` +
+  [1, 2, 3].map(i => `<img class="ase" src="../assets/Z5_aseri_${i}.png" style="position:absolute;left:0;top:0;height:290px;display:${i === 2 ? 'block' : 'none'}">`).join('') + `</div>`,
+  Object.assign({ m: 'none' }, P));
+const TAIL = [285, 520];
+arrowPart('L_a1', F.CLI, ...TAIL, 462, 265, { p: P });
+part('L_w1', F.CLI, 470, 200, win('B', 'Codex CLI', 540, 130), PW);
+arrowPart('L_a2', F.APP, ...TAIL, 462, 435, { p: P });
+part('L_w2', F.APP, 470, 370, win('W', 'Codexアプリ', 540, 130), PW);
+arrowPart('L_a3', F.CCA, ...TAIL, 462, 605, { p: P });
+part('L_w3', F.CCA, 470, 540, win('W', 'Claude Codeアプリ', 540, 130), PW);
+// 中華鍋・炊飯器・湯気・吹き出し（場面①だけ）
+part('P_wok', F.WOK, 1080, 366, WOK(1.35), { f1: F.S2 });
+part('P_rice', F.RICE, 1490, 300, RICE(1.3), { f1: F.S2 });
+part('P_steam1', F.MAKE, 1236, 228, STEAM(3, 1.2), { f1: F.S2, m: 'draw', dur: 12 });
+part('P_steam2', F.MAKE, 1576, 150, STEAM(2, 1.2), { f1: F.S2, m: 'draw', dur: 12 });
+part('P_bub', F.BUB, 505, 790, Z.bubble('なんで わざわざ 同時で？', { size: 54, tail: 'right', off: 26 }), { f1: F.S2 });
+
+// ───── 場面② 三上さん：入口は1つ（右）
+// 2026-10-04 反証：線が場面③の札と締めの字を縦に貫いていた → y40〜780 に縮めた
+part('R_line', F.S2, 638, 40, `<div style="width:4px;height:740px;background:rgba(255,255,255,0.55)"></div>`, { m: 'fade', dur: 6 });
+part('R_head', F.S2, 680, 40, Z.plate('三上さん：入口は 1つ', { size: 62, bg: '#d90a0a' }));
+part('R_you', F.S2, 690, 140, Z.img('../assets/pc_ureshii.png', { h: 250 }));
+const RA = arrowPart('R_a', F.RCC, 868, 282, 990, 222, { streak: 'R', p: { z: 6 } });   // 段より上（光が段に隠れない）
+part('R_win', F.RCC, 1000, 150, win('W', 'Claude Codeアプリ', 540, 130), { z: 5 });
+// 2026-10-04 反証：半透明の白だと段の中にカメラ（三上さん）が透けて曇りガラスの四角になった → 透けない灰色
+// 2026-10-04 直し：場面③で段とその中身を暗くする（RD）。明るく残すのは「右のあなた → 光る赤い矢印1本 → Claude Codeアプリ（＋炊飯器）」だけ
+part('R_dan', F.DAN, 860, 300, `<div style="width:1000px;height:360px;box-sizing:border-box;border-radius:20px;background:#34373d;border:3px solid rgba(255,255,255,0.4)"></div>`, { m: 'fade', dur: 6, z: 0, dim: RD });
+part('R_fable', F.FABLE, 1004, 284, `<div style="position:relative;width:140px;height:176px;overflow:hidden"><img id="fableImg" src="${ROBOT}" style="position:absolute;left:0;top:20px;height:150px;display:block"></div>`, { m: 'none', z: 1, dim: RD });
+part('R_fname', F.FABLE, 1150, 316, Z.stk('Fable', { size: 58 }), { dim: RD });
+arrowPart('R_wa1', F.CDX, 1066, 455, 975, 524, { color: '#fff', shaft: 18, hl: 38, hw: 54, streak: true, p: { dim: RD } });
+part('R_bw1', F.CDX, 870, 532, win('B', '', 200, 115, 54), { dim: RD });
+arrowPart('R_wa2', F.CCCLI, 1088, 455, 1190, 524, { color: '#fff', shaft: 18, hl: 38, hw: 54, streak: true, p: { dim: RD } });
+part('R_bw2', F.CCCLI, 1095, 532, win('B', '', 195, 115, 54), { dim: RD });
+arrowPart('R_wa3', F.SUB, 1142, 405, 1356, 560, { color: '#fff', shaft: 18, hl: 38, hw: 54, streak: true, p: { dim: RD } });
+part('R_subs', F.SUB, 1350, 536, `<div style="position:relative;width:224px;height:100px">` +
+  [0, 1, 2].map(i => `<img src="${ROBOT}" style="position:absolute;left:${i * 68}px;top:0;height:100px">`).join('') + `</div>`, { dim: RD });
+arrowPart('R_wa4', F.ADD, 1572, 548, 1624, 486, { color: '#fff', shaft: 12, hl: 24, hw: 34, streak: true, p: { dim: RD } });
+part('R_add', F.ADD, 1572, 330, ADDNESS, { dim: RD });
+arrowPart('R_wa5', F.MAIL, 1572, 592, 1645, 580, { color: '#fff', shaft: 12, hl: 24, hw: 34, streak: true, p: { dim: RD } });
+part('R_mail', F.MAIL, 1652, 540, MAIL, { dim: RD });
+part('R_only', F.ONLY, 672, 690, Z.stk('Claude Codeだけ\n開いてればいい', { size: 60 }), { f1: F.Q });
+
+// ───── 場面③ 見比べ：左＝あなたから赤3本、右＝あなたから赤1本（残りは任せて暗い）
+// 2026-10-04 直し：x40〜600 に縮めた左のままだと札の字が35px・窓が名前の無い灰色の箱で、見比べが一目で分からなかった
+// → 左を #L3 に大きく描き直す（札 62px・矢印は右の赤い矢印と同じ太さ・窓に名前 38px）。x40〜618・y40〜645（仕切り線 x638 より左、Q の札 y862 より上）
+const C = { parent: document.getElementById('L3'), m: 'none' };
+function win2(kind, l1, l2, w, h, fs) {
+  const a = kind === 'B' ? `<span class="prompt" style="font-size:${fs}px;margin-bottom:8px">&gt;_</span>` : `<span>${l1}</span>`;
+  return `<div class="win ${kind === 'B' ? 'wB' : 'wW'}" style="width:${w}px;height:${h}px">` +
+    `<div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>` +
+    `<div class="body two" style="height:${h - 28 - 6}px;font-size:${fs}px">${a}<span>${l2}</span></div></div>`;
+}
+part('C_head', F.Q, 40, 40, Z.plate('入口が いっぱい', { size: 62, bg: '#1b5fd1' }), C);
+part('C_ase', F.Q, 40, 300, `<div style="position:relative;width:151px;height:220px">` +
+  [1, 2, 3].map(i => `<img class="ase3" src="../assets/Z5_aseri_${i}.png" style="position:absolute;left:0;top:0;height:220px;display:${i === 2 ? 'block' : 'none'}">`).join('') + `</div>`, C);
+const T3 = [200, 405];   // 3本とも手元から。右の赤い矢印と同じ太さ。伸ばし直さず #L3 と一緒に広がる（伸びる途中の頭が手元に重なって赤い塊に見えた）
+arrowPart('C_a1', F.Q, ...T3, 310, 235, { p: { parent: C.parent, dur: 1 } });
+part('C_w1', F.Q, 318, 165, win2('B', '', 'Codex CLI', 300, 140, 38), C);
+arrowPart('C_a2', F.Q, ...T3, 310, 405, { p: { parent: C.parent, dur: 1 } });
+part('C_w2', F.Q, 318, 335, win2('W', 'Codex', 'アプリ', 300, 140, 38), C);
+arrowPart('C_a3', F.Q, ...T3, 310, 575, { p: { parent: C.parent, dur: 1 } });
+part('C_w3', F.Q, 318, 505, win2('W', 'Claude Code', 'アプリ', 300, 140, 38), C);
+part('Q_q', F.Q, 150, 862, Z.plate('Q:入口は1つの方が 見やすい？', { size: 58, bg: '#fff', fg: '#111' }), { f1: F.MIY });
+part('Q_miy', F.MIY, 130, 828, Z.stk('見やすい 全然違う', { size: 104, fill: '#f5e63a', strokes: [['#000', 20]], font: 'Tsk' }), { m: 'bounce', dur: 7 });
+part('Q_rice', F.RICE2, 1478, 92, `<div style="transform:rotate(-8deg)">${RICE(0.62)}</div>`, { m: 'bounce', dur: 7, z: 6 });
+
+// ───── 1コマずつの独自の動き
+const ease = (t) => 1 - Math.pow(1 - t, 3);
+let ASE, ASE3, L3, NAMES, STEAMS, FIMG, STREAKS, SR, RAW;
+window.ZUKAI = {
+  frames: 1430,
+  custom(f) {
+    if (!ASE) {
+      ASE = [...document.querySelectorAll('#L_ase .ase')];
+      ASE3 = [...document.querySelectorAll('#C_ase .ase3')];
+      L3 = document.getElementById('L3');
+      NAMES = [...document.querySelectorAll('#L .wname')];
+      STEAMS = [...document.querySelectorAll('.steam')];
+      FIMG = document.getElementById('fableImg');
+      STREAKS = [...document.querySelectorAll('.sW')];
+      SR = document.querySelector('.sR');
+      RAW = document.getElementById('R_a_w');
+    }
+    const sig = [];
+    // 場面②：左を x40〜600 に縮める（6コマ）
+    let k = 1, tx = 0, ty = 0;
+    if (f >= F.S2) { const e = ease(Math.min(1, (f - F.S2 + 1) / 6)); k = 1 - 0.41 * e; tx = 4.6 * e; ty = 16.4 * e; }
+    LW.style.transform = k === 1 ? 'none' : `translate(${tx.toFixed(2)}px,${ty.toFixed(2)}px) scale(${k.toFixed(4)})`;
+    sig.push('k' + k.toFixed(4));
+    // 場面②から左の窓の名前を消す
+    for (const n of NAMES) n.style.display = f >= F.S2 ? 'none' : '';
+    sig.push(f >= F.S2 ? 'n0' : 'n1');
+    // 焦り顔：目が3つの窓を行き来する（上→真ん中→下→真ん中、7コマずつ）。場面②からは真ん中
+    let ev = 1;
+    if (f >= F.MAKE && f < F.S2) ev = [0, 1, 2, 1][Math.floor((f - F.MAKE) / 7) % 4];
+    ASE.forEach((im, i) => { im.style.display = i === ev ? 'block' : 'none'; });
+    sig.push('e' + ev);
+    // 場面③：大きい左（#L3）が縮んだ左の大きさ（札の字 64×0.59≒38px → 62px）から 8コマで広がる。目はまた3つの窓を行き来する
+    let k3 = 1;
+    if (f >= F.Q) k3 = 0.61 + 0.39 * ease(Math.min(1, (f - F.Q + 1) / 8));
+    L3.style.transform = k3 === 1 ? 'none' : `scale(${k3.toFixed(4)})`;
+    sig.push('K' + k3.toFixed(4));
+    const ev3 = f >= F.Q ? [0, 1, 2, 1][Math.floor((f - F.Q) / 7) % 4] : 1;
+    ASE3.forEach((im, i) => { im.style.display = i === ev3 ? 'block' : 'none'; });
+    sig.push('E' + ev3);
+    // 湯気がゆれる
+    const sw = (f >= F.MAKE && f < F.S2) ? 5 * Math.sin((f - F.MAKE) / 24 * 2 * Math.PI) : 0;
+    for (const s of STEAMS) s.style.transform = sw ? `translate(${sw.toFixed(2)}px,${(-Math.abs(sw) * 0.6).toFixed(2)}px)` : 'none';
+    sig.push('s' + sw.toFixed(2));
+    // Fable が窓の中から下へ出てくる（8コマ）
+    const fq = Math.max(0, Math.min(1, (f - F.FABLE + 1) / 8));
+    const fy = -176 * (1 - ease(fq));
+    FIMG.style.transform = fy ? `translateY(${fy.toFixed(1)}px)` : 'none';
+    sig.push('f' + fy.toFixed(1));
+    // 「Fable入口」：黄色が白い矢印を全部同時に走る（20コマで1回、3回）
+    const run = f >= F.RUN && f < F.ONLY;
+    const q = run ? ((f - F.RUN) % 20 + 1) / 20 : 0;
+    for (const s of STREAKS) {
+      const L = parseFloat(s.dataset.len);
+      s.style.display = run ? 'block' : 'none';
+      s.style.left = (q * (L + 110) - 110).toFixed(1) + 'px';
+    }
+    sig.push('r' + q.toFixed(3));
+    // 「Claude Codeだけ」：右の赤い矢印が光る（最初の 1秒は脈打つ）
+    let g = 0;
+    if (f >= F.ONLY) g = f < F.ONLY + 30 ? 18 + 8 * Math.cos((f - F.ONLY) / 15 * 2 * Math.PI) : 16;
+    RAW.style.filter = g ? `drop-shadow(0 0 3px #fff7a0) drop-shadow(0 0 ${(g / 2).toFixed(1)}px #f5e63a) drop-shadow(0 0 ${g.toFixed(1)}px #f5e63a)` : 'none';
+    sig.push('g' + g.toFixed(2));
+    // 赤い矢印の中を黄色の光が2回走る（18コマで1回）
+    const runR = f >= F.ONLY && f < F.ONLY + 36;
+    const qr = runR ? ((f - F.ONLY) % 18 + 1) / 18 : 0;
+    const LR = parseFloat(SR.dataset.len);
+    SR.style.display = runR ? 'block' : 'none';
+    SR.style.left = (qr * (LR + 70) - 70).toFixed(1) + 'px';
+    sig.push('R' + qr.toFixed(3));
+    return sig.join('|');
+  }
+};
+</script></body></html>

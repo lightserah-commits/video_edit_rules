@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 """見本集から、型ID（T＝テロップ型／E＝画面効果／S＝SE）で実物を複製して、新しい場面に置く（再現ツール）。
 
-見本集プロジェクト（見本/テロップ見本集.prproj）のコピーの中で使う。共有物（元クリップ・素材・保存スタイル）が
-見本集の中にあるため、編集するシーケンスも同じプロジェクトの中に置く。
+案件では部品集（見本/テロップ部品集.prproj。見本集の軽い版）のコピーの中で使う（コピーは build_parts.py --case-copy で作る）。
+共有物（元クリップ・素材・保存スタイル）がそのプロジェクトの中にあるため、編集するシーケンスも同じプロジェクトの中に置く。
+デモ（demo・verify）は場面見本 D を使うので、見本集（見本/テロップ見本集.prproj）で動かす。
 
 使い方（Pythonから）:
-  lib = Library("案件/v001/edit.prproj")                 # 見本集のコピー（編集用）
+  lib = Library("案件/edit/v001/案件_v001.prproj")       # 部品集のコピー（build_parts.py --case-copy で作る）
   seq = lib.pj.sequence("編集シーケンス")
   lib.add_telop(seq, "T001", "通常の字幕", start=12.3, duration=1.8, track="V6")
   lib.add_telop(seq, "T015", [["AIを使いこなす習慣⑧"], ["8つの習慣"]], start=20.0)
   lib.add_effect(seq, "E001", start=20.0, duration=3.9, track="V5")
   lib.add_se(seq, "S001", start=20.0, track="A4")
-  lib.save("案件/v002/edit.prproj")
+  lib.save("案件/edit/v002/案件_v002.prproj")
 
 デモ（完成版 01:51〜02:30 を、映像・声・BGMだけ元から持ち、装飾はすべて型IDから置き直す）:
   python3 reproduce.py demo --library 見本/テロップ見本集.prproj --out work/reproduce_demo/demo_v001.prproj
@@ -199,7 +200,7 @@ def verify_demo(project_path, record_path, out_dir, step_frames=10):
         jobs.append([timecode(seconds_to_frame(scene["start"]) + o), os.path.join(out_dir, f"{o:05d}_元")])
     name = os.path.basename(project_path)
     js = r'''(function(){ try {
-      var prev=null; try{prev=app.project.activeSequence;}catch(e0){}
+      var prevPath=String(app.project.path), prev=null; try{prev=app.project.activeSequence;}catch(e0){}
       var target=null; for (var i=0;i<app.projects.numProjects;i++){ try{ if (String(app.projects[i].path)===__PATH__) target=app.projects[i]; }catch(e1){} }
       if (!target) { app.openDocument(__PATH__, true, true, true, true); for (var j=0;j<app.projects.numProjects;j++){ try{ if (String(app.projects[j].path)===__PATH__) target=app.projects[j]; }catch(e2){} } }
       if (!target) return JSON.stringify({error:"could not open"});
@@ -208,7 +209,7 @@ def verify_demo(project_path, record_path, out_dir, step_frames=10):
       if (String(app.project.path)!==__PATH__) return JSON.stringify({error:"active changed"});
       app.enableQE(); var qs=qe.project.getActiveSequence(); var jobs=__JOBS__, n=0;
       for (var m=0;m<jobs.length;m++){ try { qs.exportFramePNG(jobs[m][0], jobs[m][1]); n++; } catch(e3) {} }
-      try{ if(prev){ for (var a=0;a<app.projects.numProjects;a++){ var pr=app.projects[a]; for (var b=0;b<pr.sequences.numSequences;b++){ if (String(pr.sequences[b].sequenceID)===String(prev.sequenceID)) pr.openSequence(String(prev.sequenceID)); } } } }catch(e4){}
+      try{ if(prev){ for (var z=0;z<app.projects.numProjects;z++){ if (String(app.projects[z].path)===prevPath) app.projects[z].openSequence(String(prev.sequenceID)); } } }catch(e4){}  // 元のプロジェクトの中で戻す（コピーした版どうしは ID が同じ）
       return JSON.stringify({exported:n});
     } catch(e) { return JSON.stringify({err:String(e)}); } })();'''
     js = js.replace("__PATH__", json.dumps(os.path.abspath(project_path), ensure_ascii=False)).replace("__JOBS__", json.dumps(jobs, ensure_ascii=False))

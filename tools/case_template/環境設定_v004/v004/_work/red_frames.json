@@ -1,0 +1,2539 @@
+{
+ "frames": [
+  {
+   "id_from": "265",
+   "id_to": "265",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_000_265.png",
+   "rect_px": [
+    820,
+    110,
+    1465,
+    276
+   ],
+   "start": 71407496160000,
+   "end": 72322868217600,
+   "read": "AIへの依頼文（送った吹き出し）",
+   "group": "依頼文",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "269+1",
+   "id_to": "269+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_001_269p1.png",
+   "rect_px": [
+    698,
+    305,
+    1000,
+    378
+   ],
+   "start": 72322868217600,
+   "end": 72992445926400,
+   "read": "AIの作業中の表示（Loading tools／ツールを実行中）",
+   "group": "AI作業中",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "348",
+   "id_to": "351",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_002_348.png",
+   "rect_px": [
+    932,
+    100,
+    1518,
+    203
+   ],
+   "start": 90350612352000,
+   "end": 92105075462400,
+   "read": "図の見出し（MIKAMI AI WORKSPACE／AIと働く環境は、6つの層でできている）",
+   "group": "見出し",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "354",
+   "id_to": "354",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_003_354.png",
+   "rect_px": [
+    933,
+    309,
+    1760,
+    409
+   ],
+   "start": 92105075462400,
+   "end": 92969593516800,
+   "read": "動くきっかけ2つ（人が話しかける・時刻が来る）",
+   "group": "きっかけ2つ",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "356",
+   "id_to": "356",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_004_356.png",
+   "rect_px": [
+    933,
+    309,
+    1346,
+    409
+   ],
+   "start": 92969593516800,
+   "end": 93418803878400,
+   "read": "①人が話しかける",
+   "group": "人が話しかける",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "357",
+   "id_to": "357",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_005_357.png",
+   "rect_px": [
+    1349,
+    309,
+    1760,
+    409
+   ],
+   "start": 93418803878400,
+   "end": 93774781900800,
+   "read": "②時刻が来る",
+   "group": "時刻が来る",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "375",
+   "id_to": "379",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_006_375.png",
+   "rect_px": [
+    933,
+    309,
+    1760,
+    409
+   ],
+   "start": 99156830572800,
+   "end": 101309650041600,
+   "read": "動くきっかけ2つ（人が話しかける・時刻が来る）",
+   "group": "きっかけ2つ_更新",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "397",
+   "id_to": "397",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_007_397.png",
+   "rect_px": [
+    397,
+    762,
+    713,
+    834
+   ],
+   "start": 102843745804800,
+   "end": 103131918489600,
+   "read": "AIの作業中の表示（返信で再開・開発フロー・フックなど関連…／さらに考えています）",
+   "group": "AI状況",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "398",
+   "id_to": "399",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_008_398.png",
+   "rect_px": [
+    746,
+    103,
+    1518,
+    213
+   ],
+   "start": 103131918489600,
+   "end": 104733819590400,
+   "read": "図の見出し（MIKAMI AI WORKSPACE／AIと働く環境は、6つの層でできている）",
+   "group": "環境マップの見出し",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "414",
+   "id_to": "414",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_009_414.png",
+   "rect_px": [
+    746,
+    103,
+    1518,
+    213
+   ],
+   "start": 107284995417600,
+   "end": 108022378464000,
+   "read": "図の見出し（MIKAMI AI WORKSPACE／AIと働く環境は、6つの層でできている）",
+   "group": "環境の図の見出し",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "416",
+   "id_to": "417",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_010_416.png",
+   "rect_px": [
+    452,
+    467,
+    711,
+    766
+   ],
+   "start": 108090183801600,
+   "end": 109505620224000,
+   "read": "フロー図を頼んだ吹き出し（2つ目の依頼）",
+   "group": "フロー図の依頼",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "420",
+   "id_to": "420",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_011_420.png",
+   "rect_px": [
+    763,
+    248,
+    985,
+    397
+   ],
+   "start": 110048062924800,
+   "end": 110361662611200,
+   "read": "LAYER 1 エージェント層（層の名前の欄）",
+   "group": "エージェント層",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "421",
+   "id_to": "421",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_012_421.png",
+   "rect_px": [
+    1017,
+    197,
+    1520,
+    272
+   ],
+   "start": 110361662611200,
+   "end": 111277034668800,
+   "read": "Claude Code と Codex の箱",
+   "group": "ClaudeCode_Codex",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "423",
+   "id_to": "425",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_013_423.png",
+   "rect_px": [
+    1292,
+    199,
+    1516,
+    271
+   ],
+   "start": 111277034668800,
+   "end": 112726373760000,
+   "read": "Codex の箱",
+   "group": "Codex",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "425",
+   "id_to": "425",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_014_425s.png",
+   "rect_px": [
+    1292,
+    164,
+    1516,
+    238
+   ],
+   "start": 112726373760000,
+   "end": 112878935769600,
+   "read": "Codex の箱",
+   "group": "Codex_スクロール後",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "427",
+   "id_to": "427",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_015_427.png",
+   "rect_px": [
+    1262,
+    235,
+    1501,
+    309
+   ],
+   "start": 112878935769600,
+   "end": 113345097465600,
+   "read": "定時ルーティン の箱",
+   "group": "定時ルーティン",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "427+1",
+   "id_to": "427+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_016_427p1.png",
+   "rect_px": [
+    1498,
+    235,
+    1734,
+    309
+   ],
+   "start": 113345097465600,
+   "end": 113540037811200,
+   "read": "クラウドセッション の箱",
+   "group": "クラウドセッション",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "428+1",
+   "id_to": "428+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_017_428p1.png",
+   "rect_px": [
+    766,
+    163,
+    992,
+    283
+   ],
+   "start": 113929918502400,
+   "end": 114285896524800,
+   "read": "LAYER 2 モデル層（見出し）",
+   "group": "モデル層_見出し",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "428+2",
+   "id_to": "429+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_018_428p2.png",
+   "rect_px": [
+    1017,
+    162,
+    1277,
+    235
+   ],
+   "start": 114285896524800,
+   "end": 115616576275200,
+   "read": "Claude（Fable 5.1 / Opus 5.5）の箱",
+   "group": "Claude_Fable_Opus",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "508",
+   "id_to": "508",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_019_508.png",
+   "rect_px": [
+    751,
+    108,
+    1518,
+    292
+   ],
+   "start": 134635973472000,
+   "end": 135390307852800,
+   "read": "モデル層の段（全体）",
+   "group": "モデル層_全体",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "510",
+   "id_to": "510",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_020_510.png",
+   "rect_px": [
+    766,
+    168,
+    992,
+    287
+   ],
+   "start": 135390307852800,
+   "end": 135907323552000,
+   "read": "LAYER 3 ルール・記憶層（見出し）",
+   "group": "ルール記憶層_見出し",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "511+1",
+   "id_to": "512+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_021_511p1.png",
+   "rect_px": [
+    1015,
+    129,
+    1343,
+    225
+   ],
+   "start": 135907323552000,
+   "end": 137399040979200,
+   "read": "ルール の箱（CLAUDE.md / AGENTS.md）",
+   "group": "ルール",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "521",
+   "id_to": "521",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_022_521.png",
+   "rect_px": [
+    1015,
+    401,
+    1319,
+    495
+   ],
+   "start": 138483926380800,
+   "end": 138907709740800,
+   "read": "フック の箱",
+   "group": "フック",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "522",
+   "id_to": "522",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_023_522.png",
+   "rect_px": [
+    1424,
+    143,
+    1516,
+    264
+   ],
+   "start": 139314541766400,
+   "end": 139628141452800,
+   "read": "返信が届く（黄色の吹き出し）",
+   "group": "返信が届く",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "524",
+   "id_to": "526",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_024_524.png",
+   "rect_px": [
+    766,
+    156,
+    990,
+    275
+   ],
+   "start": 139628141452800,
+   "end": 141001199539200,
+   "read": "LAYER 4 道具層（見出し）",
+   "group": "道具層_見出し",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "526",
+   "id_to": "526",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_025_526s.png",
+   "rect_px": [
+    765,
+    221,
+    993,
+    335
+   ],
+   "start": 141001199539200,
+   "end": 141323274892800,
+   "read": "LAYER 4 道具層（見出し）",
+   "group": "道具層_スクロール後",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "527",
+   "id_to": "529",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_026_527.png",
+   "rect_px": [
+    1239,
+    257,
+    1496,
+    332
+   ],
+   "start": 141374128896000,
+   "end": 143230300012800,
+   "read": "Gmail・カレンダー・ドライブ の箱",
+   "group": "Gmail・カレンダー・ドライブ",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "530",
+   "id_to": "530",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_027_530.png",
+   "rect_px": [
+    1015,
+    329,
+    1279,
+    402
+   ],
+   "start": 143230300012800,
+   "end": 144069391065600,
+   "read": "Slack・LINE の箱",
+   "group": "Slack・LINE",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "532",
+   "id_to": "532",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_028_532.png",
+   "rect_px": [
+    1525,
+    329,
+    1655,
+    402
+   ],
+   "start": 144069391065600,
+   "end": 144654212102400,
+   "read": "freee・Polar の箱（会計、課金）",
+   "group": "freee・Polar",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "533+1",
+   "id_to": "533+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_029_533p1.png",
+   "rect_px": [
+    1015,
+    257,
+    1655,
+    472
+   ],
+   "start": 144654212102400,
+   "end": 144993238790400,
+   "read": "道具層の道具の箱の一覧",
+   "group": "道具層_道具一覧",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "535",
+   "id_to": "549",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_030_535.png",
+   "rect_px": [
+    1017,
+    257,
+    1241,
+    332
+   ],
+   "start": 144993238790400,
+   "end": 149341256064000,
+   "read": "Addness の箱",
+   "group": "Addness",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "565",
+   "id_to": "565",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_031_565.png",
+   "rect_px": [
+    1018,
+    179,
+    1359,
+    266
+   ],
+   "start": 155130136761600,
+   "end": 155638676793600,
+   "read": "道具層の「Addness への出入口」の箱",
+   "group": "Addnessへの出入口",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "566",
+   "id_to": "567",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_032_566.png",
+   "rect_px": [
+    765,
+    167,
+    957,
+    265
+   ],
+   "start": 155816665804800,
+   "end": 157316858899200,
+   "read": "作業場層（LAYER 5）の見出し",
+   "group": "作業場層",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "611+1",
+   "id_to": "611+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_033_611p1.png",
+   "rect_px": [
+    1018,
+    241,
+    1359,
+    334
+   ],
+   "start": 171767871475200,
+   "end": 172284887174400,
+   "read": "「メイン作業場」の箱",
+   "group": "メイン作業場",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "612",
+   "id_to": "614",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_034_612.png",
+   "rect_px": [
+    1244,
+    334,
+    1493,
+    426
+   ],
+   "start": 172284887174400,
+   "end": 173649469593600,
+   "read": "「GitHub の非公開リポジトリ」の箱",
+   "group": "GitHub非公開リポジトリ_クラウド",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "616",
+   "id_to": "617",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_035_616.png",
+   "rect_px": [
+    768,
+    231,
+    985,
+    378
+   ],
+   "start": 173691847929600,
+   "end": 175098808684800,
+   "read": "ステート層（Addness）の見出し",
+   "group": "ステート層の見出し",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "619",
+   "id_to": "621",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_036_619.png",
+   "rect_px": [
+    1018,
+    285,
+    1294,
+    357
+   ],
+   "start": 175098808684800,
+   "end": 176810893459200,
+   "read": "「ゴールのステート」の箱",
+   "group": "ゴールのステート",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "623",
+   "id_to": "624",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_037_623.png",
+   "rect_px": [
+    1292,
+    285,
+    1582,
+    357
+   ],
+   "start": 176810893459200,
+   "end": 177658460179200,
+   "read": "「会話のステート」の箱",
+   "group": "会話のステート",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "625",
+   "id_to": "626",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_038_625.png",
+   "rect_px": [
+    1018,
+    357,
+    1281,
+    430
+   ],
+   "start": 177658460179200,
+   "end": 178438221561600,
+   "read": "「顧客のステート」の箱",
+   "group": "顧客のステート",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "627",
+   "id_to": "629+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_039_627.png",
+   "rect_px": [
+    1279,
+    357,
+    1470,
+    430
+   ],
+   "start": 178438221561600,
+   "end": 180014695660800,
+   "read": "「数字のステート」の箱",
+   "group": "数字のステート",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "631",
+   "id_to": "634",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_040_631.png",
+   "rect_px": [
+    1470,
+    357,
+    1677,
+    429
+   ],
+   "start": 180014695660800,
+   "end": 181887818112000,
+   "read": "人のステート（役割、関係、予定と空き時間）",
+   "group": "人のステート",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "635",
+   "id_to": "635",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_041_635.png",
+   "rect_px": [
+    1018,
+    429,
+    1237,
+    498
+   ],
+   "start": 181887818112000,
+   "end": 182582822822400,
+   "read": "AIのステート（誰のAIがどのゴールで作業中か）",
+   "group": "AIのステート",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "637",
+   "id_to": "637",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_042_637.png",
+   "rect_px": [
+    758,
+    270,
+    1752,
+    515
+   ],
+   "start": 182582822822400,
+   "end": 183159168192000,
+   "read": "ステート層の段（Addness・6つのステート）",
+   "group": "ステート層（Addness）",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "640",
+   "id_to": "640+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_043_640.png",
+   "rect_px": [
+    744,
+    256,
+    1434,
+    314
+   ],
+   "start": 183184595193600,
+   "end": 184193199590400,
+   "read": "見出し「1つの依頼は、層を降りて、ステート層に戻って終わる」",
+   "group": "見出し_層を降りて戻る",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "641",
+   "id_to": "641+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_044_641.png",
+   "rect_px": [
+    754,
+    382,
+    930,
+    605
+   ],
+   "start": 184193199590400,
+   "end": 185108571648000,
+   "read": "01 話しかける",
+   "group": "01 話しかける",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "642",
+   "id_to": "642",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_045_642.png",
+   "rect_px": [
+    920,
+    382,
+    1095,
+    605
+   ],
+   "start": 185108571648000,
+   "end": 185625587347200,
+   "read": "02 ルールと記憶を読む",
+   "group": "02 ルールと記憶を読む",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "643",
+   "id_to": "643",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_046_643.png",
+   "rect_px": [
+    1085,
+    382,
+    1261,
+    605
+   ],
+   "start": 185625587347200,
+   "end": 186498581068800,
+   "read": "03 いまの現状を取りに行く",
+   "group": "03 いまの現状を取りに行く",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "645",
+   "id_to": "645",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_047_645.png",
+   "rect_px": [
+    1251,
+    382,
+    1426,
+    605
+   ],
+   "start": 186498581068800,
+   "end": 186795229420800,
+   "read": "04 作る",
+   "group": "04 作る",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "646",
+   "id_to": "646",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_048_646.png",
+   "rect_px": [
+    1416,
+    382,
+    1590,
+    605
+   ],
+   "start": 186795229420800,
+   "end": 187320720787200,
+   "read": "05 結果で確かめる",
+   "group": "05 結果で確かめる",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "647",
+   "id_to": "649",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_049_647.png",
+   "rect_px": [
+    1580,
+    382,
+    1755,
+    605
+   ],
+   "start": 187320720787200,
+   "end": 188532741196800,
+   "read": "06 ステートを更新する",
+   "group": "06 ステートを更新する",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "650",
+   "id_to": "653",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_050_650.png",
+   "rect_px": [
+    744,
+    124,
+    1450,
+    179
+   ],
+   "start": 188575119532800,
+   "end": 190210923302400,
+   "read": "見出し「人に聞いたら止まって待ち、返信が来た瞬間に再開する」",
+   "group": "見出し_人に聞いたら止まって待つ",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "659+1",
+   "id_to": "659+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_051_659p1.png",
+   "rect_px": [
+    763,
+    296,
+    893,
+    349
+   ],
+   "start": 191524651718400,
+   "end": 192041667417600,
+   "read": "図の「AI（Claude Code・Codex）」の段",
+   "group": "AIの段",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "661",
+   "id_to": "661",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_052_661.png",
+   "rect_px": [
+    763,
+    464,
+    900,
+    515
+   ],
+   "start": 192041667417600,
+   "end": 192550207449600,
+   "read": "図の「相手（メンバー・自分のスマホ）」の段",
+   "group": "相手の段",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "662",
+   "id_to": "662",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_053_662.png",
+   "rect_px": [
+    902,
+    292,
+    1059,
+    348
+   ],
+   "start": 192550207449600,
+   "end": 193058747481600,
+   "read": "質問を書く（AIの段）",
+   "group": "指令図_質問を書く",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "663",
+   "id_to": "663",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_054_663.png",
+   "rect_px": [
+    902,
+    376,
+    1059,
+    432
+   ],
+   "start": 193058747481600,
+   "end": 193635092851200,
+   "read": "名指しでコメント（Addnessの段）",
+   "group": "指令図_名指しでコメント",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "664",
+   "id_to": "664",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_055_664.png",
+   "rect_px": [
+    1079,
+    460,
+    1236,
+    516
+   ],
+   "start": 193635092851200,
+   "end": 194414854233600,
+   "read": "通知が届く（相手の段）",
+   "group": "指令図_通知が届く",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "665+1",
+   "id_to": "665+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_056_665p1.png",
+   "rect_px": [
+    1256,
+    376,
+    1413,
+    516
+   ],
+   "start": 194414854233600,
+   "end": 195236993952000,
+   "read": "返信する → 返信コメント",
+   "group": "指令図_返信",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "666",
+   "id_to": "666",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_057_666.png",
+   "rect_px": [
+    1433,
+    292,
+    1590,
+    348
+   ],
+   "start": 195236993952000,
+   "end": 196415111692800,
+   "read": "その瞬間に再開（黄色の箱）",
+   "group": "指令図_その瞬間に再開",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "683",
+   "id_to": "683",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_058_683.png",
+   "rect_px": [
+    754,
+    410,
+    905,
+    521
+   ],
+   "start": 199652816563200,
+   "end": 200296967270400,
+   "read": "01 要件をまとめる（Claude）",
+   "group": "開発_01要件",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "684",
+   "id_to": "684",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_059_684.png",
+   "rect_px": [
+    1039,
+    286,
+    1189,
+    521
+   ],
+   "start": 200296967270400,
+   "end": 200873312640000,
+   "read": "03 実装する（Codex）",
+   "group": "開発_02GO_03実装",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "685",
+   "id_to": "685",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_060_685.png",
+   "rect_px": [
+    1181,
+    286,
+    1331,
+    521
+   ],
+   "start": 200873312640000,
+   "end": 201246241996800,
+   "read": "04 レビューする（Codex）",
+   "group": "開発_04レビュー",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "686",
+   "id_to": "686",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_061_686.png",
+   "rect_px": [
+    1323,
+    286,
+    1471,
+    521
+   ],
+   "start": 201246241996800,
+   "end": 201839538700800,
+   "read": "05 検収する（Claude）",
+   "group": "開発_05検収",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "687",
+   "id_to": "688",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_062_687.png",
+   "rect_px": [
+    1463,
+    286,
+    1613,
+    521
+   ],
+   "start": 201839538700800,
+   "end": 203204121120000,
+   "read": "06 マージのGO（人）",
+   "group": "開発_06マージ",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "689",
+   "id_to": "690",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_063_689.png",
+   "rect_px": [
+    754,
+    286,
+    1755,
+    521
+   ],
+   "start": 203204121120000,
+   "end": 204077114841600,
+   "read": "開発の流れの表（01〜07）",
+   "group": "開発_表全体",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "691",
+   "id_to": "692",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_064_691.png",
+   "rect_px": [
+    1607,
+    286,
+    1755,
+    521
+   ],
+   "start": 204077114841600,
+   "end": 205153524576000,
+   "read": "07 本番で確かめて残す（Addness）",
+   "group": "開発_07本番",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "760",
+   "id_to": "760",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_065_760s.png",
+   "rect_px": [
+    754,
+    549,
+    1755,
+    764
+   ],
+   "start": 218765446099200,
+   "end": 219706245158400,
+   "read": "定時で回っている仕事の表（6列）",
+   "group": "定時_表全体",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "762",
+   "id_to": "767",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_066_762.png",
+   "rect_px": [
+    922,
+    549,
+    1094,
+    764
+   ],
+   "start": 219706245158400,
+   "end": 223232122713600,
+   "read": "朝 顧客リストの同期（Claude Code）",
+   "group": "定時_顧客リスト",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "770",
+   "id_to": "770",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_068_770.png",
+   "rect_px": [
+    1252,
+    549,
+    1424,
+    764
+   ],
+   "start": 223232122713600,
+   "end": 224215300108800,
+   "read": "朝・夕 Xのネタ出しと下書き",
+   "group": "定時_Xネタ出し",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "772",
+   "id_to": "772",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_069_772.png",
+   "rect_px": [
+    1418,
+    549,
+    1590,
+    764
+   ],
+   "start": 224215300108800,
+   "end": 224545851129600,
+   "read": "10:00/18:00 リマインド",
+   "group": "定時_リマインド",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "773",
+   "id_to": "773",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_070_773.png",
+   "rect_px": [
+    1582,
+    549,
+    1755,
+    764
+   ],
+   "start": 224545851129600,
+   "end": 225045915494400,
+   "read": "23:00 議事録の取り込み",
+   "group": "定時_議事録",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1053",
+   "id_to": "1053",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_071_1053s.png",
+   "rect_px": [
+    749,
+    140,
+    1518,
+    216
+   ],
+   "start": 233691096038400,
+   "end": 233953841721600,
+   "read": "指令フローの資料の題「ひとこと頼んだあと、指令はこう流れる」",
+   "group": "指令フロー資料の題",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1054",
+   "id_to": "1054",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_072_1054.png",
+   "rect_px": [
+    410,
+    460,
+    626,
+    552
+   ],
+   "start": 233953841721600,
+   "end": 234826835443200,
+   "read": "チャットの2つの資料（環境マップ・指令フロー）",
+   "group": "資料2つの一覧",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1193",
+   "id_to": "1193",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_073_1193.png",
+   "rect_px": [
+    1152,
+    134,
+    1518,
+    192
+   ],
+   "start": 288706651833600,
+   "end": 289121959526400,
+   "read": "比較ページの題「3つは同じ棚の道具じゃない。いる層が違う」（右の枠が狭い時の位置）",
+   "group": "比較ページの題",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1195+1",
+   "id_to": "1198",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_074_1195p1.png",
+   "rect_px": [
+    541,
+    347,
+    1724,
+    484
+   ],
+   "start": 289469461881600,
+   "end": 291639232684800,
+   "read": "Orca・Obsidian・Addness 3枚のカードの見出し",
+   "group": "3つのカードの見出し",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1199",
+   "id_to": "1201",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_075_1199.png",
+   "rect_px": [
+    541,
+    261,
+    938,
+    395
+   ],
+   "start": 291639232684800,
+   "end": 293097047443200,
+   "read": "Orcaのカードの見出し（エージェントの作業台）",
+   "group": "Orcaの見出し",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1288",
+   "id_to": "1288",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_076_1288.png",
+   "rect_px": [
+    562,
+    573,
+    918,
+    623
+   ],
+   "start": 330949377158400,
+   "end": 331652857536000,
+   "read": "Orcaの「使う人：開発者ひとり」",
+   "group": "Orcaの使う人",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1289",
+   "id_to": "1290",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_077_1289.png",
+   "rect_px": [
+    933,
+    261,
+    1331,
+    395
+   ],
+   "start": 331652857536000,
+   "end": 332568229593600,
+   "read": "Obsidianのカードの見出し",
+   "group": "Obsidianの見出し",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1292",
+   "id_to": "1293",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_078_1292.png",
+   "rect_px": [
+    957,
+    431,
+    1309,
+    475
+   ],
+   "start": 332568229593600,
+   "end": 333644639328000,
+   "read": "Obsidianの「扱うもの：手元のMarkdownファイル」",
+   "group": "Obsidianの扱うもの",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1294",
+   "id_to": "1297",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_079_1294.png",
+   "rect_px": [
+    957,
+    472,
+    1309,
+    515
+   ],
+   "start": 333644639328000,
+   "end": 334797330067200,
+   "read": "Obsidianの「単位：ノートと、ノート同士のリンク」",
+   "group": "Obsidianのリンク",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1345",
+   "id_to": "1349",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_080_1345.png",
+   "rect_px": [
+    933,
+    117,
+    1331,
+    253
+   ],
+   "start": 342900067910400,
+   "end": 344620628352000,
+   "read": "Obsidianのカードの見出し（自分のノート）",
+   "group": "Obsidianの見出し（メモアプリ）",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1353+1",
+   "id_to": "1355",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_081_1353p1.png",
+   "rect_px": [
+    1329,
+    228,
+    1719,
+    599
+   ],
+   "start": 345832648761600,
+   "end": 346900582828800,
+   "read": "Addness のカード（ステート層：人とAIの仕事の「いま」を、まるごと持つ）",
+   "group": "役割_Addnessカード",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1356",
+   "id_to": "1358",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_082_1356.png",
+   "rect_px": [
+    1413,
+    340,
+    1719,
+    785
+   ],
+   "start": 346926009830400,
+   "end": 348248213913600,
+   "read": "層の表の Addness の列（黄色のマス）",
+   "group": "層の表_Addness列",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1464",
+   "id_to": "1464",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_083_1464s.png",
+   "rect_px": [
+    470,
+    323,
+    833,
+    623
+   ],
+   "start": 376353526348800,
+   "end": 376785785376000,
+   "read": "人々 →（生む）→ 知恵（決めたこと・やり方・数字・成果）",
+   "group": "脳の図_人々と知恵",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1465",
+   "id_to": "1465",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_084_1465.png",
+   "rect_px": [
+    962,
+    472,
+    1057,
+    557
+   ],
+   "start": 376785785376000,
+   "end": 377582498092800,
+   "read": "AI（編む）",
+   "group": "脳の図_AI",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1466",
+   "id_to": "1466",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_085_1466.png",
+   "rect_px": [
+    1179,
+    242,
+    1446,
+    638
+   ],
+   "start": 377582498092800,
+   "end": 377862195110400,
+   "read": "集合知（国の脳みそ）の丸",
+   "group": "脳の図_集合知",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1467+1",
+   "id_to": "1467+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_086_1467p1s.png",
+   "rect_px": [
+    536,
+    379,
+    875,
+    563
+   ],
+   "start": 378294454137600,
+   "end": 378726713164800,
+   "read": "これまで：人々 → 人が頑張ってまとめる（会議・報告書・マニュアル…）",
+   "group": "比べる図_これまで_まとめる_位置A",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1467+2",
+   "id_to": "1467+2",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_087_1467p2.png",
+   "rect_px": [
+    536,
+    255,
+    875,
+    438
+   ],
+   "start": 378726713164800,
+   "end": 379142020857600,
+   "read": "これまで：人々 → 人が頑張ってまとめる（会議・報告書・マニュアル…）",
+   "group": "比べる図_これまで_まとめる_位置B",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1468",
+   "id_to": "1468",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_088_1468.png",
+   "rect_px": [
+    541,
+    491,
+    871,
+    631
+   ],
+   "start": 379142020857600,
+   "end": 379540377216000,
+   "read": "これまで：漏斗からこぼれる知恵（赤い点線のかけら・失われる）",
+   "group": "比べる図_これまで_失われる",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1468+1",
+   "id_to": "1468+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_089_1468p1.png",
+   "rect_px": [
+    601,
+    636,
+    811,
+    866
+   ],
+   "start": 379540377216000,
+   "end": 380040441580800,
+   "read": "これまでの集合知（薄い・遅い・すぐ古くなる／ほとんど現場に還らない）",
+   "group": "比べる図_これまで_集合知",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1469",
+   "id_to": "1469",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_090_1469.png",
+   "rect_px": [
+    1155,
+    503,
+    1241,
+    559
+   ],
+   "start": 380040441580800,
+   "end": 380506603276800,
+   "read": "脳があると：AI",
+   "group": "比べる図_脳_AI",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1470",
+   "id_to": "1470",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_091_1470.png",
+   "rect_px": [
+    1095,
+    347,
+    1306,
+    494
+   ],
+   "start": 380506603276800,
+   "end": 381108375648000,
+   "read": "脳があると：ゴールの木＋「知恵はそのままゴールの上に／誰もまとめなくていい」",
+   "group": "比べる図_脳_ゴールの上に",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1471",
+   "id_to": "1471",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_092_1471.png",
+   "rect_px": [
+    1157,
+    507,
+    1321,
+    556
+   ],
+   "start": 381108375648000,
+   "end": 381430451001600,
+   "read": "脳があると：AI「毎日、編む」",
+   "group": "比べる図_脳_毎日編む",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1472",
+   "id_to": "1473",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_093_1472.png",
+   "rect_px": [
+    1094,
+    567,
+    1304,
+    838
+   ],
+   "start": 381430451001600,
+   "end": 382498385068800,
+   "read": "脳があると：集合知（全部・最新・こぼれない／全員の明日の仕事へ）",
+   "group": "比べる図_脳_集合知",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1501",
+   "id_to": "1501",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_094_1501.png",
+   "rect_px": [
+    527,
+    300,
+    1468,
+    760
+   ],
+   "start": 391660581312000,
+   "end": 392177597011200,
+   "read": "取り消し線の付いた完了タスクの行（過去7日間に終わったタスク）",
+   "group": "完了タスクの一覧",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1501",
+   "id_to": "1501",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_095_1501s.png",
+   "rect_px": [
+    380,
+    230,
+    1503,
+    262
+   ],
+   "start": 392177597011200,
+   "end": 392482721030400,
+   "read": "開いた完了タスクの詳細（見出し）",
+   "group": "完了タスクの詳細_AGENT",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1507",
+   "id_to": "1509",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_096_1507.png",
+   "rect_px": [
+    1000,
+    201,
+    1201,
+    240
+   ],
+   "start": 392482721030400,
+   "end": 394593162163200,
+   "read": "「完了を表示・過去7日間」の切り替え",
+   "group": "完了を表示_過去7日間",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1509",
+   "id_to": "1510",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_097_1509s.png",
+   "rect_px": [
+    380,
+    230,
+    935,
+    265
+   ],
+   "start": 394593162163200,
+   "end": 395211885868800,
+   "read": "途中のタスク「関係図をobsidianみたいに…」の詳細（見出し）",
+   "group": "途中タスクの詳細_関係図",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1529",
+   "id_to": "1530",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_098_1529s.png",
+   "rect_px": [
+    379,
+    230,
+    1122,
+    269
+   ],
+   "start": 399771794822400,
+   "end": 400492226534400,
+   "read": "「PR-1 骨組み：左の一覧を個人9・組織7に分け直し…」の詳細（見出し）",
+   "group": "PR-1の詳細",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1531",
+   "id_to": "1531",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_099_1531.png",
+   "rect_px": [
+    534,
+    321,
+    1461,
+    464
+   ],
+   "start": 400492226534400,
+   "end": 401212658246400,
+   "read": "子ゴール PR-1〜PR-3 の行",
+   "group": "設定ページのPR子ゴール",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1544",
+   "id_to": "1544",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_100_1544.png",
+   "rect_px": [
+    1308,
+    228,
+    1714,
+    935
+   ],
+   "start": 407713494988800,
+   "end": 408145754016000,
+   "read": "表の Addness の列（黄色）",
+   "group": "比較表のAddnessの列",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1545+1",
+   "id_to": "1545+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_101_1545p1.png",
+   "rect_px": [
+    1308,
+    228,
+    1714,
+    935
+   ],
+   "start": 408238986355200,
+   "end": 408645818380800,
+   "read": "表の Addness の列（黄色）",
+   "group": "比較表のAddnessの列",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1547",
+   "id_to": "1547",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_102_1547.png",
+   "rect_px": [
+    552,
+    526,
+    1714,
+    613
+   ],
+   "start": 408645818380800,
+   "end": 409383201427200,
+   "read": "「顧客（CRM）」「数字（KPI・ダッシュボード）」の2行",
+   "group": "比較表の顧客と数字の行",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1548",
+   "id_to": "1548",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_103_1548.png",
+   "rect_px": [
+    552,
+    613,
+    1714,
+    657
+   ],
+   "start": 409383201427200,
+   "end": 409917168460800,
+   "read": "「フォーム・アンケート」の行",
+   "group": "比較表のフォームの行",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1551",
+   "id_to": "1553",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_104_1551.png",
+   "rect_px": [
+    592,
+    378,
+    1308,
+    1075
+   ],
+   "start": 410357903155200,
+   "end": 411688582905600,
+   "read": "人の関係図（グラフ）",
+   "group": "関係図のグラフ",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1554",
+   "id_to": "1554",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_105_1554.png",
+   "rect_px": [
+    856,
+    583,
+    980,
+    707
+   ],
+   "start": 411688582905600,
+   "end": 412341209280000,
+   "read": "選んだ人と三上さんをつなぐ線",
+   "group": "関係図の選んだ人と自分",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "827",
+   "id_to": "829",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_106_827.png",
+   "rect_px": [
+    746,
+    345,
+    1087,
+    476
+   ],
+   "start": 438666631603200,
+   "end": 439683711667200,
+   "read": "「人が話しかける」",
+   "group": "人が話しかける",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "850",
+   "id_to": "851",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_107_850.png",
+   "rect_px": [
+    1344,
+    394,
+    1386,
+    437
+   ],
+   "start": 444201242284800,
+   "end": 444701306649600,
+   "read": "キラキラ（AIに依頼）のボタン",
+   "group": "キラキラのボタン",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "851",
+   "id_to": "851",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_108_851s.png",
+   "rect_px": [
+    992,
+    512,
+    1164,
+    550
+   ],
+   "start": 444701306649600,
+   "end": 445057284672000,
+   "read": "メニューの『Claude Codeで開く』",
+   "group": "Claude Codeで開くメニュー_851",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "851",
+   "id_to": "853+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_109_851s.png",
+   "rect_px": [
+    706,
+    812,
+    1463,
+    902
+   ],
+   "start": 445057284672000,
+   "end": 445879424390400,
+   "read": "Claude Code に入った指示文（上の方）",
+   "group": "Claude Codeの指示文（ゴール）",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "893",
+   "id_to": "893",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_110_893.png",
+   "rect_px": [
+    770,
+    495,
+    982,
+    543
+   ],
+   "start": 454092345907200,
+   "end": 454270334918400,
+   "read": "『その他の機能』の『テンプレート』のタイル",
+   "group": "テンプレートのタイル",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "893",
+   "id_to": "893",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_111_893s.png",
+   "rect_px": [
+    419,
+    208,
+    572,
+    256
+   ],
+   "start": 454270334918400,
+   "end": 454702593945600,
+   "read": "「テンプレート」のページ見出し",
+   "group": "テンプレートのタイル_見出し",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "894",
+   "id_to": "894",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_112_894.png",
+   "rect_px": [
+    679,
+    396,
+    1087,
+    586
+   ],
+   "start": 454702593945600,
+   "end": 455211133977600,
+   "read": "「Addnessをセットアップする」のテンプレート（5つの手順）",
+   "group": "セットアップのテンプレート（一覧）",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "895",
+   "id_to": "895",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_113_895.png",
+   "rect_px": [
+    664,
+    519,
+    897,
+    735
+   ],
+   "start": 455211133977600,
+   "end": 455448452659200,
+   "read": "セットアップの5つの手順",
+   "group": "セットアップの5つの手順（詳細）",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "897",
+   "id_to": "897",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_114_897.png",
+   "rect_px": [
+    472,
+    194,
+    1461,
+    508
+   ],
+   "start": 455448452659200,
+   "end": 456143457369600,
+   "read": "「Addnessをセットアップする」のテンプレート（名前と5つの手順）",
+   "group": "セットアップのテンプレート（ページ）",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "898+1",
+   "id_to": "898+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_115_898p1.png",
+   "rect_px": [
+    1084,
+    190,
+    1217,
+    238
+   ],
+   "start": 456143457369600,
+   "end": 456541813728000,
+   "read": "「AIで始める」ボタン",
+   "group": "AIで始めるボタン",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "899",
+   "id_to": "899",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_116_899.png",
+   "rect_px": [
+    927,
+    354,
+    1211,
+    395
+   ],
+   "start": 456541813728000,
+   "end": 456821510745600,
+   "read": "メニューの『Claude Codeで開く』",
+   "group": "Claude Codeで開くメニュー_899",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "899",
+   "id_to": "900",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_117_899s.png",
+   "rect_px": [
+    706,
+    654,
+    1463,
+    1051
+   ],
+   "start": 456889316083200,
+   "end": 457397856115200,
+   "read": "Claude Code に入った指示文",
+   "group": "Claude Codeの指示文（テンプレート）",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "913",
+   "id_to": "913",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_118_913s.png",
+   "rect_px": [
+    496,
+    272,
+    1194,
+    467
+   ],
+   "start": 461050868678400,
+   "end": 461364468364800,
+   "read": "メモの5つの手順（1.AIをAddnessにつなぐ〜5.毎日の使い方を覚える）",
+   "group": "テンプレートのメモ",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "913",
+   "id_to": "913",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_119_913s.png",
+   "rect_px": [
+    526,
+    280,
+    1465,
+    516
+   ],
+   "start": 461364468364800,
+   "end": 461627214048000,
+   "read": "テンプレートの5つの子ゴール（1. AIをAddnessにつなぐ〜5. 毎日の使い方を覚える）",
+   "group": "5つの子ゴール_1",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "914",
+   "id_to": "914",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_120_914s.png",
+   "rect_px": [
+    379,
+    227,
+    644,
+    268
+   ],
+   "start": 461754349056000,
+   "end": 461915386732800,
+   "read": "「1. AIをAddnessにつなぐ」の詳細（題）",
+   "group": "1の詳細_題_1",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "916",
+   "id_to": "916",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_121_916s.png",
+   "rect_px": [
+    482,
+    501,
+    1438,
+    611
+   ],
+   "start": 462034046073600,
+   "end": 462330694425600,
+   "read": "Claude Code のコマンド（claude mcp add … / claude mcp login addness）",
+   "group": "Claude Codeのコマンド",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "917",
+   "id_to": "918",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_122_917.png",
+   "rect_px": [
+    379,
+    227,
+    644,
+    268
+   ],
+   "start": 462398499763200,
+   "end": 463449482496000,
+   "read": "「1. AIをAddnessにつなぐ」の詳細（題）",
+   "group": "1の詳細_題_2",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "919",
+   "id_to": "919",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_123_919.png",
+   "rect_px": [
+    474,
+    266,
+    1431,
+    751
+   ],
+   "start": 463449482496000,
+   "end": 463974973862400,
+   "read": "設定に足す節（CLAUDE.md に書く中身）のコード欄",
+   "group": "設定に足す節の中身",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "922",
+   "id_to": "922",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_124_922s.png",
+   "rect_px": [
+    1015,
+    470,
+    1344,
+    565
+   ],
+   "start": 465254799609600,
+   "end": 465390410284800,
+   "read": "環境マップの「ルール」の箱（動き方の約束。CLAUDE.md / AGENTS.md）",
+   "group": "図のルールの箱",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "924",
+   "id_to": "924",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_125_924.png",
+   "rect_px": [
+    460,
+    377,
+    795,
+    420
+   ],
+   "start": 465390410284800,
+   "end": 465788766643200,
+   "read": "見出し「設定に足す節（このまま書く）」",
+   "group": "設定に足す節_見出し",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "924",
+   "id_to": "926",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_126_924s.png",
+   "rect_px": [
+    379,
+    227,
+    644,
+    268
+   ],
+   "start": 465788766643200,
+   "end": 467238105734400,
+   "read": "「1. AIをAddnessにつなぐ」の詳細（題）",
+   "group": "1の詳細_題_3",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "926",
+   "id_to": "926",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_127_926s.png",
+   "rect_px": [
+    526,
+    280,
+    1465,
+    516
+   ],
+   "start": 467238105734400,
+   "end": 467712743097600,
+   "read": "テンプレートの5つの子ゴール（1. AIをAddnessにつなぐ〜5. 毎日の使い方を覚える）",
+   "group": "5つの子ゴール_2",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "926",
+   "id_to": "927+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_128_926s.png",
+   "rect_px": [
+    379,
+    227,
+    644,
+    268
+   ],
+   "start": 467712743097600,
+   "end": 468255185798400,
+   "read": "「2. 仕事のツールをつなぐ」の詳細（題）",
+   "group": "2の詳細_題",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "927+1",
+   "id_to": "927+2",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_129_927p1s.png",
+   "rect_px": [
+    765,
+    402,
+    993,
+    518
+   ],
+   "start": 468653542156800,
+   "end": 469289217196800,
+   "read": "LAYER 4 道具層（見出し）",
+   "group": "道具層",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "932",
+   "id_to": "932",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_130_932.png",
+   "rect_px": [
+    765,
+    644,
+    993,
+    739
+   ],
+   "start": 469289217196800,
+   "end": 469755378892800,
+   "read": "LAYER 5 作業場層（見出し）",
+   "group": "作業場層",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "932",
+   "id_to": "932",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_131_932s.png",
+   "rect_px": [
+    765,
+    475,
+    993,
+    572
+   ],
+   "start": 469755378892800,
+   "end": 469890989568000,
+   "read": "LAYER 5 作業場層（見出し）",
+   "group": "作業場層_スクロール後",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "933",
+   "id_to": "933",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_132_933s.png",
+   "rect_px": [
+    760,
+    515,
+    1752,
+    757
+   ],
+   "start": 469975746240000,
+   "end": 470628372614400,
+   "read": "ステート層の段（LAYER 6）",
+   "group": "ステート層",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "937",
+   "id_to": "938+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_133_937.png",
+   "rect_px": [
+    502,
+    231,
+    803,
+    270
+   ],
+   "start": 471704782348800,
+   "end": 472823570419200,
+   "read": "テンプレートの題「Addnessをセットアップする」",
+   "group": "テンプレートの題_1",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "945",
+   "id_to": "945",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_134_945.png",
+   "rect_px": [
+    502,
+    231,
+    803,
+    270
+   ],
+   "start": 473221926777600,
+   "end": 473696564140800,
+   "read": "テンプレートの題「Addnessをセットアップする」",
+   "group": "テンプレートの題_2",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "949",
+   "id_to": "953+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_135_949.png",
+   "rect_px": [
+    581,
+    588,
+    1463,
+    637
+   ],
+   "start": 474569557862400,
+   "end": 478019154412800,
+   "read": "新しいゴールの入力欄（「テンプレートのAddnessセットアップがちょっと古い…」）",
+   "group": "新しいゴールの入力欄",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "955",
+   "id_to": "955",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_136_955s.png",
+   "rect_px": [
+    1369,
+    706,
+    1543,
+    751
+   ],
+   "start": 478146289420800,
+   "end": 478451413440000,
+   "read": "メニューの「Claude Codeで開く」",
+   "group": "ToDo_ClaudeCodeで開く",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "957",
+   "id_to": "958+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_137_957.png",
+   "rect_px": [
+    825,
+    114,
+    1461,
+    369
+   ],
+   "start": 478722634790400,
+   "end": 480112644211200,
+   "read": "送った指示文（Claude Code の吹き出し）",
+   "group": "ClaudeCode_送った指示文",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "977+1",
+   "id_to": "977+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_138_977p1.png",
+   "rect_px": [
+    897,
+    440,
+    1757,
+    835
+   ],
+   "start": 480112644211200,
+   "end": 480578805907200,
+   "read": "判断シートの「決めること」（Q1 と選択肢）",
+   "group": "判断シート_決めること",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "981",
+   "id_to": "981",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_139_981.png",
+   "rect_px": [
+    474,
+    114,
+    860,
+    523
+   ],
+   "start": 480578805907200,
+   "end": 481358567289600,
+   "read": "最初に送った指示文（左の会話の吹き出し）",
+   "group": "会話_最初の指示文",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "982+1",
+   "id_to": "982+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_140_982p1.png",
+   "rect_px": [
+    1319,
+    228,
+    1739,
+    818
+   ],
+   "start": 481358567289600,
+   "end": 481790826316800,
+   "read": "Q2〜Q4 の選択肢（推奨が選ばれている）",
+   "group": "判断シート_推奨の選択肢_982",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "983",
+   "id_to": "983",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_141_983.png",
+   "rect_px": [
+    903,
+    633,
+    1480,
+    677
+   ],
+   "start": 481790826316800,
+   "end": 482053572000000,
+   "read": "「未保存（推奨のまま）…推奨のままでよければ、そのままで大丈夫です」",
+   "group": "判断シート_推奨のままでよければ",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "984+1",
+   "id_to": "984+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_142_984p1s.png",
+   "rect_px": [
+    903,
+    495,
+    1742,
+    705
+   ],
+   "start": 482367171686400,
+   "end": 482689247040000,
+   "read": "Q3 同じ名前の古い型（アーカイブする／そのまま置く／揃える）",
+   "group": "判断シート_Q3同じ名前の古い型",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "986+1",
+   "id_to": "986+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_143_986p1.png",
+   "rect_px": [
+    501,
+    227,
+    801,
+    273
+   ],
+   "start": 483316446412800,
+   "end": 483858889113600,
+   "read": "テンプレートの題「Addnessをセットアップする」（公開中）",
+   "group": "テンプレ_Addnessをセットアップする_題",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "987",
+   "id_to": "989",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_144_987.png",
+   "rect_px": [
+    661,
+    218,
+    1546,
+    1076
+   ],
+   "start": 483858889113600,
+   "end": 484706455833600,
+   "read": "検索結果：同じ名前「Addnessをセットアップする」のテンプレートがたくさん",
+   "group": "テンプレ検索_同じ名前がたくさん",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "994+1",
+   "id_to": "994+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_145_994p1.png",
+   "rect_px": [
+    1319,
+    228,
+    1739,
+    880
+   ],
+   "start": 484706455833600,
+   "end": 485164141862400,
+   "read": "Q2〜Q4 の推奨の選択肢",
+   "group": "判断シート_推奨の選択肢_994",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "996",
+   "id_to": "996",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_146_996.png",
+   "rect_px": [
+    587,
+    708,
+    860,
+    783
+   ],
+   "start": 485164141862400,
+   "end": 485401460544000,
+   "read": "送った返事「うん、全部推奨でオッケー。よろしく。」",
+   "group": "会話_全部推奨でOKの返事",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1755",
+   "id_to": "1755",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_147_1755.png",
+   "rect_px": [
+    470,
+    191,
+    1476,
+    511
+   ],
+   "start": 519838096377600,
+   "end": 521084019456000,
+   "read": "公開テンプレート「Addnessをセットアップする」（題と5つの手順）",
+   "group": "公開テンプレ_仕組み",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1757",
+   "id_to": "1757",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_148_1757.png",
+   "rect_px": [
+    474,
+    733,
+    1426,
+    785
+   ],
+   "start": 521084019456000,
+   "end": 521601035155200,
+   "read": "メモ「やり方は1つだけ。行の右にある『AIに依頼する』を押して…」",
+   "group": "公開テンプレ_やり方",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "1759",
+   "id_to": "1759",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/環境設定について/edit/v004/_work/red_frames/g2_149_1759.png",
+   "rect_px": [
+    825,
+    76,
+    1172,
+    112
+   ],
+   "start": 521601035155200,
+   "end": 522245185862400,
+   "read": "公開ページのリンク（アドレス欄の URL）",
+   "group": "公開テンプレ_リンク",
+   "ocr": "",
+   "ratio": []
+  }
+ ],
+ "hits": 243,
+ "how": "v004 G2：analysis/赤枠_v004/ の AI の判断と反証（splits で字幕の途中の画面の替わり目に合わせる）"
+}

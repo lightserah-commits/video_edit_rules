@@ -1,0 +1,15 @@
+/* 動く図解の共通の見た目（dots v002・環境設定 v004 の図解と同じ書体・板。tools/zukai/lib）。ページは 1920×1080・背景は透明
+   書体は PostScript 名で探す（local()。Adobe Fonts で有効にしたものも Chrome が見つける。ユーザー名の入ったパスを書かない） */
+@font-face { font-family: Lbl; src: local("WanpakuRuika-08"); }          /* わんぱくルイカ（dots の図解の地の文字） */
+@font-face { font-family: Tsk; src: local("ReggaeOne-Regular"); }       /* Reggae One（叩きつける一言） */
+@font-face { font-family: Jp; src: local("Toppan-BunkyuMidashiGoStd-EB"); }   /* 凸版文久見出しゴシック EB（ハイライトの地の文字） */
+@font-face { font-family: Hv; src: local("SourceHanSans-Heavy"); }            /* 源ノ角ゴシック Heavy */
+html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+#board { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.8); }     /* 黒い板 80%（カメラが薄く透ける）。make_zukai.py がリニア合成の補正をする */
+.part { position: absolute; visibility: hidden; }
+.in { position: relative; }
+.stk { position: relative; white-space: nowrap; display: inline-block; }
+.stk span { position: absolute; white-space: nowrap; }
+.plate { white-space: nowrap; line-height: 1.15; display: inline-block; }
+.bub { position: relative; background: #fff; border-radius: 22px; color: #111; display: inline-block; }
+.box { position: relative; border-radius: 18px; box-sizing: border-box; }

@@ -1,10 +1,12 @@
-# テロップのアニメーション（出方の動き）
+# テロップのアニメーション（出方の動き。工程5・8の参考データ）
 # 根拠: みかみさんCH0726_最終.prproj / AI使いこなす習慣7選。有効なテロップ・演出クリップ1,383個のうち、動き（キーフレーム）があるのは130個（約9%）。
 # 全件の一覧: 実例/みかみCH0726/アニメーション.csv（時刻・トラック・スタイル・動き・同時に鳴ったSE・本文）
 # 動きはほぼすべて「出てくる瞬間」だけ。消えるときの動きは使っていない。動いている時間は0.1〜0.5秒と短い。
+# 今の組み立てでは、見本集から型IDで部品ごと複製するので、動きも一緒に付いてくる（見本/README.md）。ここは、どの型がどう動くかを知るための表。
+# 標準の型ごとの出方は 02 の各パターンの type の横。
 
-version: 0.1
-status: 暫定（1本分の観測）
+version: 0.2
+status: 確定（1本目の完成版の実測値。動きは見本集の実物を正とする。2026-10-02 2本目で答え合わせ：強調赤黄 32/32 に動き（落ちて弾む・横から流れる）、ツッコミ 8/8（揺れ＋縦の伸び）、ゴージャス青は色かぶり＋不透明度＋幅で、どれも下の候補の中。実例/AI時代に消える仕事残る仕事_冒頭/型と動き.csv）
 
 principle:
   - 通常字幕は動かさない（約600件中、動きがあるのは数件）
@@ -141,12 +143,7 @@ animations:
     count: 3
 
 implementation:
-  xml: |
-    動きの多くは Premiere 専用のエフェクト（トランスフォーム・指向性ブラー・色かぶり補正・ストロボ）で作られていて、
-    Final Cut Pro 7 XML には載らない（書き出したXMLから消えている）。XMLだけでは再現できない。
-  plan: |
-    XMLで読み込んだ後、Premiere内の MCP Bridge（tools/premiere_bridge.py）から、該当クリップにエフェクトを足してキーフレームを打つ。
-    位置・拡大・不透明度だけの動き（SLIDE_RIGHT／SLIDE_LEFT／JUMP_UP／SHAKE／FADE_MOVE）は、XMLのモーション・不透明度のキーフレームでも代用できる可能性がある。
-  status: |
-    2026-09-25 動作確認済み：JUMP_UP・SHAKE・SLIDE_RIGHT・POP_FLASH・STROBE_IN（work/telop_prototype/v002_anim/結果.md）。
-    ツールは tools/telop_animate.py（プリセット名で指定）。未確認：SLIDE_BLUR_RIGHT・WIPE_RIGHT・FADE_MOVE・FLOAT_LOOP。
+  now: 見本集から型IDで部品ごと複製する（tools/reproduce.py）。エフェクトとキーフレームも元と同じになる（見本/README.md）
+  note: |
+    動きの多くは Premiere 専用のエフェクト（トランスフォーム・指向性ブラー・色かぶり補正・ストロボ）で作られていて、Final Cut Pro 7 XML には載らない。
+    以前の方式（XML で読み込んだ後に tools/telop_animate.py で動きを足す）は使わない（CLAUDE.md の組み立て。経緯は 変更履歴.md）

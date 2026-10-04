@@ -31,7 +31,8 @@ from premiere_bridge import run, timecode, seconds_to_frame, preflight  # noqa: 
 EXPORT_JS = r'''
 (function(){
   try {
-    var prevSeq = null; try { prevSeq = app.project.activeSequence; } catch (e0) {}
+    function __byPath(pp){ for (var z=0;z<app.projects.numProjects;z++){ if (String(app.projects[z].path)===pp) return app.projects[z]; } return null; }
+    var prevPath = String(app.project.path), prevSeq = null; try { prevSeq = app.project.activeSequence; } catch (e0) {}
     var prevId = prevSeq ? String(prevSeq.sequenceID) : null;
     var target = null;
     for (var i = 0; i < app.projects.numProjects; i++) { try { if (String(app.projects[i].name) === __PROJECT__) target = app.projects[i]; } catch (e1) {} }
@@ -47,17 +48,26 @@ EXPORT_JS = r'''
     var qs = qe.project.getActiveSequence();
     var jobs = __JOBS__, n = 0, errs = [];
     for (var k = 0; k < jobs.length; k++) { try { qs.exportFramePNG(jobs[k][0], jobs[k][1]); n++; } catch (e2) { errs.push(String(e2)); } }
-    if (prevId && prevId !== String(seq.sequenceID)) {
-      for (var m = 0; m < app.projects.numProjects; m++) { var pr = app.projects[m];
-        for (var q = 0; q < pr.sequences.numSequences; q++) { if (String(pr.sequences[q].sequenceID) === prevId) { try { pr.openSequence(prevId); } catch (e3) {} } } }
-    }
+    // 元のプロジェクトの中で戻す（コピーした版どうしはシーケンスの ID が同じなので、全プロジェクトから探すと別の版へ戻る）
+    if (prevId) { var pj0 = __byPath(prevPath); try { if (pj0) pj0.openSequence(prevId); } catch (e3) {} }
     return JSON.stringify({exported: n, errs: errs.slice(0, 3)});
   } catch (e) { return JSON.stringify({err: String(e), line: e.line}); }
 })();
 '''
 
 
+def open_name(name):
+    """Premiere が持っているプロジェクト名（濁点が分かれた形 NFD のことがある）に合わせる。開いていなければ元の名前のまま。"""
+    import unicodedata
+    names = run('(function(){ var a=[]; for (var i=0;i<app.projects.numProjects;i++) a.push(String(app.projects[i].name)); return JSON.stringify(a); })();')
+    for n in names if isinstance(names, list) else []:
+        if unicodedata.normalize("NFC", n) == unicodedata.normalize("NFC", name):
+            return n
+    return name
+
+
 def export(project, sequence, jobs, batch=120):
+    project = open_name(project)
     done = 0
     for i in range(0, len(jobs), batch):
         chunk = jobs[i:i + batch]
@@ -194,7 +204,7 @@ def main():
     lib_name = os.path.basename(lib_path)
     ref_name = os.path.basename(a.reference)
     idx = json.load(open(os.path.splitext(lib_path)[0] + "_目次.json", encoding="utf-8"))
-    frames_dir = os.path.join(os.path.abspath(a.out), "frames")
+    frames_dir = os.path.join(os.path.abspath(a.out), "frames")  # 書き出し先は絶対パス（相対パスだと Premiere は何も書かずに書き出したと返す）
     os.makedirs(frames_dir, exist_ok=True)
     offs = [int(x) for x in a.offsets.split(",")]
     if a.compare_only:
@@ -204,9 +214,9 @@ def main():
     print("Premiere:", preflight())
 
     # 見本集を開く（開いていなければ）
-    r = run('(function(){ for (var i=0;i<app.projects.numProjects;i++){ if (String(app.projects[i].name)===' + json.dumps(lib_name, ensure_ascii=False)
-            + ') return "open"; } var prev=null; try{prev=app.project.activeSequence;}catch(e){} app.openDocument(' + json.dumps(lib_path, ensure_ascii=False)
-            + ', true, true, true, true); try{ if(prev){ for (var m=0;m<app.projects.numProjects;m++){ var pr=app.projects[m]; for (var q=0;q<pr.sequences.numSequences;q++){ if (String(pr.sequences[q].sequenceID)===String(prev.sequenceID)) pr.openSequence(String(prev.sequenceID)); } } } }catch(e2){} return "opened"; })();', timeout=600)
+    r = run('(function(){ for (var i=0;i<app.projects.numProjects;i++){ if (String(app.projects[i].name)===' + json.dumps(open_name(lib_name), ensure_ascii=False)
+            + ') return "open"; } var prev=null; var pp=String(app.project.path); try{prev=app.project.activeSequence;}catch(e){} app.openDocument(' + json.dumps(lib_path, ensure_ascii=False)
+            + ', true, true, true, true); try{ if(prev){ for (var z=0;z<app.projects.numProjects;z++){ if (String(app.projects[z].path)===pp) app.projects[z].openSequence(String(prev.sequenceID)); } } }catch(e2){} return "opened"; })();', timeout=600)
     print("見本集:", r)
 
     lib_jobs, ref_jobs = [], []

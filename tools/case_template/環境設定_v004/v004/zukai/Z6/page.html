@@ -1,0 +1,255 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Z6 Obsidian は腐る／人の脳と Addness はいらんことを忘れて賢くなる。v002 f43736〜f45021（1285コマ）。部品の data-f0 は図解の頭からのコマ（絶対のコマ − 43736） -->
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+  /* メモ（白い小さな紙。腐ると茶色・においの線） */
+  .memo { position: absolute; }
+  .memo .pw, .memo .pb { position: absolute; inset: 0; border-radius: 5px; clip-path: polygon(0 0, 80% 0, 100% 26%, 100% 100%, 0 100%); }
+  .memo .pw { background:
+      linear-gradient(#a7afba, #a7afba) 35% 30% / 66% 8% no-repeat,
+      linear-gradient(#a7afba, #a7afba) 27% 54% / 56% 8% no-repeat,
+      linear-gradient(#a7afba, #a7afba) 32% 78% / 62% 8% no-repeat,
+      linear-gradient(to bottom left, transparent 50%, #cfcfc2 50%) 100% 0 / 20% 26% no-repeat,
+      #fbfbf3; }
+  .memo .pb { opacity: 0; background:
+      linear-gradient(#4f300f, #4f300f) 35% 30% / 66% 8% no-repeat,
+      linear-gradient(#4f300f, #4f300f) 27% 54% / 56% 8% no-repeat,
+      linear-gradient(#4f300f, #4f300f) 32% 78% / 62% 8% no-repeat,
+      radial-gradient(ellipse 15% 20% at 74% 66%, #5c3814 96%, transparent 100%),
+      radial-gradient(ellipse 10% 13% at 20% 88%, #66401a 96%, transparent 100%),
+      linear-gradient(to bottom left, transparent 50%, #6a4420 50%) 100% 0 / 20% 26% no-repeat,
+      #946232; }
+  .memo .sk { position: absolute; left: 15%; width: 70%; opacity: 0; overflow: visible; }
+  .memo .star { position: absolute; right: -20px; top: -20px; width: 42px; height: 42px; opacity: 0; overflow: visible; }
+  .cal { width: 186px; height: 120px; background: #fff; border-radius: 12px; overflow: hidden; border: 5px solid #000; box-sizing: border-box; }
+  .cal .top { height: 34px; background: #d23b3b; border-bottom: 4px solid #000; position: relative; }
+  .cal .top i { position: absolute; top: 8px; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 2px solid #000; }
+  .cal .txt { font-family: Lbl; font-size: 46px; color: #111; text-align: center; line-height: 72px; white-space: nowrap; }
+  .think { position: absolute; width: 400px; height: 220px; box-sizing: border-box; border: 9px solid #fff; border-radius: 44px; background: #3b3b3b; }
+  .tdot { position: absolute; box-sizing: border-box; border: 6px solid #fff; border-radius: 50%; background: #3b3b3b; }
+  .abox { position: absolute; width: 400px; height: 220px; box-sizing: border-box; border: 10px solid #fdde58; border-radius: 0 44px 44px 44px; background: #3b3b3b; }
+  .atab { position: absolute; left: -10px; top: -58px; height: 60px; padding: 0 12px; background: #fdde58; border-radius: 16px 16px 0 0;
+          font-family: Lbl; font-size: 48px; line-height: 60px; color: #111; white-space: nowrap; }
+</style>
+</head><body>
+<div id="board"></div>
+
+<!-- ───── 左：Obsidian -->
+<!-- ロゴ（形・色を変えない・暗くしない。左を暗くする間は消す） -->
+<div class="part" id="logoA" data-f0="0" data-f1="778" style="left:60px;top:38px"><div class="in"><img src="../assets/obsidian_logo_gradient.svg" style="width:88px;height:88px;display:block"></div></div>
+<div class="part" id="logoB" data-f0="949" data-f1="1000" data-m="none" style="left:60px;top:38px"><div class="in"><img src="../assets/obsidian_logo_gradient.svg" style="width:88px;height:88px;display:block"></div></div>
+<div class="part" id="logoC" data-f0="1222" data-m="none" style="left:60px;top:38px"><div class="in"><img src="../assets/obsidian_logo_gradient.svg" style="width:88px;height:88px;display:block"></div></div>
+<div class="part" id="head" data-f0="0" data-dim="778-949:0.45,1000-1222:0.45" style="left:158px;top:34px"><div class="in" id="headIn"></div></div>
+
+<!-- メモの網（網の線・崩れた後の絡まった線・メモ12枚。メモの出方・茶色・崩れ方は ZUKAI.custom） -->
+<div class="part" id="net" data-f0="0" data-dim="778-949:0.45,1000-1222:0.45" style="left:40px;top:158px;isolation:isolate"><div class="in" id="netIn" style="width:696px;height:456px"></div></div>
+
+<div class="part" id="plUse" data-f0="7" data-f1="96" style="left:52px;top:592px"><div class="in" id="plUseIn"></div></div>
+<div class="part" id="plUse2" data-f0="96" data-f1="314" data-m="none" style="left:52px;top:592px"><div class="in" id="plUse2In"></div></div>
+<div class="part" id="trash" data-f0="96" data-f1="314" style="left:540px;top:580px"><div class="in">
+  <svg width="100" height="124" viewBox="0 0 100 124" style="display:block;overflow:visible">
+    <rect x="37" y="1" width="26" height="12" rx="4" fill="#aeb4bd" stroke="#000" stroke-width="3"/>
+    <rect x="5" y="11" width="90" height="15" rx="5" fill="#c9ced6" stroke="#000" stroke-width="4"/>
+    <path d="M13 29 H87 L79 121 H21 Z" fill="#c9ced6" stroke="#000" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M35 42 L38 108 M50 42 V108 M65 42 L62 108" stroke="#7d848e" stroke-width="6" stroke-linecap="round"/>
+  </svg>
+</div></div>
+
+<!-- ロボット（中で考えて動く AI）とほうき（ほうきの角度は ZUKAI.custom） -->
+<div class="part" id="robot" data-f0="141" data-dim="778-949:0.45,1000-1222:0.45" style="left:705px;top:230px"><div class="in" id="robotIn"></div></div>
+<div class="part" id="plAI" data-f0="169" data-f1="314" style="left:653px;top:640px"><div class="in" id="plAIIn"></div></div>
+<div class="part" id="weak" data-f0="257" data-f1="314" style="left:52px;top:466px"><div class="in" id="weakIn"></div></div>
+<div class="part" id="dots" data-f0="314" data-f1="625" data-m="pop" style="left:776px;top:186px"><div class="in">
+  <svg width="96" height="32" style="display:block;overflow:visible"><g fill="#fff" stroke="#000" stroke-width="4"><circle cx="14" cy="16" r="11"/><circle cx="48" cy="16" r="11"/><circle cx="82" cy="16" r="11"/></g></svg>
+</div></div>
+
+<!-- 日めくり（左）。1日目〜30日目 → 1ヶ月後 -->
+<div class="part" id="cal" data-f0="362" data-dim="778-949:0.45,1000-1222:0.45" style="left:710px;top:40px"><div class="in">
+  <div class="cal"><div class="top"><i style="left:40px"></i><i style="left:124px"></i></div><div class="txt" id="calL">1日目</div></div>
+</div></div>
+<div class="part" id="kusaru" data-f0="403" data-f1="506" style="left:52px;top:626px"><div class="in" id="kusaruIn"></div></div>
+<div class="part" id="stamp" data-f0="506" data-f1="653" data-m="bounce" style="left:216px;top:292px"><div class="in">
+  <div style="transform:rotate(-8deg);border:9px solid #d90a0a;border-radius:16px;color:#d90a0a;background:rgba(255,255,255,0.94);font-family:Tsk;font-size:66px;line-height:1.12;padding:8px 30px 14px;text-align:center;white-space:nowrap">使い物に<br>ならない</div>
+</div></div>
+<div class="part" id="batsu" data-f0="567" data-f1="625" data-m="pop" style="left:701px;top:522px"><div class="in">
+  <svg width="120" height="120" style="display:block;overflow:visible"><g stroke-linecap="round"><path d="M18 18 L102 102 M102 18 L18 102" stroke="#fff" stroke-width="34"/><path d="M18 18 L102 102 M102 18 L18 102" stroke="#d90a0a" stroke-width="22"/></g></svg>
+</div></div>
+<div class="part" id="okashi" data-f0="653" data-f1="778" style="left:52px;top:628px"><div class="in" id="okashiIn"></div></div>
+<div class="part" id="tooku" data-f0="977" data-dim="1000-1222:0.45" style="left:52px;top:628px"><div class="in" id="tookuIn"></div></div>
+
+<!-- ───── 右：人間の脳と Addness -->
+<div class="part" id="divider" data-f0="778" data-m="fade" data-dur="6" style="left:928px;top:40px"><div class="in"><div style="width:4px;height:1000px;background:#8a8a8a"></div></div></div>
+<div class="part" id="head2" data-f0="778" data-dim="949-1000:0.45" style="left:962px;top:34px"><div class="in" id="head2In"></div></div>
+<div class="part" id="person1" data-f0="778" data-f1="819" style="left:1045px;top:470px"><div class="in" id="person1In"></div></div>
+<div class="part" id="person2" data-f0="819" data-m="none" data-dim="949-1000:0.45" style="left:1045px;top:470px"><div class="in"><img src="../assets/Z6_pc_nemuri.png" style="width:190px;display:block"></div></div>
+<!-- 頭の上の考え事の吹き出し（角丸の四角を小さな丸2つで頭につなぐ）。中のメモは左と同じ絵 -->
+<div class="part" id="bubble" data-f0="795" data-dim="949-1000:0.45" style="left:960px;top:170px"><div class="in" id="bubbleIn" style="width:400px;height:290px"></div></div>
+<div class="part" id="zzz" data-f0="819" data-m="pop" data-dim="949-1000:0.45" style="left:946px;top:462px"><div class="in" id="zzzIn"></div></div>
+<div class="part" id="wasure" data-f0="819" data-f1="1021" data-dim="949-1000:0.45" style="left:1268px;top:432px"><div class="in" id="wasureIn"></div></div>
+<!-- Addness の箱（吹き出しと同じ大きさ。黄色の太い縁・左上のタブ・中は暗い灰色） -->
+<div class="part" id="abox" data-f0="1000" style="left:1420px;top:170px"><div class="in" id="aboxIn" style="width:400px;height:220px"></div></div>
+<div class="part" id="plAdd" data-f0="1021" data-f1="1188" style="left:1420px;top:428px"><div class="in" id="plAddIn"></div></div>
+<div class="part" id="cal2" data-f0="1153" style="left:1694px;top:40px"><div class="in">
+  <div class="cal"><div class="top"><i style="left:40px"></i><i style="left:124px"></i></div><div class="txt" id="calR">1日目</div></div>
+</div></div>
+<div class="part" id="arrUp" data-f0="1188" data-m="grow" style="left:1768px;top:404px"><div class="in" id="arrUpIn"></div></div>
+<div class="part" id="close" data-f0="1188" style="left:1296px;top:426px"><div class="in" id="closeIn"></div></div>
+
+<script>
+window.ZUKAI = { frames: 1285 };
+const $ = (id) => document.getElementById(id);
+const WHITE = { bg: "#fff", fg: "#111" };
+$("headIn").innerHTML = Z.stk("Obsidian", { size: 76 });
+$("plUseIn").innerHTML = Z.plate("使う？", { size: 58, ...WHITE });
+$("plUse2In").innerHTML = Z.plate("使う？ 捨てる？", { size: 58, ...WHITE });
+$("plAIIn").innerHTML = Z.plate("AIに\n掃除させる\nしかない", { size: 56, ...WHITE, pad: "6px 26px 12px" });
+$("weakIn").innerHTML = Z.plate("致命的な弱点", { size: 76, bg: "#d90a0a" });
+$("kusaruIn").innerHTML = Z.stk("毎日 腐る", { size: 120, fill: "#f5e63a", strokes: [["#000", 18]], font: "Tsk" });
+$("okashiIn").innerHTML = Z.plate("おかしくなる", { size: 64, bg: "#d90a0a" });
+$("tookuIn").innerHTML = Z.plate("遠く及ばない", { size: 64, bg: "#d90a0a" });
+$("head2In").innerHTML = Z.stk("人間の脳", { size: 74 });
+$("person1In").innerHTML = Z.img(Z.ILLUST + "パソコン業務.png", { w: 190 });
+$("zzzIn").innerHTML = Z.stk("Zzz", { size: 56, fill: "#bfe3ff" });
+$("wasureIn").innerHTML = Z.stk("寝ると\nいらんことを\n忘れる", { size: 58, fill: "#f5e63a" });
+$("plAddIn").innerHTML = Z.plate("Addnessも\n忘れる仕組み", { size: 54, ...WHITE });
+$("arrUpIn").innerHTML = Z.arrow({ len: 220, dir: "up", color: "#f5e63a", shaft: 34, hl: 62, hw: 92 });
+$("closeIn").innerHTML = Z.stk('使えば使うほど<br><span style="font-size:96px">賢くなる</span>', { size: 62, fill: "#f5e63a", strokes: [["#000", 16]] });
+
+// メモの絵
+const STINK = '<path d="M12 32 q-7 -7 0 -14 q7 -7 0 -14" /><path d="M35 30 q-7 -7 0 -14 q7 -7 0 -14" /><path d="M58 32 q-7 -7 0 -14 q7 -7 0 -14" />';
+const STAR = '<path d="M21 0 L26 16 L42 21 L26 26 L21 42 L16 26 L0 21 L16 16 Z" fill="#fff27a" stroke="#c9a800" stroke-width="2"/>';
+function memo(id, cx, cy, w, h) {
+  const sh = Math.round(h * 0.42);
+  return `<div class="memo" id="${id}" style="left:${cx - w / 2}px;top:${cy - h / 2}px;width:${w}px;height:${h}px">` +
+    `<div class="pw"></div><div class="pb"></div>` +
+    `<svg class="sk" viewBox="0 0 70 34" style="top:${-sh - 4}px;height:${sh}px" fill="none" stroke="#b9d05a" stroke-width="4.5" stroke-linecap="round">${STINK}</svg>` +
+    `<svg class="star" viewBox="0 0 42 42">${STAR}</svg></div>`;
+}
+
+// 左の網：メモ12枚 [cx, cy, 傾き, 出るコマ(0=最初から), 茶色になり始めるコマ, 崩れた後 x, y, 傾き]（網の箱の中の座標）
+const LM = [
+  [65, 62, -4, 0, 370, 120, 230, -18], [212, 70, 3, 0, 377, 230, 195, 14], [358, 58, -2, 0, 384, 330, 180, -10],
+  [70, 198, 2, 0, 391, 95, 280, 24], [215, 190, -3, 0, 398, 200, 270, -12], [360, 202, 4, 0, 405, 320, 260, 18],
+  [502, 65, 3, 368, 412, 430, 200, -26], [505, 195, -2, 378, 419, 470, 280, 10], [68, 328, -3, 388, 426, 150, 315, -6],
+  [213, 320, 2, 398, 433, 260, 315, 30], [358, 330, -4, 408, 440, 370, 310, -20], [500, 322, 3, 418, 447, 490, 320, 8],
+];
+const PILEZ = [5, 2, 7, 1, 9, 3, 6, 11, 4, 8, 10, 12];
+const EDGES = [[0, 1], [1, 2], [0, 3], [1, 4], [2, 5], [3, 4], [4, 5], [0, 4], [2, 4], [2, 6], [5, 7], [6, 7], [3, 8], [4, 9], [8, 9], [5, 10], [9, 10], [10, 11], [7, 11], [4, 10]];
+let netH = '<svg style="position:absolute;left:0;top:0;overflow:visible" width="580" height="380">';
+netH += '<g stroke="#8f99a6" stroke-width="5" stroke-linecap="round">' +
+  EDGES.map(([a, b], i) => `<line id="e${i}" x1="${LM[a][0]}" y1="${LM[a][1]}" x2="${LM[b][0]}" y2="${LM[b][1]}"/>`).join("") + "</g>";
+netH += '<path id="tangle" d="M40 250 C110 150 190 330 250 220 S380 140 340 290 S170 350 200 210 S420 170 480 290 S300 380 240 270 S80 200 130 330 S300 120 420 230 S560 330 520 250" fill="none" stroke="#8f99a6" stroke-width="5" opacity="0"/>';
+netH += "</svg>";
+netH += LM.map((m, i) => memo("lm" + i, m[0], m[1], 110, 82)).join("");
+netH += '<svg style="position:absolute;left:0;top:0;overflow:visible;z-index:20" width="580" height="380"><path id="tangle2" d="M70 220 C160 300 230 170 300 260 S440 320 510 220 M150 330 C210 250 320 360 380 250" fill="none" stroke="#8f99a6" stroke-width="4" opacity="0"/></svg>';
+$("netIn").innerHTML = '<div style="position:absolute;left:0;top:0;width:580px;height:380px;transform:scale(1.2);transform-origin:0 0">' + netH + "</div>";
+
+// ロボットとほうき（ほうきは胸の前の手で持つ。手の位置＝絵の中の (99,187)）
+$("robotIn").innerHTML = Z.img(Z.ILLUST + "ai_character08_think.png", { w: 230 }) +
+  '<svg style="position:absolute;left:39px;top:147px;overflow:visible" width="120" height="260"><g id="broomG" transform="translate(60,40) rotate(12)">' +
+  '<rect x="-5" y="-30" width="10" height="160" rx="4" fill="#c48a4a" stroke="#000" stroke-width="2.5"/>' +
+  '<path d="M-14 128 L14 128 L42 205 L-42 205 Z" fill="#e7bb4f" stroke="#000" stroke-width="3" stroke-linejoin="round"/>' +
+  '<path d="M-6 136 L-21 201 M0 136 L0 201 M6 136 L21 201 M-11 136 L-33 201 M11 136 L33 201" stroke="#a87a26" stroke-width="3"/>' +
+  '<rect x="-17" y="119" width="34" height="15" rx="3" fill="#d23b3b" stroke="#000" stroke-width="2.5"/></g></svg>';
+
+// 吹き出しと Addness の箱：同じ並びのメモ6枚（白・茶・白／茶・白・茶）
+const SLOTS = [[75, 72, -3, "w"], [200, 72, 4, "b"], [325, 72, 2, "w"], [75, 158, -2, "b"], [200, 158, 3, "w"], [325, 158, -4, "b"]];
+$("bubbleIn").innerHTML = '<div class="think"></div>' +
+  '<div class="tdot" style="left:176px;top:229px;width:28px;height:28px"></div><div class="tdot" style="left:171px;top:268px;width:18px;height:18px"></div>' +
+  SLOTS.map((s, i) => memo("bm" + i, s[0], s[1], 84, 58)).join("");
+$("aboxIn").innerHTML = '<div class="abox"><div class="atab">Addness</div></div>' +
+  SLOTS.map((s, i) => memo("am" + i, s[0], s[1], 84, 58)).join("") +
+  [1, 3, 5].map((i) => memo("an" + i, SLOTS[i][0], SLOTS[i][1], 84, 58)).join("");
+
+// ───── コマごとの動き
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const POP = [0.4, 0.8, 1.15, 1.06, 1];
+const SPARK = [0.3, 0.7, 1.1, 1.35, 1.3, 1.15, 1.05, 1];
+const vis = (el, on) => { el.style.visibility = on ? "inherit" : "hidden"; };
+const q = (el, s) => el.querySelector(s);
+function brown(el, b) { q(el, ".pb").style.opacity = b; q(el, ".sk").style.opacity = b; }
+function star(el, k, op = 1) {
+  const s = k < 0 ? 0 : (k < SPARK.length ? SPARK[k] : 1);
+  const st = q(el, ".star");
+  st.style.opacity = s > 0 ? op : 0; st.style.transform = `scale(${s})`;
+  return s;
+}
+function glow(el, g) { el.style.filter = g > 0 ? `drop-shadow(0 0 ${(16 * g).toFixed(1)}px rgba(255,240,140,${(0.95 * g).toFixed(3)}))` : "none"; }
+function calText(f, a, b, end) {     // a〜b コマで 1日目→30日目、end から「1ヶ月後」
+  if (f >= end) return "1ヶ月後";
+  return Math.round(clamp(1 + 29 * (f - a) / (b - a), 1, 30)) + "日目";
+}
+function broomAngle(f) {
+  if (f >= 141 && f < 314) return 12 + 8 * Math.sin(2 * Math.PI * (f - 141) / 17.3);   // 掃いている
+  if (f >= 627 && f < 649) return 12 + 45 * Math.sin(Math.PI * (f - 627) / 22);       // 一振り
+  return 12;
+}
+const LEL = LM.map((m, i) => $("lm" + i));
+window.ZUKAI.custom = (f) => {
+  const sig = [];
+  // 左の網：メモが足される・古い順に茶色・崩れる
+  const cq = clamp((f - 652) / 10), ce = cq * cq * (3 - 2 * cq);
+  LM.forEach((m, i) => {
+    const el = LEL[i], k = f - m[3];
+    const on = k >= 0;
+    const s = (m[3] > 0 && k >= 0 && k < POP.length) ? POP[k] : 1;
+    vis(el, on);
+    const dx = (m[5] - m[0]) * ce, dy = (m[6] - m[1]) * ce, r = m[2] + (m[7] - m[2]) * ce;
+    el.style.transform = `translate(${dx.toFixed(2)}px,${dy.toFixed(2)}px) rotate(${r.toFixed(2)}deg) scale(${s})`;
+    el.style.zIndex = ce > 0 ? PILEZ[i] : 1;
+    const b = clamp((f - m[4]) / 6);
+    brown(el, b);
+    sig.push((on ? 1 : 0) + ":" + s + ":" + b.toFixed(2));
+  });
+  sig.push("c" + ce.toFixed(3));
+  const lo = 1 - clamp((f - 652) / 6);
+  EDGES.forEach(([a, b], i) => {
+    const e = $("e" + i);
+    vis(e, f >= LM[a][3] && f >= LM[b][3]);
+    e.setAttribute("opacity", lo.toFixed(3));
+  });
+  const tg = clamp((f - 654) / 8);
+  $("tangle").setAttribute("opacity", tg.toFixed(3)); $("tangle2").setAttribute("opacity", (tg * 0.9).toFixed(3));
+  // ほうき
+  const ang = broomAngle(f);
+  $("broomG").setAttribute("transform", `translate(60,40) rotate(${ang.toFixed(2)})`);
+  sig.push("a" + ang.toFixed(2));
+  // 日めくり
+  const tl = calText(f, 364, 426, 429), tr = calText(f, 1155, 1185, 1188);
+  if ($("calL").textContent !== tl) $("calL").textContent = tl;
+  if ($("calR").textContent !== tr) $("calR").textContent = tr;
+  sig.push(tl, tr);
+  // 吹き出し（人の脳）：寝ると 茶色のメモがすっと消える → 白いメモがキラッ
+  const bf = 1 - clamp((f - 843) / 15);
+  const dimR = f >= 949 && f < 1000;   // 右を暗くする間（光を切り、キラを薄く）
+  SLOTS.forEach((sl, i) => {
+    const el = $("bm" + i);
+    el.style.transform = `rotate(${sl[2]}deg)`;
+    if (sl[3] === "b") { brown(el, 1); el.style.opacity = bf; vis(el, bf > 0); }
+    else { const s = star(el, f - 889, dimR ? 0.35 : 1); glow(el, dimR ? 0 : clamp((f - 889) / 6)); sig.push("s" + s + (dimR ? "d" : "")); }
+  });
+  sig.push("bf" + bf.toFixed(3));
+  // Addness の箱：同じ動きで茶色のメモが消える → 使えば使うほど 白いメモが増えて整い、箱が光る
+  const af = 1 - clamp((f - 1023) / 15);
+  const tidy = clamp((f - 1153) / 35);
+  const g = clamp((f - 1153) / 35);
+  SLOTS.forEach((sl, i) => {
+    const el = $("am" + i);
+    if (sl[3] === "b") { brown(el, 1); el.style.opacity = af; vis(el, af > 0); el.style.transform = `rotate(${sl[2]}deg)`; }
+    else { el.style.transform = `rotate(${(sl[2] * (1 - tidy)).toFixed(2)}deg)`; glow(el, g); star(el, f - 1188); }
+  });
+  [[1, 1158], [3, 1168], [5, 1178]].forEach(([i, t]) => {
+    const el = $("an" + i), k = f - t;
+    vis(el, k >= 0);
+    const s = (k >= 0 && k < POP.length) ? POP[k] : 1;
+    el.style.transform = `scale(${s})`;
+    glow(el, g); star(el, f - 1188);
+    sig.push("n" + (k >= 0 ? 1 : 0) + s);
+  });
+  const box = q($("aboxIn"), ".abox");
+  box.style.boxShadow = g > 0 ? `0 0 ${(46 * g).toFixed(1)}px ${(14 * g).toFixed(1)}px rgba(253,222,88,${(0.85 * g).toFixed(3)})` : "none";
+  sig.push("af" + af.toFixed(3), "g" + g.toFixed(3), "st" + clamp(f - 1188, -1, 9));
+  return sig.join("|");
+};
+</script>
+</body></html>

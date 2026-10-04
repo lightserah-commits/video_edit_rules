@@ -1,0 +1,164 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+/* 段（6:18 からの画面の「6つの層」の図と同じ色：LAYER1 #edf4fe・LAYER2 #dbe6fc・LAYER3 #bdd0fb・LAYER5 #335cce。画面録画から取った） */
+.lay { width: 1145px; height: 190px; border-radius: 16px; box-sizing: border-box; border: 4px solid #13235a; }
+.nm { font-family: Lbl; font-size: 60px; line-height: 1.1; white-space: nowrap; }
+.chip { background: #fff; color: #13235a; border: 4px solid #13235a; border-radius: 14px; font-family: Lbl; font-size: 48px;
+        padding: 2px 18px 8px; line-height: 1.15; white-space: nowrap; display: inline-flex; align-items: center; }
+.chip.y { background: #f5e63a; }
+.chip svg { margin-right: 8px; margin-top: 4px; }
+</style></head><body>
+<div id="board"></div>
+<script>
+// ───── コマ（図解の頭 f9534＝5:18.12 からのコマ。tl.py words 273+1 317 で測った語の聞こえ始めの 0〜2コマ前）
+const F = {
+  head: 0,          // 273+1 の頭（板・ワイプと同じコマ）
+  pera: 23,         // 「ペラペラ」f9556（波形の立ち上がり f9559） → 空の段4枚（3コマおき）
+  model: 63,        // 275「モデル」f9599 → 2段目
+  opus: 90,         // 276「オーパス」：f9623 にカット、f9626 から「オー」の声（-39→-26dB）。聞こえ始めの2コマ前（f9624）
+  fable: 119,       // 276「フェイブル」波形 f9655
+  astra: 206,       // 278「アストラ」波形 f9742（カットの後）
+  sol: 236,         // 278「6.1」波形 f9772
+  dore: 321,        // 280「どれ」f9857 → カーソルが跳ねる
+  glow: 458,        // 284+1「モデル層」f9994 → 2段目の縁が光る
+  agent: 541,       // 286「AI」f10077 → 1段目
+  cc: 617,          // 287「クロードコード」f10153
+  codex: 659,       // 287「コーデックス」波形 f10194
+  use: 764,         // 291「モデルを使っている」f10300 → 太い矢印と札
+  pairA: 995,       // 296「コーデックスで」f10531 → Codex が黄色
+  pairB: 1042,      // 296「アストラ」波形 f10578 → Astra も黄色・細い矢印
+  cursor: 1110,     // 302「カーソルで」波形 f10646→ Cursor が黄色で来る
+  opusY: 1139,      // 302「オーパス」f10672（カットの頭）〜波形 f10675→ Opus が黄色・細い矢印
+  sara: 1209,       // 307+1「そっからさらに」f10745 → 1・2段目のチップを消して暗く
+  dir: 1247,        // 307+1「ディレクトリ」f10783 → 4段目
+  cloud: 1290,      // 309「クラウド」f10826
+  local: 1326,      // 309「ローカル」f10862
+  cmd: 1471,        // 311「クロード.md」f11007 → 3段目
+  skill: 1517,      // 313「スキル」f11053
+  four: 1674,       // 316「4層」f11210 → 締め
+  END: 1791         // f11325＝画面に替わる最初のコマ（含まない）
+};
+window.ZUKAI = { frames: 1791 };
+
+const T = [160, 360, 560, 760];                 // 段の上の y（上から エージェント層・モデル層・ルール・記憶層・作業場）
+const BG = ["#edf4fe", "#dbe6fc", "#bdd0fb", "#335cce"];
+const FG = ["#13235a", "#13235a", "#13235a", "#ffffff"];
+// 話していない段は暗く（不透明のまま。明るさ 0.45・彩度 0.55）
+const DIM = [
+  `${F.model}-${F.agent}:0.45,${F.sara}-${F.four}:0.45`,
+  `${F.agent}-${F.use}:0.45,${F.sara}-${F.four}:0.45`,
+  `${F.model}-${F.cmd}:0.45`,
+  `${F.model}-${F.dir}:0.45,${F.cmd}-${F.four}:0.45`
+];
+
+function P(id, f0, f1, m, x, y, html, extra = {}) {
+  const d = document.createElement("div");
+  d.className = "part"; d.id = id;
+  d.dataset.f0 = f0;
+  if (f1 !== null) d.dataset.f1 = f1;
+  d.dataset.m = m;
+  for (const k in extra) d.dataset[k] = extra[k];
+  d.style.left = x + "px"; d.style.top = y + "px";
+  d.innerHTML = `<div class="in">${html}</div>`;
+  document.body.appendChild(d);
+  return d;
+}
+const chip = (t, y = false, icon = "") => `<div class="chip${y ? " y" : ""}">${icon}${t}</div>`;
+
+// ───── 絵（AI が描いたもの。120×96）
+const NAVY = "#13235a";
+const PIC = {
+  window: `<svg width="120" height="96" viewBox="0 0 120 96"><rect x="4" y="4" width="112" height="88" rx="10" fill="#fff" stroke="${NAVY}" stroke-width="5"/>
+    <path d="M4 28 H116" stroke="${NAVY}" stroke-width="5"/><circle cx="18" cy="16" r="5" fill="#ff5f57"/><circle cx="33" cy="16" r="5" fill="#febc2e"/><circle cx="48" cy="16" r="5" fill="#28c840"/>
+    <rect x="18" y="42" width="70" height="9" rx="4" fill="#9fb3d9"/><rect x="18" y="58" width="84" height="9" rx="4" fill="#9fb3d9"/><rect x="18" y="74" width="52" height="9" rx="4" fill="#9fb3d9"/></svg>`,
+  brain: `<svg width="120" height="96" viewBox="0 0 120 96"><path d="M30 82 C12 80 5 64 11 53 C3 42 9 25 24 23 C26 10 43 4 53 11 C61 3 77 5 81 13 C96 9 110 20 107 34 C117 42 115 61 105 67 C107 81 93 90 80 86 C72 94 56 94 50 86 C42 92 31 90 30 82 Z" fill="#f6a5c0" stroke="${NAVY}" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M60 14 C55 30 67 40 58 56 C52 68 61 78 58 88" fill="none" stroke="${NAVY}" stroke-width="4" stroke-linecap="round"/>
+    <path d="M24 40 C35 34 43 43 38 53 M86 28 C97 32 97 44 88 49 M28 66 C37 60 46 66 43 76 M80 60 C91 57 97 66 92 75" fill="none" stroke="${NAVY}" stroke-width="4" stroke-linecap="round"/></svg>`,
+  book: `<svg width="120" height="96" viewBox="0 0 120 96"><path d="M4 24 L4 90 C24 84 44 84 60 94 C76 84 96 84 116 90 L116 24 Z" fill="#e8613f" stroke="${NAVY}" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M60 20 C44 10 24 10 10 16 L10 82 C24 76 44 76 60 86 Z" fill="#fff" stroke="${NAVY}" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M60 20 C76 10 96 10 110 16 L110 82 C96 76 76 76 60 86 Z" fill="#fff" stroke="${NAVY}" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M20 33 C31 29 42 30 51 35 M20 47 C31 43 42 44 51 49 M20 61 C31 57 42 58 51 63 M69 35 C78 30 89 29 100 33 M69 49 C78 44 89 43 100 47 M69 63 C78 58 89 57 100 61" fill="none" stroke="#7a8fc4" stroke-width="4" stroke-linecap="round"/></svg>`,
+  folder: `<svg width="120" height="96" viewBox="0 0 120 96"><path d="M6 20 Q6 10 16 10 L44 10 L55 22 L104 22 Q114 22 114 32 L114 80 Q114 90 104 90 L16 90 Q6 90 6 80 Z" fill="#e9b52f" stroke="${NAVY}" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M6 42 Q6 34 14 34 L106 34 Q114 34 114 42 L114 80 Q114 90 104 90 L16 90 Q6 90 6 80 Z" fill="#ffd866" stroke="${NAVY}" stroke-width="5" stroke-linejoin="round"/></svg>`
+};
+const ICON = {
+  cloud: `<svg width="62" height="44" viewBox="0 0 62 44"><path d="M15 40 C5 40 1 32 5 25 C3 15 13 9 21 13 C25 3 41 1 47 11 C57 9 63 19 59 27 C64 33 60 40 52 40 Z" fill="#cfe3ff" stroke="${NAVY}" stroke-width="4" stroke-linejoin="round"/></svg>`,
+  pc: `<svg width="62" height="44" viewBox="0 0 62 44"><rect x="10" y="3" width="42" height="28" rx="3" fill="#cfe3ff" stroke="${NAVY}" stroke-width="4"/><path d="M2 40 L60 40 L54 32 L8 32 Z" fill="${NAVY}"/></svg>`
+};
+const LAYERS = [["エージェント層", PIC.window], ["モデル層", PIC.brain], ["ルール・記憶層", PIC.book], ["作業場", PIC.folder]];
+const LIT = [F.agent, F.model, F.cmd, F.dir];   // 段に絵と名前が出るコマ
+
+// ① 見出しと空の4段
+P("head", F.head, null, "slide", 60, 34, Z.plate("AIの環境って いろいろある", { size: 72, bg: "#fff", fg: "#000", pad: "4px 26px 12px" }));
+for (let i = 0; i < 4; i++)
+  P("box" + (i + 1), F.pera + 3 * i, null, "slide", 60, T[i], `<div class="lay" style="background:${BG[i]}"></div>`, { dim: DIM[i] });
+// 段の絵と名前（左の列：絵の下に名前）
+for (let i = 0; i < 4; i++)
+  P("pic" + (i + 1), LIT[i], null, "slide", 82, T[i] + 10,
+    `<div style="width:420px">${LAYERS[i][1]}<div class="nm" style="color:${FG[i]};margin-top:2px">${LAYERS[i][0]}</div></div>`, { dim: DIM[i] });
+
+// ② モデル層のチップ（上の行に3つ、下の行の右に 6.1 Sol。Codex の真下に Astra、Cursor の真下に Opus）
+const D2 = DIM[1];
+P("c_opus", F.opus, F.sara, "slide", 540, 378, chip("Opus"), { dim: D2 });
+P("c_fable", F.fable, F.sara, "slide", 738, 378, chip("Fable"), { dim: D2 });
+P("c_astra", F.astra, F.sara, "slide", 950, 378, chip("Astra"), { dim: D2 });
+P("c_sol", F.sol, F.sara, "slide", 909, 461, chip("6.1 Sol"), { dim: D2 });
+// どれ使うん：カーソルがチップの上を跳ねて、最後に「？」
+P("cur", F.dore, F.glow, "none", 631, 430,
+  `<svg width="56" height="80" viewBox="0 0 56 80" style="display:block;overflow:visible"><path d="M4 4 L4 64 L18 51 L28 75 L39 70 L29 47 L48 47 Z" fill="#fff" stroke="#000" stroke-width="5" stroke-linejoin="round"/></svg>`);
+P("q", F.dore + 30, F.glow, "bounce", 1226, 372, Z.stk("？", { size: 130, font: "Lbl", strokes: [["#000", 18]] }));
+// モデル層があった後に：2段目の縁が1回光る
+// くっきりした黄色の枠（ぼかした影・薄くなる消え方は使わない。20コマでパッと消える）
+P("glow", F.glow, F.glow + 20, "pop", 50, 350,
+  `<div style="width:1165px;height:210px;box-sizing:border-box;border:10px solid #f5e63a;border-radius:22px"></div>`);
+
+// ③ エージェント層のチップ
+P("c_cc", F.cc, F.sara, "slide", 540, 178, chip("Claude Code"));
+P("c_codex", F.codex, F.sara, "slide", 941, 178, chip("Codex"));
+// モデルを使っている：1段目の右の縁（x1205・y255）から右へ出て下へ曲がり、2段目の右の縁（y455）に刺さるコの字の太い赤の矢印と札
+P("arrUse", F.use, F.pairA, "draw", 1195, 230,
+  `<svg width="110" height="250" viewBox="0 0 110 250" style="display:block;overflow:visible"><path class="draw" d="M8 25 H75 V225 H60" fill="none" stroke="#e60000" stroke-width="30" stroke-linejoin="miter"/></svg>`, { dur: 10 });
+P("arrUseH", F.use + 9, F.pairA, "pop", 1207, 413,
+  `<svg width="54" height="84" viewBox="0 0 54 84" style="display:block"><polygon points="0,42 54,0 54,84" fill="#e60000"/></svg>`);
+P("useLbl", F.use, F.pairA, "slide", 1322, 296, Z.plate("モデルを 使う", { size: 58, bg: "#d90a0a" }));
+// Codexで Astra：2つが黄色、Codex から Astra へ赤の矢印（中心 x1048）
+P("y_codex", F.pairA, F.cursor, "pop", 941, 178, chip("Codex", true));
+P("y_astra", F.pairB, F.cursor, "pop", 950, 378, chip("Astra", true));
+P("arrCA", F.pairB, F.cursor, "grow", 1018, 252, Z.arrow({ len: 126, dir: "down", shaft: 20, hl: 32, hw: 60 }), { dur: 8 });
+// Cursorで Opus：Cursor が黄色で来て（左の端を Claude Code・Opus の x540 にそろえる）、Opus が黄色・赤の矢印（Opus の中心 x631 の真上）
+P("c_cursor", F.cursor, F.sara, "slide", 540, 261, chip("Cursor", true));
+P("y_opus", F.opusY, F.sara, "pop", 540, 378, chip("Opus", true), { dim: D2 });
+P("arrCO", F.opusY, F.sara, "grow", 601, 334, Z.arrow({ len: 45, dir: "down", shaft: 20, hl: 30, hw: 60 }), { dur: 6 });
+
+// ④ 作業場（4段目）とルール・記憶層（3段目）
+P("c_folder", F.dir, F.cmd, "slide", 540, 778, chip("フォルダ"));
+P("c_cloud", F.cloud, F.cmd, "slide", 540, 861, chip("クラウド", false, ICON.cloud));
+P("c_local", F.local, F.cmd, "slide", 870, 861, chip("ローカル", false, ICON.pc));
+P("c_cmd", F.cmd, F.four, "slide", 540, 578, chip("CLAUDE.md"));
+P("c_skill", F.skill, F.four, "slide", 918, 578, chip("スキル"));
+
+// ⑤ 締め：4段をくくる赤い括弧と黄色「4層」
+P("brk", F.four, null, "draw", 1214, 158,
+  `<svg width="36" height="796" viewBox="0 0 36 796" style="display:block;overflow:visible"><path class="draw" d="M4 5 H30 V791 H4" fill="none" stroke="#e60000" stroke-width="10" stroke-linejoin="round"/></svg>`, { dur: 10 });
+P("four", F.four, null, "bounce", 1282, 300, Z.stk("4層", { size: 230, font: "Tsk", fill: "#f5e63a", strokes: [["#000", 24]] }));
+
+// カーソルが跳ねる（Opus → Fable → Astra → 6.1 Sol。1つ 8コマ・弧の高さ 46px）
+// 最後は 6.1 Sol のチップの右の余白（チップ x909〜1146）。先がチップの右の縁を指し、字（S）を隠さない。
+// 2026-10-04 直し：前は [1027,468]（チップの真ん中）で「？」と一緒に f458 まで止まり、S を隠して「6.1 ▶ol」に読めた。
+// 矢印の体（x1136〜1186・y469〜546）は 2段目の右の縁 x1205・下の縁 y550 を越えない
+const HOP = [[631, 430], [836, 430], [1048, 430], [1135, 468]];
+window.ZUKAI.custom = (f) => {
+  const e = document.getElementById("cur");
+  const k = Math.max(0, f - F.dore), seg = 8;
+  const i = Math.min(HOP.length - 1, Math.floor(k / seg));
+  let x, y;
+  if (i >= HOP.length - 1) { [x, y] = HOP[HOP.length - 1]; }
+  else {
+    const t = (k - i * seg) / seg, [ax, ay] = HOP[i], [bx, by] = HOP[i + 1];
+    x = ax + (bx - ax) * t; y = ay + (by - ay) * t - 46 * 4 * t * (1 - t);
+  }
+  e.style.left = x.toFixed(1) + "px"; e.style.top = y.toFixed(1) + "px";
+  return "c" + x.toFixed(1) + "," + y.toFixed(1);
+};
+</script></body></html>

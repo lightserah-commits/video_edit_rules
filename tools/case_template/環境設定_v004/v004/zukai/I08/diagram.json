@@ -1,0 +1,38 @@
+{
+ "key": "I08",
+ "title": "Slack・Gmail と LINE",
+ "start_f": 58132,
+ "end_f": 58390,
+ "anchor": {
+  "cap": "1649",
+  "f": 58132
+ },
+ "wipe": {
+  "show": false
+ },
+ "se": [
+  {
+   "f": 0,
+   "se": "cursor",
+   "why": "画像が出る"
+  },
+  {
+   "f": 40,
+   "se": "cursor",
+   "why": "画像が出る"
+  },
+  {
+   "f": 110,
+   "se": "ピコンッ",
+   "why": "画像が出る"
+  }
+ ],
+ "hide_caption_ids": [],
+ "removes": "",
+ "checks": [
+  5,
+  129,
+  253
+ ],
+ "story": "田中さん 1649「今まで Slackとか Gmailぐらいはできた」左に2つ → 1651「LINE多いじゃないですか」右に LINE を大きく。1656+1 の頭で消す"
+}

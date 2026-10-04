@@ -15,3 +15,8 @@ work/
 **/Adobe Adobe Media Encoder Audio Previews/
 __pycache__/
 *.pyc
+
+# 道具の Python とモデル（大きいので Git に入れない。作り方 tools/setup_env.sh）
+env/
+models/
+完成版/

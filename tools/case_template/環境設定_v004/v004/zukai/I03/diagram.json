@@ -1,0 +1,43 @@
+{
+ "key": "I03",
+ "title": "Cursor VS OpenAI・Anthropic → Addness VS OpenAI",
+ "start_f": 33452,
+ "end_f": 33909,
+ "anchor": {
+  "cap": "1179",
+  "f": 33452
+ },
+ "wipe": {
+  "show": false
+ },
+ "se": [
+  {
+   "f": 0,
+   "se": "cursor",
+   "why": "画像が出る"
+  },
+  {
+   "f": 144,
+   "se": "cursor",
+   "why": "画像が出る"
+  },
+  {
+   "f": 223,
+   "se": "ドン",
+   "why": "画像が出る"
+  },
+  {
+   "f": 350,
+   "se": "cursor",
+   "why": "画像が出る"
+  }
+ ],
+ "hide_caption_ids": [],
+ "removes": "",
+ "checks": [
+  5,
+  228,
+  452
+ ],
+ "story": "1179「Cursorも使ってる人は少なくなってきた」左に Cursor → 1184「OpenAIとAnthropicのAチーム」右に2つ → 1185「Cursorと殴り合ってる」VS → 1187「いつAddness対OpenAIになるか」左が Addness に替わり、同じコマで ANTHROPIC を消す。1188 の強調の頭で消す"
+}

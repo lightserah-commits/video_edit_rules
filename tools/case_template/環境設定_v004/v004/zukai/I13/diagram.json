@@ -1,0 +1,33 @@
+{
+ "key": "I13",
+ "title": "dots と Addness",
+ "start_f": 60543,
+ "end_f": 60686,
+ "anchor": {
+  "cap": "1739+1",
+  "f": 60543
+ },
+ "wipe": {
+  "show": false
+ },
+ "se": [
+  {
+   "f": 0,
+   "se": "ピコンッ",
+   "why": "画像が出る"
+  },
+  {
+   "f": 87,
+   "se": "cursor",
+   "why": "画像が出る"
+  }
+ ],
+ "hide_caption_ids": [],
+ "removes": "",
+ "checks": [
+  5,
+  71,
+  138
+ ],
+ "story": "1739+1「（OpenAIの）dotsとか いろいろ出てるけど」dots（案件 dots開設 の素材から顔と名札だけ）→ 1741「このAddnessとかとは うまく組み合わされる」左の列の下に ＋ Addness（顔にかけない）"
+}

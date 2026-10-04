@@ -10,7 +10,7 @@
   ぼかし… っていう・みたいな・って感じ・わけ・と思います・んですけど など → △（感情の強調では口調として残してよい）
   指示語… これ・それ・こいつ・ここ・こっち など → ？（画面や直前の字幕で分かるか、目で確かめる）
   倒置・「…」の前振り・「〜のでは」・お願いの「〜て」→ ？
-  長さ  … 空白と記号を除いた文字数（意味の強調は12字前後・20字まで、感情の強調は9字前後）
+  長さ  … 空白と記号を除いた文字数（参考。意味の強調は字数では削らない＝主語・述語・何の話かをそろえる。感情の強調は9字前後。01 2026-10-02）
 
 使い方:
   python3 tools/kyocho_check.py 文言 [文言 ...]
@@ -135,13 +135,35 @@ def require_texts(items):
         print(f"（参考）意味の強調で字幕と同じ文字のもの {len(same)}件。話した言葉がもともと一文なら問題ない")
 
 
+def type_ratio(pats):
+    """強調の型の割合を知らせる（01 の手順2「見直しのきっかけ」。止めない）。"""
+    n = len(pats)
+    red = sum(p in ("P01", "P08", "P06") for p, _ in pats)      # 赤黄・基本テロップ赤・ツッコミ
+    gor = sum(p in ("P02", "P03") for p, _ in pats)             # ゴージャス金・青
+    sur = sum(p == "P04" for p, _ in pats)
+    emo = [p for p, k in pats if k == "感情"]
+    emo_gold = sum(p == "P02" for p in emo)
+    print(f"# 型の割合（強調 {n}件）：赤い系（赤黄・基本テロップ赤・ツッコミ）{red}・ゴージャス（金・青）{gor}・シュール {sur}", file=sys.stderr)
+    warn = []
+    if gor * 3 > red:
+        warn.append(f"ゴージャスが赤い系の3分の1を超えている（{gor}／{red}。実演のお手本は約10分の1）")
+    if emo and emo_gold / len(emo) > .1:
+        warn.append(f"感情の強調の {100 * emo_gold / len(emo):.0f}% が金（お手本は3%。喜び・興奮の一言は赤黄か白シャドウ）")
+    if n >= 20 and sur / n < .1:
+        warn.append(f"シュールが {100 * sur / n:.0f}%（お手本は29%。冷めた言い方の結論・本音を見落としていないか）")
+    for w in warn:
+        print("# 見直す：" + w, file=sys.stderr)
+
+
 def main():
     args = sys.argv[1:]
     items = []
+    pats = []
     if args and args[0] == "--csv":
         for row in csv.DictReader(open(args[1], encoding="utf-8-sig")):
             if re.match(r"P0[1-8]$", row.get("パターンID", "")):
                 items.append((row.get("時刻", ""), row.get("文字・内容", ""), row.get("種類", ""), row.get("元の言葉", "")))
+                pats.append((row.get("パターンID", ""), row.get("種類", "")))
     else:
         items = [("", a, "", "") for a in args]
     count = {}
@@ -153,6 +175,8 @@ def main():
         print(f"{tm}\t{v}\t{kind}\t{r['chars']}字\t{r['text']}\t{' / '.join(notes(r))}{extra}")
     if len(items) > 1:
         print("# " + "  ".join(f"{k} {n}" for k, n in sorted(count.items())), file=sys.stderr)
+    if pats:
+        type_ratio(pats)
     sys.exit(1 if any(k.startswith("×") for k in count) else 0)
 
 

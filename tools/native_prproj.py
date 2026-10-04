@@ -19,6 +19,7 @@
 import base64
 import copy
 import gzip
+import os
 import re
 import struct
 import uuid
@@ -413,6 +414,92 @@ class Prproj:
             items_el.append(r)
         return new_item
 
+
+    # --- ディゾルブ（2026-10-03 dots v003 で確かめた。QE の addTransition は使わない） ---
+    # 手本は小川さんが Premiere で手で付けたクロスディゾルブ（ワークの完全解説 v003 の V3、MatchName AE.AE_Impact_Dissolve＝
+    # Premiere 2026 の「クロスディゾルブ」）を部品ごと書き出した tools/dissolve_template.xml。
+    # 終わり：ClipTrackItem に TailTransition、Start＝終わり−長さ・End＝終わり、HasOutgoingClip=true・HasIncomingClip=false・Alignment＝長さ。
+    # 頭　　：HeadTransition、Start＝頭・End＝頭＋長さ、HasOutgoingClip=false・HasIncomingClip=true・Alignment=0。
+    # どちらもトラックの ClipTrack/TransitionItems/TrackItems に時刻順で載せる。
+    # 見本集から複製したクリップ（右上タイトルなど）は、見本の古いディゾルブへの参照（トラックに載っていない）を持っていることがある。
+    # 同じ側に参照があれば外してから付ける（QE が V9 で失敗する・違う位置に付くのは、これが原因の候補）。
+    DISSOLVE_TEMPLATE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dissolve_template.xml")
+
+    def add_dissolve(self, seq, track_name, item, frames=15, at_end=True):
+        """seq の track_name の item の終わり（at_end）か頭に、frames コマのクロスディゾルブを付ける。トランジションの要素を返す"""
+        track = self.track(seq, track_name)
+        ticks = frames * self.frame_ticks(seq)
+        s, e = self.span(item)
+        if e - s <= ticks:
+            raise ValueError(f"クリップ（{(e - s) / TPS:.3f}秒）がディゾルブ（{ticks / TPS:.3f}秒）より短い")
+        tag = "TailTransition" if at_end else "HeadTransition"
+        ct = item.find("ClipTrackItem")
+        old = ct.find(tag)
+        lst_parent = track.find("ClipTrack/TransitionItems")
+        if lst_parent is None:
+            raise ValueError(f"{track_name} に TransitionItems が無い")
+        lst = lst_parent.find("TrackItems")
+        if lst is None:
+            lst = ET.Element("TrackItems", {"Version": "1"})
+            lst_parent.insert(0, lst)
+        if old is not None:
+            for r in list(lst.findall("TrackItem")):
+                if r.attrib.get("ObjectRef") == old.attrib.get("ObjectRef"):
+                    lst.remove(r)
+            ct.remove(old)
+        tmpl = list(ET.parse(self.DISSOLVE_TEMPLATE).getroot())
+        remap = {}
+        for o in tmpl:
+            remap[o.attrib["ObjectID"]] = str(self.next_id)
+            self.next_id += 1
+        parts = []
+        for o in tmpl:
+            o.attrib["ObjectID"] = remap[o.attrib["ObjectID"]]
+            for x in o.iter():
+                if "ObjectRef" in x.attrib:
+                    x.attrib["ObjectRef"] = remap[x.attrib["ObjectRef"]]
+            parts.append(o)
+        tr = parts[0]
+        tti = tr.find("TransitionTrackItem")
+        ti = tti.find("TrackItem")
+        if ti.find("Node") is not None:
+            ti.remove(ti.find("Node"))
+        a, b = (e - ticks, e) if at_end else (s, s + ticks)
+        st = ti.find("Start")
+        if st is None:
+            st = ET.Element("Start")
+            ti.insert(0, st)
+        st.text, ti.find("End").text = str(a), str(b)
+        tti.find("HasOutgoingClip").text = "true" if at_end else "false"
+        tti.find("HasIncomingClip").text = "false" if at_end else "true"
+        tti.find("Alignment").text = str(ticks) if at_end else "0"
+        for o in parts:
+            self.root.append(o)
+            self.ids[o.attrib["ObjectID"]] = o
+        ref = ET.Element(tag, {"ObjectRef": tr.attrib["ObjectID"]})
+        if at_end:
+            ct.append(ref)
+        else:
+            tail = ct.find("TailTransition")
+            ct.insert(list(ct).index(tail) if tail is not None else len(ct), ref)
+        refs = list(lst.findall("TrackItem")) + [ET.Element("TrackItem", {"Index": "0", "ObjectRef": tr.attrib["ObjectID"]})]
+        refs.sort(key=lambda r: int(self.ids[r.attrib["ObjectRef"]].findtext("TransitionTrackItem/TrackItem/Start")))
+        for r in list(lst.findall("TrackItem")):
+            lst.remove(r)
+        for i, r in enumerate(refs):
+            r.attrib["Index"] = str(i)
+            lst.append(r)
+        return tr
+
+    def transitions(self, seq, track_name):
+        """track_name に載っているトランジションの (開始, 終わり, MatchName) の一覧（検査用）"""
+        lst = self.track(seq, track_name).find("ClipTrack/TransitionItems/TrackItems")
+        out = []
+        for r in (lst.findall("TrackItem") if lst is not None else []):
+            t = self.ids[r.attrib["ObjectRef"]]
+            ti = t.find("TransitionTrackItem/TrackItem")
+            out.append((int(ti.findtext("Start")), int(ti.findtext("End")), t.findtext("TransitionTrackItem/MatchName")))
+        return out
 
     # --- 見本集づくりの補助 ---
     def detach_all(self, seq):

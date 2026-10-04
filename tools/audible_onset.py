@@ -18,12 +18,15 @@
   python3 audible_onset.py check-prproj 完成.prproj --sequence 本編 --tracks V8,V9 --audio-track A1 --media IMG_1063.MOV --wav 出力.wav [--asr 認識.json]
       … 置かれている字幕の開始フレームと、聞こえ始めのフレームの差を出す（編集済みのタイムラインで）。
         --asr を渡すと、本番と同じく音声認識の語の時刻を候補にして聞こえ始めを決める
-  音声認識（語の時刻つき）: whisper-cli -m ggml-small.bin -l ja -nfa -dtw small -ojf -of 出力 声.wav
+  python3 audible_onset.py transcribe 出力.wav 認識.json [--model ggml-small.bin]
+      … 音声認識（語の時刻つき）。3分ずつ whisper-cli -dtw にかけてつなぐ（長い声を一度に -dtw で渡すと止まる）。
+        --asr に渡すと、DTW の語の時刻を 0.10秒前にして候補にする（DTW_LEAD）
 """
 import argparse
 import json
 import math
 import os
+import re
 import subprocess
 import sys
 import unicodedata
@@ -42,6 +45,12 @@ RISE_DB = 14.0            # 間の大きさより何dB大きくなったら声�
 KEEP_DB = 16.0            # 立ち上がりの後 40ミリ秒の平均がこれ以上なら声が続いている
 QUIET_DB = 12.0           # 間とみなす大きさ（底から何dB以内）
 FPS = 30000 / 1001
+# whisper の DTW の語の時刻は、聞こえ始めより中央で3〜4フレーム遅い。候補（探す中心）にする時だけ 0.10秒前にする
+# （字幕の時刻は波形で決めるので、一律にずらす補正ではない）。かかるのは load_whisper_tokens を通した時だけ。
+# 1本目の声の途中から始まる字幕 330本の ±1フレーム以内が small 28%→39%（前半・後半とも同じ向き）。0.08〜0.15秒はほぼ同じ、
+# 0.20秒は下がる。2本目は声の途中の字幕が27本しかなく確かめになっていない。カットの頭の字幕では差が無い（実例/根拠と実例.md）
+DTW_LEAD = 0.10
+CHUNK_SEC, CHUNK_OVERLAP = 180.0, 10.0    # transcribe：長い声を一度に -dtw で渡すと止まる（92分で2時間進まなかった）ので3分ずつ
 
 
 def extract(src, out_wav):
@@ -154,10 +163,81 @@ def load_whisper_tokens(path):
                 continue
             dtw = t.get("t_dtw", -1)
             t0 = (t.get("offsets") or {}).get("from", 0) / 1000
-            start = dtw / 100 if isinstance(dtw, (int, float)) and dtw >= 0 else t0
+            start = max(0.0, dtw / 100 - DTW_LEAD) if isinstance(dtw, (int, float)) and dtw >= 0 else t0
             toks.append({"text": text, "start": round(start, 3)})
     toks.sort(key=lambda x: x["start"])
     return toks
+
+
+MODEL_CANDIDATES = [os.path.expanduser("~/Desktop/video_edit_rules/models/ggml-small.bin"),   # tools/setup_env.sh で作る（2026-10-05 から）
+                    os.path.expanduser("~/whisper-models/ggml-small.bin")]
+
+
+DTW_PRESETS = {"tiny", "tiny.en", "base", "base.en", "small", "small.en", "medium", "medium.en",
+               "large.v1", "large.v2", "large.v3", "large.v3.turbo"}     # whisper-cli -dtw が受け付ける名前
+
+
+def dtw_preset(model):
+    """モデルのファイル名から -dtw の名前（ggml-small-q5_1.bin → small、ggml-large-v3-turbo.bin → large.v3.turbo）"""
+    name = re.sub(r"^ggml-|\.bin$", "", os.path.basename(model))
+    name = re.sub(r"-(q\d+_\d+|q\d+|f16|f32|tdrz)$", "", name).replace("-", ".")
+    return name if name in DTW_PRESETS else None
+
+
+def transcribe(wav, out_json, model=None, preset=None):
+    """声の WAV を3分ずつ（10秒重ねて）whisper-cli -dtw で文字起こしし、語の時刻を元の声の時刻に直してつなぐ。
+    出力は whisper-cli -ojf と同じ形（transcription[].tokens[]、offsets はミリ秒・t_dtw は 1/100秒。timestamps の文字列はかけらの中の時刻のまま）。
+    止まった・失敗したかけらがあれば、理由を出して止める。"""
+    import signal
+    import tempfile
+    signal.signal(signal.SIGTERM, lambda s, f: sys.exit(143))     # 外から止められても、一時フォルダと whisper-cli を片付ける
+    if model and not os.path.exists(model):
+        raise SystemExit(f"モデルがありません: {model}")
+    model = model or next((m for m in MODEL_CANDIDATES if os.path.exists(m)), None)
+    if not model:
+        raise SystemExit(f"文字起こしのモデルがありません: {MODEL_CANDIDATES}（iMacの準備.md の 3）")
+    preset = preset or dtw_preset(model)
+    if preset not in DTW_PRESETS:
+        raise SystemExit(f"-dtw の名前をモデル名から決められません: {os.path.basename(model)}（--dtw で {sorted(DTW_PRESETS)} のどれかを渡す）")
+    with wave.open(wav, "rb") as w:
+        total = w.getnframes() / w.getframerate()
+    tokens, log, t, i = [], [], 0.0, 0
+    with tempfile.TemporaryDirectory() as tmp:
+        while t < total:
+            part, base = os.path.join(tmp, f"c{i:03d}.wav"), os.path.join(tmp, f"c{i:03d}")
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(t), "-t", str(CHUNK_SEC + CHUNK_OVERLAP), "-i", wav,
+                            "-c", "copy", part], check=True)
+            try:      # -mc 0：前の文に引きずられて同じ言葉をくり返す誤認識を防ぐ
+                subprocess.run(["whisper-cli", "-m", model, "-l", "ja", "-nfa", "-mc", "0", "-dtw", preset, "-ojf", "-of", base, part],
+                               stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, timeout=900, check=True)
+            except subprocess.TimeoutExpired:
+                raise SystemExit(f"{t:.0f}秒からのかけらの文字起こしが15分で終わらなかった（{model}）")
+            except subprocess.CalledProcessError as e:
+                tail = "\n".join((e.stderr or b"").decode("utf-8", errors="replace").strip().splitlines()[-5:])
+                raise SystemExit(f"{t:.0f}秒からのかけらで whisper-cli が失敗した（終了コード {e.returncode}）:\n{tail}")
+            d = json.loads(open(base + ".json", "rb").read().decode("utf-8", errors="replace"))
+            lo, hi = t + (CHUNK_OVERLAP / 2 if i > 0 else 0.0), t + CHUNK_SEC + CHUNK_OVERLAP / 2
+            n = 0
+            for seg in d.get("transcription", []):
+                for tok in seg.get("tokens", []):
+                    off = dict(tok.get("offsets") or {})
+                    f = off.get("from", 0) / 1000 + t
+                    dtw = tok.get("t_dtw")
+                    at = dtw / 100 + t if isinstance(dtw, (int, float)) and dtw >= 0 else f
+                    if not (lo <= at < hi):
+                        continue          # 重ねた所は、かけらの真ん中に近い方を使う（決めるのは DTW の時刻。offsets は文の単位で粗く、境目で語が二重・抜けになる）
+                    off["from"], off["to"] = int(round(f * 1000)), int(round(off.get("to", 0) + t * 1000))
+                    tok = {**tok, "offsets": off}
+                    if isinstance(tok.get("t_dtw"), (int, float)) and tok["t_dtw"] >= 0:
+                        tok["t_dtw"] = int(round(tok["t_dtw"] + t * 100))
+                    tokens.append(tok)
+                    n += 1
+            log.append({"start": t, "tokens": n})
+            print(f"  {t / 60:5.1f}分〜 {n}語", flush=True)
+            i, t = i + 1, t + CHUNK_SEC
+    json.dump({"model": model, "dtw": preset, "chunks": log, "transcription": [{"tokens": tokens}]},
+              open(out_json, "w", encoding="utf-8"), ensure_ascii=False)
+    print(f"{out_json}: {len(tokens)}語（{len(log)}かけら）")
 
 
 def asr_candidate(tokens, starts, text, t, window=1.5):
@@ -181,6 +261,110 @@ def asr_candidate(tokens, starts, text, t, window=1.5):
         if best is not None:
             return best
     return None
+
+
+# ---------- 候補づくり（2026-10-03。字幕の文字と語を、ずれ・抜けを許して並べ合わせる） ----------
+# 完成版1本目の声の途中から始まる字幕の前半165本で選び、後半・2本目で確かめた（scratchpad の harness。実例/根拠と実例.md）：
+# ±1フレーム以内 前半 47→54%・後半 32→33%・2本目 30→44%、±2 は 53→62%・51→55%・48→74%。候補が作れない字幕が約半分になる。
+# 字幕に書いていない「だから・なんか」から出す・聞こえ始めの探し方を変える案は、前半にだけ効いて後半・2本目で効かなかったので入れていない
+CAP_HEAD = 10                         # 字幕の頭の何文字を並べ合わせるか
+AL_MATCH, AL_MISMATCH, AL_GAP = 2.0, -1.0, -1.0
+AL_MIN = 3.0                          # 並べ合わせの点がこれ未満なら一致とみなさない（ほぼ2文字以上の一致）
+_KANJI_NUM = str.maketrans("〇一二三四五六七八九", "0123456789")
+
+
+def _strip_paren(s):
+    """（ ）の中を消す（字幕で補った言葉は話されていない）"""
+    out, depth = [], 0
+    for ch in s:
+        if ch in "（(":
+            depth += 1
+            out.append(" ")
+        elif ch in ")）" and depth:
+            depth -= 1
+        elif not depth:
+            out.append(ch)
+    return "".join(out) if depth == 0 else s
+
+
+def cnorm(s, drop_paren=True):
+    """NFKC・（ ）の中を消す・カタカナ→ひらがな・漢数字→数字・英数字と「ー」だけ残す（英字は小文字）"""
+    s = unicodedata.normalize("NFKC", s)
+    if drop_paren:
+        s = _strip_paren(s)
+    s = "".join(chr(ord(ch) - 0x60) if 0x30A1 <= ord(ch) <= 0x30F6 else ch for ch in s).translate(_KANJI_NUM)
+    return "".join(ch.lower() for ch in s if ch.isalnum() or ch == "ー")
+
+
+def caption_patterns(text, prev_text=None):
+    """並べ合わせる字幕の文字（層ごと、長い層から）。1行目を出してから2行目を足す字幕（1つ前の字幕の文字で始まる）は、足した所だけ"""
+    if prev_text:
+        a, b = cnorm(prev_text), cnorm(text)
+        if a and len(b) > len(a) and b.startswith(a):
+            return [b[len(a):]]
+    parts = [p for p in text.split(" / ") if cnorm(p)]
+    parts.sort(key=lambda p: -len(cnorm(p)))
+    return [cnorm(p) for p in parts] or [cnorm(text)]
+
+
+def align_starts(cap, s):
+    """cap（字幕の頭）を s（窓の中の語の文字）に、ずれ・抜けを許して当てる。[(点, s の何文字目から, cap の頭を何文字飛ばしたか)]"""
+    n, m = len(cap), len(s)
+    if n == 0 or m == 0:
+        return []
+    NEG = -1e9
+    H = [[NEG] * (m + 1) for _ in range(n + 1)]
+    S = [[None] * (m + 1) for _ in range(n + 1)]
+    for j in range(m + 1):
+        H[0][j] = 0.0
+    for i in range(1, n + 1):
+        H[i][0] = H[i - 1][0] + AL_GAP
+    best = {}
+    for i in range(1, n + 1):
+        ci = cap[i - 1]
+        Hi, Hp, Si, Sp = H[i], H[i - 1], S[i], S[i - 1]
+        for j in range(1, m + 1):
+            bs, bst = NEG, None
+            hd = Hp[j - 1]
+            if hd > NEG / 2:
+                if ci == s[j - 1]:
+                    bs, bst = hd + AL_MATCH, Sp[j - 1] or (j - 1, i - 1)
+                elif Sp[j - 1] is not None:
+                    bs, bst = hd + AL_MISMATCH, Sp[j - 1]
+            if Hp[j] > NEG / 2 and Hp[j] + AL_GAP > bs:
+                bs, bst = Hp[j] + AL_GAP, Sp[j]
+            if Si[j - 1] is not None and Hi[j - 1] > NEG / 2 and Hi[j - 1] + AL_GAP > bs:
+                bs, bst = Hi[j - 1] + AL_GAP, Si[j - 1]
+            if bs <= NEG / 2:
+                continue
+            Hi[j], Si[j] = bs, bst
+            if bst is not None and bs > best.get(bst, NEG):
+                best[bst] = bs
+    return [(sc, j0, i0) for (j0, i0), sc in best.items()]
+
+
+def asr_candidate2(tokens, starts, text, t, prev_text=None, window=1.5):
+    """字幕の文字と語を並べ合わせ、t の近く（±window 秒の語）で一番点の高い一致の開始秒を返す（同じ点なら t に近いもの。無ければ None）。
+    prev_text：同じトラックで1つ前の字幕の文字（1行目→2行目の字幕の判定。無くても動く）。t は「だいたいの場所」で、窓の中心と同点の選び方だけに使う"""
+    import bisect
+    pats = [p for p in caption_patterns(text, prev_text) if p]
+    if not pats:
+        return None
+    i0, i1 = bisect.bisect_left(starts, t - window), bisect.bisect_right(starts, t + window)
+    chars = [(ch, i) for i in range(i0, i1) for ch in cnorm(tokens[i]["text"], drop_paren=False)]
+    if not chars:
+        return None
+    s = "".join(c for c, _ in chars)
+    ms = []
+    for rank, cap in enumerate(pats):
+        ms = [(sc - 0.5 * rank, chars[j][1]) for sc, j, _ in align_starts(cap[:CAP_HEAD], s)]
+        if ms:
+            break
+    ms = [m for m in ms if m[0] >= AL_MIN]
+    if not ms:
+        return None
+    top = max(sc for sc, _ in ms)
+    return min((starts[ti] for sc, ti in ms if sc >= top), key=lambda st: abs(st - t))
 
 
 def check_prproj(a):
@@ -216,12 +400,14 @@ def check_prproj(a):
     for tn, tr in pj.tracks(seq):
         if tn not in tracks:
             continue
-        for it in pj.items(tr):
+        prev_text = None                   # 同じトラックで1つ前の字幕の文字（1行目→2行目の字幕の判定）
+        for it in sorted(pj.items(tr), key=lambda x: pj.span(x)[0]):
             if it.find("ClipTrackItem/IsMuted") is not None:
                 continue
             s, _ = pj.span(it)
             texts = pj.item_texts(it)
             text = " / ".join("".join(r) for r in texts).replace("\r", " ")
+            prev_text, prev = text, prev_text
             clip = next((c for c in clips if c[0] <= s < c[1]), None)
             if clip is None:
                 rows.append({"track": tn, "frame": round(s / frame_t), "text": text[:30], "status": "no_audio_clip"})
@@ -235,7 +421,7 @@ def check_prproj(a):
                 r = onset_near(audio, src_t, lo=src_lo - 0.2, hi=src_hi)
             else:
                 # 本番と同じ：音声認識の語の時刻を候補にして聞こえ始めを決め、編集者の置き方と比べる
-                cand = asr_candidate(tokens, starts, text, src_t)
+                cand = asr_candidate2(tokens, starts, text, src_t, prev_text=prev)
                 r = best_onset(audio, cand, lo=src_lo - 0.2, hi=src_hi) if cand is not None else {"onset": None, "status": "no_asr_match"}
             row = {"track": tn, "frame": round(s / frame_t), "text": text[:30], **r}
             if r["onset"] is not None:
@@ -275,6 +461,11 @@ def main():
     m = sp.add_parser("measure")
     m.add_argument("wav")
     m.add_argument("times", nargs="+", type=float)
+    tr = sp.add_parser("transcribe")
+    tr.add_argument("wav")
+    tr.add_argument("out")
+    tr.add_argument("--model", help="whisper.cpp のモデル（既定は ggml-small.bin。iMacの準備.md の 3）")
+    tr.add_argument("--dtw", help="-dtw のプリセット（既定はモデルの名前から small・large.v3.turbo など）")
     c = sp.add_parser("check-prproj")
     c.add_argument("project")
     c.add_argument("--sequence", required=True)
@@ -287,6 +478,8 @@ def main():
     a = ap.parse_args()
     if a.cmd == "extract":
         extract(a.src, a.out)
+    elif a.cmd == "transcribe":
+        transcribe(a.wav, a.out, a.model, a.dtw)
     elif a.cmd == "measure":
         audio = Audio(a.wav)
         for t in a.times:

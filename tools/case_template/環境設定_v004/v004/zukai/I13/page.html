@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- I13（v004 G3）dots と Addness。gen_images.py が作った（手で直さない） -->
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+  .ph { position: relative; background: #fff; border: 14px solid #fff; border-radius: 14px; box-shadow: 0 14px 40px rgba(0,0,0,.6); overflow: hidden; box-sizing: border-box; }
+  .ph img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .ph.contain img { object-fit: contain; background: #fff; }
+  .card { display: flex; align-items: center; gap: 24px; background: #fff; border: 5px solid #000; border-radius: 26px; padding: 16px 40px 16px 22px;
+          box-shadow: 0 8px 22px rgba(0,0,0,.45); box-sizing: border-box; }
+  .card .logo { height: 120px; width: auto; max-width: 420px; display: block; flex: none; }
+  .card .nm { font-family: Lbl; font-size: 80px; line-height: 1.0; color: #111; white-space: nowrap; padding-bottom: 4px; }
+  .card .sub { font-family: Lbl; font-size: 38px; line-height: 1.1; color: #1b5fd1; white-space: nowrap; }
+  .credit { font-family: 'Hiragino Sans'; font-weight: 600; font-size: 22px; color: #fff; text-shadow: 0 0 4px #000, 0 0 2px #000; white-space: nowrap; }
+</style>
+</head><body>
+<div class="part" id="p1" data-f0="0" data-m="pop" style="left:100px;top:140px"><div class="in"><div class="ph contain" style="width:340px;height:340px"><img src="../assets/img_dots_clean.png"></div></div></div>
+<div class="part" id="p1L" data-f0="0" data-m="pop" style="left:270px;top:490px"><div class="in"><div id="p1Lt" style="position:relative;display:inline-block;transform:translateX(-50%)"></div></div></div>
+<div class="part" id="pl" data-f0="87" data-m="pop" style="left:270px;top:612px"><div class="in"><div id="plt" style="position:relative;display:inline-block;transform:translate(-50%,-50%)"></div></div></div>
+<div class="part" id="c1" data-f0="87" data-m="slideL" style="left:50px;top:672px"><div class="in"><div class="card"><img class="logo" style="height:76px" src="../assets/logo_addness_clear.png"></div></div></div>
+<script>
+window.ZUKAI = { frames: 143 };
+document.getElementById('p1Lt').innerHTML = Z.stk("dots", {size: 58});
+document.getElementById('plt').innerHTML = Z.stk("+", {size: 110, fill: '#f5e63a', font: 'Hv', strokes: [['#000', 18]]});
+</script></body></html>

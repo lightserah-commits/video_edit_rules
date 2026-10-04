@@ -11,7 +11,7 @@
 
 見た目の指紋に使うもの: 文字レイヤーごとのフォント・サイズ・塗り・縁（色・太さ・重ね数）・影・揃え、
 箱などの図形レイヤーの設定、レイヤー構成、クリップ全体の拡大率。位置は指紋に入れず、別に集計する。
-文字データの読み取りは颯太さんの解析ツール（プロマネ静的解析.py の Flat）を使う。
+文字データの読み取りは颯太さんの解析ツール（プロマネ静的解析.py の Flat）を使う。無い時は文字とフォント名だけを読む簡易版（SimpleFlat）で動く（2026-10-02）。
 """
 import argparse
 import ast
@@ -29,8 +29,40 @@ FLAT_SRC = os.path.expanduser("~/Downloads/林社長コラボ_v007_颯太引継�
             "動画制作案件/2026-09-09_YouTube編集ルール定義/資料/プロマネ静的解析.py")
 
 
+class SimpleFlat:
+    """FLAT_SRC が無い時の代わり。文字と、フォント名らしい文字列だけを読む（大きさ・色・縁は読めない）。
+    見た目の指紋は粗くなる（同じフォントの別の色が同じ型に入る）。動き（キーフレーム）の読み取りには影響しない。"""
+
+    def __init__(self, raw):
+        self.raw = raw
+
+    def decode(self):
+        import struct
+        out, i, n = [], 0, len(self.raw)
+        while i + 4 < n:  # uint32長 + UTF-8 + NUL（decoration_report.fb_strings と同じ）
+            ln = struct.unpack_from("<I", self.raw, i)[0]
+            if 1 <= ln <= 4000 and i + 4 + ln < n and self.raw[i + 4 + ln] == 0:
+                try:
+                    s = self.raw[i + 4:i + 4 + ln].decode("utf-8")
+                    if all(ord(c) >= 0x20 or c in "\r\n\t" for c in s):
+                        out.append(s)
+                        i += 4 + ln + 1
+                        continue
+                except UnicodeDecodeError:
+                    pass
+            i += 1
+        font_re = re.compile(r"^[A-Za-z][A-Za-z0-9]*(-[A-Za-z0-9]+)+$|^[A-Z][A-Za-z0-9]{5,}$")
+        fonts = [s for s in out if font_re.match(s)]
+        rest = [s for s in out if s not in fonts]
+        return {"text": max(rest, key=len) if rest else "", "fonts_postscript_saved": fonts}
+
+
 def load_flat():
     import math, struct  # noqa: F401  Flat が使う
+    if not os.path.exists(FLAT_SRC):
+        import sys
+        print(f"注意: {FLAT_SRC} が無いので、文字とフォント名だけを読む簡易版で動かします（見た目の指紋は粗くなる）", file=sys.stderr)
+        return SimpleFlat
     tree = ast.parse(open(FLAT_SRC, encoding="utf-8").read())
     node = next(n for n in tree.body if isinstance(n, ast.ClassDef) and n.name == "Flat")
     ns = {"struct": struct, "math": math, "json": json}

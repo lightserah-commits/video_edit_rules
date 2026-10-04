@@ -1,0 +1,33 @@
+{
+ "key": "I14",
+ "title": "OpenAI とサム・アルトマン",
+ "start_f": 60780,
+ "end_f": 60965,
+ "anchor": {
+  "cap": "1744",
+  "f": 60780
+ },
+ "wipe": {
+  "show": false
+ },
+ "se": [
+  {
+   "f": 0,
+   "se": "cursor",
+   "why": "画像が出る"
+  },
+  {
+   "f": 60,
+   "se": "ピコンッ",
+   "why": "画像が出る"
+  }
+ ],
+ "hide_caption_ids": [],
+ "removes": "",
+ "checks": [
+  5,
+  92,
+  180
+ ],
+ "story": "1744「OpenAIがどう出てくるかって めっちゃ読んでる」OpenAI → 1745「サム・アルトマンの次の次の次ぐらい」本人の写真（Wikimedia Commons、CC BY 2.0）"
+}

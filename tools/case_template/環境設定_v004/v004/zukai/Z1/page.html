@@ -1,0 +1,91 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Z1 道具を増やす順番（Orca は後で）。v002 f3940〜f4398（458コマ）。部品の data-f0 は図解の頭からのコマ（絶対のコマ − 3940） -->
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+  .win { width: 560px; background: #fff; border: 5px solid #000; border-radius: 18px; box-sizing: border-box; overflow: hidden; }
+  .win .bar { height: 40px; background: #d6d6d6; border-bottom: 4px solid #000; display: flex; align-items: center; gap: 12px; padding-left: 18px; }
+  .win .bar i { width: 18px; height: 18px; border-radius: 50%; display: block; border: 2px solid rgba(0,0,0,.35); }
+  .win .body { height: 96px; display: flex; align-items: center; justify-content: center; font-family: Lbl; font-size: 60px; color: #111; white-space: nowrap; }
+  .meter { width: 440px; height: 52px; background: #fff; border: 5px solid #000; box-sizing: border-box; position: relative; overflow: hidden; border-radius: 10px; }
+  .meter .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: #f5e63a; }
+  .tile { width: 118px; height: 118px; border-radius: 26px; background: #3b3b3b; border: 5px dashed #fff; box-sizing: border-box;
+          display: flex; align-items: center; justify-content: center; font-family: Lbl; font-size: 82px; color: #fff; line-height: 1; }
+  .badge { width: 112px; height: 112px; border-radius: 50%; background: #f5e63a; border: 7px solid #000; box-sizing: border-box;
+           display: flex; align-items: center; justify-content: center; font-family: Hv; font-size: 72px; color: #000; line-height: 1; padding-bottom: 4px; }
+</style>
+</head><body>
+<div id="board"></div>
+
+<!-- 道（左→右）と駅3つ。黄色は 72「ここ」で駅1→駅2、73「こういうの」で駅2→駅3 -->
+<div class="part" id="road" data-f0="0" style="left:130px;top:552px"><div class="in">
+  <div style="position:relative;width:1720px;height:96px">
+    <div style="position:absolute;left:0;top:28px;width:1652px;height:40px;background:#8a8a8a;box-shadow:0 0 0 4px #000"></div>
+    <svg style="position:absolute;left:1640px;top:6px;overflow:visible" width="80" height="84"><polygon points="2,2 76,42 2,82" fill="#8a8a8a" stroke="#000" stroke-width="4" stroke-linejoin="round"/></svg>
+    <div style="position:absolute;left:190px;top:28px;width:580px;height:40px;overflow:hidden"><div class="fill" data-a="228" data-b="240" style="position:absolute;left:0;top:0;bottom:0;width:0;background:#f5e63a"></div></div>
+    <div style="position:absolute;left:770px;top:28px;width:600px;height:40px;overflow:hidden"><div class="fill" data-a="289" data-b="301" style="position:absolute;left:0;top:0;bottom:0;width:0;background:#f5e63a"></div></div>
+    <div style="position:absolute;left:142px;top:0;width:96px;height:96px;border-radius:50%;background:#fff;border:8px solid #222;box-sizing:border-box"></div>
+    <div style="position:absolute;left:722px;top:0;width:96px;height:96px;border-radius:50%;background:#fff;border:8px solid #222;box-sizing:border-box"></div>
+    <div style="position:absolute;left:1322px;top:0;width:96px;height:96px;border-radius:50%;background:#fff;border:8px solid #222;box-sizing:border-box"></div>
+  </div>
+</div></div>
+
+<!-- 見出し（足した言葉） -->
+<div class="part" id="head1" data-f0="0" style="left:60px;top:40px"><div class="in" id="h1"></div></div>
+<div class="part" id="head2" data-f0="0" style="left:598px;top:40px"><div class="in" id="h2"></div></div>
+
+<!-- 駅1：69 Claude Code のデスクトップアプリ・70 Codex のデスクトップアプリ（白い窓＝アプリ。窓の中は名前だけ） -->
+<div class="part" id="winCC" data-f0="0" style="left:40px;top:186px"><div class="in">
+  <div class="win"><div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div><div class="body">Claude Code</div></div>
+</div></div>
+<div class="part" id="winCX" data-f0="78" style="left:40px;top:362px"><div class="in">
+  <div class="win"><div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div><div class="body">Codex</div></div>
+</div></div>
+
+<!-- 71「使えて（f154）… 完璧に 使える（f205）」 -->
+<div class="part" id="meter" data-f0="152" data-m="slideL" style="left:100px;top:690px"><div class="in">
+  <div class="meter"><div class="fill" data-a="154" data-b="205"></div></div>
+</div></div>
+<div class="part" id="check" data-f0="205" data-m="bounce" style="left:498px;top:672px"><div class="in">
+  <svg width="88" height="88" viewBox="0 0 60 60"><circle cx="30" cy="30" r="27" fill="#1a9a0a" stroke="#fff" stroke-width="4"/><polyline points="17,31 26,40 44,21" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div></div>
+<div class="part" id="okplate" data-f0="205" data-m="slideL" style="left:100px;top:772px"><div class="in" id="ok"></div></div>
+
+<!-- 駅2：72「ここ かゆいとこ 手届かんな」。吹き出しは頭の上で最後まで残す（②に何が起きたかの字）。右に白い札「あなた」（Z4・Z7 と同じ） -->
+<div class="part" id="person" data-f0="236" style="left:803px;top:268px"><div class="in"><img src="../assets/pc_komari.png" style="height:282px;display:block"></div></div>
+<div class="part" id="bubble" data-f0="236" style="left:800px;top:100px"><div class="in" id="bub"></div></div>
+<div class="part" id="you" data-f0="236" style="left:990px;top:468px"><div class="in" id="yt"></div></div>
+
+<!-- 駅3：73「こういうの使えるツールないかな（f289）で 初めて探す（f362）」 -->
+<div class="part" id="lens" data-f0="289" style="left:1300px;top:150px"><div class="in">
+  <svg width="160" height="160" viewBox="0 0 170 170" style="display:block;overflow:visible">
+    <line x1="104" y1="104" x2="158" y2="158" stroke="#000" stroke-width="36" stroke-linecap="round"/>
+    <line x1="104" y1="104" x2="158" y2="158" stroke="#b5762a" stroke-width="24" stroke-linecap="round"/>
+    <circle cx="66" cy="66" r="56" fill="rgba(150,210,255,.30)" stroke="#000" stroke-width="26"/>
+    <circle cx="66" cy="66" r="56" fill="none" stroke="#fff" stroke-width="15"/>
+    <path d="M38 52 A32 32 0 0 1 60 34" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  </svg>
+</div></div>
+<div class="part" id="tiles" data-f0="362" style="left:1282px;top:322px"><div class="in">
+  <div style="display:flex;align-items:center;gap:22px">
+    <div style="width:140px;height:140px;border-radius:32px;background:#fff;display:flex;align-items:center;justify-content:center"><img src="../assets/orca_icon.png" style="width:146px;height:146px;display:block;margin:-3px"></div>
+    <div class="tile">？</div><div class="tile">？</div>
+  </div>
+</div></div>
+<div class="part" id="toka" data-f0="362" style="left:1350px;top:468px"><div class="in" id="tk"></div></div>
+<div class="part" id="hajimete" data-f0="362" style="left:1478px;top:196px"><div class="in" id="hj"></div></div>
+
+<!-- 74「順番」：3つの駅に①②③（足した言葉） -->
+<div class="part" id="n1" data-f0="407" data-m="bounce" style="left:264px;top:544px"><div class="in"><div class="badge">1</div></div></div>
+<div class="part" id="n2" data-f0="407" data-m="bounce" style="left:844px;top:544px"><div class="in"><div class="badge">2</div></div></div>
+<div class="part" id="n3" data-f0="407" data-m="bounce" style="left:1444px;top:544px"><div class="in"><div class="badge">3</div></div></div>
+
+<script>
+window.ZUKAI = { frames: 458 };
+document.getElementById('h1').innerHTML = Z.stk('道具を増やす', { size: 84 });
+document.getElementById('h2').innerHTML = Z.stk('順番', { size: 84, fill: '#f5e63a' });
+document.getElementById('ok').innerHTML = Z.plate('完璧に使える', { size: 62, bg: '#1b5fd1' });
+document.getElementById('bub').innerHTML = Z.bubble('かゆいとこ\n手届かんな', { size: 54, tail: 'down', off: 80 });
+document.getElementById('yt').innerHTML = Z.plate('あなた', { size: 48, bg: '#fff', fg: '#000', pad: '2px 18px 8px' });
+document.getElementById('tk').innerHTML = Z.stk('Orcaとか', { size: 58 });
+document.getElementById('hj').innerHTML = Z.plate('初めて探す', { size: 66, bg: '#d90a0a' });
+</script></body></html>

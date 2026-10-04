@@ -1,0 +1,160 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+.card { position: relative; width: 130px; height: 80px; background: #fff; border: 4px solid #000; border-radius: 8px; box-sizing: border-box; padding: 12px 14px; }
+.card i { display: block; height: 8px; background: #9a9a9a; border-radius: 4px; margin-bottom: 9px; }
+.num { width: 62px; height: 62px; border-radius: 50%; background: #fff; border: 4px solid #000; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-family: Lbl; font-size: 44px; color: #000; line-height: 1; padding-bottom: 6px; }
+.task { position: relative; width: 300px; height: 100px; background: #fff; border: 5px solid #000; box-sizing: border-box; overflow: hidden; }
+.task .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: #f5e63a; }
+.task .t { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center; font-family: Lbl; font-size: 54px; color: #000; line-height: 1; padding-bottom: 8px; }
+</style></head><body>
+<div id="board"></div>
+
+<!-- ① 考えることを Addness が持つ -->
+<div class="part" id="head" data-f0="0" style="left:60px;top:44px"><div class="in" id="h_head"></div></div>
+
+<div class="part" id="think" data-f0="28" data-f1="592" style="left:60px;top:185px"><div class="in">
+ <svg width="500" height="270" style="display:block;overflow:visible">
+  <rect x="4" y="4" width="476" height="206" rx="44" fill="#2b2b2b" stroke="#fff" stroke-width="8"/>
+  <circle cx="145" cy="232" r="13" fill="#2b2b2b" stroke="#fff" stroke-width="6"/>
+  <circle cx="130" cy="257" r="8" fill="#2b2b2b" stroke="#fff" stroke-width="5"/>
+ </svg></div></div>
+
+<div class="part" id="you" data-f0="28" data-f1="309" style="left:80px;top:450px"><div class="in" id="h_you"></div></div>
+<div class="part" id="you_komari" data-f0="309" data-f1="374" data-m="none" style="left:80px;top:450px"><div class="in"><img src="../assets/pc_komari.png" style="width:207px;height:300px;display:block"></div></div>
+<div class="part" id="you_ureshii" data-f0="374" data-m="none" style="left:80px;top:450px"><div class="in"><img src="../assets/pc_ureshii.png" style="width:207px;height:300px;display:block"></div></div>
+<div class="part" id="you_tag" data-f0="28" style="left:106px;top:756px"><div class="in" id="h_tag"></div></div>
+
+<div class="part" id="think_tag" data-f0="57" data-f1="592" style="left:92px;top:156px"><div class="in" id="h_think_tag"></div></div>
+
+<div class="part" id="box" data-f0="142" data-dim="267-346:0.45" style="left:860px;top:175px"><div class="in">
+ <div id="boxv" style="position:relative;width:380px;height:475px;border:12px solid #FDDE58;border-radius:28px;background:#2e2e2e;box-sizing:border-box">
+  <div style="position:absolute;left:-2px;top:-2px;background:#FDDE58;color:#000;font-family:Lbl;font-size:46px;padding:2px 22px 10px 18px;border-radius:12px 0 22px 0;line-height:1.15">Addness</div>
+ </div></div></div>
+
+<div class="part" id="darr" data-f0="154" data-f1="592" data-m="grow" data-dim="267-374:0.45" style="left:552px;top:272px"><div class="in" id="h_darr"></div></div>
+<div class="part" id="motsu" data-f0="154" data-f1="592" data-dim="267-374:0.45" style="left:548px;top:343px"><div class="in" id="h_motsu"></div></div>
+
+<!-- 字の無いカード（考え事の吹き出しの中 → 箱へ飛ぶ → 縦一列） -->
+<div class="part" id="c1" data-f0="267" data-f1="592" data-m="bounce" style="left:70px;top:260px"><div class="in"><div class="card" id="c1b"><i style="width:100%"></i><i style="width:84%"></i><i style="width:58%"></i></div></div></div>
+<div class="part" id="c2" data-f0="287" data-f1="592" data-m="bounce" style="left:180px;top:245px"><div class="in"><div class="card" id="c2b"><i style="width:100%"></i><i style="width:84%"></i><i style="width:58%"></i></div></div></div>
+<div class="part" id="c3" data-f0="298" data-f1="592" data-m="bounce" style="left:290px;top:265px"><div class="in"><div class="card" id="c3b"><i style="width:100%"></i><i style="width:84%"></i><i style="width:58%"></i></div></div></div>
+<div class="part" id="c4" data-f0="309" data-f1="592" data-m="bounce" style="left:400px;top:250px"><div class="in"><div class="card" id="c4b"><i style="width:100%"></i><i style="width:84%"></i><i style="width:58%"></i></div></div></div>
+
+<div class="part" id="tanomu" data-f0="374" data-f1="592" data-m="bounce" style="left:322px;top:470px"><div class="in" id="h_tanomu"></div></div>
+
+<div class="part" id="n1" data-f0="435" data-f1="592" data-m="bounce" style="left:889px;top:269px"><div class="in"><div class="num">1</div></div></div>
+<div class="part" id="n2" data-f0="435" data-f1="592" data-m="bounce" style="left:889px;top:356px"><div class="in"><div class="num">2</div></div></div>
+<div class="part" id="n3" data-f0="435" data-f1="592" data-m="bounce" style="left:889px;top:443px"><div class="in"><div class="num">3</div></div></div>
+<div class="part" id="n4" data-f0="435" data-f1="592" data-m="bounce" style="left:889px;top:530px"><div class="in"><div class="num">4</div></div></div>
+
+<div class="part" id="k1" data-f0="455" data-f1="592" data-m="bounce" data-dur="5" style="left:1110px;top:268px"><div class="in"></div></div>
+<div class="part" id="k2" data-f0="459" data-f1="592" data-m="bounce" data-dur="5" style="left:1110px;top:355px"><div class="in"></div></div>
+<div class="part" id="k3" data-f0="464" data-f1="592" data-m="bounce" data-dur="5" style="left:1110px;top:442px"><div class="in"></div></div>
+<div class="part" id="k4" data-f0="469" data-f1="592" data-m="bounce" data-dur="5" style="left:1110px;top:529px"><div class="in"></div></div>
+
+<div class="part" id="close1" data-f0="482" data-f1="592" style="left:740px;top:662px"><div class="in" id="h_close1"></div></div>
+
+<!-- ② 1つの目的 → タスク3枚 → AI と同時に -->
+<div class="part" id="flag" data-f0="592" style="left:665px;top:307px"><div class="in">
+ <div style="position:relative;width:280px;height:220px">
+  <div style="position:absolute;left:0;top:0;width:12px;height:220px;background:#e6e6e6;border-radius:6px"></div>
+  <div style="position:absolute;left:12px;top:6px;width:262px;height:136px;background:#1b5fd1;border:4px solid #fff;box-sizing:border-box;display:flex;align-items:center;justify-content:center;text-align:center;font-family:Lbl;font-size:48px;line-height:1.1;color:#fff;padding-bottom:6px">大きい目的<br>1つ</div>
+ </div></div></div>
+
+<div class="part" id="rarr" data-f0="636" data-m="grow" style="left:305px;top:428px"><div class="in" id="h_rarr"></div></div>
+
+<div class="part" id="branch" data-f0="668" data-m="draw" style="left:930px;top:222px"><div class="in">
+ <svg width="180" height="300" style="display:block;overflow:visible">
+  <path class="draw" d="M9,159 H70 V33 H128" fill="none" stroke="#fff" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path class="draw" d="M9,159 H128" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <path class="draw" d="M70,159 V283 H128" fill="none" stroke="#fff" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+ </svg></div></div>
+
+<div class="part" id="t1" data-f0="668" style="left:1056px;top:205px"><div class="in"><div class="task"><div class="fill" data-a="786" data-b="1000"></div><div class="t">タスク</div></div></div></div>
+<div class="part" id="t2" data-f0="668" style="left:1056px;top:330px"><div class="in"><div class="task"><div class="fill" data-a="786" data-b="1000"></div><div class="t">タスク</div></div></div></div>
+<div class="part" id="t3" data-f0="668" style="left:1056px;top:455px"><div class="in"><div class="task"><div class="fill" data-a="786" data-b="1000"></div><div class="t">タスク</div></div></div></div>
+
+<div class="part" id="r1" data-f0="754" style="left:1380px;top:200px"><div class="in"><img src="../assets/t_ff2a124ce0.png" style="height:110px;display:block"></div></div>
+<div class="part" id="r2" data-f0="754" style="left:1380px;top:325px"><div class="in"><img src="../assets/t_ff2a124ce0.png" style="height:110px;display:block"></div></div>
+<div class="part" id="r3" data-f0="754" style="left:1380px;top:450px"><div class="in"><img src="../assets/t_ff2a124ce0.png" style="height:110px;display:block"></div></div>
+
+<div class="part" id="ai_tag" data-f0="754" style="left:1366px;top:566px"><div class="in" id="h_ai"></div></div>
+
+<div class="part" id="brace" data-f0="786" style="left:1482px;top:200px"><div class="in">
+ <svg width="50" height="360" style="display:block;overflow:visible"><path d="M6,6 Q30,6 30,40 V150 Q30,180 46,180 Q30,180 30,210 V320 Q30,354 6,354" fill="none" stroke="#f5e63a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+<div class="part" id="douji" data-f0="786" style="left:1530px;top:318px"><div class="in" id="h_douji"></div></div>
+
+<div class="part" id="sou" data-f0="867" data-m="pop" style="left:852px;top:715px"><div class="in" id="h_sou"></div></div>
+
+<script>
+window.ZUKAI = { frames: 962 };
+const $ = (id) => document.getElementById(id);
+$('h_head').innerHTML = Z.plate('Addnessは なんで速い？', { size: 72, bg: '#fff', fg: '#000', pad: '4px 24px 12px' });
+$('h_you').innerHTML = Z.img(Z.ILLUST + encodeURIComponent('パソコン業務.png'), { w: 207, h: 300 });
+$('h_tag').innerHTML = Z.plate('あなた', { size: 50, bg: '#fff', fg: '#000', pad: '2px 18px 8px' });
+$('h_think_tag').innerHTML = Z.plate('考えること', { size: 50, bg: '#1b5fd1' });
+$('h_motsu').innerHTML = Z.stk('Addnessが\n持つ', { size: 48 });
+$('h_tanomu').innerHTML = Z.bubble('頼む', { size: 54, tail: 'left', off: 24 });
+$('h_close1').innerHTML = Z.stk('「頼む」だけで\n仕事が進む', { size: 70, fill: '#f5e63a', strokes: [['#000', 16]], font: 'Tsk' });
+$('h_rarr').innerHTML = Z.arrow({ len: 350, dir: 'right', color: '#e60000' });
+$('h_ai').innerHTML = Z.plate('AI', { size: 48, bg: '#fff', fg: '#000', pad: '0px 20px 6px' });
+$('h_douji').innerHTML = Z.stk('同時に', { size: 90, fill: '#f5e63a', strokes: [['#000', 18]], font: 'Tsk', lh: 1.05 });
+$('h_sou').innerHTML = Z.bubble('そういうこと', { size: 52, tail: 'right', off: 22 });
+// ✓（dots と同じ緑の丸）
+const CHK = '<svg width="64" height="64" viewBox="0 0 60 60" style="display:block"><circle cx="30" cy="30" r="27" fill="#1a9a0a" stroke="#fff" stroke-width="4"/>' +
+  '<polyline points="17,31 26,40 44,21" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+for (const k of ['k1', 'k2', 'k3', 'k4']) $(k).firstElementChild.innerHTML = CHK;
+// 点線の矢印（白。grow で伸びる。Z.arrow と同じ仕組みで軸だけ点線）
+(function () {
+  const len = 296, hl = 44, hw = 60, id = 'z7dash';
+  $('h_darr').innerHTML = `<svg class="arr" data-len="${len}" data-hl="${hl}" data-v="0" width="${len}" height="${hw}" style="overflow:visible;display:block">` +
+    `<defs><clipPath id="${id}"><rect class="clip" x="0" y="0" width="0" height="${hw}"/></clipPath></defs>` +
+    `<g clip-path="url(#${id})"><line x1="0" y1="${hw / 2}" x2="${len - hl + 2}" y2="${hw / 2}" stroke="#fff" stroke-width="12" stroke-dasharray="22 14"/></g>` +
+    `<g class="head"><polygon points="${len - hl},0 ${len},${hw / 2} ${len - hl},${hw}" fill="#fff"/></g></svg>`;
+})();
+
+// カードの動き：吹き出しの中（B）→「頼む」で点線に沿って箱へ飛ぶ（S。散らばったまま）→「整理整頓」で縦一列（C）
+const CW = 130, CH = 80;
+const B = [[135, 300, -6, 0.8], [245, 285, 5, 0.8], [355, 305, -4, 0.8], [465, 290, 7, 0.8]];
+const S = [[950, 330, -8, 1], [1120, 352, 7, 1], [980, 470, 5, 1], [1140, 525, -6, 1]];
+const C = [[1030, 300, 0, 1], [1030, 387, 0, 1], [1030, 474, 0, 1], [1030, 561, 0, 1]];
+const FLY = 374, FLYD = 12, LINE = 435, LINED = 9;
+const ease = (q) => q < 0.5 ? 2 * q * q : 1 - Math.pow(-2 * q + 2, 2) / 2;
+const lerp = (a, b, q) => a + (b - a) * q;
+function cardAt(i, f) {
+  const t1 = FLY + 2 * i;
+  if (f < t1) return B[i];
+  if (f < t1 + FLYD) {
+    const q = ease((f - t1 + 1) / FLYD);
+    const p = B[i].map((v, j) => lerp(v, S[i][j], q));
+    p[1] -= 70 * Math.sin(Math.PI * q);             // 少し弧を描いて飛ぶ
+    return p;
+  }
+  if (f < LINE) return S[i];
+  if (f < LINE + LINED) { const q = ease((f - LINE + 1) / LINED); return S[i].map((v, j) => lerp(v, C[i][j], q)); }
+  return C[i];
+}
+// 箱：「大きい目的」で右いっぱいに広がる
+const BOX0 = [860, 175, 380, 475], BOX1 = [600, 180, 1260, 470], GROW_AT = 592, GROWD = 8;
+function boxAt(f) {
+  if (f < GROW_AT) return BOX0;
+  const q = ease(Math.min(1, (f - GROW_AT + 1) / GROWD));
+  return BOX0.map((v, j) => lerp(v, BOX1[j], q));
+}
+window.ZUKAI.custom = (f) => {
+  const sig = [];
+  for (let i = 0; i < 4; i++) {
+    const [cx, cy, r, s] = cardAt(i, f);
+    const e = $('c' + (i + 1));
+    e.style.left = (cx - CW / 2).toFixed(1) + 'px'; e.style.top = (cy - CH / 2).toFixed(1) + 'px';
+    $('c' + (i + 1) + 'b').style.transform = `rotate(${r.toFixed(2)}deg) scale(${s.toFixed(3)})`;
+    sig.push(cx.toFixed(1), cy.toFixed(1), r.toFixed(2), s.toFixed(3));
+  }
+  const [x, y, w, h] = boxAt(f);
+  $('box').style.left = x.toFixed(1) + 'px'; $('box').style.top = y.toFixed(1) + 'px';
+  $('boxv').style.width = w.toFixed(1) + 'px'; $('boxv').style.height = h.toFixed(1) + 'px';
+  sig.push(x.toFixed(1), y.toFixed(1), w.toFixed(1), h.toFixed(1));
+  return sig.join('|');
+};
+</script></body></html>

@@ -1,0 +1,33 @@
+{
+ "key": "I11",
+ "title": "ChatGPT のアプリに Addness",
+ "start_f": 25202,
+ "end_f": 25516,
+ "anchor": {
+  "cap": "717",
+  "f": 25202
+ },
+ "wipe": {
+  "show": false
+ },
+ "se": [
+  {
+   "f": 0,
+   "se": "cursor",
+   "why": "画像が出る"
+  },
+  {
+   "f": 191,
+   "se": "ピコンッ",
+   "why": "画像が出る"
+  }
+ ],
+ "hide_caption_ids": [],
+ "removes": "",
+ "checks": [
+  5,
+  157,
+  309
+ ],
+ "story": "717「（ChatGPTの）プラグインが公式のところになってる」左に ChatGPT → 727「Addnessって調べたら Addnessって出てくる」矢印と Addness（小川さんがくれた画像と同じ公式の画像）"
+}

@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- I05（v004 G3）出刃包丁と野菜用の繊細な包丁。gen_images.py が作った（手で直さない） -->
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+  .ph { position: relative; background: #fff; border: 14px solid #fff; border-radius: 14px; box-shadow: 0 14px 40px rgba(0,0,0,.6); overflow: hidden; box-sizing: border-box; }
+  .ph img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .ph.contain img { object-fit: contain; background: #fff; }
+  .card { display: flex; align-items: center; gap: 24px; background: #fff; border: 5px solid #000; border-radius: 26px; padding: 16px 40px 16px 22px;
+          box-shadow: 0 8px 22px rgba(0,0,0,.45); box-sizing: border-box; }
+  .card .logo { height: 120px; width: auto; max-width: 420px; display: block; flex: none; }
+  .card .nm { font-family: Lbl; font-size: 80px; line-height: 1.0; color: #111; white-space: nowrap; padding-bottom: 4px; }
+  .card .sub { font-family: Lbl; font-size: 38px; line-height: 1.1; color: #1b5fd1; white-space: nowrap; }
+  .credit { font-family: 'Hiragino Sans'; font-weight: 600; font-size: 22px; color: #fff; text-shadow: 0 0 4px #000, 0 0 2px #000; white-space: nowrap; }
+</style>
+</head><body>
+<div class="part" id="p1" data-f0="0" data-m="slideL" style="left:70px;top:150px"><div class="in"><div class="ph contain" style="width:640px;height:292px"><img src="../assets/img_knife_big.jpg"></div></div></div>
+<div class="part" id="p1L" data-f0="0" data-m="slideL" style="left:390px;top:452px"><div class="in"><div id="p1Lt" style="position:relative;display:inline-block;transform:translateX(-50%)"></div></div></div>
+<div class="part" id="p2" data-f0="185" data-m="slideL" style="left:70px;top:560px"><div class="in"><div class="ph contain" style="width:640px;height:143px"><img src="../assets/img_knife_thin.jpg"></div></div></div>
+<div class="part" id="p2L" data-f0="185" data-m="slideL" style="left:390px;top:713px"><div class="in"><div id="p2Lt" style="position:relative;display:inline-block;transform:translateX(-50%)"></div></div></div>
+<script>
+window.ZUKAI = { frames: 366 };
+document.getElementById('p1Lt').innerHTML = Z.stk("すっげえやばい出刃包丁", {size: 58});
+document.getElementById('p2Lt').innerHTML = Z.stk("野菜用の繊細なやつ", {size: 58});
+</script></body></html>

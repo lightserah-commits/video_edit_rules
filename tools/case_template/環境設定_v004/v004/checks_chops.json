@@ -1,0 +1,19 @@
+{
+ "loud_db": -38.0,
+ "rows": [
+  {
+   "frame": 5601,
+   "time": "03:06.89",
+   "tail_cut": false,
+   "head_cut": true,
+   "db": {
+    "tail_in": -64.7,
+    "tail_beyond": -58.9,
+    "head_beyond": -33.4,
+    "head_in": -32.4
+   }
+  }
+ ],
+ "tail_cut": 0,
+ "head_cut": 1
+}

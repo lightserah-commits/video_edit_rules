@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<title>kankyo highlight</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+canvas { position: absolute; left: 0; top: 0; }
+</style></head>
+<body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script src="hl.js"></script>
+<script>
+// ハイライト（文字PV風の切り抜き）の描画。window.HL（make_hl.py が書く）を、フレーム f ごとに決まった絵にする。
+// 背景（カメラの1コマ）・カメラの寄り/揺れ・文字（声の1語ずつに合わせて出す）・図形・光/グリッチを1枚のキャンバスに描く。
+// 動きの速い所は、1コマの中の時刻を少しずつずらして何回か描いて重ねる（モーションブラー）。
+const HL = window.HL, FPS = HL.fps, W = 1920, H = 1080;
+const cv = document.getElementById("c"), ctx = cv.getContext("2d");
+const mk = (w = W, h = H) => { const c = document.createElement("canvas"); c.width = w; c.height = h; return c; };
+const sub = mk(), sctx = sub.getContext("2d");
+const tmp = mk(), tctx = tmp.getContext("2d");
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const lerp = (a, b, p) => a + (b - a) * p;
+const eOut = (p) => 1 - Math.pow(1 - clamp(p), 3);
+const eOut5 = (p) => 1 - Math.pow(1 - clamp(p), 5);
+const eIn = (p) => Math.pow(clamp(p), 3);
+const eIO = (p) => { p = clamp(p); return p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2; };
+const eBack = (p, c = 2.2) => { p = clamp(p); return 1 + (c + 1) * Math.pow(p - 1, 3) + c * Math.pow(p - 1, 2); };
+function rnd(s) { const x = Math.sin(s * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
+
+// ---------- 背景の画像（1コマずつ） ----------
+const bgCache = new Map();
+function loadBg(f) {
+  const k = Math.max(0, Math.min(HL.N - 1, f));
+  if (bgCache.has(k)) return bgCache.get(k);
+  const p = new Promise((ok) => {
+    const im = new Image();
+    im.onload = () => ok(im); im.onerror = () => ok(null);
+    im.src = HL.bgDir + "/" + String(k).padStart(5, "0") + ".jpg";
+  });
+  bgCache.set(k, p);
+  if (bgCache.size > 6) bgCache.delete(bgCache.keys().next().value);
+  return p;
+}
+
+// ---------- 粒子のノイズ（フィルムの粒） ----------
+const grains = [0, 1, 2, 3].map((s) => {
+  const c = mk(480, 270), g = c.getContext("2d"), d = g.createImageData(480, 270);
+  for (let i = 0; i < d.data.length; i += 4) { const v = 128 + (rnd(i * 0.37 + s * 91.3) - 0.5) * 255; d.data[i] = d.data[i + 1] = d.data[i + 2] = v; d.data[i + 3] = 255; }
+  g.putImageData(d, 0, 0); return c;
+});
+
+// ---------- カメラ（場面・寄り・揺れ・パンチ） ----------
+function shotAt(t) {
+  for (const s of HL.shots) if (t >= s.t0 && t < s.t1) return s;
+  return t < HL.shots[0].t0 ? HL.shots[0] : HL.shots[HL.shots.length - 1];
+}
+function fxAmt(type, t) {
+  let v = 0;
+  for (const e of HL.fx) {
+    if (e.type !== type || t < e.t || t >= e.t + e.d) continue;
+    const p = (t - e.t) / e.d;
+    if (type === "punch") v += e.amt * (p < 0.15 ? eOut(p / 0.15) : 1 - eIO((p - 0.15) / 0.85));
+    else if (type === "settle") v += e.amt * (1 - eOut5(p));
+    else v = Math.max(v, (e.amp || e.a || e.amt || 1) * (1 - p) * (1 - p));
+  }
+  return v;
+}
+function camera(t) {
+  const s = shotAt(t), u = clamp((t - s.t0) / Math.max(0.001, s.t1 - s.t0));
+  let z = lerp(s.z0, s.z1, eIO(u)) * (1 + fxAmt("punch", t) + fxAmt("settle", t));
+  let cx = lerp(s.cx0, s.cx1, eIO(u)), cy = lerp(s.cy0, s.cy1, eIO(u));
+  const sh = fxAmt("shake", t);
+  const k = Math.floor(t * FPS * 2);
+  const sx = (rnd(k * 1.7) - 0.5) * 2 * sh, sy = (rnd(k * 2.9 + 5) - 0.5) * 2 * sh * 0.7, sr = (rnd(k * 4.1 + 9) - 0.5) * sh * 0.0016;
+  // はみ出さないように中心を寄せる
+  cx = clamp(cx, W / 2 / z, 1920 - W / 2 / z); cy = clamp(cy, H / 2 / z, 1080 - H / 2 / z);
+  return { s, z, cx, cy, sx, sy, sr };
+}
+
+// ---------- 文字 ----------
+const measureCache = new Map();
+function fontOf(it, size) { return `${it.weight || 400} ${size}px ${it.font}`; }
+function charWidths(it) {
+  const key = it.id;
+  if (measureCache.has(key)) return measureCache.get(key);
+  ctx.save(); ctx.font = fontOf(it, it.size);
+  const tr = (it.track || 0) * it.size;
+  const ws = [...it.text].map((ch, i) => ctx.measureText(ch).width * (it.cscale ? (it.cscale[i] || 1) : 1) + tr);
+  ctx.restore();
+  const tot = ws.reduce((a, b) => a + b, 0) - (it.track || 0) * it.size;
+  const r = { ws, tot };
+  measureCache.set(key, r);
+  return r;
+}
+const itemById = new Map();
+function itemX(it) {   // 横の基準（左端）
+  const { tot } = charWidths(it);
+  if (it.after) {
+    const o = itemById.get(it.after);
+    const ox = itemX(o) + charWidths(o).tot * (o.afterScale || 1);
+    return ox + (it.gap || 0);
+  }
+  if (it.align === "c") return it.x - tot / 2;
+  if (it.align === "r") return it.x - tot;
+  return it.x;
+}
+function charStyle(it, i) {
+  return (it.colors && it.colors[i]) || it.color || "#fff";
+}
+function drawText(g, it, t) {
+  if (t < it.t0 - 0.0001 || t >= it.t1 + (it.ed || 0)) return;
+  const chars = [...it.text];
+  const { ws, tot } = charWidths(it);
+  const x0 = itemX(it), y0 = it.y;
+  // まとまりの動き
+  let gs = 1, gdx = 0, gdy = 0, ga = 1, grot = it.rot || 0, gblur = 0;
+  const age = t - it.t0;
+  const A = it.anim || "pop";
+  if (A === "slam") { const p = age / (it.ad || 0.10); gs = lerp(it.from || 2.6, 1, eOut(p)); ga = clamp(p * 2.5); }
+  else if (A === "zoomin") { const p = age / (it.ad || 0.35); gs = lerp(0.7, 1, eOut5(p)); ga = eOut(p); }
+  else if (A === "slideL" || A === "slideR") { const p = age / (it.ad || 0.14); gdx = (A === "slideL" ? -1 : 1) * (it.dist || 900) * (1 - eOut5(p)); ga = clamp(p * 3); }
+  else if (A === "slideU") { const p = age / (it.ad || 0.16); gdy = (it.dist || 300) * (1 - eOut5(p)); ga = clamp(p * 3); }
+  gs *= 1 + (it.drift == null ? 0.014 : it.drift) * Math.max(0, age);
+  if (it.float) { gdx += it.float[0] * age; gdy += it.float[1] * age; }
+  // 出口
+  if (t >= it.t1) {
+    const q = clamp((t - it.t1) / (it.ed || 0.12));
+    const E = it.exit || "cut";
+    if (E === "cut") return;
+    if (E === "fade") ga *= 1 - q;
+    if (E === "up") { gdy -= 220 * eIn(q); ga *= 1 - q; }
+    if (E === "blur") { gs *= 1 + 0.5 * eIn(q); ga *= 1 - q; }
+    if (E === "flyL") { gdx -= 2200 * eIn(q); grot -= 20 * q; }
+    if (E === "flyR") { gdx += 2200 * eIn(q); grot += 20 * q; }
+    if (E === "shrink") { gs *= 1 - 0.9 * eIn(q); ga *= 1 - q; }
+    if (E === "drop") { gdy += 900 * eIn(q); grot += 12 * q; }
+  }
+  if (ga <= 0.003) return;
+  // 揺れ（出た瞬間）
+  if (it.jolt) { const k = clamp(1 - age / 0.25); const fr = Math.floor(t * FPS * 2); gdx += (rnd(fr * 3.3 + it.id.length) - 0.5) * it.jolt * k; gdy += (rnd(fr * 5.1 + 3) - 0.5) * it.jolt * k; }
+  const cxg = x0 + tot / 2, cyg = y0;
+  g.save();
+  g.globalAlpha = ga;
+  g.translate(cxg + gdx, cyg + gdy); g.rotate(grot * Math.PI / 180); g.scale(gs, gs); g.translate(-cxg, -cyg);
+  if (it.skew) g.transform(1, 0, Math.tan(it.skew * Math.PI / 180), 1, 0, 0);
+  // 下地の箱
+  if (it.box) {
+    const b = it.box, bp = clamp((t - (b.t != null ? b.t : it.t0)) / (b.d || 0.12));
+    if (bp > 0) {
+      const bx = x0 - (b.px || 0.18) * it.size, by = y0 - it.size * (0.5 + (b.py || 0.12)), bw = tot + 2 * (b.px || 0.18) * it.size, bh = it.size * (1 + 2 * (b.py || 0.12));
+      g.fillStyle = b.color;
+      const bwp = bw * eOut5(bp), sk = Math.tan((b.skew || 0) * Math.PI / 180) * bh;
+      if (b.skew) { g.beginPath(); g.moveTo(bx + sk, by); g.lineTo(bx + sk + bwp, by); g.lineTo(bx + bwp, by + bh); g.lineTo(bx, by + bh); g.closePath(); g.fill(); }
+      else g.fillRect(bx, by, bwp, bh);
+    }
+  }
+  g.font = fontOf(it, it.size);
+  g.textBaseline = "middle"; g.textAlign = "center";
+  g.lineJoin = "round"; g.miterLimit = 2;
+  let x = x0;
+  for (let i = 0; i < chars.length; i++) {
+    const ch = chars[i], cw = ws[i] - (it.track || 0) * it.size;
+    const ct = it.ct ? it.ct[i] : it.t0;
+    const cx = x + cw / 2;
+    x += ws[i];
+    if (t < ct - 0.0001) continue;
+    if (ch === " " || ch === "　") continue;
+    const ca = t - ct;
+    let s = 1, dx = 0, dy = 0, a = 1, r = 0;
+    const C = it.canim || (A === "slam" || A === "slideL" || A === "slideR" || A === "slideU" || A === "zoomin" ? "none" : A);
+    if (C === "pop") { const p = ca / 0.13; s = lerp(1.9, 1, eBack(p, 1.6)); a = clamp(p * 3); dy = -it.size * 0.12 * (1 - eOut(p)); }
+    else if (C === "rise") { const p = ca / 0.18; dy = it.size * 0.45 * (1 - eOut5(p)); a = clamp(p * 2); }
+    else if (C === "drop") { const p = ca / 0.2; dy = -it.size * 0.8 * (1 - eBack(p, 1.2)); a = clamp(p * 3); }
+    else if (C === "stamp") { const p = ca / 0.07; s = lerp(3.2, 1, eOut(p)); a = clamp(p * 2); r = (rnd(i * 7.7 + it.size) - 0.5) * 16 * (1 - clamp(p)); }
+    else if (C === "type") { a = 1; }
+    const cs = it.cscale ? (it.cscale[i] || 1) : 1;
+    g.save();
+    g.globalAlpha = ga * a;
+    g.translate(cx + dx, y0 + dy); g.rotate(r * Math.PI / 180); g.scale(s * cs, s * cs);
+    const col = charStyle(it, i);
+    // 影（硬い影）
+    if (it.hard !== false) {
+      g.fillStyle = "rgba(0,0,0,0.55)";
+      g.fillText(ch, it.size * 0.035, it.size * 0.05);
+    }
+    if (it.glow) { g.shadowColor = it.glow; g.shadowBlur = it.size * 0.35; }
+    else if (it.soft !== false) { g.shadowColor = "rgba(0,0,0,0.65)"; g.shadowBlur = it.size * 0.18; }
+    if (it.stroke) { g.strokeStyle = it.strokeColor || "#000"; g.lineWidth = it.stroke; g.strokeText(ch, 0, 0); g.shadowBlur = 0; g.shadowColor = "transparent"; }
+    if (it.rgb && ca < it.rgb) {   // 色ずれ
+      const o = it.size * 0.05 * (1 - ca / it.rgb);
+      g.globalCompositeOperation = "lighter";
+      g.fillStyle = "rgba(255,30,60,0.9)"; g.fillText(ch, -o, 0);
+      g.fillStyle = "rgba(30,220,255,0.9)"; g.fillText(ch, o, 0);
+      g.globalCompositeOperation = "source-over";
+    }
+    if (it.outline) { g.shadowBlur = 0; g.strokeStyle = col; g.lineWidth = it.outline; g.strokeText(ch, 0, 0); }
+    else { g.fillStyle = col; g.fillText(ch, 0, 0); }
+    g.restore();
+  }
+  // 残像
+  if (it.echo && age >= 0 && age < 0.42) {
+    const q = age / 0.42;
+    g.font = fontOf(it, it.size); g.lineWidth = Math.max(2, it.size * 0.018);
+    for (let k = 1; k <= it.echo; k++) {
+      const es = 1 + eOut(q) * 0.22 * k;
+      g.save(); g.globalAlpha = ga * (1 - q) * 0.6 / k;
+      g.translate(cxg, cyg); g.scale(es, es); g.translate(-cxg, -cyg);
+      g.strokeStyle = it.echoColor || charStyle(it, 0);
+      let ex = x0; chars.forEach((ch, i) => { const cw = ws[i] - (it.track || 0) * it.size; g.strokeText(ch, ex + cw / 2, y0); ex += ws[i]; });
+      g.restore();
+    }
+  }
+  // 打ち消し線
+  if (it.strike && t >= it.strike.t) {
+    const p = eOut5((t - it.strike.t) / 0.12);
+    const [i0, i1] = it.strike.range;
+    let sx = x0; for (let i = 0; i < i0; i++) sx += ws[i];
+    let ex = sx; for (let i = i0; i < i1; i++) ex += ws[i];
+    g.save(); g.strokeStyle = it.strike.color || "#FF2D46"; g.lineWidth = it.size * 0.12; g.lineCap = "butt";
+    g.shadowColor = "rgba(0,0,0,.6)"; g.shadowBlur = 12;
+    g.beginPath(); g.moveTo(sx - 10, y0 + it.size * 0.05); g.lineTo(lerp(sx - 10, ex + 10, p), y0 - it.size * 0.05); g.stroke(); g.restore();
+  }
+  g.restore();
+}
+
+// ---------- 図形 ----------
+function rr(g, x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
+function glass(g, x, y, w, h, r, edge) {
+  rr(g, x, y, w, h, r);
+  g.fillStyle = "rgba(8,12,22,0.78)"; g.fill();
+  g.lineWidth = 2; g.strokeStyle = edge || "rgba(120,170,255,0.55)"; g.stroke();
+}
+const DRAW = {};
+DRAW.rec = (g, e, t) => {   // 撮影中の枠（四隅・REC・タイムコード）
+  const m = 56, L = 70;
+  g.save(); g.strokeStyle = "rgba(255,255,255,0.9)"; g.lineWidth = 5;
+  const a = clamp((t - e.t0) / 0.15); g.globalAlpha = a;
+  for (const [x, y, sx, sy] of [[m, m, 1, 1], [W - m, m, -1, 1], [m, H - m, 1, -1], [W - m, H - m, -1, -1]]) {
+    g.beginPath(); g.moveTo(x, y + sy * L); g.lineTo(x, y); g.lineTo(x + sx * L, y); g.stroke();
+  }
+  const blink = Math.floor((t - e.t0) * 2.4) % 2 === 0;
+  g.font = "800 46px 'Avenir Next Condensed'"; g.textBaseline = "middle";
+  if (blink) { g.fillStyle = "#FF2B3A"; g.beginPath(); g.arc(m + 46, m + 62, 15, 0, Math.PI * 2); g.fill(); }
+  g.fillStyle = "#fff"; g.fillText("REC", m + 74, m + 64);
+  const tc = e.tc0 + (t - e.t0);
+  const hh = Math.floor(tc / 3600), mm = Math.floor(tc / 60) % 60, ss = Math.floor(tc) % 60, ff = Math.floor((tc % 1) * 30);
+  const s = [hh, mm, ss, ff].map((v) => String(v).padStart(2, "0")).join(":");
+  g.textAlign = "right"; g.fillText(s, W - m - 20, m + 64);
+  g.restore();
+};
+DRAW.threads = (g, e, t) => {   // 並列で動くスレッドの窓
+  e.pos.forEach(([x, y], i) => {
+    const ta = e.ts[i]; if (t < ta) return;
+    const p = (t - ta) / 0.16, s = lerp(0.4, 1, eBack(p, 1.8)), a = clamp(p * 3);
+    let ex = 1; if (t > e.t1) ex = 1 - clamp((t - e.t1) / 0.15);
+    if (ex <= 0) return;
+    const w = e.w, h = e.h;
+    g.save(); g.globalAlpha = a * ex; g.translate(x + w / 2, y + h / 2); g.scale(s, s); g.translate(-w / 2, -h / 2);
+    glass(g, 0, 0, w, h, 14, "rgba(120,190,255,0.6)");
+    g.fillStyle = "rgba(120,190,255,0.18)"; rr(g, 0, 0, w, 40, 14); g.fill();
+    g.font = "800 24px 'Avenir Next Condensed'"; g.fillStyle = "#cfe3ff"; g.textBaseline = "middle"; g.textAlign = "left";
+    g.fillText("THREAD " + String(i + 1).padStart(2, "0"), 16, 21);
+    // 動いている印
+    const spd = t > e.fast ? 3.2 : 1;
+    const ang = (t - ta) * 6 * spd + i;
+    g.strokeStyle = "#7CF7C1"; g.lineWidth = 4; g.beginPath(); g.arc(w - 26, 21, 9, ang, ang + 4.2); g.stroke();
+    // ログの線
+    for (let k = 0; k < 3; k++) {
+      const lw = (0.35 + 0.55 * rnd(i * 13 + k * 7 + Math.floor((t - ta) * 4 * spd))) * (w - 40);
+      g.fillStyle = "rgba(200,220,255,0.35)"; g.fillRect(16, 58 + k * 22, lw, 9);
+    }
+    // 進み具合
+    const pr = (((t - ta) * 0.35 * spd + rnd(i * 3.3)) % 1);
+    g.fillStyle = "rgba(255,255,255,0.15)"; g.fillRect(16, h - 26, w - 32, 10);
+    g.fillStyle = "#3D8BFF"; g.fillRect(16, h - 26, (w - 32) * pr, 10);
+    g.restore();
+  });
+};
+DRAW.warn = (g, e, t) => {   // 赤い警告の帯
+  const p = eOut5((t - e.t0) / 0.14);
+  let a = 1; if (t > e.t1) a = 1 - clamp((t - e.t1) / 0.1);
+  const on = Math.floor((t - e.t0) * 8) % 2 === 0 || t - e.t0 < 0.25;
+  g.save(); g.globalAlpha = a;
+  const y = e.y, h = 92, x1 = W * p;
+  g.beginPath(); g.rect(0, y, x1, h); g.clip();
+  g.fillStyle = "#E3142B"; g.fillRect(0, y, W, h);
+  g.fillStyle = "rgba(0,0,0,0.25)";
+  for (let x = -200 + ((t * 300) % 80); x < W; x += 80) { g.beginPath(); g.moveTo(x, y + h); g.lineTo(x + 40, y + h); g.lineTo(x + 80, y); g.lineTo(x + 40, y); g.closePath(); g.fill(); }
+  if (on) {
+    g.font = "800 64px 'Avenir Next Condensed'"; g.fillStyle = "#fff"; g.textBaseline = "middle"; g.textAlign = "left";
+    g.fillText("⚠  " + e.label, 60, y + h / 2 + 2);
+    g.textAlign = "right"; g.fillText(e.label2 || "", W - 60, y + h / 2 + 2);
+  }
+  g.restore();
+};
+DRAW.burst = (g, e, t) => {   // 爆発の線と輪
+  const p = (t - e.t0) / (e.t1 - e.t0); if (p < 0 || p > 1) return;
+  g.save(); g.translate(e.x, e.y);
+  const n = 22;
+  for (let i = 0; i < n; i++) {
+    const an = (i / n) * Math.PI * 2 + rnd(i * 3.1) * 0.25;
+    const r0 = lerp(e.r * 0.3, e.r * 1.9, eOut(p)), r1 = r0 + e.r * (0.9 - 0.8 * p) * (0.6 + rnd(i) * 0.8);
+    const wdt = e.r * 0.06 * (1 - p);
+    g.fillStyle = i % 3 === 0 ? (e.color2 || "#fff") : e.color;
+    g.globalAlpha = 1 - p;
+    g.beginPath();
+    g.moveTo(Math.cos(an - 0.02) * r0, Math.sin(an - 0.02) * r0);
+    g.lineTo(Math.cos(an) * r1, Math.sin(an) * r1);
+    g.lineTo(Math.cos(an + 0.02) * r0, Math.sin(an + 0.02) * r0);
+    g.closePath(); g.fill();
+    void wdt;
+  }
+  g.globalAlpha = (1 - p) * 0.9; g.strokeStyle = e.color2 || "#fff"; g.lineWidth = 26 * (1 - p) + 2;
+  g.beginPath(); g.arc(0, 0, lerp(e.r * 0.2, e.r * 2.4, eOut(p)), 0, Math.PI * 2); g.stroke();
+  g.restore();
+};
+DRAW.speed = (g, e, t) => {   // 集中線
+  let a = clamp((t - e.t0) / 0.08); if (t > e.t1) a *= 1 - clamp((t - e.t1) / 0.12);
+  if (a <= 0) return;
+  const fr = Math.floor(t * FPS / 2);
+  g.save(); g.globalAlpha = a * (e.a || 0.55); g.fillStyle = e.color || "#fff";
+  const R = 1300;
+  for (let i = 0; i < (e.n || 70); i++) {
+    const an = rnd(i * 9.1 + fr * 1.3) * Math.PI * 2, r0 = (e.r0 || 380) + rnd(i * 4.7 + fr) * 260, wd = 0.004 + rnd(i * 2.2 + fr) * 0.01;
+    g.beginPath();
+    g.moveTo(e.x + Math.cos(an) * r0, e.y + Math.sin(an) * r0);
+    g.lineTo(e.x + Math.cos(an - wd) * R, e.y + Math.sin(an - wd) * R);
+    g.lineTo(e.x + Math.cos(an + wd) * R, e.y + Math.sin(an + wd) * R);
+    g.closePath(); g.fill();
+  }
+  g.restore();
+};
+DRAW.panels = (g, e, t) => {   // Fable・Opus・Astra の縦の板 → 上の帯に縮む
+  const pw = W / e.items.length;
+  const col = clamp((t - e.collapse) / 0.22), cp = eIO(col);
+  let out = 1; if (t > e.t1) out = 1 - clamp((t - e.t1) / 0.15);
+  if (out <= 0) return;
+  e.items.forEach((it, i) => {
+    if (t < it.t) return;
+    const p = eOut5((t - it.t) / 0.13);
+    const fullH = H, barH = e.barH;
+    const h = lerp(fullH, barH, cp);
+    const y = lerp(-fullH * (1 - p), 0, cp);
+    const hl = it.hl && it.hl.some(([a, b]) => t >= a && t < b);
+    g.save(); g.globalAlpha = out * (cp > 0 ? lerp(0.92, hl ? 1 : 0.55, cp) : 0.92);
+    const gr = g.createLinearGradient(0, y, 0, y + h);
+    gr.addColorStop(0, it.c1); gr.addColorStop(1, it.c2);
+    g.fillStyle = gr; g.fillRect(i * pw, y, pw + 1, h);
+    g.fillStyle = "rgba(255,255,255,0.9)"; g.fillRect(i * pw, y + h - 6, pw, 6);
+    // 名前
+    const fs = lerp(220, 74, cp);
+    g.font = `800 ${fs}px 'Avenir Next Condensed'`; g.textAlign = "center"; g.textBaseline = "middle";
+    g.shadowColor = "rgba(0,0,0,.35)"; g.shadowBlur = 20;
+    g.fillStyle = "#fff"; g.fillText(it.name, i * pw + pw / 2, y + h / 2 + (cp < 1 ? 0 : 4));
+    if (cp < 0.5 && it.sub) { g.font = `800 ${lerp(52, 20, cp)}px 'Avenir Next Condensed'`; g.globalAlpha *= 1 - cp * 2; g.fillText(it.sub, i * pw + pw / 2, y + h / 2 + 150); }
+    if (hl) { g.strokeStyle = "#fff"; g.lineWidth = 8; g.strokeRect(i * pw + 4, y + 4, pw - 8, h - 8); }
+    g.restore();
+  });
+};
+DRAW.chat = (g, e, t) => {   // AI のチャット画面風の吹き出し（Astra のセリフ）
+  let a = clamp((t - e.t0) / 0.12), s = lerp(0.85, 1, eBack((t - e.t0) / 0.2, 1.5));
+  let dx = 0, dy = 0, rot = 0;
+  if (e.knock && t >= e.knock) { const q = clamp((t - e.knock) / 0.22); dx = -1600 * eIn(q); dy = -260 * q; rot = -28 * q; }
+  if (e.shrinkAt && t >= e.shrinkAt) { const q = eOut(clamp((t - e.shrinkAt) / 0.18)); s *= lerp(1, e.shrinkTo, q); a *= lerp(1, 0.75, q); }
+  if (t >= e.t1) return;
+  g.save(); g.globalAlpha = a;
+  g.translate(e.x + dx, e.y + dy); g.rotate(rot * Math.PI / 180); g.scale(s, s);
+  const w = e.w, h = e.h;
+  glass(g, 0, 0, w, h, 26, "rgba(90,160,255,0.85)");
+  g.fillStyle = "rgba(61,139,255,0.16)"; rr(g, 0, 0, w, 74, 26); g.fill();
+  // 名札
+  g.fillStyle = "#3D8BFF"; g.beginPath(); g.arc(46, 37, 16, 0, Math.PI * 2); g.fill();
+  g.fillStyle = "#fff"; g.beginPath(); g.arc(46, 37, 6, 0, Math.PI * 2); g.fill();
+  g.font = "800 38px 'Avenir Next Condensed'"; g.fillStyle = "#fff"; g.textBaseline = "middle"; g.textAlign = "left";
+  g.fillText(e.name || "Astra", 76, 39);
+  const nw = g.measureText(e.name || "Astra").width;
+  g.font = `${e.tagFont ? "800 26px " + e.tagFont : "600 24px 'Avenir Next Condensed'"}`; g.fillStyle = "rgba(200,220,255,.75)"; g.fillText(e.tag || "AI AGENT", 76 + nw + 22, 41);
+  // 文字（打ち込み）
+  let yy = 74 + 70;
+  e.lines.forEach((L) => {
+    const chars = [...L.text];
+    g.font = `${L.weight || 700} ${L.size}px ${L.font || "'Hiragino Sans'"}`; g.fillStyle = L.color || "#fff";
+    let xx = 44, last = -1;
+    chars.forEach((ch, i) => { if (t >= L.ct[i]) { g.fillText(ch, xx, yy); last = i; } xx += g.measureText(ch).width; });
+    // カーソル
+    const typing = last >= 0 && last < chars.length - 1 || (t >= L.ct[0] && t < L.ct[chars.length - 1] + 0.35);
+    if (typing && Math.floor(t * 4) % 2 === 0) {
+      let cx2 = 44; for (let i = 0; i <= last; i++) cx2 += g.measureText(chars[i]).width;
+      g.fillStyle = "#7CC4FF"; g.fillRect(cx2 + 6, yy - L.size * 0.45, 6, L.size * 0.9);
+    }
+    yy += L.size * 1.45;
+  });
+  // 考え中の点
+  if (e.dots && t < e.lines[0].ct[0]) { for (let k = 0; k < 3; k++) { g.fillStyle = `rgba(200,220,255,${0.3 + 0.7 * (Math.floor(t * 6) % 3 === k ? 1 : 0)})`; g.beginPath(); g.arc(60 + k * 30, 140, 9, 0, Math.PI * 2); g.fill(); } }
+  g.restore();
+};
+DRAW.quote = (g, e, t) => {   // 白い吹き出し（三上さんが AI に言う言葉）
+  let s = lerp(0.6, 1, eBack((t - e.t0) / 0.18, 1.8)), a = clamp((t - e.t0) / 0.08);
+  if (t >= e.t1) { const q = clamp((t - e.t1) / 0.12); a *= 1 - q; s *= 1 + 0.2 * q; if (q >= 1) return; }
+  g.save(); g.globalAlpha = a;
+  g.font = `${e.weight || 800} ${e.size}px ${e.font}`;
+  const chars = [...e.text]; const ws = chars.map((c) => g.measureText(c).width); const tw = ws.reduce((x, y) => x + y, 0);
+  const pw = tw + e.size * 1.0, ph = e.size * 1.7;
+  g.translate(e.x, e.y); g.scale(s, s); g.rotate((e.rot || 0) * Math.PI / 180);
+  g.shadowColor = "rgba(0,0,0,.5)"; g.shadowBlur = 30; g.shadowOffsetY = 10;
+  g.fillStyle = e.bg || "#fff"; rr(g, -pw / 2, -ph / 2, pw, ph, ph * 0.45); g.fill();
+  g.beginPath(); const tx = e.tail === "l" ? -pw * 0.28 : pw * 0.28; g.moveTo(tx - 26, ph / 2 - 4); g.lineTo(tx + (e.tail === "l" ? -40 : 40), ph / 2 + 46); g.lineTo(tx + 26, ph / 2 - 4); g.closePath(); g.fill();
+  g.shadowColor = "transparent";
+  g.fillStyle = e.color || "#111"; g.textBaseline = "middle"; g.textAlign = "left";
+  let x = -tw / 2;
+  chars.forEach((ch, i) => { if (t >= e.ct[i]) { const p = clamp((t - e.ct[i]) / 0.08); g.save(); g.globalAlpha = a * p; g.fillText(ch, x, 4); g.restore(); } x += ws[i]; });
+  g.restore();
+};
+DRAW.checks = (g, e, t) => {   // 仕事が片づいていくチェックの一覧
+  let a = clamp((t - e.t0) / 0.12); if (t > e.t1) a *= 1 - clamp((t - e.t1) / 0.12);
+  if (a <= 0) return;
+  g.save(); g.globalAlpha = a;
+  const x = e.x, y = e.y, w = e.w, rh = e.rh;
+  glass(g, x, y, w, rh * e.ts.length + 40, 22, "rgba(124,247,193,0.55)");
+  e.ts.forEach((tc, i) => {
+    const ry = y + 20 + i * rh;
+    const done = t >= tc, p = eBack((t - tc) / 0.16, 2);
+    g.strokeStyle = "rgba(255,255,255,0.6)"; g.lineWidth = 4; rr(g, x + 24, ry + rh / 2 - 22, 44, 44, 9); g.stroke();
+    g.fillStyle = done ? "rgba(255,255,255,0.75)" : "rgba(255,255,255,0.3)";
+    g.fillRect(x + 92, ry + rh / 2 - 9, (w - 130) * (0.45 + 0.45 * rnd(i * 5.5)), 18);
+    if (done) {
+      g.save(); g.translate(x + 46, ry + rh / 2); g.scale(p, p);
+      g.fillStyle = "#19D38A"; rr(g, -22, -22, 44, 44, 9); g.fill();
+      g.strokeStyle = "#fff"; g.lineWidth = 7; g.lineCap = "round"; g.lineJoin = "round";
+      g.beginPath(); g.moveTo(-11, 1); g.lineTo(-3, 10); g.lineTo(13, -9); g.stroke(); g.restore();
+    }
+  });
+  g.restore();
+};
+DRAW.steps = (g, e, t) => {   // 手順 ①→②→③
+  let a = 1; if (t > e.t1) a = 1 - clamp((t - e.t1) / 0.12);
+  if (a <= 0) return;
+  g.save(); g.globalAlpha = a;
+  e.ts.forEach((tc, i) => {
+    if (t < tc) return;
+    const p = eBack((t - tc) / 0.18, 2), x = e.x + i * e.gap, y = e.y;
+    if (i > 0) { const lp = eOut((t - tc) / 0.12); g.strokeStyle = "rgba(255,255,255,0.85)"; g.lineWidth = 6; g.beginPath(); g.moveTo(x - e.gap + 62, y); g.lineTo(lerp(x - e.gap + 62, x - 62, lp), y); g.stroke(); }
+    g.save(); g.translate(x, y); g.scale(p, p);
+    g.fillStyle = "#fff"; g.beginPath(); g.arc(0, 0, 52, 0, Math.PI * 2); g.fill();
+    g.fillStyle = "#111"; g.font = "800 66px 'Avenir Next Condensed'"; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(String(i + 1), 0, 4);
+    g.restore();
+  });
+  g.restore();
+};
+DRAW.msgs = (g, e, t) => {   // 連絡が流れていく（右の列）
+  let a = clamp((t - e.t0) / 0.15); if (t > e.t1) a *= 1 - clamp((t - e.t1) / 0.15);
+  if (a <= 0) return;
+  g.save(); g.globalAlpha = a; g.beginPath(); g.rect(e.x - 20, 0, e.w + 40, H); g.clip();
+  const sp = e.speed, gap = 150;
+  for (let k = -1; k < 9; k++) {
+    const id = Math.floor((t - e.t0) * sp / gap) + k;
+    const y = H - ((t - e.t0) * sp % gap) - k * gap;
+    const w = e.w * (0.6 + 0.4 * rnd(id * 3.7)), right = id % 3 === 1;
+    const x = right ? e.x + e.w - w : e.x;
+    g.fillStyle = right ? "rgba(61,139,255,0.88)" : "rgba(255,255,255,0.9)";
+    rr(g, x, y, w, 104, 30); g.fill();
+    g.fillStyle = right ? "rgba(255,255,255,0.8)" : "rgba(20,30,50,0.55)";
+    g.fillRect(x + 30, y + 30, (w - 60) * (0.5 + 0.5 * rnd(id * 1.9)), 14); g.fillRect(x + 30, y + 60, (w - 60) * (0.3 + 0.5 * rnd(id * 2.3)), 14);
+  }
+  g.restore();
+};
+DRAW.particles = (g, e, t) => {   // 上がっていく光の粒
+  let a = clamp((t - e.t0) / 0.3); if (t > e.t1) a *= 1 - clamp((t - e.t1) / 0.2);
+  g.save(); g.globalCompositeOperation = "lighter";
+  for (let i = 0; i < 90; i++) {
+    const sp = 120 + rnd(i * 3.3) * 380, x = rnd(i * 7.1) * W, y = H + 40 - ((t - e.t0) * sp + rnd(i * 5.9) * H) % (H + 80);
+    const r = 1.5 + rnd(i * 2.2) * 4;
+    g.globalAlpha = a * (0.3 + 0.7 * rnd(i * 9.9));
+    g.fillStyle = i % 4 === 0 ? "#fff" : "#5FA8FF";
+    g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fill();
+  }
+  g.restore();
+};
+DRAW.sweep = (g, e, t) => {   // 光が走る
+  const p = (t - e.t0) / (e.t1 - e.t0); if (p < 0 || p > 1) return;
+  g.save(); g.globalCompositeOperation = "lighter";
+  const x = lerp(-600, W + 600, eIO(p));
+  const gr = g.createLinearGradient(x - 300, 0, x + 300, 0);
+  gr.addColorStop(0, "rgba(255,255,255,0)"); gr.addColorStop(0.5, `rgba(${e.rgb || "180,215,255"},${e.a || 0.55})`); gr.addColorStop(1, "rgba(255,255,255,0)");
+  g.fillStyle = gr; g.translate(x, H / 2); g.transform(1, 0, -0.35, 1, 0, 0); g.translate(-x, -H / 2); g.fillRect(x - 300, e.y0 || 0, 600, (e.y1 || H) - (e.y0 || 0));
+  g.restore();
+};
+DRAW.line = (g, e, t) => {   // 細い線がのびる
+  let p = eOut5((t - e.t0) / (e.d || 0.25)); if (p <= 0) return;
+  let a = 1; if (t > e.t1) a = 1 - clamp((t - e.t1) / 0.12);
+  g.save(); g.globalAlpha = a; g.fillStyle = e.color || "#fff";
+  g.fillRect(e.x, e.y, e.w * p, e.h || 6); g.restore();
+};
+DRAW.card = (g, e, t) => { if (t < e.t0 || t >= e.t1) return; g.fillStyle = e.color; g.fillRect(-60, -60, W + 120, H + 120); };
+DRAW.rect = (g, e, t) => {   // 色の板（画面全体・一部）
+  let p = eOut5((t - e.t0) / (e.d || 0.12)); if (p <= 0) return;
+  let a = e.a == null ? 1 : e.a; if (t > e.t1) { const q = clamp((t - e.t1) / (e.ed || 0.1)); if (e.exit === "wipe") { g.save(); g.globalAlpha = a; g.fillStyle = e.color; g.fillRect(e.x + e.w * eIn(q), e.y, e.w * (1 - eIn(q)), e.h); g.restore(); return; } a *= 1 - q; }
+  g.save(); g.globalAlpha = a; g.fillStyle = e.color;
+  if (e.from === "l") g.fillRect(e.x, e.y, e.w * p, e.h); else if (e.from === "t") g.fillRect(e.x, e.y, e.w, e.h * p); else g.fillRect(e.x, e.y, e.w, e.h);
+  g.restore();
+};
+
+// ---------- この動画（環境設定）で足した図形 ----------
+function hexRgb(h) { h = h.replace("#", ""); return [0, 2, 4].map((i) => parseInt(h.substr(i, 2), 16)); }
+function mixColor(a, b, p) { const x = hexRgb(a), y = hexRgb(b); return `rgb(${x.map((v, i) => Math.round(lerp(v, y[i], clamp(p)))).join(",")})`; }
+function outAlpha(e, t, d = 0.12) { return t > e.t1 ? 1 - clamp((t - e.t1) / d) : 1; }
+DRAW.tools = (g, e, t) => {   // 流行りの道具のカード（Orca・Obsidian）→ 赤い×
+  const out = outAlpha(e, t); if (out <= 0) return;
+  e.items.forEach((it, i) => {
+    if (t < it.t) return;
+    const p = (t - it.t) / 0.18, s = lerp(0.3, 1, eBack(p, 1.8)), a = clamp(p * 3);
+    let dx = 0, dy = 0;
+    const xa = e.xAt != null && t >= e.xAt;
+    if (xa) { const k = clamp(1 - (t - e.xAt) / 0.3), fr = Math.floor(t * FPS * 2); dx = (rnd(fr * 1.3 + i * 7) - 0.5) * 40 * k; dy = (rnd(fr * 2.1 + i * 3) - 0.5) * 26 * k; }
+    g.save(); g.globalAlpha = a * out;
+    g.translate(it.x + it.w / 2 + dx, it.y + it.h / 2 + dy); g.rotate((it.rot || 0) * Math.PI / 180); g.scale(s, s); g.translate(-it.w / 2, -it.h / 2);
+    g.shadowColor = "rgba(0,0,0,.55)"; g.shadowBlur = 34; g.shadowOffsetY = 14;
+    const gr = g.createLinearGradient(0, 0, it.w, it.h); gr.addColorStop(0, it.c1); gr.addColorStop(1, it.c2);
+    rr(g, 0, 0, it.w, it.h, 30); g.fillStyle = gr; g.fill(); g.shadowColor = "transparent";
+    g.lineWidth = 4; g.strokeStyle = "rgba(255,255,255,.55)"; g.stroke();
+    g.textAlign = "center"; g.textBaseline = "middle";
+    if (it.logo) {   // v004（小川さん「Aで」）：公式のロゴを上に、名前と説明を下に
+      const L = LOGO[it.logo], ls = it.ls || 120;
+      g.fillStyle = "rgba(255,255,255,.96)"; rr(g, it.w / 2 - ls / 2 - 14, it.h * 0.07, ls + 28, ls + 28, 24); g.fill();
+      if (L && L.complete) g.drawImage(L, it.w / 2 - ls / 2, it.h * 0.07 + 14, ls, ls);
+      g.font = `800 ${it.fs || 86}px 'Avenir Next Condensed'`; g.fillStyle = "#fff"; g.fillText(it.name, it.w / 2, it.h * 0.735);
+      if (it.sub) { g.font = `800 ${it.sfs || 36}px 'Hiragino Sans'`; g.fillStyle = "rgba(255,255,255,.88)"; g.fillText(it.sub, it.w / 2, it.h * 0.905); }
+    } else {
+    g.font = `800 ${it.fs || 100}px 'Avenir Next Condensed'`; g.fillStyle = "#fff"; g.fillText(it.name, it.w / 2, it.h * 0.43);
+    if (it.sub) { g.font = `800 ${it.sfs || 40}px 'Hiragino Sans'`; g.fillStyle = "rgba(255,255,255,.88)"; g.fillText(it.sub, it.w / 2, it.h * 0.78); }
+    }
+    if (xa) {
+      const q = clamp((t - e.xAt) / 0.15);
+      g.fillStyle = `rgba(15,15,20,${0.5 * q})`; rr(g, 0, 0, it.w, it.h, 30); g.fill();
+      const d1 = clamp((t - e.xAt - i * 0.05) / 0.09), d2 = clamp((t - e.xAt - i * 0.05 - 0.07) / 0.09), m = 34;
+      g.strokeStyle = "#FF2D46"; g.lineWidth = 30; g.lineCap = "round"; g.shadowColor = "rgba(0,0,0,.6)"; g.shadowBlur = 16;
+      if (d1 > 0) { g.beginPath(); g.moveTo(m, m); g.lineTo(lerp(m, it.w - m, eOut(d1)), lerp(m, it.h - m, eOut(d1))); g.stroke(); }
+      if (d2 > 0) { g.beginPath(); g.moveTo(it.w - m, m); g.lineTo(lerp(it.w - m, m, eOut(d2)), lerp(m, it.h - m, eOut(d2))); g.stroke(); }
+    }
+    g.restore();
+  });
+};
+DRAW.memo = (g, e, t) => {   // 付せんのメモ → 腐っていく（色が濁る・しみ・垂れる・しおれる）
+  const out = outAlpha(e, t); if (out <= 0) return;
+  const p = (t - e.t0) / 0.2, s = lerp(0.5, 1, eBack(p, 1.6)), a = clamp(p * 3);
+  const r = e.rotAt != null ? clamp((t - e.rotAt) / (e.rotD || 1.2)) : 0, dr = eOut(r);
+  g.save(); g.globalAlpha = a * out;
+  g.translate(e.x + e.w / 2, e.y + e.h / 2); g.rotate(((e.rot || 0) + dr * 5) * Math.PI / 180); g.scale(s, s * (1 - 0.05 * dr)); g.translate(-e.w / 2, -e.h / 2);
+  g.shadowColor = "rgba(0,0,0,.55)"; g.shadowBlur = 34; g.shadowOffsetY = 16;
+  g.fillStyle = mixColor("#FFE55C", "#7a7436", dr); g.fillRect(0, 0, e.w, e.h); g.shadowColor = "transparent";
+  // 折り目の影
+  const fg = g.createLinearGradient(0, 0, 0, e.h); fg.addColorStop(0, "rgba(0,0,0,0.0)"); fg.addColorStop(1, `rgba(0,0,0,${0.12 + 0.2 * dr})`); g.fillStyle = fg; g.fillRect(0, 0, e.w, e.h);
+  g.save(); g.translate(e.w / 2, 0); g.rotate(-0.05); g.fillStyle = "rgba(255,255,255,.6)"; g.fillRect(-80, -20, 160, 40); g.restore();
+  // 罫線
+  g.fillStyle = `rgba(0,0,0,${0.10 + 0.05 * dr})`; for (let k = 0; k < 3; k++) g.fillRect(48, e.h * 0.70 + k * 46, e.w - 96, 5);
+  // 文字（手書き風ではなく太字）
+  g.font = `800 ${e.size}px 'Hiragino Sans'`; g.textBaseline = "middle"; g.textAlign = "left";
+  const chars = [...e.text]; const ws = chars.map((c) => g.measureText(c).width); const tw = ws.reduce((x, y) => x + y, 0);
+  let x = (e.w - tw) / 2;
+  chars.forEach((ch, i) => { const ct = e.ct ? e.ct[i] : e.t0; if (t >= ct) { const q = clamp((t - ct) / 0.08); g.save(); g.globalAlpha = a * out * q; g.fillStyle = mixColor("#1b1b1b", "#2d2610", dr); g.translate(x + ws[i] / 2, e.h * 0.40); g.scale(lerp(1.6, 1, eOut(q)), lerp(1.6, 1, eOut(q))); g.fillText(ch, -ws[i] / 2, 0); g.restore(); } x += ws[i]; });
+  // しみ・カビ
+  if (r > 0) {
+    for (let k = 0; k < 18; k++) {
+      const rs = clamp(r * 1.7 - rnd(k * 3.1) * 0.7); if (rs <= 0) continue;
+      g.fillStyle = k % 3 ? `rgba(70,58,22,${0.55 * rs})` : `rgba(96,120,40,${0.6 * rs})`;
+      const sx = rnd(k * 7.3) * e.w, sy = rnd(k * 5.1) * e.h, sr = (12 + rnd(k * 2.7) * 46) * rs;
+      g.beginPath(); g.arc(sx, sy, sr, 0, Math.PI * 2); g.fill();
+    }
+    // 下へ垂れる
+    for (let k = 0; k < 6; k++) {
+      const rs = clamp(r * 1.4 - rnd(k * 9.7) * 0.5); if (rs <= 0) continue;
+      const dx = 50 + rnd(k * 4.4) * (e.w - 100), len = rs * (60 + rnd(k * 1.9) * 140), wd = 14 + rnd(k * 6.6) * 14;
+      g.fillStyle = "rgba(92,84,34,0.95)";
+      g.beginPath(); g.moveTo(dx - wd / 2, e.h - 2); g.lineTo(dx - wd / 2, e.h + len); g.arc(dx, e.h + len, wd / 2, Math.PI, 0, true); g.lineTo(dx + wd / 2, e.h - 2); g.closePath(); g.fill();
+    }
+  }
+  g.restore();
+};
+DRAW.gauge = (g, e, t) => {   // ゲージ（AIのスキル）。drainAt で from → to に減る
+  const out = outAlpha(e, t); if (out <= 0) return;
+  const p = eOut5((t - e.t0) / 0.18);
+  const dv = e.drainAt != null ? eIO(clamp((t - e.drainAt) / (e.drainD || 0.35))) : 0;
+  const v = lerp(e.from, e.to, dv);
+  g.save(); g.globalAlpha = out * clamp((t - e.t0) / 0.08);
+  g.translate(e.x, e.y); g.scale(lerp(0.6, 1, p), 1);
+  glass(g, 0, 0, e.w, e.h + 92, 20, "rgba(255,255,255,.4)");
+  g.font = "800 46px 'Hiragino Sans'"; g.fillStyle = "#fff"; g.textBaseline = "middle"; g.textAlign = "left"; g.fillText(e.label, 30, 46);
+  const low = v < 0.2, blink = low && Math.floor((t - e.drainAt) * 8) % 2 === 0;
+  g.font = "800 60px 'Avenir Next Condensed'"; g.textAlign = "right"; g.fillStyle = low ? "#FF2D46" : "#7CF7C1";
+  g.fillText(`${Math.round(v * 100)}%`, e.w - 30, 48);
+  g.fillStyle = "rgba(255,255,255,.14)"; rr(g, 30, 80, e.w - 60, e.h - 10, 10); g.fill();
+  g.fillStyle = low ? (blink ? "#FF2D46" : "#b3172a") : "#19D38A"; rr(g, 30, 80, Math.max(12, (e.w - 60) * v), e.h - 10, 10); g.fill();
+  for (let k = 1; k < 10; k++) { g.fillStyle = "rgba(0,0,0,.35)"; g.fillRect(30 + (e.w - 60) * k / 10 - 2, 80, 4, e.h - 10); }
+  g.restore();
+};
+DRAW.layers = (g, e, t) => {   // 環境の層（下から積み上がる板）
+  const out = outAlpha(e, t); if (out <= 0) return;
+  e.items.forEach((it, i) => {
+    if (t < it.t) return;
+    const p = (t - it.t) / 0.16, dy = -300 * (1 - eOut5(p)), a = clamp(p * 3);
+    const y = e.y + i * (e.bh + e.gap);
+    g.save(); g.globalAlpha = a * out; g.translate(0, dy);
+    const sk = 26;   // 斜めの上面
+    g.fillStyle = mixColor(it.color, "#ffffff", 0.35);
+    g.beginPath(); g.moveTo(e.x + sk, y - 16); g.lineTo(e.x + e.w + sk, y - 16); g.lineTo(e.x + e.w, y); g.lineTo(e.x, y); g.closePath(); g.fill();
+    g.shadowColor = "rgba(0,0,0,.5)"; g.shadowBlur = 18; g.shadowOffsetY = 8;
+    const gr = g.createLinearGradient(e.x, 0, e.x + e.w, 0); gr.addColorStop(0, it.color); gr.addColorStop(1, mixColor(it.color, "#000000", 0.35));
+    g.fillStyle = gr; g.fillRect(e.x, y, e.w, e.bh); g.shadowColor = "transparent";
+    g.fillStyle = mixColor(it.color, "#000000", 0.5); g.beginPath(); g.moveTo(e.x + e.w, y); g.lineTo(e.x + e.w + sk, y - 16); g.lineTo(e.x + e.w + sk, y + e.bh - 16); g.lineTo(e.x + e.w, y + e.bh); g.closePath(); g.fill();
+    g.font = `800 ${e.fs || 40}px 'Hiragino Sans'`; g.fillStyle = "#fff"; g.textBaseline = "middle"; g.textAlign = "left";
+    g.fillText(it.label, e.x + 28, y + e.bh / 2 + 2);
+    g.font = "800 30px 'Avenir Next Condensed'"; g.textAlign = "right"; g.fillStyle = "rgba(255,255,255,.7)"; g.fillText(`LAYER ${String(i + 1).padStart(2, "0")}`, e.x + e.w - 24, y + e.bh / 2 + 2);
+    g.restore();
+  });
+};
+DRAW.pill = (g, e, t) => {   // 状態の札（▶ AIが再始動）
+  const out = outAlpha(e, t); if (out <= 0) return;
+  const p = (t - e.t0) / 0.18, s = lerp(0.4, 1, eBack(p, 2)), a = clamp(p * 3);
+  g.save(); g.globalAlpha = a * out; g.font = `800 ${e.size}px 'Hiragino Sans'`;
+  const tw = g.measureText(e.text).width, w = tw + e.size * 2.2, h = e.size * 1.7;
+  g.translate(e.x + w / 2, e.y); g.scale(s, s);
+  g.shadowColor = e.glow || "rgba(25,211,138,.8)"; g.shadowBlur = 30;
+  rr(g, -w / 2, -h / 2, w, h, h / 2); g.fillStyle = e.color || "#14b877"; g.fill(); g.shadowColor = "transparent";
+  // 回る印
+  const ang = (t - e.t0) * 9; g.strokeStyle = "#fff"; g.lineWidth = e.size * 0.16; g.lineCap = "round";
+  g.beginPath(); g.arc(-w / 2 + h / 2 + 4, 0, e.size * 0.36, ang, ang + 4.3); g.stroke();
+  g.fillStyle = "#fff"; g.textBaseline = "middle"; g.textAlign = "left"; g.fillText(e.text, -w / 2 + h * 0.95, 2);
+  g.restore();
+};
+DRAW.tapbtn = (g, e, t) => {   // ワンタップのボタン（指が来て押す → 波紋 → 完了）
+  const out = outAlpha(e, t); if (out <= 0) return;
+  const p = (t - e.t0) / 0.2, a = clamp(p * 3);
+  const pressed = t >= e.tapAt, q = pressed ? (t - e.tapAt) : 0;
+  let s = lerp(0.5, 1, eBack(p, 1.8)); if (pressed) s *= q < 0.06 ? lerp(1, 0.9, q / 0.06) : lerp(0.9, 1.04, eBack(clamp((q - 0.06) / 0.2), 2.5));
+  const cx = e.x + e.w / 2, cy = e.y + e.h / 2;
+  g.save(); g.globalAlpha = a * out;
+  // 波紋
+  if (pressed) for (let k = 0; k < 3; k++) { const rp = clamp((q - k * 0.1) / 0.5); if (rp <= 0 || rp >= 1) continue; g.strokeStyle = `rgba(255,210,63,${1 - rp})`; g.lineWidth = 14 * (1 - rp) + 2; g.beginPath(); g.ellipse(cx, cy, e.w / 2 + 220 * eOut(rp), e.h / 2 + 160 * eOut(rp), 0, 0, Math.PI * 2); g.stroke(); }
+  g.translate(cx, cy); g.scale(s, s);
+  g.shadowColor = pressed ? "rgba(255,210,63,.9)" : "rgba(0,0,0,.5)"; g.shadowBlur = pressed ? 50 : 30; g.shadowOffsetY = pressed ? 0 : 12;
+  rr(g, -e.w / 2, -e.h / 2, e.w, e.h, e.h / 2); g.fillStyle = pressed ? "#FFD23F" : "#ffffff"; g.fill(); g.shadowColor = "transparent";
+  g.font = `800 ${e.size}px 'Hiragino Sans'`; g.fillStyle = "#111"; g.textAlign = "center"; g.textBaseline = "middle";
+  g.fillText(pressed ? (e.label2 || e.label) : e.label, 0, 3);
+  g.restore();
+  // 指（丸いカーソル）
+  if (t >= e.handAt) {
+    const hp = eOut5(clamp((t - e.handAt) / Math.max(0.05, e.tapAt - e.handAt)));
+    const hx = lerp(cx + 460, cx + e.w * 0.44, hp), hy = lerp(cy + 300, cy + 40, hp);
+    const hs = pressed ? (q < 0.08 ? 0.8 : lerp(0.8, 1, clamp((q - 0.08) / 0.15))) : 1;
+    g.save(); g.globalAlpha = out * clamp((t - e.handAt) / 0.08);
+    g.translate(hx, hy); g.scale(hs, hs);
+    g.fillStyle = "rgba(255,255,255,.9)"; g.strokeStyle = "rgba(0,0,0,.45)"; g.lineWidth = 6;
+    g.beginPath(); g.arc(0, 0, 46, 0, Math.PI * 2); g.fill(); g.stroke();
+    g.fillStyle = "rgba(61,139,255,.9)"; g.beginPath(); g.arc(0, 0, 20, 0, Math.PI * 2); g.fill();
+    g.restore();
+  }
+};
+
+// ---------- 1つの時刻の絵 ----------
+function drawScene(g, t, img) {
+  const c = camera(t), s = c.s;
+  g.save();
+  g.fillStyle = "#000"; g.fillRect(0, 0, W, H);
+  g.translate(W / 2 + c.sx, H / 2 + c.sy); g.rotate(c.sr);
+  // 背景
+  g.save();
+  g.scale(c.z, c.z); g.translate(-c.cx, -c.cy);
+  g.filter = s.filter || "contrast(1.2) saturate(0.78) brightness(0.86)";
+  if (img) g.drawImage(img, 0, 0, 1920, 1080);
+  g.filter = "none";
+  g.restore();
+  g.translate(-W / 2, -H / 2);
+  // 色味・暗くする
+  if (s.tint) { g.save(); g.globalCompositeOperation = s.tintBlend || "soft-light"; g.globalAlpha = s.tintA || 0.5; g.fillStyle = s.tint; g.fillRect(-50, -50, W + 100, H + 100); g.restore(); }
+  for (const e of HL.fx) if (e.type === "tint" && t >= e.t0 && t < e.t1) { g.save(); g.globalCompositeOperation = e.blend || "soft-light"; g.globalAlpha = e.a; g.fillStyle = e.color; g.fillRect(-50, -50, W + 100, H + 100); g.restore(); }
+  const sh = s.shade || "left";
+  if (sh === "left" || sh === "both") { const gr = g.createLinearGradient(0, 0, W * 0.72, 0); gr.addColorStop(0, "rgba(0,0,0,0.72)"); gr.addColorStop(0.55, "rgba(0,0,0,0.38)"); gr.addColorStop(1, "rgba(0,0,0,0)"); g.fillStyle = gr; g.fillRect(-50, -50, W + 100, H + 100); }
+  if (sh === "bottom" || sh === "both") { const gr = g.createLinearGradient(0, H * 0.45, 0, H); gr.addColorStop(0, "rgba(0,0,0,0)"); gr.addColorStop(1, "rgba(0,0,0,0.7)"); g.fillStyle = gr; g.fillRect(-50, -50, W + 100, H + 100); }
+  for (const e of HL.fx) if (e.type === "dim" && t >= e.t0 - (e.fi || 0) && t < e.t1 + (e.fo || 0)) {
+    let a = e.a; if (t < e.t0) a *= 1 - (e.t0 - t) / e.fi; if (t > e.t1) a *= 1 - (t - e.t1) / e.fo;
+    g.fillStyle = `rgba(${e.rgb || "0,0,0"},${a})`; g.fillRect(-50, -50, W + 100, H + 100);
+  }
+  const vg = g.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 1.05);
+  vg.addColorStop(0, "rgba(0,0,0,0)"); vg.addColorStop(1, "rgba(0,0,0,0.6)"); g.fillStyle = vg; g.fillRect(-50, -50, W + 100, H + 100);
+  // 図形と文字（z の順）
+  for (const e of HL.els) {
+    if (t < e.t0 - 0.0001 || t > e.t1 + (e.ed || 0.4)) continue;
+    if (t >= e.t1 && HL.shots.some((x) => x.t0 > e.t1 - 1e-6 && x.t0 <= t)) continue;   // 終わった後にカットが変わったら、消えている途中でも消す
+    if (e.type === "txt") drawText(g, e, t); else if (DRAW[e.type]) DRAW[e.type](g, e, t);
+  }
+  g.restore();
+  // ホワイトアウト（t0〜t1 で白く飛び、t1〜t2 で白から戻る）
+  for (const e of HL.fx) {
+    if (e.type !== "whiteout" || t < e.t0 || t >= e.t2) continue;
+    const a = t < e.t1 ? eIn((t - e.t0) / (e.t1 - e.t0)) : 1 - eOut((t - e.t1) / (e.t2 - e.t1));
+    g.fillStyle = "#fff"; g.globalAlpha = clamp(a); g.fillRect(0, 0, W, H); g.globalAlpha = 1;
+  }
+  // 光
+  for (const e of HL.fx) {
+    if (e.type !== "flash" || t < e.t || t >= e.t + e.d) continue;
+    const p = (t - e.t) / e.d; g.fillStyle = e.color || "#fff"; g.globalAlpha = (e.a || 1) * (1 - eOut(p)); g.fillRect(0, 0, W, H); g.globalAlpha = 1;
+  }
+}
+
+// ---------- 仕上げ（グリッチ・色の反転・横ぶれ・粒） ----------
+function post(t, f) {
+  for (const e of HL.fx) {
+    if (t < e.t || t >= e.t + e.d) continue;
+    const p = (t - e.t) / e.d;
+    if (e.type === "glitch") {
+      tctx.drawImage(cv, 0, 0);
+      const amt = (e.amt || 1) * (1 - p * 0.6);
+      // 横の帯をずらす
+      const n = 9;
+      for (let i = 0; i < n; i++) {
+        const y = Math.floor(rnd(f * 3.1 + i * 7.7) * H), h = 12 + Math.floor(rnd(f * 1.3 + i) * 120), dx = (rnd(f * 5.3 + i * 2.1) - 0.5) * 260 * amt;
+        ctx.drawImage(tmp, 0, y, W, h, dx, y, W, h);
+      }
+      // 色ずれ
+      const o = 18 * amt;
+      ctx.save(); ctx.globalCompositeOperation = "screen"; ctx.globalAlpha = 0.5 * amt;
+      ctx.drawImage(tmp, o, 0); ctx.globalCompositeOperation = "multiply"; ctx.globalAlpha = 0.25 * amt; ctx.fillStyle = "#ff0040"; ctx.fillRect(0, 0, W, H);
+      ctx.restore();
+    } else if (e.type === "invert") {
+      ctx.save(); ctx.globalCompositeOperation = "difference"; ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H); ctx.restore();
+    } else if (e.type === "whip") {
+      tctx.drawImage(cv, 0, 0);
+      const k = Math.sin(Math.PI * p), r = 140 * k * (e.amt || 1), dir = e.dir || 1;
+      ctx.save(); ctx.globalAlpha = 1;
+      for (let i = 1; i <= 6; i++) { ctx.globalAlpha = 0.28; ctx.drawImage(tmp, dir * r * i / 6, 0); ctx.drawImage(tmp, -dir * r * i / 6, 0); }
+      ctx.restore();
+    }
+  }
+  // 粒
+  ctx.save(); ctx.globalCompositeOperation = "overlay"; ctx.globalAlpha = 0.07;
+  ctx.drawImage(grains[f % 4], 0, 0, W, H); ctx.restore();
+}
+
+// ---------- 動きの速さ（重ねる回数） ----------
+function subframes(t) {
+  if (HL.forceSub) return HL.forceSub;
+  for (const e of HL.fx) {
+    if ((e.type === "shake" || e.type === "punch") && t >= e.t && t < e.t + Math.min(e.d, 0.25)) return 5;
+    if (e.type === "settle" && t >= e.t && t < e.t + 0.12) return 4;
+    if ((e.type === "whip") && t >= e.t && t < e.t + e.d) return 4;
+  }
+  for (const e of HL.els) {
+    if (e.type === "txt") {
+      const A = e.anim || "pop";
+      if ((A === "slam" || A.startsWith("slide")) && t >= e.t0 && t < e.t0 + 0.16) return 6;
+      if (e.exit && e.exit !== "cut" && e.exit !== "fade" && t >= e.t1 && t < e.t1 + (e.ed || 0.12)) return 5;
+      if ((A === "pop" || A === "stamp" || A === "drop") && e.ct && e.ct.some((c) => t >= c && t < c + 0.08)) return 3;
+    } else if (e.type === "panels") {
+      if (e.items.some((it) => t >= it.t && t < it.t + 0.14) || (t >= e.collapse && t < e.collapse + 0.22)) return 6;
+    } else if (e.type === "chat" && e.knock && t >= e.knock && t < e.knock + 0.25) return 6;
+    else if (e.type === "burst" && t >= e.t0 && t < e.t0 + 0.2) return 4;
+    else if ((e.type === "tools" || e.type === "layers") && e.items.some((it) => t >= it.t && t < it.t + 0.14)) return 4;
+    else if (e.type === "tools" && e.xAt != null && t >= e.xAt && t < e.xAt + 0.25) return 4;
+    else if ((e.type === "memo" || e.type === "pill" || e.type === "tapbtn") && t >= e.t0 && t < e.t0 + 0.16) return 3;
+    else if (e.type === "tapbtn" && t >= e.tapAt && t < e.tapAt + 0.2) return 4;
+  }
+  return 1;
+}
+
+window.render = async function (f) {
+  const t = f / FPS;
+  const img = await loadBg(f);
+  loadBg(f + 1);
+  const S = subframes(t);
+  if (S <= 1) drawScene(ctx, t, img);
+  else {
+    const sh = 0.5 / FPS;   // 180°のシャッター
+    // カットの切り替わり（場面・色の板・パッと消える文字）をまたがない
+    let lo = -1e9, hi = 1e9;
+    for (const b of HL.bounds) { if (b <= t + 1e-6) lo = Math.max(lo, b); else hi = Math.min(hi, b); }
+    for (let k = 0; k < S; k++) {
+      const tk = clamp(t + (k + 0.5) / S * sh - sh / 2, lo, hi - 1e-4);
+      drawScene(sctx, tk, img);
+      ctx.globalAlpha = 1 / (k + 1); ctx.drawImage(sub, 0, 0); ctx.globalAlpha = 1;
+    }
+  }
+  post(t, f);
+  return S;
+};
+HL.els.forEach((e, i) => { if (!e.id) e.id = "e" + i; itemById.set(e.id, e); });
+// v004：カードのロゴ（../zukai/assets/。v002 の図解と同じ公式の画像）を先に読む
+const LOGO = {}, logoWait = [];
+HL.els.forEach((e) => (e.items || []).forEach((it) => {
+  if (it.logo && !LOGO[it.logo]) { const im = new Image(); logoWait.push(new Promise((r) => { im.onload = r; im.onerror = r; })); im.src = it.logo; LOGO[it.logo] = im; }
+}));
+Promise.all(HL.fontsToLoad.map((f) => document.fonts.load(f, "あA3"))).then(() => document.fonts.ready).then(() => Promise.all(logoWait)).then(() => { window.__ready = true; });
+</script></body></html>

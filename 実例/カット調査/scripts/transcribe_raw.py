@@ -1,8 +1,8 @@
 """切る前の素材を文字起こしする（語ごとの時刻つき）。完成版のカット調査用。
-Codex が使っていた mlx_whisper の環境とモデル（large-v3-turbo）をそのまま使う（新しく入れるものは無い）。
+mlx_whisper の環境とモデル（large-v3-turbo）は video_edit_rules の env/・models/（作り方 tools/setup_env.sh）。
 
 使い方:
-  ~/Documents/Codex/2026-09-17/new-chat/work/asr-env/bin/python 実例/カット調査/scripts/transcribe_raw.py <素材> <名前> <作業フォルダ> <出力フォルダ>
+  ~/Desktop/video_edit_rules/env/bin/python 実例/カット調査/scripts/transcribe_raw.py <素材> <名前> <作業フォルダ> <出力フォルダ>
 出力: <出力フォルダ>/asr_<名前>.json（区切りごと。words に語ごとの start/end。時刻は素材の秒）
 """
 import json
@@ -15,7 +15,7 @@ os.environ['HF_HUB_OFFLINE'] = '1'
 import mlx_whisper  # noqa: E402
 import numpy as np  # noqa: E402
 
-MODEL = '/Users/yoshizawakouichi/Documents/Codex/2026-09-08/new-chat-3/work/transcription_correct/model'
+MODEL = os.path.expanduser('~/Desktop/video_edit_rules/models/whisper-large-v3-turbo')   # 2026-10-05 から（前は ~/Documents/Codex の中。消えた）
 CHUNK = 300
 
 src, name, work, out = sys.argv[1:5]

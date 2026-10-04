@@ -1,0 +1,142 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Z4 Orca は入口の見た目だけ（裏は同じ Claude Code）。v002 f31714〜f32143（429コマ。f32143 から次のカット＝1128 の映像）。部品の data-f0 は図解の頭からのコマ（絶対のコマ − 31714） -->
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+  /* 窓（Z1 と同じ形：角丸・上に信号の3つの丸の帯） */
+  .win { width: 440px; height: 200px; border-radius: 18px; box-sizing: border-box; overflow: hidden; display: flex; flex-direction: column; }
+  .win .bar { flex: none; display: flex; align-items: center; gap: 12px; padding-left: 18px; }
+  .win .bar i { width: 18px; height: 18px; border-radius: 50%; display: block; border: 2px solid rgba(0,0,0,.35); flex: none; }
+  .win .body { flex: 1; display: flex; align-items: center; justify-content: center; white-space: nowrap; }
+  .white { background: #fff; border: 5px solid #000; }
+  .white .bar { height: 40px; background: #d6d6d6; border-bottom: 4px solid #000; }
+  .white .body { font-family: Lbl; font-size: 54px; line-height: 1.08; color: #111; text-align: center; }
+  .dark { background: #0d0d0d; border: 5px solid #d0d0d0; }
+  .dark .bar { background: #2b2b2b; border-bottom: 3px solid #555; }
+  .orca .bar { height: 58px; }
+  .orca .bar .nm { font-family: Lbl; font-size: 48px; line-height: 1; color: #fff; padding-bottom: 6px; }
+  .orcaW { background: #fff; border: 5px solid #000; }
+  .orcaW .bar { background: #d6d6d6; border-bottom: 3px solid #000; }
+  .orcaW .bar .nm { color: #111; }
+  .orcaW .body { background: #fff; }
+  .orcaW .body img { filter: invert(1) hue-rotate(180deg); }   /* 白い窓の時は中の画面も白地に黒い字（キャラはオレンジのまま）＝色だけ替わる */
+  .term .bar { height: 40px; }
+  .term .body { gap: 22px; color: #fff; }
+  .term .pr { font-family: Hv; font-size: 64px; line-height: 1; padding-bottom: 8px; }
+  .term .nm { font-family: Lbl; font-size: 54px; line-height: 1; padding-bottom: 6px; }
+  .cc { width: 265px; height: 270px; border-radius: 36px; background: #d97757; box-shadow: 0 0 0 4px #fff inset; display: flex; align-items: center; justify-content: center; box-sizing: border-box; }
+  .glow { width: 293px; height: 298px; border-radius: 48px; border: 10px solid #f5e63a; box-sizing: border-box; box-shadow: 0 0 30px 10px rgba(245,230,58,.85); }
+</style>
+</head><body>
+<div id="board"></div>
+
+<!-- 縦の点線（入口｜裏の境目）。1118「裏では別に」の頭（板と同じコマ。前は画面なのでこれより早くできない） -->
+<div class="part" id="line" data-f0="0" data-m="fade" data-dur="6" style="left:914px;top:40px"><div class="in">
+  <svg width="12" height="790" style="display:block"><line x1="6" y1="0" x2="6" y2="790" stroke="#bdbdbd" stroke-width="6" stroke-dasharray="20 16"/></svg>
+</div></div>
+
+<!-- あなた（dots と同じ人） -->
+<div class="part" id="you" data-f0="0" style="left:40px;top:330px"><div class="in"><img src="../assets/t_35f9c55e96.png" style="width:176px;display:block"></div></div>
+<div class="part" id="youTag" data-f0="0" style="left:40px;top:664px"><div class="in" id="yt"></div></div>
+
+<!-- 入口1：Orca（暗い窓。帯に Orca のアイコンと名前、中は Orca の公式の画面の Claude Code の欄の頭） -->
+<div class="part" id="winOrca" data-f0="0" data-dim="140-198:0.5" style="left:400px;top:140px"><div class="in">
+  <div class="win dark orca"><div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
+    <img src="../assets/orca_icon.png" style="width:46px;height:46px;display:block;margin-left:8px"><span class="nm">Orca</span></div>
+    <div class="body"><img src="../assets/Z4_orca_cc.png" style="width:430px;height:126px;display:block"></div></div>
+</div></div>
+<!-- 1120「色ぐらいの話」：Orca の窓が白い窓に替わる（中身は同じ。色だけ）。「色」（f199）から「ぐらい」の終わりまでの1回（f198〜236）で暗い窓に戻る。
+     2026-10-04 反証：前は 白10コマ→黒8コマ→白20コマ でチカチカしたので1回にまとめた -->
+<div class="part winOW" id="winOrcaW" data-f0="198" data-f1="236" data-m="pop" style="left:400px;top:140px"><div class="in">
+  <div class="win orcaW orca"><div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
+    <img src="../assets/orca_icon.png" style="width:46px;height:46px;display:block;margin-left:8px"><span class="nm">Orca</span></div>
+    <div class="body"><img src="../assets/Z4_orca_cc.png" style="width:430px;height:126px;display:block"></div></div>
+</div></div>
+<!-- Orca の画面の中の Claude Code（キャラと見出し）に黄色の枠：1118「Claude Code」 -->
+<div class="part" id="ccFrame" data-f0="33" data-m="bounce" data-dim="140-198:0.5" style="left:405px;top:212px"><div class="in">
+  <div style="width:430px;height:122px;border:6px solid #f5e63a;border-radius:10px;box-sizing:border-box"></div>
+</div></div>
+
+<!-- 入口2：デスクトップアプリ（白い窓）1122「デスクトップアプリ」 -->
+<div class="part" id="winDesk" data-f0="240" style="left:400px;top:375px"><div class="in">
+  <div class="win white"><div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+    <div class="body">デスクトップ<br>アプリ</div></div>
+</div></div>
+<!-- 入口3：ターミナル（黒い窓に >_）1122「ターミナル」 -->
+<div class="part" id="winTerm" data-f0="285" style="left:400px;top:610px"><div class="in">
+  <div class="win dark term"><div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+    <div class="body"><span class="pr">&gt;_</span><span class="nm">ターミナル</span></div></div>
+</div></div>
+
+<!-- 札：入口（1119「入り口」）・裏（1118「裏では」。板と同じコマ） -->
+<div class="part" id="tagIn" data-f0="92" style="left:400px;top:40px"><div class="in" id="ti"></div></div>
+<div class="part" id="tagUra" data-f0="0" style="left:1000px;top:40px"><div class="in" id="tu"></div></div>
+
+<!-- 裏の Claude Code（共通のオレンジの四角） -->
+<div class="part" id="cc" data-f0="33" style="left:1000px;top:335px"><div class="in"><div class="cc" id="ccT"></div></div></div>
+
+<!-- 窓 → 四角の白い矢印（入口が増えるたびに1本） -->
+<div class="part" id="wA" data-f0="37" data-m="grow" data-dim="140-198:0.5"><div class="in"></div></div>
+<div class="part" id="wB" data-f0="244" data-m="grow"><div class="in"></div></div>
+<div class="part" id="wC" data-f0="289" data-m="grow"><div class="in"></div></div>
+
+<!-- あなたの赤い矢印（いつも1本。乗り換えるだけ） -->
+<div class="part" id="rA1" data-f0="3" data-f1="240" data-m="grow" data-dim="140-198:0.5"><div class="in"></div></div>
+<div class="part" id="rB1" data-f0="240" data-f1="285" data-m="grow"><div class="in"></div></div>
+<div class="part" id="rC1" data-f0="285" data-f1="333" data-m="grow"><div class="in"></div></div>
+<!-- 1124「そういう話なんだよ」：Orca → デスクトップアプリ → ターミナルと 12コマおきに乗り換え、そのたびに白い矢印に黄色が走り、四角が黄色に光る -->
+<div class="part" id="rA2" data-f0="333" data-f1="345" data-m="grow" data-dur="4"><div class="in"></div></div>
+<div class="part" id="rB2" data-f0="345" data-f1="357" data-m="grow" data-dur="4"><div class="in"></div></div>
+<!-- 赤い矢印は「どっちでもいい」が出るコマ（f364）で消す（ターミナルに止まったままだと「あなたはターミナルを選んだ」と読めるので。2026-10-04 反証）。最後の絵は 3つの窓→Claude Code の白い矢印3本と四角 -->
+<div class="part" id="rC2" data-f0="357" data-f1="364" data-m="grow" data-dur="4"><div class="in"></div></div>
+<div class="part" id="yA" data-f0="335" data-f1="345" data-m="grow" data-dur="5"><div class="in"></div></div>
+<div class="part" id="yB" data-f0="347" data-f1="357" data-m="grow" data-dur="5"><div class="in"></div></div>
+<div class="part" id="yC" data-f0="359" data-f1="369" data-m="grow" data-dur="5"><div class="in"></div></div>
+<div class="part" id="glow1" data-f0="339" data-f1="345" data-m="pop" style="left:986px;top:321px"><div class="in"><div class="glow"></div></div></div>
+<div class="part" id="glow2" data-f0="351" data-f1="357" data-m="pop" style="left:986px;top:321px"><div class="in"><div class="glow"></div></div></div>
+<div class="part" id="glow3" data-f0="363" data-f1="371" data-m="pop" style="left:986px;top:321px"><div class="in"><div class="glow"></div></div></div>
+
+<!-- 1120「色ぐらいの話」：窓の列の上、「入口」の札の右（点線より左）＝入口の窓ぜんぶの話。
+     2026-10-04 反証：前は窓の列の下で、3つ並ぶとターミナルの窓の真下に来てターミナルの説明に見えたので移した -->
+<div class="part" id="iro" data-f0="198" style="left:582px;top:48px"><div class="in" id="ir"></div></div>
+
+<!-- 締め：1125「どっちでもいいよ別に」（ワイプの上） -->
+<div class="part" id="close" data-f0="364" style="left:1298px;top:300px"><div class="in" id="cl"></div></div>
+
+<script>
+window.ZUKAI = { frames: 429 };
+const $ = (id) => document.getElementById(id);
+$('yt').innerHTML = Z.plate('あなた', { size: 52, bg: '#fff', fg: '#000', pad: '2px 14px 8px' });
+$('ti').innerHTML = Z.plate('入口', { size: 58, bg: '#1b5fd1' });
+$('tu').innerHTML = Z.plate('裏', { size: 58, bg: '#d90a0a' });
+$('ccT').innerHTML = Z.stk('Claude\nCode', { size: 60, strokes: [['#8a3a12', 10]], align: 'center', lh: 1.08 });
+$('ir').innerHTML = Z.stk('色ぐらいの話', { size: 50, fill: '#f5e63a', strokes: [['#000', 12]] });
+$('cl').innerHTML = Z.stk('どっちでも\nいい', { size: 108, font: 'Tsk', fill: '#f5e63a', strokes: [['#000', 18]], align: 'center', lh: 1.1 });
+
+// 斜めにも伸びる矢印（Z.arrow と同じ作り：.arr・.clip・.head。白の縁つき）
+function arrowSVG(len, { color = '#e60000', shaft = 26, hl = 52, hw = 76, outline = '#fff', ow = 4 } = {}) {
+  const id = 'z4a' + (++Z._n), H = hw + ow * 2, cy = H / 2;
+  const sh = (c, ex) => `<rect x="${ow}" y="${cy - shaft / 2}" width="${len - hl + 2 - ow}" height="${shaft}" fill="${c}" ${ex}/>`;
+  const hd = (c, ex) => `<polygon points="${len - hl},${cy - hw / 2} ${len - ow},${cy} ${len - hl},${cy + hw / 2}" fill="${c}" ${ex}/>`;
+  const st = `stroke="${outline}" stroke-width="${ow * 2}" stroke-linejoin="round"`;
+  return `<svg class="arr" data-len="${len}" data-hl="${hl}" data-v="0" width="${len}" height="${H}" style="overflow:visible;display:block">` +
+    `<defs><clipPath id="${id}"><rect class="clip" x="-20" y="-20" width="0" height="${H + 40}"/></clipPath></defs>` +
+    (outline ? `<g clip-path="url(#${id})">${sh(outline, st)}</g><g class="head">${hd(outline, st)}</g>` : '') +
+    `<g clip-path="url(#${id})">${sh(color, '')}</g><g class="head">${hd(color, '')}</g></svg>`;
+}
+function placeArrow(pid, x1, y1, x2, y2, opts) {
+  const e = $(pid), len = Math.round(Math.hypot(x2 - x1, y2 - y1)), th = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+  const H = (opts.hw || 76) + 2 * (opts.outline === null ? 0 : (opts.ow || 4));
+  e.style.left = x1 + 'px'; e.style.top = y1 + 'px';
+  e.firstElementChild.innerHTML = `<div style="position:absolute;left:0;top:${-H / 2}px;transform-origin:0 50%;transform:rotate(${th.toFixed(2)}deg)">${arrowSVG(len, opts)}</div>`;
+}
+// あなた → 窓（赤）
+const RED = { color: '#e60000', shaft: 26, hl: 52, hw: 76, outline: '#fff', ow: 4 };
+const rA = [226, 430, 392, 250], rB = [232, 480, 392, 475], rC = [226, 530, 392, 702];
+for (const [p, c] of [['rA1', rA], ['rA2', rA], ['rB1', rB], ['rB2', rB], ['rC1', rC], ['rC2', rC]]) placeArrow(p, ...c, RED);
+// 窓 → 裏の Claude Code（白い細い矢印・走る黄色）
+const WHITE = { color: '#fff', shaft: 14, hl: 36, hw: 48, outline: '#000', ow: 3 };
+const YEL = { color: '#f5e63a', shaft: 14, hl: 36, hw: 48, outline: '#000', ow: 3 };
+const wA = [850, 248, 990, 404], wB = [850, 475, 990, 470], wC = [850, 708, 990, 538];
+placeArrow('wA', ...wA, WHITE); placeArrow('wB', ...wB, WHITE); placeArrow('wC', ...wC, WHITE);
+placeArrow('yA', ...wA, YEL); placeArrow('yB', ...wB, YEL); placeArrow('yC', ...wC, YEL);
+</script></body></html>
