@@ -15,7 +15,6 @@
   1件でもあれば終了コード1
 """
 import argparse
-import audioop
 import json
 import math
 import os
@@ -23,6 +22,17 @@ import sys
 import wave
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    import audioop
+
+    def _rms(b):
+        return audioop.rms(b, 2)
+except ModuleNotFoundError:           # Python 3.13 から audioop が無い（env/ は 3.14）。同じ値を numpy で出す（2026-10-05）
+    import numpy as np
+
+    def _rms(b):
+        a = np.frombuffer(b, dtype="<i2").astype(np.float64)
+        return int(math.sqrt(float((a * a).mean()))) if len(a) else 0
 LOUD = -38.0          # これ以上を声とみなす（dB）
 EDGE_FRAMES = 2       # つなぎ目の前後で見るフレーム数
 BEYOND = 0.10         # 素材で、つなぎ目の向こう側を見る秒
@@ -45,7 +55,7 @@ class Wav:
         hop = self.rate // 100 * 2
         best = 0
         for k in range(0, len(raw) - hop + 1, hop):
-            best = max(best, audioop.rms(raw[k:k + hop], 2))
+            best = max(best, _rms(raw[k:k + hop]))
         return 20 * math.log10(best / 32768) if best else -99.0
 
 

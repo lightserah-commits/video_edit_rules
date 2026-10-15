@@ -65,7 +65,8 @@ def main():
         raise SystemExit("画面を映す字幕が無い（map の screen_spans と jobs.json を確かめる）")
     batches = [items[k:k + a.size] for k in range(0, len(items), a.size)]
     if len(batches) > 1 and len(batches[-1]) < 10:
-        batches[-2] += batches.pop()
+        last_ = batches.pop()          # 2026-10-05：`batches[-2] += batches.pop()` は pop のあとの添字 -2 が別の束を指し、束を上書きして1つ消えた（1003 AIで稼ぐ系）
+        batches[-1] += last_
     os.makedirs(a.out, exist_ok=True)
     for n, b in enumerate(batches):
         i0 = items.index(b[0])

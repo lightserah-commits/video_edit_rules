@@ -6,6 +6,8 @@
   - 文字（text）・矢印（arrow）・赤い×（cross）
   - 部品の出るコマは、その言葉の字幕の頭（S("字幕ID") − 図解の頭）。消えるのは次の字幕の頭など（省くと最後まで）
   - 出る時の SE：写真は「ピコンッ」、カードは「cursor」（make が manifest の se_events を鳴らす）
+  - 消え方：最後まで出ている部品は、最後の 15コマ（0.5秒）で薄くなる（既定。02 の P13 image_exit）。画角の変化と一緒に消す時だけ spec(…, exit="cut")
+    全体挿入の後ろのぼかし E016（調整レイヤー）には Premiere のディゾルブを付けない（カメラごと暗転する。画像が薄くなりきったコマで切る）
 
   python3 tools/zukai/gen_images.py --ver <edit/vNNN> [--spec <図解のフォルダ>/images_spec.py] [I01 …]
     → <図解のフォルダ>/I??/page.html・diagram.json（そのあと python3 tools/zukai/make_zukai.py --ver … I??）
@@ -18,6 +20,7 @@
 """
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -88,8 +91,21 @@ def cross(pid, x, y, size, f0, f1=None):
 SPECS = {}
 
 
-def spec(key, title, anchor, end_f, parts, se, story):
-    SPECS[key] = dict(title=title, anchor=anchor, end_f=end_f, parts=parts, se=se, story=story)
+def spec(key, title, anchor, end_f, parts, se, story, exit="fade"):
+    """exit：最後まで出ている部品の消え方。"fade"（既定）＝最後の 15コマ（0.5秒）で薄くなる（02 の P13 image_exit）。
+    "cut"＝そのコマでパッと消す（image_exit の例外：画角の変化と同じコマで出て、その変化が終わるコマで一緒に消える時だけ）"""
+    SPECS[key] = dict(title=title, anchor=anchor, end_f=end_f, parts=parts, se=se, story=story, exit=exit)
+
+
+EXIT_FADE = 15
+
+
+def _auto_fade(h):
+    """data-f1 も data-out も無い部品（最後まで出ている部品）に data-out="fade:15" を付ける。
+    2026-10-15 1015 v005：画像の消え方（image_exit）を images_spec.py に書き忘れ、画像が残ったまま後ろだけ暗転して目立った。書き忘れを無くすため既定にした"""
+    return re.sub(r'<div class="part"([^>]*)>',
+                  lambda m: m.group(0) if ("data-f1=" in m.group(1) or "data-out=" in m.group(1))
+                  else f'<div class="part" data-out="fade:{EXIT_FADE}"{m.group(1)}>', h)
 
 
 def write(zdir, tl, key):
@@ -100,7 +116,7 @@ def write(zdir, tl, key):
     d.mkdir(parents=True, exist_ok=True)
     html, js = "", ""
     for h, j in sp["parts"]:
-        html += h
+        html += _auto_fade(h) if sp.get("exit", "fade") == "fade" else h
         js += j
     page = (f'<!doctype html><html><head><meta charset="utf-8">\n<!-- {key} {sp["title"]}。tools/zukai/gen_images.py が作った（手で直さない。images_spec.py を直す） -->\n'
             f'<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>\n<style>{CSS}</style>\n</head><body>\n'

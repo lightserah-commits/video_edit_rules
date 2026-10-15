@@ -103,7 +103,10 @@ def local_records():
         p = PROJECT / rel
         if p.is_file():
             out.append((rel, p.stat().st_mtime))
+    off = {k for k, c in load_goals().get("cases", {}).items() if c.get("addness") is False}   # Addness に置かない案件（2026-10-09 ほたて）
     for name, base in case_edit_dirs().items():
+        if name in off:
+            continue
         for p in [base / "00_案件メモ.md"] + sorted(base.glob("v*/確認_v*.md")):
             if p.is_file():
                 out.append((f"[{name}] {p.relative_to(base)}", p.stat().st_mtime))   # 案件の記録は「[案件ID] 作業場の中のパス」

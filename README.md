@@ -46,7 +46,7 @@ AI への入口は `CLAUDE.md`（最初にやること・守ること・どこ�
 | `check_kyocho_timing.py` | 強調テロップが出る瞬間と、書いた最初の言葉が聞こえ始める瞬間の差（早いものを0件に。`01` の「出す時刻」） |
 | `find_repeats.py` | 近くで同じ話をくり返している所の候補（同じ言葉が続く・文が似ている。`08` の remove） |
 | `flow_table.py` | 字幕・問い・強調・図解・説明・カットを見る順に並べた一覧（考えずに分かるかを読む。`動画の土台.md`） |
-| `check_slivers.py`・`check_chops.py`・`check_deco.py`・`check_timeline.py`・`dump_timeline.py` | 検査（切れ端／声の途中で切れたつなぎ目／SE の開始・右上タイトル・15秒以上何もない区間／変えてはいけない基準との比べ／基準の書き出し）。使い方は `編集の依頼文.md` の工程9 |
+| `check_slivers.py`・`check_chops.py`・`check_deco.py`・`check_timeline.py`・`dump_timeline.py`・`check_blackout.py` | 検査（切れ端／声の途中で切れたつなぎ目／SE の開始・右上タイトル・15秒以上何もない区間／変えてはいけない基準との比べ／基準の書き出し／書き出した mp4 の暗転）。使い方は `編集の依頼文.md` の工程9・10 |
 | `check_gakaku.py` | 画角が変わるコマ（寄り・引きの入りと出、画面の出入り）でテロップが残る・先に出る・またぐ所（`04` の zoom.gakaku_check。工程9。V2 の無効のクリップは数えない） |
 | `prproj_motion.py` | .prproj のクリップのスケール・位置・無効を読む（check_gakaku・diff_user_edits が使う） |
 | `red_frames/` | 画面共有の赤枠（`07` の read_frame）：画面の画像と文字認識 → 束 → AI が決める → 確かめの絵 → 反証 → 時刻の赤枠（`red_frames/README.md`） |
@@ -56,6 +56,7 @@ AI への入口は `CLAUDE.md`（最初にやること・守ること・どこ�
 | `find_silent_acts.py` | 黙って演じている所の候補（字幕の間の声の無い時間。言葉が途中で抜けている所を上に）を一覧と 0.5秒ごとのコマの画像にする |
 | `case_template/` | 前の案件の版のスクリプト一式（次の案件をここから写して始める。`case_template/<案件>_vNNN/README.md`） |
 | `font_fix.py` | この Mac に無いフォント名を置き換える（`--scan` で数えるだけ） |
+| `gen_image.py` | 合う写真が無い所の絵を OpenAI の画像 API で作る（`02` の P13 generated。月 10ドルまで。`--month` で今月の額） |
 | `cleanup_cases.py` | 案件の作業場（edit/）の片付け（ゴミ箱へ移すだけ） |
 | `decoration_report.py`・`plates_roleplay.py`・`look_catalog.py`・`type_catalog.py` | 完成版から実例・座布団と代弁・見た目・型を抜き出す（ルールづくり用） |
 | `build_library.py`・`verify_library.py`・`make_type_list.py` | テロップ見本集を作る・元と見比べる・型一覧を作る（`見本/README.md`） |

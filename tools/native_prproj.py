@@ -19,6 +19,7 @@
 import base64
 import copy
 import gzip
+import sys
 import os
 import re
 import struct
@@ -425,8 +426,21 @@ class Prproj:
     # 同じ側に参照があれば外してから付ける（QE が V9 で失敗する・違う位置に付くのは、これが原因の候補）。
     DISSOLVE_TEMPLATE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dissolve_template.xml")
 
+    def is_adjustment_layer(self, item):
+        """item の元クリップ（SubClip → MasterClip）が調整レイヤー（IsAdjustmentLayer=true。見本の E016 ぼかしなど）か"""
+        sub = self.ref(item.find("ClipTrackItem/SubClip"))
+        mc = self.ref(sub.find("MasterClip")) if sub is not None else None
+        return mc is not None and (mc.findtext("IsAdjustmentLayer") or "").strip() == "true"
+
     def add_dissolve(self, seq, track_name, item, frames=15, at_end=True):
-        """seq の track_name の item の終わり（at_end）か頭に、frames コマのクロスディゾルブを付ける。トランジションの要素を返す"""
+        """seq の track_name の item の終わり（at_end）か頭に、frames コマのクロスディゾルブを付ける。トランジションの要素を返す。
+        調整レイヤーには付けない（何もせず None を返し、知らせを出す）：Premiere は調整レイヤーのディゾルブを「効果が外れていく」ではなく
+        「下のカメラごと黒へ溶かす」で描く（2026-10-15 1015claude project開設 v005 の全体挿入のぼかし E016。0.5秒でカメラが黒まで落ちて戻った。
+        tools/check_blackout.py で見つけられる）。座布団・※・画像・タイトルなど普通のクリップのディゾルブは黒くならない（v005 の32本で確かめた）"""
+        if self.is_adjustment_layer(item):
+            print(f"[add_dissolve] {track_name} の調整レイヤー（{self.span(item)[0] / TPS:.2f}秒〜）にはディゾルブを付けない（カメラごと暗転するため。02 P13 image_exit）",
+                  file=sys.stderr)
+            return None
         track = self.track(seq, track_name)
         ticks = frames * self.frame_ticks(seq)
         s, e = self.span(item)
