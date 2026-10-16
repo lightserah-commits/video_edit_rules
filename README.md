@@ -51,7 +51,7 @@ AI への入口は `CLAUDE.md`（最初にやること・守ること・どこ�
 | `prproj_motion.py` | .prproj のクリップのスケール・位置・無効を読む（check_gakaku・diff_user_edits が使う） |
 | `red_frames/` | 画面共有の赤枠（`07` の read_frame）：画面の画像と文字認識 → 束 → AI が決める → 確かめの絵 → 反証 → 時刻の赤枠（`red_frames/README.md`） |
 | `zukai/` | 動く図解と画像（`09`）：HTML で描いて透明の動画とワイプにする・字幕の時刻・カットが変わった時のずらし（`zukai/README.md`） |
-| `premiere_case/` | 案件の Premiere の小さなスクリプト：確認の画像の書き出し・直した所だけの一覧・保存せずに閉じる（ユーザーの直しがあれば止まる）・Media Encoder で mp4（`premiere_case/README.md`） |
+| `premiere_case/` | 案件の Premiere の小さなスクリプト：確認の画像の書き出し・直した所だけの一覧・保存せずに閉じる（ユーザーの直しがあれば止まる）・Media Encoder で mp4・締めのつなぎ目に Composer の Pan（`premiere_case/README.md`） |
 | `diff_user_edits.py` | AI の組み立てと、ユーザーが Premiere で保存したもの（か開いているシーケンス。読むだけ）を比べて表にする（リップル・クリップの出入り・V1/V2 のスケールと位置・穴・テロップの文字） |
 | `find_silent_acts.py` | 黙って演じている所の候補（字幕の間の声の無い時間。言葉が途中で抜けている所を上に）を一覧と 0.5秒ごとのコマの画像にする |
 | `case_template/` | 前の案件の版のスクリプト一式（次の案件をここから写して始める。`case_template/<案件>_vNNN/README.md`） |

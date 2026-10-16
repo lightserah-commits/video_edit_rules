@@ -5,7 +5,8 @@
   - ロゴ（card）：白いカードにロゴと名前。左から流れてくる（slideL）・右から（slide）
   - 文字（text）・矢印（arrow）・赤い×（cross）
   - 部品の出るコマは、その言葉の字幕の頭（S("字幕ID") − 図解の頭）。消えるのは次の字幕の頭など（省くと最後まで）
-  - 出る時の SE：写真は「ピコンッ」、カードは「cursor」（make が manifest の se_events を鳴らす）
+  - 出る時の SE：写真は「ピピ」（明るい話はキラでもよい。ピコンッは笑いを誘う画像だけ＝02 の P13 se）、カードは「cursor」（make が manifest の se_events を鳴らす）
+  - 全体挿入（後ろにぼかし E016）は、最初の部品を 0コマ目から出す（ぼかしだけの時間を作らない。02 の P13 insert_kinds）。遅れて出る時は知らせる
   - 消え方：最後まで出ている部品は、最後の 15コマ（0.5秒）で薄くなる（既定。02 の P13 image_exit）。画角の変化と一緒に消す時だけ spec(…, exit="cut")
     全体挿入の後ろのぼかし E016（調整レイヤー）には Premiere のディゾルブを付けない（カメラごと暗転する。画像が薄くなりきったコマで切る）
 
@@ -14,7 +15,7 @@
   images_spec.py（案件ごと。既定 <図解のフォルダ>/images_spec.py）は、下の道具をそのまま使える Python：
     s0 = S("161"); r = lambda c: S(c) - s0
     spec("I01", "スパイク", "161", S("172"), [photo("p1", "img_spike_side.jpg", 510, 110, 900, 600, 0, r("162")), …],
-         [(0, "ピコンッ"), (r("162"), "ピコンッ")], "161「…」横の写真 → 162「…」裏の写真")
+         [(0, "ピピ"), (r("162"), "ピピ")], "161「…」横の写真 → 162「…」裏の写真")
   使える名前：S(字幕ID)・E(字幕ID)（字幕の頭・終わりのコマ）・spec・photo・card・text・arrow・cross・tl・ZUKAI（図解のフォルダ）・OUT・json
   画像は <図解のフォルダ>/assets/ に置き、名前だけ書く（ページからは ../assets/名前）。例：examples/images_spec_example.py
 """
@@ -127,6 +128,13 @@ def write(zdir, tl, key):
           "removes": "", "checks": [5, max(6, n // 2), n - 5], "story": sp["story"]}
     (d / "diagram.json").write_text(json.dumps(dj, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{key}: {ts(s0)}〜{ts(sp['end_f'])}（{n}コマ）{sp['title']}")
+    f0s = [int(v) for v in re.findall(r'data-f0="(-?\d+)"', html)]
+    if f0s and min(f0s) > 0:
+        # 2026-10-16 1015 v006：I07 は最初の写真が38コマ遅れて出て、後ろのぼかしだけが 1.25秒見えた（小川さん「ブラーだけで画像が何もないのはおかしい」）
+        print(f"  ！{key}：最初の部品が {min(f0s)}コマ目から出る。全体挿入（後ろにぼかし）なら、その間ぼかしだけになる → 最初の部品の f0 を 0 に（02 の P13 insert_kinds）")
+    for f, s_ in sp["se"]:
+        if s_ == "ピコンッ":
+            print(f"  ！{key}：{f}コマ目の SE がピコンッ（間抜けの音）。笑いを誘う画像でなければピピかキラに（02 の P13 se）")
 
 
 def main():
