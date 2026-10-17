@@ -1,0 +1,115 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Z1 1つだけ漏れても しゃーない（上の段・青）↔ セットで漏れると やばい（下の段・赤）。上下2本の段を同じ形にして違う所だけ見せる（1015 v007 Z6 の形）。
+     123「名前によくわからん数字」〜133「そういう話だったりするのね」。字は話した言葉（と字幕の補い）だけ -->
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+.lane { width: 1840px; box-sizing: border-box; border: 6px solid; border-radius: 26px; }
+.lane.b { height: 280px; border-color: #3d7ff0; background: rgba(27, 95, 209, .16); }
+.lane.r { height: 250px; border-color: #ff5a3c; background: rgba(217, 10, 10, .13); }
+.card { background: #fff; border-radius: 20px; box-shadow: 0 10px 24px rgba(0,0,0,.5); box-sizing: border-box; position: relative; }
+.mail { width: 700px; height: 124px; display: flex; align-items: center; padding: 0 24px; gap: 20px; }
+.mail .t { font-family: Lbl; font-size: 46px; color: #555; line-height: 1; }
+.mail .a { font-family: Hv; font-size: 42px; color: #111; line-height: 1.1; white-space: nowrap; position: relative; }
+.ghost { width: 640px; height: 120px; background: #d9dde3; border-radius: 20px; box-shadow: 0 8px 18px rgba(0,0,0,.45);
+         font-family: Hv; font-size: 40px; color: #7b828c; padding: 64px 0 0 128px; box-sizing: border-box; white-space: nowrap; }
+.pw { min-width: 370px; height: 124px; display: flex; align-items: center; padding: 0 22px; gap: 14px; }
+.dots { font-family: Hv; font-size: 38px; color: #111; letter-spacing: 1px; }
+.dc { width: 230px; height: 170px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+.dc .l { font-family: Lbl; font-size: 44px; color: #111; line-height: 1; }
+.rope { width: 1496px; height: 198px; box-sizing: border-box; border: 12px solid #ff2a2a; border-radius: 30px;
+        box-shadow: 0 0 0 4px #fff, 0 0 26px rgba(255, 40, 40, .9); }
+#numHi { position: absolute; left: -6px; top: -2px; right: -6px; bottom: -4px; background: #f5e63a; border-radius: 8px; z-index: -1; }
+#nmHi { position: absolute; left: -6px; top: 8px; right: -4px; bottom: -4px; background: #bcd8ff; border-radius: 8px; z-index: -1; }
+</style></head><body>
+<div id="board"></div>
+<script>
+// コマ（図解の頭 f5978＝字幕123「名前に」の頭。終わり f6896＝字幕134+1 の頭。tl.py words 123 134+1 の聞こえ始め − 5978）
+// 123 名前 0・よくわからん 27・数字 46 ／ 124 見つかる 99・メアド 147 ／ 125 しかも 170・誰か 190 ／ 126 意外と 270・漏れた 298
+// 127 パスワード 364・漏れた 392・しゃーない 436 ／ 128 まずいのは 483・メアド 518・パスワード 539・クレカ 559
+// 129+1 住所 575・名前 605・顔写真 632 ／ 130 セット 692・漏れる 708・やばい 721 ／ 132 こういう風に 747・ならない 770・セキュリティ 831 ／ 133 851
+const F = { start: 0, num: 46, mitsu: 99, dare: 190, more: 298, pw: 364, sha: 436,
+            mazui: 483, c1: 518, c2: 539, c3: 559, c4: 575, c5: 605, c6: 632, set: 692, more2: 708, yabai: 721,
+            kou: 747, nara: 770, sec: 831, END: 918 };
+window.ZUKAI = { frames: 918 };
+function P(id, f0, m, x, y, html, o = {}) {
+  const d = document.createElement("div");
+  d.className = "part"; d.id = id; d.dataset.f0 = f0; d.dataset.m = m;
+  if (o.f1 !== undefined) d.dataset.f1 = o.f1;
+  if (o.dim) d.dataset.dim = o.dim;
+  if (o.dur) d.dataset.dur = o.dur;
+  if (o.out) d.dataset.out = o.out;
+  d.style.left = x + "px"; d.style.top = y + "px";
+  if (o.z) d.style.zIndex = o.z;
+  d.innerHTML = `<div class="in">${html}</div>`;
+  document.body.appendChild(d); return d;
+}
+// ───── 絵（SVG）
+const env = (w = 84) => `<svg width="${w}" height="${w * 0.7}" viewBox="0 0 84 59" style="display:block;flex:none"><rect x="3" y="3" width="78" height="53" rx="7" fill="#fff" stroke="#1b5fd1" stroke-width="6"/><path d="M6,8 L42,34 L78,8" fill="none" stroke="#1b5fd1" stroke-width="6" stroke-linejoin="round"/></svg>`;
+const keyI = (w = 70) => `<svg width="${w}" height="${w}" viewBox="0 0 70 70" style="display:block;flex:none"><circle cx="22" cy="24" r="16" fill="none" stroke="#e0a400" stroke-width="9"/><path d="M33,35 L62,64 M50,52 L58,44 M57,59 L64,52" stroke="#e0a400" stroke-width="9" stroke-linecap="round"/></svg>`;
+const ccI = `<svg width="112" height="76" viewBox="0 0 112 76" style="display:block"><rect x="3" y="3" width="106" height="70" rx="10" fill="#2f6fe0" stroke="#111" stroke-width="5"/><rect x="3" y="18" width="106" height="13" fill="#111"/><rect x="14" y="42" width="24" height="18" rx="4" fill="#f5c84a"/><rect x="50" y="50" width="48" height="8" rx="4" fill="#cfe0ff"/></svg>`;
+const houseI = `<svg width="100" height="86" viewBox="0 0 100 86" style="display:block"><path d="M8,42 L50,6 L92,42" fill="#e94b3c" stroke="#111" stroke-width="5" stroke-linejoin="round"/><rect x="18" y="40" width="64" height="42" fill="#fff3d6" stroke="#111" stroke-width="5"/><rect x="42" y="54" width="18" height="28" fill="#8a5a2b" stroke="#111" stroke-width="4"/></svg>`;
+const nameI = `<svg width="116" height="76" viewBox="0 0 116 76" style="display:block"><rect x="3" y="3" width="110" height="70" rx="8" fill="#fff" stroke="#111" stroke-width="5"/><rect x="3" y="3" width="110" height="20" rx="8" fill="#e94b3c"/><rect x="18" y="36" width="80" height="10" rx="5" fill="#555"/><rect x="18" y="54" width="54" height="10" rx="5" fill="#aaa"/></svg>`;
+const faceI = `<svg width="90" height="86" viewBox="0 0 90 86" style="display:block"><rect x="3" y="3" width="84" height="80" rx="8" fill="#cfe6ff" stroke="#111" stroke-width="5"/><circle cx="45" cy="34" r="16" fill="#f2c9a0" stroke="#111" stroke-width="4"/><path d="M15,80 C17,58 73,58 75,80 Z" fill="#3b6fb6" stroke="#111" stroke-width="4"/></svg>`;
+const pwI = `<svg width="112" height="76" viewBox="0 0 112 76" style="display:block"><rect x="3" y="12" width="106" height="52" rx="10" fill="#fff" stroke="#111" stroke-width="5"/>` +
+  [24, 46, 68, 90].map(x => `<circle cx="${x}" cy="38" r="8" fill="#111"/>`).join("") + `</svg>`;
+const who = `<svg width="130" height="150" viewBox="0 0 130 150" style="display:block;overflow:visible"><circle cx="65" cy="46" r="34" fill="#8d95a3" stroke="#000" stroke-width="5"/><path d="M8,150 C10,96 120,96 122,150 Z" fill="#8d95a3" stroke="#000" stroke-width="5"/></svg>`;
+const lens = `<svg width="120" height="120" viewBox="0 0 110 110" style="display:block;overflow:visible"><line x1="72" y1="72" x2="102" y2="102" stroke="#111" stroke-width="24" stroke-linecap="round"/><line x1="72" y1="72" x2="101" y2="101" stroke="#f5e63a" stroke-width="12" stroke-linecap="round"/><circle cx="44" cy="44" r="34" fill="rgba(255,255,255,.28)" stroke="#111" stroke-width="15"/><circle cx="44" cy="44" r="34" fill="none" stroke="#fff" stroke-width="7"/></svg>`;
+const atk = (h) => `<img src="../assets/img_attacker_c.png" style="height:${h}px;display:block">`;
+const dc = (icon, label) => `<div class="card dc">${icon}<div class="l">${label}</div></div>`;
+
+// ───── 上の段（青）：1つだけ。123「名前によくわからん数字」→ 124「見つかる」→ 125「誰かもわからん」→ 126「漏れたところで」→ 127「パスワードだけ」「しゃーない」
+const DT = { dim: `${F.mazui}-${F.kou}:0.45` };
+P("laneT", F.start, "slide", 40, 70, `<div class="lane b"></div>`, DT);
+P("mail", F.start, "slide", 80, 138, `<div class="card mail">${env()}<div><div class="t">メアド</div>` +
+  `<div class="a"><span id="nm" style="position:relative;z-index:0"><span id="nmHi"></span>yamada</span><span id="numW" style="position:relative;z-index:0"><span id="numHi"></span>58274</span>@mail.com</div></div></div>`, DT);
+// 札は「名前＋よくわからん数字」（元の言葉「名前によくわからん数字並べてみたり」。「名前＝数字」と読めないように ＋ でつなぐ）。
+// yamada は青い印と青い「名前」、58274 は黄色い印と黄色い「＋よくわからん数字」で、どこが何かを色でそろえる
+P("labNm", F.start, "pop", 236, 266, Z.stk("名前", { size: 48, fill: "#8cc4ff" }), DT);
+P("labNum", F.num, "pop", 338, 266, Z.stk("＋よくわからん数字", { size: 48, fill: "#f5e63a" }), DT);
+P("lens", F.mitsu, "pop", 790, 118, `<div id="lensM">${lens}</div>`, DT);
+P("mitsu", F.mitsu, "bounce", 786, 240, Z.stk("見つかる", { size: 48, fill: "#8cc4ff" }), DT);
+P("who", F.dare, "bounce", 998, 150, `<div style="position:relative">${who}<div style="position:absolute;left:30px;top:6px">${Z.stk("?", { size: 84, font: "Tsk", fill: "#f5e63a", strokes: [["#000", 16]] })}</div></div>`, DT);
+P("dare", F.dare, "slide", 1126, 160, Z.stk("誰かも<br>わからん", { size: 48 }), DT);
+P("hdT", F.more, "slide", 70, 40, Z.plate("1つだけ 漏れても", { size: 50, radius: 12, pad: "4px 24px 10px" }), DT);
+P("pw", F.pw, "slide", 1342, 138, `<div class="card pw">${keyI()}<div><div class="t" style="font-family:Lbl;font-size:46px;color:#555;line-height:1;white-space:nowrap">パスワード</div>` +
+  `<div class="dots">●●●●●●</div></div></div>`, DT);
+P("atkT", F.sha, "bounce", 1736, 92, atk(250), DT);
+P("sha", F.sha, "bounce", 1398, 270, Z.bubble("しゃーない", { size: 50, tail: "right", off: 14, pad: "4px 26px 8px" }), DT);
+
+// ───── 下の段（赤）：セット。128「まずいのは このメアドで このパスワードで このクレカで」→ 129+1「住所」「名前」「顔写真」→ 130「セットで漏れるとやばい」
+P("laneQ", F.start, "slide", 40, 400, `<div class="lane" style="height:250px;border-color:#8a8f98;background:rgba(255,255,255,.05);border-style:dashed"></div>`, { f1: F.mazui });
+P("q", F.start, "bounce", 890, 434, Z.stk("？", { size: 150, font: "Tsk", fill: "#c4c8cf", strokes: [["#000", 20]] }), { f1: F.mazui });
+P("laneB", F.mazui, "slide", 40, 400, `<div class="lane r"></div>`);
+P("hdB", F.mazui, "slide", 70, 368, Z.plate("まずいのは", { size: 50, bg: "#d90a0a", radius: 12, pad: "4px 24px 10px" }));
+const CX = [80, 326, 572, 818, 1064, 1310];
+P("c1", F.c1, "bounce", CX[0], 450, dc(env(104), "メアド"));
+P("c2", F.c2, "bounce", CX[1], 450, dc(pwI, "パスワード"));
+P("c3", F.c3, "bounce", CX[2], 450, dc(ccI, "クレカ"));
+P("c4", F.c4, "bounce", CX[3], 450, dc(houseI, "住所"));
+P("c5", F.c5, "bounce", CX[4], 450, dc(nameI, "名前"));
+P("c6", F.c6, "bounce", CX[5], 450, dc(faceI, "顔写真"));
+P("rope", F.set, "pop", 62, 436, `<div class="rope"></div>`);
+P("setTag", F.set, "bounce", 1300, 402, Z.plate("セット", { size: 50, bg: "#f5e63a", fg: "#111", radius: 12, pad: "2px 22px 8px" }));
+P("arrB", F.more2, "grow", 1566, 500, Z.arrow({ len: 66, dir: "right", color: "#ff2a2a", shaft: 22, hl: 36, hw: 56 }));
+P("atkB", F.more2, "bounce", 1660, 410, atk(236));
+
+// ───── 下：130「セットで漏れるとやばい」→ 132「こういう風にならないようにするのが セキュリティ」
+P("s1", F.more2, "slide", 70, 724, Z.stk("セットで漏れると", { size: 76 }), { f1: F.kou });
+P("s2", F.yabai, "bounce", 700, 680, Z.stk("やばい", { size: 150, font: "Tsk", fill: "#ff3b30", strokes: [["#000", 36], ["#fff", 16]] }), { f1: F.kou });
+P("k1", F.kou, "slide", 70, 690, Z.stk("こうならないようにするのが", { size: 64 }));
+P("k2", F.sec, "bounce", 70, 790, Z.img(Z.ILLUST + "game_tate.png", { w: 190 }));
+P("k3", F.sec, "bounce", 270, 806, Z.stk("セキュリティ", { size: 136, font: "Tsk", fill: "#f5e63a", strokes: [["#000", 28]] }));
+
+// ───── 動き：数字のところが黄色く光る（46〜）・やばいで縄が脈打つ
+window.ZUKAI.custom = (f) => {
+  const on = f >= F.num ? 1 : 0;
+  document.getElementById("numHi").style.opacity = on;
+  const pr = f >= F.yabai && f < F.kou ? (Math.sin((f - F.yabai) * 0.5) * 0.5 + 0.5) : 0;
+  document.querySelector(".rope").style.boxShadow = `0 0 0 4px #fff, 0 0 ${26 + 30 * pr}px rgba(255, 40, 40, .9)`;
+  // 124「見つかる」：虫眼鏡がメアドの上を小さく回る
+  const w = f >= F.mitsu && f < F.dare ? 8 : 0, an = (f - F.mitsu) * 0.35;
+  const lx = (w * Math.cos(an)).toFixed(1), ly = (w * Math.sin(an)).toFixed(1);
+  document.getElementById("lensM").style.transform = `translate(${lx}px, ${ly}px)`;
+  return on + "/" + pr.toFixed(2) + "/" + lx + "," + ly;
+};
+</script></body></html>

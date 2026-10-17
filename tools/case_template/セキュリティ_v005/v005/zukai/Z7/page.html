@@ -1,0 +1,182 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Z7 大企業は AI を使うのに何ヶ月 ↔ 攻撃者はその日のうちに新しいモデル（v001 新規。字幕 267〜276+1）。
+     右上に「俺ら（機敏）」→ 左の枠「大企業」（でっかい・システムが硬直・AI を使うのに何ヶ月＝矢印がじわじわしか伸びない）→
+     右の枠「攻撃者」（新しいモデルに その日のうちに切り替え＝矢印が一瞬で届く）→ 吹き出し「これすごいやん」「ちょっと大手をアタックしてみる」「行ってこい」→
+     攻撃者の AI が大企業のビルへ飛んで当たる（大企業の矢印はまだ届いていない）→ 右上に「厳しいよね」。
+     実在の会社の名前は描かない（「大手」）。下の段（AI の行）は左右同じ形：上に言葉・矢印・下に時間の札・右に AI -->
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+.frame { width: 580px; height: 885px; box-sizing: border-box; border: 6px solid; border-radius: 26px; background: rgba(34,34,34,.9); }
+.band { width: 580px; height: 112px; box-sizing: border-box; border-radius: 26px 26px 0 0; }
+.obox { width: 570px; height: 300px; box-sizing: border-box; border: 5px solid #8a8a8a; border-radius: 24px; background: rgba(40,40,40,.92); }
+.ico { width: 150px; height: 150px; border-radius: 50%; border: 6px solid #fff; box-sizing: border-box; object-fit: cover; display: block; }
+.attk { filter: drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff); }
+</style></head><body>
+<div id="board"></div>
+<script>
+// コマ（図解の頭 f12534＝字幕267 の頭。tl.py words 267 277 の聞こえ始め。終わり f13229＝字幕277 の頭）
+// 267 俺 20・機敏 39・まだ 57 ／ 268 機敏だからいい 91・いい 112・もう 123・でっかく 128 ／ 269 システム 153・硬直 172 ／
+// 270 AI 202・使う 208 ／ 270+1 何ヶ月 230・企業が 272 ／ 271 攻撃者 341・新しくなった 360・モデル 384 ／
+// 272 その日のうちに 400・切り替えて 420 ／ 273 ああ 453・これ 461・すごいやん 470・ちょっと 501 ／ 274+1 （大手を）508・アタック 536 ／
+// 275 行ってこい 580・行く 607 ／ 276+1 厳しい 646・もう 670
+// 確かめ係（2026-10-17）：「俺ら」の字は「俺」の 20 に／速さの線が「三」に読めたので白の4本に／「ああ これ すごいやん」は「ああ」の 453 に／
+//   「もう」は 670 に／飛ぶ AI は写し（r_fly）にして、右の行の AI は残す（矢印の先が空にならない）／飛ぶ道は攻撃者の体と「新しいモデルに」を
+//   横切らないよう、右の枠の右の隙間を上がって枠の上を通り、大企業のビルへ降りる。AI は道の先を走る（道を引くのと同じ q）
+const F = { ore: 0, ore2: 20, kibin: 39, ii: 105, big: 123, dekai: 128, kocho: 172, ai: 202, nankagetsu: 230,
+            atk: 341, newm: 360, sonohi: 400, kirikae: 420, sugoi: 453, otede: 501, itte: 580, fly: 583, hit: 607, kibishi: 646, mou: 670, END: 695 };
+const FLYD = 24;   // 飛ぶコマ数（583〜606。607「行く」で当たる）
+window.ZUKAI = { frames: 695 };
+function P(id, f0, m, x, y, html, o = {}) {
+  const d = document.createElement("div");
+  d.className = "part"; d.id = id; d.dataset.f0 = f0; d.dataset.m = m;
+  if (o.f1 !== undefined) d.dataset.f1 = o.f1;
+  if (o.dur) d.dataset.dur = o.dur;
+  if (o.dim) d.dataset.dim = o.dim;
+  d.style.left = x + "px"; d.style.top = y + "px";
+  d.innerHTML = `<div class="in">${html}</div>`;
+  document.body.appendChild(d); return d;
+}
+const BLUE = "#1b5fd1", RED = "#d90a0a", YEL = "#f5e63a";
+const L = 50, R = 670, PY = 150;              // 枠の左上（左＝大企業・右＝攻撃者。幅 580・高さ 885）
+const DIM_ORE = `${F.big}-${F.kibishi}:0.45`; // 俺らの箱（大企業の話から暗く）
+const DIM_L = `${F.atk}-${F.kirikae + 12}:0.45`;   // 大企業の枠（攻撃者の話の頭だけ暗く。切り替えの後は並べて見比べる）
+
+// ───── 右上：俺ら（機敏）
+P("o_box", F.ore, "pop", 1290, 44, `<div class="obox"></div>`, { dim: DIM_ORE, f1: F.kibishi });
+P("o_ico", F.ore, "pop", 1316, 74, `<img class="ico" src="../assets/mikami_icon.png">`, { dim: DIM_ORE, f1: F.kibishi });
+P("o_name", F.ore2, "slide", 1490, 70, Z.stk("俺ら", { size: 72 }), { dim: DIM_ORE, f1: F.kibishi });
+// 速さの線（白・長さの違う4本・左へ消えていく。黄色の3本は「三機敏」と読めたので変えた）
+const SPEED = `<svg width="120" height="96" style="display:block;overflow:visible"><defs>` +
+  `<linearGradient id="spdg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="0.95"/></linearGradient></defs>` +
+  [[12, 46], [34, 86], [56, 62], [78, 100]].map(([y, w]) => `<rect x="${112 - w}" y="${y - 3.5}" width="${w}" height="7" rx="3.5" fill="url(#spdg)"/>`).join("") +
+  `</svg>`;
+P("o_speed", F.kibin, "slideL", 1478, 176, SPEED, { dim: DIM_ORE, f1: F.kibishi });
+P("o_kibin", F.kibin, "bounce", 1600, 150, Z.stk("機敏", { size: 104, font: "Tsk", fill: YEL, strokes: [["#000", 22]] }), { dim: DIM_ORE, f1: F.kibishi });
+P("o_ii", F.ii, "slide", 1318, 252, Z.stk("だから まだいい", { size: 52 }), { dim: DIM_ORE, f1: F.kibishi });
+
+// ───── 枠（同じ形）
+function frame(pfx, X, col, name, f0, dim) {
+  const o = dim ? { dim } : {};
+  P(`${pfx}_frame`, f0, "pop", X, PY, `<div class="frame" style="border-color:${col}"></div>`, o);
+  P(`${pfx}_band`, f0, "pop", X, PY, `<div class="band" style="background:${col}"></div>`, o);
+  P(`${pfx}_name`, f0, "slide", X + 34, PY + 10, Z.stk(name, { size: 76, strokes: [["#000", 12]] }), o);
+}
+frame("l", L, BLUE, "大企業", F.big, DIM_L);
+frame("r", R, RED, "攻撃者", F.atk, null);
+const dl = { dim: DIM_L };
+
+// ───── 左：大企業（でっかい・システムが硬直）
+P("l_bld", F.big, "pop", L + 24, PY + 128, `<div class="shk" style="transform-origin:50% 100%">` +
+  `<div class="grow" style="transform-origin:50% 100%">${Z.img(Z.ILLUST + "building_kaisya.png", { h: 372 })}</div></div>`, dl);
+P("l_dekai", F.dekai, "slide", L + 352, PY + 132, Z.stk("でっかい", { size: 52, fill: YEL }), dl);
+// 歯車（灰色・鎖と錠で止まっている＝硬直）
+const GEAR = (cx, cy, r, n, col) => {
+  let d = "";
+  for (let i = 0; i < n; i++) {
+    const a = (i / n) * Math.PI * 2, w = Math.PI / n * 0.55;
+    const p = (rr, aa) => `${(cx + rr * Math.cos(aa)).toFixed(1)},${(cy + rr * Math.sin(aa)).toFixed(1)}`;
+    d += `M${p(r * 0.82, a - w * 1.3)} L${p(r, a - w)} L${p(r, a + w)} L${p(r * 0.82, a + w * 1.3)} Z `;
+  }
+  return `<path d="${d}" fill="${col}" stroke="#111" stroke-width="4"/><circle cx="${cx}" cy="${cy}" r="${r * 0.82}" fill="${col}" stroke="#111" stroke-width="4"/>` +
+    `<circle cx="${cx}" cy="${cy}" r="${r * 0.3}" fill="#3a3a3a" stroke="#111" stroke-width="4"/>`;
+};
+const GEARS = `<svg width="200" height="170" style="display:block;overflow:visible">` + GEAR(70, 72, 62, 9, "#9aa0a6") + GEAR(150, 120, 44, 8, "#80868b") +
+  `<path d="M6,40 Q100,150 194,64" fill="none" stroke="#c9ced3" stroke-width="12" stroke-dasharray="20 9" stroke-linecap="round"/>` +
+  `<path d="M6,40 Q100,150 194,64" fill="none" stroke="#111" stroke-width="3" stroke-dasharray="20 9"/>` +
+  `<rect x="76" y="96" width="56" height="46" rx="8" fill="${YEL}" stroke="#111" stroke-width="5"/>` +
+  `<path d="M88,98 V84 a16,16 0 0 1 32,0 V98" fill="none" stroke="#111" stroke-width="7"/><circle cx="104" cy="118" r="6" fill="#111"/></svg>`;
+P("l_gear", F.kocho, "bounce", L + 360, PY + 214, GEARS, dl);
+P("l_sys", F.kocho, "slide", L + 352, PY + 392, Z.stk("システムが", { size: 40 }), dl);
+P("l_kocho", F.kocho, "slide", L + 384, PY + 436, Z.stk("硬直", { size: 78, font: "Tsk", fill: "#bfe0ff", strokes: [["#000", 18]] }), dl);
+
+// ───── AI の行（左右同じ形：上に言葉・矢印・下に時間・右に AI）
+const AIROW = PY + 548;   // 行の上（abs 698）
+const ROBO = (h) => Z.img(Z.ILLUST + "ai_character08_think.png", { h });
+// 左：AI を使うのに 何ヶ月（矢印はじわじわ。最後まで届かない）
+P("l_ailab", F.ai, "slide", L + 30, AIROW, Z.stk("AIを使うのに", { size: 50 }), dl);
+P("l_robo", F.ai, "bounce", L + 372, AIROW + 34, ROBO(176), dl);
+P("l_track", F.ai, "pop", L + 30, AIROW + 92, `<svg width="330" height="70" style="display:block;overflow:visible">` +
+  `<path d="M0,35 H268" stroke="#777" stroke-width="12" stroke-dasharray="18 12"/><polygon points="268,6 326,35 268,64" fill="none" stroke="#777" stroke-width="6" stroke-dasharray="12 8"/></svg>`, dl);
+P("l_slow", F.nankagetsu, "pop", L + 30, AIROW + 92, `<svg width="330" height="70" style="display:block;overflow:visible">` +
+  `<rect id="slowbar" x="0" y="20" width="0" height="30" rx="6" fill="${BLUE}" stroke="#fff" stroke-width="4"/></svg>`, dl);
+const CAL = `<svg width="96" height="100" style="display:block;overflow:visible">` +
+  `<rect x="4" y="14" width="88" height="82" rx="10" fill="#fff" stroke="#111" stroke-width="5"/><rect x="4" y="14" width="88" height="26" rx="8" fill="${RED}" stroke="#111" stroke-width="5"/>` +
+  `<rect x="22" y="2" width="10" height="24" rx="4" fill="#111"/><rect x="64" y="2" width="10" height="24" rx="4" fill="#111"/>` +
+  [0, 1, 2].map(r => [0, 1, 2, 3].map(c => `<rect x="${16 + c * 18}" y="${50 + r * 14}" width="11" height="8" fill="#9aa3ad"/>`).join("")).join("") + `</svg>`;
+P("l_cal", F.nankagetsu, "bounce", L + 30, AIROW + 182, CAL, dl);
+P("l_nan", F.nankagetsu, "bounce", L + 138, AIROW + 178, Z.stk("何ヶ月", { size: 86, font: "Tsk", fill: YEL, strokes: [["#000", 20]] }), dl);
+
+// ───── 右：攻撃者（新しくなったモデルに その日のうちに切り替え）
+P("r_man", F.atk, "bounce", R + 130, PY + 124, `<img class="attk" src="../assets/img_attacker.png" style="height:404px;display:block">`);
+P("r_lab", F.newm, "slide", R + 30, AIROW, Z.stk("新しいモデルに", { size: 50 }));
+P("r_robo", F.newm, "bounce", R + 372, AIROW + 34, `<div class="fly" style="width:160px">` +
+  `<div style="position:relative">${ROBO(176)}<svg width="180" height="180" style="position:absolute;left:-14px;top:-10px;overflow:visible">` +
+  [[168, 20, 15], [172, 140, 18], [4, 150, 14]].map(([x, y, s]) => `<path d="M${x},${y - s} Q${x},${y} ${x + s},${y} Q${x},${y} ${x},${y + s} Q${x},${y} ${x - s},${y} Q${x},${y} ${x},${y - s} Z" fill="${YEL}" stroke="#111" stroke-width="3"/>`).join("") +
+  `</svg></div></div>`).style.zIndex = 5;
+P("r_track", F.atk, "pop", R + 30, AIROW + 92, `<svg width="330" height="70" style="display:block;overflow:visible">` +
+  `<path d="M0,35 H268" stroke="#777" stroke-width="12" stroke-dasharray="18 12"/><polygon points="268,6 326,35 268,64" fill="none" stroke="#777" stroke-width="6" stroke-dasharray="12 8"/></svg>`, { f1: F.kirikae });
+P("r_fast", F.kirikae, "grow", R + 30, AIROW + 85, Z.arrow({ len: 330, dir: "right", color: RED, shaft: 30, hl: 58, hw: 84 }), { dur: 4 });
+const CLOCK = `<svg width="96" height="96" style="display:block;overflow:visible"><circle cx="48" cy="48" r="42" fill="#fff" stroke="#111" stroke-width="6"/>` +
+  [0, 1, 2, 3].map(i => { const a = i * Math.PI / 2; return `<rect x="${46 + 32 * Math.cos(a) - 3}" y="${48 + 32 * Math.sin(a) - 3}" width="6" height="6" fill="#111"/>`; }).join("") +
+  `<path id="hand" d="M48,48 L48,16" stroke="${RED}" stroke-width="7" stroke-linecap="round"/><path d="M48,48 L68,48" stroke="#111" stroke-width="7" stroke-linecap="round"/><circle cx="48" cy="48" r="6" fill="#111"/></svg>`;
+P("r_clock", F.sonohi, "bounce", R + 30, AIROW + 184, CLOCK);
+P("r_sonohi", F.sonohi, "bounce", R + 136, AIROW + 186, Z.stk("その日のうちに", { size: 56, font: "Tsk", fill: YEL, strokes: [["#000", 18]] }));
+
+// ───── 吹き出し（攻撃者の言葉。右上・ワイプの上。同じ所で入れ替わる）
+P("b1", F.sugoi, "pop", 1300, 380, Z.bubble("ああ これ\nすごいやん", { size: 56, tail: "left", off: 60 }), { f1: F.otede });
+P("b2", F.otede, "pop", 1300, 380, Z.bubble("ちょっと 大手を\nアタックしてみる", { size: 52, tail: "left", off: 60 }), { f1: F.itte });
+P("b3", F.itte, "pop", 1300, 380, Z.bubble("行ってこい", { size: 64, tail: "left", off: 40 }));
+
+// ───── 行ってこい：攻撃者の AI（写し）が大企業のビルへ飛ぶ（赤い点線）→ 当たる
+// 道（画面の座標）：右の行の AI の中心 → 攻撃者の右の隙間を上がる → 枠の上を左へ → 大企業の帯の「大企業」の右から降りてビルへ
+const OX = 240, OY = 80;   // 道の箱の左上
+const TP = [[1119, 820], [1180, 720], [1178, 430], [1172, 300], [1166, 160], [1090, 104], [960, 104], [520, 104],
+            [410, 104], [352, 156], [342, 250], [334, 330], [300, 390], [255, 440]];
+const TD = (() => { const q = TP.map(([x, y]) => `${x - OX},${y - OY}`);
+  return `M${q[0]} C${q[1]} ${q[2]} ${q[3]} C${q[4]} ${q[5]} ${q[6]} L${q[7]} C${q[8]} ${q[9]} ${q[10]} C${q[11]} ${q[12]} ${q[13]}`; })();
+// 点線のまま引くため、引く線（.draw）は mask に入れ、見える点線（白の縁＋赤）を mask で見せる
+P("trail", F.fly, "draw", OX, OY, `<svg width="950" height="760" style="display:block;overflow:visible">` +
+  `<defs><mask id="trailmask" maskUnits="userSpaceOnUse" x="-40" y="-40" width="1030" height="840">` +
+  `<path class="draw" d="${TD}" fill="none" stroke="#fff" stroke-width="34" stroke-linecap="round"/></mask></defs>` +
+  `<g mask="url(#trailmask)"><path d="${TD}" fill="none" stroke="#fff" stroke-width="19" stroke-dasharray="26 16" stroke-linecap="round"/>` +
+  `<path id="trailpath" d="${TD}" fill="none" stroke="${RED}" stroke-width="11" stroke-dasharray="26 16" stroke-linecap="round"/></g></svg>`,
+  { dur: FLYD }).style.zIndex = 4;
+const BURST = `<svg width="300" height="300" style="display:block;overflow:visible"><polygon points="` +
+  Array.from({ length: 24 }, (_, i) => { const a = i / 24 * Math.PI * 2, rr = i % 2 ? 70 : 140; return `${(150 + rr * Math.cos(a)).toFixed(1)},${(150 + rr * Math.sin(a)).toFixed(1)}`; }).join(" ") +
+  `" fill="${YEL}" stroke="${RED}" stroke-width="12" stroke-linejoin="round"/></svg>`;
+P("burst", F.hit, "bounce", L + 56, PY + 150, BURST, { dur: 8 });
+// 飛ぶ AI（右の行の AI の写し。右の行の AI はそのまま残す）
+const FLY0 = [R + 372, AIROW + 34];   // r_robo と同じ左上。絵（155×176）の中心は +77.5, +88
+P("r_fly", F.fly, "none", FLY0[0], FLY0[1], `<div class="fly2" style="width:155px;height:176px">${ROBO(176)}</div>`).style.zIndex = 6;
+
+// ───── 締め（右上。俺らの箱の所）
+P("kibishi", F.kibishi, "bounce", 1296, 96, Z.stk("厳しいよね", { size: 108, font: "Tsk", fill: YEL, strokes: [["#000", 24]] }));
+P("kibishi2", F.mou, "slide", 1500, 238, Z.stk("もう", { size: 64 }));
+
+// 動き：ビルが大きくなる（でっかく）・大企業の矢印がじわじわ伸びる（何ヶ月）・時計の針が回る・AI が道の先を飛ぶ・ビルが揺れる
+let TPATH = null, TLEN = 0;
+window.ZUKAI.custom = (f) => {
+  const sig = [];
+  const g = document.querySelector("#l_bld .grow");
+  const q1 = Math.max(0, Math.min(1, (f - F.dekai) / 10)), e1 = 1 - Math.pow(1 - q1, 3);
+  const s = 0.78 + 0.22 * e1; g.style.transform = s !== 1 ? `scale(${s.toFixed(3)})` : "none"; sig.push(s.toFixed(3));
+  const bar = document.getElementById("slowbar");
+  const q2 = Math.max(0, (f - F.nankagetsu) / (F.END - F.nankagetsu));
+  bar.setAttribute("width", (8 + 120 * q2).toFixed(1)); sig.push(q2.toFixed(3));
+  const hand = document.getElementById("hand");
+  const q3 = Math.max(0, Math.min(1, (f - F.sonohi) / 30)); hand.setAttribute("transform", `rotate(${(q3 * 720).toFixed(1)} 48 48)`); sig.push(q3.toFixed(3));
+  if (!TPATH) { TPATH = document.getElementById("trailpath"); TLEN = TPATH.getTotalLength(); }
+  const fly = document.querySelector("#r_fly .fly2");
+  const k4 = f - F.fly, q4 = Math.max(0, Math.min(1, (k4 + 1) / FLYD));   // 道を引く（draw）のと同じ q
+  if (k4 >= 0) {
+    const pt = TPATH.getPointAtLength(TLEN * q4);
+    const dx = pt.x + OX - (FLY0[0] + 77.5), dy = pt.y + OY - (FLY0[1] + 88), sc = 1 - 0.4 * Math.min(1, q4 / 0.3);
+    fly.style.transform = `translate(${dx.toFixed(1)}px, ${dy.toFixed(1)}px) scale(${sc.toFixed(3)})`;
+  } else fly.style.transform = "none";
+  sig.push(q4.toFixed(3));
+  const shk = document.querySelector("#l_bld .shk");
+  const k = f - F.hit; const amp = k >= 0 && k < 14 ? 14 * (1 - k / 14) * (k % 2 ? 1 : -1) : 0;
+  shk.style.transform = amp ? `translateX(${amp.toFixed(1)}px) rotate(${(amp / 7).toFixed(2)}deg)` : "none"; sig.push(amp.toFixed(1));
+  return sig.join("|");
+};
+</script></body></html>

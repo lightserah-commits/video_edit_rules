@@ -1,0 +1,28 @@
+{
+ "key": "I07",
+ "title": "Addness のロゴ（部分）",
+ "start_f": 10378,
+ "end_f": 10540,
+ "anchor": {
+  "cap": "234",
+  "f": 10378
+ },
+ "wipe": {
+  "show": false
+ },
+ "se": [
+  {
+   "f": 0,
+   "se": "ピピ",
+   "why": "画像が出る"
+  }
+ ],
+ "hide_caption_ids": [],
+ "removes": "",
+ "checks": [
+  5,
+  81,
+  157
+ ],
+ "story": "234 の頭で出し、236「そこに対しても全力で」の頭で消える（※Addness は 237）"
+}

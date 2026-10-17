@@ -54,9 +54,11 @@ AI への入口は `CLAUDE.md`（最初にやること・守ること・どこ�
 | `premiere_case/` | 案件の Premiere の小さなスクリプト：確認の画像の書き出し・直した所だけの一覧・保存せずに閉じる（ユーザーの直しがあれば止まる）・Media Encoder で mp4・締めのつなぎ目に Composer の Pan（`premiere_case/README.md`） |
 | `diff_user_edits.py` | AI の組み立てと、ユーザーが Premiere で保存したもの（か開いているシーケンス。読むだけ）を比べて表にする（リップル・クリップの出入り・V1/V2 のスケールと位置・穴・テロップの文字） |
 | `find_silent_acts.py` | 黙って演じている所の候補（字幕の間の声の無い時間。言葉が途中で抜けている所を上に）を一覧と 0.5秒ごとのコマの画像にする |
+| `find_laugh_gaps.py` | 笑い声・言葉の途中の間の候補（残している区間の中で、文字起こしに言葉が無い 0.5秒以上）を、切る点（大きさの谷）つきで一覧にする（`08` の cut.pauses.laugh_gaps） |
 | `case_template/` | 前の案件の版のスクリプト一式（次の案件をここから写して始める。`case_template/<案件>_vNNN/README.md`） |
 | `font_fix.py` | この Mac に無いフォント名を置き換える（`--scan` で数えるだけ） |
 | `gen_image.py` | 合う写真が無い所の絵を OpenAI の画像 API で作る（`02` の P13 generated。月 10ドルまで。`--month` で今月の額） |
+| `make_voice_comp.sh` | 声の作業用コピーに +17dB・コンプレッサー・リミッターを掛けた wav を作る（`04` の bgm.balance.limiter。完成版の大きさまで上げても割れない） |
 | `cleanup_cases.py` | 案件の作業場（edit/）の片付け（ゴミ箱へ移すだけ） |
 | `decoration_report.py`・`plates_roleplay.py`・`look_catalog.py`・`type_catalog.py` | 完成版から実例・座布団と代弁・見た目・型を抜き出す（ルールづくり用） |
 | `build_library.py`・`verify_library.py`・`make_type_list.py` | テロップ見本集を作る・元と見比べる・型一覧を作る（`見本/README.md`） |

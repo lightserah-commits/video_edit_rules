@@ -1,0 +1,141 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Z4 セキュリティの本質（マイクロソフトの澤さん）：取られることはある → 取られた時どうなるかまで想定 → 取られても困らないようにしておけ
+     → 例：メアドだけ流出＝半分ブロック・メアドだけじゃ意味ない → 情報をぶつ切りに。続きは Z5（鍵と住所を分ける＝二段構え。同じ見出しのまま続く） -->
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+.pnl { width: 550px; height: 456px; border-radius: 26px; box-sizing: border-box; border: 6px solid #9a9a9a; background: rgba(255,255,255,.07); }
+.pnl.y { border-color: #f5e63a; background: rgba(245,230,58,.10); }
+.icard { display: flex; align-items: center; gap: 18px; width: 470px; height: 96px; box-sizing: border-box; padding: 0 22px 0 14px;
+         background: #fff; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,.55); font-family: Lbl; font-size: 50px; color: #111; }
+.ic { width: 70px; height: 70px; border-radius: 14px; display: flex; align-items: center; justify-content: center; flex: none; }
+.slot { width: 470px; height: 96px; box-sizing: border-box; border: 5px dashed #888; border-radius: 16px; }
+.att { display: block; filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff) drop-shadow(0 0 5px rgba(255,255,255,.6)); }
+.ill { display: block; }
+.mini { display: flex; align-items: center; gap: 8px; background: #fff; border-radius: 10px; padding: 6px 12px; box-shadow: 0 6px 14px rgba(0,0,0,.5);
+        font-family: Lbl; font-size: 30px; color: #111; }
+.gbar { width: 520px; height: 46px; border-radius: 23px; box-sizing: border-box; border: 5px solid #fff; background: #333; position: relative; overflow: hidden; }
+.gbar .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: #3d7ff0; }
+.gbar .half { position: absolute; left: 50%; top: -4px; bottom: -4px; width: 0; border-left: 4px dashed #fff; }
+</style></head><body>
+<div id="board"></div>
+<script>
+// コマ（図解の頭 f13906＝字幕289「その方が」の頭。tl.py words 289 316。終わり f14554＝字幕299「家の鍵もさ」の頭＝Z5 の頭）
+// 289 その 4・セキュリティ 22・本質 43 ／ 290 取られる 97・ある 125 ／ 291 けれども 144・取られた時 160・どうなるか 188・ところまで 207
+// 291+1 想定 219・取られても 249・困らない 271・ように 287・しておけ 293 ／ 293 さっき言った 333・メアドだけ 350・流出 379
+// 294 これって 395・半分 407・ブロック 426・できてる 437 ／ 295 意味ない 478・メアドだけ 498 ／ 296 そういう風に 537・情報を 560・ぶつ切り 587・してみたり 599
+const F = { start: 0, head: 22, tora: 97, aru: 125, kedo: 144, toki: 160, dou: 188, soutei: 219, a2: 240, temo: 249, koma: 271, oke: 293,
+            sakki: 333, s2: 341, meado: 350, ryu: 379, hanbun: 407, imi: 478, joho: 560, butsu: 587, END: 648 };
+window.ZUKAI = { frames: 648 };
+function P(id, f0, m, x, y, html, o = {}) {
+  const d = document.createElement("div");
+  d.className = "part"; d.id = id; d.dataset.f0 = f0; d.dataset.m = m;
+  if (o.f1 !== undefined) d.dataset.f1 = o.f1;
+  if (o.dim) d.dataset.dim = o.dim;
+  if (o.dur) d.dataset.dur = o.dur;
+  if (o.out) d.dataset.out = o.out;
+  d.style.left = x + "px"; d.style.top = y + "px";
+  d.innerHTML = `<div class="in">${html}</div>`;
+  document.body.appendChild(d); return d;
+}
+const IL = (n, h, cls = "ill") => `<img class="${cls}" src="${Z.ILLUST}${n}" style="height:${h}px">`;
+const ATT = (h) => `<img class="att" src="../assets/img_attacker_c.png" style="height:${h}px">`;
+// 情報の札（メアド・パスワード・クレカ・住所。Z1 の「セット」の中身と同じ名前）
+const G = {
+  doc: `<svg width="40" height="48" viewBox="0 0 40 48"><path d="M4,3 H26 L37,14 V45 H4 Z" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"/><rect x="10" y="22" width="20" height="4" fill="#fff"/><rect x="10" y="31" width="20" height="4" fill="#fff"/></svg>`,
+  mail: `<svg width="46" height="34" viewBox="0 0 46 34"><rect x="2" y="2" width="42" height="30" rx="4" fill="none" stroke="#fff" stroke-width="4"/><path d="M3,4 L23,19 L43,4" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"/></svg>`,
+  pass: `<svg width="52" height="20" viewBox="0 0 52 20"><circle cx="8" cy="10" r="7" fill="#fff"/><circle cx="26" cy="10" r="7" fill="#fff"/><circle cx="44" cy="10" r="7" fill="#fff"/></svg>`,
+  card: `<svg width="50" height="36" viewBox="0 0 50 36"><rect x="2" y="2" width="46" height="32" rx="5" fill="none" stroke="#fff" stroke-width="4"/><rect x="2" y="9" width="46" height="7" fill="#fff"/><rect x="8" y="23" width="14" height="5" rx="2" fill="#fff"/></svg>`,
+  home: `<svg width="46" height="40" viewBox="0 0 46 40"><path d="M4,20 L23,4 L42,20" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><path d="M10,17 V37 H36 V17" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"/><rect x="19" y="24" width="8" height="13" fill="#fff"/></svg>`,
+};
+const card = (g, bg, t, w = 470) => `<div class="icard" style="width:${w}px"><div class="ic" style="background:${bg}">${G[g]}</div>${t}</div>`;
+const mini = (g, bg, t) => `<div class="mini"><div class="ic" style="width:42px;height:42px;border-radius:9px;background:${bg}"><div style="transform:scale(.6)">${G[g]}</div></div>${t}</div>`;
+const Q = (s, c = "#f5e63a") => Z.stk("？", { size: s, font: "Tsk", fill: c, strokes: [["#000", Math.round(s / 6)]] });
+const person = `<svg width="64" height="64" viewBox="0 0 64 64" style="display:block"><circle cx="32" cy="32" r="31" fill="#4a4a4a" stroke="#fff" stroke-width="3"/>` +
+  `<circle cx="32" cy="25" r="11" fill="#ddd"/><path d="M12,54 Q32,30 52,54" fill="#ddd"/></svg>`;
+const cloud = (w, h) => `<svg width="${w}" height="${h}" viewBox="0 0 300 200" preserveAspectRatio="none" style="position:absolute;left:0;top:0;overflow:visible">` +
+  `<path d="M60,170 Q10,170 18,125 Q-5,85 40,62 Q45,18 100,22 Q130,-5 175,18 Q230,0 250,45 Q300,55 288,105 Q305,150 255,165 Q235,198 185,180 Q150,205 112,182 Q85,195 60,170 Z" fill="#fff" stroke="#111" stroke-width="5"/></svg>`;
+const knife = `<svg width="190" height="96" viewBox="0 0 190 96" style="display:block;overflow:visible">` +
+  `<path d="M6,10 H128 V78 Q70,92 6,72 Z" fill="#e8eef2" stroke="#111" stroke-width="6" stroke-linejoin="round"/><circle cx="110" cy="26" r="8" fill="#111"/>` +
+  `<rect x="126" y="30" width="60" height="26" rx="8" fill="#8a5a2b" stroke="#111" stroke-width="6"/></svg>`;
+
+// ───── 見出し（Z5 も同じ場所に出したまま続く）。2026-10-17 確かめ係の指摘で、見出しを上へ・澤さんの名札を右上へ大きく（中身の段を広く使う）
+P("sawa", F.start, "slide", 1040, 62, `<div style="display:flex;align-items:center;gap:14px"><div style="transform:scale(1.2)">${person}</div>${Z.stk("その方＝マイクロソフトの 澤さん", { size: 48 })}</div>`);
+P("head", F.head, "slide", 56, 30, Z.stk("セキュリティの本質", { size: 104, font: "Tsk", fill: "#f5e63a", strokes: [["#000", 22]] }));
+
+// ───── 前半：3つの箱（取られることはある → 取られた時どうなるかまで想定 → 取られても困らない）。後半（f333〜）で消える
+const oA = { f1: F.s2, out: "fade:8" };
+const PY = 198, PX = [60, 690, 1320];   // 箱 550×456（y 198〜654。右の箱はワイプの上で止める）
+const SC = (k, h) => `<div style="transform:scale(${k});transform-origin:0 0">${h}</div>`;
+P("p1", F.tora, "slide", PX[0], PY, `<div class="pnl"></div>`, oA);
+P("p1c", F.tora, "bounce", PX[0] + 22, PY + 92, SC(1.2, card("doc", "#1b5fd1", "情報", 230)), oA);
+P("p1a", F.tora + 4, "grow", PX[0] + 308, PY + 124, Z.arrow({ len: 96, dir: "right", color: "#e60000", shaft: 24, hl: 44, hw: 64 }), oA);
+P("p1h", F.tora, "bounce", PX[0] + 410, PY + 12, ATT(244), oA);
+P("p1t", F.tora, "slide", PX[0] + 64, PY + 262, Z.stk("取られることは", { size: 60 }), oA);
+P("p1r", F.aru, "bounce", PX[0] + 196, PY + 324, Z.stk("ある", { size: 84, font: "Tsk", fill: "#ff8a7a", strokes: [["#000", 16]] }), oA);
+P("ar1", F.kedo, "grow", 618, PY + 200, Z.arrow({ len: 66, dir: "right", color: "#fff", shaft: 20, hl: 36, hw: 54 }), oA);
+
+P("p2", F.toki, "slide", PX[1], PY, `<div class="pnl"></div>`, oA);
+P("p2m", F.toki, "bounce", PX[1] + 14, PY + 28, IL("business_man3_1_question.png", 226), oA);
+P("p2c", F.toki, "bounce", PX[1] + 190, PY + 30, SC(1.08, `<div style="position:relative;width:320px;height:210px">${cloud(320, 210)}` +
+  `<div style="position:absolute;left:44px;top:30px">${ATT(150)}</div>` +
+  `<div style="position:absolute;left:126px;top:58px">${mini("doc", "#1b5fd1", "情報")}</div>` +
+  `<div style="position:absolute;left:226px;top:108px">${Q(70)}</div></div>`), oA);
+P("p2t", F.dou, "slide", PX[1] + 125, PY + 262, Z.stk("取られた時<br>どうなるか", { size: 60 }), oA);
+P("p2s", F.soutei, "bounce", PX[1] + 296, PY - 34, Z.plate("まで想定", { size: 54, bg: "#f5e63a", fg: "#111", radius: 12, pad: "2px 22px 8px" }), oA);
+P("ar2", F.a2, "grow", 1248, PY + 200, Z.arrow({ len: 66, dir: "right", color: "#fff", shaft: 20, hl: 36, hw: 54 }), oA);
+
+P("p3", F.temo, "slide", PX[2], PY, `<div class="pnl y"></div>`, oA);
+P("p3h", F.temo, "bounce", PX[2] + 22, PY + 36, ATT(226), oA);
+P("p3c", F.temo, "bounce", PX[2] + 100, PY + 66, SC(1.15, mini("doc", "#1b5fd1", "情報")), oA);
+P("p3q", F.temo + 6, "bounce", PX[2] + 100, PY + 128, Q(88), oA);
+P("p3m", F.koma, "bounce", PX[2] + 320, PY + 24, IL("businessman5_ureshii.png", 232), oA);
+P("p3t", F.temo, "slide", PX[2] + 120, PY + 262, Z.stk("取られても", { size: 60 }), oA);
+P("p3k", F.koma, "bounce", PX[2] + 92, PY + 324, Z.stk("困らない", { size: 84, font: "Tsk", fill: "#f5e63a", strokes: [["#000", 16]] }), oA);
+
+// 締めの一言（291+1「取られても困らないようにしておけ」）。後半は見出しの下へ小さく上がって残る（Z5 も同じ場所）
+P("quote", F.oke, "bounce", 60, 700, `<div id="qM" style="transform-origin:0 0">` +
+  Z.stk("「取られても 困らないように しておけ」", { size: 62, font: "Tsk", fill: "#f5e63a", strokes: [["#000", 16]] }) + `</div>`);
+
+// ───── 後半：さっき言った メアドだけが流出する → 半分ブロックできてる → メアドだけじゃ意味ない → 情報をぶつ切りに
+// 2026-10-17：札の列を 1.25倍（字 50→62）、攻撃する側・メアド・吹き出しを右の空き（ワイプの上）へ
+const CX = 60, CY = 284, CG = 140, CS = 1.25;   // 情報の札の列（左）。札 588×120
+const rows = [["mail", "#1b5fd1", "メアド"], ["pass", "#7a4cc2", "パスワード"], ["card", "#c98a0a", "クレカ"], ["home", "#2c9a55", "住所"]];
+P("slot0", F.ryu + 8, "pop", CX, CY, `<div id="cut0">${SC(CS, `<div class="slot"></div>`)}</div>`);
+rows.forEach(([g, bg, t], i) => {
+  if (i === 0) return;
+  P("c" + i, F.s2 + i * 3, "slide", CX, CY + CG * i, `<div id="cut${i}">${SC(CS, card(g, bg, t))}</div>`);
+});
+// メアドの札：列の一番上 → 流出で右の攻撃する側の手元へ（少し小さくなって動く）
+P("c0", F.s2, "slide", CX, CY, `<div id="mvM" style="transform-origin:0 0">${SC(CS, card("mail", "#1b5fd1", "メアド"))}</div>`);
+P("rb0", F.meado, "pop", CX - 12, CY - 12, `<div id="rbM" style="width:612px;height:144px;box-sizing:border-box;border:8px solid #e60000;border-radius:22px;box-shadow:0 0 0 3px rgba(255,255,255,.9)"></div>`, { f1: F.ryu });
+P("arR", F.ryu, "grow", 668, CY + 26, Z.arrow({ len: 270, dir: "right", color: "#e60000", shaft: 28, hl: 52, hw: 78 }));
+P("ryu", F.ryu, "bounce", 700, CY + 112, Z.stk("流出", { size: 72, font: "Tsk", fill: "#ff8a7a", strokes: [["#000", 16]] }));
+P("att2", F.ryu, "bounce", 948, 240, ATT(420));
+P("bub", F.imi, "bounce", 1196, 440, Z.bubble("メアドだけじゃ<br>意味ない…", { size: 64, tail: "left", off: 40, pad: "12px 30px 16px" }));
+P("qq", F.imi, "bounce", 1090, 190, Q(110));
+// 半分ブロックできてる（メーターが半分まで満ちる）
+P("hb", F.hanbun, "slide", 668, 700, Z.stk("半分 ブロックできてる", { size: 54, fill: "#8cc4ff" }));
+P("gb", F.hanbun, "slide", 672, 790, `<div class="gbar" style="width:560px;height:52px;border-radius:26px"><div class="fill" data-a="${F.hanbun + 2}" data-b="${F.hanbun + 30}" style="max-width:50%"></div><div class="half"></div></div>`);
+// 情報をぶつ切りに（列の札の間に切れ目・包丁）
+[1, 2, 3].forEach((i) => P("cl" + i, F.butsu + (i - 1) * 3, "pop", CX - 24, CY + CG * i - 16,
+  `<div id="cutL${i}"><svg width="640" height="12" style="display:block"><line x1="4" y1="6" x2="636" y2="6" stroke="#e60000" stroke-width="8" stroke-dasharray="24 12" stroke-linecap="round"/></svg></div>`));
+P("knife", F.butsu, "pop", 470, CY + 56, `<div id="knM" style="transform-origin:0 0">${knife}</div>`, { f1: F.butsu + 20, out: "fade:6" });
+P("bt1", F.joho, "slide", 60, 896, Z.stk("情報を", { size: 80 }));
+P("bt2", F.butsu, "bounce", 340, 866, Z.stk("ぶつ切りに", { size: 112, font: "Tsk", fill: "#f5e63a", strokes: [["#000", 22]] }));
+
+// ───── 動き：締めの一言が見出しの下へ上がる／メアドの札が攻撃する側の手元へ／包丁が列を上から下へ切る・札が少し離れる
+const ease = (q) => 1 - Math.pow(1 - q, 3);
+const cl = (q) => Math.max(0, Math.min(1, q));
+window.ZUKAI.custom = (f) => {
+  const q1 = ease(cl((f - F.s2) / 10));
+  document.getElementById("qM").style.transform = q1 > 0 ? `translate(0px, ${(-514 * q1).toFixed(1)}px) scale(${(1 - 0.28 * q1).toFixed(4)})` : "none";
+  const q2 = ease(cl((f - F.ryu) / 12));
+  document.getElementById("mvM").style.transform = q2 > 0 ? `translate(${(1156 * q2).toFixed(1)}px, ${(30 * q2).toFixed(1)}px) scale(${(1 - 0.1 * q2).toFixed(4)})` : "none";
+  const k = cl((f - F.butsu) / 12);
+  document.getElementById("knM").style.transform = `translate(0px, ${(k * 380).toFixed(1)}px) scale(0.8) rotate(${(-10 + 20 * Math.sin(k * Math.PI * 3)).toFixed(1)}deg)`;
+  const sp = ease(cl((f - F.butsu - 2) / 10));
+  for (let i = 0; i < 4; i++) { const e = document.getElementById("cut" + i); if (e) e.style.transform = sp > 0 ? `translateY(${(i * 8 * sp).toFixed(1)}px)` : "none"; }
+  for (let i = 1; i < 4; i++) document.getElementById("cutL" + i).style.transform = sp > 0 ? `translateY(${((i - 0.5) * 8 * sp).toFixed(1)}px)` : "none";
+  return [q1.toFixed(4), q2.toFixed(4), k.toFixed(3), sp.toFixed(4)].join("/");
+};
+</script></body></html>

@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script></head><body>
+<div id="board"></div>
+<div class="part" id="head" data-f0="35" style="left:60px;top:36px"><div class="in" id="h"></div></div>
+<!-- 水と氷山の水の中（430「100」18624 → 161）・項目（フ 18796 → 333、編集データ 19001 → 538）・氷山の先＝スキル（444「ス」19160 → 697）・コンテキストの名札（コ 19455 → 992） -->
+<div class="part" id="sea" data-f0="161" data-m="fade" data-dur="10" style="left:60px;top:440px"><div class="in" id="sea1"></div></div>
+<div class="part" id="i1" data-f0="161" data-m="pop" style="left:250px;top:560px"><div class="in" id="i1t"></div></div>
+<div class="part" id="i2" data-f0="333" data-m="pop" style="left:250px;top:670px"><div class="in" id="i2t"></div></div>
+<div class="part" id="i3" data-f0="538" data-m="pop" style="left:250px;top:780px"><div class="in" id="i3t"></div></div>
+<div class="part" id="tip" data-f0="697" data-m="bounce" style="left:330px;top:205px"><div class="in" id="tip1"></div></div>
+<div class="part" id="ctx" data-f0="992" data-m="pop" style="left:200px;top:905px"><div class="in" id="ctx1"></div></div>
+<!-- 右：スキルだけでは役に立たない（450〜452「役」19408 → 945）・自分で集める（457「自」19473 → 1010）・案件の数（459「案」19600 → 1137）・動画の数（461「動画」19707 → 1244）・魔法でドンとはいかない（462「魔」19805 → 1342） -->
+<div class="part" id="r1" data-f0="945" data-m="bounce" style="left:1110px;top:200px"><div class="in" id="r1t"></div></div>
+<div class="part" id="r2" data-f0="1010" style="left:1110px;top:400px"><div class="in" id="r2t"></div></div>
+<div class="part" id="r3" data-f0="1137" data-m="pop" style="left:1130px;top:560px"><div class="in" id="r3t"></div></div>
+<div class="part" id="r4" data-f0="1244" data-m="pop" style="left:1130px;top:670px"><div class="in" id="r4t"></div></div>
+<div class="part" id="r5" data-f0="1342" data-m="bounce" style="left:1110px;top:820px"><div class="in" id="r5t"></div></div>
+<script>
+window.ZUKAI = { frames: 1500 };
+const $ = id => document.getElementById(id);
+$('h').innerHTML = Z.stk('クオリティが高い理由', {size: 84, fill: '#f5e63a', font: 'Tsk', strokes: [['#000', 16]]});
+// 水（青い帯）と氷山の水の中の部分
+$('sea1').innerHTML = '<svg width="980" height="600" viewBox="0 0 980 600">' +
+  '<rect x="0" y="0" width="980" height="600" fill="#0d4f8a" opacity="0.55"/>' +
+  '<line x1="0" y1="2" x2="980" y2="2" stroke="#9fd4ff" stroke-width="6"/>' +
+  '<polygon points="300,0 620,0 900,180 820,470 520,590 140,500 60,220" fill="#d8f1ff" stroke="#fff" stroke-width="6" opacity="0.95"/></svg>';
+$('i1t').innerHTML = Z.stk('過去の動画 100本以上', {size: 50, fill: '#0b2a4a', strokes: [['#fff', 10]]});
+$('i2t').innerHTML = Z.stk('編集者へのフィードバック', {size: 50, fill: '#0b2a4a', strokes: [['#fff', 10]]});
+$('i3t').innerHTML = Z.stk('実際の編集データ', {size: 50, fill: '#0b2a4a', strokes: [['#fff', 10]]});
+// 氷山の先（水の上）＝スキル
+$('tip1').innerHTML = '<div style="position:relative;width:380px;height:240px">' +
+  '<svg width="380" height="240" viewBox="0 0 380 240" style="position:absolute;left:0;top:0"><polygon points="190,0 300,240 70,240" fill="#ffffff" stroke="#9fd4ff" stroke-width="6"/></svg>' +
+  '<div style="position:absolute;left:0;top:96px;width:380px;text-align:center">' + Z.plate('スキル（ルール）', {size: 46, bg: '#d90a0a'}) + '</div></div>';
+$('ctx1').innerHTML = Z.plate('＝ 後ろにあるコンテキスト', {size: 50, bg: '#1b5fd1'});
+$('r1t').innerHTML = Z.stk('スキルだけ もらっても\n役に立たない', {size: 62, fill: '#ff3b3b', strokes: [['#fff', 12], ['#000', 6]]});
+$('r2t').innerHTML = Z.stk('後ろのコンテキストは\n自分で集める', {size: 58});
+$('r3t').innerHTML = Z.plate('クライアントワーク → 案件の数', {size: 44, bg: '#333'});
+$('r4t').innerHTML = Z.plate('YouTube → 投稿した動画の数', {size: 44, bg: '#333'});
+$('r5t').innerHTML = Z.stk('魔法で ドンとはいかない', {size: 64, fill: '#f5e63a', font: 'Tsk', strokes: [['#000', 14]]});
+</script></body></html>

@@ -1,0 +1,205 @@
+{
+ "video": "sec_v005_pan.mp4",
+ "frames": 27385,
+ "fps": 29.97,
+ "blackouts": [],
+ "screen_content": [],
+ "dissolves": [
+  {
+   "track": "V5",
+   "what": "説明 13 の終わり",
+   "end": "0:46.08",
+   "dark_cells": 1,
+   "blackout": false
+  },
+  {
+   "track": "V5",
+   "what": "説明 142 の終わり",
+   "end": "3:52.90",
+   "dark_cells": 1,
+   "blackout": false
+  },
+  {
+   "track": "V5",
+   "what": "説明 197+1 の終わり",
+   "end": "5:07.61",
+   "dark_cells": 5,
+   "blackout": false
+  },
+  {
+   "track": "V5",
+   "what": "説明 205 の終わり",
+   "end": "5:10.58",
+   "dark_cells": 1,
+   "blackout": false
+  },
+  {
+   "track": "V5",
+   "what": "説明 237 の終わり",
+   "end": "5:58.76",
+   "dark_cells": 5,
+   "blackout": false
+  },
+  {
+   "track": "V5",
+   "what": "説明 317 の終わり",
+   "end": "8:24.57",
+   "dark_cells": 3,
+   "blackout": false
+  },
+  {
+   "track": "V5",
+   "what": "説明 326+1 の終わり",
+   "end": "8:43.36",
+   "dark_cells": 0,
+   "blackout": false
+  },
+  {
+   "track": "V5",
+   "what": "説明 335 の終わり",
+   "end": "8:52.70",
+   "dark_cells": 3,
+   "blackout": false
+  },
+  {
+   "track": "V5",
+   "what": "説明 349 の終わり",
+   "end": "9:09.78",
+   "dark_cells": 1,
+   "blackout": false
+  },
+  {
+   "track": "V5",
+   "what": "説明 474 の終わり",
+   "end": "12:25.21",
+   "dark_cells": 3,
+   "blackout": false
+  },
+  {
+   "track": "V5",
+   "what": "説明 476 の終わり",
+   "end": "12:29.75",
+   "dark_cells": 7,
+   "blackout": false
+  },
+  {
+   "track": "V12",
+   "what": "問い 3 の終わり（G3）",
+   "end": "0:29.13",
+   "dark_cells": 12,
+   "blackout": false
+  },
+  {
+   "track": "V12",
+   "what": "問い 101 の終わり（G3）",
+   "end": "2:24.24",
+   "dark_cells": 12,
+   "blackout": false
+  },
+  {
+   "track": "V12",
+   "what": "問い 180 の終わり（G3）",
+   "end": "4:51.62",
+   "dark_cells": 10,
+   "blackout": false
+  },
+  {
+   "track": "V12",
+   "what": "問い 214 の終わり（G3）",
+   "end": "5:34.53",
+   "dark_cells": 15,
+   "blackout": false
+  },
+  {
+   "track": "V12",
+   "what": "問い 230 の終わり（G3）",
+   "end": "5:45.58",
+   "dark_cells": 12,
+   "blackout": false
+  },
+  {
+   "track": "V12",
+   "what": "問い 234 の終わり（G3）",
+   "end": "5:53.82",
+   "dark_cells": 14,
+   "blackout": false
+  },
+  {
+   "track": "V12",
+   "what": "問い 364 の終わり（G3）",
+   "end": "9:40.61",
+   "dark_cells": 12,
+   "blackout": false
+  },
+  {
+   "track": "V12",
+   "what": "問い 433 の終わり（G3）",
+   "end": "11:19.95",
+   "dark_cells": 9,
+   "blackout": false
+  },
+  {
+   "track": "V12",
+   "what": "問い 449 の終わり（G3）",
+   "end": "11:57.68",
+   "dark_cells": 11,
+   "blackout": false
+  },
+  {
+   "track": "V3",
+   "what": "全体挿入 I01 のぼかしの終わり（G1）",
+   "end": "1:18.81",
+   "dark_cells": 0,
+   "blackout": false
+  },
+  {
+   "track": "V3",
+   "what": "全体挿入 I04 のぼかしの終わり（G1）",
+   "end": "1:49.11",
+   "dark_cells": 4,
+   "blackout": false
+  },
+  {
+   "track": "V3",
+   "what": "全体挿入 I11 のぼかしの終わり（G1）",
+   "end": "10:29.33",
+   "dark_cells": 0,
+   "blackout": false
+  },
+  {
+   "track": "V3",
+   "what": "全体挿入 I14 のぼかしの終わり（G1）",
+   "end": "14:30.84",
+   "dark_cells": 6,
+   "blackout": false
+  },
+  {
+   "track": "V3",
+   "what": "全体挿入 I16 のぼかしの終わり（G1）",
+   "end": "1:42.57",
+   "dark_cells": 0,
+   "blackout": false
+  },
+  {
+   "track": "V3",
+   "what": "全体挿入 I17 のぼかしの終わり（G1）",
+   "end": "2:03.66",
+   "dark_cells": 2,
+   "blackout": false
+  },
+  {
+   "track": "V8",
+   "what": "右上タイトルの最初",
+   "end": "0:29.13",
+   "dark_cells": 12,
+   "blackout": false
+  },
+  {
+   "track": "V9",
+   "what": "右上タイトルの最初",
+   "end": "0:29.13",
+   "dark_cells": 12,
+   "blackout": false
+  }
+ ]
+}

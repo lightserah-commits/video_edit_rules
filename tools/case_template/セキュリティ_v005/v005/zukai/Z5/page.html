@@ -1,0 +1,115 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Z5 鍵と住所を分ける＝二段構え（Z4 の続き。見出し「セキュリティの本質」と締めの一言は Z4 の終わりと同じ場所・同じ大きさで出したまま）
+     鍵だけ拾っても どこの家か分からん → 鍵に住所が書いてあったら 詰む → 鍵と住所は分ける → 鍵を大事に・住所を大事に → ① 盗まれない ② 盗まれても使えない＝二段構え -->
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+.att { display: block; filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff) drop-shadow(0 0 5px rgba(255,255,255,.6)); }
+.box2 { width: 600px; height: 364px; border-radius: 26px; box-sizing: border-box; border: 7px solid #fff; background: rgba(255,255,255,.08); }
+.tag { position: relative; width: 250px; height: 116px; }
+.house { display: block; }
+</style></head><body>
+<div id="board"></div>
+<script>
+// コマ（図解の頭 f14554＝字幕299「家の鍵もさ」の頭＝Z4 の終わり。tl.py words 289 316 の聞こえ始め − 648。終わり f15372＝字幕316 の頭）
+// 299 鍵 8・鍵だけ 18〜32・拾っても 38 ／ 300 どこの家 67〜73・分からん 90・意味ない 101〜109 ／ 302+1 鍵に 148・住所 165・書いてあったら 178〜189・詰む 193
+// 304 この鍵だけ 224〜240・あれば 247・いける 259 ／ 305+1 そういう状況に 311・しとかない 327 ／ 305+2 データを 339・鍵と 358・住所は 371・分ける 386・ポコポコ 420
+// 308 仕掛けておく 435 ／ 309+1 その上で 516・鍵を 534・大事にする 545 ／ 311 住所を 577・大事 585 ／ 312 盗まれない 617〜645 ／ 313 盗まれても 671・使えない 703
+// 314 二段構え 749・大事だ 775 ／ 315 そういう話がありますね 790 ／ 316 の頭 818 で全部消える
+const F = { start: 0, hiro: 38, ie: 73, wakan: 86, imi: 106, kagi2: 150, sumi: 161, ya: 189, tsumu: 193, ikeru: 224,
+            batsu: 320, out: 339, kagi3: 358, sumi3: 371, wake: 386, poko: 420, poko2: 429, daiji1: 534, daiji2: 577,
+            n1: 617, n2: 671, nidan: 749, END: 818 };
+window.ZUKAI = { frames: 818 };
+function P(id, f0, m, x, y, html, o = {}) {
+  const d = document.createElement("div");
+  d.className = "part"; d.id = id; d.dataset.f0 = f0; d.dataset.m = m;
+  if (o.f1 !== undefined) d.dataset.f1 = o.f1;
+  if (o.dim) d.dataset.dim = o.dim;
+  if (o.dur) d.dataset.dur = o.dur;
+  if (o.out) d.dataset.out = o.out;
+  d.style.left = x + "px"; d.style.top = y + "px";
+  d.innerHTML = `<div class="in">${html}</div>`;
+  document.body.appendChild(d); return d;
+}
+const ATT = (h) => `<img class="att" src="../assets/img_attacker_c.png" style="height:${h}px">`;
+const KEY = (w) => `<img src="../assets/img_house_key_c.png" style="width:${w}px;display:block">`;
+const HOUSE = (h) => `<img class="house" src="../assets/img_house_c.png" style="height:${h}px">`;
+const Q = (s, c = "#f5e63a") => Z.stk("？", { size: s, font: "Tsk", fill: c, strokes: [["#000", Math.round(s / 6)]] });
+const person = `<svg width="64" height="64" viewBox="0 0 64 64" style="display:block"><circle cx="32" cy="32" r="31" fill="#4a4a4a" stroke="#fff" stroke-width="3"/>` +
+  `<circle cx="32" cy="25" r="11" fill="#ddd"/><path d="M12,54 Q32,30 52,54" fill="#ddd"/></svg>`;
+// 住所の札（荷札の形。字は「住所」と、伏せた住所の線）
+const tag = `<div class="tag"><svg width="250" height="116" viewBox="0 0 250 116" style="position:absolute;left:0;top:0">` +
+  `<path d="M34,4 H242 Q248,4 248,10 V106 Q248,112 242,112 H34 L4,82 V34 Z" fill="#fff6dc" stroke="#111" stroke-width="5" stroke-linejoin="round"/>` +
+  `<circle cx="30" cy="58" r="9" fill="#333"/><rect x="70" y="80" width="150" height="9" rx="4" fill="#bdb39a"/><rect x="70" y="96" width="100" height="8" rx="4" fill="#bdb39a"/></svg>` +
+  `<div style="position:absolute;left:66px;top:6px;font-family:Lbl;font-size:58px;color:#111;line-height:1.1">住所</div></div>`;
+const padlock = `<svg width="96" height="110" viewBox="0 0 96 110" style="display:block;overflow:visible">` +
+  `<path d="M24,50 V32 Q24,8 48,8 Q72,8 72,32 V50" fill="none" stroke="#111" stroke-width="20"/><path d="M24,50 V32 Q24,8 48,8 Q72,8 72,32 V50" fill="none" stroke="#c9ced6" stroke-width="10"/>` +
+  `<rect x="8" y="46" width="80" height="60" rx="12" fill="#f5c400" stroke="#111" stroke-width="6"/><circle cx="48" cy="70" r="8" fill="#111"/><rect x="44" y="72" width="8" height="18" rx="3" fill="#111"/></svg>`;
+const bigX = (s) => `<svg width="${s}" height="${s}" viewBox="0 0 210 210" style="display:block;overflow:visible"><g stroke-linecap="round">` +
+  `<line x1="24" y1="24" x2="186" y2="186" stroke="#fff" stroke-width="58"/><line x1="186" y1="24" x2="24" y2="186" stroke="#fff" stroke-width="58"/>` +
+  `<line x1="24" y1="24" x2="186" y2="186" stroke="#e60000" stroke-width="40"/><line x1="186" y1="24" x2="24" y2="186" stroke="#e60000" stroke-width="40"/></g></svg>`;
+const split = `<svg width="64" height="54" viewBox="0 0 64 54" style="display:block"><rect x="2" y="8" width="24" height="38" rx="6" fill="#fff"/><rect x="38" y="8" width="24" height="38" rx="6" fill="#fff"/>` +
+  `<line x1="32" y1="0" x2="32" y2="54" stroke="#ff8a7a" stroke-width="5" stroke-dasharray="8 6"/></svg>`;
+
+// ───── 見出し（Z4 の終わりと同じ。動かさない）
+// 2026-10-17 確かめ係の指摘で Z4 と一緒に直した：見出しを上へ・澤さんの名札を右上へ大きく・一言は見出しの下（Z4 の終わりと同じ式）
+P("sawa", F.start, "none", 1040, 62, `<div style="display:flex;align-items:center;gap:14px"><div style="transform:scale(1.2)">${person}</div>${Z.stk("その方＝マイクロソフトの 澤さん", { size: 48 })}</div>`);
+P("head", F.start, "none", 56, 30, Z.stk("セキュリティの本質", { size: 104, font: "Tsk", fill: "#f5e63a", strokes: [["#000", 22]] }));
+P("quote", F.start, "none", 60, 700, `<div style="transform-origin:0 0;transform:translate(0px, -514px) scale(0.72)">` +
+  Z.stk("「取られても 困らないように しておけ」", { size: 62, font: "Tsk", fill: "#f5e63a", strokes: [["#000", 16]] }) + `</div>`);
+const SC = (k, h) => `<div style="transform:scale(${k});transform-origin:0 0">${h}</div>`;
+
+// ───── 前半：鍵だけ拾っても どこの家か分からん → 鍵に住所が書いてあったら 詰む
+const oA = { f1: F.out, out: "fade:8" };
+const HX = [760, 1130, 1500], HY = 262, HH = 300;   // 家 314×300（2026-10-17：250→300・右の空きまで）
+P("att", F.hiro, "bounce", 60, 272, ATT(400), oA);
+P("t1", F.hiro, "slide", 60, 806, Z.stk("鍵だけ 拾っても", { size: 64 }), { f1: F.ya, out: "fade:6" });
+P("t1b", F.imi, "bounce", 575, 784, Z.stk("意味ない", { size: 90, font: "Tsk", fill: "#8cc4ff", strokes: [["#000", 18]] }), { f1: F.ya, out: "fade:6" });
+HX.forEach((x, i) => P("h" + i, F.ie + i * 3, "bounce", x, HY, HOUSE(HH), { f1: F.out, out: "fade:8", dim: i === 0 ? "" : `${F.ya}-${F.END}:0.45` }));
+document.getElementById("h0").removeAttribute("data-dim");
+HX.forEach((x, i) => P("q" + i, F.wakan + i * 3, "bounce", x + 94, HY + 80, Q(124), { f1: i === 0 ? F.ya : F.out, out: "fade:6", dim: i === 0 ? "" : `${F.ya}-${F.END}:0.45` }));
+["q0"].forEach(id => document.getElementById(id).removeAttribute("data-dim"));
+P("t2", F.ie, "slide", 840, 574, Z.stk("どこの家の鍵か 分からん", { size: 58 }), { f1: F.ya, out: "fade:6" });
+// 住所の札が付く → 1軒に赤い矢印 → 詰む
+P("str", F.sumi, "pop", 196, 556, `<svg width="120" height="160" style="display:block;overflow:visible"><path d="M96,8 Q44,56 16,154" fill="none" stroke="#fff" stroke-width="7"/></svg>`, { f1: F.kagi3 });
+P("arK", F.ya, "grow", 600, 482, Z.arrow({ len: 150, dir: "right", color: "#e60000", shaft: 28, hl: 50, hw: 74 }), oA);
+P("rbH", F.ya, "pop", HX[0] - 14, HY - 14, `<div style="width:${314 + 28}px;height:${HH + 28}px;box-sizing:border-box;border:8px solid #e60000;border-radius:22px;box-shadow:0 0 0 3px rgba(255,255,255,.9)"></div>`, oA);
+P("tsumu", F.tsumu, "bounce", 770, 584, `<div style="transform:rotate(-8deg)">${Z.stk("詰む", { size: 150, font: "Tsk", fill: "#ff3b2f", strokes: [["#fff", 32], ["#000", 16]] })}</div>`, oA);
+P("bub", F.ikeru, "bounce", 60, 900, Z.bubble("この鍵だけあれば いけるじゃん", { size: 60, tail: "up", off: 80, pad: "12px 32px 16px" }), oA);
+P("batsu", F.batsu, "bounce", 228, 436, bigX(330), { f1: F.kagi3 - 4, out: "fade:6" });
+
+// ───── 鍵と札（前半から続けて出したまま。305+2「鍵と」「住所は」で左右の箱へ分かれる）
+P("kagi", F.start, "bounce", 232, 446, `<div id="kM">${KEY(360)}</div>`);
+P("tagP", F.sumi, "bounce", 172, 640, `<div id="tM">${SC(1.25, tag)}</div>`);
+
+// ───── 後半：鍵と住所は分ける → ポコポコ仕掛けておく → 鍵を大事に・住所を大事に → ① 盗まれない ② 盗まれても使えない＝二段構え
+// 2026-10-17：箱 500×290→600×364、「鍵と住所は 分ける」を右の空きへ、札の字 50〜52→58〜60
+P("bxL", F.kagi3, "pop", 60, 290, `<div class="box2"></div>`);
+P("bxR", F.kagi3 + 4, "pop", 740, 290, `<div class="box2"></div>`);
+P("cutd", F.wake, "pop", 694, 272, `<svg width="12" height="400" style="display:block;overflow:visible"><path d="M6,4 V396" fill="none" stroke="#e60000" stroke-width="9" stroke-dasharray="26 14" stroke-linecap="round"/></svg>`);
+P("w1", F.sumi3, "slide", 1396, 330, Z.stk("鍵と住所は", { size: 66 }));
+P("w2", F.wake, "bounce", 1396, 420, Z.stk("分ける", { size: 110, font: "Tsk", fill: "#f5e63a", strokes: [["#000", 22]] }));
+P("pk1", F.poko, "bounce", 90, 254, `<div style="transform:rotate(-8deg)">${Z.stk("ポコッ", { size: 60, font: "Lbl", fill: "#fff", strokes: [["#000", 14]] })}</div>`);
+P("pk2", F.poko2, "bounce", 770, 254, `<div style="transform:rotate(-8deg)">${Z.stk("ポコッ", { size: 60, font: "Lbl", fill: "#fff", strokes: [["#000", 14]] })}</div>`);
+P("lk1", F.daiji1, "bounce", 536, 306, SC(1.15, padlock));
+P("pl1", F.daiji1 + 8, "slide", 169, 552, Z.plate("鍵を 大事に", { size: 60, radius: 12 }));
+P("lk2", F.daiji2, "bounce", 1216, 306, SC(1.15, padlock));
+P("pl2", F.daiji2 + 6, "slide", 819, 552, Z.plate("住所を 大事に", { size: 60, radius: 12 }));
+const row = (ic, t) => `<div style="display:flex;align-items:center;gap:14px;background:#1b5fd1;border-radius:16px;padding:10px 26px 14px 14px;box-shadow:0 8px 20px rgba(0,0,0,.5)">` +
+  `<div style="width:76px;height:66px;display:flex;align-items:center;justify-content:center">${ic}</div><span style="font-family:Lbl;font-size:58px;color:#fff;white-space:nowrap">${t}</span></div>`;
+P("n1", F.n1, "slide", 44, 680, row(`<div style="transform:scale(.6);flex:none">${padlock}</div>`, "① 盗まれない"));
+P("n2", F.n2, "slide", 44, 794, row(`<div style="transform:scale(1.15);flex:none">${split}</div>`, "② 盗まれても使えない"));
+P("brk", F.nidan, "pop", 790, 676, `<svg width="60" height="222" viewBox="0 0 60 216" preserveAspectRatio="none" style="display:block;overflow:visible">` +
+  `<path d="M8,6 Q34,6 34,34 V86 Q34,108 54,108 Q34,108 34,130 V182 Q34,210 8,210" fill="none" stroke="#000" stroke-width="20" stroke-linejoin="round"/>` +
+  `<path d="M8,6 Q34,6 34,34 V86 Q34,108 54,108 Q34,108 34,130 V182 Q34,210 8,210" fill="none" stroke="#f5e63a" stroke-width="10" stroke-linejoin="round"/></svg>`);
+P("nidan", F.nidan, "bounce", 856, 718, Z.stk("二段構え", { size: 92, font: "Tsk", fill: "#f5e63a", strokes: [["#000", 20]] }));
+
+// ───── 動き：鍵が左の箱へ・住所の札が右の箱へ分かれて入る
+const ease = (q) => 1 - Math.pow(1 - q, 3);
+const cl = (q) => Math.max(0, Math.min(1, q));
+window.ZUKAI.custom = (f) => {
+  const a = ease(cl((f - F.kagi3) / 12)), b = ease(cl((f - F.kagi3 - 4) / 12));
+  document.getElementById("kM").style.transform = a > 0 ? `translate(${(-62 * a).toFixed(1)}px, ${(-76 * a).toFixed(1)}px)` : "none";
+  document.getElementById("tM").style.transform = b > 0 ? `translate(${(712 * b).toFixed(1)}px, ${(-260 * b).toFixed(1)}px)` : "none";
+  return [a.toFixed(4), b.toFixed(4)].join("/");
+};
+</script></body></html>

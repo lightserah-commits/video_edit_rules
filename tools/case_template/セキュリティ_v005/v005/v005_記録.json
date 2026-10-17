@@ -1,0 +1,8146 @@
+{
+ "source": "v005/_work/v005_stills.prproj",
+ "output": "v005/sec_v005.prproj",
+ "sequence": "sec_v005",
+ "captions": 374,
+ "telops": [
+  {
+   "id": "5+1",
+   "until": "5+1",
+   "pattern": "P04",
+   "type": "T010",
+   "text": "しょうがないよね",
+   "se": "S008",
+   "kind": "感情",
+   "source": "しょうがないよね",
+   "zoom": "引き78",
+   "bgm_stop": true,
+   "reason": "「めっちゃ緊急」の問いへの冷めた本音の答え（P04 のセット）",
+   "start": 29.129,
+   "end": 30.53,
+   "screen": false,
+   "size": {
+    "rule": "シュールテロップ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 8,
+    "lines": 1,
+    "size_after": 156.0,
+    "width_pct": 65.0,
+    "shrink_one_line": 1.0,
+    "type": "T010"
+   }
+  },
+  {
+   "id": "9",
+   "until": "9",
+   "pattern": "P07",
+   "type": "T023",
+   "text": "俺も暇だったらやるもん",
+   "se": "S012",
+   "kind": "感情",
+   "source": "俺も暇だったらやるもん",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "三上さんのボケ（社長が「暇ならやる」と言う冗談）。白テキ＋ポカン（01 ボケとツッコミ）。8 の前のにやけ顔は TAME",
+   "start": 35.702,
+   "end": 37.738,
+   "screen": false,
+   "size": {
+    "rule": "白テキ",
+    "size_before": 134.7,
+    "notes": [],
+    "chars_longest_line": 11,
+    "lines": 1,
+    "size_after": 135.0,
+    "width_pct": 77.3,
+    "shrink_one_line": 1.0,
+    "type": "T023"
+   }
+  },
+  {
+   "id": "19+1",
+   "until": "19+1",
+   "pattern": "P04",
+   "type": "T010",
+   "text": "フィッシング詐欺で\r18万くらい持ってかれた",
+   "se": "S008",
+   "kind": "感情",
+   "source": "18万くらい持ってかれて",
+   "zoom": "",
+   "bgm_stop": true,
+   "reason": "v004 小川さん（Loom 0:28）「ネガティブな話をしているので、ネガティブなシュールテロップ。シャンの SE」→ シュール明朝＋鈴しゃん（P04 のセット：引き・BGM 停止）。v003 は P01（決め）＋ドン。何の話か（フィッシング詐欺）は 13 から補った",
+   "start": 46.28,
+   "end": 48.382,
+   "screen": false,
+   "size": {
+    "rule": "シュールテロップ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 12,
+    "lines": 2,
+    "size_after": 154.0,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.55,
+    "type": "T010",
+    "line_change": "'フィッシング詐欺で 18万くらい持ってかれた' → 'フィッシング詐欺で\\r18万くらい持ってかれた'"
+   }
+  },
+  {
+   "id": "37",
+   "until": "37",
+   "pattern": "P05",
+   "type": "T020",
+   "text": "自動編集できるから\r何でもいいや",
+   "se": "S012",
+   "kind": "感情",
+   "source": "自動編集できるから 何でもいいやって思ってて",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "創太くんのボケ（喜びでノールック課金）。49+1 のツッコミの前振り。聞き手なので寄りなし",
+   "start": 77.477,
+   "end": 80.781,
+   "screen": false,
+   "size": {
+    "rule": "ヒラギノ白シャドウ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 9,
+    "lines": 2,
+    "size_after": 156.0,
+    "width_pct": 73.1,
+    "shrink_one_line": 0.74,
+    "type": "T020",
+    "line_change": "'自動編集できるから 何でもいいや' → '自動編集できるから\\r何でもいいや'"
+   }
+  },
+  {
+   "id": "49+1",
+   "until": "49+1",
+   "pattern": "P06",
+   "type": "T086",
+   "text": "だってiCloudが\r18万になるわけないもんね",
+   "se": "S011",
+   "kind": "感情",
+   "source": "だってiCloudが 18万になるわけないもんね",
+   "zoom": "寄り120",
+   "bgm_stop": false,
+   "reason": "三上さんのツッコミ（37 のボケへの正論）。寄りなので前置きの「だって」も文に入れた",
+   "start": 86.253,
+   "end": 89.79,
+   "screen": false,
+   "size": {
+    "rule": "ツッコミ",
+    "size_before": 155.0,
+    "notes": [],
+    "chars_longest_line": 13,
+    "lines": 2,
+    "size_after": 139.6,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.56,
+    "type": "T086",
+    "line_change": "'だってiCloudが 18万になるわけないもんね' → 'だってiCloudが\\r18万になるわけないもんね'"
+   }
+  },
+  {
+   "id": "53",
+   "until": "53",
+   "pattern": "P04",
+   "type": "T010",
+   "text": "仕方ないね",
+   "se": "S023",
+   "kind": "感情",
+   "source": "仕方ないね",
+   "zoom": "引き78",
+   "bgm_stop": true,
+   "reason": "詐欺の話の締め。冷めた一言のオチ（気まずい間）",
+   "start": 93.827,
+   "end": 95.095,
+   "screen": false,
+   "size": {
+    "rule": "シュールテロップ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 5,
+    "lines": 1,
+    "size_after": 156.0,
+    "width_pct": 40.6,
+    "shrink_one_line": 1.0,
+    "type": "T010"
+   }
+  },
+  {
+   "id": "90",
+   "until": "90",
+   "pattern": "P07",
+   "type": "T023",
+   "text": "どういうこと？",
+   "se": "S012",
+   "kind": "感情",
+   "source": "どういうこと？ ってなったっていうのがあったね",
+   "zoom": "強い寄り150",
+   "bgm_stop": true,
+   "reason": "地震速報の取り消しを見た困惑（話のオチ。コマで上を見て困った顔）",
+   "start": 123.657,
+   "end": 125.626,
+   "screen": false,
+   "size": {
+    "rule": "白テキ",
+    "size_before": 134.7,
+    "notes": [],
+    "chars_longest_line": 7,
+    "lines": 1,
+    "size_after": 135.0,
+    "width_pct": 49.2,
+    "shrink_one_line": 1.0,
+    "type": "T023"
+   }
+  },
+  {
+   "id": "100",
+   "until": "100",
+   "pattern": "P04",
+   "type": "T010",
+   "text": "本当かどうかは知らん",
+   "se": "S008",
+   "kind": "感情",
+   "source": "（本当か）どうかは知らん",
+   "zoom": "引き78",
+   "bgm_stop": true,
+   "reason": "気象庁の発表への冷めた本音",
+   "start": 137.471,
+   "end": 138.805,
+   "screen": false,
+   "size": {
+    "rule": "シュールテロップ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 10,
+    "lines": 1,
+    "size_after": 156.0,
+    "width_pct": 81.2,
+    "shrink_one_line": 1.0,
+    "type": "T010"
+   }
+  },
+  {
+   "id": "107",
+   "until": "107",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "情報漏洩は意外と\r大ダメージにつながることがあまりない",
+   "se": "S001",
+   "kind": "意味",
+   "source": "でもね 意外と大ダメージに つながることってあんまなくて",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "分かるようになること1 の入口（意外な結論）。主語は 105 から補った。Z1 の締め（セットで漏れるとやばい）とは別のネタ",
+   "start": 157.624,
+   "end": 162.929,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 18,
+    "lines": 2,
+    "size_after": 90.0,
+    "width_pct": 84.4,
+    "type": "T153",
+    "line_change": "'情報漏洩は意外と 大ダメージにつながることがあまりない' → '情報漏洩は意外と\\r大ダメージにつながることがあまりない'"
+   }
+  },
+  {
+   "id": "118",
+   "until": "119",
+   "pattern": "P07",
+   "type": "T023",
+   "text": "この動画見たら 連絡めっちゃ来る",
+   "se": "S012",
+   "kind": "感情",
+   "source": "これ（この動画）見たら / （連絡が）めっちゃ来る",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "創太くんの自虐のボケ（メアドの中身を話してしまった）。直後に三上さんが大笑い。これ→この動画、何が来るか（連絡）は 119 の字幕の補いを入れた（検査係）",
+   "start": 181.214,
+   "end": 183.684,
+   "screen": false,
+   "size": {
+    "rule": "白テキ",
+    "size_before": 134.7,
+    "notes": [],
+    "chars_longest_line": 16,
+    "lines": 1,
+    "size_after": 112.9,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.84,
+    "type": "T023"
+   }
+  },
+  {
+   "id": "139",
+   "until": "139",
+   "pattern": "P04",
+   "type": "T010",
+   "text": "無理",
+   "se": "S024",
+   "kind": "感情",
+   "source": "無理",
+   "zoom": "引き78",
+   "bgm_stop": true,
+   "reason": "古いシステムはアップデートできない＝終わっている（冷めた一言）。話題タイトルと同じ「限界」は出さない",
+   "start": 224.357,
+   "end": 225.392,
+   "screen": false,
+   "size": {
+    "rule": "シュールテロップ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 2,
+    "lines": 1,
+    "size_after": 156.0,
+    "width_pct": 16.2,
+    "shrink_one_line": 1.0,
+    "type": "T010"
+   }
+  },
+  {
+   "id": "157",
+   "until": "160",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "MAXセキュリティなら\r開けられん箱に入れてしまえばいい",
+   "se": "S006",
+   "kind": "意味",
+   "source": "これ MAXセキュリティ ガチガチにしようと思ったら / 開けられん箱に入れてしまえばいい / 絶対に開かない箱",
+   "zoom": "寄り125",
+   "bgm_stop": false,
+   "reason": "ジレンマの前振り。160「絶対に開かない箱」は二度言いなのでまとめた。条件（MAXセキュリティなら）が落ちていたので 157 から始めて入れた（検査係）",
+   "start": 249.416,
+   "end": 254.221,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 16,
+    "lines": 2,
+    "size_after": 108.0,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.41,
+    "type": "T147",
+    "line_change": "'MAXセキュリティなら 開けられん箱に入れてしまえばいい' → 'MAXセキュリティなら\\r開けられん箱に入れてしまえばいい'"
+   }
+  },
+  {
+   "id": "183",
+   "until": "184",
+   "pattern": "P04",
+   "type": "T010",
+   "text": "できると思う やるだけだもん",
+   "se": "S014",
+   "kind": "感情",
+   "source": "できると思う / やるだけだもん だって",
+   "zoom": "引き78",
+   "bgm_stop": true,
+   "reason": "大手にも攻撃できるかへの冷めた答え（身もふたもない現実）",
+   "start": 291.625,
+   "end": 294.895,
+   "screen": false,
+   "size": {
+    "rule": "シュールテロップ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 14,
+    "lines": 1,
+    "size_after": 129.6,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.83,
+    "type": "T010"
+   }
+  },
+  {
+   "id": "211",
+   "until": "211",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "攻撃パックが結構出回ってる",
+   "se": "S001",
+   "kind": "意味",
+   "source": "それの攻撃パックみたいなのが 結構出回ってんのよ",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "話した核（AI で攻撃が簡単になった）だけ。やり方は足さない",
+   "start": 315.615,
+   "end": 319.319,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 13,
+    "lines": 1,
+    "size_after": 90.0,
+    "width_pct": 60.9,
+    "type": "T153"
+   }
+  },
+  {
+   "id": "227",
+   "until": "227",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "もう厳しい戦いやん",
+   "se": "S013",
+   "kind": "感情",
+   "source": "だから もう厳しい戦いやん ほんまにこれは",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "攻撃する側が有利への結論（重い言い切り）。231 に寄りがあるので寄りなし",
+   "start": 341.708,
+   "end": 343.243,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 9,
+    "lines": 1,
+    "size_after": 160.0,
+    "width_pct": 75.0,
+    "shrink_one_line": 1.0,
+    "type": "T147"
+   }
+  },
+  {
+   "id": "231",
+   "until": "231",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "もちろん",
+   "se": "S006",
+   "kind": "感情",
+   "source": "もちろん",
+   "zoom": "寄り125",
+   "bgm_stop": false,
+   "reason": "守り方を知っているかへの即答（言い切り）",
+   "start": 345.579,
+   "end": 346.279,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 4,
+    "lines": 1,
+    "size_after": 200.0,
+    "width_pct": 41.7,
+    "shrink_one_line": 1.0,
+    "type": "T147"
+   }
+  },
+  {
+   "id": "242",
+   "until": "242+1",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "守るためには\r攻撃のやり方を知っておかないといけない",
+   "se": "S001",
+   "kind": "意味",
+   "source": "そのためには 攻撃のやり方を 知っておかないといけなかった / ってことですよね 三上さんは",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "聞き手がまとめた要点（守る＝攻撃を知る）。その→守る に置き換え。聞き手なので寄りなし",
+   "start": 359.392,
+   "end": 362.996,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 19,
+    "lines": 2,
+    "size_after": 90.0,
+    "width_pct": 89.1,
+    "type": "T153",
+    "line_change": "'守るためには 攻撃のやり方を知っておかないといけない' → '守るためには\\r攻撃のやり方を知っておかないといけない'"
+   }
+  },
+  {
+   "id": "260",
+   "until": "260",
+   "pattern": "P04",
+   "type": "T010",
+   "text": "いや もう無理よ",
+   "se": "S008",
+   "kind": "感情",
+   "source": "いや（防ぐのは）もう無理よ",
+   "zoom": "引き78",
+   "bgm_stop": true,
+   "reason": "大手の漏洩は防げない（冷めた本音。言った言葉のまま）",
+   "start": 396.63,
+   "end": 397.864,
+   "screen": false,
+   "size": {
+    "rule": "シュールテロップ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 8,
+    "lines": 1,
+    "size_after": 156.0,
+    "width_pct": 59.6,
+    "shrink_one_line": 1.0,
+    "type": "T010"
+   }
+  },
+  {
+   "id": "30",
+   "until": "30",
+   "pattern": "P07",
+   "type": "T023",
+   "text": "間違えて押しちゃったの？ ポチポチ",
+   "se": "S012",
+   "kind": "感情",
+   "source": "間違えて押しちゃったの？ ポチポチ",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "三上さんのツッコミ（創太くんの失敗を茶化す）。15秒の空き 0:56〜1:16",
+   "start": 65.032,
+   "end": 67.434,
+   "screen": false,
+   "size": {
+    "rule": "白テキ",
+    "size_before": 134.7,
+    "notes": [],
+    "chars_longest_line": 17,
+    "lines": 1,
+    "size_after": 106.0,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.79,
+    "type": "T023"
+   }
+  },
+  {
+   "id": "110",
+   "until": "110",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "メアドなんて 別に文字列",
+   "se": "S001",
+   "kind": "意味",
+   "source": "メアドなんて 別に文字列だから",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "核①の入り（メアドだけなら ただの文字列）。15秒の空き 2:48〜3:12",
+   "start": 166.633,
+   "end": 168.935,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 12,
+    "lines": 1,
+    "size_after": 90.0,
+    "width_pct": 53.1,
+    "type": "T153"
+   }
+  },
+  {
+   "id": "317",
+   "until": "318",
+   "pattern": "P14",
+   "type": "T147",
+   "text": "セキュリティポリシーの\rチェックシートを作ってあげよう",
+   "se": "S010",
+   "kind": "意味",
+   "source": "セキュリティポリシーの チェックシートみたいなのでも / 作ってあげようかな",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "CTA ①の誘導の言い切り（P14。板 319〜324 の前）。316「なので この辺のセキュリティとか」は前置きなので 317 から。「みたいなのでも」「かな」のぼかしを落とした",
+   "start": 501.301,
+   "end": 504.671,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 15,
+    "lines": 2,
+    "size_after": 115.2,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.42,
+    "type": "T147",
+    "line_change": "'セキュリティポリシーの チェックシートを作ってあげよう' → 'セキュリティポリシーの\\rチェックシートを作ってあげよう'"
+   }
+  },
+  {
+   "id": "326+1",
+   "until": "326+1",
+   "pattern": "P05",
+   "type": "T020",
+   "text": "僕は 考え方とか リスク許容度が\r一応バグってる方",
+   "se": "S012",
+   "kind": "感情",
+   "source": "（僕は）考え方とか リスク許容度 一応バグってる方だと思うんですよ",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "創太くんの自虐（ボケ）。字幕の頭の「考え方とか」は前置き（make が「リスク」の聞こえ始めに合わせる）。「だと思うんですよ」を削るだけ",
+   "start": 515.849,
+   "end": 523.356,
+   "screen": false,
+   "size": {
+    "rule": "ヒラギノ白シャドウ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 16,
+    "lines": 2,
+    "size_after": 117.9,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.49,
+    "type": "T020",
+    "line_change": "'僕は 考え方とか リスク許容度が 一応バグってる方' → '僕は 考え方とか リスク許容度が\\r一応バグってる方'"
+   }
+  },
+  {
+   "id": "341",
+   "until": "341",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "ワンタイムパスを設定してなかったら\r多分もう口座ゼロ",
+   "se": "S013",
+   "kind": "意味",
+   "source": "それを設定してなかったら 多分もう口座ゼロっすね",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "創太くんの体験の着地（お金のリスク＝ドン）。「それ」→ワンタイムパス。予想の「多分」は残す。342 の三上さんの驚きは寄りだけ（ZOOM）",
+   "start": 539.672,
+   "end": 542.375,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 17,
+    "lines": 2,
+    "size_after": 101.6,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.43,
+    "type": "T147",
+    "line_change": "'ワンタイムパスを設定してなかったら 多分もう口座ゼロ' → 'ワンタイムパスを設定してなかったら\\r多分もう口座ゼロ'"
+   }
+  },
+  {
+   "id": "354",
+   "until": "355",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "何でもかんでもAIがいいならOKって\rやっとるとちょっと怖い",
+   "se": "S001",
+   "kind": "意味",
+   "source": "何でもかんでもAIがいいなら OK OKとかってやっとると / ちょっと怖い部分もあるよね",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "話の要点（AIに任せるのに慣れる怖さ。395「創太くんが何かOKしちゃってる」の前振り）。353「そうじゃね だから」は前置き。「OK OK」の二度言いと「部分もあるよね」をまとめた",
+   "start": 560.36,
+   "end": 564.431,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 18,
+    "lines": 2,
+    "size_after": 90.0,
+    "width_pct": 79.7,
+    "type": "T153",
+    "line_change": "'何でもかんでもAIがいいならOKって やっとるとちょっと怖い' → '何でもかんでもAIがいいならOKって\\rやっとるとちょっと怖い'"
+   }
+  },
+  {
+   "id": "367",
+   "until": "369+1",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "AIでみんなの力が上がる分\r間違った使い方をすると大ダメージになる",
+   "se": "S001",
+   "kind": "意味",
+   "source": "（AIで）みんなの力が 上がっていくわけじゃん / だからやっぱり 間違った使い方をすると / 大ダメージになるっていうのは 確かにそうなんだよね",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "問い（364〜365 どんな未来が来る？）への答えの要点。367〜369+1 を一文に（「わけじゃん だから」→「分」）。369+1「確かにそうなんだよね」は落とした",
+   "start": 584.05,
+   "end": 591.624,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 19,
+    "lines": 2,
+    "size_after": 90.0,
+    "width_pct": 89.1,
+    "type": "T153",
+    "line_change": "'AIでみんなの力が上がる分 間違った使い方をすると大ダメージになる' → 'AIでみんなの力が上がる分\\r間違った使い方をすると大ダメージになる'"
+   }
+  },
+  {
+   "id": "418",
+   "until": "418",
+   "pattern": "P07",
+   "type": "T023",
+   "text": "人間軍とAI軍が戦うって\r何なんですか",
+   "se": "S012",
+   "kind": "感情",
+   "source": "人間軍とAI軍が戦うっていうのは 何なんですか",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "三上さんのボケ（405 人間軍とAI軍）への創太くんの困惑のツッコミ（01 のボケとツッコミ。白テキ＋ポカン・溜め）。聞き手なのでズームなし",
+   "start": 644.144,
+   "end": 646.779,
+   "screen": false,
+   "size": {
+    "rule": "白テキ",
+    "size_before": 134.7,
+    "notes": [],
+    "chars_longest_line": 12,
+    "lines": 2,
+    "size_after": 135.0,
+    "width_pct": 79.9,
+    "shrink_one_line": 0.74,
+    "type": "T023",
+    "line_change": "'人間軍とAI軍が戦うって 何なんですか' → '人間軍とAI軍が戦うって\\r何なんですか'"
+   }
+  },
+  {
+   "id": "424",
+   "until": "426",
+   "pattern": "P04",
+   "type": "T010",
+   "text": "システムは大体の場合悪くない\r人間がダメなんだよね",
+   "se": "S008",
+   "kind": "意味",
+   "source": "システムは悪くないんだよ 大体の場合 / 人間がダメなんだよね",
+   "zoom": "引き78",
+   "bgm_stop": true,
+   "reason": "冷めた言い方の結論（弱点は人間）。423+1「脆弱だよね」は同じネタの前振りなので通常。427〜429 の創太くんの例は SE だけ（1ネタ1発）。留保「大体の場合」が落ちていたので戻した（検査係）",
+   "start": 655.121,
+   "end": 659.359,
+   "screen": false,
+   "size": {
+    "rule": "シュールテロップ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 14,
+    "lines": 2,
+    "size_after": 123.4,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.46,
+    "type": "T010",
+    "line_change": "'システムは大体の場合悪くない 人間がダメなんだよね' → 'システムは大体の場合悪くない\\r人間がダメなんだよね'"
+   }
+  },
+  {
+   "id": "432",
+   "until": "432",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "俺たちが進化しないと やばい",
+   "se": "S022",
+   "kind": "意味",
+   "source": "だから俺たちが進化しないとやばい",
+   "zoom": "寄り125",
+   "bgm_stop": false,
+   "reason": "「人間がダメ」の話の締めの断言（未来の断言＝キキッ）。字幕の頭の「だから」は前置き。431「難しいんだよね」は通常",
+   "start": 666.733,
+   "end": 669.002,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 14,
+    "lines": 1,
+    "size_after": 129.9,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.81,
+    "type": "T147"
+   }
+  },
+  {
+   "id": "443",
+   "until": "443",
+   "pattern": "P05",
+   "type": "T020",
+   "text": "大統領の腕一本を\r生贄に捧げれば発射できる",
+   "se": "S012",
+   "kind": "意味",
+   "source": "（大統領の）腕一本パーンってやって 生贄に捧げれば発射できるみたいな",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "三上さんのボケ（突飛なたとえ・腕を切る身振り）。中身は構造的に守る仕組みの例なので意味の強調。大統領は 441 から補った。身振りを見せるためズームなし",
+   "start": 684.117,
+   "end": 688.188,
+   "screen": false,
+   "size": {
+    "rule": "ヒラギノ白シャドウ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 12,
+    "lines": 2,
+    "size_after": 144.0,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.55,
+    "type": "T020",
+    "line_change": "'大統領の腕一本を 生贄に捧げれば発射できる' → '大統領の腕一本を\\r生贄に捧げれば発射できる'"
+   }
+  },
+  {
+   "id": "447",
+   "until": "447",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "守る側は 構造的に守って戦っていく",
+   "se": "S001",
+   "kind": "意味",
+   "source": "そういう構造的に守るとか そういうので戦っていくんだよ",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "核の話の要点（構造的に守る）。主語は 439・441「守る側が」から補った。448「頭の使い合い」は同じネタなので通常。改行の位置を「構造的に守って」が割れない所へ（検査係）",
+   "start": 695.562,
+   "end": 699.866,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 17,
+    "lines": 1,
+    "size_after": 90.0,
+    "width_pct": 76.5,
+    "type": "T153"
+   }
+  },
+  {
+   "id": "458+1",
+   "until": "458+1",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "変化についていけない奴が\r取り残されてやられるのよ",
+   "se": "S001",
+   "kind": "意味",
+   "source": "変化についていけない奴が 取り残されてやられるのよ",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "創太くんの「大企業も弱いのでは」への答えの要点。口調の「のよ」は残す。460〜460+1「薙ぎ倒されてく」は同じネタで、469 で言い切るので通常",
+   "start": 719.819,
+   "end": 722.956,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 12,
+    "lines": 2,
+    "size_after": 90.0,
+    "width_pct": 56.2,
+    "type": "T153",
+    "line_change": "'変化についていけない奴が 取り残されてやられるのよ' → '変化についていけない奴が\\r取り残されてやられるのよ'"
+   }
+  },
+  {
+   "id": "469",
+   "until": "469",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "大企業でもやられる\rこれがポイント",
+   "se": "S013",
+   "kind": "意味",
+   "source": "大企業でもやられる これがポイント",
+   "zoom": "寄り130",
+   "bgm_stop": false,
+   "reason": "話者が「ポイント」と言い切る核（動画の土台の2）。460+1 とは別のネタの扱い（460+1 はズームなし）",
+   "start": 733.132,
+   "end": 735.535,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 9,
+    "lines": 2,
+    "size_after": 160.0,
+    "width_pct": 75.0,
+    "shrink_one_line": 0.68,
+    "type": "T147",
+    "line_change": "'大企業でもやられる これがポイント' → '大企業でもやられる\\rこれがポイント'"
+   }
+  },
+  {
+   "id": "514",
+   "until": "514",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "あなたは一刻も早く変わったルールに\r追いつけるようになってください",
+   "se": "S013",
+   "kind": "意味",
+   "source": "あなたは一刻も早くそこに 追いつけるようになってください",
+   "zoom": "寄り125",
+   "bgm_stop": false,
+   "reason": "ルールの話の締めの呼びかけ（ドン）。「そこに」→「変わったルールに」（506〜509 から）",
+   "start": 793.426,
+   "end": 795.962,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 17,
+    "lines": 2,
+    "size_after": 101.6,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.34,
+    "type": "T147",
+    "line_change": "'あなたは一刻も早く変わったルールに 追いつけるようになってください' → 'あなたは一刻も早く変わったルールに\\r追いつけるようになってください'"
+   }
+  },
+  {
+   "id": "518",
+   "until": "518",
+   "pattern": "P04",
+   "type": "T010",
+   "text": "間違いない\r取り残され続ける人生",
+   "se": "S024",
+   "kind": "感情",
+   "source": "間違いない 取り残され続ける人生",
+   "zoom": "引き78",
+   "bgm_stop": true,
+   "reason": "身もふたもない残念な現実（低いテンション）。引きが付く強調は遅らせず字幕の頭から出るので、前置きの「間違いない」も文に入れた（検査係）",
+   "start": 803.369,
+   "end": 805.905,
+   "screen": false,
+   "size": {
+    "rule": "シュールテロップ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 10,
+    "lines": 2,
+    "size_after": 156.0,
+    "width_pct": 81.2,
+    "shrink_one_line": 0.74,
+    "type": "T010",
+    "line_change": "'間違いない 取り残され続ける人生' → '間違いない\\r取り残され続ける人生'"
+   }
+  },
+  {
+   "id": "524",
+   "until": "524",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "張り続けた 3年張り続けた",
+   "se": "S006",
+   "kind": "感情",
+   "source": "張り続けた 3年張り続けた",
+   "zoom": "寄り125",
+   "bgm_stop": false,
+   "reason": "数字（3年）の言い切り。522 の「Addness」は聞き違いの疑い（案件メモ：AI に、の可能性・要確認）なので大きく出さない。寄りで字幕の頭から出るので、言ったままの二度言いにした（検査係）",
+   "start": 814.047,
+   "end": 815.882,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 13,
+    "lines": 1,
+    "size_after": 143.2,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.89,
+    "type": "T147"
+   }
+  },
+  {
+   "id": "527",
+   "until": "527",
+   "pattern": "P04",
+   "type": "T010",
+   "text": "イカれてるって言われ続けた",
+   "se": "S008",
+   "kind": "感情",
+   "source": "イカれてるって言われ続けた",
+   "zoom": "引き78",
+   "bgm_stop": true,
+   "reason": "自分への皮肉のオチ（525〜526「普通張らない」「絶対張らない」の着地）。溜めつき",
+   "start": 818.584,
+   "end": 819.719,
+   "screen": false,
+   "size": {
+    "rule": "シュールテロップ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 13,
+    "lines": 1,
+    "size_after": 132.9,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.85,
+    "type": "T010"
+   }
+  },
+  {
+   "id": "548",
+   "until": "550",
+   "pattern": "P14",
+   "type": "T147",
+   "text": "僕なりにやっていることをまとめた\rちょっとしたチェックリスト",
+   "se": "S010",
+   "kind": "意味",
+   "source": "なのでそれこそ 僕なりに どういうことをやっているかとか / そういったことをまとめた ちょっとしたチェックリストをですね",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "CTA ②の誘導（P14。板 554〜564 の前）。548 の頭「なのでそれこそ」は前置き。「どういうことをやっているか」→「やっていること」",
+   "start": 838.104,
+   "end": 843.409,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 16,
+    "lines": 2,
+    "size_after": 108.0,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.37,
+    "type": "T147",
+    "line_change": "'僕なりにやっていることをまとめた ちょっとしたチェックリスト' → '僕なりにやっていることをまとめた\\rちょっとしたチェックリスト'"
+   }
+  },
+  {
+   "id": "576",
+   "until": "576",
+   "pattern": "P03",
+   "type": "T175",
+   "text": "ピンチはチャンス",
+   "se": "S022",
+   "kind": "意味",
+   "source": "ピンチはチャンスです",
+   "zoom": "寄り130",
+   "bgm_stop": false,
+   "reason": "締めの格言（勝負の格言＝キキッ）。571「下剋上チャンス」・579「ビッグウェーブに」は同じネタなので通常（579 は画像）",
+   "start": 862.261,
+   "end": 863.162,
+   "screen": false,
+   "size": {
+    "rule": "ゴージャス青",
+    "size_before": 200.0,
+    "notes": [],
+    "chars_longest_line": 8,
+    "lines": 1,
+    "size_after": 200.0,
+    "width_pct": 83.3,
+    "shrink_one_line": 1.0,
+    "type": "T175"
+   }
+  },
+  {
+   "id": "591",
+   "until": "592",
+   "pattern": "P14",
+   "type": "T147",
+   "text": "ぜひ私たちのAddnessを\r広める手伝いをしてください",
+   "se": "S010",
+   "kind": "意味",
+   "source": "そういう方はぜひ私たちのAddness / このプラットフォームを 広める手伝いをしてください",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "認定パートナーの CTA の誘導（板 593〜597 の前）。「このプラットフォーム」→ Addness。591 の頭「そういう方は」は前置き",
+   "start": 890.423,
+   "end": 893.526,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 14,
+    "lines": 2,
+    "size_after": 132.9,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.43,
+    "type": "T147",
+    "line_change": "'ぜひ私たちのAddnessを 広める手伝いをしてください' → 'ぜひ私たちのAddnessを\\r広める手伝いをしてください'"
+   }
+  },
+  {
+   "id": "571",
+   "until": "571",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "環境変わるってことは\r下剋上チャンス",
+   "se": "S001",
+   "kind": "意味",
+   "source": "でもこれ 環境変わるってことは 下剋上チャンスだから",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "締めの核（576「ピンチはチャンス」の格言の前の言い切り）",
+   "start": 853.086,
+   "end": 855.254,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 10,
+    "lines": 2,
+    "size_after": 90.0,
+    "width_pct": 46.9,
+    "type": "T153",
+    "line_change": "'環境変わるってことは 下剋上チャンス' → '環境変わるってことは\\r下剋上チャンス'"
+   }
+  }
+ ],
+ "highlight": [],
+ "boards": [
+  {
+   "from": "319",
+   "to": "324",
+   "type": "T189",
+   "text": "「1016セキュリティチェック」と\r概要欄の公式LINEに送ってください",
+   "start": 504.671,
+   "end": 513.046,
+   "width_px": 1509,
+   "group_x": null,
+   "reason": "CTA ①（中盤）。319「もしここまで見ている方は」＋321「1016セキュリティチェックという風に入れていただければ」＋322+1「チェックポイントをあげておきます」＋324「ぜひ自社の…使ってみてください」（08 の keep：特典の受け取り方は必ず板でも出す）"
+  },
+  {
+   "from": "502",
+   "to": "505",
+   "type": "T028",
+   "text": "今までいいとされてるルールは\rもう良くない＝世界のルールは変わった",
+   "start": 773.773,
+   "end": 778.678,
+   "width_px": 1620,
+   "group_x": [
+    0.5963541865348816,
+    0.5260416865348816
+   ],
+   "reason": "動画の土台の3（ルールは変わった）の言い切り。502「今までいいとされてるルールは」＋503+1「もう良くないんだよ」＋505「もう世界のルールは変わりました」"
+  },
+  {
+   "from": "532",
+   "to": "536",
+   "type": "T028",
+   "text": "力が強い・背が高い・走るのが速いやつではなく\r環境に適応できるやつが 本当に強い",
+   "start": 819.719,
+   "end": 827.56,
+   "width_px": 1584,
+   "group_x": [
+    0.5963541865348816,
+    0.5354166865348816
+   ],
+   "reason": "動画の土台の3（変化に適応する人が生き残る）の名言。531「変化に適応するやつが最強」は装飾係の強調で、その後の名言をボードで受ける。確かめ係1回目 A2：削りすぎて「背でもなく」が分からないので言った言葉に戻した。2回目 A2：「足が速い」→言った言葉「走るのが速い」"
+  },
+  {
+   "from": "554",
+   "to": "564",
+   "type": "T189",
+   "text": "「1016セキュリティチェック」と\r概要欄の公式LINEに送ってください",
+   "start": 843.409,
+   "end": 853.086,
+   "width_px": 1509,
+   "group_x": null,
+   "reason": "CTA ②（締め）。554「動画下の概要欄の公式LINEの方から」＋561「1016セキュリティと 1016セキュリティチェック」＋563〜564「という風に公式LINEの方に入れていただけたら 見れますので ぜひ受け取っておいてください」。声の「1016セキュリティ」を板に並べるかは 7-1 で聞く（00_案件メモ.md）"
+  },
+  {
+   "from": "593",
+   "to": "597",
+   "type": "T189",
+   "text": "概要欄から 1on1（1対1）の\r個別説明会に応募できます",
+   "start": 893.526,
+   "end": 904.771,
+   "width_px": 1235,
+   "group_x": null,
+   "reason": "Addness 認定パートナーの募集（CTA）。593「Addnessの認定パートナーの募集も行っております」〜597「発展に力を貸してください」"
+  }
+ ],
+ "chapters": [],
+ "se": [
+  {
+   "start": 23.557,
+   "se": "S001",
+   "why": "問い 3",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 29.129,
+   "se": "S008",
+   "why": "強調 5+1",
+   "cut": false,
+   "gain_db": -2.22
+  },
+  {
+   "start": 35.702,
+   "se": "S012",
+   "why": "強調 9",
+   "cut": false,
+   "gain_db": -2.78
+  },
+  {
+   "start": 41.141,
+   "se": "S010",
+   "why": "説明 13",
+   "cut": false,
+   "gain_db": -5.64
+  },
+  {
+   "start": 46.28,
+   "se": "S008",
+   "why": "強調 19+1",
+   "cut": false,
+   "gain_db": -2.22
+  },
+  {
+   "start": 54.655,
+   "se": "S019",
+   "why": "画像 I02",
+   "cut": false,
+   "gain_db": -2.07
+  },
+  {
+   "start": 65.032,
+   "se": "S012",
+   "why": "強調 30",
+   "cut": false,
+   "gain_db": -2.78
+  },
+  {
+   "start": 71.972,
+   "se": "S001",
+   "why": "画像 I01",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 77.477,
+   "se": "S012",
+   "why": "強調 37",
+   "cut": false,
+   "gain_db": -2.78
+  },
+  {
+   "start": 81.848,
+   "se": "S001",
+   "why": "画像 I03",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 86.253,
+   "se": "S011",
+   "why": "強調 49+1",
+   "cut": false,
+   "gain_db": -2.16
+  },
+  {
+   "start": 93.827,
+   "se": "S023",
+   "why": "強調 53",
+   "cut": false,
+   "gain_db": -0.41
+  },
+  {
+   "start": 100.133,
+   "se": "S001",
+   "why": "画像 I16",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 104.871,
+   "se": "S001",
+   "why": "画像 I04",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 113.447,
+   "se": "S001",
+   "why": "画像 I17",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 116.116,
+   "se": "S009",
+   "why": "画像 I17",
+   "cut": false,
+   "gain_db": -9.83
+  },
+  {
+   "start": 118.218,
+   "se": "S009",
+   "why": "画像 I17",
+   "cut": false,
+   "gain_db": -9.83
+  },
+  {
+   "start": 120.02,
+   "se": "S009",
+   "why": "画像 I17",
+   "cut": false,
+   "gain_db": -9.83
+  },
+  {
+   "start": 123.657,
+   "se": "S012",
+   "why": "強調 90",
+   "cut": false,
+   "gain_db": -2.78
+  },
+  {
+   "start": 132.966,
+   "se": "S001",
+   "why": "画像 I05",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 137.471,
+   "se": "S008",
+   "why": "強調 100",
+   "cut": false,
+   "gain_db": -2.22
+  },
+  {
+   "start": 138.538,
+   "se": "S001",
+   "why": "問い 101",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 157.624,
+   "se": "S001",
+   "why": "強調 107",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 166.633,
+   "se": "S001",
+   "why": "強調 110",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 181.214,
+   "se": "S012",
+   "why": "強調 118",
+   "cut": false,
+   "gain_db": -2.78
+  },
+  {
+   "start": 187.087,
+   "se": "S001",
+   "why": "図解 Z1 出だし 123「名前に」上の段・メアドの札",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 188.622,
+   "se": "S002",
+   "why": "図解 Z1 123「よくわからん数字」数字が光る",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 190.39,
+   "se": "S002",
+   "why": "図解 Z1 124「見つかる」虫眼鏡",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 193.427,
+   "se": "S002",
+   "why": "図解 Z1 125「誰かもわからん」？の人",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 197.03,
+   "se": "S002",
+   "why": "図解 Z1 126+1「漏れたところで」見出し「1つだけ 漏れても」",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 199.232,
+   "se": "S002",
+   "why": "図解 Z1 127「パスワードだけ」パスワードの札",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 201.635,
+   "se": "S012",
+   "why": "図解 Z1 127「（盗んだ側も）しゃーないやん」攻撃者の吹き出し",
+   "cut": false,
+   "gain_db": -2.78
+  },
+  {
+   "start": 203.203,
+   "se": "S001",
+   "why": "図解 Z1 128「まずいのは」下の段（赤）",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 204.371,
+   "se": "S002",
+   "why": "図解 Z1 128「このメアドで」",
+   "cut": true,
+   "gain_db": -3.33
+  },
+  {
+   "start": 205.072,
+   "se": "S002",
+   "why": "図解 Z1 128「このパスワードで」",
+   "cut": true,
+   "gain_db": -3.33
+  },
+  {
+   "start": 205.739,
+   "se": "S002",
+   "why": "図解 Z1 128「このクレカで」",
+   "cut": true,
+   "gain_db": -3.33
+  },
+  {
+   "start": 206.273,
+   "se": "S002",
+   "why": "図解 Z1 129+1「この住所で」",
+   "cut": true,
+   "gain_db": -3.33
+  },
+  {
+   "start": 207.274,
+   "se": "S002",
+   "why": "図解 Z1 129+1「名前はこれで」",
+   "cut": true,
+   "gain_db": -3.33
+  },
+  {
+   "start": 208.175,
+   "se": "S002",
+   "why": "図解 Z1 129+1「顔写真これでーす」",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 210.177,
+   "se": "S003",
+   "why": "図解 Z1 130「セットで」縄で束ねる",
+   "cut": true,
+   "gain_db": -6.62
+  },
+  {
+   "start": 211.144,
+   "se": "S011",
+   "why": "図解 Z1 130「やばいわけ」",
+   "cut": false,
+   "gain_db": -2.16
+  },
+  {
+   "start": 212.012,
+   "se": "S001",
+   "why": "図解 Z1 132「こういう風に ならないようにする」締めの前の一言",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 214.815,
+   "se": "S004",
+   "why": "図解 Z1 締め 132「セキュリティ」",
+   "cut": false,
+   "gain_db": -1.95
+  },
+  {
+   "start": 224.357,
+   "se": "S024",
+   "why": "強調 139",
+   "cut": false,
+   "gain_db": 2.8
+  },
+  {
+   "start": 230.03,
+   "se": "S010",
+   "why": "説明 142",
+   "cut": false,
+   "gain_db": -5.64
+  },
+  {
+   "start": 235.102,
+   "se": "S001",
+   "why": "SEのみ 144",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 245.645,
+   "se": "S001",
+   "why": "画像 I06",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 249.416,
+   "se": "S006",
+   "why": "強調 157",
+   "cut": false,
+   "gain_db": -0.15
+  },
+  {
+   "start": 256.323,
+   "se": "S001",
+   "why": "図解 Z2 出だし 165「これを」守りたいデータ",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 258.892,
+   "se": "S002",
+   "why": "図解 Z2 166「ラップで」①",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 261.194,
+   "se": "S002",
+   "why": "図解 Z2 168「金庫」②",
+   "cut": true,
+   "gain_db": -3.33
+  },
+  {
+   "start": 261.828,
+   "se": "S002",
+   "why": "図解 Z2 168「コンクリート」③",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 265.065,
+   "se": "S002",
+   "why": "図解 Z2 169「溶かした鉄」④",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 268.068,
+   "se": "S013",
+   "why": "図解 Z2 170+1「鉄球にする」⑤",
+   "cut": true,
+   "gain_db": -4.75
+  },
+  {
+   "start": 269.469,
+   "se": "S012",
+   "why": "図解 Z2 171「開けられんやん 俺が」",
+   "cut": false,
+   "gain_db": -2.78
+  },
+  {
+   "start": 272.839,
+   "se": "S003",
+   "why": "図解 Z2 174「固めれば固めるほど」",
+   "cut": false,
+   "gain_db": -6.62
+  },
+  {
+   "start": 275.909,
+   "se": "S001",
+   "why": "図解 Z2 176「ユーザーが」組み替え（後半）",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 278.912,
+   "se": "S002",
+   "why": "図解 Z2 177「開けられる」扉が開く",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 282.315,
+   "se": "S002",
+   "why": "図解 Z2 177+1「使っているデータ」鍵",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 283.984,
+   "se": "S002",
+   "why": "図解 Z2 179「引っこ抜いて」鍵が攻撃者へ",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 285.619,
+   "se": "S011",
+   "why": "図解 Z2 締め 179「攻撃者も開けられる」",
+   "cut": false,
+   "gain_db": -2.16
+  },
+  {
+   "start": 288.054,
+   "se": "S001",
+   "why": "問い 180",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 291.625,
+   "se": "S014",
+   "why": "強調 183",
+   "cut": false,
+   "gain_db": -4.32
+  },
+  {
+   "start": 298.431,
+   "se": "S001",
+   "why": "SEのみ 192",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 303.303,
+   "se": "S010",
+   "why": "説明 197+1",
+   "cut": false,
+   "gain_db": -5.64
+  },
+  {
+   "start": 307.574,
+   "se": "S010",
+   "why": "説明 205",
+   "cut": false,
+   "gain_db": -5.64
+  },
+  {
+   "start": 315.615,
+   "se": "S001",
+   "why": "強調 211",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 319.252,
+   "se": "S001",
+   "why": "問い 214",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 341.708,
+   "se": "S013",
+   "why": "強調 227",
+   "cut": true,
+   "gain_db": -4.75
+  },
+  {
+   "start": 343.176,
+   "se": "S001",
+   "why": "問い 230",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 345.579,
+   "se": "S006",
+   "why": "強調 231",
+   "cut": false,
+   "gain_db": -0.15
+  },
+  {
+   "start": 346.213,
+   "se": "S001",
+   "why": "問い 234",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 353.82,
+   "se": "S010",
+   "why": "説明 237",
+   "cut": false,
+   "gain_db": -5.64
+  },
+  {
+   "start": 359.392,
+   "se": "S001",
+   "why": "強調 242",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 370.704,
+   "se": "S001",
+   "why": "図解 Z3 出だし 250「守るための」左の段・盾",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 372.272,
+   "se": "S002",
+   "why": "図解 Z3 250「穴チェックリスト」盾の穴とリスト",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 374.808,
+   "se": "S019",
+   "why": "図解 Z3 250+1「守れる」穴をふさぐ・✓",
+   "cut": false,
+   "gain_db": -2.07
+  },
+  {
+   "start": 375.775,
+   "se": "S001",
+   "why": "図解 Z3 251「逆に言うと」右の段（赤）",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 377.877,
+   "se": "S002",
+   "why": "図解 Z3 251「悪用すれば」攻撃者",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 379.412,
+   "se": "S006",
+   "why": "図解 Z3 252「どこ攻撃すればいいかリスト」✓ が 的 に変わる",
+   "cut": false,
+   "gain_db": -0.15
+  },
+  {
+   "start": 385.485,
+   "se": "S002",
+   "why": "図解 Z3 253「脱獄したAI」",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 387.22,
+   "se": "S013",
+   "why": "図解 Z3 253+1「バーン読み込まして」",
+   "cut": true,
+   "gain_db": -4.75
+  },
+  {
+   "start": 388.154,
+   "se": "S002",
+   "why": "図解 Z3 254「行ってこい」",
+   "cut": true,
+   "gain_db": -3.33
+  },
+  {
+   "start": 389.055,
+   "se": "S021",
+   "why": "図解 Z3 254「片っ端から」会社に次々当たる",
+   "cut": false,
+   "gain_db": -1.03
+  },
+  {
+   "start": 390.523,
+   "se": "S011",
+   "why": "図解 Z3 締め 254+1「どっかボコボコに」",
+   "cut": false,
+   "gain_db": -2.16
+  },
+  {
+   "start": 396.63,
+   "se": "S008",
+   "why": "強調 260",
+   "cut": false,
+   "gain_db": -2.22
+  },
+  {
+   "start": 405.438,
+   "se": "S001",
+   "why": "図解 Z7 出だし 267「俺らは」右上の俺らの箱",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 406.74,
+   "se": "S002",
+   "why": "図解 Z7 267「機敏」",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 409.542,
+   "se": "S001",
+   "why": "図解 Z7 268「もうでっかくなっちゃって」左の枠・大企業のビル",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 411.177,
+   "se": "S002",
+   "why": "図解 Z7 269「硬直」歯車と錠",
+   "cut": true,
+   "gain_db": -3.33
+  },
+  {
+   "start": 412.178,
+   "se": "S002",
+   "why": "図解 Z7 270「AI使うのにも」AI と点線の矢印",
+   "cut": true,
+   "gain_db": -3.33
+  },
+  {
+   "start": 413.113,
+   "se": "S002",
+   "why": "図解 Z7 270+1「何ヶ月」カレンダー・矢印がじわじわ",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 416.816,
+   "se": "S001",
+   "why": "図解 Z7 271「攻撃者は」右の枠",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 417.45,
+   "se": "S002",
+   "why": "図解 Z7 271「新しくなったモデル」",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 418.785,
+   "se": "S002",
+   "why": "図解 Z7 272「その日のうちに」時計",
+   "cut": true,
+   "gain_db": -3.33
+  },
+  {
+   "start": 419.452,
+   "se": "S008",
+   "why": "図解 Z7 272「切り替えて」矢印が一瞬で届く",
+   "cut": false,
+   "gain_db": -2.22
+  },
+  {
+   "start": 420.553,
+   "se": "S002",
+   "why": "図解 Z7 273「ああ これすごいやん」吹き出し",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 422.155,
+   "se": "S002",
+   "why": "図解 Z7 273「ちょっと（大手を）アタックしてみる」吹き出し",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 424.791,
+   "se": "S002",
+   "why": "図解 Z7 275「行ってこい」吹き出し・AI（写し）が飛び立つ",
+   "cut": true,
+   "gain_db": -3.33
+  },
+  {
+   "start": 425.692,
+   "se": "S011",
+   "why": "図解 Z7 275「行くわけでしょ」ビルに当たる",
+   "cut": false,
+   "gain_db": -2.16
+  },
+  {
+   "start": 426.993,
+   "se": "S006",
+   "why": "図解 Z7 締め 276+1「厳しいよね」",
+   "cut": false,
+   "gain_db": -0.15
+  },
+  {
+   "start": 441.875,
+   "se": "S001",
+   "why": "画像 I08",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 450.35,
+   "se": "S001",
+   "why": "図解 Z4 出だし 289「その方が」澤さんの名札",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 451.084,
+   "se": "S002",
+   "why": "図解 Z4 289「セキュリティの本質」見出し",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 453.586,
+   "se": "S002",
+   "why": "図解 Z4 290「取られることは」1つ目の箱",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 455.689,
+   "se": "S002",
+   "why": "図解 Z4 291「取られた時に」2つ目の箱",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 457.657,
+   "se": "S002",
+   "why": "図解 Z4 291+1「想定」まで想定",
+   "cut": true,
+   "gain_db": -3.33
+  },
+  {
+   "start": 458.658,
+   "se": "S002",
+   "why": "図解 Z4 291+1「取られても」3つ目の箱",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 460.126,
+   "se": "S003",
+   "why": "図解 Z4 291+1「しておけ」締めの一言",
+   "cut": false,
+   "gain_db": -6.62
+  },
+  {
+   "start": 461.728,
+   "se": "S001",
+   "why": "図解 Z4 293「さっき言った」情報の札の列",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 462.996,
+   "se": "S002",
+   "why": "図解 Z4 293「流出する」メアドが攻撃する側へ",
+   "cut": true,
+   "gain_db": -3.33
+  },
+  {
+   "start": 463.93,
+   "se": "S002",
+   "why": "図解 Z4 294「半分ブロックできてる」メーター",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 466.299,
+   "se": "S002",
+   "why": "図解 Z4 295「意味ないもん」吹き出し",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 469.936,
+   "se": "S011",
+   "why": "図解 Z4 296「ぶつ切りに」包丁で切る",
+   "cut": false,
+   "gain_db": -2.16
+  },
+  {
+   "start": 471.971,
+   "se": "S001",
+   "why": "図解 Z5 出だし 299「家の鍵もさ」鍵",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 473.239,
+   "se": "S002",
+   "why": "図解 Z5 299「拾っても」攻撃する側",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 474.407,
+   "se": "S002",
+   "why": "図解 Z5 300「どこの家の鍵か」家が3軒・？",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 475.508,
+   "se": "S012",
+   "why": "図解 Z5 300「意味ないやん」",
+   "cut": false,
+   "gain_db": -2.78
+  },
+  {
+   "start": 477.344,
+   "se": "S002",
+   "why": "図解 Z5 302+1「住所とか」住所の札が付く",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 478.411,
+   "se": "S011",
+   "why": "図解 Z5 302+1「詰むわけよ」",
+   "cut": false,
+   "gain_db": -2.16
+  },
+  {
+   "start": 479.446,
+   "se": "S002",
+   "why": "図解 Z5 304「この鍵だけあればいけるじゃん」吹き出し",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 482.649,
+   "se": "S006",
+   "why": "図解 Z5 305+1「しとかない」バツ",
+   "cut": false,
+   "gain_db": -0.15
+  },
+  {
+   "start": 483.917,
+   "se": "S001",
+   "why": "図解 Z5 305+2「鍵と」左の箱へ",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 484.851,
+   "se": "S002",
+   "why": "図解 Z5 305+2「分ける」切れ目",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 485.986,
+   "se": "S002",
+   "why": "図解 Z5 305+2「ポコポコ」",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 489.789,
+   "se": "S002",
+   "why": "図解 Z5 309+1「鍵を大事にする」錠前",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 491.224,
+   "se": "S002",
+   "why": "図解 Z5 311「住所を大事にする」錠前",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 492.559,
+   "se": "S001",
+   "why": "図解 Z5 312「盗まれない」①",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 494.361,
+   "se": "S002",
+   "why": "図解 Z5 313「盗まれても使えない」②",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 496.963,
+   "se": "S003",
+   "why": "図解 Z5 314「二段構え」締め",
+   "cut": false,
+   "gain_db": -6.62
+  },
+  {
+   "start": 501.301,
+   "se": "S010",
+   "why": "強調 317",
+   "cut": false,
+   "gain_db": -5.64
+  },
+  {
+   "start": 504.571,
+   "se": "S005",
+   "why": "ボード 319",
+   "cut": false,
+   "gain_db": -8.0
+  },
+  {
+   "start": 515.849,
+   "se": "S012",
+   "why": "強調 326+1",
+   "cut": false,
+   "gain_db": -2.78
+  },
+  {
+   "start": 527.127,
+   "se": "S001",
+   "why": "画像 I09",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 531.231,
+   "se": "S001",
+   "why": "画像 I10",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 539.672,
+   "se": "S013",
+   "why": "強調 341",
+   "cut": false,
+   "gain_db": -4.75
+  },
+  {
+   "start": 546.746,
+   "se": "S010",
+   "why": "説明 349",
+   "cut": false,
+   "gain_db": -5.64
+  },
+  {
+   "start": 560.36,
+   "se": "S001",
+   "why": "強調 354",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 569.836,
+   "se": "S001",
+   "why": "SEのみ 362",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 576.376,
+   "se": "S001",
+   "why": "問い 364",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 584.05,
+   "se": "S001",
+   "why": "強調 367",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 591.624,
+   "se": "S001",
+   "why": "図解 Z6 出だし 388「でも いずれも」見出し「弱点は ？」",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 593.126,
+   "se": "S011",
+   "why": "図解 Z6 388「人間なんだよ」",
+   "cut": false,
+   "gain_db": -2.16
+  },
+  {
+   "start": 594.894,
+   "se": "S002",
+   "why": "図解 Z6 389「今回の情報漏洩」",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 596.262,
+   "se": "S002",
+   "why": "図解 Z6 389「どういう流れか」",
+   "cut": true,
+   "gain_db": -3.33
+  },
+  {
+   "start": 597.163,
+   "se": "S002",
+   "why": "図解 Z6 390「従業員から」会社と従業員",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 598.665,
+   "se": "S002",
+   "why": "図解 Z6 390「漏れてる」書類が漏れ出す",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 600.2,
+   "se": "S002",
+   "why": "図解 Z6 392「だから従業員」黄色の輪",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 601.668,
+   "se": "S001",
+   "why": "図解 Z6 394「創太くんのパソコンが」パソコン・創太くん",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 603.002,
+   "se": "S002",
+   "why": "図解 Z6 394「ハッキングされる」攻撃する側・矢印",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 604.671,
+   "se": "S002",
+   "why": "図解 Z6 395「OKしちゃってる」ポチッ",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 607.307,
+   "se": "S002",
+   "why": "図解 Z6 396「侵入して」画面が赤く",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 610.844,
+   "se": "S002",
+   "why": "図解 Z6 397「俺が」三上さん",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 614.18,
+   "se": "S002",
+   "why": "図解 Z6 398「何か入れた時に」書類が中へ",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 615.415,
+   "se": "S006",
+   "why": "図解 Z6 399「持ってかれる」",
+   "cut": false,
+   "gain_db": -0.15
+  },
+  {
+   "start": 620.053,
+   "se": "S002",
+   "why": "図解 Z6 402「人間がいる限り」人に黄色の輪",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 622.355,
+   "se": "S011",
+   "why": "図解 Z6 402「なくせない」",
+   "cut": false,
+   "gain_db": -2.16
+  },
+  {
+   "start": 624.491,
+   "se": "S003",
+   "why": "図解 Z6 404「すごく難しい戦い」締め",
+   "cut": false,
+   "gain_db": -6.62
+  },
+  {
+   "start": 626.259,
+   "se": "S019",
+   "why": "画像 I11",
+   "cut": false,
+   "gain_db": -2.07
+  },
+  {
+   "start": 633.333,
+   "se": "S019",
+   "why": "画像 I12",
+   "cut": false,
+   "gain_db": -2.07
+  },
+  {
+   "start": 644.144,
+   "se": "S012",
+   "why": "強調 418",
+   "cut": false,
+   "gain_db": -2.78
+  },
+  {
+   "start": 655.121,
+   "se": "S008",
+   "why": "強調 424",
+   "cut": false,
+   "gain_db": -2.22
+  },
+  {
+   "start": 662.829,
+   "se": "S019",
+   "why": "SEのみ 429",
+   "cut": false,
+   "gain_db": -2.07
+  },
+  {
+   "start": 666.733,
+   "se": "S022",
+   "why": "強調 432",
+   "cut": false,
+   "gain_db": -2.03
+  },
+  {
+   "start": 668.868,
+   "se": "S001",
+   "why": "問い 433",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 684.117,
+   "se": "S012",
+   "why": "強調 443",
+   "cut": false,
+   "gain_db": -2.78
+  },
+  {
+   "start": 695.562,
+   "se": "S001",
+   "why": "強調 447",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 702.702,
+   "se": "S001",
+   "why": "問い 449",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 719.819,
+   "se": "S001",
+   "why": "強調 458+1",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 733.132,
+   "se": "S013",
+   "why": "強調 469",
+   "cut": false,
+   "gain_db": -4.75
+  },
+  {
+   "start": 741.341,
+   "se": "S010",
+   "why": "説明 474",
+   "cut": false,
+   "gain_db": -5.64
+  },
+  {
+   "start": 745.211,
+   "se": "S010",
+   "why": "説明 476",
+   "cut": false,
+   "gain_db": -5.64
+  },
+  {
+   "start": 752.518,
+   "se": "S001",
+   "why": "図解 Z8 出だし 489「AI使っちゃいけません」上場会社とルールの紙",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 755.088,
+   "se": "S002",
+   "why": "図解 Z8 490「までは ない」に線",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 756.456,
+   "se": "S002",
+   "why": "図解 Z8 491「使うなら」",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 757.991,
+   "se": "S001",
+   "why": "図解 Z8 491「東証に申請」東証",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 758.658,
+   "se": "S002",
+   "why": "図解 Z8 491「申請」会社から東証への道と申請書",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 760.793,
+   "se": "S002",
+   "why": "図解 Z8 495「なぜなら」",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 761.861,
+   "se": "S002",
+   "why": "図解 Z8 495「ハッキング」",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 764.464,
+   "se": "S002",
+   "why": "図解 Z8 496「情報漏洩のリスク」",
+   "cut": false,
+   "gain_db": -3.33
+  },
+  {
+   "start": 768.201,
+   "se": "S001",
+   "why": "図解 Z8 498「AIの申請してる間に」砂時計・申請書がじわじわ",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 770.103,
+   "se": "S011",
+   "why": "図解 Z8 498「ハッキングされる」攻撃者が会社を突く",
+   "cut": false,
+   "gain_db": -2.16
+  },
+  {
+   "start": 771.504,
+   "se": "S006",
+   "why": "図解 Z8 締め 500「ルールがやばい」紙に赤枠",
+   "cut": false,
+   "gain_db": -0.15
+  },
+  {
+   "start": 773.773,
+   "se": "S003",
+   "why": "ボード 502",
+   "cut": false,
+   "gain_db": -6.62
+  },
+  {
+   "start": 787.12,
+   "se": "S001",
+   "why": "SEのみ 509@ハッキング",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 793.426,
+   "se": "S013",
+   "why": "強調 514",
+   "cut": false,
+   "gain_db": -4.75
+  },
+  {
+   "start": 803.369,
+   "se": "S024",
+   "why": "強調 518",
+   "cut": false,
+   "gain_db": 2.8
+  },
+  {
+   "start": 814.047,
+   "se": "S006",
+   "why": "強調 524",
+   "cut": false,
+   "gain_db": -0.15
+  },
+  {
+   "start": 818.584,
+   "se": "S008",
+   "why": "強調 527",
+   "cut": false,
+   "gain_db": -2.22
+  },
+  {
+   "start": 819.652,
+   "se": "S003",
+   "why": "ボード 532",
+   "cut": false,
+   "gain_db": -6.62
+  },
+  {
+   "start": 838.104,
+   "se": "S010",
+   "why": "強調 548",
+   "cut": false,
+   "gain_db": -5.64
+  },
+  {
+   "start": 843.342,
+   "se": "S005",
+   "why": "ボード 554",
+   "cut": false,
+   "gain_db": -8.0
+  },
+  {
+   "start": 853.086,
+   "se": "S001",
+   "why": "強調 571",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 862.261,
+   "se": "S022",
+   "why": "強調 576",
+   "cut": false,
+   "gain_db": -2.03
+  },
+  {
+   "start": 866.966,
+   "se": "S020",
+   "why": "画像 I14",
+   "cut": false,
+   "gain_db": -3.11
+  },
+  {
+   "start": 876.109,
+   "se": "S001",
+   "why": "画像 I15",
+   "cut": false,
+   "gain_db": -10.81
+  },
+  {
+   "start": 890.423,
+   "se": "S010",
+   "why": "強調 591",
+   "cut": false,
+   "gain_db": -5.64
+  },
+  {
+   "start": 893.526,
+   "se": "S005",
+   "why": "ボード 593",
+   "cut": false,
+   "gain_db": -8.0
+  }
+ ],
+ "zooms": [
+  {
+   "start": 29.263,
+   "end": 30.53,
+   "scale": 78.0,
+   "pos": [
+    0.5,
+    0.5
+   ],
+   "clips": 2,
+   "why": "字幕5+1 引き78"
+  },
+  {
+   "start": 86.253,
+   "end": 89.79,
+   "scale": 120.0,
+   "pos": [
+    0.5119,
+    0.6
+   ],
+   "clips": 2,
+   "why": "字幕49+1 寄り120"
+  },
+  {
+   "start": 93.827,
+   "end": 95.095,
+   "scale": 78.0,
+   "pos": [
+    0.5,
+    0.5
+   ],
+   "clips": 2,
+   "why": "字幕53 引き78"
+  },
+  {
+   "start": 123.657,
+   "end": 125.626,
+   "scale": 150.0,
+   "pos": [
+    0.443,
+    0.6792
+   ],
+   "clips": 2,
+   "why": "字幕90 強い寄り150"
+  },
+  {
+   "start": 137.537,
+   "end": 138.805,
+   "scale": 78.0,
+   "pos": [
+    0.5,
+    0.5
+   ],
+   "clips": 3,
+   "why": "字幕100 引き78"
+  },
+  {
+   "start": 144.244,
+   "end": 149.75,
+   "scale": 120.0,
+   "pos": [
+    0.495,
+    0.5678
+   ],
+   "clips": 2,
+   "why": "字幕103 寄り120（寄りだけ）"
+  },
+  {
+   "start": 224.357,
+   "end": 225.392,
+   "scale": 78.0,
+   "pos": [
+    0.5,
+    0.5
+   ],
+   "clips": 2,
+   "why": "字幕139 引き78"
+  },
+  {
+   "start": 249.483,
+   "end": 254.221,
+   "scale": 125.0,
+   "pos": [
+    0.5038,
+    0.562
+   ],
+   "clips": 5,
+   "why": "字幕157 寄り125"
+  },
+  {
+   "start": 291.625,
+   "end": 294.895,
+   "scale": 78.0,
+   "pos": [
+    0.5,
+    0.5
+   ],
+   "clips": 4,
+   "why": "字幕183 引き78"
+  },
+  {
+   "start": 335.535,
+   "end": 338.672,
+   "scale": 120.0,
+   "pos": [
+    0.4588,
+    0.5589
+   ],
+   "clips": 2,
+   "why": "字幕224 寄り120（寄りだけ）"
+  },
+  {
+   "start": 345.579,
+   "end": 346.279,
+   "scale": 125.0,
+   "pos": [
+    0.479,
+    0.6037
+   ],
+   "clips": 2,
+   "why": "字幕231 寄り125"
+  },
+  {
+   "start": 396.63,
+   "end": 397.864,
+   "scale": 78.0,
+   "pos": [
+    0.5,
+    0.5
+   ],
+   "clips": 1,
+   "why": "字幕260 引き78"
+  },
+  {
+   "start": 542.375,
+   "end": 546.813,
+   "scale": 130.0,
+   "pos": [
+    0.5486,
+    0.5986
+   ],
+   "clips": 2,
+   "why": "字幕342 寄り130（寄りだけ）"
+  },
+  {
+   "start": 655.121,
+   "end": 659.359,
+   "scale": 78.0,
+   "pos": [
+    0.5,
+    0.5
+   ],
+   "clips": 4,
+   "why": "字幕424 引き78"
+  },
+  {
+   "start": 666.733,
+   "end": 669.002,
+   "scale": 125.0,
+   "pos": [
+    0.5129,
+    0.5898
+   ],
+   "clips": 3,
+   "why": "字幕432 寄り125"
+  },
+  {
+   "start": 733.199,
+   "end": 735.535,
+   "scale": 130.0,
+   "pos": [
+    0.5019,
+    0.5396
+   ],
+   "clips": 1,
+   "why": "字幕469 寄り130"
+  },
+  {
+   "start": 793.426,
+   "end": 795.962,
+   "scale": 125.0,
+   "pos": [
+    0.4992,
+    0.569
+   ],
+   "clips": 3,
+   "why": "字幕514 寄り125"
+  },
+  {
+   "start": 803.369,
+   "end": 805.905,
+   "scale": 78.0,
+   "pos": [
+    0.5,
+    0.5
+   ],
+   "clips": 1,
+   "why": "字幕518 引き78"
+  },
+  {
+   "start": 814.047,
+   "end": 815.882,
+   "scale": 125.0,
+   "pos": [
+    0.5109,
+    0.5632
+   ],
+   "clips": 2,
+   "why": "字幕524 寄り125"
+  },
+  {
+   "start": 818.584,
+   "end": 819.719,
+   "scale": 78.0,
+   "pos": [
+    0.5,
+    0.5
+   ],
+   "clips": 2,
+   "why": "字幕527 引き78"
+  },
+  {
+   "start": 862.295,
+   "end": 863.162,
+   "scale": 130.0,
+   "pos": [
+    0.5121,
+    0.5529
+   ],
+   "clips": 1,
+   "why": "字幕576 寄り130"
+  }
+ ],
+ "bgm": {
+  "main_gain_db": -1.0,
+  "voice_gain_db": -1.0,
+  "stops": [
+   [
+    29.263,
+    30.53
+   ],
+   [
+    46.28,
+    48.382
+   ],
+   [
+    93.827,
+    95.095
+   ],
+   [
+    123.657,
+    125.626
+   ],
+   [
+    137.537,
+    138.805
+   ],
+   [
+    224.357,
+    225.392
+   ],
+   [
+    291.625,
+    294.895
+   ],
+   [
+    396.63,
+    397.864
+   ],
+   [
+    655.121,
+    659.359
+   ],
+   [
+    803.369,
+    805.905
+   ],
+   [
+    818.584,
+    819.719
+   ]
+  ],
+  "muted": 11
+ },
+ "titles": [
+  {
+   "kind": "シリーズ名",
+   "text": "AI時代のセキュリティ",
+   "clips": 43,
+   "width_px": 690
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "情報漏洩どう感じる？",
+   "from": "3",
+   "clips": 2,
+   "width_px": 455
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "フィッシング詐欺の被害",
+   "from": "13",
+   "clips": 6,
+   "width_px": 500
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "地震はサイバー攻撃？",
+   "from": "73",
+   "clips": 5,
+   "width_px": 455
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "漏れたら何がヤバい？",
+   "from": "103",
+   "clips": 1,
+   "width_px": 455
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "古いシステムは限界",
+   "from": "134+1",
+   "clips": 2,
+   "width_px": 410
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "セキュリティのジレンマ",
+   "from": "142",
+   "clips": 2,
+   "width_px": 500
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "大手にも攻撃できる？",
+   "from": "180",
+   "clips": 2,
+   "width_px": 455
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "攻撃する側が有利？",
+   "from": "214",
+   "clips": 2,
+   "width_px": 410
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "どう守ってる？",
+   "from": "230",
+   "clips": 2,
+   "width_px": 318
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "大手でもやられる",
+   "from": "257",
+   "clips": 3,
+   "width_px": 364
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "セキュリティの本質",
+   "from": "284",
+   "clips": 2,
+   "width_px": 410
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "ワンタイムパスで助かった",
+   "from": "325",
+   "clips": 3,
+   "width_px": 546
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "AI任せは怖い？",
+   "from": "353",
+   "clips": 1,
+   "width_px": 334
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "これからどんな未来？",
+   "from": "362",
+   "clips": 1,
+   "width_px": 455
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "弱点は人間",
+   "from": "388",
+   "clips": 3,
+   "width_px": 228
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "核もハッキング？",
+   "from": "433",
+   "clips": 2,
+   "width_px": 364
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "大企業でもやられる？",
+   "from": "449",
+   "clips": 2,
+   "width_px": 455
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "世界のルールは変わった",
+   "from": "502",
+   "clips": 1,
+   "width_px": 500
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "変化に適応できるか",
+   "from": "515",
+   "clips": 4,
+   "width_px": 410
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "チェックリストの受け取り方",
+   "from": "546+1",
+   "clips": 1,
+   "width_px": 592
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "ピンチはチャンス",
+   "from": "571",
+   "clips": 2,
+   "width_px": 364
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "認定パートナー募集",
+   "from": "581",
+   "clips": 3,
+   "width_px": 410
+  }
+ ],
+ "labels": [],
+ "notes": [
+  "強調の文の確認（require_texts）：40件、止まる所なし",
+  "字幕19+1 の引き78：聞き手の字幕なのでズームしない（04 の zoom）",
+  "字幕107：基本テロップ赤を2行にした（'情報漏洩は意外と\\r大ダメージにつながることがあまりない'）",
+  "強調 211：書いた最初の言葉の聞こえ始め（+0.53秒）から出した。前の字幕 210 を延ばした",
+  "強調 227：書いた最初の言葉の聞こえ始め（+0.97秒）から出した。字幕 227 の前置き「だから」だけを前置きの間に出した",
+  "字幕242：基本テロップ赤を2行にした（'守るためには\\r攻撃のやり方を知っておかないといけない'）",
+  "字幕354：基本テロップ赤を2行にした（'何でもかんでもAIがいいならOKって\\rやっとるとちょっと怖い'）",
+  "字幕367：基本テロップ赤を2行にした（'AIでみんなの力が上がる分\\r間違った使い方をすると大ダメージになる'）",
+  "字幕432：ズーム（寄り125）が付くので、聞こえ始め（+0.30秒）まで遅らせず、画角が変わるコマ（字幕の頭）から出した（v005 G1）",
+  "字幕458+1：基本テロップ赤を2行にした（'変化についていけない奴が\\r取り残されてやられるのよ'）",
+  "強調 548：書いた最初の言葉の聞こえ始め（+1.60秒）から出した。字幕 548 の前置き「なのでそれこそ」だけを前置きの間に出した",
+  "強調 591：書いた最初の言葉の聞こえ始め（+0.60秒）から出した。字幕 591 の前置き「そういう方は」だけを前置きの間に出した",
+  "字幕571：基本テロップ赤を2行にした（'環境変わるってことは\\r下剋上チャンス'）",
+  "強調 571：書いた最初の言葉の聞こえ始め（+0.33秒）から出した。前の字幕 564 を延ばした",
+  "説明 317：3.4秒しか出せない（31字、1秒9字）",
+  "説明 474：3.9秒しか出せない（33字、1秒9字）",
+  "問い 3：画面の90%に収まるよう文字を 89% にした",
+  "問い 101：画面の90%に収まるよう文字を 98% にした",
+  "問い 180：画面の90%に収まるよう文字を 94% にした",
+  "問い 214：画面の90%に収まるよう文字を 89% にした",
+  "問い 234：画面の90%に収まるよう文字を 81% にした",
+  "問い 364：画面の90%に収まるよう文字を 89% にした",
+  "問い 433：画面の90%に収まるよう文字を 86% にした",
+  "問い 449：画面の90%に収まるよう文字を 85% にした",
+  "カメラ直接のズームの部品の手本：V16 のクリップのモーション",
+  "SE の開始が同じ（346.28秒 問い 234 と 画像 I07）。画像 I07 の音は置かない",
+  "SE の開始が同じ（527.13秒 画像 I09 と 説明 335）。説明 335 の音は置かない",
+  "SE の開始が同じ（684.12秒 強調 443 と 画像 I13）。画像 I13 の音は置かない",
+  "[11] 画像 I01（71.97〜78.81）の間は右上タイトルを出さない",
+  "[11] 画像 I02（54.65〜58.16）の間は右上タイトルを出さない",
+  "[11] 画像 I03（81.85〜85.15）の間は右上タイトルを出さない",
+  "[11] 画像 I04（104.87〜109.11）の間は右上タイトルを出さない",
+  "[11] 画像 I05（132.97〜137.54）の間は右上タイトルを出さない",
+  "[11] 画像 I06（245.65〜249.48）の間は右上タイトルを出さない",
+  "[11] 画像 I07（346.28〜351.68）の間は右上タイトルを出さない",
+  "[11] 画像 I08（441.87〜448.35）の間は右上タイトルを出さない",
+  "[11] 画像 I09（527.13〜531.23）の間は右上タイトルを出さない",
+  "[11] 画像 I10（531.23〜539.67）の間は右上タイトルを出さない",
+  "[11] 画像 I11（626.26〜629.33）の間は右上タイトルを出さない",
+  "[11] 画像 I12（633.33〜636.20）の間は右上タイトルを出さない",
+  "[11] 画像 I13（684.12〜688.19）の間は右上タイトルを出さない",
+  "[11] 画像 I14（866.97〜870.84）の間は右上タイトルを出さない",
+  "[11] 画像 I15（876.11〜878.64）の間は右上タイトルを出さない",
+  "[11] 画像 I16（100.13〜102.57）の間は右上タイトルを出さない",
+  "[11] 画像 I17（113.45〜123.66）の間は右上タイトルを出さない",
+  "話題タイトル「チェックリストの受け取り方」はカメラの区間が無いので出ない",
+  "[40] 図解・画像の幕の下・終わりの5コマのつなぎ 89 か所には、字幕・強調・右上タイトル・札・ボードを寄せない"
+ ],
+ "screen_lead": [],
+ "zoom_only": [
+  {
+   "id": "103",
+   "zoom": "寄り120",
+   "start": 144.244,
+   "end": 149.75,
+   "reason": "2回目の問いの答えの入り（いや でもね もうこれね いたしかたなくて）。15秒の空き 2:29〜2:48（メインの AI 2026-10-17）"
+  },
+  {
+   "id": "342",
+   "zoom": "寄り130",
+   "start": 542.375,
+   "end": 546.813,
+   "reason": "創太くんの「口座ゼロ」（341 の強調。聞き手なのでズームなし）への三上さんの驚き笑いの顔（コマ 784.5 で大きく笑っている）"
+  },
+  {
+   "id": "224",
+   "zoom": "寄り120",
+   "start": 335.535,
+   "end": 338.672,
+   "reason": "包丁のたとえ「オラーって包丁出して刺されたら」（顔と声が一番動く所）。22.5秒何も起きない所の見直し（確かめ係2回目 A7。メインの AI 2026-10-17）"
+  }
+ ],
+ "notes_added": [
+  {
+   "id": "13",
+   "text": "※フィッシング詐欺…本物そっくりのメールやサイトで\rお金や情報をだまし取る詐欺",
+   "type": "T132",
+   "start": 41.141,
+   "end": 46.079,
+   "reason": "初心者がつまずく言葉（初出）"
+  },
+  {
+   "id": "142",
+   "text": "※ジレンマ…どっちを選んでも困ってしまう状態",
+   "type": "T132",
+   "start": 230.063,
+   "end": 232.899,
+   "reason": "話題の言葉（初出）。中身は Z2 の図解で見せる"
+  },
+  {
+   "id": "197+1",
+   "text": "※オープンソースのモデル…中身が公開されていて\r誰でも使えるAI",
+   "type": "T132",
+   "start": 303.303,
+   "end": 307.607,
+   "reason": "初心者がつまずく言葉（意味だけ。手順は書かない）"
+  },
+  {
+   "id": "205",
+   "text": "※海賊版…不正にコピー・改造された物",
+   "type": "T132",
+   "start": 307.607,
+   "end": 310.577,
+   "reason": "初心者がつまずく言葉（意味だけ。手順は書かない）"
+  },
+  {
+   "id": "237",
+   "text": "※Addness…アドネス株式会社が作っている\r目標やタスクを管理するサービス",
+   "type": "T132",
+   "start": 353.82,
+   "end": 358.758,
+   "reason": "自社サービスが何か分からない（p01_main_fixes「※の説明と画像で補う」）。234 は問いの札（234〜236）とロゴの画像が重なるので、札が消えた直後の答え 237 へ移した（検査係）"
+  },
+  {
+   "id": "317",
+   "text": "※セキュリティポリシー…会社が情報を守るために\r決めているルール",
+   "type": "T132",
+   "start": 501.301,
+   "end": 504.671,
+   "reason": "初心者が知らない言葉（初めて出る）。同じ字幕の強調（P14 決定）と重なるので SE なし。強調の上へ 40px 上げる（確かめ係1回目 B5）"
+  },
+  {
+   "id": "326+1",
+   "text": "※リスク許容度…損や危険を\rどこまで受け入れられるか",
+   "type": "T132",
+   "start": 515.849,
+   "end": 523.356,
+   "reason": "初心者が知らない言葉。同じ字幕の強調（ポカン）と重なるので SE なし。大きい強調の下に2行目が隠れたので 110px 上げる（確かめ係1回目 A4・B7）"
+  },
+  {
+   "id": "335",
+   "text": "※ワンタイムパス…ログインや支払いの時に届く\r1回だけ使える番号（ワンタイムパスワード）",
+   "type": "T132",
+   "start": 527.127,
+   "end": 532.699,
+   "reason": "初めて出る言葉（この後 340+1・341 の話の鍵）"
+  },
+  {
+   "id": "349",
+   "text": "※リテラシー…情報を正しく理解して\r使いこなす力",
+   "type": "T132",
+   "start": 546.813,
+   "end": 549.783,
+   "reason": "初心者が知らない言葉"
+  },
+  {
+   "id": "474",
+   "text": "※上場会社…東京証券取引所（東証）などで\r株が売り買いされている会社",
+   "type": "T132",
+   "start": 741.341,
+   "end": 745.211,
+   "reason": "初心者が知らない言葉。476 の「東証」もここで分かるようにした"
+  },
+  {
+   "id": "476",
+   "text": "※ガバナンス…会社を正しく運営するための\r決まりや仕組み",
+   "type": "T132",
+   "start": 745.211,
+   "end": 749.749,
+   "reason": "初心者が知らない言葉"
+  }
+ ],
+ "ai_talk": [],
+ "roleplay": [
+  {
+   "lines": [
+    [
+     "21",
+     "こいつカモやー",
+     "E003"
+    ]
+   ],
+   "start": 51.818,
+   "end": 53.32,
+   "reason": "詐欺の側になりきって言う（0:50 のコマで大きく口を開けて演じている）"
+  },
+  {
+   "lines": [
+    [
+     "80",
+     "止めて止めて みんなー",
+     "E003"
+    ]
+   ],
+   "start": 111.111,
+   "end": 113.447,
+   "reason": "鳴り続けるスマホへの昼ごはんの時の自分の心の声（地震速報の話）"
+  },
+  {
+   "lines": [
+    [
+     "413",
+     "はぁ〜 1015 1015",
+     "E003"
+    ]
+   ],
+   "start": 636.202,
+   "end": 639.038,
+   "reason": "三上さんが人間軍の仲間になりきって、トイレに行きながらパスワードをつぶやく所（アホなふり。コマ 958 で横を向いて演じている）。「みたいな」は語りなので外した"
+  }
+ ],
+ "plate_pos": [
+  {
+   "text": "　      Q:最近 情報漏洩やサイバー攻撃が\rひどくなってきてる 三上さんはどう感じてる？",
+   "left": 96.0,
+   "box_w": 1728.0,
+   "cy": 998.0,
+   "scale": 0.892
+  },
+  {
+   "text": "  Q:サイバー攻撃が普通に不安すぎるので\rその辺 三上さんはどう感じてるんですか？",
+   "left": 96.0,
+   "box_w": 1728.0,
+   "cy": 998.0,
+   "scale": 0.985
+  },
+  {
+   "text": "Q:やろうと思ったらできるって言いましたが\r　  大手とかに対してもできるんですか？",
+   "left": 96.0,
+   "box_w": 1728.0,
+   "cy": 998.0,
+   "scale": 0.938
+  },
+  {
+   "text": "Q:攻撃されて初めて守る穴を見つけられるから\r　　  攻撃する側の方が有利なんですか？",
+   "left": 96.0,
+   "box_w": 1728.0,
+   "cy": 998.0,
+   "scale": 0.894
+  },
+  {
+   "text": " Q:三上さんは 守り方も\r一応知ってるんですか？",
+   "left": 457.2,
+   "box_w": 1005.6,
+   "cy": 998.0,
+   "scale": 1.0
+  },
+  {
+   "text": "Q:僕らのAddnessも 人々のデータを持ってますが\r　そこに対しても 全力でやりきってるんですか？",
+   "left": 96.0,
+   "box_w": 1728.0,
+   "cy": 998.0,
+   "scale": 0.81
+  },
+  {
+   "text": "　 Q:三上さん的に こういうサイバー攻撃が\r行われていった先に どんな未来が来ると思う？",
+   "left": 96.0,
+   "box_w": 1728.0,
+   "cy": 998.0,
+   "scale": 0.892
+  },
+  {
+   "text": " Q:ハッキングがめっちゃ簡単になってきた先に\r核爆弾もワンポチで飛ばせそうじゃないですか？",
+   "left": 96.0,
+   "box_w": 1728.0,
+   "cy": 998.0,
+   "scale": 0.865
+  },
+  {
+   "text": "　　      Q:大企業でも 情報漏洩が起きた\r偉いとか関係なく 守りは弱いんじゃないですか？",
+   "left": 96.0,
+   "box_w": 1728.0,
+   "cy": 998.0,
+   "scale": 0.852
+  }
+ ],
+ "plates": [
+  {
+   "kind": "問い",
+   "items": [
+    [
+     "3",
+     "Q:最近 情報漏洩やサイバー攻撃が／ひどくなってきてる 三上さんはどう感じてる？",
+     23.59
+    ]
+   ],
+   "end": 29.263,
+   "reason": "動画の最初の問い（2〜4）。とか・だから は削り、条件と主語を残した"
+  },
+  {
+   "kind": "問い",
+   "items": [
+    [
+     "101",
+     "Q:サイバー攻撃が普通に不安すぎるので／その辺 三上さんはどう感じてるんですか？",
+     138.805
+    ]
+   ],
+   "end": 144.244,
+   "reason": "地震の話から本題（103〜）へ戻す問い。サイバー攻撃は 92 から補った（同じ問いが 3 にもある）"
+  },
+  {
+   "kind": "問い",
+   "items": [
+    [
+     "180",
+     "Q:やろうと思ったらできるって言いましたが／大手とかに対してもできるんですか？",
+     288.054
+    ]
+   ],
+   "end": 291.625,
+   "reason": "8〜9 の冗談を受けて攻撃の話へ進める問い（さっき は削った）"
+  },
+  {
+   "kind": "問い",
+   "items": [
+    [
+     "214",
+     "Q:攻撃されて初めて守る穴を見つけられるから／攻撃する側の方が有利なんですか？",
+     319.319
+    ]
+   ],
+   "end": 334.534,
+   "reason": "214〜221 の長い問いを1つに（理由の条件を残した）"
+  },
+  {
+   "kind": "問い",
+   "items": [
+    [
+     "230",
+     "Q:三上さんは 守り方も／一応知ってるんですか？",
+     343.243
+    ]
+   ],
+   "end": 345.579,
+   "reason": "守り方の話へ進める問い（知ってるは知ってる の重ねは削った）"
+  },
+  {
+   "kind": "問い",
+   "items": [
+    [
+     "234",
+     "Q:僕らのAddnessも 人々のデータを持ってますが／そこに対しても 全力でやりきってるんですか？",
+     346.279
+    ]
+   ],
+   "end": 353.82,
+   "reason": "234〜236 の問いを1つに（主語と条件を残した）"
+  },
+  {
+   "kind": "問い",
+   "items": [
+    [
+     "364",
+     "Q:三上さん的に こういうサイバー攻撃が／行われていった先に どんな未来が来ると思う？",
+     576.476
+    ]
+   ],
+   "end": 580.613,
+   "reason": "話を「これからの未来」へ誘導する問い。条件（こういうのが行われていった先に）と主語（三上さん的に）を残し、「こういうの」は 362〜363 のサイバー攻撃。362〜363 の地震の前提は字幕のまま（2行に入らない）"
+  },
+  {
+   "kind": "問い",
+   "items": [
+    [
+     "433",
+     "Q:ハッキングがめっちゃ簡単になってきた先に／核爆弾もワンポチで飛ばせそうじゃないですか？",
+     669.002
+    ]
+   ],
+   "end": 680.046,
+   "reason": "核のハッキングへ話を進める問い（右上も 433 で変わる）。「とかが」「例えば」「そんなことが起こりそうだなっていう」を削り、434「全部データで」と 436「ハッキングできそう」は1行目の条件にまとめた"
+  },
+  {
+   "kind": "問い",
+   "items": [
+    [
+     "449",
+     "Q:大企業でも 情報漏洩が起きた／偉いとか関係なく 守りは弱いんじゃないですか？",
+     702.802
+    ]
+   ],
+   "end": 717.75,
+   "reason": "創太くんの長い問い（449〜457。17.8秒何も起きなかった。ほかの長い問いと同じく問いの札。言った言葉：449「大企業とかでも情報漏洩起きた」453「偉いとか関係ない」457「（守りが）弱いんじゃないかな」。確かめ係2回目 A6。メインの AI 2026-10-17）"
+  }
+ ],
+ "anim_diagrams": [
+  {
+   "key": "Z1",
+   "title": "1つだけ漏れても しゃーない ↔ セットで漏れると やばい（上下で対比）→ こうならないようにするのがセキュリティ",
+   "start": 187.087,
+   "end": 217.718,
+   "hidden_captions": [
+    "123",
+    "124",
+    "125",
+    "126",
+    "126+1",
+    "127",
+    "128",
+    "129+1",
+    "130",
+    "132",
+    "133"
+   ],
+   "se": 18,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v003/zukai/out/Z1/overlay_r6.mov",
+   "wipe": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v003/zukai/out/Z1/wipe.mp4"
+  },
+  {
+   "key": "Z2",
+   "title": "セキュリティのジレンマ：固めるほど本人も開けられない ↔ 開けやすくすると 鍵のデータを抜いた攻撃者も開けられる",
+   "start": 256.323,
+   "end": 288.054,
+   "hidden_captions": [
+    "165",
+    "166",
+    "168",
+    "169",
+    "170+1",
+    "171",
+    "174",
+    "174+1",
+    "176",
+    "177",
+    "177+1",
+    "179"
+   ],
+   "se": 13,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v003/zukai/out/Z2/overlay_r4.mov",
+   "wipe": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v003/zukai/out/Z2/wipe.mp4"
+  },
+  {
+   "key": "Z3",
+   "title": "守るための穴チェックリスト ＝ 逆に言うと どこ攻撃すればいいかリスト → 脱獄した AI に読み込ませて 片っ端から",
+   "start": 370.704,
+   "end": 391.725,
+   "hidden_captions": [
+    "250",
+    "250+1",
+    "251",
+    "252",
+    "253",
+    "253+1",
+    "254",
+    "254+1"
+   ],
+   "se": 11,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v003/zukai/out/Z3/overlay_r4.mov",
+   "wipe": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v003/zukai/out/Z3/wipe.mp4"
+  },
+  {
+   "key": "Z7",
+   "title": "大企業は AI を使うのに何ヶ月 ↔ 攻撃者はその日のうちに新しいモデル（左右で対比）",
+   "start": 405.438,
+   "end": 428.628,
+   "hidden_captions": [
+    "267",
+    "268",
+    "269",
+    "270",
+    "270+1",
+    "271",
+    "272",
+    "273",
+    "274+1",
+    "275",
+    "276+1"
+   ],
+   "se": 15,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v001/zukai/out/Z7/overlay_r5.mov",
+   "wipe": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v001/zukai/out/Z7/wipe.mp4"
+  },
+  {
+   "key": "Z4",
+   "title": "セキュリティの本質（マイクロソフトの澤さん）：取られても困らないようにしておけ → メアドだけ流出＝半分ブロック → 情報をぶつ切りに",
+   "start": 450.35,
+   "end": 471.971,
+   "hidden_captions": [
+    "289",
+    "290",
+    "291",
+    "291+1",
+    "293",
+    "294",
+    "295",
+    "296"
+   ],
+   "se": 12,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v001/zukai/out/Z4/overlay_r5.mov",
+   "wipe": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v001/zukai/out/Z4/wipe.mp4"
+  },
+  {
+   "key": "Z5",
+   "title": "鍵と住所を分ける＝二段構え（盗まれない・盗まれても使えない）。Z4 の続き",
+   "start": 471.971,
+   "end": 499.265,
+   "hidden_captions": [
+    "299",
+    "300",
+    "302+1",
+    "304",
+    "305+1",
+    "305+2",
+    "308",
+    "309+1",
+    "311",
+    "312",
+    "313",
+    "314",
+    "315"
+   ],
+   "se": 16,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v001/zukai/out/Z5/overlay_r4.mov",
+   "wipe": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v001/zukai/out/Z5/wipe.mp4"
+  },
+  {
+   "key": "Z6",
+   "title": "弱点は人間（情報漏洩の流れ：創太くんのパソコンがハッキングされる → 三上さんが使う → 持ってかれる）",
+   "start": 591.624,
+   "end": 626.259,
+   "hidden_captions": [
+    "388",
+    "389",
+    "390",
+    "392",
+    "394",
+    "395",
+    "396",
+    "397",
+    "398",
+    "399",
+    "401",
+    "402",
+    "404"
+   ],
+   "se": 17,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v003/zukai/out/Z6/overlay_r4.mov",
+   "wipe": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v003/zukai/out/Z6/wipe.mp4"
+  },
+  {
+   "key": "Z8",
+   "title": "AI を使うなら東証に申請 → 申請している間にハッキングされる（流れ）",
+   "start": 752.518,
+   "end": 773.773,
+   "hidden_captions": [
+    "489",
+    "490",
+    "491",
+    "495",
+    "496",
+    "498",
+    "500"
+   ],
+   "se": 11,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v003/zukai/out/Z8/overlay_r4.mov",
+   "wipe": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v003/zukai/out/Z8/wipe.mp4"
+  }
+ ],
+ "images": [
+  {
+   "key": "I01",
+   "title": "スマホに届いた偽の請求メール（イメージ・全体）",
+   "start": 71.972,
+   "end": 78.812,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v004/zukai/out/I01/overlay.mov",
+   "insert": "full",
+   "center": true
+  },
+  {
+   "key": "I02",
+   "title": "狙われるカモ（イメージ・部分）",
+   "start": 54.655,
+   "end": 58.158,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v004/zukai/out/I02/overlay.mov",
+   "insert": "partial",
+   "center": false
+  },
+  {
+   "key": "I03",
+   "title": "止められたクレジットカード（イメージ・部分）",
+   "start": 81.848,
+   "end": 85.152,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v004/zukai/out/I03/overlay.mov",
+   "insert": "partial",
+   "center": false
+  },
+  {
+   "key": "I04",
+   "title": "一斉に鳴るスマホの緊急地震速報（イメージ・全体）",
+   "start": 104.871,
+   "end": 109.109,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v004/zukai/out/I04/overlay.mov",
+   "insert": "full",
+   "center": true
+  },
+  {
+   "key": "I05",
+   "title": "気象庁（ロゴは仮）",
+   "start": 132.966,
+   "end": 137.537,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v001/zukai/out/I05/overlay.mov",
+   "insert": "partial",
+   "center": false
+  },
+  {
+   "key": "I06",
+   "title": "ダイヤル式の金庫（イメージ・部分）",
+   "start": 245.645,
+   "end": 249.483,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v004/zukai/out/I06/overlay.mov",
+   "insert": "partial",
+   "center": false
+  },
+  {
+   "key": "I07",
+   "title": "Addness のロゴ（部分）",
+   "start": 346.279,
+   "end": 351.685,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v001/zukai/out/I07/overlay.mov",
+   "insert": "partial",
+   "center": false
+  },
+  {
+   "key": "I08",
+   "title": "マイクロソフト（ロゴは仮）",
+   "start": 441.875,
+   "end": 448.348,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v004/zukai/out/I08/overlay.mov",
+   "insert": "partial",
+   "center": false
+  },
+  {
+   "key": "I09",
+   "title": "スマホに届くワンタイムパスワード（イメージ・部分）",
+   "start": 527.127,
+   "end": 531.231,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v004/zukai/out/I09/overlay.mov",
+   "insert": "partial",
+   "center": false
+  },
+  {
+   "key": "I10",
+   "title": "海外の旅行サイトの請求がずらっと並ぶ明細（イメージ・部分）",
+   "start": 531.231,
+   "end": 539.672,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v004/zukai/out/I10/overlay.mov",
+   "insert": "partial",
+   "center": false
+  },
+  {
+   "key": "I11",
+   "title": "人間の軍団とロボットの軍団（イメージ・全体）",
+   "start": 626.259,
+   "end": 629.329,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v004/zukai/out/I11/overlay.mov",
+   "insert": "full",
+   "center": true
+  },
+  {
+   "key": "I12",
+   "title": "うっかりパスワードをつぶやく人（イメージ・部分）",
+   "start": 633.333,
+   "end": 636.202,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v004/zukai/out/I12/overlay.mov",
+   "insert": "partial",
+   "center": false
+  },
+  {
+   "key": "I13",
+   "title": "大統領が腕を差し込まないと動かない発射装置（イメージ・部分）",
+   "start": 684.117,
+   "end": 688.188,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v004/zukai/out/I13/overlay.mov",
+   "insert": "partial",
+   "center": false
+  },
+  {
+   "key": "I14",
+   "title": "大きな波に乗るサーファー（イメージ・全体）",
+   "start": 866.966,
+   "end": 870.837,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v004/zukai/out/I14/overlay.mov",
+   "insert": "full",
+   "center": true
+  },
+  {
+   "key": "I15",
+   "title": "Addness のロゴ（部分・CTA）",
+   "start": 876.109,
+   "end": 878.644,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v004/zukai/out/I15/overlay.mov",
+   "insert": "partial",
+   "center": false
+  },
+  {
+   "key": "I16",
+   "title": "緊急地震速報の取り消しのニュース（記事の写真・全体）",
+   "start": 100.133,
+   "end": 102.569,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v005/zukai/out/I16/overlay.mov",
+   "insert": "full",
+   "center": true
+  },
+  {
+   "key": "I17",
+   "title": "紙芝居：揺れない → また鳴る → また？ → テレビに取り消し（イメージ・全体）",
+   "start": 113.447,
+   "end": 123.657,
+   "se": 4,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/セキュリティについて/edit/v004/zukai/out/I17/overlay.mov",
+   "insert": "full",
+   "center": true
+  }
+ ],
+ "g1_pieces": [
+  {
+   "at": 29.129,
+   "frames": 4,
+   "from": "100.",
+   "to": "78.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 95.028,
+   "frames": 2,
+   "from": "78.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 125.492,
+   "frames": 4,
+   "from": "150.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 137.471,
+   "frames": 2,
+   "from": "100.",
+   "to": "78.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 138.538,
+   "frames": 8,
+   "from": "78.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 249.416,
+   "frames": 2,
+   "from": "100.",
+   "to": "125.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 254.154,
+   "frames": 2,
+   "from": "125.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 294.795,
+   "frames": 3,
+   "from": "78.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 335.468,
+   "frames": 2,
+   "from": "100.",
+   "to": "120.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 346.213,
+   "frames": 2,
+   "from": "125.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 546.746,
+   "frames": 2,
+   "from": "130.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 668.868,
+   "frames": 4,
+   "from": "125.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 733.132,
+   "frames": 2,
+   "from": "100.",
+   "to": "130.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 795.895,
+   "frames": 2,
+   "from": "125.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 819.652,
+   "frames": 2,
+   "from": "78.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 862.261,
+   "frames": 1,
+   "from": "100.",
+   "to": "130.",
+   "how": "カットの直後を後ろの大きさに"
+  }
+ ],
+ "motion_components_added": 54,
+ "titles_dropped": [
+  {
+   "start": 85.152,
+   "end": 86.253,
+   "sec": 1.1,
+   "after": "画像"
+  }
+ ],
+ "g1_aligned": [
+  {
+   "track": "V5",
+   "text": "※リテラシー…情報を正しく理解して／使いこなす力",
+   "from": [
+    546.813,
+    549.783
+   ],
+   "to": [
+    546.746,
+    549.783
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "でもそれで言うても／めっちゃ怖いなって",
+   "from": [
+    95.095,
+    97.197
+   ],
+   "to": [
+    95.028,
+    97.197
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "あれ サイバー攻撃だったら／もしかしてやばいかも",
+   "from": [
+    125.626,
+    128.996
+   ],
+   "to": [
+    125.492,
+    128.996
+   ],
+   "frames": [
+    -4,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "一応 気象庁は サイバー攻撃違います／って言って",
+   "from": [
+    132.966,
+    137.537
+   ],
+   "to": [
+    132.966,
+    137.471
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "そうそうそう 金庫って別にさ／ポポポってやったら",
+   "from": [
+    246.813,
+    249.483
+   ],
+   "to": [
+    246.813,
+    249.416
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "身動き取りづらくなるみたいな？",
+   "from": [
+    254.221,
+    255.322
+   ],
+   "to": [
+    254.154,
+    255.322
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "あれ（攻撃）どうやってやってるか／っていうとね",
+   "from": [
+    294.895,
+    296.563
+   ],
+   "to": [
+    294.795,
+    296.563
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "てか いつだってそうだよね",
+   "from": [
+    334.534,
+    335.535
+   ],
+   "to": [
+    334.534,
+    335.468
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "だってさ この場でさ／オラーって包丁出して刺され",
+   "from": [
+    335.535,
+    338.672
+   ],
+   "to": [
+    335.468,
+    338.672
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "まーじ？ 危なっ／危なかったね よかった",
+   "from": [
+    542.375,
+    546.813
+   ],
+   "to": [
+    542.375,
+    546.746
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "これ見てる人とか／まだリテラシー高くて",
+   "from": [
+    546.813,
+    549.649
+   ],
+   "to": [
+    546.746,
+    549.649
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "もう薙ぎ倒されてくんだろうね",
+   "from": [
+    731.764,
+    733.199
+   ],
+   "to": [
+    731.764,
+    733.132
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "何においても全部そうですよね／ビジネスだろうと",
+   "from": [
+    795.962,
+    799.465
+   ],
+   "to": [
+    795.895,
+    799.465
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "（上に）持っていきたいと／思うのであればチャンス",
+   "from": [
+    860.393,
+    862.295
+   ],
+   "to": [
+    860.393,
+    862.261
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "しょうがないよね",
+   "from": [
+    29.263,
+    30.53
+   ],
+   "to": [
+    29.129,
+    30.53
+   ],
+   "frames": [
+    -4,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "仕方ないね",
+   "from": [
+    93.827,
+    95.095
+   ],
+   "to": [
+    93.827,
+    95.028
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "どういうこと？",
+   "from": [
+    123.657,
+    125.626
+   ],
+   "to": [
+    123.657,
+    125.492
+   ],
+   "frames": [
+    0,
+    -4
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "本当かどうかは知らん",
+   "from": [
+    137.537,
+    138.805
+   ],
+   "to": [
+    137.471,
+    138.538
+   ],
+   "frames": [
+    -2,
+    -8
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "MAXセキュリティなら／開けられん箱に入れてしま",
+   "from": [
+    249.483,
+    254.221
+   ],
+   "to": [
+    249.416,
+    254.154
+   ],
+   "frames": [
+    -2,
+    -2
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "できると思う やるだけだもん",
+   "from": [
+    291.625,
+    294.895
+   ],
+   "to": [
+    291.625,
+    294.795
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "もちろん",
+   "from": [
+    345.579,
+    346.279
+   ],
+   "to": [
+    345.579,
+    346.213
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "俺たちが進化しないと やばい",
+   "from": [
+    666.733,
+    669.002
+   ],
+   "to": [
+    666.733,
+    668.868
+   ],
+   "frames": [
+    0,
+    -4
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "大企業でもやられる／これがポイント",
+   "from": [
+    733.199,
+    735.535
+   ],
+   "to": [
+    733.132,
+    735.535
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "あなたは一刻も早く変わったルールに／追いつけるよ",
+   "from": [
+    793.426,
+    795.962
+   ],
+   "to": [
+    793.426,
+    795.895
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "イカれてるって言われ続けた",
+   "from": [
+    818.584,
+    819.719
+   ],
+   "to": [
+    818.584,
+    819.652
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "ピンチはチャンス",
+   "from": [
+    862.295,
+    863.162
+   ],
+   "to": [
+    862.261,
+    863.162
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    23.59,
+    29.263
+   ],
+   "to": [
+    23.59,
+    29.129
+   ],
+   "frames": [
+    0,
+    -4
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    95.095,
+    100.133
+   ],
+   "to": [
+    95.028,
+    100.133
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    125.626,
+    132.966
+   ],
+   "to": [
+    125.492,
+    132.966
+   ],
+   "frames": [
+    -4,
+    0
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    138.805,
+    144.244
+   ],
+   "to": [
+    138.538,
+    144.244
+   ],
+   "frames": [
+    -8,
+    0
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    254.221,
+    256.323
+   ],
+   "to": [
+    254.154,
+    256.323
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    294.895,
+    335.535
+   ],
+   "to": [
+    294.795,
+    335.468
+   ],
+   "frames": [
+    -3,
+    -2
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    546.813,
+    591.624
+   ],
+   "to": [
+    546.746,
+    591.624
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    669.002,
+    684.117
+   ],
+   "to": [
+    668.868,
+    684.117
+   ],
+   "frames": [
+    -4,
+    0
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    688.188,
+    733.199
+   ],
+   "to": [
+    688.188,
+    733.132
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    795.962,
+    803.369
+   ],
+   "to": [
+    795.895,
+    803.369
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    853.086,
+    862.295
+   ],
+   "to": [
+    853.086,
+    862.261
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "情報漏洩どう感じる？",
+   "from": [
+    23.59,
+    29.263
+   ],
+   "to": [
+    23.59,
+    29.129
+   ],
+   "frames": [
+    0,
+    -4
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "フィッシング詐欺の被害",
+   "from": [
+    95.095,
+    97.197
+   ],
+   "to": [
+    95.028,
+    97.197
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "地震はサイバー攻撃？",
+   "from": [
+    125.626,
+    132.966
+   ],
+   "to": [
+    125.492,
+    132.966
+   ],
+   "frames": [
+    -4,
+    0
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "地震はサイバー攻撃？",
+   "from": [
+    138.805,
+    144.244
+   ],
+   "to": [
+    138.538,
+    144.244
+   ],
+   "frames": [
+    -8,
+    0
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "セキュリティのジレンマ",
+   "from": [
+    254.221,
+    256.323
+   ],
+   "to": [
+    254.154,
+    256.323
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "大手にも攻撃できる？",
+   "from": [
+    294.895,
+    319.319
+   ],
+   "to": [
+    294.795,
+    319.319
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "攻撃する側が有利？",
+   "from": [
+    319.319,
+    335.535
+   ],
+   "to": [
+    319.319,
+    335.468
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "ワンタイムパスで助かった",
+   "from": [
+    546.813,
+    557.724
+   ],
+   "to": [
+    546.746,
+    557.724
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "核もハッキング？",
+   "from": [
+    669.002,
+    684.117
+   ],
+   "to": [
+    668.868,
+    684.117
+   ],
+   "frames": [
+    -4,
+    0
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "大企業でもやられる？",
+   "from": [
+    702.802,
+    733.199
+   ],
+   "to": [
+    702.802,
+    733.132
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "変化に適応できるか",
+   "from": [
+    795.962,
+    803.369
+   ],
+   "to": [
+    795.895,
+    803.369
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "ピンチはチャンス",
+   "from": [
+    853.086,
+    862.295
+   ],
+   "to": [
+    853.086,
+    862.261
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V10",
+   "text": "ポイント力が強い・背が高い・走るのが速いやつでは",
+   "from": [
+    819.719,
+    827.56
+   ],
+   "to": [
+    819.652,
+    827.56
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V12",
+   "text": "　      Q:最近 情報漏洩やサイバー攻撃が",
+   "from": [
+    23.59,
+    29.263
+   ],
+   "to": [
+    23.59,
+    29.129
+   ],
+   "frames": [
+    0,
+    -4
+   ]
+  },
+  {
+   "track": "V12",
+   "text": "  Q:サイバー攻撃が普通に不安すぎるので／その",
+   "from": [
+    138.805,
+    144.244
+   ],
+   "to": [
+    138.538,
+    144.244
+   ],
+   "frames": [
+    -8,
+    0
+   ]
+  },
+  {
+   "track": "V12",
+   "text": "Q:僕らのAddnessも 人々のデータを持って",
+   "from": [
+    346.279,
+    353.82
+   ],
+   "to": [
+    346.213,
+    353.82
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V12",
+   "text": " Q:ハッキングがめっちゃ簡単になってきた先に／",
+   "from": [
+    669.002,
+    680.046
+   ],
+   "to": [
+    668.868,
+    680.046
+   ],
+   "frames": [
+    -4,
+    0
+   ]
+  }
+ ],
+ "cut_aligned": [
+  {
+   "track": "V6",
+   "text": "どうも アドネスの三上です",
+   "from": [
+    19.62,
+    21.655
+   ],
+   "to": [
+    19.586,
+    21.655
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "忙しいからやんないけど わざわざ",
+   "from": [
+    37.738,
+    40.04
+   ],
+   "to": [
+    37.671,
+    40.04
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "俺も暇だったらやるもん",
+   "from": [
+    35.702,
+    37.738
+   ],
+   "to": [
+    35.702,
+    37.671
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "僕それで最近／フィッシング詐欺にあって",
+   "from": [
+    41.141,
+    43.377
+   ],
+   "to": [
+    41.141,
+    43.31
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "持ってかれたの？",
+   "from": [
+    43.377,
+    44.344
+   ],
+   "to": [
+    43.31,
+    44.344
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "持ってかれたの？",
+   "from": [
+    43.31,
+    44.344
+   ],
+   "to": [
+    43.31,
+    44.244
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "持ってかれました",
+   "from": [
+    44.344,
+    45.012
+   ],
+   "to": [
+    44.244,
+    45.012
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "普通に悔しくて",
+   "from": [
+    53.32,
+    54.655
+   ],
+   "to": [
+    53.253,
+    54.655
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "こいつカモやー",
+   "from": [
+    51.818,
+    53.32
+   ],
+   "to": [
+    51.818,
+    53.253
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "情報持ってかれるし",
+   "from": [
+    59.993,
+    61.528
+   ],
+   "to": [
+    59.993,
+    61.461
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "頭弱いやつなんか今後／生きづらくなってくるんじゃ",
+   "from": [
+    61.528,
+    65.032
+   ],
+   "to": [
+    61.461,
+    65.032
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "めっちゃ興奮してて",
+   "from": [
+    68.735,
+    70.203
+   ],
+   "to": [
+    68.735,
+    70.137
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "マジでノールックで",
+   "from": [
+    70.203,
+    71.972
+   ],
+   "to": [
+    70.137,
+    71.972
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "それでカモ認定された",
+   "from": [
+    80.781,
+    81.848
+   ],
+   "to": [
+    80.714,
+    81.848
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "自動編集できるから／何でもいいや",
+   "from": [
+    77.477,
+    80.781
+   ],
+   "to": [
+    77.477,
+    80.714
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "冷静に考えたらそうだな",
+   "from": [
+    89.79,
+    91.391
+   ],
+   "to": [
+    89.79,
+    91.358
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "喜びの方が勝ってて／おかしくなってたんだ",
+   "from": [
+    91.391,
+    93.827
+   ],
+   "to": [
+    91.358,
+    93.827
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "でもそれで言うても／めっちゃ怖いなって",
+   "from": [
+    95.028,
+    97.197
+   ],
+   "to": [
+    95.028,
+    97.13
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "情報漏洩？",
+   "from": [
+    97.197,
+    98.265
+   ],
+   "to": [
+    97.13,
+    98.265
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "あったね 俺さっき昼食ってさ",
+   "from": [
+    102.569,
+    104.871
+   ],
+   "to": [
+    102.569,
+    104.838
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "そしたらさ 地震速報でさ／キューンキューンキュー",
+   "from": [
+    104.871,
+    107.541
+   ],
+   "to": [
+    104.838,
+    107.541
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "で 俺待つとさ",
+   "from": [
+    113.447,
+    114.281
+   ],
+   "to": [
+    113.413,
+    114.281
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "止めて止めて みんなー",
+   "from": [
+    111.712,
+    113.447
+   ],
+   "to": [
+    111.712,
+    113.413
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "（理由が）いくつかあるんだよ",
+   "from": [
+    149.75,
+    150.584
+   ],
+   "to": [
+    149.75,
+    150.517
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "基本的にね そういう情報漏洩って／すごい怖い感じ",
+   "from": [
+    150.584,
+    157.624
+   ],
+   "to": [
+    150.517,
+    157.624
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "っていうので（メアドって）／だいたいそんな雰囲気",
+   "from": [
+    183.684,
+    187.087
+   ],
+   "to": [
+    183.65,
+    187.087
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "この動画見たら 連絡めっちゃ来る",
+   "from": [
+    181.214,
+    183.684
+   ],
+   "to": [
+    181.214,
+    183.65
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "あと 世のね 古いシステムとかって／もう限界だね",
+   "from": [
+    217.718,
+    222.222
+   ],
+   "to": [
+    217.718,
+    222.189
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "普通にだってアップデートできんもん",
+   "from": [
+    222.222,
+    224.357
+   ],
+   "to": [
+    222.189,
+    224.357
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "確かに 攻撃側も進化するからね",
+   "from": [
+    227.794,
+    230.063
+   ],
+   "to": [
+    227.794,
+    230.03
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "だってさ これね／セキュリティってジレンマあって",
+   "from": [
+    230.063,
+    232.299
+   ],
+   "to": [
+    230.03,
+    232.299
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "おもろいのがさ／セキュリティめっちゃ固くするやん",
+   "from": [
+    232.299,
+    235.135
+   ],
+   "to": [
+    232.299,
+    235.102
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "そうすると どうなると思う？",
+   "from": [
+    235.135,
+    236.303
+   ],
+   "to": [
+    235.102,
+    236.303
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "そうすると どうなると思う？",
+   "from": [
+    235.102,
+    236.303
+   ],
+   "to": [
+    235.102,
+    236.236
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "セキュリティめっちゃ固くしたら",
+   "from": [
+    236.303,
+    237.671
+   ],
+   "to": [
+    236.236,
+    237.671
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "絶対に悪用できないとか／できるよ別に",
+   "from": [
+    238.939,
+    240.707
+   ],
+   "to": [
+    238.939,
+    240.674
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "簡単じゃん",
+   "from": [
+    240.707,
+    241.808
+   ],
+   "to": [
+    240.674,
+    241.808
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "これ盗まれたくなかったらさ",
+   "from": [
+    241.808,
+    243.276
+   ],
+   "to": [
+    241.808,
+    243.243
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "セキュリティガチガチに／これ守るとしたらどうする",
+   "from": [
+    243.276,
+    245.645
+   ],
+   "to": [
+    243.243,
+    245.645
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "あれ（攻撃）どうやってやってるか／っていうとね",
+   "from": [
+    294.795,
+    296.563
+   ],
+   "to": [
+    294.795,
+    296.463
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "っていう話をするとやるやついるから",
+   "from": [
+    296.563,
+    298.498
+   ],
+   "to": [
+    296.463,
+    298.498
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "っていう話をするとやるやついるから",
+   "from": [
+    296.463,
+    298.498
+   ],
+   "to": [
+    296.463,
+    298.431
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "やっちゃダメだから／やり方は一応言わんとくけど",
+   "from": [
+    298.498,
+    301.067
+   ],
+   "to": [
+    298.431,
+    301.067
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "やっちゃダメだから／やり方は一応言わんとくけど",
+   "from": [
+    298.431,
+    301.067
+   ],
+   "to": [
+    298.431,
+    301.001
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "若干伏せつつ言うと",
+   "from": [
+    301.067,
+    303.303
+   ],
+   "to": [
+    301.001,
+    303.303
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "某オープンソースの強いモデルって／あるわけですよ",
+   "from": [
+    303.303,
+    307.607
+   ],
+   "to": [
+    303.303,
+    307.574
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "一番強い海賊版のやつ（モデル）を／一個ゴーンって",
+   "from": [
+    307.607,
+    310.577
+   ],
+   "to": [
+    307.574,
+    310.577
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "これで小分けに／パカパカパカパカ命令させて やる",
+   "from": [
+    310.577,
+    314.014
+   ],
+   "to": [
+    310.577,
+    313.947
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "（それで）いけるっていう",
+   "from": [
+    314.014,
+    315.615
+   ],
+   "to": [
+    313.947,
+    315.615
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "もうきついやん",
+   "from": [
+    338.672,
+    339.806
+   ],
+   "to": [
+    338.672,
+    339.706
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "そんなもんよね",
+   "from": [
+    339.806,
+    340.74
+   ],
+   "to": [
+    339.706,
+    340.74
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "そんなもんよね",
+   "from": [
+    339.706,
+    340.74
+   ],
+   "to": [
+    339.706,
+    340.674
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "だから",
+   "from": [
+    340.74,
+    341.708
+   ],
+   "to": [
+    340.674,
+    341.708
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "もちろんもちろん／結構やってるよ ちゃんと",
+   "from": [
+    353.82,
+    355.755
+   ],
+   "to": [
+    353.82,
+    355.722
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "だから／その辺の普通のシステムとかよりは",
+   "from": [
+    355.755,
+    358.024
+   ],
+   "to": [
+    355.722,
+    358.024
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "まあまあでかい大手が／引っかかったじゃないですか",
+   "from": [
+    391.725,
+    394.127
+   ],
+   "to": [
+    391.725,
+    394.094
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "バーガーキングとかね／1000万件とかね",
+   "from": [
+    394.127,
+    396.63
+   ],
+   "to": [
+    394.094,
+    396.63
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "もう（大手でも）こうはなるよね／みんななっとるじ",
+   "from": [
+    399.332,
+    402.068
+   ],
+   "to": [
+    399.332,
+    402.002
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "だって頑張っとるわけよ／バーガーキングもどうせ",
+   "from": [
+    402.068,
+    404.671
+   ],
+   "to": [
+    402.002,
+    404.671
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "守り方の考え方とか",
+   "from": [
+    428.628,
+    430.964
+   ],
+   "to": [
+    428.628,
+    430.864
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "こういう風な流れで攻撃されるんだな／っていう前提",
+   "from": [
+    430.964,
+    434.234
+   ],
+   "to": [
+    430.864,
+    434.234
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "（そのチェックシート）／僕がシンプルに欲しいなっ",
+   "from": [
+    513.046,
+    515.849
+   ],
+   "to": [
+    512.946,
+    515.849
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "今後イカれる（やられる）可能性／めっちゃあるなと",
+   "from": [
+    523.356,
+    527.127
+   ],
+   "to": [
+    523.356,
+    527.06
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "でも今回／ワンタイムパス設定してたんですよ",
+   "from": [
+    527.127,
+    531.231
+   ],
+   "to": [
+    527.06,
+    531.231
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "この辺に対して気にしてる人なのかな／って思うんで",
+   "from": [
+    549.649,
+    552.085
+   ],
+   "to": [
+    549.649,
+    551.985
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "やっぱ僕みたいに何でもかんでも／やっちゃうみたい",
+   "from": [
+    552.085,
+    556.189
+   ],
+   "to": [
+    551.985,
+    556.189
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "やっぱ僕みたいに何でもかんでも／やっちゃうみたい",
+   "from": [
+    551.985,
+    556.189
+   ],
+   "to": [
+    551.985,
+    556.156
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "全然イカれる（やられる）／可能性あるなって",
+   "from": [
+    556.189,
+    557.724
+   ],
+   "to": [
+    556.156,
+    557.724
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "違いない／（AIに）やってみて みたいなね",
+   "from": [
+    568.034,
+    569.869
+   ],
+   "to": [
+    568.034,
+    569.836
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "今回の地震とかも（気象庁は）",
+   "from": [
+    569.869,
+    571.137
+   ],
+   "to": [
+    569.836,
+    571.137
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "その時に",
+   "from": [
+    629.329,
+    630.497
+   ],
+   "to": [
+    629.329,
+    630.43
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "人間の仲間とかが持ってかれて",
+   "from": [
+    630.497,
+    633.333
+   ],
+   "to": [
+    630.43,
+    633.333
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "人間の仲間とかが持ってかれて",
+   "from": [
+    630.43,
+    633.333
+   ],
+   "to": [
+    630.43,
+    633.233
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "こいつがポロって／トイレとか行きながら",
+   "from": [
+    633.333,
+    636.202
+   ],
+   "to": [
+    633.233,
+    636.202
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "パスワード言っちゃうみたいな",
+   "from": [
+    639.038,
+    640.306
+   ],
+   "to": [
+    639.038,
+    640.24
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "（そう）やると詰むっていうので／敗北するとかね",
+   "from": [
+    640.306,
+    644.144
+   ],
+   "to": [
+    640.24,
+    644.144
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "いや 戦いそうじゃん",
+   "from": [
+    646.779,
+    648.114
+   ],
+   "to": [
+    646.779,
+    648.047
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "よくあるターミネーター的な／イメージね",
+   "from": [
+    648.114,
+    651.15
+   ],
+   "to": [
+    648.047,
+    651.15
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "戦ってなったら",
+   "from": [
+    651.15,
+    652.685
+   ],
+   "to": [
+    651.15,
+    652.619
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "だから人間って思うと／脆弱（もろい）だよね",
+   "from": [
+    652.685,
+    655.121
+   ],
+   "to": [
+    652.619,
+    655.121
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "創太くんがもう払ってんだから",
+   "from": [
+    662.829,
+    665.565
+   ],
+   "to": [
+    662.829,
+    665.498
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "難しいんだよね",
+   "from": [
+    665.565,
+    666.733
+   ],
+   "to": [
+    665.498,
+    666.733
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "まあね だから守る側が／どう頑張るかだよね",
+   "from": [
+    680.046,
+    684.117
+   ],
+   "to": [
+    679.946,
+    684.117
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "だから そこの頭の使い合いだよね",
+   "from": [
+    699.866,
+    702.802
+   ],
+   "to": [
+    699.832,
+    702.802
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "守る側は 構造的に守って戦っていく",
+   "from": [
+    695.562,
+    699.866
+   ],
+   "to": [
+    695.562,
+    699.832
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "そうだね だからもう今って",
+   "from": [
+    717.75,
+    719.819
+   ],
+   "to": [
+    717.684,
+    719.819
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "一昔前だったら大丈夫だった対策も／これからは大丈",
+   "from": [
+    722.956,
+    727.36
+   ],
+   "to": [
+    722.956,
+    727.293
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "だから進化に乗り遅れた奴から／でかかろうが小さか",
+   "from": [
+    727.36,
+    731.764
+   ],
+   "to": [
+    727.293,
+    731.764
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "東証の厳しいガバナンスの基準を／クリアしてる会社",
+   "from": [
+    745.211,
+    749.749
+   ],
+   "to": [
+    745.211,
+    749.716
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "だから 東証の厳しい基準ってのは／例えばね",
+   "from": [
+    749.749,
+    752.518
+   ],
+   "to": [
+    749.716,
+    752.518
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "だからこの世界のルールが／変わったことに気づいて",
+   "from": [
+    778.678,
+    781.247
+   ],
+   "to": [
+    778.578,
+    781.247
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "変わったルールに追いつけない奴らは／ハッキングさ",
+   "from": [
+    785.385,
+    788.921
+   ],
+   "to": [
+    785.385,
+    788.821
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "そういう世界になります",
+   "from": [
+    788.921,
+    790.323
+   ],
+   "to": [
+    788.821,
+    790.323
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "今の地位があるんかなと思って",
+   "from": [
+    808.574,
+    809.509
+   ],
+   "to": [
+    808.574,
+    809.409
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "確かにそうかも",
+   "from": [
+    809.509,
+    810.376
+   ],
+   "to": [
+    809.409,
+    810.376
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "変化に適応するやつが最強っていうね",
+   "from": [
+    827.56,
+    832.799
+   ],
+   "to": [
+    827.493,
+    832.799
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "この環境変化 ここに適応するって／やっぱり難しい",
+   "from": [
+    832.799,
+    836.502
+   ],
+   "to": [
+    832.799,
+    836.436
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "なのでそれこそ",
+   "from": [
+    836.502,
+    838.104
+   ],
+   "to": [
+    836.436,
+    838.104
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "今めちゃくちゃ勝ってるんだったら／やばいやばいっ",
+   "from": [
+    855.254,
+    858.558
+   ],
+   "to": [
+    855.188,
+    858.558
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "環境変わるってことは／下剋上チャンス",
+   "from": [
+    853.086,
+    855.254
+   ],
+   "to": [
+    853.086,
+    855.188
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "ぜひね このピンチ／人によってはピンチなこの状況",
+   "from": [
+    863.162,
+    866.966
+   ],
+   "to": [
+    863.162,
+    866.933
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "私たちだけの大チャンスの／ビッグウェーブに変えて",
+   "from": [
+    866.966,
+    870.837
+   ],
+   "to": [
+    866.933,
+    870.837
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "問い合わせの方で／対応がしきれていない状況です",
+   "from": [
+    880.713,
+    883.483
+   ],
+   "to": [
+    880.713,
+    883.416
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "ぜひあなたの力を借りたい／というところで",
+   "from": [
+    883.483,
+    885.485
+   ],
+   "to": [
+    883.416,
+    885.485
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "この動画を見ているってことは／AI得意だから",
+   "from": [
+    887.353,
+    889.822
+   ],
+   "to": [
+    887.353,
+    889.756
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "そういう方は",
+   "from": [
+    889.822,
+    890.423
+   ],
+   "to": [
+    889.756,
+    890.423
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "（この波を）どんどんどんどんね／乗りこなしていき",
+   "from": [
+    904.771,
+    906.339
+   ],
+   "to": [
+    904.704,
+    906.339
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "ということで 引き続き／どうぞよろしくお願いしま",
+   "from": [
+    908.074,
+    909.409
+   ],
+   "to": [
+    908.074,
+    909.342
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "いつも最後まで見ていただき／ありがとうございまし",
+   "from": [
+    909.409,
+    911.344
+   ],
+   "to": [
+    909.342,
+    911.344
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  }
+ ],
+ "jump_aligned": [
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    23.59,
+    29.129
+   ],
+   "to": [
+    23.557,
+    29.129
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    53.32,
+    54.655
+   ],
+   "to": [
+    53.253,
+    54.655
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    102.569,
+    104.871
+   ],
+   "to": [
+    102.569,
+    104.838
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    109.109,
+    111.111
+   ],
+   "to": [
+    109.109,
+    111.044
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    225.392,
+    245.645
+   ],
+   "to": [
+    225.392,
+    245.512
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    254.154,
+    256.323
+   ],
+   "to": [
+    254.154,
+    256.256
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    351.685,
+    370.704
+   ],
+   "to": [
+    351.685,
+    370.67
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    397.864,
+    405.438
+   ],
+   "to": [
+    397.864,
+    405.372
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    448.348,
+    450.35
+   ],
+   "to": [
+    448.348,
+    450.216
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    499.265,
+    504.671
+   ],
+   "to": [
+    499.265,
+    504.571
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    513.046,
+    527.127
+   ],
+   "to": [
+    512.946,
+    527.06
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    546.746,
+    591.624
+   ],
+   "to": [
+    546.746,
+    591.591
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    629.329,
+    633.333
+   ],
+   "to": [
+    629.329,
+    633.233
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    668.868,
+    684.117
+   ],
+   "to": [
+    668.868,
+    684.05
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    735.535,
+    752.518
+   ],
+   "to": [
+    735.535,
+    752.452
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    778.678,
+    793.426
+   ],
+   "to": [
+    778.578,
+    793.426
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    827.56,
+    843.409
+   ],
+   "to": [
+    827.493,
+    843.342
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    863.162,
+    866.966
+   ],
+   "to": [
+    863.162,
+    866.933
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    870.837,
+    876.109
+   ],
+   "to": [
+    870.837,
+    875.975
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI時代のセキュリティ",
+   "from": [
+    904.771,
+    913.746
+   ],
+   "to": [
+    904.704,
+    913.746
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "情報漏洩どう感じる？",
+   "from": [
+    23.59,
+    29.129
+   ],
+   "to": [
+    23.557,
+    29.129
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "フィッシング詐欺の被害",
+   "from": [
+    53.32,
+    54.655
+   ],
+   "to": [
+    53.253,
+    54.655
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "フィッシング詐欺の被害",
+   "from": [
+    95.028,
+    97.197
+   ],
+   "to": [
+    95.028,
+    97.13
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "地震はサイバー攻撃？",
+   "from": [
+    97.197,
+    100.133
+   ],
+   "to": [
+    97.13,
+    100.133
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "地震はサイバー攻撃？",
+   "from": [
+    102.569,
+    104.871
+   ],
+   "to": [
+    102.569,
+    104.838
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "地震はサイバー攻撃？",
+   "from": [
+    109.109,
+    111.111
+   ],
+   "to": [
+    109.109,
+    111.044
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "古いシステムは限界",
+   "from": [
+    225.392,
+    230.063
+   ],
+   "to": [
+    225.392,
+    230.03
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "セキュリティのジレンマ",
+   "from": [
+    230.063,
+    245.645
+   ],
+   "to": [
+    230.03,
+    245.512
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "セキュリティのジレンマ",
+   "from": [
+    254.154,
+    256.323
+   ],
+   "to": [
+    254.154,
+    256.256
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "大手にも攻撃できる？",
+   "from": [
+    294.795,
+    319.319
+   ],
+   "to": [
+    294.795,
+    319.252
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "攻撃する側が有利？",
+   "from": [
+    319.319,
+    335.468
+   ],
+   "to": [
+    319.252,
+    335.468
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "攻撃する側が有利？",
+   "from": [
+    338.672,
+    343.243
+   ],
+   "to": [
+    338.672,
+    343.176
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "どう守ってる？",
+   "from": [
+    343.243,
+    345.579
+   ],
+   "to": [
+    343.176,
+    345.579
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "どう守ってる？",
+   "from": [
+    351.685,
+    370.704
+   ],
+   "to": [
+    351.685,
+    370.67
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "大手でもやられる",
+   "from": [
+    397.864,
+    405.438
+   ],
+   "to": [
+    397.864,
+    405.372
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "セキュリティの本質",
+   "from": [
+    448.348,
+    450.35
+   ],
+   "to": [
+    448.348,
+    450.216
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "セキュリティの本質",
+   "from": [
+    499.265,
+    504.671
+   ],
+   "to": [
+    499.265,
+    504.571
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "ワンタイムパスで助かった",
+   "from": [
+    513.046,
+    527.127
+   ],
+   "to": [
+    512.946,
+    527.06
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "AI任せは怖い？",
+   "from": [
+    557.724,
+    569.869
+   ],
+   "to": [
+    557.724,
+    569.836
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "これからどんな未来？",
+   "from": [
+    569.869,
+    591.624
+   ],
+   "to": [
+    569.836,
+    591.591
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "弱点は人間",
+   "from": [
+    629.329,
+    633.333
+   ],
+   "to": [
+    629.329,
+    633.233
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "核もハッキング？",
+   "from": [
+    668.868,
+    684.117
+   ],
+   "to": [
+    668.868,
+    684.05
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "核もハッキング？",
+   "from": [
+    688.188,
+    702.802
+   ],
+   "to": [
+    688.188,
+    702.702
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "大企業でもやられる？",
+   "from": [
+    702.802,
+    733.132
+   ],
+   "to": [
+    702.702,
+    733.132
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "大企業でもやられる？",
+   "from": [
+    735.535,
+    752.518
+   ],
+   "to": [
+    735.535,
+    752.452
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "世界のルールは変わった",
+   "from": [
+    778.678,
+    793.426
+   ],
+   "to": [
+    778.578,
+    793.426
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "変化に適応できるか",
+   "from": [
+    827.56,
+    832.799
+   ],
+   "to": [
+    827.493,
+    832.799
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "チェックリストの受け取り方",
+   "from": [
+    832.799,
+    843.409
+   ],
+   "to": [
+    832.799,
+    843.342
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "ピンチはチャンス",
+   "from": [
+    863.162,
+    866.966
+   ],
+   "to": [
+    863.162,
+    866.933
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "認定パートナー募集",
+   "from": [
+    870.837,
+    876.109
+   ],
+   "to": [
+    870.837,
+    875.975
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "認定パートナー募集",
+   "from": [
+    904.771,
+    913.746
+   ],
+   "to": [
+    904.704,
+    913.746
+   ]
+  },
+  {
+   "track": "V10",
+   "text": "セキュリティチェックリストの受け取り方「1016",
+   "from": [
+    504.671,
+    513.046
+   ],
+   "to": [
+    504.571,
+    512.946
+   ]
+  },
+  {
+   "track": "V10",
+   "text": "ポイント今までいいとされてるルールは／もう良くな",
+   "from": [
+    773.773,
+    778.678
+   ],
+   "to": [
+    773.773,
+    778.578
+   ]
+  },
+  {
+   "track": "V10",
+   "text": "ポイント力が強い・背が高い・走るのが速いやつでは",
+   "from": [
+    819.652,
+    827.56
+   ],
+   "to": [
+    819.652,
+    827.493
+   ]
+  },
+  {
+   "track": "V10",
+   "text": "セキュリティチェックリストの受け取り方「1016",
+   "from": [
+    843.409,
+    853.086
+   ],
+   "to": [
+    843.342,
+    853.086
+   ]
+  },
+  {
+   "track": "V10",
+   "text": "Addness認定パートナー募集中概要欄から 1",
+   "from": [
+    893.526,
+    904.771
+   ],
+   "to": [
+    893.526,
+    904.704
+   ]
+  },
+  {
+   "track": "V12",
+   "text": "　      Q:最近 情報漏洩やサイバー攻撃が",
+   "from": [
+    23.59,
+    29.129
+   ],
+   "to": [
+    23.557,
+    29.129
+   ]
+  },
+  {
+   "track": "V12",
+   "text": "Q:攻撃されて初めて守る穴を見つけられるから／　",
+   "from": [
+    319.319,
+    334.534
+   ],
+   "to": [
+    319.252,
+    334.534
+   ]
+  },
+  {
+   "track": "V12",
+   "text": " Q:三上さんは 守り方も／一応知ってるんですか",
+   "from": [
+    343.243,
+    345.579
+   ],
+   "to": [
+    343.176,
+    345.579
+   ]
+  },
+  {
+   "track": "V12",
+   "text": "　 Q:三上さん的に こういうサイバー攻撃が／行",
+   "from": [
+    576.476,
+    580.613
+   ],
+   "to": [
+    576.376,
+    580.613
+   ]
+  },
+  {
+   "track": "V12",
+   "text": " Q:ハッキングがめっちゃ簡単になってきた先に／",
+   "from": [
+    668.868,
+    680.046
+   ],
+   "to": [
+    668.868,
+    679.946
+   ]
+  },
+  {
+   "track": "V12",
+   "text": "　　      Q:大企業でも 情報漏洩が起きた",
+   "from": [
+    702.802,
+    717.75
+   ],
+   "to": [
+    702.702,
+    717.684
+   ]
+  }
+ ],
+ "tail_aligned": [
+  {
+   "track": "V3",
+   "from": [
+    51.818,
+    53.32
+   ],
+   "to_end": 53.253
+  },
+  {
+   "track": "V3",
+   "from": [
+    111.111,
+    113.447
+   ],
+   "to_end": 113.413
+  },
+  {
+   "track": "V16",
+   "from": [
+    132.966,
+    137.537
+   ],
+   "to_end": 137.471
+  },
+  {
+   "track": "V16",
+   "from": [
+    245.645,
+    249.483
+   ],
+   "to_end": 249.416
+  }
+ ],
+ "frames_moved": [],
+ "se_moved": [
+  {
+   "why": "問い 3",
+   "from": 23.59,
+   "to": 23.557
+  },
+  {
+   "why": "強調 5+1",
+   "from": 29.263,
+   "to": 29.129
+  },
+  {
+   "why": "強調 100",
+   "from": 137.537,
+   "to": 137.471
+  },
+  {
+   "why": "問い 101",
+   "from": 138.805,
+   "to": 138.538
+  },
+  {
+   "why": "説明 142",
+   "from": 230.063,
+   "to": 230.03
+  },
+  {
+   "why": "SEのみ 144",
+   "from": 235.135,
+   "to": 235.102
+  },
+  {
+   "why": "強調 157",
+   "from": 249.483,
+   "to": 249.416
+  },
+  {
+   "why": "SEのみ 192",
+   "from": 298.498,
+   "to": 298.431
+  },
+  {
+   "why": "説明 205",
+   "from": 307.607,
+   "to": 307.574
+  },
+  {
+   "why": "問い 214",
+   "from": 319.319,
+   "to": 319.252
+  },
+  {
+   "why": "問い 230",
+   "from": 343.243,
+   "to": 343.176
+  },
+  {
+   "why": "問い 234",
+   "from": 346.279,
+   "to": 346.213
+  },
+  {
+   "why": "ボード 319",
+   "from": 504.671,
+   "to": 504.571
+  },
+  {
+   "why": "説明 349",
+   "from": 546.813,
+   "to": 546.746
+  },
+  {
+   "why": "SEのみ 362",
+   "from": 569.869,
+   "to": 569.836
+  },
+  {
+   "why": "問い 364",
+   "from": 576.476,
+   "to": 576.376
+  },
+  {
+   "why": "問い 433",
+   "from": 669.002,
+   "to": 668.868
+  },
+  {
+   "why": "問い 449",
+   "from": 702.802,
+   "to": 702.702
+  },
+  {
+   "why": "強調 469",
+   "from": 733.199,
+   "to": 733.132
+  },
+  {
+   "why": "ボード 532",
+   "from": 819.719,
+   "to": 819.652
+  },
+  {
+   "why": "ボード 554",
+   "from": 843.409,
+   "to": 843.342
+  },
+  {
+   "why": "強調 576",
+   "from": 862.295,
+   "to": 862.261
+  }
+ ],
+ "plate_head_trim": [
+  {
+   "track": "V6",
+   "plate": "問い 3",
+   "from": 23.59,
+   "to": 23.557
+  },
+  {
+   "track": "V7",
+   "plate": "問い 214",
+   "from": 319.319,
+   "to": 319.252
+  },
+  {
+   "track": "V7",
+   "plate": "問い 230",
+   "from": 343.243,
+   "to": 343.176
+  },
+  {
+   "track": "V6",
+   "plate": "問い 364",
+   "from": 576.476,
+   "to": 576.376
+  },
+  {
+   "track": "V6",
+   "plate": "問い 449",
+   "from": 702.802,
+   "to": 702.702
+  },
+  {
+   "track": "V5",
+   "plate": "ボード セキュリティチェックリス",
+   "from": 504.671,
+   "to": 504.571
+  },
+  {
+   "track": "V7",
+   "plate": "ボード セキュリティチェックリス",
+   "from": 504.671,
+   "to": 504.571
+  },
+  {
+   "track": "V7",
+   "plate": "ボード セキュリティチェックリス",
+   "from": 843.409,
+   "to": 843.342
+  }
+ ],
+ "dissolves": [
+  {
+   "track": "V5",
+   "what": "説明 13 の終わり",
+   "clip": [
+    41.141,
+    46.079
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 142 の終わり",
+   "clip": [
+    230.063,
+    232.899
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 197+1 の終わり",
+   "clip": [
+    303.303,
+    307.607
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 205 の終わり",
+   "clip": [
+    307.607,
+    310.577
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 237 の終わり",
+   "clip": [
+    353.82,
+    358.758
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 317 の終わり",
+   "clip": [
+    501.301,
+    504.571
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 326+1 の終わり",
+   "clip": [
+    515.849,
+    523.356
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 335 の終わり",
+   "clip": [
+    527.127,
+    532.699
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 349 の終わり",
+   "clip": [
+    546.746,
+    549.783
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 474 の終わり",
+   "clip": [
+    741.341,
+    745.211
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 476 の終わり",
+   "clip": [
+    745.211,
+    749.749
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "問い 3 の終わり（G3）",
+   "clip": [
+    23.557,
+    29.129
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "問い 101 の終わり（G3）",
+   "clip": [
+    138.538,
+    144.244
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "問い 180 の終わり（G3）",
+   "clip": [
+    288.054,
+    291.625
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "問い 214 の終わり（G3）",
+   "clip": [
+    319.252,
+    334.534
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "問い 230 の終わり（G3）",
+   "clip": [
+    343.176,
+    345.579
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "問い 234 の終わり（G3）",
+   "clip": [
+    346.213,
+    353.82
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "問い 364 の終わり（G3）",
+   "clip": [
+    576.376,
+    580.613
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "問い 433 の終わり（G3）",
+   "clip": [
+    668.868,
+    679.946
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "問い 449 の終わり（G3）",
+   "clip": [
+    702.702,
+    717.684
+   ]
+  },
+  {
+   "track": "V3",
+   "what": "全体挿入 I01 のぼかしの終わり（G1）",
+   "clip": [
+    71.972,
+    78.812
+   ]
+  },
+  {
+   "track": "V3",
+   "what": "全体挿入 I04 のぼかしの終わり（G1）",
+   "clip": [
+    104.871,
+    109.109
+   ]
+  },
+  {
+   "track": "V3",
+   "what": "全体挿入 I11 のぼかしの終わり（G1）",
+   "clip": [
+    626.259,
+    629.329
+   ]
+  },
+  {
+   "track": "V3",
+   "what": "全体挿入 I14 のぼかしの終わり（G1）",
+   "clip": [
+    866.966,
+    870.837
+   ]
+  },
+  {
+   "track": "V3",
+   "what": "全体挿入 I16 のぼかしの終わり（G1）",
+   "clip": [
+    100.133,
+    102.569
+   ]
+  },
+  {
+   "track": "V3",
+   "what": "全体挿入 I17 のぼかしの終わり（G1）",
+   "clip": [
+    113.447,
+    123.657
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "※AI指示中 0本の出る・消える（18コマ）",
+   "clip": []
+  },
+  {
+   "track": "V8",
+   "what": "右上タイトルの最初",
+   "clip": [
+    23.557,
+    29.129
+   ]
+  },
+  {
+   "track": "V9",
+   "what": "右上タイトルの最初",
+   "clip": [
+    23.557,
+    29.129
+   ]
+  }
+ ],
+ "peak_fix": [],
+ "font_fix": {},
+ "checks": {
+  "V1_clips": 685,
+  "V2_clips": 0,
+  "V3_clips": 9,
+  "V4_clips": 0,
+  "V5_clips": 11,
+  "V6_clips": 194,
+  "V7_clips": 43,
+  "V8_clips": 43,
+  "V9_clips": 52,
+  "V10_clips": 5,
+  "V11_clips": 0,
+  "V12_clips": 9,
+  "V13_clips": 0,
+  "V14_clips": 1,
+  "V15_clips": 8,
+  "V16_clips": 25,
+  "A1_clips": 685,
+  "A2_clips": 685,
+  "A3_clips": 28,
+  "A4_clips": 199,
+  "A5_clips": 0,
+  "captions_placed": 191,
+  "captions_replaced": 183,
+  "emphasis_se_start_match": true
+ },
+ "size_log": [
+  {
+   "rule": "シュールテロップ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 8,
+   "lines": 1,
+   "size_after": 156.0,
+   "width_pct": 65.0,
+   "shrink_one_line": 1.0,
+   "type": "T010"
+  },
+  {
+   "rule": "白テキ",
+   "size_before": 134.7,
+   "notes": [],
+   "chars_longest_line": 11,
+   "lines": 1,
+   "size_after": 135.0,
+   "width_pct": 77.3,
+   "shrink_one_line": 1.0,
+   "type": "T023"
+  },
+  {
+   "rule": "シュールテロップ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 12,
+   "lines": 2,
+   "size_after": 154.0,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.55,
+   "type": "T010",
+   "line_change": "'フィッシング詐欺で 18万くらい持ってかれた' → 'フィッシング詐欺で\\r18万くらい持ってかれた'"
+  },
+  {
+   "rule": "ヒラギノ白シャドウ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 9,
+   "lines": 2,
+   "size_after": 156.0,
+   "width_pct": 73.1,
+   "shrink_one_line": 0.74,
+   "type": "T020",
+   "line_change": "'自動編集できるから 何でもいいや' → '自動編集できるから\\r何でもいいや'"
+  },
+  {
+   "rule": "ツッコミ",
+   "size_before": 155.0,
+   "notes": [],
+   "chars_longest_line": 13,
+   "lines": 2,
+   "size_after": 139.6,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.56,
+   "type": "T086",
+   "line_change": "'だってiCloudが 18万になるわけないもんね' → 'だってiCloudが\\r18万になるわけないもんね'"
+  },
+  {
+   "rule": "シュールテロップ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 5,
+   "lines": 1,
+   "size_after": 156.0,
+   "width_pct": 40.6,
+   "shrink_one_line": 1.0,
+   "type": "T010"
+  },
+  {
+   "rule": "白テキ",
+   "size_before": 134.7,
+   "notes": [],
+   "chars_longest_line": 7,
+   "lines": 1,
+   "size_after": 135.0,
+   "width_pct": 49.2,
+   "shrink_one_line": 1.0,
+   "type": "T023"
+  },
+  {
+   "rule": "シュールテロップ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 10,
+   "lines": 1,
+   "size_after": 156.0,
+   "width_pct": 81.2,
+   "shrink_one_line": 1.0,
+   "type": "T010"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 18,
+   "lines": 2,
+   "size_after": 90.0,
+   "width_pct": 84.4,
+   "type": "T153",
+   "line_change": "'情報漏洩は意外と 大ダメージにつながることがあまりない' → '情報漏洩は意外と\\r大ダメージにつながることがあまりない'"
+  },
+  {
+   "rule": "白テキ",
+   "size_before": 134.7,
+   "notes": [],
+   "chars_longest_line": 16,
+   "lines": 1,
+   "size_after": 112.9,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.84,
+   "type": "T023"
+  },
+  {
+   "rule": "シュールテロップ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 2,
+   "lines": 1,
+   "size_after": 156.0,
+   "width_pct": 16.2,
+   "shrink_one_line": 1.0,
+   "type": "T010"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 16,
+   "lines": 2,
+   "size_after": 108.0,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.41,
+   "type": "T147",
+   "line_change": "'MAXセキュリティなら 開けられん箱に入れてしまえばいい' → 'MAXセキュリティなら\\r開けられん箱に入れてしまえばいい'"
+  },
+  {
+   "rule": "シュールテロップ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 14,
+   "lines": 1,
+   "size_after": 129.6,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.83,
+   "type": "T010"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 13,
+   "lines": 1,
+   "size_after": 90.0,
+   "width_pct": 60.9,
+   "type": "T153"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 9,
+   "lines": 1,
+   "size_after": 160.0,
+   "width_pct": 75.0,
+   "shrink_one_line": 1.0,
+   "type": "T147"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 4,
+   "lines": 1,
+   "size_after": 200.0,
+   "width_pct": 41.7,
+   "shrink_one_line": 1.0,
+   "type": "T147"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 19,
+   "lines": 2,
+   "size_after": 90.0,
+   "width_pct": 89.1,
+   "type": "T153",
+   "line_change": "'守るためには 攻撃のやり方を知っておかないといけない' → '守るためには\\r攻撃のやり方を知っておかないといけない'"
+  },
+  {
+   "rule": "シュールテロップ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 8,
+   "lines": 1,
+   "size_after": 156.0,
+   "width_pct": 59.6,
+   "shrink_one_line": 1.0,
+   "type": "T010"
+  },
+  {
+   "rule": "白テキ",
+   "size_before": 134.7,
+   "notes": [],
+   "chars_longest_line": 17,
+   "lines": 1,
+   "size_after": 106.0,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.79,
+   "type": "T023"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 12,
+   "lines": 1,
+   "size_after": 90.0,
+   "width_pct": 53.1,
+   "type": "T153"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 15,
+   "lines": 2,
+   "size_after": 115.2,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.42,
+   "type": "T147",
+   "line_change": "'セキュリティポリシーの チェックシートを作ってあげよう' → 'セキュリティポリシーの\\rチェックシートを作ってあげよう'"
+  },
+  {
+   "rule": "ヒラギノ白シャドウ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 16,
+   "lines": 2,
+   "size_after": 117.9,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.49,
+   "type": "T020",
+   "line_change": "'僕は 考え方とか リスク許容度が 一応バグってる方' → '僕は 考え方とか リスク許容度が\\r一応バグってる方'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 17,
+   "lines": 2,
+   "size_after": 101.6,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.43,
+   "type": "T147",
+   "line_change": "'ワンタイムパスを設定してなかったら 多分もう口座ゼロ' → 'ワンタイムパスを設定してなかったら\\r多分もう口座ゼロ'"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 18,
+   "lines": 2,
+   "size_after": 90.0,
+   "width_pct": 79.7,
+   "type": "T153",
+   "line_change": "'何でもかんでもAIがいいならOKって やっとるとちょっと怖い' → '何でもかんでもAIがいいならOKって\\rやっとるとちょっと怖い'"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 19,
+   "lines": 2,
+   "size_after": 90.0,
+   "width_pct": 89.1,
+   "type": "T153",
+   "line_change": "'AIでみんなの力が上がる分 間違った使い方をすると大ダメージになる' → 'AIでみんなの力が上がる分\\r間違った使い方をすると大ダメージになる'"
+  },
+  {
+   "rule": "白テキ",
+   "size_before": 134.7,
+   "notes": [],
+   "chars_longest_line": 12,
+   "lines": 2,
+   "size_after": 135.0,
+   "width_pct": 79.9,
+   "shrink_one_line": 0.74,
+   "type": "T023",
+   "line_change": "'人間軍とAI軍が戦うって 何なんですか' → '人間軍とAI軍が戦うって\\r何なんですか'"
+  },
+  {
+   "rule": "シュールテロップ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 14,
+   "lines": 2,
+   "size_after": 123.4,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.46,
+   "type": "T010",
+   "line_change": "'システムは大体の場合悪くない 人間がダメなんだよね' → 'システムは大体の場合悪くない\\r人間がダメなんだよね'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 14,
+   "lines": 1,
+   "size_after": 129.9,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.81,
+   "type": "T147"
+  },
+  {
+   "rule": "ヒラギノ白シャドウ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 12,
+   "lines": 2,
+   "size_after": 144.0,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.55,
+   "type": "T020",
+   "line_change": "'大統領の腕一本を 生贄に捧げれば発射できる' → '大統領の腕一本を\\r生贄に捧げれば発射できる'"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 17,
+   "lines": 1,
+   "size_after": 90.0,
+   "width_pct": 76.5,
+   "type": "T153"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 12,
+   "lines": 2,
+   "size_after": 90.0,
+   "width_pct": 56.2,
+   "type": "T153",
+   "line_change": "'変化についていけない奴が 取り残されてやられるのよ' → '変化についていけない奴が\\r取り残されてやられるのよ'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 9,
+   "lines": 2,
+   "size_after": 160.0,
+   "width_pct": 75.0,
+   "shrink_one_line": 0.68,
+   "type": "T147",
+   "line_change": "'大企業でもやられる これがポイント' → '大企業でもやられる\\rこれがポイント'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 17,
+   "lines": 2,
+   "size_after": 101.6,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.34,
+   "type": "T147",
+   "line_change": "'あなたは一刻も早く変わったルールに 追いつけるようになってください' → 'あなたは一刻も早く変わったルールに\\r追いつけるようになってください'"
+  },
+  {
+   "rule": "シュールテロップ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 10,
+   "lines": 2,
+   "size_after": 156.0,
+   "width_pct": 81.2,
+   "shrink_one_line": 0.74,
+   "type": "T010",
+   "line_change": "'間違いない 取り残され続ける人生' → '間違いない\\r取り残され続ける人生'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 13,
+   "lines": 1,
+   "size_after": 143.2,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.89,
+   "type": "T147"
+  },
+  {
+   "rule": "シュールテロップ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 13,
+   "lines": 1,
+   "size_after": 132.9,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.85,
+   "type": "T010"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 16,
+   "lines": 2,
+   "size_after": 108.0,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.37,
+   "type": "T147",
+   "line_change": "'僕なりにやっていることをまとめた ちょっとしたチェックリスト' → '僕なりにやっていることをまとめた\\rちょっとしたチェックリスト'"
+  },
+  {
+   "rule": "ゴージャス青",
+   "size_before": 200.0,
+   "notes": [],
+   "chars_longest_line": 8,
+   "lines": 1,
+   "size_after": 200.0,
+   "width_pct": 83.3,
+   "shrink_one_line": 1.0,
+   "type": "T175"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 14,
+   "lines": 2,
+   "size_after": 132.9,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.43,
+   "type": "T147",
+   "line_change": "'ぜひ私たちのAddnessを 広める手伝いをしてください' → 'ぜひ私たちのAddnessを\\r広める手伝いをしてください'"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 10,
+   "lines": 2,
+   "size_after": 90.0,
+   "width_pct": 46.9,
+   "type": "T153",
+   "line_change": "'環境変わるってことは 下剋上チャンス' → '環境変わるってことは\\r下剋上チャンス'"
+  },
+  {
+   "rule": "シュールテロップ/P16",
+   "size_before": 114.2,
+   "notes": [],
+   "chars_longest_line": 7,
+   "lines": 1,
+   "size_after": 114.0,
+   "width_pct": 41.6,
+   "shrink_one_line": 1.0,
+   "type": "T009"
+  },
+  {
+   "rule": "シュールテロップ/P16",
+   "size_before": 114.2,
+   "notes": [],
+   "chars_longest_line": 11,
+   "lines": 1,
+   "size_after": 114.0,
+   "width_pct": 61.3,
+   "shrink_one_line": 1.0,
+   "type": "T009"
+  },
+  {
+   "rule": "シュールテロップ/P16",
+   "size_before": 114.2,
+   "notes": [],
+   "chars_longest_line": 13,
+   "lines": 1,
+   "size_after": 114.0,
+   "width_pct": 50.7,
+   "shrink_one_line": 1.0,
+   "type": "T009"
+  }
+ ]
+}

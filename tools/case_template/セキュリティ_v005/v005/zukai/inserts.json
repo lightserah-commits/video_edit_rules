@@ -1,0 +1,81 @@
+{
+ "I01": {
+  "insert": "full",
+  "why": "偽の請求（何を見て払ったかが言葉に無い）"
+ },
+ "I02": {
+  "insert": "partial",
+  "why": "カモ認定（たとえ）",
+  "hide_title": true
+ },
+ "I03": {
+  "insert": "partial",
+  "why": "止められたクレカ（初めて出る物）",
+  "hide_title": true
+ },
+ "I04": {
+  "insert": "full",
+  "why": "緊急地震速報（場面）"
+ },
+ "I05": {
+  "insert": "partial",
+  "why": "気象庁（初めて出る役所。ロゴは仮）",
+  "hide_title": true
+ },
+ "I06": {
+  "insert": "partial",
+  "why": "金庫（たとえの物。Z2 の前）",
+  "hide_title": true
+ },
+ "I07": {
+  "insert": "partial",
+  "why": "Addness（初めて出る自社サービス）",
+  "hide_title": true
+ },
+ "I08": {
+  "insert": "partial",
+  "why": "マイクロソフト（初めて出る会社。ロゴは仮）",
+  "hide_title": true
+ },
+ "I09": {
+  "insert": "partial",
+  "why": "ワンタイムパスワード（初めて出る物）",
+  "hide_title": true
+ },
+ "I10": {
+  "insert": "partial",
+  "why": "海外の旅行サイトに勝手に課金（場面。※ワンタイムパスを隠さないよう部分に）",
+  "hide_title": true
+ },
+ "I11": {
+  "insert": "full",
+  "why": "人間軍と AI 軍（突飛なたとえ）"
+ },
+ "I12": {
+  "insert": "partial",
+  "why": "トイレでパスワードをポロっと（たとえ）",
+  "hide_title": true
+ },
+ "I13": {
+  "insert": "partial",
+  "why": "大統領の腕を生贄に（たとえ）",
+  "hide_title": true
+ },
+ "I14": {
+  "insert": "full",
+  "why": "ビッグウェーブ（たとえ）"
+ },
+ "I15": {
+  "insert": "partial",
+  "why": "Addness（締めの CTA。2回目）",
+  "hide_title": true
+ },
+ "I16": {
+  "insert": "full",
+  "why": "実際にあったニュース（v004 小川さんの指示10。ケータイ Watch の記事の写真）"
+ },
+ "I17": {
+  "insert": "full",
+  "why": "紙芝居（エピソードトーク。v004 小川さんの指示12）"
+ }
+}

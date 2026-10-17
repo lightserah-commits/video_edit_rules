@@ -1,0 +1,131 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Z2 セキュリティのジレンマ。前半：守りたいデータの外側に ラップ→金庫→コンクリート→溶かした鉄→鉄球 と言うたびに1枚ずつ重なる（右に手順の一覧）→「開けられんやん 俺が」→「固めれば固めるほど ユーザーが開けられん」。
+     後半（176「ユーザーが」で組み替え）：開けやすくすると ユーザーは開けられる → 開ける時に使うデータ（鍵）→ それを引っこ抜いた攻撃者も開けられる。165〜179 -->
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+.step { display: flex; align-items: center; gap: 16px; }
+.num { width: 62px; height: 62px; border-radius: 50%; background: #f5e63a; color: #111; font-family: Hv; font-size: 40px;
+       display: flex; align-items: center; justify-content: center; border: 4px solid #000; box-sizing: border-box; flex: none; }
+.doc { width: 128px; height: 160px; background: #fff; border-radius: 10px; border: 5px solid #111; box-sizing: border-box; position: relative; }
+.doc i { position: absolute; left: 18px; height: 10px; border-radius: 5px; background: #9aa3ad; }
+.box { width: 380px; height: 320px; position: relative; }
+.box .body { position: absolute; inset: 0; border-radius: 22px; background: linear-gradient(160deg, #b9c0c9, #7d8590); border: 6px solid #111; box-sizing: border-box; }
+.box .inside { position: absolute; left: 26px; top: 26px; right: 26px; bottom: 26px; border-radius: 12px; background: #2a2e35; display: flex; align-items: center; justify-content: center; }
+.box .door { position: absolute; left: 20px; top: 20px; right: 20px; bottom: 20px; border-radius: 14px; background: linear-gradient(160deg, #cfd5dc, #959daa);
+             border: 5px solid #111; box-sizing: border-box; transform-origin: 0 50%; }
+</style></head><body>
+<div id="board"></div>
+<script>
+// コマ（図解の頭 f8057＝字幕165 の頭。終わり f9008＝字幕180 の頭。tl.py words 163 180 の聞こえ始め − 8057）
+// 165 セキュリティ 11・守ろう 29 ／ 166 ラップ 77・ぐるぐる巻き 97 ／ 168 バチバチ 129・金庫 146・コンクリート 165・固めて 174
+// 169 鉄で 233・溶かした 262・鉄の中 276・入れて 295・もう 321 ／ 170+1 鉄で固めて 328・鉄球 352 ／ 171 もう 388・開けられんやん 394・俺が 425
+// 174 セキュリティ 477・固めれば 495・固めるほど 514 ／ 174+1 ユーザーが 533・開けられんなる 550 ／ 176 だけど 572・ユーザーが 587・開けやすく 611
+// 177 ユーザーは 653・開けられる 677 ／ 177+1 逆に言うと 709・ユーザーが開ける時に 747・使っているデータ 779（データ 792）
+// 179 それを 819・引っこ抜いて 829・攻撃者も 857・開けられる 878 ／ 180 の頭 951 で全部消える
+const F = { start: 0, sec: 11, wrap: 77, guru: 97, kinko: 146, conc: 165, iron: 262, cool: 328, ball: 352, ake: 394, ore: 425,
+            kata: 495, user1: 533, B: 587, yasu: 611, uha: 653, okay: 677, tsukau: 779, nuku: 829, atk: 857, ake2: 878, END: 951 };
+window.ZUKAI = { frames: 951 };
+function P(id, f0, m, x, y, html, o = {}) {
+  const d = document.createElement("div");
+  d.className = "part"; d.id = id; d.dataset.f0 = f0; d.dataset.m = m;
+  if (o.f1 !== undefined) d.dataset.f1 = o.f1;
+  if (o.dim) d.dataset.dim = o.dim;
+  if (o.dur) d.dataset.dur = o.dur;
+  if (o.out) d.dataset.out = o.out;
+  d.style.left = x + "px"; d.style.top = y + "px";
+  d.innerHTML = `<div class="in">${html}</div>`;
+  document.body.appendChild(d); return d;
+}
+const C = { x: 470, y: 370 };                      // 前半の絵の真ん中
+// 枠（外の四角から内の四角をくり抜く）。w・h＝外、t＝太さ、r＝角
+const ring = (w, h, t, r, fill, extra = "") => `<svg width="${w}" height="${h}" style="display:block;overflow:visible">` +
+  `<path fill-rule="evenodd" fill="${fill}" stroke="#000" stroke-width="5" d="M${r},0 H${w - r} Q${w},0 ${w},${r} V${h - r} Q${w},${h} ${w - r},${h} H${r} Q0,${h} 0,${h - r} V${r} Q0,0 ${r},0 Z ` +
+  `M${t + r * .6},${t} H${w - t - r * .6} Q${w - t},${t} ${w - t},${t + r * .6} V${h - t - r * .6} Q${w - t},${h - t} ${w - t - r * .6},${h - t} H${t + r * .6} Q${t},${h - t} ${t},${h - t - r * .6} V${t + r * .6} Q${t},${t} ${t + r * .6},${t} Z"/>${extra}</svg>`;
+const at = (w, h) => [C.x - w / 2, C.y - h / 2];
+// コンクリートの粒（決まった並び。Math.random を使わない）
+const grains = (w, h, t) => { let s = ""; for (let i = 0; i < 90; i++) { const a = (Math.sin(i * 12.9898) * 43758.5453) % 1, b = (Math.sin(i * 78.233) * 12345.678) % 1;
+  const u = Math.abs(a), v = Math.abs(b); let x, y; const side = i % 4;
+  if (side === 0) { x = u * w; y = v * t; } else if (side === 1) { x = u * w; y = h - v * t; } else if (side === 2) { x = v * t; y = u * h; } else { x = w - v * t; y = u * h; }
+  s += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(2 + (i % 3) * 1.6).toFixed(1)}" fill="${i % 2 ? "#6f6f6f" : "#c9c9c9"}"/>`; } return s; };
+
+// ───── 前半（0〜587）
+const A = { f1: F.B };
+const A2 = { f1: F.ball + 3 };             // 鉄球が出たら中の層は消す（鉄球だけが残る）
+// 右：見出しと手順
+P("hd", F.sec, "slide", 880, 44, Z.stk("セキュリティを<br>守ろうと思ったら", { size: 60 }), A);
+const steps = [[F.wrap, "ラップで ぐるぐる巻き"], [F.kinko, "バチバチの金庫"], [F.conc, "コンクリートで固める"], [F.iron, "溶かした鉄の中へ"], [F.ball, "鉄球にする"]];
+steps.forEach(([f, t], i) => P("st" + i, f, "slide", 890, 214 + 80 * i,
+  `<div class="step"><div class="num">${i + 1}</div>${Z.stk(t, { size: 50, fill: i === 4 ? "#f5e63a" : "#fff" })}</div>`, A));
+// 真ん中：守りたいデータ
+P("doc", F.start, "bounce", C.x - 64, C.y - 96, `<div class="doc"><i style="top:24px;width:82px;background:#1b5fd1"></i><i style="top:52px;width:82px"></i><i style="top:76px;width:82px"></i><i style="top:100px;width:56px"></i></div>`, A2);
+P("docL", F.start, "pop", C.x - 66, C.y + 70, Z.stk("データ", { size: 40 }), A2);
+// ① ラップ（すけている）＋ぐるぐる巻きの線
+{ const [x, y] = at(250, 290); P("wrap", F.wrap, "pop", x, y, `<div style="width:250px;height:290px;border-radius:34px;background:rgba(190,225,255,.32);border:5px solid rgba(255,255,255,.9);box-sizing:border-box"></div>`, A2);
+  P("guru", F.guru, "draw", x, y, `<svg width="250" height="290" style="display:block;overflow:visible">` +
+    [40, 110, 180, 250].map(yy => `<path class="draw" d="M-6,${yy} Q125,${yy - 60} 256,${yy - 10}" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".85"/>`).join("") + `</svg>`, Object.assign({ dur: 14 }, A2)); }
+// ② 金庫（鉄の枠・ダイヤル・取っ手・びょう）
+{ const w = 370, h = 400, [x, y] = at(w, h);
+  const rv = [[22, 22], [w - 22, 22], [22, h - 22], [w - 22, h - 22]].map(([a, b]) => `<circle cx="${a}" cy="${b}" r="7" fill="#e6e9ee" stroke="#000" stroke-width="3"/>`).join("");
+  const dial = `<circle cx="${w - 30}" cy="${h / 2}" r="34" fill="#dfe3e8" stroke="#000" stroke-width="5"/><circle cx="${w - 30}" cy="${h / 2}" r="14" fill="#555"/>` +
+    `<rect x="${w - 34}" y="${h / 2 - 34}" width="8" height="16" fill="#000"/>`;
+  P("kinko", F.kinko, "bounce", x, y, ring(w, h, 56, 30, "url(#gSteel)", `<defs><linearGradient id="gSteel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cdd3da"/><stop offset="1" stop-color="#7e8792"/></linearGradient></defs>${rv}${dial}`), A2); }
+// ③ コンクリート
+{ const w = 500, h = 530, t = 62, [x, y] = at(w, h);
+  P("conc", F.conc, "bounce", x, y, ring(w, h, t, 18, "#a3a3a0", grains(w, h, t)), A2); }
+// ④ 溶かした鉄（光る）→ 170+1「鉄で固めて」で冷えて黒くなる
+{ const w = 630, h = 650, t = 64, [x, y] = at(w, h);
+  P("iron", F.iron, "bounce", x, y, `<div style="position:relative;width:${w}px;height:${h}px">` +
+    `<div id="hot" style="position:absolute;inset:0;filter:drop-shadow(0 0 22px rgba(255,140,30,.95))">${ring(w, h, t, 40, "url(#gHot)", `<defs><linearGradient id="gHot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe066"/><stop offset=".5" stop-color="#ff8a1c"/><stop offset="1" stop-color="#e2420a"/></linearGradient></defs>`)}</div>` +
+    `<div id="cold" style="position:absolute;inset:0;opacity:0">${ring(w, h, t, 40, "#3a3d42")}</div></div>`, A2); }
+// ⑤ 鉄球（全部を包む）
+{ const d = 640, [x, y] = at(d, d);
+  P("ball", F.ball, "bounce", x, y, `<div style="width:${d}px;height:${d}px;border-radius:50%;border:6px solid #000;box-sizing:border-box;` +
+    `background:radial-gradient(circle at 34% 28%, #c4c9d0 0%, #6c727b 22%, #34383e 58%, #15171a 100%);box-shadow:0 18px 40px rgba(0,0,0,.6)"></div>`, A); }
+// 鉄球の中にデータがあることを見せる（点線の書類の形と「データ」。鉄球がはずんだ後に薄く出る）
+P("docX", F.ball + 6, "fade", C.x - 64, C.y - 96, `<div style="width:128px;height:160px;border:5px dashed rgba(255,255,255,.8);border-radius:10px;box-sizing:border-box"></div>`, Object.assign({ dur: 8 }, A));
+P("docXL", F.ball + 6, "fade", C.x - 66, C.y + 70, Z.stk("データ", { size: 40 }), Object.assign({ dur: 8 }, A));
+// 171「じゃあもう開けられんやん 俺が」
+P("me", F.ake, "bounce", 60, 712, `<div style="position:relative"><img src="../assets/mikami_icon.png" style="width:150px;height:150px;border-radius:50%;box-sizing:border-box;border:6px solid #fff;object-fit:cover;display:block">` +
+  `<svg width="60" height="70" style="position:absolute;left:128px;top:-14px;overflow:visible"><path d="M20,4 C34,26 40,38 30,52 C22,62 6,58 6,44 C6,32 14,20 20,4 Z" fill="#7cc8ff" stroke="#000" stroke-width="4"/></svg></div>`, A);
+P("bub", F.ake, "bounce", 244, 726, Z.bubble("開けられんやん <span style='color:#d90a0a'>俺が</span>", { size: 56, tail: "left", off: 30, pad: "8px 28px 14px" }), A);
+// 174「固めれば固めるほど」174+1「ユーザーが開けられんなる」
+P("k1", F.kata, "slide", 60, 884, Z.stk("固めれば固めるほど", { size: 62, font: "Tsk", fill: "#f5e63a", strokes: [["#000", 16]] }), A);
+P("k2", F.user1, "bounce", 676, 890, Z.plate("ユーザーが開けられん", { size: 48, bg: "#d90a0a", radius: 10 }), A);
+
+// ───── 後半（587〜）：開けやすくすると
+const DIM1 = { dim: `${F.atk}-${F.END}:0.45` };
+P("hdB", F.yasu, "slide", 60, 40, Z.stk("開けやすくすると", { size: 72 }));
+P("user", F.B, "bounce", 70, 150, Z.img(Z.ILLUST + "businessman5_ureshii.png", { h: 300 }));
+P("userL", F.B, "slide", 84, 456, Z.plate("ユーザー", { size: 46, radius: 10 }));
+P("box", F.yasu, "bounce", 560, 150, `<div class="box" id="boxW"><div class="body"></div><div class="inside">` +
+  `<div class="doc" style="transform:scale(.9)"><i style="top:24px;width:82px;background:#1b5fd1"></i><i style="top:52px;width:82px"></i><i style="top:76px;width:82px"></i><i style="top:100px;width:56px"></i></div></div>` +
+  `<div class="door" id="door"><svg width="60" height="90" style="position:absolute;left:150px;top:96px"><circle cx="30" cy="26" r="20" fill="#111"/><path d="M20,36 H40 L46,84 H14 Z" fill="#111"/></svg></div></div>`);
+P("arrU", F.okay, "grow", 318, 244, Z.arrow({ len: 226, dir: "right", color: "#3d7ff0", shaft: 26, hl: 44, hw: 66 }));
+P("r1a", F.uha, "slide", 60, 690, Z.stk("ユーザーは", { size: 62 }), DIM1);
+P("r1b", F.okay, "bounce", 400, 686, Z.plate("開けられる", { size: 62, radius: 12 }), DIM1);
+P("key", F.tsukau, "bounce", 330, 520, Z.img("../assets/img_house_key_c.png", { w: 170 }));
+P("keyL", F.tsukau + 13, "slide", 262, 600, Z.stk("開ける時に使う データ", { size: 56, fill: "#f5e63a" }));
+P("trail", F.nuku, "draw", 504, 548, `<svg width="660" height="20" style="display:block;overflow:visible"><path class="draw" d="M0,10 H646" stroke="#ff3b30" stroke-width="8" stroke-dasharray="18 14" fill="none"/></svg>`, { dur: 14 });
+P("key2", F.nuku, "pop", 330, 520, `<div id="key2M" style="filter:drop-shadow(0 0 10px rgba(255,40,40,.95))">${Z.img("../assets/img_house_key_c.png", { w: 170 })}</div>`);
+P("atkI", F.nuku, "bounce", 1352, 136, Z.img("../assets/img_attacker_c.png", { h: 300 }));
+P("atkL", F.atk, "slide", 1330, 446, Z.plate("攻撃者", { size: 46, bg: "#d90a0a", radius: 10 }));
+P("arrA", F.ake2, "grow", 952, 230, Z.arrow({ len: 380, dir: "left", color: "#ff2a2a", shaft: 26, hl: 44, hw: 66 }));
+P("r2a", F.atk, "bounce", 60, 820, Z.stk("攻撃者も", { size: 104, font: "Tsk", fill: "#ff3b30", strokes: [["#000", 30], ["#fff", 14]] }));
+P("r2b", F.ake2, "slide", 520, 846, Z.stk("開けられる", { size: 84 }));
+
+// ───── 動き：鉄が冷える・扉が開く・鍵を引っこ抜く・箱が赤く光る
+const ease = (q) => 1 - Math.pow(1 - q, 3);
+const cl = (q) => Math.max(0, Math.min(1, q));
+window.ZUKAI.custom = (f) => {
+  const c = cl((f - F.cool) / 18);
+  document.getElementById("cold").style.opacity = c.toFixed(3);
+  document.getElementById("hot").style.opacity = (1 - c).toFixed(3);
+  const o = ease(cl((f - F.okay) / 9));
+  document.getElementById("door").style.transform = o > 0 ? `perspective(900px) rotateY(${(-78 * o).toFixed(2)}deg)` : "none";
+  const k = ease(cl((f - F.nuku - 2) / 14));
+  document.getElementById("key2M").style.transform = `translateX(${(830 * k).toFixed(1)}px)`;
+  const g = f >= F.ake2 ? 0.5 + 0.5 * Math.sin((f - F.ake2) * 0.45) : 0;
+  document.getElementById("boxW").style.filter = g > 0 ? `drop-shadow(0 0 ${(16 + 22 * g).toFixed(1)}px rgba(255,30,30,.95))` : "none";
+  return [c.toFixed(3), o.toFixed(3), k.toFixed(3), g.toFixed(2)].join("/");
+};
+</script></body></html>

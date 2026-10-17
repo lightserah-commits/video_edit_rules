@@ -1,0 +1,149 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Z3 守るための穴チェックリスト ＝ 逆に言うと どこ攻撃すればいいかリスト。真ん中に同じリスト1枚、左（青）＝守る側（盾の穴をふさぐ → 守れる）、
+     右（赤）＝悪用する側（同じリストの ✓ が 的 に変わる）→ 脱獄した AI に読み込ませる → 行ってこい → 片っ端から → どっかボコボコ。250〜254+1。
+     やり方の手順・道具の名前は描かない（話した言葉だけ） -->
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+.lane { box-sizing: border-box; border: 6px solid; border-radius: 26px; height: 540px; }
+.lane.b { width: 560px; border-color: #3d7ff0; background: rgba(27, 95, 209, .16); }
+.lane.r { width: 730px; border-color: #ff5a3c; background: rgba(217, 10, 10, .13); }
+.clip { width: 440px; height: 520px; border-radius: 24px; background: #9a6a3a; border: 5px solid #000; box-sizing: border-box; position: relative; box-shadow: 0 14px 30px rgba(0,0,0,.55); }
+.clip .paper { position: absolute; left: 22px; right: 22px; top: 52px; bottom: 22px; background: #fff; border-radius: 10px; }
+.clip .cl { position: absolute; left: 140px; top: -16px; width: 150px; height: 56px; border-radius: 12px; background: #3a3f47; border: 5px solid #000; box-sizing: border-box; }
+.clip .tt { position: absolute; left: 0; right: 0; top: 18px; text-align: center; font-family: Jp; font-size: 44px; color: #111; }
+.row { position: absolute; left: 30px; width: 340px; height: 60px; }
+.row .bx { position: absolute; left: 0; top: 2px; width: 56px; height: 56px; border: 5px solid #111; border-radius: 8px; box-sizing: border-box; background: #fff; }
+.row .bar { position: absolute; left: 82px; top: 23px; height: 14px; border-radius: 7px; background: #a9b0b8; }
+.row svg { position: absolute; left: -8px; top: -10px; overflow: visible; }
+</style></head><body>
+<div id="board"></div>
+<script>
+// コマ（図解の頭 f11497＝字幕250「守るための」の頭。終わり f12127＝字幕257 の頭。tl.py words 247 257 の聞こえ始め − 11497）
+// 250 守る 7・要は 36・穴 47・チェックリスト 62・あると 115 ／ 250+1 守れる 123 ／ 251 逆に 152・この穴チェックリスト 169・悪用 215
+// 252 どこ 261・攻撃 264・リスト 289 ／（笑い 300〜414）／ 253 これを 414・さっき言った 431・脱獄した 443・AI 467
+// 253+1 バーン 495・読み込まして 504 ／ 254 行ってこい 523・やって 542・片っ端から 550・行くと 576 ／ 254+1 どっか 584・ボコボコ 594・できる 615
+const F = { start: 0, ana: 47, aru: 115, mamoreru: 123, gyaku: 152, akuyo: 215, doko: 261, kore: 414, dakkoku: 443,
+            ban: 495, itte: 523, yatte: 531, kata: 550, boko: 594, END: 630 };
+window.ZUKAI = { frames: 630 };
+function P(id, f0, m, x, y, html, o = {}) {
+  const d = document.createElement("div");
+  d.className = "part"; d.id = id; d.dataset.f0 = f0; d.dataset.m = m;
+  if (o.f1 !== undefined) d.dataset.f1 = o.f1;
+  if (o.dim) d.dataset.dim = o.dim;
+  if (o.dur) d.dataset.dur = o.dur;
+  if (o.out) d.dataset.out = o.out;
+  d.style.left = x + "px"; d.style.top = y + "px";
+  d.innerHTML = `<div class="in">${html}</div>`;
+  document.body.appendChild(d); return d;
+}
+const ck = (id) => `<svg id="${id}" width="76" height="70" style="opacity:0"><path d="M10,36 L30,56 L68,10" fill="none" stroke="#111" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>` +
+  `<path d="M10,36 L30,56 L68,10" fill="none" stroke="#2f7bff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const tg = (id) => `<svg id="${id}" width="76" height="76" style="opacity:0"><circle cx="36" cy="38" r="30" fill="#fff" stroke="#e60000" stroke-width="8"/><circle cx="36" cy="38" r="14" fill="#e60000"/>` +
+  `<path d="M36,0 V18 M36,58 V76 M-2,38 H16 M56,38 H74" stroke="#e60000" stroke-width="7" stroke-linecap="round"/></svg>`;
+const list = (pre) => `<div class="clip"><div class="paper"><div class="tt">穴チェックリスト</div>` +
+  [0, 1, 2, 3].map(i => `<div class="row" style="top:${96 + 88 * i}px"><div class="bx"></div><div class="bar" style="width:${[230, 200, 250, 170][i]}px"></div>${ck(pre + "c" + i)}${tg(pre + "t" + i)}</div>`).join("") +
+  `</div><div class="cl"></div></div>`;
+// 盾の穴（250「穴」）と、ふさぐ青い当て布（250+1「守れる」）
+const HO = [[78, 92], [176, 128], [112, 196]];
+const holes = `<svg width="300" height="300" style="display:block;overflow:visible">` + HO.map(([x, y], i) =>
+  `<g><path d="M${x - 26},${y} L${x - 16},${y - 22} L${x + 2},${y - 26} L${x + 22},${y - 16} L${x + 26},${y + 4} L${x + 14},${y + 24} L${x - 8},${y + 26} L${x - 24},${y + 14} Z" fill="#111" stroke="#fff" stroke-width="4"/>` +
+  `<g id="pt${i}" style="opacity:0"><rect x="${x - 34}" y="${y - 24}" width="68" height="48" rx="12" fill="#3d7ff0" stroke="#fff" stroke-width="5" transform="rotate(-18 ${x} ${y})"/>` +
+  `<path d="M${x - 14},${y - 4} L${x - 2},${y + 8} L${x + 16},${y - 12}" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g></g>`).join("") + `</svg>`;
+const burst = `<svg width="90" height="90" viewBox="-45 -45 90 90" style="display:block;overflow:visible"><polygon points="` +
+  Array.from({ length: 16 }, (_, k) => { const r = k % 2 ? 18 : 42, a = Math.PI * 2 * k / 16; return `${(r * Math.cos(a)).toFixed(1)},${(r * Math.sin(a)).toFixed(1)}`; }).join(" ") +
+  `" fill="#f5e63a" stroke="#e60000" stroke-width="6" stroke-linejoin="round"/></svg>`;
+const crack = `<svg width="110" height="121" style="display:block;overflow:visible"><path d="M30,6 L46,40 L30,62 L52,92 L40,120 M46,40 L74,34 L86,58 M52,92 L80,98" fill="none" stroke="#000" stroke-width="9" stroke-linecap="round"/>` +
+  `<path d="M30,6 L46,40 L30,62 L52,92 L40,120 M46,40 L74,34 L86,58 M52,92 L80,98" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>`;
+
+// ───── 前半の場面（0〜414）。253「これを」で組み替える（左右の段は消え、リスト・攻撃者・「どこ攻撃すればいいかリスト」は後半の場所へ動く）
+// 左（青）：守るための → 穴 → 穴チェックリスト → あると → 守れる
+const DL = { dim: `${F.gyaku}-${F.kore}:0.45`, f1: F.kore };
+const R1 = { f1: F.kore };
+P("laneL", F.start, "slide", 40, 80, `<div class="lane b"></div>`, DL);
+P("hdL", F.start, "slide", 64, 46, Z.plate("守るための", { size: 50, radius: 12, pad: "4px 24px 10px" }), DL);
+P("shield", F.start, "bounce", 170, 140, Z.img(Z.ILLUST + "game_tate.png", { w: 300 }), DL);
+P("holes", F.ana, "pop", 170, 140, holes, DL);
+P("arrL", F.aru, "grow", 480, 300, Z.arrow({ len: 160, dir: "left", color: "#3d7ff0", shaft: 26, hl: 44, hw: 66 }), DL);
+P("mamo", F.mamoreru, "bounce", 196, 470, Z.plate("守れる", { size: 74, radius: 14 }), DL);
+// 真ん中：同じリスト1枚（後半は左へ動いて小さくなる）
+P("list", F.ana, "bounce", 650, 90, `<div id="listW" style="transform-origin:0 0">${list("L")}</div>`);
+// 右（赤）：逆に言うと → この穴チェックリストを悪用すれば → どこ攻撃すればいいかリスト
+P("laneR", F.gyaku, "slide", 1150, 80, `<div class="lane r"></div>`, R1);
+P("hdR", F.gyaku, "slide", 1176, 46, Z.plate("逆に言うと", { size: 50, bg: "#d90a0a", radius: 12, pad: "4px 24px 10px" }), R1);
+P("arrR", F.akuyo, "grow", 1100, 290, Z.arrow({ len: 170, dir: "right", color: "#ff2a2a", shaft: 26, hl: 44, hw: 66 }), R1);
+P("atk", F.akuyo, "bounce", 1290, 120, `<div id="atkM" style="transform-origin:0 0">${Z.img("../assets/img_attacker_c.png", { h: 290 })}</div>`);
+P("akuyo", F.akuyo, "bounce", 1480, 170, Z.stk("悪用", { size: 100, font: "Tsk", fill: "#ff3b30", strokes: [["#000", 30], ["#fff", 14]] }), R1);
+P("doko", F.doko, "slide", 1200, 440, `<div id="dokoM" style="transform-origin:0 0">${Z.plate("どこ攻撃すれば<br>いいかリスト", { size: 58, bg: "#d90a0a", radius: 14, pad: "6px 26px 12px" })}</div>`);
+
+// ───── 後半の場面（414〜）：攻撃者・リスト → 脱獄したAI に バーン読み込まして → 行ってこい → 片っ端から（会社のビル）→ どっかボコボコ
+// 動いた後の場所：攻撃者 (70,380)・リスト (240,340) ×0.55・「どこ攻撃すればいいかリスト」(214,640) ×0.7
+const MV = { atk: [70 - 1290, 380 - 120, 1], list: [240 - 650, 340 - 90, 0.55], doko: [214 - 1200, 640 - 440, 0.7] };
+// 脱獄した AI（赤いロボット。手首の枷の鎖がちぎれている）
+const robot = `<svg width="300" height="340" viewBox="0 0 300 340" style="display:block;overflow:visible"><g stroke="#000" stroke-linejoin="round">` +
+  `<line x1="150" y1="22" x2="150" y2="62" stroke-width="9"/><circle cx="150" cy="20" r="15" fill="#ffdf3a" stroke-width="6"/>` +
+  `<path d="M90,232 L38,180" stroke-width="34" stroke-linecap="round"/><path d="M90,232 L38,180" stroke="#e5343c" stroke-width="20" stroke-linecap="round"/>` +
+  `<path d="M210,232 L262,180" stroke-width="34" stroke-linecap="round"/><path d="M210,232 L262,180" stroke="#e5343c" stroke-width="20" stroke-linecap="round"/>` +
+  `<rect x="16" y="160" width="44" height="28" rx="6" fill="#b9c1ca" stroke-width="6" transform="rotate(-45 38 174)"/>` +
+  `<rect x="240" y="160" width="44" height="28" rx="6" fill="#b9c1ca" stroke-width="6" transform="rotate(45 262 174)"/>` +
+  `<rect x="40" y="96" width="30" height="58" rx="10" fill="#9e1f26" stroke-width="6"/><rect x="230" y="96" width="30" height="58" rx="10" fill="#9e1f26" stroke-width="6"/>` +
+  `<rect x="62" y="58" width="176" height="136" rx="32" fill="#e5343c" stroke-width="8"/><rect x="84" y="82" width="132" height="88" rx="22" fill="#26090b" stroke-width="5"/>` +
+  `<polygon points="98,102 142,118 138,134 100,124" fill="#ffe94a" stroke-width="0"/><polygon points="202,102 158,118 162,134 200,124" fill="#ffe94a" stroke-width="0"/>` +
+  `<path d="M112,148 L125,158 L138,148 L150,158 L162,148 L175,158 L188,148" fill="none" stroke="#ffe94a" stroke-width="6" stroke-linecap="round"/>` +
+  `<rect x="128" y="192" width="44" height="16" fill="#9e1f26" stroke-width="5"/><rect x="80" y="206" width="140" height="110" rx="26" fill="#e5343c" stroke-width="8"/>` +
+  `<rect x="100" y="312" width="36" height="26" rx="6" fill="#9e1f26" stroke-width="6"/><rect x="164" y="312" width="36" height="26" rx="6" fill="#9e1f26" stroke-width="6"/></g>` +
+  `<text x="150" y="284" font-family="Hv" font-size="58" text-anchor="middle" fill="#fff" stroke="#000" stroke-width="10" paint-order="stroke">AI</text>` +
+  [[8, 128, -30], [-14, 102, 20], [292, 128, 30], [314, 102, -20]].map(([x, y, r]) =>
+    `<g transform="rotate(${r} ${x} ${y})"><ellipse cx="${x}" cy="${y}" rx="17" ry="10" fill="none" stroke="#000" stroke-width="12"/><ellipse cx="${x}" cy="${y}" rx="17" ry="10" fill="none" stroke="#c9d0d8" stroke-width="5"/></g>`).join("") +
+  [[22, 80, 40, 92], [-8, 150, 12, 146], [278, 80, 260, 92], [308, 150, 288, 146]].map(([a, b, c, d]) =>
+    `<line x1="${a}" y1="${b}" x2="${c}" y2="${d}" stroke="#ffe94a" stroke-width="6" stroke-linecap="round"/>`).join("") + `</svg>`;
+P("ai", F.dakkoku, "bounce", 610, 300, `<div id="aiM">${robot}</div>`);
+P("aiL", F.dakkoku, "slide", 626, 662, Z.plate("脱獄したAI", { size: 52, bg: "#d90a0a", radius: 12, pad: "4px 24px 10px" }));
+// 「脱獄したAI」の意味の添え（初心者が「脱獄」で止まるため。2026-10-17 確かめ係の指摘。言葉の言い換えで、言っていない事実は足さない）
+P("aiS", F.dakkoku, "slide", 550, 748, `<div style="border:3px solid #8f96a0;border-radius:12px;overflow:hidden">${Z.plate("（安全のための制限を外したAI）", { size: 32, bg: "rgba(12,12,14,.92)", fg: "#fff", radius: 0, pad: "4px 18px 8px" })}</div>`);
+P("mini", F.ban, "pop", 300, 400, `<div id="miniM" style="transform-origin:0 0"><div style="transform:scale(.3);transform-origin:0 0;filter:drop-shadow(0 0 16px rgba(255,40,40,1))">${list("M")}</div></div>`);
+P("ban", F.ban, "bounce", 560, 150, `<div style="transform:rotate(-8deg)">${Z.stk("バーン", { size: 110, font: "Tsk", fill: "#f5e63a", strokes: [["#000", 22]] })}</div>`);
+P("itte", F.itte, "bounce", 40, 236, Z.bubble("行ってこい", { size: 54, tail: "down", off: 60, pad: "6px 28px 10px" }));
+const BX = [1030, 1198, 1366, 1534, 1702];
+BX.forEach((x, i) => P("b" + i, F.yatte + 3 * i, "slide", x, 380, `<div id="b${i}M">${Z.img(Z.ILLUST + "building_kaisya.png", { w: 160 })}</div>`));
+P("arrK", F.kata, "grow", 926, 440, Z.arrow({ len: 96, dir: "right", color: "#ff2a2a", shaft: 26, hl: 44, hw: 66 }));
+P("kataL", F.kata, "slide", 1030, 578, Z.stk("片っ端から", { size: 56 }));
+BX.forEach((x, i) => P("h" + i, F.kata + 6 * i, "pop", x + 36, 410, burst, { f1: F.kata + 6 * i + 14 }));   // 当たった印は 14コマで消える（片っ端から次々）
+P("crack", F.boko, "pop", BX[2] + 26, 430, crack);
+P("hB", F.boko, "bounce", BX[2] + 84, 360, burst);                               // 254+1「ボコボコ」：まん中のビルだけ印が残る
+P("boko", F.boko, "bounce", 1140, 160, Z.stk("ボコボコ", { size: 124, font: "Tsk", fill: "#ff3b30", strokes: [["#000", 34], ["#fff", 16]] }));
+
+// ───── 動き
+const ease = (q) => 1 - Math.pow(1 - q, 3);
+const cl = (q) => Math.max(0, Math.min(1, q));
+const mv = (id, [dx, dy, sc], m) => { document.getElementById(id).style.transform = m > 0 ? `translate(${(dx * m).toFixed(1)}px, ${(dy * m).toFixed(1)}px) scale(${(1 - (1 - sc) * m).toFixed(4)})` : "none"; };
+window.ZUKAI.custom = (f) => {
+  const st = [];
+  for (let i = 0; i < 4; i++) {
+    const c = f >= F.mamoreru + 6 * i && f < F.doko + 3 + 4 * i, t = f >= F.doko + 3 + 4 * i;
+    for (const p of ["L", "M"]) {
+      document.getElementById(p + "c" + i).style.opacity = c ? 1 : 0;
+      document.getElementById(p + "t" + i).style.opacity = (t || (p === "M" && f >= F.ban)) ? 1 : 0;
+    }
+    st.push(c ? 1 : 0, t ? 1 : 0);
+  }
+  for (let i = 0; i < 3; i++) document.getElementById("pt" + i).style.opacity = f >= F.mamoreru + 6 * i ? 1 : 0;
+  const lg = f >= F.doko ? 1 : 0;
+  document.getElementById("listW").style.filter = lg ? "drop-shadow(0 0 18px rgba(255,40,40,.95))" : "none";
+  // 253「これを」：攻撃者・リスト・「どこ攻撃すればいいかリスト」が後半の場所へ動く（14コマ）
+  const m = ease(cl((f - F.kore) / 14));
+  mv("atkM", MV.atk, m); mv("listW", MV.list, m); mv("dokoM", MV.doko, m);
+  // 253+1「バーン読み込まして」：リストの写しが AI へ飛んで吸い込まれる
+  const q = ease(cl((f - F.ban) / 10));
+  const mm = document.getElementById("miniM");
+  mm.style.transform = `translate(${(400 * q).toFixed(1)}px, ${(30 * q).toFixed(1)}px) scale(${(1 - 0.5 * q).toFixed(3)})`;
+  mm.style.opacity = f >= F.ban + 13 ? 0 : 1;
+  const ag = f >= F.ban + 8 && f < F.ban + 30 ? 0.5 + 0.5 * Math.sin((f - F.ban) * 0.6) : 0;
+  document.getElementById("aiM").style.filter = ag > 0 ? `drop-shadow(0 0 ${(12 + 20 * ag).toFixed(1)}px rgba(255,40,40,1))` : "none";
+  // 254+1「ボコボコ」：まん中の会社がゆれて暗くなる
+  const sh = f >= F.boko && f < F.boko + 20 ? Math.sin((f - F.boko) * 2.2) * 9 * (1 - (f - F.boko) / 20) : 0;
+  const b2 = document.getElementById("b2M");
+  b2.style.transform = `translateX(${sh.toFixed(1)}px)`;
+  b2.style.filter = f >= F.boko ? "brightness(.55) saturate(.6)" : "none";
+  return st.join("") + "/" + lg + "/" + m.toFixed(3) + "/" + q.toFixed(3) + "/" + ag.toFixed(2) + "/" + sh.toFixed(1) + (f >= F.boko ? "B" : "");
+};
+</script></body></html>

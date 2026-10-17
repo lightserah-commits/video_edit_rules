@@ -1,0 +1,133 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Z6 弱点は人間（情報漏洩の流れ）：従業員から漏れてる → 簡単な話、創太くんのパソコンがハッキングされる（何かOKしちゃう → 何かが侵入）
+     → そのパソコンを三上さんが使う → 何か入れる → 持ってかれる → 人間がいる限り なくせない → すごく難しい戦い -->
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+.att { display: block; filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff) drop-shadow(0 0 5px rgba(255,255,255,.6)); }
+.av { display: block; border-radius: 50%; box-sizing: border-box; border: 6px solid #fff; object-fit: cover; box-shadow: 0 10px 24px rgba(0,0,0,.55); }
+.dlg { width: 300px; height: 168px; box-sizing: border-box; border-radius: 16px; background: #fff; border: 4px solid #555; box-shadow: 0 8px 18px rgba(0,0,0,.4); position: relative; }
+.okb { position: absolute; left: 92px; top: 100px; width: 116px; height: 52px; border-radius: 12px; background: #1b5fd1; color: #fff;
+       font-family: Hv; font-size: 34px; text-align: center; line-height: 52px; }
+.ring { box-sizing: border-box; border: 10px solid #f5e63a; border-radius: 50%; box-shadow: 0 0 0 4px #000, inset 0 0 0 4px #000; }
+</style></head><body>
+<div id="board"></div>
+<script>
+// コマ（図解の頭 f18241＝字幕388「でも いずれも」の頭。tl.py words 388 405 の聞こえ始め。終わり f19279＝字幕405「だから今後さ」の頭）
+// 388 弱点 30・人間 45 ／ 389 今回の 82・情報漏洩 98・結局 127・どういう流れか 139 ／ 390 従業員から 166・漏れてる 211 ／ 392 だいたいそう 242・従業員 257
+// 394 簡単な話 278・創太くんのパソコンが 301・ハッキング 341 ／ 395 何か 384・OK 391 ／ 396 そこから 432・何かが 455・侵入 470
+// 397 その創太くんのパソコンを 506〜560・俺が 576・何か 587・使っちゃう 594 ／ 398 俺が 645・何か 670・入れた 676 ／ 399 それが 700・持ってかれる 713
+// 401 こういうのなんだよね 757 ／ 402 人間がいる限り 852・なくせない 921 ／ 404 すごく 964・難しい 985・戦い 999 ／ 405 の頭 1038 で全部消える
+const F = { start: 0, ningen: 45, konkai: 98, nagare: 139, jugyo: 166, more: 211, daitai: 242, jugyo2: 257, kantan: 278,
+            pc: 301, hack: 341, nanika: 384, ok: 391, nani2: 455, shin: 470, ore: 576, tsukau: 594, ireru: 670, ireta: 676,
+            sore: 700, motte: 713, ningen2: 852, naku: 921, muzu: 985, END: 1038 };
+window.ZUKAI = { frames: 1038 };
+function P(id, f0, m, x, y, html, o = {}) {
+  const d = document.createElement("div");
+  d.className = "part"; d.id = id; d.dataset.f0 = f0; d.dataset.m = m;
+  if (o.f1 !== undefined) d.dataset.f1 = o.f1;
+  if (o.dim) d.dataset.dim = o.dim;
+  if (o.dur) d.dataset.dur = o.dur;
+  if (o.out) d.dataset.out = o.out;
+  d.style.left = x + "px"; d.style.top = y + "px";
+  d.innerHTML = `<div class="in">${html}</div>`;
+  document.body.appendChild(d); return d;
+}
+const IL = (n, h) => `<img src="${Z.ILLUST}${n}" style="height:${h}px;display:block">`;
+const ATT = (h) => `<img class="att" src="../assets/img_attacker_c.png" style="height:${h}px">`;
+const paper = (s = 1) => `<svg width="${80 * s}" height="${100 * s}" viewBox="0 0 80 100" style="display:block;overflow:visible"><path d="M4,4 H56 L76,24 V96 H4 Z" fill="#fff" stroke="#111" stroke-width="5" stroke-linejoin="round"/>` +
+  `<path d="M56,4 V24 H76" fill="#d6d6d6" stroke="#111" stroke-width="5" stroke-linejoin="round"/>` + [40, 56, 72].map((y, i) => `<rect x="14" y="${y}" width="${i === 2 ? 30 : 50}" height="7" rx="3" fill="#b5b5b5"/>`).join("") + `</svg>`;
+const virus = (s) => `<svg width="${s}" height="${s}" viewBox="0 0 120 120" style="display:block;overflow:visible"><g stroke="#111" stroke-width="5">` +
+  [0, 45, 90, 135, 180, 225, 270, 315].map(a => `<g transform="rotate(${a} 60 60)"><line x1="60" y1="18" x2="60" y2="4"/><circle cx="60" cy="4" r="7" fill="#b13bd6"/></g>`).join("") +
+  `<circle cx="60" cy="60" r="40" fill="#b13bd6"/></g><path d="M38,50 L54,58 M82,50 L66,58" stroke="#111" stroke-width="7" stroke-linecap="round"/>` +
+  `<circle cx="47" cy="62" r="6" fill="#fff"/><circle cx="73" cy="62" r="6" fill="#fff"/><path d="M44,84 Q60,74 76,84" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round"/></svg>`;
+const laptop = `<svg width="520" height="330" viewBox="0 0 520 330" style="display:block;overflow:visible">` +
+  `<rect x="30" y="4" width="460" height="282" rx="20" fill="#3b3f46" stroke="#111" stroke-width="7"/><rect x="48" y="20" width="424" height="246" rx="8" fill="#dbe9ff"/>` +
+  `<path d="M2,290 H518 L494,326 H26 Z" fill="#a3aab4" stroke="#111" stroke-width="7" stroke-linejoin="round"/><rect x="214" y="290" width="92" height="10" rx="4" fill="#7d838c"/></svg>`;
+const cursor = `<svg width="56" height="70" viewBox="0 0 56 70" style="display:block;overflow:visible"><path d="M4,4 L4,56 L18,44 L28,66 L38,61 L28,40 L48,40 Z" fill="#fff" stroke="#111" stroke-width="5" stroke-linejoin="round"/></svg>`;
+const Q = (s) => Z.stk("？", { size: s, font: "Tsk", fill: "#f5e63a", strokes: [["#000", Math.round(s / 6)]] });
+const red = (t, s) => Z.stk(t, { size: s, font: "Tsk", fill: "#ff5a4a", strokes: [["#fff", 12], ["#000", 6]] });
+// 流れの字（ハッキング・何かが 侵入・持ってかれる）は暗い背景で読めるよう、白い太い縁（外に黒の細い縁）。2026-10-17 確かめ係の指摘
+const redF = (t, s) => Z.stk(t, { size: s, font: "Tsk", fill: "#ff4a3a", strokes: [["#000", 24], ["#fff", 15]] });
+
+// ───── 見出し：弱点は ？ → 人間
+P("h1", F.start, "slide", 60, 52, Z.stk("弱点は", { size: 96, font: "Tsk", strokes: [["#000", 20]] }));
+P("hq", F.start, "bounce", 414, 44, Q(112), { f1: F.ningen });
+P("h2", F.ningen, "bounce", 380, 42, Z.stk("人間", { size: 118, font: "Tsk", fill: "#f5e63a", strokes: [["#000", 24]] }));
+P("s1", F.konkai, "slide", 680, 70, Z.plate("今回の 情報漏洩", { size: 48, radius: 12 }));
+P("s2", F.nagare, "slide", 1150, 76, Z.stk("結局 どういう流れ？", { size: 50 }));
+
+// ───── 前半：従業員から漏れてる（会社と従業員 → 書類が漏れ出す）。394「簡単な話」で消える
+const oA = { f1: F.kantan + 8, out: "fade:8" };
+P("bld", F.jugyo, "bounce", 90, 284, IL("building_kaisya.png", 420), oA);
+P("emp", F.jugyo, "bounce", 470, 262, IL("computer_mob_programming.png", 440), oA);
+P("empL", F.jugyo + 10, "slide", 610, 716, Z.plate("従業員", { size: 50, radius: 12 }), oA);
+P("arL", F.more, "grow", 924, 450, Z.arrow({ len: 220, dir: "right", color: "#e60000", shaft: 26, hl: 48, hw: 72 }), oA);
+P("more", F.more, "bounce", 914, 330, red("漏れてる", 70), oA);
+P("pp", F.more + 6, "bounce", 1160, 400, `<div style="position:relative;width:300px;height:170px">` +
+  `<div style="position:absolute;left:0;top:30px;transform:rotate(-14deg)">${paper(1)}</div><div style="position:absolute;left:96px;top:0;transform:rotate(8deg)">${paper(1)}</div>` +
+  `<div style="position:absolute;left:190px;top:46px;transform:rotate(22deg)">${paper(1)}</div></div>`, oA);
+P("dait", F.daitai, "slide", 1150, 584, Z.stk("だいたい そう", { size: 54, fill: "#f5e63a" }), oA);
+P("ringE", F.jugyo2, "pop", 466, 262, `<div class="ring" style="width:450px;height:450px"></div>`, oA);
+
+// ───── 後半：流れ（攻撃する側 → 創太くんのパソコン ← 三上さん）
+const DIM = `${F.ningen2}-${F.END}:0.45`;
+const oD = { dim: DIM };
+P("lap", F.pc, "bounce", 700, 330, laptop, oD);
+P("red", F.shin + 3, "fade", 748, 350, `<div style="width:424px;height:246px;border-radius:8px;background:rgba(230,0,0,.42)"></div>`, { dim: DIM, dur: 6 });
+P("lapT", F.pc, "slide", 724, 278, Z.plate("創太くんのパソコン", { size: 48, bg: "#222", radius: 10, pad: "2px 20px 8px" }), oD);
+P("sota", F.pc, "bounce", 1300, 330, `<img class="av" src="../assets/avatar_sota.png" style="width:160px;height:160px">`);
+P("sotaN", F.pc + 4, "slide", 1266, 498, Z.plate("創太くん", { size: 48, bg: "#222", radius: 10, pad: "2px 20px 8px" }));
+P("att", F.hack, "bounce", 78, 330, ATT(350), oD);
+P("ar1", F.hack, "grow", 262, 374, Z.arrow({ len: 420, dir: "right", color: "#e60000", shaft: 26, hl: 48, hw: 72 }), oD);
+P("hackT", F.hack, "slide", 291, 284, redF("ハッキング", 56), oD);
+// 何か OK しちゃう（画面の確認の窓・矢印のカーソルで OK を押す）
+P("dlg", F.nanika, "bounce", 810, 388, `<div class="dlg"><div style="position:absolute;left:22px;top:16px">${Q(60)}</div>` +
+  `<div style="position:absolute;left:100px;top:30px;width:170px;height:10px;border-radius:5px;background:#c9c9c9"></div>` +
+  `<div style="position:absolute;left:100px;top:56px;width:120px;height:10px;border-radius:5px;background:#c9c9c9"></div>` +
+  `<div class="okb" id="okB">OK</div></div>`, { f1: F.shin });
+P("cur", F.nanika, "pop", 1010, 470, `<div id="curM">${cursor}</div>`, { f1: F.shin });
+P("pochi", F.ok, "bounce", 1060, 372, Z.stk("ポチッ", { size: 50, font: "Tsk", fill: "#fff", strokes: [["#000", 12]] }), { f1: F.shin });
+P("okT", F.ok, "slide", 1290, 576, Z.plate("何か OKしちゃう", { size: 44, bg: "#d90a0a", radius: 12 }));
+// 何かが侵入（攻撃する側から矢印に沿ってパソコンの中へ）
+P("vir", F.nani2, "pop", 240, 352, `<div id="virM">${virus(110)}</div>`, oD);
+P("shinT", F.shin, "bounce", 285, 450, redF("何かが 侵入", 54), oD);
+// その創太くんのパソコンを 俺が使っちゃう → 何か入れる → 持ってかれる
+P("me", F.ore, "bounce", 880, 742, `<img class="av" src="../assets/mikami_icon.png" style="width:150px;height:150px">`);
+// 名札は 48px にするとワイプの所（x 1250 より右）にかかるので、アイコンの下に置く（創太くんと同じ）
+P("meN", F.ore + 4, "slide", 839, 906, Z.plate("三上さん", { size: 48, bg: "#222", radius: 10, pad: "2px 20px 8px" }));
+P("arU", F.tsukau, "grow", 920, 664, Z.arrow({ len: 74, dir: "up", color: "#fff", shaft: 20, hl: 36, hw: 54 }), oD);
+P("tsk", F.tsukau, "slide", 400, 768, Z.stk("俺が 何か使っちゃう", { size: 46 }), { f1: F.ningen2, out: "fade:6" });
+P("doc", F.ireru, "pop", 1000, 780, `<div id="docM">${paper(0.9)}</div>`, oD);
+P("irT", F.ireta, "slide", 400, 848, Z.stk("何か 入れる", { size: 46 }), { f1: F.ningen2, out: "fade:6" });
+P("ar2", F.sore, "grow", 262, 548, Z.arrow({ len: 420, dir: "left", color: "#e60000", shaft: 26, hl: 48, hw: 72 }), oD);
+P("motT", F.motte, "bounce", 275, 610, redF("持ってかれる", 56), oD);
+
+// ───── 締め：人間がいる限り なくせない → すごく難しい戦い
+P("rgS", F.ningen2, "pop", 1284, 314, `<div class="ring" style="width:192px;height:192px"></div>`);
+P("rgM", F.ningen2, "pop", 864, 726, `<div class="ring" style="width:182px;height:182px"></div>`);
+P("k1", F.ningen2, "slide", 60, 760, Z.stk("人間がいる限り", { size: 76, font: "Tsk", strokes: [["#000", 18]] }));
+P("k2", F.naku, "bounce", 60, 868, red("なくせない", 118));
+// 暗くした流れの字（何かが 侵入・持ってかれる）と重ならないよう、黒い座布団に載せる
+P("muzu", F.muzu, "bounce", 286, 420, `<div style="transform:rotate(-4deg);background:rgba(10,10,10,.9);border:6px solid #f5e63a;border-radius:26px;padding:8px 36px 16px;box-shadow:0 10px 28px rgba(0,0,0,.7)">${Z.stk("すごく 難しい戦い", { size: 96, font: "Tsk", fill: "#f5e63a", strokes: [["#000", 22]] })}</div>`);
+
+// ───── 動き：カーソルが OK を押す／何か（ウイルス）が矢印に沿って侵入／書類が三上さんから中へ、そして攻撃する側へ
+const ease = (q) => 1 - Math.pow(1 - q, 3);
+const cl = (q) => Math.max(0, Math.min(1, q));
+const lerp = (a, b, q) => a + (b - a) * q;
+window.ZUKAI.custom = (f) => {
+  const c = ease(cl((f - F.nanika) / 6));
+  document.getElementById("curM").style.transform = `translate(${(-24 * c).toFixed(1)}px, ${(-14 * c).toFixed(1)}px)`;
+  const pressed = f >= F.ok && f < F.ok + 4;
+  document.getElementById("okB").style.background = f >= F.ok ? "#0d3d8f" : "#1b5fd1";
+  document.getElementById("okB").style.transform = pressed ? "scale(0.9)" : "none";
+  const v = ease(cl((f - F.nani2) / 16));
+  const vx = lerp(240, 900, v), vy = lerp(352, 420, v) - Math.sin(v * Math.PI) * 40;
+  const vs = f >= F.shin + 3 ? 1.5 + 0.3 * Math.max(0, 1 - (f - F.shin - 3) / 6) : 1;
+  document.getElementById("virM").style.transform = `translate(${(vx - 240).toFixed(1)}px, ${(vy - 352).toFixed(1)}px) scale(${vs.toFixed(3)})`;
+  const a = ease(cl((f - F.ireta) / 12)), b = ease(cl((f - F.motte) / 16));
+  let dx = lerp(1000, 1060, a), dy = lerp(780, 430, a);
+  if (b > 0) { dx = lerp(1060, 150, b); dy = lerp(430, 500, b) - Math.sin(b * Math.PI) * 30; }
+  document.getElementById("docM").style.transform = `translate(${(dx - 1000).toFixed(1)}px, ${(dy - 780).toFixed(1)}px)`;
+  return [c.toFixed(3), pressed ? 1 : 0, f >= F.ok ? 1 : 0, vx.toFixed(1), vy.toFixed(1), vs.toFixed(3), dx.toFixed(1), dy.toFixed(1)].join("/");
+};
+</script></body></html>

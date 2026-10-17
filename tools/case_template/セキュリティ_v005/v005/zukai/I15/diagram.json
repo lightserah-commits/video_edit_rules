@@ -1,0 +1,28 @@
+{
+ "key": "I15",
+ "title": "Addness のロゴ（部分・CTA）",
+ "start_f": 26257,
+ "end_f": 26333,
+ "anchor": {
+  "cap": "584",
+  "f": 26257
+ },
+ "wipe": {
+  "show": false
+ },
+ "se": [
+  {
+   "f": 0,
+   "se": "ピピ",
+   "why": "画像が出る"
+  }
+ ],
+ "hide_caption_ids": [],
+ "removes": "",
+ "checks": [
+  5,
+  38,
+  71
+ ],
+ "story": "584 の頭で出し、586「今ものすごい勢いで」の頭で消える"
+}

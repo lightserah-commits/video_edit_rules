@@ -1,0 +1,125 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Z8 AI を使うなら申請 → 申請している間にハッキングされる（v001 新規。字幕 489〜500）。
+     左に上場会社のビル・真ん中に「東証の厳しい基準」の紙（ルール）・右に東証（字だけ。ロゴは使わない）。
+     ルール「AI 使っちゃいけません」→（までは ない）に線 →「AIを使うなら 東証に申請」→ 会社から東証へ点線の道と申請書 →
+     「なぜなら ハッキング・情報漏洩のリスクがあるから」→ 紙を暗くし、申請書がじわじわ進む（砂時計「AIの申請してる間に」）→
+     攻撃者が下から会社を突く「ハッキング される」→ 紙が明るく赤枠「ルールが やばい」（右上・ワイプの上。Z7 の締めと同じ所） -->
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+.card { width: 770px; height: 484px; box-sizing: border-box; border: 6px solid #111; border-radius: 18px; background: #fdfdfb; box-shadow: 0 10px 30px rgba(0,0,0,.55); }
+.cband { width: 770px; height: 82px; box-sizing: border-box; border-radius: 18px 18px 0 0; background: #1b5fd1; border: 6px solid #111; border-bottom: none; }
+.tx { font-family: Lbl; color: #111; white-space: nowrap; line-height: 1.1; }
+.redf { width: 790px; height: 504px; box-sizing: border-box; border: 12px solid #d90a0a; border-radius: 24px; box-shadow: 0 0 24px rgba(217,10,10,.7); }
+.attk { filter: drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff); }
+</style></head><body>
+<div id="board"></div>
+<script>
+// コマ（図解の頭 f23352＝字幕489 の頭。tl.py words 489 502 の聞こえ始め。終わり f23989＝字幕502 の頭）
+// 489 AI 0・使っちゃいけません 9 ／ 490 までは 77・ないんだけど 86 ／ 491 使うなら 118・東証に 164・申請 184・しなきゃいけない 195 ／
+// 495 なぜなら 248・ハッキング 280 ／ 496 セキュリティリスク 320・情報漏洩のリスク 358・あるから 392 ／
+// 498 って言って 441・AIの 470・申請してる 483・間に 504・ハッキング 512・される 527 ／ 500 ルール 569・やばい 588
+const F = { ai: 0, made: 77, nai: 86, tsukau: 118, tosho: 164, shinsei: 184, shina: 195, naze: 248, hack: 280, roei: 358, aru: 392,
+            itte: 441, aida: 470, hack2: 512, sareru: 527, rule: 569, yabai: 588, END: 637 };
+window.ZUKAI = { frames: 637 };
+function P(id, f0, m, x, y, html, o = {}) {
+  const d = document.createElement("div");
+  d.className = "part"; d.id = id; d.dataset.f0 = f0; d.dataset.m = m;
+  if (o.f1 !== undefined) d.dataset.f1 = o.f1;
+  if (o.dur) d.dataset.dur = o.dur;
+  if (o.dim) d.dataset.dim = o.dim;
+  d.style.left = x + "px"; d.style.top = y + "px";
+  d.innerHTML = `<div class="in">${html}</div>`;
+  document.body.appendChild(d); return d;
+}
+const BLUE = "#1b5fd1", RED = "#d90a0a", YEL = "#f5e63a";
+const CX = 470, CY = 56;                        // ルールの紙の左上（770×484）。確かめ係：赤枠（CY−10）を画面の上から 40px 以上に（前は 30px）
+const DIMC = { dim: `${F.itte}-${F.rule}:0.45` };   // 申請している間〜ハッキングの間、紙を暗く
+const T = (t, size = 52, col = "#111", font = "Lbl") => `<div class="tx" style="font-size:${size}px;color:${col};font-family:${font}">${t}</div>`;
+
+// ───── 左：上場会社
+P("bld", F.ai, "pop", 70, 250, `<div class="shk" style="transform-origin:50% 100%">${Z.img(Z.ILLUST + "building_kaisya.png", { h: 330 })}</div>`);
+P("bldlab", F.ai, "slide", 66, 588, Z.stk("上場会社", { size: 58 }));
+
+// ───── 真ん中：ルールの紙（東証の厳しい基準）
+P("card", F.ai, "pop", CX, CY, `<div class="card"></div>`, DIMC);
+P("cband", F.ai, "pop", CX, CY, `<div class="cband"></div>`, DIMC);
+P("ctitle", F.ai, "slide", CX + 28, CY + 6, Z.stk("東証の厳しい基準", { size: 54, strokes: [["#0b2a66", 10]] }), DIMC);
+// 478「東証の厳しい基準ってのは 例えばね」の「例えば」（ルールの中身は三上さんが例として言ったもの。確かめ係が足した）
+P("ctag", F.ai, "slide", CX + 480, CY + 11, Z.stk("（例えば）", { size: 46, strokes: [["#0b2a66", 8]] }), DIMC);
+// 1行目：AI 使っちゃいけません（AI の絵に禁止の印）→ 490「までは ない」で線
+const ROBO = (h) => Z.img(Z.ILLUST + "ai_character08_think.png", { h });
+P("l1ico", F.ai, "bounce", CX + 26, CY + 88, `<div style="position:relative;width:76px;height:86px">${ROBO(86)}` +
+  `<svg width="96" height="96" style="position:absolute;left:-10px;top:-5px;overflow:visible"><circle cx="48" cy="48" r="40" fill="none" stroke="${RED}" stroke-width="9"/>` +
+  `<path d="M20,20 L76,76" stroke="${RED}" stroke-width="9"/></svg></div>`, DIMC);
+P("l1", F.ai + 9, "slide", CX + 124, CY + 100, T("AI 使っちゃいけません", 54), DIMC);
+P("l1x", F.made, "draw", CX + 116, CY + 100, `<svg width="560" height="70" style="display:block;overflow:visible">` +
+  `<path class="draw" d="M0,36 L556,30" stroke="${RED}" stroke-width="8" stroke-linecap="round"/></svg>`, Object.assign({ dur: 8 }, DIMC));
+P("l1n", F.nai, "slide", CX + 300, CY + 160, T("（までは ないけど）", 46, RED), DIMC);
+// 2行目：AIを使うなら → 東証に申請（申請書の絵）・しなきゃいけない
+P("l2a", F.tsukau, "slide", CX + 26, CY + 222, T("AIを使うなら", 50), DIMC);
+P("l2arr", F.tosho, "pop", CX + 340, CY + 234, `<svg width="60" height="44" style="display:block"><path d="M2,22 H40" stroke="#111" stroke-width="9"/><polygon points="36,4 58,22 36,40" fill="#111"/></svg>`, DIMC);
+P("l2b", F.tosho, "bounce", CX + 414, CY + 212, T("東証に申請", 62, RED, "Hv"), DIMC);
+P("l2c", F.shina, "slide", CX + 372, CY + 290, T("しなきゃいけない", 48), DIMC);
+// 3：なぜなら ハッキング・情報漏洩のリスクがあるから
+P("div", F.naze, "pop", CX + 24, CY + 352, `<div style="width:722px;height:0;border-top:4px dashed #9aa3ad"></div>`, DIMC);
+P("l3a", F.naze, "slide", CX + 30, CY + 362, Z.plate("なぜなら", { size: 40, pad: "2px 18px 8px", radius: 10 }), DIMC);
+P("l3b", F.hack, "slide", CX + 236, CY + 360, T("ハッキング・", 52), DIMC);
+P("l3c", F.roei, "slide", CX + 30, CY + 416, T("情報漏洩のリスク", 52), DIMC);
+P("l3d", F.aru, "slide", CX + 458, CY + 416, T("があるから", 52), DIMC);
+
+// ───── 右：東証（字だけ）
+P("tlab", F.tosho, "slide", 1452, 236, Z.stk("東証", { size: 76 }));
+P("tbld", F.tosho, "bounce", 1372, 326, Z.img("../assets/img_tosho_building.png", { h: 290 }));
+
+// ───── 申請の道（会社 → 東証）と申請書
+P("track", F.shinsei, "draw", 380, 585, `<svg width="1000" height="60" style="display:block;overflow:visible">` +
+  `<path class="draw" d="M10,30 H930" stroke="#bbb" stroke-width="10" stroke-dasharray="22 14"/>` +
+  `<polygon points="930,6 984,30 930,54" fill="#bbb"/></svg>`, { dur: 10 });
+const DOC = `<svg width="64" height="80" style="display:block;overflow:visible"><path d="M3,3 H46 L61,18 V77 H3 Z" fill="#fff" stroke="#111" stroke-width="5" stroke-linejoin="round"/>` +
+  `<rect x="11" y="16" width="30" height="8" rx="3" fill="${BLUE}"/><rect x="11" y="34" width="42" height="6" rx="3" fill="#9aa3ad"/><rect x="11" y="48" width="42" height="6" rx="3" fill="#9aa3ad"/>` +
+  `<circle cx="44" cy="64" r="9" fill="none" stroke="${RED}" stroke-width="4"/></svg>`;
+P("doc", F.shinsei, "bounce", 392, 540, `<div class="mv">${DOC}</div>`);
+P("doclab", F.shinsei, "slide", 468, 638, Z.stk("申請", { size: 56 }), { f1: F.aida });
+
+// ───── 申請してる間に（砂時計・申請書がじわじわ進む）
+const HG = `<svg width="66" height="96" style="display:block;overflow:visible"><g id="hg" style="transform-origin:33px 48px">` +
+  `<rect x="2" y="2" width="62" height="10" rx="4" fill="#8b5a2b" stroke="#111" stroke-width="4"/><rect x="2" y="84" width="62" height="10" rx="4" fill="#8b5a2b" stroke="#111" stroke-width="4"/>` +
+  `<path d="M10,12 H56 C56,36 36,40 36,48 C36,56 56,60 56,84 H10 C10,60 30,56 30,48 C30,40 10,36 10,12 Z" fill="#e8f4ff" stroke="#111" stroke-width="4"/>` +
+  `<path id="sandT" d="M16,18 H50 C48,32 36,40 33,46 C30,40 18,32 16,18 Z" fill="${YEL}"/><path id="sandB" d="M33,60 C40,64 50,72 50,80 H16 C16,72 26,64 33,60 Z" fill="${YEL}"/></g></svg>`;
+P("hg", F.aida, "bounce", 470, 652, HG);
+P("aida", F.aida, "slide", 552, 664, Z.stk("AIの申請してる 間に…", { size: 54, fill: YEL }));
+
+// ───── ハッキングされる（攻撃者が下から会社を突く）
+P("atk", F.hack2, "bounce", 610, 748, `<img class="attk" src="../assets/img_attacker.png" style="height:290px;display:block">`);
+P("atkarr", F.hack2, "draw", 340, 540, `<svg width="330" height="340" style="display:block;overflow:visible">` +
+  `<path class="draw" d="M268,318 Q70,300 34,52" fill="none" stroke="${RED}" stroke-width="16" stroke-linecap="round"/></svg>`, { dur: 10 });
+P("atkhead", F.hack2 + 9, "pop", 346, 548, `<svg width="60" height="60" style="display:block;overflow:visible"><polygon points="28,0 0,48 56,46" fill="${RED}" transform="rotate(-8 28 30)"/></svg>`);
+const BURST = `<svg width="230" height="230" style="display:block;overflow:visible"><polygon points="` +
+  Array.from({ length: 22 }, (_, i) => { const a = i / 22 * Math.PI * 2, rr = i % 2 ? 54 : 112; return `${(115 + rr * Math.cos(a)).toFixed(1)},${(115 + rr * Math.sin(a)).toFixed(1)}`; }).join(" ") +
+  `" fill="${YEL}" stroke="${RED}" stroke-width="10" stroke-linejoin="round"/></svg>`;
+P("burst", F.sareru, "bounce", 150, 330, BURST, { dur: 8 });
+const HK = (t) => Z.stk(t, { size: 74, font: "Tsk", fill: "#ff3b2f", strokes: [["#000", 22], ["#fff", 10]] });
+P("hk1", F.hack2, "slide", 846, 770, HK("ハッキング"));
+P("hk2", F.sareru, "bounce", 966, 866, HK("される"));
+
+// ───── 締め：ルールの紙に赤枠・右上に「ルールが やばい」
+P("redf", F.rule, "pop", CX - 10, CY - 10, `<div class="redf"></div>`);
+P("c1", F.rule, "bounce", 1300, 74, Z.stk("ルールが", { size: 70, font: "Tsk", fill: "#fff", strokes: [["#000", 20]] }));
+P("c2", F.yabai, "bounce", 1612, 66, Z.stk("やばい", { size: 78, font: "Tsk", fill: YEL, strokes: [["#000", 22]] }));
+
+// 動き：申請書がじわじわ進む（って言って〜最後まで）・砂時計の砂が落ちる・ビルが揺れる
+window.ZUKAI.custom = (f) => {
+  const sig = [];
+  const mv = document.querySelector("#doc .mv");
+  const q = Math.max(0, (f - F.itte) / (F.END - F.itte)), dx = 430 * q;
+  mv.style.transform = q > 0 ? `translateX(${dx.toFixed(1)}px)` : "none"; sig.push(dx.toFixed(1));
+  const s = Math.max(0, Math.min(1, (f - F.aida) / (F.END - F.aida)));
+  document.getElementById("sandT").setAttribute("transform", `translate(33 46) scale(${(1 - 0.8 * s).toFixed(3)}) translate(-33 -46)`);
+  document.getElementById("sandB").setAttribute("transform", `translate(33 80) scale(${(0.3 + 0.7 * s).toFixed(3)}) translate(-33 -80)`);
+  sig.push(s.toFixed(3));
+  const shk = document.querySelector("#bld .shk");
+  const k = f - F.sareru; const amp = k >= 0 && k < 14 ? 12 * (1 - k / 14) * (k % 2 ? 1 : -1) : 0;
+  shk.style.transform = amp ? `translateX(${amp.toFixed(1)}px) rotate(${(amp / 7).toFixed(2)}deg)` : "none"; sig.push(amp.toFixed(1));
+  return sig.join("|");
+};
+</script></body></html>
