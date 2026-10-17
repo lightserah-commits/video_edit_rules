@@ -33,7 +33,7 @@ import unicodedata
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from native_prproj import Prproj  # noqa: E402
 
-ROOT = os.path.expanduser("~/Desktop/video_edit_rules")
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))   # このフォルダ（tools/ の1つ上。置き場所に頼らない 2026-10-17）
 LIBRARY = os.path.join(ROOT, "見本", "テロップ見本集.prproj")
 OUT = os.path.join(ROOT, "見本", "テロップ部品集.prproj")
 INDEX = os.path.join(ROOT, "見本", "テロップ見本集_目次.json")

@@ -8,7 +8,7 @@
 
 ## 場所
 - 案件：`~/Desktop/みかみ案件依頼書/セキュリティについて/edit/`（以下 CASE）
-- ルールと道具：`~/Desktop/video_edit_rules/`（以下 RULES）。上司のルール：`~/Desktop/担当2/YT AI自動編集の方法 2/workspace/obsidian/動画編集/定義/`（以下 BOSS）
+- ルールと道具：`~/Desktop/video_edit_rules/`（以下 RULES）。上司のルール：`~/Desktop/video_edit_rules/上司の資料/YT AI自動編集の方法 2/workspace/obsidian/動画編集/定義/`（以下 BOSS）
 - python は `~/Desktop/video_edit_rules/env/bin/python`（以下 PY）
 
 ## 最初に読むもの（全部読んでから書く）

@@ -1,0 +1,22 @@
+- [Concurrent agents in this folder](concurrent-agents-same-folder.md) — other Claude/Codex sessions edit files and drive Premiere in parallel; check mtimes and `premiere_bridge.py status` first
+- [Restate dictated fixes first](restate-instructions-first.md) — voice/Loom edit fixes: paste the organized list IN CHAT (not just a file + OK button) and get OK before working
+- [Show visual options as screenshots](show-visual-options-as-screenshots.md) — for style choices, send labeled Premiere frame sheets, not word descriptions
+- [Font-fix before opening in Premiere](font-fix-before-opening.md) — scan/fix missing fonts into a copy before any openDocument; user hates the フォントを解決 dialog
+- [Addness goal placement](addness-goal-placement.md) — goals live under 創太's 月に30本YouTube上げる (where he granted edit rights); IDs in .claude/addness/goals.json
+- [Announce Premiere use](announce-premiere-use.md) — say before/after each Premiere step; don't save/close user projects; restore their front sequence
+- [Verbalize user's edit intent first](verbalize-user-intent-first.md) — when continuing the user's own edits, put their intent into words and get OK before applying
+- [Reply in Japanese](reply-in-japanese.md) — all chat replies, reports and progress notes in Japanese (user corrected an English report 2026-09-28)
+- [脳死で見れるか（not sound-off）](sound-off-comprehension.md) — bar is "偏差値40が脳死で見れる"; ノーサウンド was a mishearing; don't summarize questions; keep final version when speaker wavers
+- [Highlight is not an opening](highlight-not-opening.md) — 冒頭ハイライト＝細かく切った本人のセリフ＋激しい文字グラフィック（切り抜き風）。タイトルコールの丁寧なオープニングにしない
+- [Term notes restraint](term-notes-restraint.md) — ※用語注釈は本当に知らない言葉だけ（主題・Claude Code・日常語は不要）、消える時はディゾルブ 0.5秒
+- [Whisper local model offline](whisper-local-model-offline.md) — mlx_whisper は video_edit_rules/models/ のモデルをパス＋HF_HUB_OFFLINE=1。env/ の python。名前で呼ぶと無断ダウンロードになる
+- [文字PVはカメラを動かす](moji-pv-dynamic-camera.md) — 歌詞が出るだけはNG。切り替え・寄り・3D・振りを最初から。出来た区切りから早めに動画で見せる
+- [No experimental blobs in Premiere](no-experimental-blobs-in-premiere.md) — repointing FlatBuffer refs in telop text crashed the user's Premiere (2026-10-04); only edit values, or ask first
+- [Make missing telop looks via Premiere GUI](premiere-gui-telop-color.md) — don't ask the user; recolor via Properties→Appearance with computer use, save, clone the text blob (Aqua Voice overlay blocks mid-screen clicks)
+- [Check usage before fan-out](check-usage-before-fan-out.md) — get_usage before many parallel agents; 1003 case hit 80% of the 5-hour window
+- [Subagent fan-out drains quota](subagent-fanout-token-sink.md) — 1003案件の夜間66エージェントで週22%消費。多数のエージェントは事前に見込みを伝えて承諾を取る
+- [ほたて案件は Addness に置かない](hotate-case-no-addness.md) — hotate_taisho_20261009 は別チャンネル。記録は 00_案件メモ.md だけ、見本 YouTube がトンマナの正
+- [YouTube preview upload](youtube-preview-upload.md) — previews go to personal channel as private via tools/youtube_upload.py; never みかみCH; --dry + OK before sending
+- [Runaway image checker](runaway-image-checker.md) — 確かめ係に何百枚も画像を見せると暴走（grok 2026-10-17：5時間・週の約30%）。一覧画像・回数の上限・30〜60分ごとの見張り
+- [Overnight edit speed](overnight-edit-speed.md) — 2026-10-17「遅くね？」：夜の作業も見込みの表を出す・止まった headless Chrome を先に止める・遅れたらすぐ知らせる
+- [Complete Addness steps as you go](complete-addness-steps-as-you-go.md) — complete each child goal as soon as its step is done; user caught a tree with zero completions (2026-10-17)

@@ -7,7 +7,7 @@ import json
 import os
 import sys
 
-ROOT = os.path.expanduser("~/Desktop/video_edit_rules")
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # このフォルダ（tools/premiere_case/ の2つ上。置き場所に頼らない 2026-10-17）
 TOOLS = os.path.join(ROOT, "tools")
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, TOOLS)

@@ -169,7 +169,7 @@ def load_whisper_tokens(path):
     return toks
 
 
-MODEL_CANDIDATES = [os.path.expanduser("~/Desktop/video_edit_rules/models/ggml-small.bin"),   # tools/setup_env.sh で作る（2026-10-05 から）
+MODEL_CANDIDATES = [os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "models", "ggml-small.bin"),   # tools/setup_env.sh で作る（2026-10-05 から）
                     os.path.expanduser("~/whisper-models/ggml-small.bin")]
 
 
@@ -195,7 +195,7 @@ def transcribe(wav, out_json, model=None, preset=None):
         raise SystemExit(f"モデルがありません: {model}")
     model = model or next((m for m in MODEL_CANDIDATES if os.path.exists(m)), None)
     if not model:
-        raise SystemExit(f"文字起こしのモデルがありません: {MODEL_CANDIDATES}（iMacの準備.md の 3）")
+        raise SystemExit(f"文字起こしのモデルがありません: {MODEL_CANDIDATES}（別のPCの準備.md の 2）")
     preset = preset or dtw_preset(model)
     if preset not in DTW_PRESETS:
         raise SystemExit(f"-dtw の名前をモデル名から決められません: {os.path.basename(model)}（--dtw で {sorted(DTW_PRESETS)} のどれかを渡す）")
@@ -464,7 +464,7 @@ def main():
     tr = sp.add_parser("transcribe")
     tr.add_argument("wav")
     tr.add_argument("out")
-    tr.add_argument("--model", help="whisper.cpp のモデル（既定は ggml-small.bin。iMacの準備.md の 3）")
+    tr.add_argument("--model", help="whisper.cpp のモデル（既定は ggml-small.bin。別のPCの準備.md の 2）")
     tr.add_argument("--dtw", help="-dtw のプリセット（既定はモデルの名前から small・large.v3.turbo など）")
     c = sp.add_parser("check-prproj")
     c.add_argument("project")

@@ -11,7 +11,7 @@
 #   （名前で呼ぶとダウンロードする。AI メモリ whisper-local-model-offline）
 # 2026-10-05 小川さん「このフォルダの中に道具とか全部まとめておいてほしい」（~/Documents/Codex にあった前の環境が消えたため）
 set -e
-ROOT=~/Desktop/video_edit_rules
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"   # このフォルダ（tools/ の1つ上。置き場所に頼らない 2026-10-17）
 cd "$ROOT"
 mkdir -p models
 PYBASE=$(command -v python3.14 || command -v python3)

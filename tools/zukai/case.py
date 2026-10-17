@@ -13,7 +13,7 @@ import re
 from pathlib import Path
 
 TOOLS = Path(__file__).resolve().parent                       # ~/Desktop/video_edit_rules/tools/zukai
-ROOT = Path(os.path.expanduser("~/Desktop/video_edit_rules"))
+ROOT = TOOLS.parent.parent                                     # このフォルダ（置き場所に頼らない 2026-10-17）
 
 
 def add_args(ap):

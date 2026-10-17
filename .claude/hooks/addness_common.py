@@ -40,11 +40,11 @@ RECORDER_AGENT = "addness-kiroku"
 
 # ローカルの記録（Addness に反映すべき中身が書かれるファイル）
 RULE_FILES = [
-    "作業状況.md", "編集の依頼文.md", "README.md", "00_上司ルールとの対応表.md", "01_判断フロー.md",
+    "作業状況.md", "編集の依頼文.md", "README.md", "上司の資料/README.md", "01_判断フロー.md",
     "02_演出パターン.yaml", "03_SEカタログ.yaml", "04_ズーム・BGM・テンポ.yaml", "05_アニメーション.yaml",
     "06_テロップの大きさ.yaml", "07_画面共有とワイプ.yaml", "08_カットと字幕の追加ルール.yaml", "09_図解.md",
     "見本/README.md", "見本/型一覧.md",
-    "CLAUDE.md", "索引.md", "変更履歴.md", "Addnessと働く.md", "iMacの準備.md", "実例/根拠と実例.md",
+    "CLAUDE.md", "索引.md", "変更履歴.md", "Addnessと働く.md", "別のPCの準備.md", "実例/根拠と実例.md",
     "動画の土台.md", "実例/実演お手本/分析.md",
 ]
 
@@ -103,7 +103,9 @@ def local_records():
         p = PROJECT / rel
         if p.is_file():
             out.append((rel, p.stat().st_mtime))
-    off = {k for k, c in load_goals().get("cases", {}).items() if c.get("addness") is False}   # Addness に置かない案件（2026-10-09 ほたて）
+    for p in sorted((PROJECT / "チャンネル").glob("*/*.md")):   # みかみCH 以外のチャンネルのルール（2026-10-17 から）
+        out.append((str(p.relative_to(PROJECT)), p.stat().st_mtime))
+    off ={k for k, c in load_goals().get("cases", {}).items() if c.get("addness") is False}   # Addness に置かない案件（2026-10-09 ほたて）
     for name, base in case_edit_dirs().items():
         if name in off:
             continue
