@@ -1,0 +1,63 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>
+<style>
+.win{background:#f4f6fa;border-radius:14px;box-shadow:0 0 0 6px #fff;overflow:hidden}
+.win .bar{background:#2b2f3a;color:#fff;font-family:Lbl;font-size:34px;padding:4px 18px}
+.tl{position:relative;background:#1d2029}
+.tl i{position:absolute;height:22px;border-radius:4px}
+.doc{background:#fff;border-radius:10px;box-shadow:0 0 0 6px #f5e63a;padding:14px 22px;font-family:Menlo,monospace;font-size:30px;color:#222;line-height:1.5}
+.doc b{font-family:Lbl;font-size:40px;color:#d90a0a;display:block;margin-bottom:4px}
+</style></head><body>
+<div id="board"></div>
+<div class="part" id="head" data-f0="0" style="left:60px;top:36px"><div class="in" id="h"></div></div>
+<!-- 左：よくあるやり方（266+1「どういう風に」11620 → 79）・コンピュータユース（271「コ」11700 → 159）・マウス（273「マ」11797 → 256）・Premiere を直接（279「P」12024 → 483）・✕（282 12178 → 637） -->
+<div class="part" id="lp" data-f0="79" data-dim="724-2389:0.45" style="left:60px;top:170px"><div class="in" id="lp1"></div></div>
+<div class="part" id="cu" data-f0="159" data-dim="724-2389:0.45" style="left:60px;top:265px"><div class="in" id="cu1"></div></div>
+<div class="part" id="rb1" data-f0="159" data-m="bounce" data-dim="724-2389:0.45" style="left:70px;top:370px"><div class="in" id="rb1i"></div></div>
+<div class="part" id="pc" data-f0="256" data-m="pop" data-dim="724-2389:0.45" style="left:360px;top:380px"><div class="in" id="pc1"></div></div>
+<div class="part" id="bubL" data-f0="483" data-m="pop" data-dim="724-2389:0.45" style="left:300px;top:690px"><div class="in" id="bl1"></div></div>
+<div class="part" id="ng" data-f0="637" data-m="bounce" data-dim="724-2389:0.45" style="left:90px;top:880px"><div class="in" id="ng1"></div></div>
+<!-- 右：我々のやり方（283 12265 → 724）・XML ファイル（284「X」12340 → 799）・中身（293 12733 → 1192、タ 12771 → 1230、素 12799 → 1258、カ 12864 → 1323）・全部コード（296「全部」12893 → 1352）・直接作る（301「作」13249 → 1708）・読み込む（306 13392 → 1851）・音のズレ（311 13743 → 2202）・修正（312 13796 → 2255） -->
+<div class="part" id="rp" data-f0="724" style="left:990px;top:170px"><div class="in" id="rp1"></div></div>
+<div class="part" id="rb2" data-f0="724" data-m="bounce" style="left:990px;top:285px"><div class="in" id="rb2i"></div></div>
+<div class="part" id="ar1" data-f0="799" data-m="grow" style="left:1170px;top:340px"><div class="in" id="ar1i"></div></div>
+<div class="part" id="xml" data-f0="799" data-m="pop" style="left:1315px;top:250px"><div class="in" id="x1"></div></div>
+<div class="part" id="xl1" data-f0="1230" data-m="type" style="left:1339px;top:322px"><div class="in"><div class="type doc-line" id="xa"></div></div></div>
+<div class="part" id="xl2" data-f0="1258" data-m="type" style="left:1339px;top:372px"><div class="in"><div class="type doc-line" id="xb"></div></div></div>
+<div class="part" id="xl3" data-f0="1323" data-m="type" style="left:1339px;top:422px"><div class="in"><div class="type doc-line" id="xc"></div></div></div>
+<div class="part" id="all" data-f0="1352" style="left:1315px;top:505px"><div class="in" id="all1"></div></div>
+<div class="part" id="make" data-f0="1708" data-m="bounce" style="left:990px;top:625px"><div class="in" id="mk1"></div></div>
+<div class="part" id="ar2" data-f0="1851" data-m="grow" style="left:1600px;top:615px"><div class="in" id="ar2i"></div></div>
+<div class="part" id="pr" data-f0="1851" data-m="pop" style="left:1440px;top:705px"><div class="in" id="pr1"></div></div>
+<div class="part" id="m1" data-f0="2202" data-m="pop" style="left:990px;top:900px"><div class="in" id="m1i"></div></div>
+<div class="part" id="m2" data-f0="2255" data-m="pop" style="left:1430px;top:900px"><div class="in" id="m2i"></div></div>
+<script>
+window.ZUKAI = { frames: 2389 };
+const $ = id => document.getElementById(id);
+$('h').innerHTML = Z.stk('AI自動編集の しくみ', {size: 84, fill: '#f5e63a', font: 'Tsk', strokes: [['#000', 16]]});
+$('lp1').innerHTML = Z.plate('よくあるやり方', {size: 54, bg: '#1b5fd1'});
+$('cu1').innerHTML = Z.stk('コンピュータユース', {size: 60});
+$('rb1i').innerHTML = Z.img(Z.ILLUST + 'ai_character08_think.png', {w: 250});
+$('pc1').innerHTML = '<div class="win" style="width:480px"><div class="bar">Premiere Pro</div><div class="tl" style="height:230px">' +
+  '<i style="left:30px;top:30px;width:260px;background:#7d5cff"></i><i style="left:120px;top:70px;width:300px;background:#3fb6ff"></i>' +
+  '<i style="left:40px;top:110px;width:380px;background:#36c46b"></i><i style="left:70px;top:150px;width:200px;background:#ffb13f"></i>' +
+  '<svg style="position:absolute;left:300px;top:96px" width="70" height="90" viewBox="0 0 70 90"><path d="M5 5 L5 72 L22 56 L34 84 L46 78 L34 51 L58 51 Z" fill="#fff" stroke="#000" stroke-width="5"/></svg></div></div>';
+$('bl1').innerHTML = Z.bubble('AIが マウスで\nPremiereを直接操作する', {size: 46, tail: 'up', off: 120});
+$('ng1').innerHTML = Z.stk('✕ うちは これじゃない', {size: 70, fill: '#ff3b3b', font: 'Tsk', strokes: [['#fff', 14], ['#000', 6]]});
+$('rp1').innerHTML = Z.plate('うちのやり方', {size: 54, bg: '#d90a0a'});
+$('rb2i').innerHTML = Z.img(Z.ILLUST + 'ai_character08_think.png', {w: 170});
+$('ar1i').innerHTML = Z.arrow({len: 150, dir: 'right', color: '#f5e63a', shaft: 24, hl: 46, hw: 70});
+$('x1').innerHTML = '<div class="doc" style="width:500px;height:230px"><b>XMLファイル</b></div>';
+$('xa').textContent = '0:01:23 ← タイムコード';
+$('xb').textContent = 'camera.mov ← 素材';
+$('xc').textContent = '12.0〜15.5秒 ← カット';
+$('all1').innerHTML = Z.stk('タイムラインの中身を\n全部コードで書いたファイル', {size: 40});
+$('mk1').innerHTML = Z.stk('AIが XMLを直接作る', {size: 60, fill: '#f5e63a', font: 'Tsk', strokes: [['#000', 14]]});
+$('ar2i').innerHTML = Z.arrow({len: 80, dir: 'down', color: '#f5e63a', shaft: 24, hl: 40, hw: 64});
+$('pr1').innerHTML = '<div class="win" style="width:420px"><div class="bar">Premiere Proで開くだけ</div><div class="tl" style="height:120px">' +
+  '<i style="left:20px;top:18px;width:200px;background:#7d5cff"></i><i style="left:90px;top:50px;width:260px;background:#3fb6ff"></i>' +
+  '<i style="left:30px;top:82px;width:330px;background:#36c46b"></i></div></div>';
+$('m1i').innerHTML = Z.plate('◎ 音のズレがない', {size: 50, bg: '#0b8a3e'});
+$('m2i').innerHTML = Z.plate('◎ 直しやすい', {size: 50, bg: '#0b8a3e'});
+document.querySelectorAll('.doc-line').forEach(e => { e.style.fontFamily = 'Menlo, monospace'; e.style.fontSize = '30px'; e.style.color = '#222'; });
+</script></body></html>

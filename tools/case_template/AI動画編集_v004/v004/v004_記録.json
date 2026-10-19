@@ -1,0 +1,10157 @@
+{
+ "source": "v004/_work/v004_stills.prproj",
+ "output": "v004/aied_v004.prproj",
+ "sequence": "aied_v004",
+ "captions": 461,
+ "telops": [
+  {
+   "id": "5",
+   "until": "5",
+   "pattern": "P07",
+   "type": "T023",
+   "text": "神",
+   "se": "S012",
+   "kind": "感情",
+   "source": "神",
+   "zoom": "強い寄り150",
+   "bgm_stop": false,
+   "reason": "三上さんのボケ（AI自動編集はどうかと聞かれて一言「神」。大げさな評価）。白テキ＋ポカン（01 のボケとツッコミ）",
+   "start": 32.933,
+   "end": 35.102,
+   "screen": false,
+   "size": {
+    "rule": "白テキ",
+    "size_before": 134.7,
+    "notes": [],
+    "chars_longest_line": 1,
+    "lines": 1,
+    "size_after": 135.0,
+    "width_pct": 7.0,
+    "shrink_one_line": 1.0,
+    "type": "T023"
+   }
+  },
+  {
+   "id": "10",
+   "until": "10",
+   "pattern": "P04",
+   "type": "T010",
+   "text": "世の奴らが言うAI自動編集は\rレベルが低い",
+   "se": "S008",
+   "kind": "意味",
+   "source": "レベルが低い",
+   "zoom": "引き78",
+   "bgm_stop": true,
+   "reason": "6〜9 の口まね（代弁）のオチ。冷めた言い切り＝シュールのセット（引き・BGM停止・しゃん）。何が低いかを6〜8から補った",
+   "start": 43.844,
+   "end": 45.712,
+   "screen": false,
+   "size": {
+    "rule": "シュールテロップ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 14,
+    "lines": 2,
+    "size_after": 131.1,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.58,
+    "type": "T010",
+    "line_change": "'世の奴らが言うAI自動編集は レベルが低い' → '世の奴らが言うAI自動編集は\\rレベルが低い'"
+   }
+  },
+  {
+   "id": "22",
+   "until": "22",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "うちのYouTubeの編集は\r「編集して」で終わる",
+   "se": "S018",
+   "kind": "意味",
+   "source": "うちのYouTubeの編集は 「編集して」で終わるんですよね",
+   "zoom": "寄り130",
+   "bgm_stop": false,
+   "reason": "動画の約束（テーマの提示）。21 は前振りなので通常",
+   "start": 53.72,
+   "end": 57.357,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 14,
+    "lines": 2,
+    "size_after": 143.6,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.49,
+    "type": "T147",
+    "line_change": "'うちのYouTubeの編集は 「編集して」で終わる' → 'うちのYouTubeの編集は\\r「編集して」で終わる'"
+   }
+  },
+  {
+   "id": "26",
+   "until": "26",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "再生数は自動編集にしても\r落ちるどころかむしろ上がってる",
+   "se": "S001",
+   "kind": "意味",
+   "source": "再生数とかに関しても 落ちるどころか むしろ上がってて",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "聞き手の情報の核（自動編集にしても再生数は上がった）。何の話か（自動編集にしても）を 19 から補った（検査係）。聞き手なのでズームなし",
+   "start": 57.291,
+   "end": 61.795,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 15,
+    "lines": 2,
+    "size_after": 90.0,
+    "width_pct": 70.3,
+    "type": "T153",
+    "line_change": "'再生数は自動編集にしても 落ちるどころかむしろ上がってる' → '再生数は自動編集にしても\\r落ちるどころかむしろ上がってる'"
+   }
+  },
+  {
+   "id": "36",
+   "until": "36",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "やりましょう",
+   "se": "S006",
+   "kind": "感情",
+   "source": "やりましょう",
+   "zoom": "寄り120",
+   "bgm_stop": false,
+   "reason": "工程まで全部見せる提案への即答（宣言）",
+   "start": 76.543,
+   "end": 77.711,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 6,
+    "lines": 1,
+    "size_after": 160.0,
+    "width_pct": 50.0,
+    "shrink_one_line": 1.0,
+    "type": "T147"
+   }
+  },
+  {
+   "id": "55",
+   "until": "55",
+   "pattern": "P07",
+   "type": "T023",
+   "text": "問題児",
+   "se": "S012",
+   "kind": "感情",
+   "source": "問題児",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "三上さんの合いの手（こういちさんへの身内いじり＝ボケ）。話者の判別が半々（台本係）なのでズームなし",
+   "start": 93.46,
+   "end": 96.997,
+   "screen": false,
+   "size": {
+    "rule": "白テキ",
+    "size_before": 134.7,
+    "notes": [],
+    "chars_longest_line": 3,
+    "lines": 1,
+    "size_after": 135.0,
+    "width_pct": 21.1,
+    "shrink_one_line": 1.0,
+    "type": "T023"
+   }
+  },
+  {
+   "id": "61",
+   "until": "62",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "うちの動画編集と全く同じものが\r5秒でできるようになる",
+   "se": "S013",
+   "kind": "意味",
+   "source": "じゃあもう うちの動画編集と / 全く同じものを5秒で できるようになってしまう",
+   "zoom": "寄り125",
+   "bgm_stop": false,
+   "reason": "プレゼントの中身の言い切り（大げさ）。61〜62 を1枚に。数字「5秒」はそのまま",
+   "start": 106.006,
+   "end": 110.844,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 15,
+    "lines": 2,
+    "size_after": 115.2,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.42,
+    "type": "T147",
+    "line_change": "'うちの動画編集と全く同じものが 5秒でできるようになる' → 'うちの動画編集と全く同じものが\\r5秒でできるようになる'"
+   }
+  },
+  {
+   "id": "70",
+   "until": "70",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "この動画を見れば\r編集もサムネも全部自動化できる",
+   "se": "S001",
+   "kind": "意味",
+   "source": "これ見たらもう 編集もサムネも全部自動化できる",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "聞き手が言う動画のテーマ（これ→この動画）。聞き手なのでズームなし",
+   "start": 122.022,
+   "end": 124.891,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 15,
+    "lines": 2,
+    "size_after": 90.0,
+    "width_pct": 70.3,
+    "type": "T153",
+    "line_change": "'この動画を見れば 編集もサムネも全部自動化できる' → 'この動画を見れば\\r編集もサムネも全部自動化できる'"
+   }
+  },
+  {
+   "id": "73",
+   "until": "73",
+   "pattern": "P07",
+   "type": "T023",
+   "text": "あげまくるわね あなた",
+   "se": "S012",
+   "kind": "感情",
+   "source": "あげまくるわね あなた",
+   "zoom": "強い寄り150",
+   "bgm_stop": false,
+   "reason": "三上さんのボケ（サムネもあげる創太くんをからかう）。白テキ＋ポカン。言ったまま",
+   "start": 127.427,
+   "end": 129.73,
+   "screen": false,
+   "size": {
+    "rule": "白テキ",
+    "size_before": 134.7,
+    "notes": [],
+    "chars_longest_line": 11,
+    "lines": 1,
+    "size_after": 135.0,
+    "width_pct": 72.4,
+    "shrink_one_line": 1.0,
+    "type": "T023"
+   }
+  },
+  {
+   "id": "80+1",
+   "until": "81+1",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "うち以外のやつらがプレゼントするくらいなら\rうちがプレゼントしたい",
+   "se": "S001",
+   "kind": "意味",
+   "source": "うち以外のやつらがね プレゼントするくらいだったら / うちがプレゼントしたいよね",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "配る理由の言い切り（80+1〜81+1 を1枚）",
+   "start": 137.237,
+   "end": 141.074,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 21,
+    "lines": 2,
+    "size_after": 82.3,
+    "width_pct": 90.0,
+    "type": "T153",
+    "line_change": "'うち以外のやつらがプレゼントするくらいなら うちがプレゼントしたい' → 'うち以外のやつらがプレゼントするくらいなら\\rうちがプレゼントしたい'"
+   }
+  },
+  {
+   "id": "86",
+   "until": "86",
+   "pattern": "P07",
+   "type": "T023",
+   "text": "そんなこと言っていいの？",
+   "se": "S012",
+   "kind": "感情",
+   "source": "そんなこと言っていいの？",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "聞き手の「いい動画撮れなかったら伸びない」への三上さんのツッコミ（白テキ＋ポカン）",
+   "start": 144.778,
+   "end": 146.313,
+   "screen": false,
+   "size": {
+    "rule": "白テキ",
+    "size_before": 134.7,
+    "notes": [],
+    "chars_longest_line": 12,
+    "lines": 1,
+    "size_after": 135.0,
+    "width_pct": 84.4,
+    "shrink_one_line": 1.0,
+    "type": "T023"
+   }
+  },
+  {
+   "id": "97+1",
+   "until": "98",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "編集で食ってたら\rこの仕組みは秘伝のタレ",
+   "se": "S013",
+   "kind": "意味",
+   "source": "編集で食ってたら 上げれないんだよ これ / もう秘伝のタレだから",
+   "zoom": "寄り125",
+   "bgm_stop": false,
+   "reason": "なぜ配れるか（裏返しの言い切り）。97+1「上げれない」は要聴取なので文に入れず、98「秘伝のタレ」で言い切る。これ→この仕組み",
+   "start": 149.95,
+   "end": 155.422,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 11,
+    "lines": 2,
+    "size_after": 157.1,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.57,
+    "type": "T147",
+    "line_change": "'編集で食ってたら この仕組みは秘伝のタレ' → '編集で食ってたら\\rこの仕組みは秘伝のタレ'"
+   }
+  },
+  {
+   "id": "101",
+   "until": "101",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "この動画編集ぐらい上げても\r痛くも痒くもない",
+   "se": "S006",
+   "kind": "意味",
+   "source": "全然 この動画編集ぐらい 上げても痛くも痒くもない",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "配る理由の着地。並べる座布団（98+2〜100+2）の寄り120の直後なのでズームなし",
+   "start": 169.403,
+   "end": 171.104,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 13,
+    "lines": 2,
+    "size_after": 132.9,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.51,
+    "type": "T147",
+    "line_change": "'この動画編集ぐらい上げても 痛くも痒くもない' → 'この動画編集ぐらい上げても\\r痛くも痒くもない'"
+   }
+  },
+  {
+   "id": "120",
+   "until": "121",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "うちのプラットフォームには\rいろんな種と仕掛けがある",
+   "se": "S001",
+   "kind": "意味",
+   "source": "なんだけど うちのプラットフォームとか / いろんな種と仕掛けがあるわけですよ",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "うちが違う理由の要点（120〜121 を1枚）。頭の「なんだけど」は文に入れない",
+   "start": 187.988,
+   "end": 191.925,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 13,
+    "lines": 2,
+    "size_after": 90.0,
+    "width_pct": 60.9,
+    "type": "T153",
+    "line_change": "'うちのプラットフォームには いろんな種と仕掛けがある' → 'うちのプラットフォームには\\rいろんな種と仕掛けがある'"
+   }
+  },
+  {
+   "id": "130",
+   "until": "130",
+   "pattern": "P07",
+   "type": "T023",
+   "text": "転生したら\r天才編集者になってました",
+   "se": "S012",
+   "kind": "感情",
+   "source": "転生したら 天才編集者になってました",
+   "zoom": "強い寄り150",
+   "bgm_stop": false,
+   "reason": "こういちさんのボケ（「天才編集者」と振られて）。白テキ＋ポカン。言ったまま",
+   "start": 201.902,
+   "end": 204.204,
+   "screen": false,
+   "size": {
+    "rule": "白テキ",
+    "size_before": 134.7,
+    "notes": [
+     "1行にまとめても基本の大きさの75%で収まる（75%以上）。1行にする"
+    ],
+    "chars_longest_line": 12,
+    "lines": 2,
+    "size_after": 135.0,
+    "width_pct": 84.4,
+    "shrink_one_line": 0.75,
+    "type": "T023",
+    "line_change": "'転生したら 天才編集者になってました' → '転生したら\\r天才編集者になってました'"
+   }
+  },
+  {
+   "id": "161",
+   "until": "163",
+   "pattern": "P02",
+   "type": "T184",
+   "text": "みかみチャンネルの直近の8本ぐらいは\rほぼ全部AI動画編集でワンポチ",
+   "se": "S004",
+   "kind": "意味",
+   "source": "今みかみチャンネル 見てると思うんですけど / 直近の8本ぐらい ほぼ全部ワンポチです / AI動画編集で",
+   "zoom": "寄り130",
+   "bgm_stop": false,
+   "reason": "数字の実績（直近8本）。161「みかみチャンネル」と 163「AI動画編集で」を入れて1枚（メイン：文の頭の「みかみチャンネル」は 161 で話しているので 161 から出す）",
+   "start": 249.249,
+   "end": 258.125,
+   "screen": false,
+   "size": {
+    "rule": "ゴージャス金",
+    "size_before": 163.2,
+    "notes": [],
+    "chars_longest_line": 18,
+    "lines": 2,
+    "size_after": 97.2,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.32,
+    "type": "T184",
+    "line_change": "'みかみチャンネルの直近の8本ぐらいは ほぼ全部AI動画編集でワンポチ' → 'みかみチャンネルの直近の8本ぐらいは\\rほぼ全部AI動画編集でワンポチ'"
+   }
+  },
+  {
+   "id": "164",
+   "until": "164",
+   "pattern": "P06",
+   "type": "T086",
+   "text": "皆さんAI動画編集を\r舐めてると思う",
+   "se": "S011",
+   "kind": "意味",
+   "source": "なので結構皆さん （AI動画編集を）舐めてると思う",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "強い指摘（留保「と思う」は残す）。直前の金（寄り130）と続くのでズームなし",
+   "start": 258.892,
+   "end": 261.428,
+   "screen": false,
+   "size": {
+    "rule": "ツッコミ",
+    "size_before": 155.0,
+    "notes": [],
+    "chars_longest_line": 10,
+    "lines": 2,
+    "size_after": 155.0,
+    "width_pct": 73.6,
+    "shrink_one_line": 0.69,
+    "type": "T086",
+    "line_change": "'皆さんAI動画編集を 舐めてると思う' → '皆さんAI動画編集を\\r舐めてると思う'"
+   }
+  },
+  {
+   "id": "171",
+   "until": "171",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "違いますね",
+   "se": "S006",
+   "kind": "感情",
+   "source": "いや 違いますね",
+   "zoom": "寄り125",
+   "bgm_stop": false,
+   "reason": "問い（170）への即答の言い切り。頭の「いや」は削る",
+   "start": 267.801,
+   "end": 269.136,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 5,
+    "lines": 1,
+    "size_after": 200.0,
+    "width_pct": 52.1,
+    "shrink_one_line": 1.0,
+    "type": "T147"
+   }
+  },
+  {
+   "id": "177",
+   "until": "177",
+   "pattern": "P04",
+   "type": "T010",
+   "text": "だいたいゴミっすね",
+   "se": "S024",
+   "kind": "感情",
+   "source": "だいたいゴミっすね",
+   "zoom": "引き78",
+   "bgm_stop": true,
+   "reason": "情報商材のスキル一般への冷めた本音（特定の人ではない）。シュールのセット",
+   "start": 278.645,
+   "end": 280.68,
+   "screen": false,
+   "size": {
+    "rule": "シュールテロップ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 9,
+    "lines": 1,
+    "size_after": 156.0,
+    "width_pct": 73.1,
+    "shrink_one_line": 1.0,
+    "type": "T010"
+   }
+  },
+  {
+   "id": "192",
+   "until": "192",
+   "pattern": "P02",
+   "type": "T184",
+   "text": "AI編集でも直近は\r1万再生を超える動画が出ている",
+   "se": "S004",
+   "kind": "意味",
+   "source": "直近だと1万再生を超えるような 動画が出たりとか",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "数字の成果（1万再生）。189+1「この辺から全部AI」を受ける。193〜193+1（人力の時と変わらない）は同じネタなので通常",
+   "start": 316.383,
+   "end": 320.987,
+   "screen": true,
+   "size": {
+    "rule": "ゴージャス金",
+    "size_before": 163.2,
+    "notes": [],
+    "chars_longest_line": 15,
+    "lines": 2,
+    "size_after": 117.0,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.44,
+    "type": "T184",
+    "line_change": "'AI編集でも直近は 1万再生を超える動画が出ている' → 'AI編集でも直近は\\r1万再生を超える動画が出ている'"
+   }
+  },
+  {
+   "id": "230",
+   "until": "230",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "この編集は全て\rAIがやったもの",
+   "se": "S018",
+   "kind": "意味",
+   "source": "これ全てAIがやったものです",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "見本の後の答えの提示（229「人間がやったのとほぼ変わらない」を受ける）。231「やばくないですかね」は同じネタなので通常",
+   "start": 371.538,
+   "end": 373.607,
+   "screen": true,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [
+     "1行にまとめても基本の大きさの75%で収まる（75%以上）。1行にする"
+    ],
+    "chars_longest_line": 8,
+    "lines": 2,
+    "size_after": 160.0,
+    "width_pct": 61.3,
+    "shrink_one_line": 0.75,
+    "type": "T147",
+    "line_change": "'この編集は全て AIがやったもの' → 'この編集は全て\\rAIがやったもの'"
+   }
+  },
+  {
+   "id": "239",
+   "until": "240",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "そのルールを元に「編集して」とお願いしたら\r一発でこのレベルが出てきた",
+   "se": "S010",
+   "kind": "意味",
+   "source": "それを元に「編集して」というふうに お願いしたら / このレベルのものというのが 一発でポンと出てきました",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "仕組みの決め（232〜238「難しいことはしていない・ルールは定義」を受ける）。239〜240 を1枚。それ→そのルール",
+   "start": 383.717,
+   "end": 388.822,
+   "screen": true,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 21,
+    "lines": 2,
+    "size_after": 82.3,
+    "width_pct": 90.0,
+    "type": "T153",
+    "line_change": "'そのルールを元に「編集して」とお願いしたら 一発でこのレベルが出てきた' → 'そのルールを元に「編集して」とお願いしたら\\r一発でこのレベルが出てきた'"
+   }
+  },
+  {
+   "id": "252",
+   "until": "252",
+   "pattern": "P14",
+   "type": "T147",
+   "text": "動画の最後に\rAI動画編集の作り方のスキルをプレゼント",
+   "se": "S010",
+   "kind": "意味",
+   "source": "動画の最後に プレゼントさせていただきますので",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "CTA の予告（P14。structure_notes で可）。246+1「これの作り方をスキルにまとめたもの」を入れた。「この作り方」では何の作り方か分からないので「AI動画編集の作り方」にした（検査係）",
+   "start": 391.892,
+   "end": 394.561,
+   "screen": true,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 20,
+    "lines": 2,
+    "size_after": 89.3,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.43,
+    "type": "T147",
+    "line_change": "'動画の最後に AI動画編集の作り方のスキルをプレゼント' → '動画の最後に\\rAI動画編集の作り方のスキルをプレゼント'"
+   }
+  },
+  {
+   "id": "322+1",
+   "until": "322+1",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "今ぶっちぎりですごいのは\rOpus",
+   "se": "S006",
+   "kind": "意味",
+   "source": "今ぶっちぎりですごいのはOpusですね",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "使う AI の断言（hl 候補）",
+   "start": 506.272,
+   "end": 509.309,
+   "screen": true,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 12,
+    "lines": 2,
+    "size_after": 144.0,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.72,
+    "type": "T147",
+    "line_change": "'今ぶっちぎりですごいのは Opus' → '今ぶっちぎりですごいのは\\rOpus'"
+   }
+  },
+  {
+   "id": "346",
+   "until": "346",
+   "pattern": "P02",
+   "type": "T184",
+   "text": "月3000円のプランでも\rClaude Codeは実案件に耐えれる",
+   "se": "S004",
+   "kind": "意味",
+   "source": "全然 月3000（円）のプランで 実案件耐えれるような",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "数字（月3000円）で初心者に得な情報。主語（Claude Code。317〜349 の話・349）を補った（検査係）。343+1「一番高い200ドル」を受ける。頭の「全然」は文に入れない",
+   "start": 523.99,
+   "end": 526.393,
+   "screen": true,
+   "size": {
+    "rule": "ゴージャス金",
+    "size_before": 163.2,
+    "notes": [],
+    "chars_longest_line": 20,
+    "lines": 2,
+    "size_after": 106.6,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.37,
+    "type": "T184",
+    "line_change": "'月3000円のプランでも Claude Codeは実案件に耐えれる' → '月3000円のプランでも\\rClaude Codeは実案件に耐えれる'"
+   }
+  },
+  {
+   "id": "349",
+   "until": "349",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "ぜひClaude Codeに\r課金してやってみて",
+   "se": "S013",
+   "kind": "意味",
+   "source": "ぜひ皆さん Claude Code 課金してやってみてください",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "締めの呼びかけ（太鼓ドン）",
+   "start": 528.428,
+   "end": 531.498,
+   "screen": true,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 14,
+    "lines": 2,
+    "size_after": 160.0,
+    "width_pct": 85.1,
+    "shrink_one_line": 0.56,
+    "type": "T147",
+    "line_change": "'ぜひClaude Codeに 課金してやってみて' → 'ぜひClaude Codeに\\r課金してやってみて'"
+   }
+  },
+  {
+   "id": "355",
+   "until": "357",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "細かくルールを\rみかみチャンネル用に定義している",
+   "se": "S010",
+   "kind": "意味",
+   "source": "まず僕は 細かくルールを 非常に定義してます / みかみチャンネル用に",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "実演の仕組みの決め（355〜357 を1枚）。頭の「まず僕は」は文に入れない",
+   "start": 536.87,
+   "end": 540.64,
+   "screen": true,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 16,
+    "lines": 2,
+    "size_after": 90.0,
+    "width_pct": 75.0,
+    "type": "T153",
+    "line_change": "'細かくルールを みかみチャンネル用に定義している' → '細かくルールを\\rみかみチャンネル用に定義している'"
+   }
+  },
+  {
+   "id": "378",
+   "until": "378",
+   "pattern": "P04",
+   "type": "T010",
+   "text": "シュールのテロップ",
+   "se": "S024",
+   "kind": "意味",
+   "source": "例えばシュールのテロップですね",
+   "zoom": "",
+   "bgm_stop": true,
+   "reason": "379「『チーン』という風に今出たと思う」と話すので、ここでシュールのテロップを実際に見せる（画面の間なので引きなし）",
+   "start": 562.295,
+   "end": 564.297,
+   "screen": true,
+   "size": {
+    "rule": "シュールテロップ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 9,
+    "lines": 1,
+    "size_after": 156.0,
+    "width_pct": 73.1,
+    "shrink_one_line": 1.0,
+    "type": "T010"
+   }
+  },
+  {
+   "id": "383",
+   "until": "383",
+   "pattern": "P03",
+   "type": "T175",
+   "text": "ゴージャス青",
+   "se": "S004",
+   "kind": "意味",
+   "source": "あとはゴージャス青ですね",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "384「今多分出たと思う」と話すので、ここでゴージャス青を実際に見せる",
+   "start": 574.174,
+   "end": 575.542,
+   "screen": true,
+   "size": {
+    "rule": "ゴージャス青",
+    "size_before": 200.0,
+    "notes": [],
+    "chars_longest_line": 6,
+    "lines": 1,
+    "size_after": 200.0,
+    "width_pct": 62.5,
+    "shrink_one_line": 1.0,
+    "type": "T175"
+   }
+  },
+  {
+   "id": "420",
+   "until": "420",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "ルールやスキルは\rAIで作るもの",
+   "se": "S006",
+   "kind": "意味",
+   "source": "AIで作れますというか AIで作るもんですね",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "410〜417「プログラミングやコードの勉強が要ると思っていた」の着地の断言。主語は 411「ルールとかスキルとかっていうのは」から補った。409「全部AIに作らせてます」は同じネタなので通常",
+   "start": 630.363,
+   "end": 633.133,
+   "screen": true,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [
+     "1行にまとめても基本の大きさの75%で収まる（75%以上）。1行にする"
+    ],
+    "chars_longest_line": 8,
+    "lines": 2,
+    "size_after": 160.0,
+    "width_pct": 66.7,
+    "shrink_one_line": 0.75,
+    "type": "T147",
+    "line_change": "'ルールやスキルは AIで作るもの' → 'ルールやスキルは\\rAIで作るもの'"
+   }
+  },
+  {
+   "id": "470",
+   "until": "470",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "スキルをもらっても\r結局地味な作業が必要になる",
+   "se": "S001",
+   "kind": "意味",
+   "source": "結局 地味な作業が必要に なってくるという風な感じですね",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "身もふたもない現実を低いテンションで言い切る（スキルの話の締め）。条件は 468「できる人のスキルをもらえれば」から。BGM停止は P04 の既定の候補（止めるかは工程7）",
+   "start": 691.824,
+   "end": 695.094,
+   "screen": true,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 13,
+    "lines": 2,
+    "size_after": 90.0,
+    "width_pct": 60.9,
+    "type": "T153",
+    "line_change": "'スキルをもらっても 結局地味な作業が必要になる' → 'スキルをもらっても\\r結局地味な作業が必要になる'"
+   }
+  },
+  {
+   "id": "505",
+   "until": "505",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "エフォートは必ず\rUltracodeにする",
+   "se": "S006",
+   "kind": "意味",
+   "source": "このエフォートを必ず Ultracodeにしてください",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "「必ず〜してください」の引き締め（実演の大事な設定）。「この」を落として言い切りに",
+   "start": 716.015,
+   "end": 718.384,
+   "screen": true,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 12,
+    "lines": 2,
+    "size_after": 160.0,
+    "width_pct": 72.6,
+    "shrink_one_line": 0.65,
+    "type": "T147",
+    "line_change": "'エフォートは必ず Ultracodeにする' → 'エフォートは必ず\\rUltracodeにする'"
+   }
+  },
+  {
+   "id": "512",
+   "until": "513",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "この状態で「編集して」と\r言うだけ",
+   "se": "S018",
+   "kind": "意味",
+   "source": "この状態で「編集して」 という風に言って / 編集するだけです",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "この動画の約束（「編集して」で終わる）を実際にやる所。513「編集するだけです」まで一文に",
+   "start": 724.524,
+   "end": 728.261,
+   "screen": true,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 12,
+    "lines": 2,
+    "size_after": 144.0,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.68,
+    "type": "T147",
+    "line_change": "'この状態で「編集して」と 言うだけ' → 'この状態で「編集して」と\\r言うだけ'"
+   }
+  },
+  {
+   "id": "524+1",
+   "until": "524+1",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "AI自動編集の待ち時間は\r3時間から5時間ぐらいかかる",
+   "se": "S001",
+   "kind": "意味",
+   "source": "3時間から5時間ぐらい",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "数字の要点（AI自動編集の待ち時間）。主語は 519+1「AI自動編集は結構待ってる時間長い」から補った（何の話かを検査係が足した）。522「5時間ぐらい」は言い直しなので後ろの数字で",
+   "start": 737.704,
+   "end": 739.272,
+   "screen": true,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 14,
+    "lines": 2,
+    "size_after": 90.0,
+    "width_pct": 63.4,
+    "type": "T153",
+    "line_change": "'AI自動編集の待ち時間は 3時間から5時間ぐらいかかる' → 'AI自動編集の待ち時間は\\r3時間から5時間ぐらいかかる'"
+   }
+  },
+  {
+   "id": "538",
+   "until": "538+1",
+   "pattern": "P02",
+   "type": "T184",
+   "text": "なんとPremiereに\r全て積まれた状態で完成",
+   "se": "S004",
+   "kind": "意味",
+   "source": "見ると こんな形で なんと Premiereに全て積まれた状態で / 完成しているような形です",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "結果を見せる山場（大きな成果）。550「すごくないですか」は同じネタなので通常字幕",
+   "start": 750.049,
+   "end": 754.887,
+   "screen": true,
+   "size": {
+    "rule": "ゴージャス金",
+    "size_before": 163.2,
+    "notes": [],
+    "chars_longest_line": 12,
+    "lines": 2,
+    "size_after": 157.1,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.5,
+    "type": "T184",
+    "line_change": "'なんとPremiereに 全て積まれた状態で完成' → 'なんとPremiereに\\r全て積まれた状態で完成'"
+   }
+  },
+  {
+   "id": "571",
+   "until": "571",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "やばくないですか",
+   "se": "S021",
+   "kind": "感情",
+   "source": "やばくないですか",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "562〜570+1 の座布団（AI がやってくれること）の後の驚きの一言",
+   "start": 788.421,
+   "end": 789.489,
+   "screen": true,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 8,
+    "lines": 1,
+    "size_after": 160.0,
+    "width_pct": 66.7,
+    "shrink_one_line": 1.0,
+    "type": "T147"
+   }
+  },
+  {
+   "id": "591",
+   "until": "591",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "ついにここまで来てしまった",
+   "se": "S013",
+   "kind": "感情",
+   "source": "ついにここまで来てしまった っていう感覚がありますね",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "574〜590「動画編集は無理だと思っていた」の着地。言ったまま（「っていう感覚がありますね」を削った）",
+   "start": 820.086,
+   "end": 823.322,
+   "screen": true,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 13,
+    "lines": 1,
+    "size_after": 132.9,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.83,
+    "type": "T147"
+   }
+  },
+  {
+   "id": "596",
+   "until": "597+1",
+   "pattern": "P04",
+   "type": "T010",
+   "text": "手先でやる動画編集は\rこれからほとんどなくなると思う",
+   "se": "S014",
+   "kind": "意味",
+   "source": "普通に多分 手先でやる 動画編集っていうのは / これから多分ほとんど なくなってくると思います",
+   "zoom": "",
+   "bgm_stop": true,
+   "reason": "重めの予言（場の空気を変える一言）。留保「と思う」は残す。頭の「普通に多分」は前置き。BGM停止は候補",
+   "start": 829.662,
+   "end": 833.633,
+   "screen": true,
+   "size": {
+    "rule": "シュールテロップ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 15,
+    "lines": 2,
+    "size_after": 115.2,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.44,
+    "type": "T010",
+    "line_change": "'手先でやる動画編集は これからほとんどなくなると思う' → '手先でやる動画編集は\\rこれからほとんどなくなると思う'"
+   }
+  },
+  {
+   "id": "609",
+   "until": "610+1",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "5時間の編集すら\r1回5分でポン出しの世界が来るかも",
+   "se": "S022",
+   "kind": "意味",
+   "source": "それすらもう多分 1回5分でポン出しとか / っていう風な世界が 来るかもしれないと思ってます",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "未来の断言（数字が核）。「それすら」→5時間の編集（604）。条件「あと2回AIがアップデートされたら」は直前の 606 の字幕で読める。留保「かも」は残す",
+   "start": 840.406,
+   "end": 847.447,
+   "screen": true,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 17,
+    "lines": 2,
+    "size_after": 104.5,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.44,
+    "type": "T147",
+    "line_change": "'5時間の編集すら 1回5分でポン出しの世界が来るかも' → '5時間の編集すら\\r1回5分でポン出しの世界が来るかも'"
+   }
+  },
+  {
+   "id": "640+1",
+   "until": "640+1",
+   "pattern": "P03",
+   "type": "T175",
+   "text": "さすがっすね",
+   "se": "S004",
+   "kind": "感情",
+   "source": "さすがっすね",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "聞き手がこういちさんの実演を認める一言（肯定のリアクション）。聞き手なのでズームなし",
+   "start": 870.436,
+   "end": 871.738,
+   "screen": false,
+   "size": {
+    "rule": "ゴージャス青",
+    "size_before": 200.0,
+    "notes": [],
+    "chars_longest_line": 6,
+    "lines": 1,
+    "size_after": 200.0,
+    "width_pct": 62.5,
+    "shrink_one_line": 1.0,
+    "type": "T175"
+   }
+  },
+  {
+   "id": "666",
+   "until": "666",
+   "pattern": "P07",
+   "type": "T023",
+   "text": "じゃあダメだ",
+   "se": "S012",
+   "kind": "感情",
+   "source": "じゃあダメだ",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "三上さんのボケ（「あるのか？」「ありますね」→即撤回）。白テキ＋ポカン（01 のボケとツッコミ）",
+   "start": 900.299,
+   "end": 901.1,
+   "screen": false,
+   "size": {
+    "rule": "白テキ",
+    "size_before": 134.7,
+    "notes": [],
+    "chars_longest_line": 6,
+    "lines": 1,
+    "size_after": 135.0,
+    "width_pct": 42.2,
+    "shrink_one_line": 1.0,
+    "type": "T023"
+   }
+  },
+  {
+   "id": "671",
+   "until": "676",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "リストマーケ1年目で\rYouTubeを通しての成長曲線は一番",
+   "se": "S001",
+   "kind": "意味",
+   "source": "リストマーケ始めて 1年目じゃないですか / このYouTubeを通しての / 成長曲線は一番っすね",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "聞き手の数字の事実（リストマーケ1年目）。言った言葉のまま。聞き手なのでズームなし",
+   "start": 904.437,
+   "end": 910.409,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 19,
+    "lines": 2,
+    "size_after": 90.0,
+    "width_pct": 79.4,
+    "type": "T153",
+    "line_change": "'リストマーケ1年目で YouTubeを通しての成長曲線は一番' → 'リストマーケ1年目で\\rYouTubeを通しての成長曲線は一番'"
+   }
+  },
+  {
+   "id": "683",
+   "until": "683",
+   "pattern": "P07",
+   "type": "T023",
+   "text": "全部一番っすね",
+   "se": "S012",
+   "kind": "感情",
+   "source": "全部一番っすね",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "三上さんのボケ（自慢の大げさ）。681「動画編集も一番」は前振りなので通常",
+   "start": 911.344,
+   "end": 911.911,
+   "screen": false,
+   "size": {
+    "rule": "白テキ",
+    "size_before": 134.7,
+    "notes": [],
+    "chars_longest_line": 7,
+    "lines": 1,
+    "size_after": 135.0,
+    "width_pct": 49.2,
+    "shrink_one_line": 1.0,
+    "type": "T023"
+   }
+  },
+  {
+   "id": "698",
+   "until": "699",
+   "pattern": "P05",
+   "type": "T020",
+   "text": "2周回って最先端過ぎて\rみんなわかんない",
+   "se": "S012",
+   "kind": "感情",
+   "source": "やっぱり 2周回って最先端過ぎて / みんなわかんないっていう",
+   "zoom": "寄り120",
+   "bgm_stop": false,
+   "reason": "三上さんの自慢まじりの笑い（天才キャラ）。「やっぱり」「っていう」を削った",
+   "start": 943.81,
+   "end": 947.58,
+   "screen": false,
+   "size": {
+    "rule": "ヒラギノ白シャドウ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 11,
+    "lines": 2,
+    "size_after": 156.0,
+    "width_pct": 87.5,
+    "shrink_one_line": 0.59,
+    "type": "T020",
+    "line_change": "'2周回って最先端過ぎて みんなわかんない' → '2周回って最先端過ぎて\\rみんなわかんない'"
+   }
+  },
+  {
+   "id": "701",
+   "until": "701",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "AI時代に大事なのは\r誰を信じれるか",
+   "se": "S001",
+   "kind": "意味",
+   "source": "AI時代に大事なのって 誰を信じれるかが一番だと思って",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "聞き手の情報の核（この話題の原則）。722〜723 は同じネタなので通常。聞き手なのでズームなし",
+   "start": 949.749,
+   "end": 956.522,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 10,
+    "lines": 2,
+    "size_after": 90.0,
+    "width_pct": 43.8,
+    "type": "T153",
+    "line_change": "'AI時代に大事なのは 誰を信じれるか' → 'AI時代に大事なのは\\r誰を信じれるか'"
+   }
+  },
+  {
+   "id": "705+2",
+   "until": "705+2",
+   "pattern": "P04",
+   "type": "T010",
+   "text": "なんでも適当なんだよ みんな",
+   "se": "S008",
+   "kind": "感情",
+   "source": "なんでも 適当なんだよ みんな",
+   "zoom": "引き78",
+   "bgm_stop": true,
+   "reason": "705+1 の代弁（ChatGPT のまね）のオチ。冷めた本音・皮肉",
+   "start": 965.064,
+   "end": 966.933,
+   "screen": false,
+   "size": {
+    "rule": "シュールテロップ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 14,
+    "lines": 1,
+    "size_after": 129.6,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.83,
+    "type": "T010"
+   }
+  },
+  {
+   "id": "718",
+   "until": "718",
+   "pattern": "P04",
+   "type": "T010",
+   "text": "あれ痛かった 激痛だよ",
+   "se": "S024",
+   "kind": "感情",
+   "source": "あれ痛かった 激痛だよ",
+   "zoom": "引き78",
+   "bgm_stop": true,
+   "reason": "過去のモデルの話をしていた残念な結末への本音。話者は仮に三上さん（doubts）",
+   "start": 988.421,
+   "end": 992.758,
+   "screen": false,
+   "size": {
+    "rule": "シュールテロップ",
+    "size_before": 156.3,
+    "notes": [],
+    "chars_longest_line": 11,
+    "lines": 1,
+    "size_after": 156.0,
+    "width_pct": 83.9,
+    "shrink_one_line": 1.0,
+    "type": "T010"
+   }
+  },
+  {
+   "id": "726",
+   "until": "726",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "誰を信じるかで全て変わる\rだから必ずキャッチアップして",
+   "se": "S013",
+   "kind": "意味",
+   "source": "全て変わってしまうので 必ずちゃんとキャッチアップして",
+   "zoom": "寄り125",
+   "bgm_stop": false,
+   "reason": "締めの呼びかけ（重い結論）。言った言葉のまま",
+   "start": 1006.606,
+   "end": 1010.543,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 14,
+    "lines": 2,
+    "size_after": 123.4,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.42,
+    "type": "T147",
+    "line_change": "'誰を信じるかで全て変わる だから必ずキャッチアップして' → '誰を信じるかで全て変わる\\rだから必ずキャッチアップして'"
+   }
+  },
+  {
+   "id": "736",
+   "until": "737",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "俺らが作る道を駆け抜ければ\rものすごく他とアドバンテージつけれる",
+   "se": "S022",
+   "kind": "意味",
+   "source": "そこも駆け抜けてもらえれば / ものすごく他と アドバンテージつけれる",
+   "zoom": "寄り125",
+   "bgm_stop": false,
+   "reason": "たとえ（崩れる地面・クロール・道）の着地の断言。「そこ」→俺らが作る道（734〜735）",
+   "start": 1025.725,
+   "end": 1029.762,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 18,
+    "lines": 2,
+    "size_after": 96.0,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.35,
+    "type": "T147",
+    "line_change": "'俺らが作る道を駆け抜ければ ものすごく他とアドバンテージつけれる' → '俺らが作る道を駆け抜ければ\\rものすごく他とアドバンテージつけれる'"
+   }
+  },
+  {
+   "id": "742",
+   "until": "742",
+   "pattern": "P14",
+   "type": "T147",
+   "text": "動画下の概要欄の公式LINEから\r受け取ってください",
+   "se": "S010",
+   "kind": "意味",
+   "source": "動画下の概要欄の公式LINEから 受け取ってもらえればと思いますし",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "CTA の誘導の言い切り（structure_notes の 740〜742 のどれか。受け取り方を言う 742 にした）",
+   "start": 1041.574,
+   "end": 1045.111,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 16,
+    "lines": 2,
+    "size_after": 116.8,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.45,
+    "type": "T147",
+    "line_change": "'動画下の概要欄の公式LINEから 受け取ってください' → '動画下の概要欄の公式LINEから\\r受け取ってください'"
+   }
+  },
+  {
+   "id": "759",
+   "until": "759",
+   "pattern": "P02",
+   "type": "T184",
+   "text": "Addnessが 爆伸びしてる",
+   "se": "S004",
+   "kind": "意味",
+   "source": "これ 爆伸びしてます",
+   "zoom": "寄り125",
+   "bgm_stop": false,
+   "reason": "大きな成果。「これ」→Addness（758）",
+   "start": 1065.731,
+   "end": 1067.366,
+   "screen": false,
+   "size": {
+    "rule": "ゴージャス金",
+    "size_before": 163.2,
+    "notes": [],
+    "chars_longest_line": 15,
+    "lines": 1,
+    "size_after": 141.1,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.83,
+    "type": "T184"
+   }
+  },
+  {
+   "id": "767+1",
+   "until": "768",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "1日50社から100社くらい\r勝手に課金されてる",
+   "se": "S021",
+   "kind": "意味",
+   "source": "1日50社から100社くらい 問い合わせくるんだから / 問い合わせっていうか 勝手に課金されてるんだよ",
+   "zoom": "寄り125",
+   "bgm_stop": false,
+   "reason": "数字が核の勢いのある一言。768「問い合わせっていうか 勝手に課金されてる」の言い直しを一文に",
+   "start": 1074.273,
+   "end": 1078.544,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 14,
+    "lines": 2,
+    "size_after": 136.9,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.5,
+    "type": "T147",
+    "line_change": "'1日50社から100社くらい 勝手に課金されてる' → '1日50社から100社くらい\\r勝手に課金されてる'"
+   }
+  },
+  {
+   "id": "775",
+   "until": "775",
+   "pattern": "P07",
+   "type": "T023",
+   "text": "もう無理です",
+   "se": "S012",
+   "kind": "感情",
+   "source": "もう無理です",
+   "zoom": "強い寄り150",
+   "bgm_stop": false,
+   "reason": "三上さんの大げさなボケ（サポートが追いつかない）。白テキ＋ポカン",
+   "start": 1081.881,
+   "end": 1083.249,
+   "screen": false,
+   "size": {
+    "rule": "白テキ",
+    "size_before": 134.7,
+    "notes": [],
+    "chars_longest_line": 6,
+    "lines": 1,
+    "size_after": 135.0,
+    "width_pct": 42.2,
+    "shrink_one_line": 1.0,
+    "type": "T023"
+   }
+  },
+  {
+   "id": "798",
+   "until": "798",
+   "pattern": "P03",
+   "type": "T175",
+   "text": "最前列特等席で\rその流れを見届けていきましょう",
+   "se": "S015",
+   "kind": "意味",
+   "source": "ぜひ 最前列特等席で その流れを見届けていきましょう",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "締めの名言（名言の余韻）。795〜798 の並べる座布団の寄り120 の中なのでズームなし",
+   "start": 1113.98,
+   "end": 1117.917,
+   "screen": false,
+   "size": {
+    "rule": "ゴージャス青",
+    "size_before": 200.0,
+    "notes": [],
+    "chars_longest_line": 15,
+    "lines": 2,
+    "size_after": 115.2,
+    "width_pct": 90.0,
+    "shrink_one_line": 0.39,
+    "type": "T175",
+    "line_change": "'最前列特等席で その流れを見届けていきましょう' → '最前列特等席で\\rその流れを見届けていきましょう'"
+   }
+  },
+  {
+   "id": "695",
+   "until": "696",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "本当に昔から言ってるけど\rみんな信じてくれない",
+   "se": "S001",
+   "kind": "意味",
+   "source": "本当に言ってんだけどね 昔からね / みんな信じてくれないよね",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "三上さんの本音（最先端の情報なのに信じてもらえない）。690〜698 の18秒に演出が無かった",
+   "start": 938.304,
+   "end": 941.741,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 12,
+    "lines": 2,
+    "size_after": 90.0,
+    "width_pct": 56.2,
+    "type": "T153",
+    "line_change": "'本当に昔から言ってるけど みんな信じてくれない' → '本当に昔から言ってるけど\\rみんな信じてくれない'"
+   }
+  },
+  {
+   "id": "704",
+   "until": "704",
+   "pattern": "P06",
+   "type": "T086",
+   "text": "死ぬ死ぬ",
+   "se": "S011",
+   "kind": "感情",
+   "source": "死ぬ死ぬ",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "聞き手「間違った情報の方に行ったらまず死ぬ」への三上さんの即答（ツッコミの形）。701〜705+2 の15秒に演出が無かった",
+   "start": 959.725,
+   "end": 960.56,
+   "screen": false,
+   "size": {
+    "rule": "ツッコミ",
+    "size_before": 155.0,
+    "notes": [],
+    "chars_longest_line": 4,
+    "lines": 1,
+    "size_after": 310.0,
+    "width_pct": 64.6,
+    "shrink_one_line": 1.0,
+    "type": "T086"
+   }
+  },
+  {
+   "id": "722",
+   "until": "723",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "誰を信じるか次第で ワンチャン死ぬ",
+   "se": "S001",
+   "kind": "意味",
+   "source": "そんな感じで 誰を信じるか次第で / ワンチャン死ぬみたいなことが 全然あると思ってて",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "聞き手の言い切り（動画の土台の締めの考え方）。720+1〜726 の15秒に演出が無かった。聞き手の字幕なので寄りなし",
+   "start": 998.397,
+   "end": 1003.302,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 17,
+    "lines": 1,
+    "size_after": 90.0,
+    "width_pct": 76.5,
+    "type": "T153"
+   }
+  },
+  {
+   "id": "35",
+   "until": "35",
+   "pattern": "P01",
+   "type": "T147",
+   "text": "その工程も含めて\r全部見せていこう",
+   "se": "S006",
+   "kind": "意味",
+   "source": "その工程とか含めて 全部見せていこうかなって思って",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "v002 直し2：0:57〜1:16 に演出が無かった。聞き手が動画の約束を言い切る所（聞き手なので寄りなし）",
+   "start": 73.44,
+   "end": 76.61,
+   "screen": false,
+   "size": {
+    "rule": "強調赤黄",
+    "size_before": 159.4,
+    "notes": [],
+    "chars_longest_line": 8,
+    "lines": 2,
+    "size_after": 160.0,
+    "width_pct": 66.7,
+    "shrink_one_line": 0.68,
+    "type": "T147",
+    "line_change": "'その工程も含めて 全部見せていこう' → 'その工程も含めて\\r全部見せていこう'"
+   }
+  },
+  {
+   "id": "114",
+   "until": "114",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "うちの動画編集の仕組みは\r結構奥深い",
+   "se": "S001",
+   "kind": "意味",
+   "source": "うちの動画編集ができてるか っていうのもね 結構奥深いんで",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "v002 直し2：2:49〜3:07 に演出が無かった（三上さんの言い切り）",
+   "start": 176.677,
+   "end": 181.615,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 12,
+    "lines": 2,
+    "size_after": 90.0,
+    "width_pct": 56.2,
+    "type": "T153",
+    "line_change": "'うちの動画編集の仕組みは 結構奥深い' → 'うちの動画編集の仕組みは\\r結構奥深い'"
+   }
+  },
+  {
+   "id": "135",
+   "until": "136",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "僕らの自動編集は\r世に出てるものよりだいぶレベルが高い",
+   "se": "S001",
+   "kind": "意味",
+   "source": "僕らがやってるやつって 世に出てる自動編集より / だいぶレベル高いもんじゃないかな と思って",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "v002 直し2：3:27〜3:45 に演出が無かった（聞き手の言い切り。寄りなし）",
+   "start": 213.647,
+   "end": 218.552,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 18,
+    "lines": 2,
+    "size_after": 90.0,
+    "width_pct": 84.4,
+    "type": "T153",
+    "line_change": "'僕らの自動編集は 世に出てるものよりだいぶレベルが高い' → '僕らの自動編集は\\r世に出てるものよりだいぶレベルが高い'"
+   }
+  },
+  {
+   "id": "180",
+   "until": "180",
+   "pattern": "P08",
+   "type": "T153",
+   "text": "僕が見たら ほかのはまだAIっぽい",
+   "se": "S001",
+   "kind": "意味",
+   "source": "僕が見たら ちょっとまだAIっぽいな みたいに思うことがあったりとかして",
+   "zoom": "",
+   "bgm_stop": false,
+   "reason": "v002 直し2：4:40〜4:58 に演出が無かった（こういちさんの評価）",
+   "start": 286.92,
+   "end": 291.224,
+   "screen": false,
+   "size": {
+    "rule": "基本テロップ赤",
+    "size_before": 90.0,
+    "notes": [],
+    "chars_longest_line": 17,
+    "lines": 1,
+    "size_after": 90.0,
+    "width_pct": 73.4,
+    "type": "T153"
+   }
+  }
+ ],
+ "highlight": [],
+ "boards": [
+  {
+   "from": "360",
+   "to": "374",
+   "type": "T028",
+   "text": "判断フロー・演出パターン・ズーム・図解\rテロップの種類・SE・字幕",
+   "start": 540.64,
+   "end": 560.393,
+   "width_px": 1385,
+   "group_x": [
+    0.5963541865348816,
+    0.5025520881017049
+   ],
+   "reason": "装飾の検査係の left：360〜374 でルールを7つ挙げる（座布団は3つまで）。355 の強調から 378 まで約26秒何も起きないので、メインの AI がボードにした。画面は Finder の video_edit_rules　v004：Loom の右下の顔の丸を隠さないよう、文字を縮めて帯の右端を x≦1510 に収める（確認の3回目 No.3）"
+  },
+  {
+   "from": "397",
+   "to": "403",
+   "type": "T189",
+   "text": "「1016動画編集」と\r概要欄の公式LINEに送ってください",
+   "start": 602.735,
+   "end": 610.677,
+   "width_px": 1404,
+   "group_x": null,
+   "reason": "CTA（こういちさん1回目）。397「これ 動画の最後に」＋401「1016動画編集という風に入力していただければ」＋402〜403「ほぼ同じようなものをプレゼント…受け取ってください」（08 の keep：特典の受け取り方は必ず板でも出す）。395〜396「これどうやって作るの？」は通常字幕で聞かせる。キーワードは三上さん（751）に合わせた（要確認）　v004：Loom の右下の顔の丸を隠さないよう、文字を縮めて帯の右端を x≦1510 に収める（確認の3回目 No.3・15）"
+  },
+  {
+   "from": "557",
+   "to": "561",
+   "type": "T028",
+   "text": "人の手なら 3〜4日かかる編集が\rAIなら たった数時間",
+   "start": 764.697,
+   "end": 773.473,
+   "width_px": 1336,
+   "group_x": [
+    0.5963541865348816,
+    0.6001041865348816
+   ],
+   "reason": "動画の土台の2（どれくらいすごいか）の言い切り。557「人間の手でやったら…3日から4日は欲しい」＋560〜561「それが AI使うとたった数時間で出てきてしまう」。画面は Premiere のできあがったタイムライン"
+  },
+  {
+   "from": "621",
+   "to": "622",
+   "type": "T189",
+   "text": "「1016動画編集」と\r概要欄の公式LINEに送ってください",
+   "start": 852.151,
+   "end": 857.757,
+   "width_px": 1509,
+   "group_x": null,
+   "reason": "CTA（こういちさん2回目）。621「今回のこの動画編集のスキルをお配りしますので」＋622「いち早くこれ触ってみて」。声のキーワード（1015AI自動編集）は台本で切った（三上さんと違う）ので、板で三上さんのキーワードを出す（要確認）。626〜627「体感してみてください」は通常字幕"
+  },
+  {
+   "from": "750",
+   "to": "755",
+   "type": "T189",
+   "text": "概要欄の公式LINEに\r「1016動画編集」「1016サムネイル」",
+   "start": 1048.047,
+   "end": 1061.093,
+   "width_px": 1717,
+   "group_x": null,
+   "reason": "CTA（三上さん）。750「キーワードは概要欄の公式LINEに登録して」＋751〜752「1016動画編集」＋753〜755「あともう一個 1016サムネイル この2つでプレゼント」"
+  },
+  {
+   "from": "778",
+   "to": "782",
+   "type": "T189",
+   "text": "動画下の概要欄から\rポチッと申し込めます",
+   "start": 1085.851,
+   "end": 1095.594,
+   "width_px": 1012,
+   "group_x": null,
+   "reason": "Addness 認定パートナーの募集（CTA）。778「Addness認定パートナー今募集しています」〜782「ポチッと申し込めるようになっております」"
+  }
+ ],
+ "chapters": [],
+ "se": [
+  {
+   "start": 22.923,
+   "se": "S001",
+   "why": "問い 1",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 32.933,
+   "se": "S012",
+   "why": "強調 5",
+   "cut": false,
+   "gain_db": -10.78
+  },
+  {
+   "start": 39.206,
+   "se": "S019",
+   "why": "画像 I01",
+   "cut": false,
+   "gain_db": -10.07
+  },
+  {
+   "start": 43.844,
+   "se": "S008",
+   "why": "強調 10",
+   "cut": false,
+   "gain_db": -10.22
+  },
+  {
+   "start": 53.72,
+   "se": "S018",
+   "why": "強調 22",
+   "cut": false,
+   "gain_db": -12.3
+  },
+  {
+   "start": 57.291,
+   "se": "S001",
+   "why": "強調 26",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 73.44,
+   "se": "S006",
+   "why": "強調 35",
+   "cut": false,
+   "gain_db": -8.15
+  },
+  {
+   "start": 76.543,
+   "se": "S006",
+   "why": "強調 36",
+   "cut": false,
+   "gain_db": -8.15
+  },
+  {
+   "start": 80.18,
+   "se": "S010",
+   "why": "説明 38+1",
+   "cut": false,
+   "gain_db": -13.64
+  },
+  {
+   "start": 93.46,
+   "se": "S012",
+   "why": "強調 55",
+   "cut": false,
+   "gain_db": -10.78
+  },
+  {
+   "start": 106.006,
+   "se": "S013",
+   "why": "強調 61",
+   "cut": false,
+   "gain_db": -12.75
+  },
+  {
+   "start": 113.68,
+   "se": "S019",
+   "why": "画像 I02",
+   "cut": false,
+   "gain_db": -10.07
+  },
+  {
+   "start": 122.022,
+   "se": "S001",
+   "why": "強調 70",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 127.427,
+   "se": "S012",
+   "why": "強調 73",
+   "cut": false,
+   "gain_db": -10.78
+  },
+  {
+   "start": 137.237,
+   "se": "S001",
+   "why": "強調 80+1",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 144.778,
+   "se": "S012",
+   "why": "強調 86",
+   "cut": false,
+   "gain_db": -10.78
+  },
+  {
+   "start": 149.95,
+   "se": "S013",
+   "why": "強調 97+1",
+   "cut": false,
+   "gain_db": -12.75
+  },
+  {
+   "start": 156.256,
+   "se": "S002",
+   "why": "座布団 98+2",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 158.225,
+   "se": "S002",
+   "why": "座布団 99",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 161.261,
+   "se": "S002",
+   "why": "座布団 99+1",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 169.403,
+   "se": "S006",
+   "why": "強調 101",
+   "cut": false,
+   "gain_db": -8.15
+  },
+  {
+   "start": 176.677,
+   "se": "S001",
+   "why": "強調 114",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 187.988,
+   "se": "S001",
+   "why": "強調 120",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 201.902,
+   "se": "S012",
+   "why": "強調 130",
+   "cut": false,
+   "gain_db": -10.78
+  },
+  {
+   "start": 204.204,
+   "se": "S010",
+   "why": "説明 131",
+   "cut": false,
+   "gain_db": -13.64
+  },
+  {
+   "start": 207.941,
+   "se": "S001",
+   "why": "問い 133",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 213.647,
+   "se": "S001",
+   "why": "強調 135",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 225.559,
+   "se": "S001",
+   "why": "図解 Z3 出だし（革命）",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 228.228,
+   "se": "S002",
+   "why": "図解 Z3 今までの自動化",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 234.468,
+   "se": "S001",
+   "why": "図解 Z3 みじん切り",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 243.11,
+   "se": "S001",
+   "why": "図解 Z3 今回のインパクト",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 244.511,
+   "se": "S020",
+   "why": "図解 Z3 ドラム式洗濯機",
+   "cut": false,
+   "gain_db": -11.11
+  },
+  {
+   "start": 248.148,
+   "se": "S003",
+   "why": "図解 Z3 手洗い→ドラム式（締め）",
+   "cut": true,
+   "gain_db": -14.62
+  },
+  {
+   "start": 249.249,
+   "se": "S004",
+   "why": "強調 161",
+   "cut": false,
+   "gain_db": -9.95
+  },
+  {
+   "start": 258.892,
+   "se": "S011",
+   "why": "強調 164",
+   "cut": false,
+   "gain_db": -10.16
+  },
+  {
+   "start": 265.699,
+   "se": "S001",
+   "why": "問い 170",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 267.801,
+   "se": "S006",
+   "why": "強調 171",
+   "cut": false,
+   "gain_db": -8.15
+  },
+  {
+   "start": 270.971,
+   "se": "S010",
+   "why": "説明 174",
+   "cut": false,
+   "gain_db": -13.64
+  },
+  {
+   "start": 275.575,
+   "se": "S019",
+   "why": "画像 I05",
+   "cut": false,
+   "gain_db": -10.07
+  },
+  {
+   "start": 278.645,
+   "se": "S024",
+   "why": "強調 177",
+   "cut": false,
+   "gain_db": -5.2
+  },
+  {
+   "start": 286.92,
+   "se": "S001",
+   "why": "強調 180",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 298.698,
+   "se": "S010",
+   "why": "SEのみ 184+1@ここからは",
+   "cut": false,
+   "gain_db": -13.64
+  },
+  {
+   "start": 311.378,
+   "se": "S009",
+   "why": "赤枠 189+1",
+   "cut": false,
+   "gain_db": -21.83
+  },
+  {
+   "start": 316.383,
+   "se": "S004",
+   "why": "強調 192",
+   "cut": false,
+   "gain_db": -9.95
+  },
+  {
+   "start": 360.66,
+   "se": "S002",
+   "why": "座布団 223",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 362.162,
+   "se": "S002",
+   "why": "座布団 224",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 363.93,
+   "se": "S002",
+   "why": "座布団 225",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 371.538,
+   "se": "S018",
+   "why": "強調 230",
+   "cut": false,
+   "gain_db": -12.3
+  },
+  {
+   "start": 383.717,
+   "se": "S010",
+   "why": "強調 239",
+   "cut": false,
+   "gain_db": -13.64
+  },
+  {
+   "start": 391.892,
+   "se": "S010",
+   "why": "強調 252",
+   "cut": false,
+   "gain_db": -13.64
+  },
+  {
+   "start": 397.163,
+   "se": "S010",
+   "why": "説明 256",
+   "cut": false,
+   "gain_db": -13.64
+  },
+  {
+   "start": 406.072,
+   "se": "S001",
+   "why": "図解 Z1 出だし",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 411.378,
+   "se": "S002",
+   "why": "図解 Z1 コンピュータユース",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 422.188,
+   "se": "S001",
+   "why": "図解 Z1 Premiere を直接触らせる",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 427.327,
+   "se": "S011",
+   "why": "図解 Z1 そういうやり方ではない",
+   "cut": false,
+   "gain_db": -10.16
+  },
+  {
+   "start": 430.23,
+   "se": "S001",
+   "why": "図解 Z1 我々のやり方",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 432.732,
+   "se": "S002",
+   "why": "図解 Z1 XML ファイル",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 451.184,
+   "se": "S001",
+   "why": "図解 Z1 全部コードで書いてある",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 463.063,
+   "se": "S003",
+   "why": "図解 Z1 XML を直接作る",
+   "cut": false,
+   "gain_db": -14.62
+  },
+  {
+   "start": 467.834,
+   "se": "S001",
+   "why": "図解 Z1 Premiere に読み込む",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 479.546,
+   "se": "S020",
+   "why": "図解 Z1 音のズレがない",
+   "cut": false,
+   "gain_db": -11.11
+  },
+  {
+   "start": 481.314,
+   "se": "S020",
+   "why": "図解 Z1 直しやすい",
+   "cut": false,
+   "gain_db": -11.11
+  },
+  {
+   "start": 495.228,
+   "se": "S010",
+   "why": "説明 319",
+   "cut": false,
+   "gain_db": -13.64
+  },
+  {
+   "start": 506.272,
+   "se": "S006",
+   "why": "強調 322+1",
+   "cut": false,
+   "gain_db": -8.15
+  },
+  {
+   "start": 514.247,
+   "se": "S010",
+   "why": "説明 333",
+   "cut": false,
+   "gain_db": -13.64
+  },
+  {
+   "start": 523.99,
+   "se": "S004",
+   "why": "強調 346",
+   "cut": false,
+   "gain_db": -9.95
+  },
+  {
+   "start": 528.428,
+   "se": "S013",
+   "why": "強調 349",
+   "cut": false,
+   "gain_db": -12.75
+  },
+  {
+   "start": 535.935,
+   "se": "S009",
+   "why": "赤枠 355",
+   "cut": false,
+   "gain_db": -21.83
+  },
+  {
+   "start": 536.87,
+   "se": "S010",
+   "why": "強調 355",
+   "cut": false,
+   "gain_db": -13.64
+  },
+  {
+   "start": 540.54,
+   "se": "S003",
+   "why": "ボード 360",
+   "cut": false,
+   "gain_db": -14.62
+  },
+  {
+   "start": 562.295,
+   "se": "S024",
+   "why": "強調 378",
+   "cut": true,
+   "gain_db": -5.2
+  },
+  {
+   "start": 564.297,
+   "se": "S009",
+   "why": "赤枠 379",
+   "cut": false,
+   "gain_db": -21.83
+  },
+  {
+   "start": 566.8,
+   "se": "S009",
+   "why": "赤枠 380",
+   "cut": false,
+   "gain_db": -21.83
+  },
+  {
+   "start": 568.168,
+   "se": "S009",
+   "why": "赤枠 381",
+   "cut": false,
+   "gain_db": -21.83
+  },
+  {
+   "start": 574.04,
+   "se": "S009",
+   "why": "赤枠 383",
+   "cut": true,
+   "gain_db": -21.83
+  },
+  {
+   "start": 574.174,
+   "se": "S004",
+   "why": "強調 383",
+   "cut": false,
+   "gain_db": -9.95
+  },
+  {
+   "start": 576.776,
+   "se": "S009",
+   "why": "赤枠 385",
+   "cut": false,
+   "gain_db": -21.83
+  },
+  {
+   "start": 594.727,
+   "se": "S001",
+   "why": "SEのみ 391@最適化",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 602.735,
+   "se": "S005",
+   "why": "ボード 397",
+   "cut": false,
+   "gain_db": -16.0
+  },
+  {
+   "start": 623.723,
+   "se": "S002",
+   "why": "座布団 414",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 627.193,
+   "se": "S002",
+   "why": "座布団 416",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 630.363,
+   "se": "S006",
+   "why": "強調 420",
+   "cut": false,
+   "gain_db": -8.15
+  },
+  {
+   "start": 638.204,
+   "se": "S001",
+   "why": "図解 Z2 出だし（クオリティの理由）",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 642.408,
+   "se": "S002",
+   "why": "図解 Z2 過去の動画100本以上",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 648.148,
+   "se": "S002",
+   "why": "図解 Z2 フィードバック",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 654.988,
+   "se": "S002",
+   "why": "図解 Z2 編集データ",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 660.293,
+   "se": "S020",
+   "why": "図解 Z2 スキル（氷山の先）",
+   "cut": false,
+   "gain_db": -11.11
+  },
+  {
+   "start": 668.568,
+   "se": "S011",
+   "why": "図解 Z2 スキルだけでは役に立たない",
+   "cut": false,
+   "gain_db": -10.16
+  },
+  {
+   "start": 670.737,
+   "se": "S001",
+   "why": "図解 Z2 コンテキストは自分で集める",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 674.974,
+   "se": "S002",
+   "why": "図解 Z2 案件の数",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 678.545,
+   "se": "S002",
+   "why": "図解 Z2 動画の数",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 681.814,
+   "se": "S006",
+   "why": "図解 Z2 魔法でドンとはいかない（締め）",
+   "cut": false,
+   "gain_db": -8.15
+  },
+  {
+   "start": 691.824,
+   "se": "S001",
+   "why": "強調 470",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 697.463,
+   "se": "S009",
+   "why": "赤枠 473",
+   "cut": false,
+   "gain_db": -21.83
+  },
+  {
+   "start": 699.566,
+   "se": "S009",
+   "why": "SEのみ 473@プラスボタン",
+   "cut": false,
+   "gain_db": -17.83
+  },
+  {
+   "start": 700.567,
+   "se": "S009",
+   "why": "赤枠 477",
+   "cut": false,
+   "gain_db": -21.83
+  },
+  {
+   "start": 703.269,
+   "se": "S010",
+   "why": "説明 478",
+   "cut": false,
+   "gain_db": -13.64
+  },
+  {
+   "start": 704.904,
+   "se": "S009",
+   "why": "赤枠 496",
+   "cut": false,
+   "gain_db": -21.83
+  },
+  {
+   "start": 714.647,
+   "se": "S010",
+   "why": "説明 503",
+   "cut": false,
+   "gain_db": -13.64
+  },
+  {
+   "start": 716.015,
+   "se": "S006",
+   "why": "強調 505",
+   "cut": false,
+   "gain_db": -8.15
+  },
+  {
+   "start": 724.524,
+   "se": "S018",
+   "why": "強調 512",
+   "cut": false,
+   "gain_db": -12.3
+  },
+  {
+   "start": 737.704,
+   "se": "S001",
+   "why": "強調 524+1",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 748.748,
+   "se": "S009",
+   "why": "赤枠 538",
+   "cut": false,
+   "gain_db": -21.83
+  },
+  {
+   "start": 750.049,
+   "se": "S004",
+   "why": "強調 538",
+   "cut": false,
+   "gain_db": -9.95
+  },
+  {
+   "start": 757.59,
+   "se": "S009",
+   "why": "赤枠 553+1",
+   "cut": false,
+   "gain_db": -21.83
+  },
+  {
+   "start": 764.697,
+   "se": "S003",
+   "why": "ボード 557",
+   "cut": false,
+   "gain_db": -14.62
+  },
+  {
+   "start": 773.373,
+   "se": "S002",
+   "why": "座布団 562",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 775.408,
+   "se": "S009",
+   "why": "赤枠 562",
+   "cut": false,
+   "gain_db": -21.83
+  },
+  {
+   "start": 777.677,
+   "se": "S002",
+   "why": "座布団 565",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 780.88,
+   "se": "S009",
+   "why": "赤枠 568",
+   "cut": false,
+   "gain_db": -21.83
+  },
+  {
+   "start": 782.548,
+   "se": "S002",
+   "why": "座布団 569",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 788.421,
+   "se": "S021",
+   "why": "強調 571",
+   "cut": false,
+   "gain_db": -9.03
+  },
+  {
+   "start": 800.266,
+   "se": "S002",
+   "why": "座布団 578+1",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 801.701,
+   "se": "S002",
+   "why": "座布団 579",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 803.436,
+   "se": "S002",
+   "why": "座布団 581",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 820.086,
+   "se": "S013",
+   "why": "強調 591",
+   "cut": false,
+   "gain_db": -12.75
+  },
+  {
+   "start": 829.662,
+   "se": "S014",
+   "why": "強調 596",
+   "cut": false,
+   "gain_db": -12.32
+  },
+  {
+   "start": 840.406,
+   "se": "S022",
+   "why": "強調 609",
+   "cut": false,
+   "gain_db": -10.03
+  },
+  {
+   "start": 852.085,
+   "se": "S005",
+   "why": "ボード 621",
+   "cut": false,
+   "gain_db": -16.0
+  },
+  {
+   "start": 870.436,
+   "se": "S004",
+   "why": "強調 640+1",
+   "cut": false,
+   "gain_db": -9.95
+  },
+  {
+   "start": 900.299,
+   "se": "S012",
+   "why": "強調 666",
+   "cut": false,
+   "gain_db": -10.78
+  },
+  {
+   "start": 904.437,
+   "se": "S001",
+   "why": "強調 671",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 911.344,
+   "se": "S012",
+   "why": "強調 683",
+   "cut": false,
+   "gain_db": -10.78
+  },
+  {
+   "start": 925.992,
+   "se": "S001",
+   "why": "SEのみ 690",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 938.304,
+   "se": "S001",
+   "why": "強調 695",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 943.81,
+   "se": "S012",
+   "why": "強調 698",
+   "cut": false,
+   "gain_db": -10.78
+  },
+  {
+   "start": 949.749,
+   "se": "S001",
+   "why": "強調 701",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 959.725,
+   "se": "S011",
+   "why": "強調 704",
+   "cut": false,
+   "gain_db": -10.16
+  },
+  {
+   "start": 965.064,
+   "se": "S008",
+   "why": "強調 705+2",
+   "cut": false,
+   "gain_db": -10.22
+  },
+  {
+   "start": 988.421,
+   "se": "S024",
+   "why": "強調 718",
+   "cut": false,
+   "gain_db": -5.2
+  },
+  {
+   "start": 998.397,
+   "se": "S001",
+   "why": "強調 722",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 1006.606,
+   "se": "S013",
+   "why": "強調 726",
+   "cut": false,
+   "gain_db": -12.75
+  },
+  {
+   "start": 1016.415,
+   "se": "S001",
+   "why": "画像 I06",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 1021.954,
+   "se": "S001",
+   "why": "画像 I07",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 1025.725,
+   "se": "S022",
+   "why": "強調 736",
+   "cut": false,
+   "gain_db": -10.03
+  },
+  {
+   "start": 1041.574,
+   "se": "S010",
+   "why": "強調 742",
+   "cut": false,
+   "gain_db": -13.64
+  },
+  {
+   "start": 1048.047,
+   "se": "S005",
+   "why": "ボード 750",
+   "cut": false,
+   "gain_db": -16.0
+  },
+  {
+   "start": 1065.731,
+   "se": "S004",
+   "why": "強調 759",
+   "cut": false,
+   "gain_db": -9.95
+  },
+  {
+   "start": 1067.366,
+   "se": "S001",
+   "why": "画像 I08",
+   "cut": false,
+   "gain_db": -18.81
+  },
+  {
+   "start": 1074.273,
+   "se": "S021",
+   "why": "強調 767+1",
+   "cut": false,
+   "gain_db": -9.03
+  },
+  {
+   "start": 1081.881,
+   "se": "S012",
+   "why": "強調 775",
+   "cut": false,
+   "gain_db": -10.78
+  },
+  {
+   "start": 1085.851,
+   "se": "S005",
+   "why": "ボード 778",
+   "cut": false,
+   "gain_db": -16.0
+  },
+  {
+   "start": 1096.929,
+   "se": "S010",
+   "why": "説明 785",
+   "cut": false,
+   "gain_db": -13.64
+  },
+  {
+   "start": 1108.107,
+   "se": "S002",
+   "why": "座布団 795",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 1109.842,
+   "se": "S002",
+   "why": "座布団 796",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 1111.711,
+   "se": "S002",
+   "why": "座布団 797",
+   "cut": false,
+   "gain_db": -11.33
+  },
+  {
+   "start": 1113.98,
+   "se": "S015",
+   "why": "強調 798",
+   "cut": false,
+   "gain_db": -9.5
+  }
+ ],
+ "zooms": [
+  {
+   "start": 32.933,
+   "end": 35.102,
+   "scale": 150.0,
+   "pos": [
+    0.4727,
+    0.5486
+   ],
+   "clips": 2,
+   "why": "字幕5 強い寄り150"
+  },
+  {
+   "start": 43.844,
+   "end": 45.712,
+   "scale": 78.0,
+   "pos": [
+    0.5,
+    0.5
+   ],
+   "clips": 3,
+   "why": "字幕10 引き78"
+  },
+  {
+   "start": 53.52,
+   "end": 57.357,
+   "scale": 130.0,
+   "pos": [
+    0.4769,
+    0.5276
+   ],
+   "clips": 5,
+   "why": "字幕22 寄り130"
+  },
+  {
+   "start": 70.57,
+   "end": 73.44,
+   "scale": 120.0,
+   "pos": [
+    0.4806,
+    0.5433
+   ],
+   "clips": 2,
+   "why": "字幕34 寄り120（寄りだけ）"
+  },
+  {
+   "start": 76.61,
+   "end": 77.711,
+   "scale": 120.0,
+   "pos": [
+    0.4662,
+    0.5278
+   ],
+   "clips": 2,
+   "why": "字幕36 寄り120"
+  },
+  {
+   "start": 106.039,
+   "end": 110.844,
+   "scale": 125.0,
+   "pos": [
+    0.4816,
+    0.5111
+   ],
+   "clips": 6,
+   "why": "字幕61 寄り125"
+  },
+  {
+   "start": 127.494,
+   "end": 129.73,
+   "scale": 150.0,
+   "pos": [
+    0.4508,
+    0.5625
+   ],
+   "clips": 2,
+   "why": "字幕73 強い寄り150"
+  },
+  {
+   "start": 149.95,
+   "end": 155.422,
+   "scale": 125.0,
+   "pos": [
+    0.5311,
+    0.4671
+   ],
+   "clips": 4,
+   "why": "字幕97+1 寄り125"
+  },
+  {
+   "start": 201.902,
+   "end": 204.204,
+   "scale": 150.0,
+   "pos": [
+    0.5313,
+    0.5458
+   ],
+   "clips": 1,
+   "why": "字幕130 強い寄り150"
+  },
+  {
+   "start": 249.282,
+   "end": 258.125,
+   "scale": 130.0,
+   "pos": [
+    0.4092,
+    0.65
+   ],
+   "clips": 7,
+   "why": "字幕161 寄り130"
+  },
+  {
+   "start": 267.801,
+   "end": 269.136,
+   "scale": 125.0,
+   "pos": [
+    0.4413,
+    0.6188
+   ],
+   "clips": 2,
+   "why": "字幕171 寄り125"
+  },
+  {
+   "start": 278.712,
+   "end": 280.68,
+   "scale": 78.0,
+   "pos": [
+    0.5,
+    0.5
+   ],
+   "clips": 2,
+   "why": "字幕177 引き78"
+  },
+  {
+   "start": 882.949,
+   "end": 888.121,
+   "scale": 120.0,
+   "pos": [
+    0.51,
+    0.5011
+   ],
+   "clips": 2,
+   "why": "字幕649 寄り120（寄りだけ）"
+  },
+  {
+   "start": 895.628,
+   "end": 898.998,
+   "scale": 120.0,
+   "pos": [
+    0.4913,
+    0.5022
+   ],
+   "clips": 2,
+   "why": "字幕662 寄り120（寄りだけ）"
+  },
+  {
+   "start": 943.576,
+   "end": 947.58,
+   "scale": 120.0,
+   "pos": [
+    0.48,
+    0.5056
+   ],
+   "clips": 5,
+   "why": "字幕698 寄り120"
+  },
+  {
+   "start": 965.064,
+   "end": 966.933,
+   "scale": 78.0,
+   "pos": [
+    0.5,
+    0.5
+   ],
+   "clips": 2,
+   "why": "字幕705+2 引き78"
+  },
+  {
+   "start": 974.54,
+   "end": 976.676,
+   "scale": 120.0,
+   "pos": [
+    0.4725,
+    0.5011
+   ],
+   "clips": 1,
+   "why": "字幕713 寄り120（寄りだけ）"
+  },
+  {
+   "start": 988.421,
+   "end": 992.758,
+   "scale": 78.0,
+   "pos": [
+    0.5,
+    0.5
+   ],
+   "clips": 2,
+   "why": "字幕718 引き78"
+  },
+  {
+   "start": 1006.606,
+   "end": 1010.543,
+   "scale": 125.0,
+   "pos": [
+    0.4927,
+    0.488
+   ],
+   "clips": 3,
+   "why": "字幕726 寄り125"
+  },
+  {
+   "start": 1025.825,
+   "end": 1029.762,
+   "scale": 125.0,
+   "pos": [
+    0.5122,
+    0.4498
+   ],
+   "clips": 2,
+   "why": "字幕736 寄り125"
+  },
+  {
+   "start": 1065.731,
+   "end": 1067.366,
+   "scale": 125.0,
+   "pos": [
+    0.4738,
+    0.4498
+   ],
+   "clips": 2,
+   "why": "字幕759 寄り125"
+  },
+  {
+   "start": 1074.273,
+   "end": 1078.544,
+   "scale": 125.0,
+   "pos": [
+    0.5025,
+    0.4671
+   ],
+   "clips": 4,
+   "why": "字幕767+1 寄り125"
+  },
+  {
+   "start": 1081.948,
+   "end": 1083.249,
+   "scale": 150.0,
+   "pos": [
+    0.4266,
+    0.5208
+   ],
+   "clips": 2,
+   "why": "字幕775 強い寄り150"
+  },
+  {
+   "start": 1104.036,
+   "end": 1105.538,
+   "scale": 120.0,
+   "pos": [
+    0.4919,
+    0.47
+   ],
+   "clips": 1,
+   "why": "字幕790+1 寄り120（寄りだけ）"
+  }
+ ],
+ "bgm": {
+  "main_gain_db": -9.0,
+  "voice_gain_db": 3.0,
+  "stops": [
+   [
+    43.844,
+    45.712
+   ],
+   [
+    278.712,
+    280.68
+   ],
+   [
+    562.295,
+    564.297
+   ],
+   [
+    829.662,
+    833.633
+   ],
+   [
+    965.064,
+    966.933
+   ],
+   [
+    988.421,
+    992.758
+   ]
+  ],
+  "muted": 6
+ },
+ "titles": [
+  {
+   "kind": "シリーズ名",
+   "text": "AI動画編集",
+   "clips": 29,
+   "width_px": 356
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "AI自動編集ってどう？",
+   "from": "1",
+   "clips": 6,
+   "width_px": 470
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "何をプレゼント？",
+   "from": "58",
+   "clips": 4,
+   "width_px": 364
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "なぜ全部あげる？",
+   "from": "84",
+   "clips": 3,
+   "width_px": 364
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "うちは何が違う？",
+   "from": "110",
+   "clips": 2,
+   "width_px": 364
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "どこまでできる？",
+   "from": "132",
+   "clips": 2,
+   "width_px": 364
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "他の編集者と違う？",
+   "from": "170",
+   "clips": 3,
+   "width_px": 410
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "うちのレベルは？",
+   "from": "634",
+   "clips": 4,
+   "width_px": 364
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "AI時代に大事なことは？",
+   "from": "701",
+   "clips": 6,
+   "width_px": 516
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "プレゼントの受け取り方",
+   "from": "740",
+   "clips": 1,
+   "width_px": 500
+  },
+  {
+   "kind": "話題タイトル",
+   "text": "Addnessが爆伸び",
+   "from": "756",
+   "clips": 5,
+   "width_px": 404
+  }
+ ],
+ "labels": [
+  {
+   "start": 298.365,
+   "end": 335.602,
+   "text": "AI編集に変えてからの動画"
+  },
+  {
+   "start": 335.602,
+   "end": 406.072,
+   "text": "AIが編集した動画"
+  },
+  {
+   "start": 485.785,
+   "end": 493.927,
+   "text": "AIが編集した動画"
+  },
+  {
+   "start": 493.927,
+   "end": 531.498,
+   "text": "使うAI（Claude Code）"
+  },
+  {
+   "start": 531.498,
+   "end": 610.677,
+   "text": "みかみチャンネル用のルール"
+  },
+  {
+   "start": 610.677,
+   "end": 637.036,
+   "text": "ルールの作り方"
+  },
+  {
+   "start": 687.086,
+   "end": 695.094,
+   "text": "ルールの作り方"
+  },
+  {
+   "start": 695.094,
+   "end": 739.272,
+   "text": "Claude Codeに編集を頼む"
+  },
+  {
+   "start": 739.272,
+   "end": 773.473,
+   "text": "できあがったPremiere"
+  },
+  {
+   "start": 773.473,
+   "end": 867.1,
+   "text": "AIが編集した動画"
+  }
+ ],
+ "notes": [
+  "強調の文の確認（require_texts）：61件、止まる所なし",
+  "字幕26：基本テロップ赤を2行にした（'再生数は自動編集にしても\\r落ちるどころかむしろ上がってる'）",
+  "字幕70：基本テロップ赤を2行にした（'この動画を見れば\\r編集もサムネも全部自動化できる'）",
+  "字幕80+1：基本テロップ赤を2行にした（'うち以外のやつらがプレゼントするくらいなら\\rうちがプレゼントしたい'）",
+  "強調 101：書いた最初の言葉の聞こえ始め（+0.63秒）から出した。字幕 101 を前置きの間だけ出した",
+  "字幕120：基本テロップ赤を2行にした（'うちのプラットフォームには\\rいろんな種と仕掛けがある'）",
+  "強調 120：書いた最初の言葉の聞こえ始め（+0.23秒）から出した。前の字幕 119 を延ばした",
+  "強調 164：書いた最初の言葉の聞こえ始め（+0.77秒）から出した。字幕 164 を前置きの間だけ出した",
+  "v004 直し：強調 192 を Loom の顔の丸の左に収めた（真ん中 x830・上へ50px・大きさ 79%）",
+  "v004 直し：強調 230 を Loom の顔の丸の左に収めた（真ん中 x830・上へ50px・大きさ 100%）",
+  "字幕239：基本テロップ赤を2行にした（'そのルールを元に「編集して」とお願いしたら\\r一発でこのレベルが出てきた'）",
+  "v004 直し：強調 239 を Loom の顔の丸の左に収めた（真ん中 x830・上へ50px・大きさ 79%）",
+  "v004 直し：強調 252 を Loom の顔の丸の左に収めた（真ん中 x830・上へ50px・大きさ 79%）",
+  "v004 直し：強調 322+1 を Loom の顔の丸の左に収めた（真ん中 x830・上へ50px・大きさ 79%）",
+  "v004 直し：強調 346 を Loom の顔の丸の左に収めた（真ん中 x830・上へ50px・大きさ 79%）",
+  "強調 346：書いた最初の言葉の聞こえ始め（+0.20秒）から出した。前の字幕 343+1 を延ばした",
+  "v004 直し：強調 349 を Loom の顔の丸の左に収めた（真ん中 x830・上へ50px・大きさ 83%）",
+  "字幕355：基本テロップ赤を2行にした（'細かくルールを\\rみかみチャンネル用に定義している'）",
+  "v004 直し：強調 355 を Loom の顔の丸の左に収めた（真ん中 x830・上へ50px・大きさ 94%）",
+  "強調 355：書いた最初の言葉の聞こえ始め（+0.93秒）から出した。字幕 355 を前置きの間だけ出した",
+  "v004 直し：強調 378 を Loom の顔の丸の左に収めた（真ん中 x830・上へ50px・大きさ 97%）",
+  "v004 直し：強調 383 を Loom の顔の丸の左に収めた（真ん中 x830・上へ50px・大きさ 100%）",
+  "強調 383：書いた最初の言葉の聞こえ始め（+0.13秒）から出した。前の字幕 382 を延ばした",
+  "v004 直し：強調 420 を Loom の顔の丸の左に収めた（真ん中 x830・上へ50px・大きさ 100%）",
+  "字幕470：基本テロップ赤を2行にした（'スキルをもらっても\\r結局地味な作業が必要になる'）",
+  "v004 直し：強調 470 を Loom の顔の丸の左に収めた（真ん中 x830・上へ50px・大きさ 100%）",
+  "v004 直し：強調 505 を Loom の顔の丸の左に収めた（真ん中 x830・上へ50px・大きさ 98%）",
+  "v004 直し：強調 512 を Loom の顔の丸の左に収めた（真ん中 x830・上へ50px・大きさ 79%）",
+  "字幕524+1：基本テロップ赤を2行にした（'AI自動編集の待ち時間は\\r3時間から5時間ぐらいかかる'）",
+  "v004 直し：強調 524+1 を Loom の顔の丸の左に収めた（真ん中 x830・上へ50px・大きさ 100%）",
+  "v004 直し：強調 538 を幅 1360px に縮めた（大きさ 79%）",
+  "強調 538：書いた最初の言葉の聞こえ始め（+1.30秒）から出した。字幕 538 を前置きの間だけ出した",
+  "v004 直し：強調 591 を幅 1360px に縮めた（大きさ 79%）",
+  "v004 直し：強調 596 を幅 1360px に縮めた（大きさ 79%）",
+  "強調 596：書いた最初の言葉の聞こえ始め（+0.50秒）から出した。前の字幕 593 を延ばした",
+  "v004 直し：強調 609 を幅 1360px に縮めた（大きさ 79%）",
+  "強調 640+1：書いた最初の言葉の聞こえ始め（+0.10秒）から出した。前の字幕 639 を延ばした",
+  "字幕671：基本テロップ赤を2行にした（'リストマーケ1年目で\\rYouTubeを通しての成長曲線は一番'）",
+  "字幕701：基本テロップ赤を2行にした（'AI時代に大事なのは\\r誰を信じれるか'）",
+  "強調 798：書いた最初の言葉の聞こえ始め（+0.67秒）から出した。字幕 798 を前置きの間だけ出した",
+  "字幕695：基本テロップ赤を2行にした（'本当に昔から言ってるけど\\rみんな信じてくれない'）",
+  "強調 722：書いた最初の言葉の聞こえ始め（+0.53秒）から出した。前の字幕 721+1 を延ばした",
+  "字幕114：基本テロップ赤を2行にした（'うちの動画編集の仕組みは\\r結構奥深い'）",
+  "字幕135：基本テロップ赤を2行にした（'僕らの自動編集は\\r世に出てるものよりだいぶレベルが高い'）",
+  "説明 131：3.7秒しか出せない（33字、1秒9字）",
+  "問い 1：画面の90%に収まるよう文字を 94% にした",
+  "SE の開始が同じ（158.22秒 座布団 99 と 画像 I03）。画像 I03 の音は置かない",
+  "SE の開始が同じ（161.26秒 座布団 99+1 と 画像 I04）。画像 I04 の音は置かない",
+  "SE の開始が同じ（316.38秒 強調 192 と 赤枠 192）。赤枠 192 の音は置かない",
+  "SE の開始が同じ（363.93秒 座布団 225 と 説明 225）。説明 225 の音は置かない",
+  "SE の開始が同じ（514.31秒 説明 333 と 赤枠 333）。赤枠 333 の音は置かない",
+  "SE の開始が同じ（562.30秒 強調 378 と 赤枠 378）。赤枠 378 の音は置かない",
+  "SE の開始が同じ（714.65秒 説明 503 と 赤枠 503）。赤枠 503 の音は置かない",
+  "SE の開始が同じ（716.02秒 強調 505 と 赤枠 505）。赤枠 505 の音は置かない",
+  "SE の開始が同じ（782.55秒 座布団 569 と 赤枠 569）。赤枠 569 の音は置かない",
+  "[11] 画像 I01（39.21〜43.84）の間は右上タイトルを出さない",
+  "[11] 画像 I02（113.68〜118.92）の間は右上タイトルを出さない",
+  "[11] 画像 I03（158.22〜161.26）の間は右上タイトルを出さない",
+  "[11] 画像 I04（161.26〜168.77）の間は右上タイトルを出さない",
+  "[11] 画像 I05（275.58〜278.58）の間は右上タイトルを出さない",
+  "[11] 画像 I06（1016.42〜1021.95）の間は右上タイトルを出さない",
+  "[11] 画像 I07（1021.95〜1025.69）の間は右上タイトルを出さない",
+  "[11] 画像 I08（1067.37〜1074.27）の間は右上タイトルを出さない",
+  "[40] 図解・画像の幕の下・終わりの5コマのつなぎ 52 か所には、字幕・強調・右上タイトル・札・ボードを寄せない"
+ ],
+ "screen_lead": [],
+ "zoom_only": [
+  {
+   "id": "649",
+   "zoom": "寄り120",
+   "start": 882.949,
+   "end": 888.121,
+   "reason": "三上さんの自慢「うちより〜ないし」の入り（4つ並ぶので座布団にしない。doubts）"
+  },
+  {
+   "id": "662",
+   "zoom": "寄り120",
+   "start": 895.628,
+   "end": 898.998,
+   "reason": "自慢の4つ目（「あるのか？」→「じゃあダメだ」のボケの前振り）。657・659 はズームなし"
+  },
+  {
+   "id": "713",
+   "zoom": "寄り120",
+   "start": 974.54,
+   "end": 976.676,
+   "reason": "三上さん「いけるよって言ったもんね 俺 結構」（自分の手柄を言う顔）"
+  },
+  {
+   "id": "790+1",
+   "zoom": "寄り120",
+   "start": 1104.036,
+   "end": 1105.538,
+   "reason": "三上さんが見る人に直接「あなたにやってもらうのがいいね」と呼びかける所"
+  },
+  {
+   "id": "34",
+   "zoom": "寄り120",
+   "start": 70.57,
+   "end": 73.44,
+   "reason": "三上さんの「ちゃんと自動編集だもんね」（強調にはしない）"
+  }
+ ],
+ "notes_added": [
+  {
+   "id": "38+1",
+   "text": "※こういち・アンディ・・・YouTubeチームで\r動画編集を担当している人",
+   "type": "T132",
+   "start": 80.247,
+   "end": 84.918,
+   "reason": "v002 直し5：名前が先に出て、誰か分からない（担当の説明は 1:28 と後から出る）"
+  },
+  {
+   "id": "131",
+   "text": "※こういち・・・YouTubeチームで\rAI動画編集を担当する編集者",
+   "type": "T132",
+   "start": 204.204,
+   "end": 207.941,
+   "reason": "v003 直し4：↑の名札が次の字幕を指したまま残ったので、※の1枚に"
+  },
+  {
+   "id": "174",
+   "text": "※情報商材・・・ノウハウを教材にして\rネットで売る商品",
+   "type": "T132",
+   "start": 270.971,
+   "end": 274.341,
+   "reason": "初心者が知らない言葉（初めて出る所）"
+  },
+  {
+   "id": "225",
+   "text": "※SE・・・効果音",
+   "type": "T132",
+   "start": 363.93,
+   "end": 366.399,
+   "reason": "編集の言葉（並べる座布団の3つ目）"
+  },
+  {
+   "id": "256",
+   "text": "※クライアントワーク・・・お客さんから\r頼まれて請ける仕事",
+   "type": "T132",
+   "start": 397.197,
+   "end": 400.834,
+   "reason": "初心者が知らない言葉"
+  },
+  {
+   "id": "319",
+   "text": "※Opus 5.5・・・Claudeの一番賢いモデル",
+   "type": "T132",
+   "start": 495.295,
+   "end": 498.665,
+   "reason": "初めて出るモデルの名前（322+1「今ぶっちぎりですごいのはOpus」と合う）"
+  },
+  {
+   "id": "333",
+   "text": "※クレジット・・・AIを使える量",
+   "type": "T132",
+   "start": 514.314,
+   "end": 517.584,
+   "reason": "画面の使用量の窓と 340「全然減らない」の前提（v002 直し14・17：赤枠にかからないよう上へ）"
+  },
+  {
+   "id": "478",
+   "text": "※作業場・・・Claude Codeが作業するフォルダ\r（ここではルールのフォルダ）",
+   "type": "T132",
+   "start": 703.269,
+   "end": 708.575,
+   "reason": "「作業場にする」が初心者に分からない。477「先ほど作ったこのvideo_edit_rules」＝ルールのフォルダ（v002 直し14・17：赤枠にかからないよう上へ）　v004：赤枠013（11:45 の上の行）にかからないよう −430 → −300（確認の3回目 No.4）"
+  },
+  {
+   "id": "503",
+   "text": "※エフォート・・・AIが考える量の設定\r（Ultracodeが一番多い）",
+   "type": "T132",
+   "start": 714.647,
+   "end": 719.185,
+   "reason": "初めて出る言葉（塊1 の言いかけは切られている）。508「一番最大で大丈夫です」から（v003 直し19・20：メニューと強調にかからないよう上へ）　v004：2行目が環境のメニューの角にかからないよう −430 → −460（確認の3回目 No.6）"
+  },
+  {
+   "id": "609",
+   "text": "※ポン出し・・・手直しせず一発で出すこと",
+   "type": "T132",
+   "start": 840.406,
+   "end": 844.777,
+   "reason": "初めて字幕に出る 446 は Z2 の図解の範囲なので、ここで1回。同じ字幕の強調（キキッ）と重なるので SE なし"
+  },
+  {
+   "id": "671",
+   "text": "※リストマーケ・・・LINEなどに登録した人へ\r案内や販売をする集客のやり方",
+   "type": "T132",
+   "start": 904.437,
+   "end": 909.242,
+   "reason": "初心者が知らない言葉。同じ字幕の強調（ピピ）と重なるので SE なし"
+  },
+  {
+   "id": "785",
+   "text": "※認定パートナー・・・Addnessのサポートを\r任せる公認の協力者",
+   "type": "T132",
+   "start": 1096.929,
+   "end": 1101.2,
+   "reason": "778〜782 はボードなので、ボードの後の最初の字幕で。776「皆さんに任せる」・785「サポートが間に合わない」から（中身は要確認）"
+  }
+ ],
+ "ai_talk": [],
+ "roleplay": [
+  {
+   "lines": [
+    [
+     "7+1",
+     "AIでこうやってやって",
+     "E003"
+    ],
+    [
+     "8",
+     "こうやってテンプレート読ませれば こうなって",
+     "E003"
+    ]
+   ],
+   "start": 37.771,
+   "end": 41.508,
+   "reason": "三上さんが世の奴らの言い方をまねる（P16 アホなふり。黒帯＋白い明朝）。6「世の奴らが言ってる」は前振り、9「こうしていこう いろいろ言うよね」は地の言葉に戻るので通常字幕"
+  },
+  {
+   "lines": [
+    [
+     "705+1",
+     "それはやめておいた方がいいって思うよ",
+     "E003"
+    ]
+   ],
+   "start": 961.928,
+   "end": 965.064,
+   "reason": "三上さんが ChatGPT（チャッピー）の適当な答えをまねる所（アホなふり。「〜って思うよとか言ってくる」）。オチは 705+2 の P04"
+  }
+ ],
+ "plate_pos": [
+  {
+   "text": "　 Q:最近めちゃくちゃ話題のAI自動編集\r僕らも使ってるけど 三上さん的にどう思う？",
+   "left": 96.0,
+   "box_w": 1728.0,
+   "cy": 998.0,
+   "scale": 0.936
+  },
+  {
+   "text": "Q:今 結構自動編集でやってくれてるけど\r      どこまで自動編集でできるのか？",
+   "left": 114.8,
+   "box_w": 1690.5,
+   "cy": 998.0,
+   "scale": 1.0
+  },
+  {
+   "text": "Q:他の編集者とはやっぱレベル違う？",
+   "left": 174.2,
+   "box_w": 1571.7,
+   "cy": 998.0,
+   "scale": 1.0
+  }
+ ],
+ "plates": [
+  {
+   "kind": "問い",
+   "items": [
+    [
+     "1",
+     "Q:最近めちゃくちゃ話題のAI自動編集／僕らも使ってるけど 三上さん的にどう思う？",
+     23.023
+    ]
+   ],
+   "end": 32.933,
+   "reason": "聞き手の最初の問い（1〜4 を1つに。条件「最近話題」「僕らも使ってる」と「三上さん的に」を残した）"
+  },
+  {
+   "kind": "並列",
+   "items": [
+    [
+     "98+2",
+     "①YouTubeチャンネル",
+     156.256
+    ],
+    [
+     "99",
+     "②スクール事業",
+     158.225
+    ],
+    [
+     "99+1",
+     "③Addness",
+     161.261
+    ]
+   ],
+   "end": 168.769,
+   "reason": "事業を順に挙げる（そっからさらに）。順番なので①②③"
+  },
+  {
+   "kind": "問い",
+   "items": [
+    [
+     "133",
+     "Q:今 結構自動編集でやってくれてるけど／どこまで自動編集でできるのか？",
+     207.941
+    ]
+   ],
+   "end": 213.647,
+   "reason": "こういちさんへの問い（話題「どこまでできる？」）。135〜136「世に出てるのよりレベル高いんじゃないか」は問いでなく思いなので字幕のまま"
+  },
+  {
+   "kind": "問い",
+   "items": [
+    [
+     "170",
+     "Q:他の編集者とはやっぱレベル違う？",
+     265.765
+    ]
+   ],
+   "end": 267.801,
+   "reason": "聞き手の誘導の問い（話題「他の編集者と違う？」）"
+  },
+  {
+   "kind": "並列",
+   "items": [
+    [
+     "223",
+     "画像挿入",
+     360.727
+    ],
+    [
+     "224",
+     "強調テロップ",
+     362.162
+    ],
+    [
+     "225",
+     "SE・スケール縮小",
+     363.93
+    ]
+   ],
+   "end": 369.536,
+   "reason": "AI がやった編集を挙げる。226 のスケール縮小は4つ目だが、札は3つまでなので3つ目にまとめた"
+  },
+  {
+   "kind": "並列",
+   "items": [
+    [
+     "414",
+     "細かいプログラミング",
+     623.79
+    ],
+    [
+     "416",
+     "難しいコードの勉強",
+     627.26
+    ]
+   ],
+   "end": 630.363,
+   "reason": "ルールやスキルを作るのに要ると思われている2つ（同じ階層）を並べ、420「AIで作るもの」の強調で返す"
+  },
+  {
+   "kind": "並列",
+   "items": [
+    [
+     "562",
+     "図解",
+     773.473
+    ],
+    [
+     "565",
+     "画像挿入",
+     777.844
+    ],
+    [
+     "569",
+     "強調テロップ・注釈",
+     782.548
+    ]
+   ],
+   "end": 788.421,
+   "reason": "AI がやってくれる装飾を挙げる所（4つなので 568「強調テロップ」と 569「注釈」を1つにまとめて 569 で出す）。571「やばくないですか」で締める"
+  },
+  {
+   "kind": "並列",
+   "items": [
+    [
+     "578+1",
+     "間を持つカット",
+     800.266
+    ],
+    [
+     "579",
+     "無音部分のカット",
+     801.701
+    ],
+    [
+     "581",
+     "あえて意味のある間",
+     803.503
+    ]
+   ],
+   "end": 813.279,
+   "reason": "「カット一つとっても」の中身（カットの種類）を3つ並べる。582「顔芸」は3つ目の例なので札にしない"
+  },
+  {
+   "kind": "並列",
+   "items": [
+    [
+     "795",
+     "世界が良くなる",
+     1108.107
+    ],
+    [
+     "796",
+     "人生が楽しくなる",
+     1109.842
+    ],
+    [
+     "797",
+     "AI時代が面白くなる",
+     1111.711
+    ]
+   ],
+   "end": 1117.917,
+   "reason": "締めの「もっともっと〜」3つ（同じ階層）。798 の締めの名言（P03）まで出して一斉に消す"
+  }
+ ],
+ "plate_face": [
+  {
+   "first": "98+2",
+   "face_left_limit": 755,
+   "right_before": 1065,
+   "scale": 0.685,
+   "right_after": 755
+  },
+  {
+   "first": "795",
+   "face_left_limit": 828,
+   "right_before": 922,
+   "scale": 0.888,
+   "right_after": 828
+  }
+ ],
+ "anim_diagrams": [
+  {
+   "key": "Z3",
+   "title": "今までの自動化＝みじん切り ↔ 今回＝ドラム式洗濯機",
+   "start": 225.125,
+   "end": 249.282,
+   "hidden_captions": [
+    "140",
+    "141",
+    "142",
+    "143",
+    "147",
+    "148",
+    "149",
+    "150",
+    "153",
+    "156"
+   ],
+   "se": 6,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v001/zukai/out/Z3/overlay.mov",
+   "wipe": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v001/zukai/out/Z3/wipe.mp4"
+  },
+  {
+   "key": "Z1",
+   "title": "よくある AI 自動編集（AI が Premiere を操作）↔ うち（AI が XML ファイルを作る）",
+   "start": 406.072,
+   "end": 485.785,
+   "hidden_captions": [
+    "265",
+    "266+1",
+    "271",
+    "272",
+    "273",
+    "277+1",
+    "278",
+    "278+1",
+    "279",
+    "280",
+    "282",
+    "283",
+    "284",
+    "289",
+    "290",
+    "291+1",
+    "292",
+    "293",
+    "295",
+    "296",
+    "297",
+    "298",
+    "300",
+    "301",
+    "302",
+    "305",
+    "306",
+    "309",
+    "310+1",
+    "311",
+    "312",
+    "313"
+   ],
+   "se": 11,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v002/zukai/out/Z1/overlay.mov",
+   "wipe": null
+  },
+  {
+   "key": "Z2",
+   "title": "スキル（ルール）の後ろにあるコンテキスト（氷山）",
+   "start": 637.036,
+   "end": 687.086,
+   "hidden_captions": [
+    "426",
+    "427",
+    "430",
+    "431",
+    "433",
+    "434",
+    "435",
+    "439",
+    "440",
+    "443",
+    "444",
+    "446",
+    "450",
+    "452+1",
+    "456+1",
+    "457",
+    "458",
+    "459",
+    "460",
+    "461",
+    "462",
+    "463",
+    "464"
+   ],
+   "se": 10,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v001/zukai/out/Z2/overlay.mov",
+   "wipe": null
+  }
+ ],
+ "images": [
+  {
+   "key": "I01",
+   "title": "AI にテンプレートを読ませる編集（イメージ・部分）",
+   "start": 39.206,
+   "end": 43.844,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v001/zukai/out/I01/overlay.mov",
+   "insert": "partial",
+   "center": false
+  },
+  {
+   "key": "I02",
+   "title": "みかみCH のサムネ（部分）",
+   "start": 113.68,
+   "end": 118.919,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v001/zukai/out/I02/overlay.mov",
+   "insert": "partial",
+   "center": false
+  },
+  {
+   "key": "I03",
+   "title": "スクール事業（イメージ・部分）",
+   "start": 158.225,
+   "end": 161.261,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v001/zukai/out/I03/overlay.mov",
+   "insert": "partial",
+   "center": false
+  },
+  {
+   "key": "I04",
+   "title": "Addness のロゴ（部分）",
+   "start": 161.261,
+   "end": 168.769,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v001/zukai/out/I04/overlay.mov",
+   "insert": "partial",
+   "center": false
+  },
+  {
+   "key": "I05",
+   "title": "動画編集を自動化するスキルの販売ページ（イメージ・部分）",
+   "start": 275.575,
+   "end": 278.578,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/zukai/out/I05/overlay.mov",
+   "insert": "partial",
+   "center": false
+  },
+  {
+   "key": "I06",
+   "title": "地面が崩れてビルが倒れる街（イメージ・全体）",
+   "start": 1016.415,
+   "end": 1021.954,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v002/zukai/out/I06/overlay.mov",
+   "insert": "full",
+   "center": true
+  },
+  {
+   "key": "I07",
+   "title": "溺れる人の中をクロールで進む（イメージ・全体）",
+   "start": 1021.954,
+   "end": 1025.691,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/zukai/out/I07/overlay.mov",
+   "insert": "full",
+   "center": true
+  },
+  {
+   "key": "I08",
+   "title": "問い合わせに追われるカスタマーサポート（イメージ・全体）",
+   "start": 1067.366,
+   "end": 1074.273,
+   "se": 1,
+   "overlay": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v002/zukai/out/I08/overlay.mov",
+   "insert": "full",
+   "center": true
+  }
+ ],
+ "g1_pieces": [
+  {
+   "at": 45.646,
+   "frames": 2,
+   "from": "78.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 53.52,
+   "frames": 6,
+   "from": "130.",
+   "to": "100.",
+   "how": "カットの直前を前の大きさに"
+  },
+  {
+   "at": 57.291,
+   "frames": 2,
+   "from": "130.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 76.543,
+   "frames": 2,
+   "from": "100.",
+   "to": "120.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 77.611,
+   "frames": 3,
+   "from": "120.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 106.006,
+   "frames": 1,
+   "from": "100.",
+   "to": "125.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 110.644,
+   "frames": 6,
+   "from": "125.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 127.427,
+   "frames": 2,
+   "from": "100.",
+   "to": "150.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 129.696,
+   "frames": 1,
+   "from": "150.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 249.249,
+   "frames": 1,
+   "from": "100.",
+   "to": "130.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 269.069,
+   "frames": 2,
+   "from": "125.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 278.645,
+   "frames": 2,
+   "from": "100.",
+   "to": "78.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 882.882,
+   "frames": 2,
+   "from": "100.",
+   "to": "120.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 888.054,
+   "frames": 2,
+   "from": "120.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 895.561,
+   "frames": 2,
+   "from": "100.",
+   "to": "120.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 898.965,
+   "frames": 1,
+   "from": "120.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 943.576,
+   "frames": 7,
+   "from": "120.",
+   "to": "100.",
+   "how": "カットの直前を前の大きさに"
+  },
+  {
+   "at": 947.513,
+   "frames": 2,
+   "from": "120.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 966.866,
+   "frames": 2,
+   "from": "78.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 974.473,
+   "frames": 2,
+   "from": "100.",
+   "to": "120.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 1010.443,
+   "frames": 3,
+   "from": "125.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 1025.725,
+   "frames": 3,
+   "from": "100.",
+   "to": "125.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 1067.3,
+   "frames": 2,
+   "from": "125.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 1078.511,
+   "frames": 1,
+   "from": "125.",
+   "to": "100.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 1081.881,
+   "frames": 2,
+   "from": "100.",
+   "to": "150.",
+   "how": "カットの直後を後ろの大きさに"
+  },
+  {
+   "at": 1103.97,
+   "frames": 2,
+   "from": "100.",
+   "to": "120.",
+   "how": "カットの直後を後ろの大きさに"
+  }
+ ],
+ "motion_components_added": 77,
+ "frames": [
+  {
+   "start": 311.378,
+   "end": 315.048,
+   "from": "189+1",
+   "to": "189+1",
+   "read": "指している動画"
+  },
+  {
+   "start": 316.383,
+   "end": 320.987,
+   "from": "192",
+   "to": "192",
+   "read": "1段目の再生数"
+  },
+  {
+   "start": 514.247,
+   "end": 519.285,
+   "from": "333",
+   "to": "340",
+   "read": "使用量の表示"
+  },
+  {
+   "start": 535.935,
+   "end": 540.54,
+   "from": "355",
+   "to": "357",
+   "read": "ルールのファイル一覧"
+  },
+  {
+   "start": 562.295,
+   "end": 564.297,
+   "from": "378",
+   "to": "378",
+   "read": "シュールの項目"
+  },
+  {
+   "start": 564.297,
+   "end": 566.8,
+   "from": "379",
+   "to": "379",
+   "read": "SE_CHIIN の行"
+  },
+  {
+   "start": 566.8,
+   "end": 568.168,
+   "from": "380",
+   "to": "380",
+   "read": "シュールの項目"
+  },
+  {
+   "start": 568.168,
+   "end": 573.273,
+   "from": "381",
+   "to": "382",
+   "read": "SE の使い分けの3行"
+  },
+  {
+   "start": 574.04,
+   "end": 576.776,
+   "from": "383",
+   "to": "384",
+   "read": "ゴージャス青の項目"
+  },
+  {
+   "start": 576.776,
+   "end": 582.148,
+   "from": "385",
+   "to": "385",
+   "read": "SE の使い分けの3行"
+  },
+  {
+   "start": 697.463,
+   "end": 700.567,
+   "from": "473",
+   "to": "473",
+   "read": "＋新規のボタン"
+  },
+  {
+   "start": 700.567,
+   "end": 704.904,
+   "from": "477",
+   "to": "478",
+   "read": "作業場の選択の行"
+  },
+  {
+   "start": 704.904,
+   "end": 709.175,
+   "from": "496",
+   "to": "496",
+   "read": "選んだ案件のフォルダ"
+  },
+  {
+   "start": 714.647,
+   "end": 716.015,
+   "from": "503",
+   "to": "503",
+   "read": "エフォートの行"
+  },
+  {
+   "start": 716.015,
+   "end": 718.384,
+   "from": "505",
+   "to": "505",
+   "read": "Ultracode"
+  },
+  {
+   "start": 748.748,
+   "end": 750.049,
+   "from": "538",
+   "to": "538+1",
+   "read": "タイムライン"
+  },
+  {
+   "start": 757.59,
+   "end": 764.697,
+   "from": "553+1",
+   "to": "556",
+   "read": "タイムライン"
+  },
+  {
+   "start": 775.408,
+   "end": 780.88,
+   "from": "562",
+   "to": "565",
+   "read": "プログラムモニターの図解"
+  },
+  {
+   "start": 780.88,
+   "end": 782.548,
+   "from": "568",
+   "to": "568",
+   "read": "強調テロップ"
+  },
+  {
+   "start": 782.548,
+   "end": 788.421,
+   "from": "569",
+   "to": "570+1",
+   "read": "注釈"
+  }
+ ],
+ "titles_dropped": [],
+ "g1_aligned": [
+  {
+   "track": "V6",
+   "text": "僕ら結構レベル違うのかなと思ってて",
+   "from": [
+    45.712,
+    48.048
+   ],
+   "to": [
+    45.646,
+    48.048
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "うちのYouTubeが／まさに自動編集の賜物でし",
+   "from": [
+    50.55,
+    53.52
+   ],
+   "to": [
+    50.55,
+    53.72
+   ],
+   "frames": [
+    0,
+    6
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "今回は三上さんじゃなくて",
+   "from": [
+    77.711,
+    80.247
+   ],
+   "to": [
+    77.611,
+    80.247
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "プレゼントして渡したいなって／思ってるんで",
+   "from": [
+    103.937,
+    106.039
+   ],
+   "to": [
+    103.937,
+    106.006
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "しかもそれも5秒でっていうものを／プレゼントしま",
+   "from": [
+    110.844,
+    113.68
+   ],
+   "to": [
+    110.644,
+    113.68
+   ],
+   "frames": [
+    -6,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "サムネもあげるの？",
+   "from": [
+    126.626,
+    127.494
+   ],
+   "to": [
+    126.626,
+    127.427
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "もう大開放してない？",
+   "from": [
+    129.73,
+    131.999
+   ],
+   "to": [
+    129.696,
+    131.999
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "結構最近（ほかの人のを）／見てるんですけど",
+   "from": [
+    269.136,
+    270.971
+   ],
+   "to": [
+    269.069,
+    270.971
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "言ってたんですけど",
+   "from": [
+    277.911,
+    278.712
+   ],
+   "to": [
+    277.911,
+    278.645
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "紹介できると思うので／そこを話していけたらと思い",
+   "from": [
+    296.096,
+    298.431
+   ],
+   "to": [
+    296.096,
+    298.365
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "というわけで ここからは／実際に画面収録の画面を",
+   "from": [
+    298.431,
+    301.468
+   ],
+   "to": [
+    298.365,
+    301.468
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "そうそうそうそう",
+   "from": [
+    881.447,
+    882.949
+   ],
+   "to": [
+    881.447,
+    882.882
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "うちより運用がガチガチに／自動化されてるところな",
+   "from": [
+    882.949,
+    888.121
+   ],
+   "to": [
+    882.882,
+    888.054
+   ],
+   "frames": [
+    -2,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "うちよりクリエイティブが／自動化されてるところも",
+   "from": [
+    888.121,
+    891.457
+   ],
+   "to": [
+    888.054,
+    891.457
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "うちより 伸びている広告／作っているところもない",
+   "from": [
+    891.457,
+    895.628
+   ],
+   "to": [
+    891.457,
+    895.561
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "うちよりAI系の／YouTubeで勝ってるところ",
+   "from": [
+    895.628,
+    898.998
+   ],
+   "to": [
+    895.561,
+    898.965
+   ],
+   "frames": [
+    -2,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "あるのか？",
+   "from": [
+    898.998,
+    899.732
+   ],
+   "to": [
+    898.965,
+    899.732
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "でもそろそろ信じてくれる人も／増え始めたっていう",
+   "from": [
+    941.741,
+    943.576
+   ],
+   "to": [
+    941.741,
+    943.81
+   ],
+   "frames": [
+    0,
+    7
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "それがやっぱり僕らのポイントです",
+   "from": [
+    947.58,
+    949.749
+   ],
+   "to": [
+    947.513,
+    949.749
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "例えば今の自動編集",
+   "from": [
+    966.933,
+    968.801
+   ],
+   "to": [
+    966.866,
+    968.801
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "死んでたね",
+   "from": [
+    973.439,
+    974.54
+   ],
+   "to": [
+    973.439,
+    974.473
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "いけるよって言ったもんね 俺 結構",
+   "from": [
+    974.54,
+    976.676
+   ],
+   "to": [
+    974.473,
+    976.676
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "逆に言えば ちょっと勉強すれば",
+   "from": [
+    1010.543,
+    1012.378
+   ],
+   "to": [
+    1010.443,
+    1012.378
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "道作ってるから",
+   "from": [
+    1024.69,
+    1025.825
+   ],
+   "to": [
+    1024.69,
+    1025.725
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "僕らは カスタマーサポート／追いついておりません",
+   "from": [
+    1067.366,
+    1070.67
+   ],
+   "to": [
+    1067.3,
+    1070.67
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "やばい 知らん間によ／増えるんよ 新しい会社が",
+   "from": [
+    1078.544,
+    1081.948
+   ],
+   "to": [
+    1078.511,
+    1081.881
+   ],
+   "frames": [
+    -1,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "やっぱYouTube見てる人ね／意外とリテラシー",
+   "from": [
+    1100.7,
+    1104.036
+   ],
+   "to": [
+    1100.7,
+    1103.97
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "あなたにやってもらうのがいいね",
+   "from": [
+    1104.036,
+    1105.538
+   ],
+   "to": [
+    1103.97,
+    1105.538
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "世の奴らが言うAI自動編集は／レベルが低い",
+   "from": [
+    43.844,
+    45.712
+   ],
+   "to": [
+    43.844,
+    45.646
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "うちのYouTubeの編集は／「編集して」で終わ",
+   "from": [
+    53.52,
+    57.357
+   ],
+   "to": [
+    53.72,
+    57.291
+   ],
+   "frames": [
+    6,
+    -2
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "再生数は自動編集にしても／落ちるどころかむしろ上",
+   "from": [
+    57.357,
+    61.795
+   ],
+   "to": [
+    57.291,
+    61.795
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "その工程も含めて／全部見せていこう",
+   "from": [
+    73.44,
+    76.61
+   ],
+   "to": [
+    73.44,
+    76.543
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "やりましょう",
+   "from": [
+    76.61,
+    77.711
+   ],
+   "to": [
+    76.543,
+    77.611
+   ],
+   "frames": [
+    -2,
+    -3
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "うちの動画編集と全く同じものが／5秒でできるよう",
+   "from": [
+    106.039,
+    110.844
+   ],
+   "to": [
+    106.006,
+    110.644
+   ],
+   "frames": [
+    -1,
+    -6
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "あげまくるわね あなた",
+   "from": [
+    127.494,
+    129.73
+   ],
+   "to": [
+    127.427,
+    129.696
+   ],
+   "frames": [
+    -2,
+    -1
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "みかみチャンネルの直近の8本ぐらいは／ほぼ全部A",
+   "from": [
+    249.282,
+    258.125
+   ],
+   "to": [
+    249.249,
+    258.125
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "違いますね",
+   "from": [
+    267.801,
+    269.136
+   ],
+   "to": [
+    267.801,
+    269.069
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "だいたいゴミっすね",
+   "from": [
+    278.712,
+    280.68
+   ],
+   "to": [
+    278.645,
+    280.68
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "2周回って最先端過ぎて／みんなわかんない",
+   "from": [
+    943.576,
+    947.58
+   ],
+   "to": [
+    943.81,
+    947.513
+   ],
+   "frames": [
+    7,
+    -2
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "なんでも適当なんだよ みんな",
+   "from": [
+    965.064,
+    966.933
+   ],
+   "to": [
+    965.064,
+    966.866
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "誰を信じるかで全て変わる／だから必ずキャッチアッ",
+   "from": [
+    1006.606,
+    1010.543
+   ],
+   "to": [
+    1006.606,
+    1010.443
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "俺らが作る道を駆け抜ければ／ものすごく他とアドバ",
+   "from": [
+    1025.825,
+    1029.762
+   ],
+   "to": [
+    1025.725,
+    1029.762
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "Addnessが 爆伸びしてる",
+   "from": [
+    1065.731,
+    1067.366
+   ],
+   "to": [
+    1065.731,
+    1067.3
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "1日50社から100社くらい／勝手に課金されてる",
+   "from": [
+    1074.273,
+    1078.544
+   ],
+   "to": [
+    1074.273,
+    1078.511
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "もう無理です",
+   "from": [
+    1081.948,
+    1083.249
+   ],
+   "to": [
+    1081.881,
+    1083.249
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    45.712,
+    53.52
+   ],
+   "to": [
+    45.646,
+    53.72
+   ],
+   "frames": [
+    -2,
+    6
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    57.357,
+    70.57
+   ],
+   "to": [
+    57.291,
+    70.57
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    73.44,
+    76.61
+   ],
+   "to": [
+    73.44,
+    76.543
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    77.711,
+    106.039
+   ],
+   "to": [
+    77.611,
+    106.006
+   ],
+   "frames": [
+    -3,
+    -1
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    110.844,
+    113.68
+   ],
+   "to": [
+    110.644,
+    113.68
+   ],
+   "frames": [
+    -6,
+    0
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    118.919,
+    127.494
+   ],
+   "to": [
+    118.919,
+    127.427
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    129.73,
+    149.95
+   ],
+   "to": [
+    129.696,
+    149.95
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    269.136,
+    275.575
+   ],
+   "to": [
+    269.069,
+    275.575
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    867.1,
+    882.949
+   ],
+   "to": [
+    867.1,
+    882.882
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    888.121,
+    895.628
+   ],
+   "to": [
+    888.054,
+    895.561
+   ],
+   "frames": [
+    -2,
+    -2
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    898.998,
+    943.576
+   ],
+   "to": [
+    898.965,
+    943.81
+   ],
+   "frames": [
+    -1,
+    7
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    947.58,
+    961.928
+   ],
+   "to": [
+    947.513,
+    961.928
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    966.933,
+    974.54
+   ],
+   "to": [
+    966.866,
+    974.473
+   ],
+   "frames": [
+    -2,
+    -2
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    1010.543,
+    1016.415
+   ],
+   "to": [
+    1010.443,
+    1016.415
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    1078.544,
+    1081.948
+   ],
+   "to": [
+    1078.511,
+    1081.881
+   ],
+   "frames": [
+    -1,
+    -2
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    1095.594,
+    1104.036
+   ],
+   "to": [
+    1095.594,
+    1103.97
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "AI自動編集ってどう？",
+   "from": [
+    45.712,
+    53.52
+   ],
+   "to": [
+    45.646,
+    53.72
+   ],
+   "frames": [
+    -2,
+    6
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "AI自動編集ってどう？",
+   "from": [
+    57.357,
+    70.57
+   ],
+   "to": [
+    57.291,
+    70.57
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "AI自動編集ってどう？",
+   "from": [
+    73.44,
+    76.61
+   ],
+   "to": [
+    73.44,
+    76.543
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "AI自動編集ってどう？",
+   "from": [
+    77.711,
+    99.866
+   ],
+   "to": [
+    77.611,
+    99.866
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "何をプレゼント？",
+   "from": [
+    99.866,
+    106.039
+   ],
+   "to": [
+    99.866,
+    106.006
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "何をプレゼント？",
+   "from": [
+    110.844,
+    113.68
+   ],
+   "to": [
+    110.644,
+    113.68
+   ],
+   "frames": [
+    -6,
+    0
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "何をプレゼント？",
+   "from": [
+    118.919,
+    127.494
+   ],
+   "to": [
+    118.919,
+    127.427
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "何をプレゼント？",
+   "from": [
+    129.73,
+    141.074
+   ],
+   "to": [
+    129.696,
+    141.074
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "他の編集者と違う？",
+   "from": [
+    269.136,
+    275.575
+   ],
+   "to": [
+    269.069,
+    275.575
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "うちのレベルは？",
+   "from": [
+    867.1,
+    882.949
+   ],
+   "to": [
+    867.1,
+    882.882
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "うちのレベルは？",
+   "from": [
+    888.121,
+    895.628
+   ],
+   "to": [
+    888.054,
+    895.561
+   ],
+   "frames": [
+    -2,
+    -2
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "うちのレベルは？",
+   "from": [
+    898.998,
+    943.576
+   ],
+   "to": [
+    898.965,
+    943.81
+   ],
+   "frames": [
+    -1,
+    7
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "うちのレベルは？",
+   "from": [
+    947.58,
+    949.749
+   ],
+   "to": [
+    947.513,
+    949.749
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "AI時代に大事なことは？",
+   "from": [
+    966.933,
+    974.54
+   ],
+   "to": [
+    966.866,
+    974.473
+   ],
+   "frames": [
+    -2,
+    -2
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "AI時代に大事なことは？",
+   "from": [
+    1010.543,
+    1016.415
+   ],
+   "to": [
+    1010.443,
+    1016.415
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "Addnessが爆伸び",
+   "from": [
+    1078.544,
+    1081.948
+   ],
+   "to": [
+    1078.511,
+    1081.881
+   ],
+   "frames": [
+    -1,
+    -2
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "Addnessが爆伸び",
+   "from": [
+    1095.594,
+    1104.036
+   ],
+   "to": [
+    1095.594,
+    1103.97
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  }
+ ],
+ "cut_aligned": [
+  {
+   "track": "V6",
+   "text": "どうも アドネスの三上です",
+   "from": [
+    20.888,
+    23.023
+   ],
+   "to": [
+    20.854,
+    23.023
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "僕ら結構レベル違うのかなと思ってて",
+   "from": [
+    45.646,
+    48.048
+   ],
+   "to": [
+    45.646,
+    47.981
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "最近の動画 全部自動編集",
+   "from": [
+    48.048,
+    50.05
+   ],
+   "to": [
+    47.981,
+    50.05
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "世に出てるAI自動編集のレベルが／どんなものなの",
+   "from": [
+    61.795,
+    65.499
+   ],
+   "to": [
+    61.795,
+    65.432
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "（世の中では）自動編集ってやつ／嘘だみたいな",
+   "from": [
+    65.499,
+    69.102
+   ],
+   "to": [
+    65.432,
+    69.102
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "今回は三上さんじゃなくて",
+   "from": [
+    77.611,
+    80.247
+   ],
+   "to": [
+    77.611,
+    80.18
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "こういちか アンディくんか／どっちがいいですかね",
+   "from": [
+    80.247,
+    82.849
+   ],
+   "to": [
+    80.18,
+    82.849
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "こういちか アンディくんか／どっちがいいですかね",
+   "from": [
+    80.18,
+    82.849
+   ],
+   "to": [
+    80.18,
+    82.783
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "どっちもいいよ 全然／創太くんのセレクションじゃ",
+   "from": [
+    82.849,
+    85.652
+   ],
+   "to": [
+    82.783,
+    85.652
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "どっちもいいよ 全然／創太くんのセレクションじゃ",
+   "from": [
+    82.783,
+    85.652
+   ],
+   "to": [
+    82.783,
+    85.585
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "こういちでもいいですかね",
+   "from": [
+    85.652,
+    87.187
+   ],
+   "to": [
+    85.585,
+    87.187
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "こういちでもいいですかね",
+   "from": [
+    85.585,
+    87.187
+   ],
+   "to": [
+    85.585,
+    87.087
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "いいんじゃない いいと思う",
+   "from": [
+    87.187,
+    88.322
+   ],
+   "to": [
+    87.087,
+    88.322
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "いいんじゃない いいと思う",
+   "from": [
+    87.087,
+    88.322
+   ],
+   "to": [
+    87.087,
+    88.255
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "今回はYouTubeチームで",
+   "from": [
+    88.322,
+    90.691
+   ],
+   "to": [
+    88.255,
+    90.691
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "しかもそれも5秒でっていうものを／プレゼントしま",
+   "from": [
+    110.644,
+    113.68
+   ],
+   "to": [
+    110.644,
+    113.58
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "サムネもめっちゃすぐできるみたいな",
+   "from": [
+    113.68,
+    115.682
+   ],
+   "to": [
+    113.58,
+    115.682
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "「過去のデータみたいに／いい感じで頼む」",
+   "from": [
+    118.919,
+    120.22
+   ],
+   "to": [
+    118.919,
+    120.187
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "って言ったら ポーンできるやつ",
+   "from": [
+    120.22,
+    122.022
+   ],
+   "to": [
+    120.187,
+    122.022
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "もうどうせ／いつか出るだろうなと思って",
+   "from": [
+    131.999,
+    135.102
+   ],
+   "to": [
+    131.999,
+    135.002
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "だったらもう早めに／あげてたほうがいいかな",
+   "from": [
+    135.102,
+    137.237
+   ],
+   "to": [
+    135.002,
+    137.237
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "自動編集とサムネができても",
+   "from": [
+    141.074,
+    142.542
+   ],
+   "to": [
+    141.041,
+    142.542
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "うち以外のやつらがプレゼントするくらいなら／うち",
+   "from": [
+    137.237,
+    141.074
+   ],
+   "to": [
+    137.237,
+    141.041
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "いや だから 上げれるもん／上げていいですよね",
+   "from": [
+    146.313,
+    148.649
+   ],
+   "to": [
+    146.313,
+    148.615
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "俺らは別に／編集で食ってるわけじゃないからね",
+   "from": [
+    148.649,
+    149.95
+   ],
+   "to": [
+    148.615,
+    149.95
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "なので上げます",
+   "from": [
+    171.104,
+    172.572
+   ],
+   "to": [
+    171.104,
+    172.539
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "（うちのは）他の動画編集と／ちょっと違う",
+   "from": [
+    172.572,
+    174.174
+   ],
+   "to": [
+    172.539,
+    174.174
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "（うちのは）他の動画編集と／ちょっと違う",
+   "from": [
+    172.539,
+    174.174
+   ],
+   "to": [
+    172.539,
+    174.107
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "なんで今回の仕組みとかで",
+   "from": [
+    174.174,
+    176.677
+   ],
+   "to": [
+    174.107,
+    176.677
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "「いや これはまだ難しい」／とかっていう気持ちも",
+   "from": [
+    183.583,
+    185.986
+   ],
+   "to": [
+    183.583,
+    185.952
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "確かに難しい 普通にやるとね",
+   "from": [
+    185.986,
+    187.988
+   ],
+   "to": [
+    185.952,
+    187.988
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "お疲れ様です",
+   "from": [
+    198.965,
+    200.4
+   ],
+   "to": [
+    198.965,
+    200.367
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "天才編集者のこういちさん／じゃないですか",
+   "from": [
+    200.4,
+    201.902
+   ],
+   "to": [
+    200.367,
+    201.902
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "こういちです",
+   "from": [
+    204.204,
+    205.605
+   ],
+   "to": [
+    204.204,
+    205.572
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "自動編集のテーマで撮ってて",
+   "from": [
+    205.605,
+    207.941
+   ],
+   "to": [
+    205.572,
+    207.941
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "視聴者が見たらできるようになる／っていうところま",
+   "from": [
+    218.552,
+    221.488
+   ],
+   "to": [
+    218.485,
+    221.488
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "僕らの自動編集は／世に出てるものよりだいぶレベル",
+   "from": [
+    213.647,
+    218.552
+   ],
+   "to": [
+    213.647,
+    218.485
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "ところで言わせていただくと",
+   "from": [
+    309.342,
+    311.444
+   ],
+   "to": [
+    309.342,
+    311.378
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "この辺から 全部AIでやってます",
+   "from": [
+    311.444,
+    315.048
+   ],
+   "to": [
+    311.378,
+    315.048
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "あんまり変わらないぐらいの再生数が／出てたりとか",
+   "from": [
+    322.322,
+    327.093
+   ],
+   "to": [
+    322.322,
+    327.027
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "同じような形で／YouTubeチャンネル運用して",
+   "from": [
+    327.093,
+    328.895
+   ],
+   "to": [
+    327.027,
+    328.895
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "どんなもんかというところを／一回お見せしたいんで",
+   "from": [
+    335.602,
+    338.471
+   ],
+   "to": [
+    335.602,
+    338.371
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "例えばこれ",
+   "from": [
+    338.471,
+    339.072
+   ],
+   "to": [
+    338.371,
+    339.072
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "さあ どうでしょうか",
+   "from": [
+    359.726,
+    360.727
+   ],
+   "to": [
+    359.726,
+    360.66
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "今 画像挿入の部分だったりとか",
+   "from": [
+    360.727,
+    362.162
+   ],
+   "to": [
+    360.66,
+    362.162
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "この画角が変わったりとか／っていうことは",
+   "from": [
+    367.467,
+    369.536
+   ],
+   "to": [
+    367.467,
+    369.469
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "人間がやったのと ほぼ変わらない／ぐらいに見える",
+   "from": [
+    369.536,
+    371.538
+   ],
+   "to": [
+    369.469,
+    371.538
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "そういうふうな難しいことは／してなくて",
+   "from": [
+    379.846,
+    381.214
+   ],
+   "to": [
+    379.846,
+    381.147
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "ルールの部分は／定義させていただいているんですけ",
+   "from": [
+    381.214,
+    383.717
+   ],
+   "to": [
+    381.147,
+    383.717
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "これの作り方というのも／スキルにまとめたものとい",
+   "from": [
+    388.822,
+    391.892
+   ],
+   "to": [
+    388.722,
+    391.892
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "そのルールを元に「編集して」とお願いしたら／一発",
+   "from": [
+    383.717,
+    388.822
+   ],
+   "to": [
+    383.717,
+    388.722
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "AI動画編集／これからやってみたいとか",
+   "from": [
+    394.561,
+    397.197
+   ],
+   "to": [
+    394.561,
+    397.163
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "それこそクライアントワークとか",
+   "from": [
+    397.197,
+    398.498
+   ],
+   "to": [
+    397.163,
+    398.498
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "それこそクライアントワークとか",
+   "from": [
+    397.163,
+    398.498
+   ],
+   "to": [
+    397.163,
+    398.398
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "自分のYouTube運用に／使っていきたいなとい",
+   "from": [
+    398.498,
+    400.533
+   ],
+   "to": [
+    398.398,
+    400.533
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "なので そういった風な形で／やらせていただいてお",
+   "from": [
+    485.785,
+    489.389
+   ],
+   "to": [
+    485.785,
+    489.289
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "実際にどういう風にやるかというのを／見せた方がい",
+   "from": [
+    489.389,
+    491.791
+   ],
+   "to": [
+    489.289,
+    491.791
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "それをちょっと／実践していくんですけども",
+   "from": [
+    491.791,
+    493.927
+   ],
+   "to": [
+    491.791,
+    493.827
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "使うAIですね",
+   "from": [
+    493.927,
+    495.295
+   ],
+   "to": [
+    493.827,
+    495.295
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "使うAIですね",
+   "from": [
+    493.827,
+    495.295
+   ],
+   "to": [
+    493.827,
+    495.228
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "Claude CodeのOpus 5.5を／使っ",
+   "from": [
+    495.295,
+    498.031
+   ],
+   "to": [
+    495.228,
+    498.031
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "いろいろ今AIあると思うんですけど",
+   "from": [
+    498.031,
+    501.668
+   ],
+   "to": [
+    498.031,
+    501.601
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "一番騒がれてたのが GPT-6の／Astraの時",
+   "from": [
+    501.668,
+    506.272
+   ],
+   "to": [
+    501.601,
+    506.272
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "（Opusは）クオリティ高い／っていうのもそうな",
+   "from": [
+    509.309,
+    512.512
+   ],
+   "to": [
+    509.242,
+    512.512
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "今ぶっちぎりですごいのは／Opus",
+   "from": [
+    506.272,
+    509.309
+   ],
+   "to": [
+    506.272,
+    509.242
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "（Opusは）クオリティ高い／っていうのもそうな",
+   "from": [
+    509.242,
+    512.512
+   ],
+   "to": [
+    509.242,
+    512.445
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "Astraに比べて 燃費も／めっちゃいいんですよ",
+   "from": [
+    512.512,
+    514.314
+   ],
+   "to": [
+    512.445,
+    514.314
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "Astraに比べて 燃費も／めっちゃいいんですよ",
+   "from": [
+    512.445,
+    514.314
+   ],
+   "to": [
+    512.445,
+    514.247
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "ここのクレジット消費量みたいな部分／あると思うん",
+   "from": [
+    514.314,
+    517.584
+   ],
+   "to": [
+    514.247,
+    517.584
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "ここのクレジット消費量みたいな部分／あると思うん",
+   "from": [
+    514.247,
+    517.584
+   ],
+   "to": [
+    514.247,
+    517.517
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "全然減らないですよ",
+   "from": [
+    517.584,
+    519.386
+   ],
+   "to": [
+    517.517,
+    519.386
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "全然減らないですよ",
+   "from": [
+    517.517,
+    519.386
+   ],
+   "to": [
+    517.517,
+    519.285
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "僕は 一番高い200ドルのプランに／課金してると",
+   "from": [
+    519.386,
+    523.99
+   ],
+   "to": [
+    519.285,
+    523.99
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "実際にAI動画編集を／していくんですけど",
+   "from": [
+    531.498,
+    535.935
+   ],
+   "to": [
+    531.431,
+    535.935
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "ぜひClaude Codeに／課金してやってみて",
+   "from": [
+    528.428,
+    531.498
+   ],
+   "to": [
+    528.428,
+    531.431
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "それをもとにAIが／編集してくれるという形です",
+   "from": [
+    596.629,
+    599.232
+   ],
+   "to": [
+    596.629,
+    599.165
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "これどうやって作るの？",
+   "from": [
+    599.232,
+    601.0
+   ],
+   "to": [
+    599.165,
+    601.0
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "これの作り方がわからない方が／いらっしゃると思う",
+   "from": [
+    610.677,
+    614.214
+   ],
+   "to": [
+    610.61,
+    614.214
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "基本的にこれも全部／AIに作らせてます",
+   "from": [
+    614.214,
+    616.416
+   ],
+   "to": [
+    614.214,
+    616.316
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "ちょっとここ専門的な話に／なるんですけど",
+   "from": [
+    616.416,
+    619.119
+   ],
+   "to": [
+    616.316,
+    619.119
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "結構みんな／僕もそう思ってたんですけど",
+   "from": [
+    620.72,
+    623.79
+   ],
+   "to": [
+    620.72,
+    623.723
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "めちゃくちゃ細かくプログラミング／できなきゃいけ",
+   "from": [
+    623.79,
+    627.26
+   ],
+   "to": [
+    623.723,
+    627.26
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "めちゃくちゃ細かくプログラミング／できなきゃいけ",
+   "from": [
+    623.723,
+    627.26
+   ],
+   "to": [
+    623.723,
+    627.193
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "難しいコードの勉強／しなきゃいけないとか",
+   "from": [
+    627.26,
+    628.795
+   ],
+   "to": [
+    627.193,
+    628.795
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "三上さんとかも含めて／全部AIで作ってる",
+   "from": [
+    633.133,
+    635.001
+   ],
+   "to": [
+    633.133,
+    634.934
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "どういう風に作るか／というところなんですけど",
+   "from": [
+    635.001,
+    637.036
+   ],
+   "to": [
+    634.934,
+    637.036
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "もちろん ある程度／できる人のスキルをもらえれば",
+   "from": [
+    687.086,
+    690.523
+   ],
+   "to": [
+    687.086,
+    690.49
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "そこの部分も早くはなるんですけど",
+   "from": [
+    690.523,
+    691.824
+   ],
+   "to": [
+    690.49,
+    691.824
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "じゃあちょっと実際に／やっていきたいと思います",
+   "from": [
+    695.094,
+    697.497
+   ],
+   "to": [
+    695.061,
+    697.497
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "スキルをもらっても／結局地味な作業が必要になる",
+   "from": [
+    691.824,
+    695.094
+   ],
+   "to": [
+    691.824,
+    695.061
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "じゃあちょっと実際に／やっていきたいと思います",
+   "from": [
+    695.061,
+    697.497
+   ],
+   "to": [
+    695.061,
+    697.463
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "僕の場合はなんですが／このプラスボタンを押して",
+   "from": [
+    697.497,
+    700.633
+   ],
+   "to": [
+    697.463,
+    700.633
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "僕の場合はなんですが／このプラスボタンを押して",
+   "from": [
+    697.463,
+    700.633
+   ],
+   "to": [
+    697.463,
+    700.567
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "先ほど作ったこのvideo_edit_rules",
+   "from": [
+    700.633,
+    703.269
+   ],
+   "to": [
+    700.567,
+    703.269
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "ここを作業場にしまして",
+   "from": [
+    703.269,
+    704.971
+   ],
+   "to": [
+    703.269,
+    704.904
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "先週投稿した Dots解説の編集を／改めてやって",
+   "from": [
+    704.971,
+    709.242
+   ],
+   "to": [
+    704.904,
+    709.242
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "先週投稿した Dots解説の編集を／改めてやって",
+   "from": [
+    704.904,
+    709.242
+   ],
+   "to": [
+    704.904,
+    709.175
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "編集素材のある場所を指定して",
+   "from": [
+    709.242,
+    711.477
+   ],
+   "to": [
+    709.175,
+    711.477
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "基本 一番最大で大丈夫です",
+   "from": [
+    720.62,
+    722.555
+   ],
+   "to": [
+    720.62,
+    722.522
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "場所は定義しているので",
+   "from": [
+    722.555,
+    724.524
+   ],
+   "to": [
+    722.522,
+    724.524
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "AI自動編集は／結構待ってる時間長いですね",
+   "from": [
+    729.229,
+    732.799
+   ],
+   "to": [
+    729.229,
+    732.732
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "だいたいここから5時間ぐらいかな",
+   "from": [
+    732.799,
+    735.101
+   ],
+   "to": [
+    732.732,
+    735.101
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "5時間はさすがに／待ってられないので",
+   "from": [
+    739.272,
+    741.441
+   ],
+   "to": [
+    739.205,
+    741.441
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "AI自動編集の待ち時間は／3時間から5時間ぐらい",
+   "from": [
+    737.704,
+    739.272
+   ],
+   "to": [
+    737.704,
+    739.205
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "実際ちょっと完成させたものを／お見せするんですけ",
+   "from": [
+    741.441,
+    743.743
+   ],
+   "to": [
+    741.441,
+    743.643
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "こんな感じですね／ジャーってAI君が作業してくれ",
+   "from": [
+    743.743,
+    748.748
+   ],
+   "to": [
+    743.643,
+    748.748
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "すごくないですか",
+   "from": [
+    754.887,
+    755.521
+   ],
+   "to": [
+    754.821,
+    755.521
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "なんとPremiereに／全て積まれた状態で完成",
+   "from": [
+    750.049,
+    754.887
+   ],
+   "to": [
+    750.049,
+    754.821
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "多分 動画編集してる人だったら／分かると思うんで",
+   "from": [
+    755.521,
+    757.657
+   ],
+   "to": [
+    755.521,
+    757.59
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "編集終わった後のシーケンスって／こんな感じになる",
+   "from": [
+    757.657,
+    760.126
+   ],
+   "to": [
+    757.59,
+    760.126
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "例えば この図解の部分も",
+   "from": [
+    773.473,
+    776.075
+   ],
+   "to": [
+    773.373,
+    776.075
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "細かい画像挿入の部分も／もちろんやってくれるし",
+   "from": [
+    777.844,
+    780.947
+   ],
+   "to": [
+    777.844,
+    780.88
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "あとは こういう風な強調テロップや",
+   "from": [
+    780.947,
+    782.548
+   ],
+   "to": [
+    780.88,
+    782.548
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "これもうびっくりしましたよ 僕も",
+   "from": [
+    789.489,
+    791.858
+   ],
+   "to": [
+    789.422,
+    791.858
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "やばくないですか",
+   "from": [
+    788.421,
+    789.489
+   ],
+   "to": [
+    788.421,
+    789.422
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "ただ無音部分のカット",
+   "from": [
+    801.701,
+    803.503
+   ],
+   "to": [
+    801.701,
+    803.436
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "あえて 間に意味があるようなのが／あったりとかす",
+   "from": [
+    803.503,
+    807.04
+   ],
+   "to": [
+    803.436,
+    807.04
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "そういうことあると思うんですけど",
+   "from": [
+    810.543,
+    813.279
+   ],
+   "to": [
+    810.543,
+    813.212
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "（AIは）そういう人間特有のボケとか／笑いとかっ",
+   "from": [
+    813.279,
+    817.05
+   ],
+   "to": [
+    813.212,
+    817.05
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "なんで 今 動画編集をやられてる方／っていると思",
+   "from": [
+    823.322,
+    829.662
+   ],
+   "to": [
+    823.289,
+    829.662
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "ついにここまで来てしまった",
+   "from": [
+    820.086,
+    823.322
+   ],
+   "to": [
+    820.086,
+    823.289
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "現状は まだAI使っても5時間くらい／かかってし",
+   "from": [
+    833.633,
+    837.47
+   ],
+   "to": [
+    833.566,
+    837.47
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "手先でやる動画編集は／これからほとんどなくなると",
+   "from": [
+    829.662,
+    833.633
+   ],
+   "to": [
+    829.662,
+    833.566
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "ぜひ体感してみてください",
+   "from": [
+    859.659,
+    861.728
+   ],
+   "to": [
+    859.659,
+    861.661
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "というところで／実演パートは一旦以上になりますの",
+   "from": [
+    861.728,
+    865.231
+   ],
+   "to": [
+    861.661,
+    865.231
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "創太おかえり",
+   "from": [
+    867.1,
+    868.501
+   ],
+   "to": [
+    867.1,
+    868.401
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "行ってきました",
+   "from": [
+    868.501,
+    869.469
+   ],
+   "to": [
+    868.401,
+    869.469
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "行ってきました",
+   "from": [
+    868.401,
+    869.469
+   ],
+   "to": [
+    868.401,
+    869.402
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "どうでしたか？",
+   "from": [
+    869.469,
+    870.436
+   ],
+   "to": [
+    869.402,
+    870.436
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "何においても僕ら／レベル高いなと思ってて",
+   "from": [
+    871.738,
+    874.34
+   ],
+   "to": [
+    871.671,
+    874.34
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "さすがっすね",
+   "from": [
+    870.436,
+    871.738
+   ],
+   "to": [
+    870.436,
+    871.671
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "あるっすけど 売上一番っすね",
+   "from": [
+    901.1,
+    902.835
+   ],
+   "to": [
+    901.1,
+    902.769
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "じゃあ一番",
+   "from": [
+    902.835,
+    904.437
+   ],
+   "to": [
+    902.769,
+    904.437
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "動画編集も一番",
+   "from": [
+    910.409,
+    911.344
+   ],
+   "to": [
+    910.376,
+    911.344
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "リストマーケ1年目で／YouTubeを通しての成",
+   "from": [
+    904.437,
+    910.409
+   ],
+   "to": [
+    904.437,
+    910.376
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "結構 周りからの目線が／違うのかなと思ってて",
+   "from": [
+    911.911,
+    916.282
+   ],
+   "to": [
+    911.878,
+    916.282
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "全部一番っすね",
+   "from": [
+    911.344,
+    911.911
+   ],
+   "to": [
+    911.344,
+    911.878
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "どの領域においても結構ヤバいな／って思うことが多",
+   "from": [
+    920.72,
+    924.857
+   ],
+   "to": [
+    920.72,
+    924.757
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "開発含めて",
+   "from": [
+    924.857,
+    925.992
+   ],
+   "to": [
+    924.757,
+    925.992
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "確かに開発ヤバい",
+   "from": [
+    925.992,
+    927.26
+   ],
+   "to": [
+    925.992,
+    927.193
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "全部強くなってきてるんじゃないかな／と思って",
+   "from": [
+    927.26,
+    929.996
+   ],
+   "to": [
+    927.193,
+    929.996
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "そうだね",
+   "from": [
+    929.996,
+    931.097
+   ],
+   "to": [
+    929.996,
+    931.03
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "僕らが出す情報とかが／結構最先端じゃないのかな",
+   "from": [
+    931.097,
+    934.901
+   ],
+   "to": [
+    931.03,
+    934.901
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "でもそろそろ信じてくれる人も／増え始めたっていう",
+   "from": [
+    941.741,
+    943.81
+   ],
+   "to": [
+    941.707,
+    943.81
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "本当に昔から言ってるけど／みんな信じてくれない",
+   "from": [
+    938.304,
+    941.741
+   ],
+   "to": [
+    938.304,
+    941.707
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "例えば今の自動編集",
+   "from": [
+    966.866,
+    968.801
+   ],
+   "to": [
+    966.866,
+    968.768
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "僕らが準備したから／今あるじゃないですか",
+   "from": [
+    968.801,
+    971.17
+   ],
+   "to": [
+    968.768,
+    971.17
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "そうだよ",
+   "from": [
+    971.17,
+    971.771
+   ],
+   "to": [
+    971.17,
+    971.671
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "あの時準備してなかったら／多分死んでたじゃないで",
+   "from": [
+    971.771,
+    973.439
+   ],
+   "to": [
+    971.671,
+    973.439
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "撮り出したんですけど",
+   "from": [
+    981.981,
+    982.582
+   ],
+   "to": [
+    981.981,
+    982.481
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "前まで（動画が出る頃には）／違うモデルが出てるの",
+   "from": [
+    982.582,
+    986.118
+   ],
+   "to": [
+    982.481,
+    986.118
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "それを視聴者の方には／気をつけてもらいたいなと思",
+   "from": [
+    1003.302,
+    1005.838
+   ],
+   "to": [
+    1003.202,
+    1005.838
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "誰を信じるか次第で ワンチャン死ぬ",
+   "from": [
+    998.397,
+    1003.302
+   ],
+   "to": [
+    998.397,
+    1003.202
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "ほとんどの人は／そういう落とし穴にはまってるから",
+   "from": [
+    1012.378,
+    1014.614
+   ],
+   "to": [
+    1012.378,
+    1014.514
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "みんな溺れてるんだから",
+   "from": [
+    1014.614,
+    1015.581
+   ],
+   "to": [
+    1014.514,
+    1015.581
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "みんな溺れてるんだから",
+   "from": [
+    1014.514,
+    1015.581
+   ],
+   "to": [
+    1014.514,
+    1015.514
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "今はもうAI時代よ",
+   "from": [
+    1015.581,
+    1016.415
+   ],
+   "to": [
+    1015.514,
+    1016.415
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "優位つけれるっていうのはあるので",
+   "from": [
+    1029.762,
+    1032.265
+   ],
+   "to": [
+    1029.762,
+    1032.198
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "この勉強は すごく／身になってるんじゃないかな",
+   "from": [
+    1032.265,
+    1034.534
+   ],
+   "to": [
+    1032.198,
+    1034.534
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "という風に思います",
+   "from": [
+    1034.534,
+    1035.534
+   ],
+   "to": [
+    1034.534,
+    1035.434
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "今回もテンプレート／用意していると思います",
+   "from": [
+    1035.534,
+    1039.772
+   ],
+   "to": [
+    1035.434,
+    1039.772
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "今回もテンプレート／用意していると思います",
+   "from": [
+    1035.434,
+    1039.772
+   ],
+   "to": [
+    1035.434,
+    1039.739
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "ワンポチ動画編集ですね",
+   "from": [
+    1039.772,
+    1041.574
+   ],
+   "to": [
+    1039.739,
+    1041.574
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "ワンポチで取れるように／なっていると思います",
+   "from": [
+    1045.111,
+    1048.047
+   ],
+   "to": [
+    1045.044,
+    1048.047
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V7",
+   "text": "動画下の概要欄の公式LINEから／受け取ってくだ",
+   "from": [
+    1041.574,
+    1045.111
+   ],
+   "to": [
+    1041.574,
+    1045.044
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "あとは／今回のこの自動化の要になっている",
+   "from": [
+    1061.093,
+    1064.964
+   ],
+   "to": [
+    1060.993,
+    1064.964
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "なのでもう皆さんに／任せることにしました",
+   "from": [
+    1083.249,
+    1085.217
+   ],
+   "to": [
+    1083.249,
+    1085.117
+   ],
+   "frames": [
+    0,
+    -3
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "ということで",
+   "from": [
+    1085.217,
+    1085.851
+   ],
+   "to": [
+    1085.117,
+    1085.851
+   ],
+   "frames": [
+    -3,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "あなたの参加を／お待ちしております",
+   "from": [
+    1095.594,
+    1096.929
+   ],
+   "to": [
+    1095.528,
+    1096.929
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "認定パートナーが増えてくれないと／僕たちサポート",
+   "from": [
+    1096.929,
+    1100.099
+   ],
+   "to": [
+    1096.929,
+    1100.032
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "よろしくお願いします",
+   "from": [
+    1100.099,
+    1100.7
+   ],
+   "to": [
+    1100.032,
+    1100.7
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "よろしくお願いします",
+   "from": [
+    1100.032,
+    1100.7
+   ],
+   "to": [
+    1100.032,
+    1100.633
+   ],
+   "frames": [
+    0,
+    -2
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "やっぱYouTube見てる人ね／意外とリテラシー",
+   "from": [
+    1100.7,
+    1103.97
+   ],
+   "to": [
+    1100.633,
+    1103.97
+   ],
+   "frames": [
+    -2,
+    0
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "ということで 頼みます",
+   "from": [
+    1105.538,
+    1106.238
+   ],
+   "to": [
+    1105.538,
+    1106.205
+   ],
+   "frames": [
+    0,
+    -1
+   ]
+  },
+  {
+   "track": "V6",
+   "text": "いつもここまで見ていただき／ありがとうございます",
+   "from": [
+    1106.238,
+    1108.107
+   ],
+   "to": [
+    1106.205,
+    1108.107
+   ],
+   "frames": [
+    -1,
+    0
+   ]
+  }
+ ],
+ "jump_aligned": [
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    23.023,
+    32.933
+   ],
+   "to": [
+    22.923,
+    32.933
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    35.102,
+    37.771
+   ],
+   "to": [
+    35.102,
+    37.671
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    110.644,
+    113.68
+   ],
+   "to": [
+    110.644,
+    113.58
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI編集に変えてからの動画",
+   "from": [
+    298.365,
+    335.602
+   ],
+   "to": [
+    298.365,
+    335.468
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AIが編集した動画",
+   "from": [
+    335.602,
+    406.072
+   ],
+   "to": [
+    335.468,
+    406.006
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AIが編集した動画",
+   "from": [
+    485.785,
+    493.927
+   ],
+   "to": [
+    485.785,
+    493.827
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "使うAI（Claude Code）",
+   "from": [
+    493.927,
+    531.498
+   ],
+   "to": [
+    493.827,
+    531.431
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "みかみチャンネル用のルール",
+   "from": [
+    531.498,
+    610.677
+   ],
+   "to": [
+    531.431,
+    610.61
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "ルールの作り方",
+   "from": [
+    610.677,
+    637.036
+   ],
+   "to": [
+    610.61,
+    636.97
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "ルールの作り方",
+   "from": [
+    687.086,
+    695.094
+   ],
+   "to": [
+    687.086,
+    695.061
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "Claude Codeに編集を頼む",
+   "from": [
+    695.094,
+    739.272
+   ],
+   "to": [
+    695.061,
+    739.205
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "できあがったPremiere",
+   "from": [
+    739.272,
+    773.473
+   ],
+   "to": [
+    739.205,
+    773.373
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AIが編集した動画",
+   "from": [
+    773.473,
+    867.1
+   ],
+   "to": [
+    773.373,
+    867.1
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    1061.093,
+    1065.731
+   ],
+   "to": [
+    1060.993,
+    1065.731
+   ]
+  },
+  {
+   "track": "V8",
+   "text": "AI動画編集",
+   "from": [
+    1095.594,
+    1103.97
+   ],
+   "to": [
+    1095.528,
+    1103.97
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "AI自動編集ってどう？",
+   "from": [
+    23.023,
+    32.933
+   ],
+   "to": [
+    22.923,
+    32.933
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "AI自動編集ってどう？",
+   "from": [
+    35.102,
+    37.771
+   ],
+   "to": [
+    35.102,
+    37.671
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "何をプレゼント？",
+   "from": [
+    110.644,
+    113.68
+   ],
+   "to": [
+    110.644,
+    113.58
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "何をプレゼント？",
+   "from": [
+    129.696,
+    141.074
+   ],
+   "to": [
+    129.696,
+    141.041
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "なぜ全部あげる？",
+   "from": [
+    141.074,
+    149.95
+   ],
+   "to": [
+    141.041,
+    149.95
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "なぜ全部あげる？",
+   "from": [
+    168.769,
+    172.572
+   ],
+   "to": [
+    168.769,
+    172.539
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "うちは何が違う？",
+   "from": [
+    172.572,
+    201.902
+   ],
+   "to": [
+    172.539,
+    201.902
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "うちは何が違う？",
+   "from": [
+    204.204,
+    205.605
+   ],
+   "to": [
+    204.204,
+    205.572
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "どこまでできる？",
+   "from": [
+    205.605,
+    225.125
+   ],
+   "to": [
+    205.572,
+    225.125
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "どこまでできる？",
+   "from": [
+    258.125,
+    265.765
+   ],
+   "to": [
+    258.125,
+    265.699
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "他の編集者と違う？",
+   "from": [
+    265.765,
+    267.801
+   ],
+   "to": [
+    265.699,
+    267.801
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "AI時代に大事なことは？",
+   "from": [
+    1029.762,
+    1035.534
+   ],
+   "to": [
+    1029.762,
+    1035.434
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "プレゼントの受け取り方",
+   "from": [
+    1035.534,
+    1048.047
+   ],
+   "to": [
+    1035.434,
+    1048.047
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "Addnessが爆伸び",
+   "from": [
+    1061.093,
+    1065.731
+   ],
+   "to": [
+    1060.993,
+    1065.731
+   ]
+  },
+  {
+   "track": "V9",
+   "text": "Addnessが爆伸び",
+   "from": [
+    1095.594,
+    1103.97
+   ],
+   "to": [
+    1095.528,
+    1103.97
+   ]
+  },
+  {
+   "track": "V10",
+   "text": "ポイント判断フロー・演出パターン・ズーム・図解／",
+   "from": [
+    540.64,
+    560.393
+   ],
+   "to": [
+    540.54,
+    560.393
+   ]
+  },
+  {
+   "track": "V10",
+   "text": "動画編集のスキルの受け取り方「1016動画編集」",
+   "from": [
+    602.735,
+    610.677
+   ],
+   "to": [
+    602.735,
+    610.61
+   ]
+  },
+  {
+   "track": "V10",
+   "text": "ポイント人の手なら 3〜4日かかる編集が／AIな",
+   "from": [
+    764.697,
+    773.473
+   ],
+   "to": [
+    764.697,
+    773.373
+   ]
+  },
+  {
+   "track": "V10",
+   "text": "動画編集のスキルの受け取り方「1016動画編集」",
+   "from": [
+    852.151,
+    857.757
+   ],
+   "to": [
+    852.085,
+    857.757
+   ]
+  },
+  {
+   "track": "V10",
+   "text": "プレゼントの受け取り方概要欄の公式LINEに／「",
+   "from": [
+    1048.047,
+    1061.093
+   ],
+   "to": [
+    1048.047,
+    1060.993
+   ]
+  },
+  {
+   "track": "V10",
+   "text": "Addness認定パートナー募集中動画下の概要欄",
+   "from": [
+    1085.851,
+    1095.594
+   ],
+   "to": [
+    1085.851,
+    1095.528
+   ]
+  },
+  {
+   "track": "V12",
+   "text": "　 Q:最近めちゃくちゃ話題のAI自動編集／僕ら",
+   "from": [
+    23.023,
+    32.933
+   ],
+   "to": [
+    22.923,
+    32.933
+   ]
+  },
+  {
+   "track": "V12",
+   "text": "Q:他の編集者とはやっぱレベル違う？",
+   "from": [
+    265.765,
+    267.801
+   ],
+   "to": [
+    265.699,
+    267.801
+   ]
+  },
+  {
+   "track": "V12",
+   "text": "画像挿入",
+   "from": [
+    360.727,
+    369.536
+   ],
+   "to": [
+    360.66,
+    369.469
+   ]
+  },
+  {
+   "track": "V12",
+   "text": "細かいプログラミング",
+   "from": [
+    623.79,
+    630.363
+   ],
+   "to": [
+    623.723,
+    630.296
+   ]
+  },
+  {
+   "track": "V12",
+   "text": "図解",
+   "from": [
+    773.473,
+    788.421
+   ],
+   "to": [
+    773.373,
+    788.421
+   ]
+  },
+  {
+   "track": "V12",
+   "text": "間を持つカット",
+   "from": [
+    800.266,
+    813.279
+   ],
+   "to": [
+    800.266,
+    813.212
+   ]
+  },
+  {
+   "track": "V13",
+   "text": "強調テロップ",
+   "from": [
+    362.162,
+    369.536
+   ],
+   "to": [
+    362.162,
+    369.469
+   ]
+  },
+  {
+   "track": "V13",
+   "text": "難しいコードの勉強",
+   "from": [
+    627.26,
+    630.363
+   ],
+   "to": [
+    627.193,
+    630.296
+   ]
+  },
+  {
+   "track": "V13",
+   "text": "画像挿入",
+   "from": [
+    777.844,
+    788.421
+   ],
+   "to": [
+    777.677,
+    788.421
+   ]
+  },
+  {
+   "track": "V13",
+   "text": "無音部分のカット",
+   "from": [
+    801.701,
+    813.279
+   ],
+   "to": [
+    801.701,
+    813.212
+   ]
+  },
+  {
+   "track": "V14",
+   "text": "SE・スケール縮小",
+   "from": [
+    363.93,
+    369.536
+   ],
+   "to": [
+    363.93,
+    369.469
+   ]
+  },
+  {
+   "track": "V14",
+   "text": "あえて意味のある間",
+   "from": [
+    803.503,
+    813.279
+   ],
+   "to": [
+    803.436,
+    813.212
+   ]
+  }
+ ],
+ "frames_moved": [
+  {
+   "from": [
+    311.444,
+    315.048
+   ],
+   "to": [
+    311.378,
+    315.048
+   ]
+  },
+  {
+   "from": [
+    514.314,
+    519.386
+   ],
+   "to": [
+    514.247,
+    519.285
+   ]
+  },
+  {
+   "from": [
+    535.935,
+    540.64
+   ],
+   "to": [
+    535.935,
+    540.54
+   ]
+  },
+  {
+   "from": [
+    697.497,
+    700.633
+   ],
+   "to": [
+    697.463,
+    700.567
+   ]
+  },
+  {
+   "from": [
+    700.633,
+    704.971
+   ],
+   "to": [
+    700.567,
+    704.904
+   ]
+  },
+  {
+   "from": [
+    704.971,
+    709.242
+   ],
+   "to": [
+    704.904,
+    709.175
+   ]
+  },
+  {
+   "from": [
+    757.657,
+    764.697
+   ],
+   "to": [
+    757.59,
+    764.697
+   ]
+  },
+  {
+   "from": [
+    775.408,
+    780.947
+   ],
+   "to": [
+    775.408,
+    780.88
+   ]
+  },
+  {
+   "from": [
+    780.947,
+    782.548
+   ],
+   "to": [
+    780.88,
+    782.548
+   ]
+  }
+ ],
+ "se_moved": [
+  {
+   "why": "問い 1",
+   "from": 23.023,
+   "to": 22.923
+  },
+  {
+   "why": "強調 22",
+   "from": 53.52,
+   "to": 53.72
+  },
+  {
+   "why": "強調 26",
+   "from": 57.357,
+   "to": 57.291
+  },
+  {
+   "why": "強調 36",
+   "from": 76.61,
+   "to": 76.543
+  },
+  {
+   "why": "説明 38+1",
+   "from": 80.247,
+   "to": 80.18
+  },
+  {
+   "why": "強調 61",
+   "from": 106.039,
+   "to": 106.006
+  },
+  {
+   "why": "強調 73",
+   "from": 127.494,
+   "to": 127.427
+  },
+  {
+   "why": "強調 161",
+   "from": 249.282,
+   "to": 249.249
+  },
+  {
+   "why": "問い 170",
+   "from": 265.765,
+   "to": 265.699
+  },
+  {
+   "why": "強調 177",
+   "from": 278.712,
+   "to": 278.645
+  },
+  {
+   "why": "赤枠 189+1",
+   "from": 311.444,
+   "to": 311.378
+  },
+  {
+   "why": "座布団 223",
+   "from": 360.727,
+   "to": 360.66
+  },
+  {
+   "why": "説明 256",
+   "from": 397.197,
+   "to": 397.163
+  },
+  {
+   "why": "説明 319",
+   "from": 495.295,
+   "to": 495.228
+  },
+  {
+   "why": "説明 333",
+   "from": 514.314,
+   "to": 514.247
+  },
+  {
+   "why": "ボード 360",
+   "from": 540.64,
+   "to": 540.54
+  },
+  {
+   "why": "座布団 414",
+   "from": 623.79,
+   "to": 623.723
+  },
+  {
+   "why": "座布団 416",
+   "from": 627.26,
+   "to": 627.193
+  },
+  {
+   "why": "赤枠 473",
+   "from": 697.497,
+   "to": 697.463
+  },
+  {
+   "why": "赤枠 477",
+   "from": 700.633,
+   "to": 700.567
+  },
+  {
+   "why": "赤枠 496",
+   "from": 704.971,
+   "to": 704.904
+  },
+  {
+   "why": "赤枠 553+1",
+   "from": 757.657,
+   "to": 757.59
+  },
+  {
+   "why": "座布団 562",
+   "from": 773.473,
+   "to": 773.373
+  },
+  {
+   "why": "座布団 565",
+   "from": 777.844,
+   "to": 777.677
+  },
+  {
+   "why": "赤枠 568",
+   "from": 780.947,
+   "to": 780.88
+  },
+  {
+   "why": "座布団 581",
+   "from": 803.503,
+   "to": 803.436
+  },
+  {
+   "why": "ボード 621",
+   "from": 852.151,
+   "to": 852.085
+  },
+  {
+   "why": "強調 698",
+   "from": 943.576,
+   "to": 943.81
+  },
+  {
+   "why": "強調 736",
+   "from": 1025.825,
+   "to": 1025.725
+  },
+  {
+   "why": "強調 775",
+   "from": 1081.948,
+   "to": 1081.881
+  }
+ ],
+ "plate_head_trim": [
+  {
+   "track": "V6",
+   "plate": "問い 1",
+   "from": 23.023,
+   "to": 22.923
+  },
+  {
+   "track": "V6",
+   "plate": "問い 170",
+   "from": 265.765,
+   "to": 265.699
+  },
+  {
+   "track": "V7",
+   "plate": "ボード ポイント判断フロー・演出",
+   "from": 540.64,
+   "to": 540.54
+  },
+  {
+   "track": "V6",
+   "plate": "ボード 動画編集のスキルの受け取",
+   "from": 852.151,
+   "to": 852.085
+  }
+ ],
+ "dissolves": [
+  {
+   "track": "V5",
+   "what": "説明 38+1 の終わり",
+   "clip": [
+    80.247,
+    84.918
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 131 の終わり",
+   "clip": [
+    204.204,
+    207.941
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 174 の終わり",
+   "clip": [
+    270.971,
+    274.341
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 225 の終わり",
+   "clip": [
+    363.93,
+    366.399
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 256 の終わり",
+   "clip": [
+    397.197,
+    400.834
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 319 の終わり",
+   "clip": [
+    495.295,
+    498.665
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 333 の終わり",
+   "clip": [
+    514.314,
+    517.584
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 478 の終わり",
+   "clip": [
+    703.269,
+    708.575
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 503 の終わり",
+   "clip": [
+    714.647,
+    719.185
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 609 の終わり",
+   "clip": [
+    840.406,
+    844.777
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 671 の終わり",
+   "clip": [
+    904.437,
+    909.242
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "説明 785 の終わり",
+   "clip": [
+    1096.929,
+    1101.2
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "問い 1 の終わり（G3）",
+   "clip": [
+    22.923,
+    32.933
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "座布団 98+2 の終わり（G3）",
+   "clip": [
+    156.256,
+    168.769
+   ]
+  },
+  {
+   "track": "V13",
+   "what": "座布団 99 の終わり（G3）",
+   "clip": [
+    158.225,
+    168.769
+   ]
+  },
+  {
+   "track": "V14",
+   "what": "座布団 99+1 の終わり（G3）",
+   "clip": [
+    161.261,
+    168.769
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "問い 133 の終わり（G3）",
+   "clip": [
+    207.941,
+    213.647
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "問い 170 の終わり（G3）",
+   "clip": [
+    265.699,
+    267.801
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "座布団 223 の終わり（G3）",
+   "clip": [
+    360.66,
+    369.469
+   ]
+  },
+  {
+   "track": "V13",
+   "what": "座布団 224 の終わり（G3）",
+   "clip": [
+    362.162,
+    369.469
+   ]
+  },
+  {
+   "track": "V14",
+   "what": "座布団 225 の終わり（G3）",
+   "clip": [
+    363.93,
+    369.469
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "座布団 414 の終わり（G3）",
+   "clip": [
+    623.723,
+    630.296
+   ]
+  },
+  {
+   "track": "V13",
+   "what": "座布団 416 の終わり（G3）",
+   "clip": [
+    627.193,
+    630.296
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "座布団 562 の終わり（G3）",
+   "clip": [
+    773.373,
+    788.421
+   ]
+  },
+  {
+   "track": "V13",
+   "what": "座布団 565 の終わり（G3）",
+   "clip": [
+    777.677,
+    788.421
+   ]
+  },
+  {
+   "track": "V14",
+   "what": "座布団 569 の終わり（G3）",
+   "clip": [
+    782.548,
+    788.421
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "座布団 578+1 の終わり（G3）",
+   "clip": [
+    800.266,
+    813.212
+   ]
+  },
+  {
+   "track": "V13",
+   "what": "座布団 579 の終わり（G3）",
+   "clip": [
+    801.701,
+    813.212
+   ]
+  },
+  {
+   "track": "V14",
+   "what": "座布団 581 の終わり（G3）",
+   "clip": [
+    803.436,
+    813.212
+   ]
+  },
+  {
+   "track": "V12",
+   "what": "座布団 795 の終わり（G3）",
+   "clip": [
+    1108.107,
+    1117.917
+   ]
+  },
+  {
+   "track": "V13",
+   "what": "座布団 796 の終わり（G3）",
+   "clip": [
+    1109.842,
+    1117.917
+   ]
+  },
+  {
+   "track": "V14",
+   "what": "座布団 797 の終わり（G3）",
+   "clip": [
+    1111.711,
+    1117.917
+   ]
+  },
+  {
+   "track": "V3",
+   "what": "全体挿入 I06 のぼかしの終わり（G1）",
+   "clip": [
+    1016.415,
+    1021.954
+   ]
+  },
+  {
+   "track": "V3",
+   "what": "全体挿入 I07 のぼかしの終わり（G1）",
+   "clip": [
+    1021.954,
+    1025.691
+   ]
+  },
+  {
+   "track": "V3",
+   "what": "全体挿入 I08 のぼかしの終わり（G1）",
+   "clip": [
+    1067.366,
+    1074.273
+   ]
+  },
+  {
+   "track": "V5",
+   "what": "※AI指示中 0本の出る・消える（18コマ）",
+   "clip": []
+  },
+  {
+   "track": "V8",
+   "what": "右上タイトルの最初",
+   "clip": [
+    22.923,
+    32.933
+   ]
+  },
+  {
+   "track": "V9",
+   "what": "右上タイトルの最初",
+   "clip": [
+    22.923,
+    32.933
+   ]
+  }
+ ],
+ "peak_fix": [
+  {
+   "track": "A1",
+   "src": 5.33,
+   "db": -4.0,
+   "clip": [
+    24.258,
+    26.96
+   ]
+  },
+  {
+   "track": "A2",
+   "src": 5.33,
+   "db": -4.0,
+   "clip": [
+    24.258,
+    26.96
+   ]
+  }
+ ],
+ "font_fix": {},
+ "checks": {
+  "V1_clips": 795,
+  "V2_clips": 370,
+  "V3_clips": 6,
+  "V4_clips": 20,
+  "V5_clips": 12,
+  "V6_clips": 281,
+  "V7_clips": 64,
+  "V8_clips": 39,
+  "V9_clips": 36,
+  "V10_clips": 6,
+  "V11_clips": 0,
+  "V12_clips": 9,
+  "V13_clips": 6,
+  "V14_clips": 6,
+  "V15_clips": 3,
+  "V16_clips": 9,
+  "A1_clips": 795,
+  "A2_clips": 795,
+  "A3_clips": 19,
+  "A4_clips": 148,
+  "A5_clips": 0,
+  "captions_placed": 276,
+  "captions_replaced": 186,
+  "emphasis_se_start_match": true
+ },
+ "size_log": [
+  {
+   "rule": "白テキ",
+   "size_before": 134.7,
+   "notes": [],
+   "chars_longest_line": 1,
+   "lines": 1,
+   "size_after": 135.0,
+   "width_pct": 7.0,
+   "shrink_one_line": 1.0,
+   "type": "T023"
+  },
+  {
+   "rule": "シュールテロップ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 14,
+   "lines": 2,
+   "size_after": 131.1,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.58,
+   "type": "T010",
+   "line_change": "'世の奴らが言うAI自動編集は レベルが低い' → '世の奴らが言うAI自動編集は\\rレベルが低い'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 14,
+   "lines": 2,
+   "size_after": 143.6,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.49,
+   "type": "T147",
+   "line_change": "'うちのYouTubeの編集は 「編集して」で終わる' → 'うちのYouTubeの編集は\\r「編集して」で終わる'"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 15,
+   "lines": 2,
+   "size_after": 90.0,
+   "width_pct": 70.3,
+   "type": "T153",
+   "line_change": "'再生数は自動編集にしても 落ちるどころかむしろ上がってる' → '再生数は自動編集にしても\\r落ちるどころかむしろ上がってる'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 6,
+   "lines": 1,
+   "size_after": 160.0,
+   "width_pct": 50.0,
+   "shrink_one_line": 1.0,
+   "type": "T147"
+  },
+  {
+   "rule": "白テキ",
+   "size_before": 134.7,
+   "notes": [],
+   "chars_longest_line": 3,
+   "lines": 1,
+   "size_after": 135.0,
+   "width_pct": 21.1,
+   "shrink_one_line": 1.0,
+   "type": "T023"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 15,
+   "lines": 2,
+   "size_after": 115.2,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.42,
+   "type": "T147",
+   "line_change": "'うちの動画編集と全く同じものが 5秒でできるようになる' → 'うちの動画編集と全く同じものが\\r5秒でできるようになる'"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 15,
+   "lines": 2,
+   "size_after": 90.0,
+   "width_pct": 70.3,
+   "type": "T153",
+   "line_change": "'この動画を見れば 編集もサムネも全部自動化できる' → 'この動画を見れば\\r編集もサムネも全部自動化できる'"
+  },
+  {
+   "rule": "白テキ",
+   "size_before": 134.7,
+   "notes": [],
+   "chars_longest_line": 11,
+   "lines": 1,
+   "size_after": 135.0,
+   "width_pct": 72.4,
+   "shrink_one_line": 1.0,
+   "type": "T023"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 21,
+   "lines": 2,
+   "size_after": 82.3,
+   "width_pct": 90.0,
+   "type": "T153",
+   "line_change": "'うち以外のやつらがプレゼントするくらいなら うちがプレゼントしたい' → 'うち以外のやつらがプレゼントするくらいなら\\rうちがプレゼントしたい'"
+  },
+  {
+   "rule": "白テキ",
+   "size_before": 134.7,
+   "notes": [],
+   "chars_longest_line": 12,
+   "lines": 1,
+   "size_after": 135.0,
+   "width_pct": 84.4,
+   "shrink_one_line": 1.0,
+   "type": "T023"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 11,
+   "lines": 2,
+   "size_after": 157.1,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.57,
+   "type": "T147",
+   "line_change": "'編集で食ってたら この仕組みは秘伝のタレ' → '編集で食ってたら\\rこの仕組みは秘伝のタレ'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 13,
+   "lines": 2,
+   "size_after": 132.9,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.51,
+   "type": "T147",
+   "line_change": "'この動画編集ぐらい上げても 痛くも痒くもない' → 'この動画編集ぐらい上げても\\r痛くも痒くもない'"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 13,
+   "lines": 2,
+   "size_after": 90.0,
+   "width_pct": 60.9,
+   "type": "T153",
+   "line_change": "'うちのプラットフォームには いろんな種と仕掛けがある' → 'うちのプラットフォームには\\rいろんな種と仕掛けがある'"
+  },
+  {
+   "rule": "白テキ",
+   "size_before": 134.7,
+   "notes": [
+    "1行にまとめても基本の大きさの75%で収まる（75%以上）。1行にする"
+   ],
+   "chars_longest_line": 12,
+   "lines": 2,
+   "size_after": 135.0,
+   "width_pct": 84.4,
+   "shrink_one_line": 0.75,
+   "type": "T023",
+   "line_change": "'転生したら 天才編集者になってました' → '転生したら\\r天才編集者になってました'"
+  },
+  {
+   "rule": "ゴージャス金",
+   "size_before": 163.2,
+   "notes": [],
+   "chars_longest_line": 18,
+   "lines": 2,
+   "size_after": 97.2,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.32,
+   "type": "T184",
+   "line_change": "'みかみチャンネルの直近の8本ぐらいは ほぼ全部AI動画編集でワンポチ' → 'みかみチャンネルの直近の8本ぐらいは\\rほぼ全部AI動画編集でワンポチ'"
+  },
+  {
+   "rule": "ツッコミ",
+   "size_before": 155.0,
+   "notes": [],
+   "chars_longest_line": 10,
+   "lines": 2,
+   "size_after": 155.0,
+   "width_pct": 73.6,
+   "shrink_one_line": 0.69,
+   "type": "T086",
+   "line_change": "'皆さんAI動画編集を 舐めてると思う' → '皆さんAI動画編集を\\r舐めてると思う'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 5,
+   "lines": 1,
+   "size_after": 200.0,
+   "width_pct": 52.1,
+   "shrink_one_line": 1.0,
+   "type": "T147"
+  },
+  {
+   "rule": "シュールテロップ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 9,
+   "lines": 1,
+   "size_after": 156.0,
+   "width_pct": 73.1,
+   "shrink_one_line": 1.0,
+   "type": "T010"
+  },
+  {
+   "rule": "ゴージャス金",
+   "size_before": 163.2,
+   "notes": [],
+   "chars_longest_line": 15,
+   "lines": 2,
+   "size_after": 117.0,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.44,
+   "type": "T184",
+   "line_change": "'AI編集でも直近は 1万再生を超える動画が出ている' → 'AI編集でも直近は\\r1万再生を超える動画が出ている'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [
+    "1行にまとめても基本の大きさの75%で収まる（75%以上）。1行にする"
+   ],
+   "chars_longest_line": 8,
+   "lines": 2,
+   "size_after": 160.0,
+   "width_pct": 61.3,
+   "shrink_one_line": 0.75,
+   "type": "T147",
+   "line_change": "'この編集は全て AIがやったもの' → 'この編集は全て\\rAIがやったもの'"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 21,
+   "lines": 2,
+   "size_after": 82.3,
+   "width_pct": 90.0,
+   "type": "T153",
+   "line_change": "'そのルールを元に「編集して」とお願いしたら 一発でこのレベルが出てきた' → 'そのルールを元に「編集して」とお願いしたら\\r一発でこのレベルが出てきた'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 20,
+   "lines": 2,
+   "size_after": 89.3,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.43,
+   "type": "T147",
+   "line_change": "'動画の最後に AI動画編集の作り方のスキルをプレゼント' → '動画の最後に\\rAI動画編集の作り方のスキルをプレゼント'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 12,
+   "lines": 2,
+   "size_after": 144.0,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.72,
+   "type": "T147",
+   "line_change": "'今ぶっちぎりですごいのは Opus' → '今ぶっちぎりですごいのは\\rOpus'"
+  },
+  {
+   "rule": "ゴージャス金",
+   "size_before": 163.2,
+   "notes": [],
+   "chars_longest_line": 20,
+   "lines": 2,
+   "size_after": 106.6,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.37,
+   "type": "T184",
+   "line_change": "'月3000円のプランでも Claude Codeは実案件に耐えれる' → '月3000円のプランでも\\rClaude Codeは実案件に耐えれる'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 14,
+   "lines": 2,
+   "size_after": 160.0,
+   "width_pct": 85.1,
+   "shrink_one_line": 0.56,
+   "type": "T147",
+   "line_change": "'ぜひClaude Codeに 課金してやってみて' → 'ぜひClaude Codeに\\r課金してやってみて'"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 16,
+   "lines": 2,
+   "size_after": 90.0,
+   "width_pct": 75.0,
+   "type": "T153",
+   "line_change": "'細かくルールを みかみチャンネル用に定義している' → '細かくルールを\\rみかみチャンネル用に定義している'"
+  },
+  {
+   "rule": "シュールテロップ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 9,
+   "lines": 1,
+   "size_after": 156.0,
+   "width_pct": 73.1,
+   "shrink_one_line": 1.0,
+   "type": "T010"
+  },
+  {
+   "rule": "ゴージャス青",
+   "size_before": 200.0,
+   "notes": [],
+   "chars_longest_line": 6,
+   "lines": 1,
+   "size_after": 200.0,
+   "width_pct": 62.5,
+   "shrink_one_line": 1.0,
+   "type": "T175"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [
+    "1行にまとめても基本の大きさの75%で収まる（75%以上）。1行にする"
+   ],
+   "chars_longest_line": 8,
+   "lines": 2,
+   "size_after": 160.0,
+   "width_pct": 66.7,
+   "shrink_one_line": 0.75,
+   "type": "T147",
+   "line_change": "'ルールやスキルは AIで作るもの' → 'ルールやスキルは\\rAIで作るもの'"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 13,
+   "lines": 2,
+   "size_after": 90.0,
+   "width_pct": 60.9,
+   "type": "T153",
+   "line_change": "'スキルをもらっても 結局地味な作業が必要になる' → 'スキルをもらっても\\r結局地味な作業が必要になる'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 12,
+   "lines": 2,
+   "size_after": 160.0,
+   "width_pct": 72.6,
+   "shrink_one_line": 0.65,
+   "type": "T147",
+   "line_change": "'エフォートは必ず Ultracodeにする' → 'エフォートは必ず\\rUltracodeにする'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 12,
+   "lines": 2,
+   "size_after": 144.0,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.68,
+   "type": "T147",
+   "line_change": "'この状態で「編集して」と 言うだけ' → 'この状態で「編集して」と\\r言うだけ'"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 14,
+   "lines": 2,
+   "size_after": 90.0,
+   "width_pct": 63.4,
+   "type": "T153",
+   "line_change": "'AI自動編集の待ち時間は 3時間から5時間ぐらいかかる' → 'AI自動編集の待ち時間は\\r3時間から5時間ぐらいかかる'"
+  },
+  {
+   "rule": "ゴージャス金",
+   "size_before": 163.2,
+   "notes": [],
+   "chars_longest_line": 12,
+   "lines": 2,
+   "size_after": 157.1,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.5,
+   "type": "T184",
+   "line_change": "'なんとPremiereに 全て積まれた状態で完成' → 'なんとPremiereに\\r全て積まれた状態で完成'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 8,
+   "lines": 1,
+   "size_after": 160.0,
+   "width_pct": 66.7,
+   "shrink_one_line": 1.0,
+   "type": "T147"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 13,
+   "lines": 1,
+   "size_after": 132.9,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.83,
+   "type": "T147"
+  },
+  {
+   "rule": "シュールテロップ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 15,
+   "lines": 2,
+   "size_after": 115.2,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.44,
+   "type": "T010",
+   "line_change": "'手先でやる動画編集は これからほとんどなくなると思う' → '手先でやる動画編集は\\rこれからほとんどなくなると思う'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 17,
+   "lines": 2,
+   "size_after": 104.5,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.44,
+   "type": "T147",
+   "line_change": "'5時間の編集すら 1回5分でポン出しの世界が来るかも' → '5時間の編集すら\\r1回5分でポン出しの世界が来るかも'"
+  },
+  {
+   "rule": "ゴージャス青",
+   "size_before": 200.0,
+   "notes": [],
+   "chars_longest_line": 6,
+   "lines": 1,
+   "size_after": 200.0,
+   "width_pct": 62.5,
+   "shrink_one_line": 1.0,
+   "type": "T175"
+  },
+  {
+   "rule": "白テキ",
+   "size_before": 134.7,
+   "notes": [],
+   "chars_longest_line": 6,
+   "lines": 1,
+   "size_after": 135.0,
+   "width_pct": 42.2,
+   "shrink_one_line": 1.0,
+   "type": "T023"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 19,
+   "lines": 2,
+   "size_after": 90.0,
+   "width_pct": 79.4,
+   "type": "T153",
+   "line_change": "'リストマーケ1年目で YouTubeを通しての成長曲線は一番' → 'リストマーケ1年目で\\rYouTubeを通しての成長曲線は一番'"
+  },
+  {
+   "rule": "白テキ",
+   "size_before": 134.7,
+   "notes": [],
+   "chars_longest_line": 7,
+   "lines": 1,
+   "size_after": 135.0,
+   "width_pct": 49.2,
+   "shrink_one_line": 1.0,
+   "type": "T023"
+  },
+  {
+   "rule": "ヒラギノ白シャドウ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 11,
+   "lines": 2,
+   "size_after": 156.0,
+   "width_pct": 87.5,
+   "shrink_one_line": 0.59,
+   "type": "T020",
+   "line_change": "'2周回って最先端過ぎて みんなわかんない' → '2周回って最先端過ぎて\\rみんなわかんない'"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 10,
+   "lines": 2,
+   "size_after": 90.0,
+   "width_pct": 43.8,
+   "type": "T153",
+   "line_change": "'AI時代に大事なのは 誰を信じれるか' → 'AI時代に大事なのは\\r誰を信じれるか'"
+  },
+  {
+   "rule": "シュールテロップ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 14,
+   "lines": 1,
+   "size_after": 129.6,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.83,
+   "type": "T010"
+  },
+  {
+   "rule": "シュールテロップ",
+   "size_before": 156.3,
+   "notes": [],
+   "chars_longest_line": 11,
+   "lines": 1,
+   "size_after": 156.0,
+   "width_pct": 83.9,
+   "shrink_one_line": 1.0,
+   "type": "T010"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 14,
+   "lines": 2,
+   "size_after": 123.4,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.42,
+   "type": "T147",
+   "line_change": "'誰を信じるかで全て変わる だから必ずキャッチアップして' → '誰を信じるかで全て変わる\\rだから必ずキャッチアップして'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 18,
+   "lines": 2,
+   "size_after": 96.0,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.35,
+   "type": "T147",
+   "line_change": "'俺らが作る道を駆け抜ければ ものすごく他とアドバンテージつけれる' → '俺らが作る道を駆け抜ければ\\rものすごく他とアドバンテージつけれる'"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 16,
+   "lines": 2,
+   "size_after": 116.8,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.45,
+   "type": "T147",
+   "line_change": "'動画下の概要欄の公式LINEから 受け取ってください' → '動画下の概要欄の公式LINEから\\r受け取ってください'"
+  },
+  {
+   "rule": "ゴージャス金",
+   "size_before": 163.2,
+   "notes": [],
+   "chars_longest_line": 15,
+   "lines": 1,
+   "size_after": 141.1,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.83,
+   "type": "T184"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 14,
+   "lines": 2,
+   "size_after": 136.9,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.5,
+   "type": "T147",
+   "line_change": "'1日50社から100社くらい 勝手に課金されてる' → '1日50社から100社くらい\\r勝手に課金されてる'"
+  },
+  {
+   "rule": "白テキ",
+   "size_before": 134.7,
+   "notes": [],
+   "chars_longest_line": 6,
+   "lines": 1,
+   "size_after": 135.0,
+   "width_pct": 42.2,
+   "shrink_one_line": 1.0,
+   "type": "T023"
+  },
+  {
+   "rule": "ゴージャス青",
+   "size_before": 200.0,
+   "notes": [],
+   "chars_longest_line": 15,
+   "lines": 2,
+   "size_after": 115.2,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.39,
+   "type": "T175",
+   "line_change": "'最前列特等席で その流れを見届けていきましょう' → '最前列特等席で\\rその流れを見届けていきましょう'"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 12,
+   "lines": 2,
+   "size_after": 90.0,
+   "width_pct": 56.2,
+   "type": "T153",
+   "line_change": "'本当に昔から言ってるけど みんな信じてくれない' → '本当に昔から言ってるけど\\rみんな信じてくれない'"
+  },
+  {
+   "rule": "ツッコミ",
+   "size_before": 155.0,
+   "notes": [],
+   "chars_longest_line": 4,
+   "lines": 1,
+   "size_after": 310.0,
+   "width_pct": 64.6,
+   "shrink_one_line": 1.0,
+   "type": "T086"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 17,
+   "lines": 1,
+   "size_after": 90.0,
+   "width_pct": 76.5,
+   "type": "T153"
+  },
+  {
+   "rule": "強調赤黄",
+   "size_before": 159.4,
+   "notes": [],
+   "chars_longest_line": 8,
+   "lines": 2,
+   "size_after": 160.0,
+   "width_pct": 66.7,
+   "shrink_one_line": 0.68,
+   "type": "T147",
+   "line_change": "'その工程も含めて 全部見せていこう' → 'その工程も含めて\\r全部見せていこう'"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 12,
+   "lines": 2,
+   "size_after": 90.0,
+   "width_pct": 56.2,
+   "type": "T153",
+   "line_change": "'うちの動画編集の仕組みは 結構奥深い' → 'うちの動画編集の仕組みは\\r結構奥深い'"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 18,
+   "lines": 2,
+   "size_after": 90.0,
+   "width_pct": 84.4,
+   "type": "T153",
+   "line_change": "'僕らの自動編集は 世に出てるものよりだいぶレベルが高い' → '僕らの自動編集は\\r世に出てるものよりだいぶレベルが高い'"
+  },
+  {
+   "rule": "基本テロップ赤",
+   "size_before": 90.0,
+   "notes": [],
+   "chars_longest_line": 17,
+   "lines": 1,
+   "size_after": 90.0,
+   "width_pct": 73.4,
+   "type": "T153"
+  },
+  {
+   "rule": "シュールテロップ/P16",
+   "size_before": 114.2,
+   "notes": [],
+   "chars_longest_line": 11,
+   "lines": 1,
+   "size_after": 114.0,
+   "width_pct": 60.4,
+   "shrink_one_line": 1.0,
+   "type": "T009"
+  },
+  {
+   "rule": "シュールテロップ/P16",
+   "size_before": 114.2,
+   "notes": [
+    "1行のままだと基本の大きさの71%まで縮む（75%未満）。2行にする（改行の位置は文節で）"
+   ],
+   "chars_longest_line": 22,
+   "lines": 1,
+   "size_after": 81.0,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.71,
+   "type": "T009"
+  },
+  {
+   "rule": "シュールテロップ/P16",
+   "size_before": 114.2,
+   "notes": [],
+   "chars_longest_line": 18,
+   "lines": 1,
+   "size_after": 96.0,
+   "width_pct": 90.0,
+   "shrink_one_line": 0.84,
+   "type": "T009"
+  }
+ ]
+}

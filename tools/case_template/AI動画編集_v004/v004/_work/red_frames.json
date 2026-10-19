@@ -1,0 +1,347 @@
+{
+ "frames": [
+  {
+   "id_from": "189+1",
+   "id_to": "189+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_000_189p1.png",
+   "rect_px": [
+    885,
+    491,
+    1292,
+    837
+   ],
+   "start": 79111877644800,
+   "end": 80027249702400,
+   "read": "指している動画",
+   "group": "AI編集の境目",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "192",
+   "id_to": "192",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_001_192.png",
+   "rect_px": [
+    470,
+    581,
+    1434,
+    621
+   ],
+   "start": 80366276390400,
+   "end": 81535918464000,
+   "read": "1段目の再生数",
+   "group": "1万再生",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "333",
+   "id_to": "340",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_002_333.png",
+   "rect_px": [
+    918,
+    645,
+    1334,
+    861
+   ],
+   "start": 130643934220800,
+   "end": 131932235635200,
+   "read": "使用量の表示",
+   "group": "使用量",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "355",
+   "id_to": "357",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_003_355.png",
+   "rect_px": [
+    993,
+    106,
+    1269,
+    380
+   ],
+   "start": 136136166566400,
+   "end": 137331235641600,
+   "read": "ルールのファイル一覧",
+   "group": "ルールのファイル",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "378",
+   "id_to": "378",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_004_378.png",
+   "rect_px": [
+    304,
+    467,
+    1658,
+    564
+   ],
+   "start": 142831943654400,
+   "end": 143340483686400,
+   "read": "シュールの項目",
+   "group": "シュール",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "379",
+   "id_to": "379",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_005_379.png",
+   "rect_px": [
+    345,
+    657,
+    993,
+    687
+   ],
+   "start": 143340483686400,
+   "end": 143976158726400,
+   "read": "SE_CHIIN の行",
+   "group": "チーン",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "380",
+   "id_to": "380",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_006_380.png",
+   "rect_px": [
+    304,
+    467,
+    1658,
+    564
+   ],
+   "start": 143976158726400,
+   "end": 144323661081600,
+   "read": "シュールの項目",
+   "group": "シュール",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "381",
+   "id_to": "382",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_007_381.png",
+   "rect_px": [
+    345,
+    618,
+    993,
+    687
+   ],
+   "start": 144323661081600,
+   "end": 145620438163200,
+   "read": "SE の使い分けの3行",
+   "group": "シュールのSE",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "383",
+   "id_to": "384",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_008_383.png",
+   "rect_px": [
+    304,
+    441,
+    1658,
+    522
+   ],
+   "start": 145815378508800,
+   "end": 146510383219200,
+   "read": "ゴージャス青の項目",
+   "group": "ゴージャス青",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "385",
+   "id_to": "385",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_009_385.png",
+   "rect_px": [
+    345,
+    573,
+    819,
+    638
+   ],
+   "start": 146510383219200,
+   "end": 147874965638400,
+   "read": "SE の使い分けの3行",
+   "group": "ゴージャスのSE",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "473",
+   "id_to": "473",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_010_473.png",
+   "rect_px": [
+    146,
+    160,
+    237,
+    205
+   ],
+   "start": 177175347148800,
+   "end": 177972059865600,
+   "read": "＋新規のボタン",
+   "group": "新規",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "477",
+   "id_to": "478",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_011_477.png",
+   "rect_px": [
+    624,
+    814,
+    968,
+    849
+   ],
+   "start": 177972059865600,
+   "end": 179073896601600,
+   "read": "作業場の選択の行",
+   "group": "作業場",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "496",
+   "id_to": "496",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_012_496.png",
+   "rect_px": [
+    965,
+    221,
+    1229,
+    259
+   ],
+   "start": 179073896601600,
+   "end": 180158782003200,
+   "read": "選んだ案件のフォルダ",
+   "group": "案件フォルダ",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "503",
+   "id_to": "503",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_013_503.png",
+   "rect_px": [
+    1312,
+    812,
+    1508,
+    853
+   ],
+   "start": 181531840089600,
+   "end": 181879342444800,
+   "read": "エフォートの行",
+   "group": "エフォート",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "505",
+   "id_to": "505",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_014_505.png",
+   "rect_px": [
+    872,
+    810,
+    1076,
+    846
+   ],
+   "start": 181879342444800,
+   "end": 182481114816000,
+   "read": "Ultracode",
+   "group": "Ultracode",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "538",
+   "id_to": "538+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_015_538.png",
+   "rect_px": [
+    353,
+    594,
+    1783,
+    864
+   ],
+   "start": 190193971968000,
+   "end": 190524522988800,
+   "read": "タイムライン",
+   "group": "タイムライン1",
+   "ocr": "",
+   "ratio": [],
+   "v004": "確認の3回目 No.5：強調 538（12:30.05〜）が枠の下半分を隠すので、枠は強調が出る所で終える（先に1.3秒見せる）"
+  },
+  {
+   "id_from": "553+1",
+   "id_to": "556",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_016_553p1.png",
+   "rect_px": [
+    403,
+    367,
+    1783,
+    864
+   ],
+   "start": 192456975110400,
+   "end": 194245340889600,
+   "read": "タイムライン",
+   "group": "タイムライン2",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "562",
+   "id_to": "565",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_017_562s.png",
+   "rect_px": [
+    669,
+    124,
+    1159,
+    416
+   ],
+   "start": 196966030060800,
+   "end": 198372990816000,
+   "read": "プログラムモニターの図解",
+   "group": "モニター",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "568",
+   "id_to": "568",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_018_568.png",
+   "rect_px": [
+    686,
+    320,
+    1126,
+    406
+   ],
+   "start": 198372990816000,
+   "end": 198779822841600,
+   "read": "強調テロップ",
+   "group": "強調テロップ",
+   "ocr": "",
+   "ratio": []
+  },
+  {
+   "id_from": "569",
+   "id_to": "570+1",
+   "png": "/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/v003/_work/red_frames/rf_019_569.png",
+   "rect_px": [
+    687,
+    256,
+    1035,
+    298
+   ],
+   "start": 198779822841600,
+   "end": 200271540268800,
+   "read": "注釈",
+   "group": "注釈",
+   "ocr": "",
+   "ratio": []
+  }
+ ],
+ "hits": 225,
+ "how": "tools/red_frames/place.py：/Users/yoshizawakouichi/Desktop/みかみ案件依頼書/AI動画編集/edit/analysis/赤枠_v001 の AI の判断と反証（splits で字幕の途中の画面の替わり目に合わせる）"
+}

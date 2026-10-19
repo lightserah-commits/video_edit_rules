@@ -1,0 +1,34 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script></head><body>
+<div id="board"></div>
+<!-- 見出し（140「革命が起きてる」の「革」6118 → 13） -->
+<div class="part" id="head" data-f0="13" style="left:90px;top:40px"><div class="in" id="h"></div></div>
+<!-- 左：今までの自動化（141「今まで」6198 → 93）・効率化（142「効」6297 → 192）・みじん切り（143「料」6385 → 280、147「み」6416 → 311）・料理の速さは変わらない（149「料」6542 → 437） -->
+<div class="part" id="lbl1" data-f0="93" data-dim="539-724:0.45" style="left:110px;top:200px"><div class="in" id="l1"></div></div>
+<div class="part" id="eff" data-f0="192" data-m="pop" data-dim="539-724:0.45" style="left:110px;top:285px"><div class="in" id="e1"></div></div>
+<div class="part" id="mj" data-f0="280" data-m="bounce" data-dim="539-724:0.45" style="left:120px;top:370px"><div class="in" id="m1"></div></div>
+<div class="part" id="bub1" data-f0="311" data-m="pop" data-dim="539-724:0.45" style="left:500px;top:420px"><div class="in" id="b1"></div></div>
+<div class="part" id="slow" data-f0="437" data-dim="539-724:0.45" style="left:110px;top:780px"><div class="in" id="s1"></div></div>
+<!-- 右：今回のインパクト（150「イ」6644 → 539）・ドラム式洗濯機（153 の頭 6686 → 581）・手洗い→ドラム式（156「手」6793 → 688） -->
+<div class="part" id="lbl2" data-f0="539" style="left:990px;top:180px"><div class="in" id="l2"></div></div>
+<div class="part" id="drum" data-f0="581" data-m="bounce" style="left:1530px;top:250px"><div class="in" id="d1"></div></div>
+<div class="part" id="drumL" data-f0="581" data-m="pop" style="left:1500px;top:585px"><div class="in" id="d2"></div></div>
+<div class="part" id="tear" data-f0="688" data-m="bounce" style="left:990px;top:280px"><div class="in" id="t1"></div></div>
+<div class="part" id="tearL" data-f0="688" data-m="pop" style="left:1045px;top:585px"><div class="in" id="t2"></div></div>
+<div class="part" id="arr" data-f0="692" data-m="grow" style="left:1310px;top:390px"><div class="in" id="a1"></div></div>
+<script>
+window.ZUKAI = { frames: 724 };
+const $ = id => document.getElementById(id);
+$('h').innerHTML = Z.stk('AI動画編集で 革命が起きている', {size: 82, fill: '#f5e63a', font: 'Tsk', strokes: [['#000', 16]]});
+$('l1').innerHTML = Z.plate('今までの「自動化」', {size: 56, bg: '#1b5fd1'});
+$('e1').innerHTML = Z.stk('＝せいぜい効率化', {size: 54});
+$('m1').innerHTML = Z.img('../assets/mijingiri.png', {w: 350});
+$('b1').innerHTML = Z.bubble('みじん切りが\nちょっと速くなる', {size: 48, tail: 'left', off: 40});
+$('s1').innerHTML = Z.stk('→ 料理の速さは あまり変わらない', {size: 52});
+$('l2').innerHTML = Z.plate('今回のAI動画編集', {size: 56, bg: '#d90a0a'});
+$('d1').innerHTML = Z.img('../assets/drum_washer.png', {w: 320});
+$('d2').innerHTML = Z.stk("ドラム式洗濯機", {size: 46, fill: "#f5e63a"});
+$('t1').innerHTML = Z.img('../assets/tearai.png', {w: 300});
+$('t2').innerHTML = Z.stk('手洗い', {size: 50});
+$('a1').innerHTML = Z.arrow({len: 200, dir: 'right', color: '#f5e63a'});
+</script></body></html>

@@ -1,0 +1,28 @@
+{
+ "key": "I03",
+ "title": "スクール事業（イメージ・部分）",
+ "start_f": 4742,
+ "end_f": 4833,
+ "anchor": {
+  "cap": "99",
+  "f": 4742
+ },
+ "wipe": {
+  "show": false
+ },
+ "se": [
+  {
+   "f": 0,
+   "se": "ピコンッ",
+   "why": "画像が出る"
+  }
+ ],
+ "hide_caption_ids": [],
+ "removes": "",
+ "checks": [
+  5,
+  45,
+  86
+ ],
+ "story": "99 の頭で出し、99+1（Addness）の頭で消える"
+}

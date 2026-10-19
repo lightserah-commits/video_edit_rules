@@ -6,7 +6,7 @@
 
 ## 最初に読むもの
 1. `CASE/v001/_work/agent_prompts/script_context.md`（台本係と同じ決まり。**台本の書き方・切る方針・固有名詞・CTA・強い言い方の扱いはここ**）と `chunk_notes.md`（見取り図）
-2. RULES/08_カットと字幕の追加ルール.yaml の cut と captions、RULES/動画の土台.md、BOSS/30_文節と言葉.md
+2. RULES/08_カットと字幕の追加ルール.yaml の cut と captions（とくに captions.segmentation・punctuation・proper_nouns）、RULES/動画の土台.md
 3. CASE/00_案件メモ.md の「動画の土台」と「聞き違いの疑い」
 4. 台本係の返す値：`CASE/v001/script_parts/pNN_notes.json`（doubts・big_cuts・strong_words）
 5. 担当の区切り：`CASE/analysis/chunks/chunk_N.txt`（全部）と `CASE/analysis/units.txt`（1行＝区切り|開始|長さ|大きさ|文字）

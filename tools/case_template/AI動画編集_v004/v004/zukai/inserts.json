@@ -1,0 +1,39 @@
+{
+ "I01": {
+  "insert": "partial",
+  "why": "テンプレート（初めて出る物）",
+  "hide_title": true
+ },
+ "I02": {
+  "insert": "partial",
+  "why": "サムネ（初めて出る物）",
+  "hide_title": true
+ },
+ "I03": {
+  "insert": "partial",
+  "why": "スクール事業（初めて出る物）",
+  "hide_title": true
+ },
+ "I04": {
+  "insert": "partial",
+  "why": "Addness（初めて出るサービス）",
+  "hide_title": true
+ },
+ "I05": {
+  "insert": "partial",
+  "why": "情報商材のスキル（初めて出る物）",
+  "hide_title": true
+ },
+ "I06": {
+  "insert": "full",
+  "why": "地面が崩れてビルが倒れる（たとえの物）"
+ },
+ "I07": {
+  "insert": "full",
+  "why": "クロール（たとえの物）"
+ },
+ "I08": {
+  "insert": "full",
+  "why": "カスタマーサポートが追いつかない（頭に姿が浮かばない場面）"
+ }
+}
