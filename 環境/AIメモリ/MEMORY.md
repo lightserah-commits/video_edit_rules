@@ -14,7 +14,7 @@
 - [No experimental blobs in Premiere](no-experimental-blobs-in-premiere.md) — repointing FlatBuffer refs in telop text crashed the user's Premiere (2026-10-04); only edit values, or ask first
 - [Make missing telop looks via Premiere GUI](premiere-gui-telop-color.md) — don't ask the user; recolor via Properties→Appearance with computer use, save, clone the text blob (Aqua Voice overlay blocks mid-screen clicks)
 - [Check usage before fan-out](check-usage-before-fan-out.md) — get_usage before many parallel agents; 1003 case hit 80% of the 5-hour window
-- [Subagent fan-out drains quota](subagent-fanout-token-sink.md) — 1003案件の夜間66エージェントで週22%消費。多数のエージェントは事前に見込みを伝えて承諾を取る
+- [Subagent fan-out drains quota](subagent-fanout-token-sink.md) — 1003案件の夜間66エージェントで週22%消費。人数は聞かず、週の使用量の見込みを1行伝えて進める（2026-10-20〜）
 - [ほたて案件は Addness に置かない](hotate-case-no-addness.md) — hotate_taisho_20261009 は別チャンネル。記録は 00_案件メモ.md だけ、見本 YouTube がトンマナの正
 - [YouTube preview upload](youtube-preview-upload.md) — previews go to personal channel as private via tools/youtube_upload.py; never みかみCH; --dry + OK before sending
 - [Runaway image checker](runaway-image-checker.md) — 確かめ係に何百枚も画像を見せると暴走（grok 2026-10-17：5時間・週の約30%）。一覧画像・回数の上限・30〜60分ごとの見張り
