@@ -49,7 +49,7 @@ AI への入口は `CLAUDE.md`（最初にやること・守ること・どこ�
 | `check_slivers.py`・`check_chops.py`・`check_deco.py`・`check_timeline.py`・`dump_timeline.py`・`check_blackout.py` | 検査（切れ端／声の途中で切れたつなぎ目／SE の開始・右上タイトル・15秒以上何もない区間／変えてはいけない基準との比べ／基準の書き出し／書き出した mp4 の暗転）。使い方は `編集の依頼文.md` の工程9・10 |
 | `check_gakaku.py` | 画角が変わるコマ（寄り・引きの入りと出、画面の出入り）でテロップが残る・先に出る・またぐ所（`04` の zoom.gakaku_check。工程9。V2 の無効のクリップは数えない） |
 | `prproj_motion.py` | .prproj のクリップのスケール・位置・無効を読む（check_gakaku・diff_user_edits が使う） |
-| `red_frames/` | 画面共有の赤枠（`07` の read_frame）：画面の画像と文字認識 → 束 → AI が決める → 確かめの絵 → 反証 → 時刻の赤枠（`red_frames/README.md`） |
+| `red_frames/` | 画面共有の赤枠（`07` の read_frame）：画面の画像と文字認識 → 束 → AI が決める → 確かめの絵 → 反証 → 時刻の赤枠 → 赤枠の所へ画面を寄せる（screen_zoom.py）（`red_frames/README.md`） |
 | `zukai/` | 動く図解と画像（`09`）：HTML で描いて透明の動画とワイプにする・字幕の時刻・カットが変わった時のずらし（`zukai/README.md`） |
 | `premiere_case/` | 案件の Premiere の小さなスクリプト：確認の画像の書き出し・直した所だけの一覧・保存せずに閉じる（ユーザーの直しがあれば止まる）・Media Encoder で mp4・締めのつなぎ目に Composer の Pan（`premiere_case/README.md`） |
 | `diff_user_edits.py` | AI の組み立てと、ユーザーが Premiere で保存したもの（か開いているシーケンス。読むだけ）を比べて表にする（リップル・クリップの出入り・V1/V2 のスケールと位置・穴・テロップの文字） |

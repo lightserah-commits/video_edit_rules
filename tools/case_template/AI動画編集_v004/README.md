@@ -32,6 +32,7 @@
 
 `v004/_work/rebuild_all.sh`（merge_script → captions_align → cuts_plan → build → zukai/shift → 赤枠 → Premiere place_stills → make〈kyocho_start_fix を挟んで3回〉→ run_checks → finish）。
 make から後だけなら `rebuild_make_only.sh`（Premiere を使わない所までなら `rebuild_make_checks.sh`）。書き出しは `tools/premiere_case/export.py`。
+画面の寄り（`07` の zoom.frame_zoom。2026-10-19）は rebuild_all.sh にまだ入っていない（この案件の Loom は寄せていない）。使う案件は 1017 v009 の rebuild_all.sh の形で、赤枠（place.py）の後に `tools/red_frames/screen_zoom.py --ver "$V" --screen-size <画面録画の大きさ>` を1行足し、案件の値を `_work/screen_zoom.json` に書く。
 
 ## ハマりどころ
 

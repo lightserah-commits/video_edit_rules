@@ -1,0 +1,9 @@
+{
+ "memo": "screen_zoom.py の案件の値の例（<版>/_work/screen_zoom.json に置く）。札は plan_vNNN.py の SCREEN の3列目（plan_parts/dNN_SCREEN.txt）と同じ文字。private は 00_案件メモ.md の「画面に映る物」と確かめ係の privacy から。案件の人名・数字はこのフォルダ（公開の Git）に書かない",
+ "chrome_labels": ["Addnessのタスクを見る", "テンプレートを見る"],
+ "skip_labels": ["数字を見る"],
+ "slide_labels": [],
+ "private": ["/Users/", "@gmail", "メールアドレス", "残り広告クレジット"],
+ "top_cut": 0.12,
+ "left_cut": 0.165
+}

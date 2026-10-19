@@ -10,7 +10,7 @@
 ## 流れ
 
 ```
-screen_frames.py frames → screen_frames.py ocr → prep.py → 【AI が決める】→ render.py → 【別の AI が反証・直す】→ render.py → place.py → 組み立て（make）
+screen_frames.py frames → screen_frames.py ocr → prep.py → 【AI が決める】→ render.py → 【別の AI が反証・直す】→ render.py → place.py → screen_zoom.py（画面の寄り）→ 組み立て（make）
 ```
 
 1. **画面の画像と文字認識**（`screen_frames.py`）
@@ -53,6 +53,20 @@ screen_frames.py frames → screen_frames.py ocr → prep.py → 【AI が決め
    ```
    python3 tools/red_frames/retime.py --frames "前の版/_work/red_frames.json" --ver "edit/vNNN" [--png-dir …]
    ```
+
+8. **画面の寄り**（`screen_zoom.py`。`07` の zoom。2026-10-19 に tools へ）：赤枠で囲んだ所を、画面録画のクリップ自体を寄せて、大きく・字幕より上に見せる。
+   土台（build）と `place.py` の後、Premiere の読み込み（place_stills）の前に毎回流す（土台 XML の画面のクリップにキーフレームを書き、赤枠を `zf_*.png` に描き直す）
+   ```
+   python3 tools/red_frames/screen_zoom.py --ver "edit/vNNN" --screen-size 3456x2234 [--dry]
+   ```
+   - 案件の値は `<版>/_work/screen_zoom.json`（`--settings` で別の所）。例 `screen_zoom_example.json`、鍵の意味は `--help`：
+     `chrome_labels`（上の帯を映さない大きさに寄せたままの区間）・`skip_labels`（寄せない区間）・`slide_labels`＋`slide_rect`（スライドを横いっぱい）・
+     `private`（寄せた時に入ると困る文字。字幕ごとの文字認識 `analysis/赤枠_vNNN/batch_*_in.json` で探す）・`top_cut`・`left_cut`。札は plan の SCREEN の3列目
+   - SCREEN に無い札は効かないので知らせる。人名・社内の数字は案件の JSON にだけ書く（このフォルダは公開の Git）
+   - 一度寄せた `red_frames.json` はもう一度寄せない（赤枠が二重に寄る。止まる）。`place.py` から流し直す。`--dry` は書かずに数だけ出す
+   - 画面は「高さ 1080 に合わせて真ん中」に置いてある前提（`place.py` の `--disp` を省いた時と同じ）。寄りは最大 2.0倍・寄り／戻しは 0.3秒
+   - 確かめたこと（2026-10-19）：1017 v009 と 1018 v001 の入力の写しで、元の `_work/screen_zoom.py` と XML・`red_frames.json`・土台の表・`zf_*.png`
+     （33枚・84枚）が同じ（`how` の文字だけ違う）。本物の版への `--dry` も元と同じ数。Premiere で読み込んでの確かめは、この道具ではまだ（元は grok v002・1017・1018 で使った）
 
 ## 確かめたこと（2026-10-05）
 
