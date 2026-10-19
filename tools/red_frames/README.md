@@ -62,6 +62,9 @@ screen_frames.py frames → screen_frames.py ocr → prep.py → 【AI が決め
    - 案件の値は `<版>/_work/screen_zoom.json`（`--settings` で別の所）。例 `screen_zoom_example.json`、鍵の意味は `--help`：
      `chrome_labels`（上の帯を映さない大きさに寄せたままの区間）・`skip_labels`（寄せない区間）・`slide_labels`＋`slide_rect`（スライドを横いっぱい）・
      `private`（寄せた時に入ると困る文字。字幕ごとの文字認識 `analysis/赤枠_vNNN/batch_*_in.json` で探す）・`top_cut`・`left_cut`。札は plan の SCREEN の3列目
+   - `burned_face`（2026-10-20 AI動画編集 v006 から。省くと今までどおり）：画面録画に顔の丸が焼き込まれている時（撮り直しの Loom など）の [真ん中 x, 真ん中 y, 半径]（素材の px）。
+     寄せると焼き込みの顔も寄って欠ける・はみ出すので、「寄せていない時の丸の所」の外に顔が 300px² より見える寄せ方は、倍率を 0.05 ずつ下げ、だめなら寄せない（`face_fixed` に記録）。
+     顔そのものは別に、顔の丸だけを抜いた映像を V11 に重ねて見せる（例：`AI動画編集/edit/r2/v006/_work/face_overlay.py`）。寄り始め・戻りの 0.3秒は、焼き込みの顔が外へ滑って見えることがある
    - SCREEN に無い札は効かないので知らせる。人名・社内の数字は案件の JSON にだけ書く（このフォルダは公開の Git）
    - 一度寄せた `red_frames.json` はもう一度寄せない（赤枠が二重に寄る。止まる）。`place.py` から流し直す。`--dry` は書かずに数だけ出す
    - 画面は「高さ 1080 に合わせて真ん中」に置いてある前提（`place.py` の `--disp` を省いた時と同じ）。寄りは最大 2.0倍・寄り／戻しは 0.3秒

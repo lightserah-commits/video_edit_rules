@@ -27,6 +27,9 @@
     private        寄せた時に画面に入ると困る文字（人名・社内の数字・アカウント名・決済の URL など。部分一致）
     top_cut        寄せた時に映さない画面の上の割合（既定 0.12＝メニューバー・アドレス欄）
     left_cut       寄せた時に映さない画面の左の割合（既定 0.165＝左の一覧＝会話の履歴など）。箱がここにかかる時は寄せない
+    burned_face    画面録画に焼き込まれた顔の丸（Loom の顔の丸など）。[真ん中 x, 真ん中 y, 半径]（画面録画の素材の px）。書いた時は、寄せた画面で
+                   その丸が「寄せていない時の丸の所」の外に見える寄せ方を避ける（倍率を 0.05 ずつ下げ、だめなら寄せない）。顔は別に重ねる
+                   （AI動画編集 v006 の _work/face_overlay.py：顔の丸だけを抜いた映像を V11 に）。2026-10-20 AI動画編集 v006 から
     memo           何でも（道具は読まない）
   一度寄せた red_frames.json はもう一度寄せない（赤枠が二重に寄る）。place.py を流し直してから（rebuild の順のまま流せばよい）。
 """
@@ -55,7 +58,8 @@ HOLD_GAP = round(2.0 * FPS)
 MIN_STATE = round(1.5 * FPS)                   # これより短い寄りは付けない（前の寄りのまま）。1秒ごとに寄りが変わると目が回る
 STROKE, COLOR = 8, (255, 30, 30, 255)
 NO_ZOOM = (1.0, 0.0, 0.0)
-KEYS = {"chrome_labels", "skip_labels", "slide_labels", "slide_rect", "private", "top_cut", "left_cut", "memo"}
+KEYS = {"chrome_labels", "skip_labels", "slide_labels", "slide_rect", "private", "top_cut", "left_cut", "memo", "burned_face"}
+FACE_PEEK_MAX = 300                            # burned_face：寄せた顔の丸が元の丸の外に見えてよい広さ（px²。端の数 px まで）
 
 
 class Screen:
@@ -80,7 +84,23 @@ class Screen:
         ly = (h - 1080) / 2
         return lx, ly
 
-    def place(self, rect, zmin=1.0, fit=None, bounds=None):
+    def face_peek(self, p, face):
+        """burned_face：params p で、焼き込みの顔の丸が「寄せていない時の丸」の外に見える広さ（出力の px²）"""
+        if not face or p is None:
+            return 0
+        z, cx, cy = p
+        k = 1080 / self.sh
+        X0, Y0, R0 = self.off_x + face[0] * k, face[1] * k, face[2] * k
+        dx, dy, dr = 960 + cx + (X0 - 960) * z, 540 + cy + (Y0 - 540) * z, R0 * z
+        x0, x1, y0, y1 = max(0, int(dx - dr)), min(1920, int(dx + dr) + 1), max(0, int(dy - dr)), min(1080, int(dy + dr) + 1)
+        n, st = 0, 4
+        for yy in range(y0, y1, st):
+            for xx in range(x0, x1, st):
+                if (xx - dx) ** 2 + (yy - dy) ** 2 <= dr * dr and (xx - X0) ** 2 + (yy - Y0) ** 2 > (R0 + 2) ** 2:
+                    n += 1
+        return n * st * st
+
+    def place(self, rect, zmin=1.0, fit=None, bounds=None, zmax=ZMAX):
         """箱 rect（元の大きさの出力の px）を見せる倍率と位置 (z, cx, cy)。左・上の帯にかかって寄せられない時は None（zmin が 1 なら元の大きさ）"""
         x0, y0, x1, y1 = rect
         w, h = max(x1 - x0, 1), max(y1 - y0, 1)
@@ -88,7 +108,7 @@ class Screen:
             z = min(fit[0] / w, fit[1] / h)
             tx, ty = 960, 540
         else:
-            z = min(ZMAX, BOX_W / w, BOX_H / h)
+            z = min(zmax, BOX_W / w, BOX_H / h)
             tx, ty = TARGET
         z = max(z, zmin)
         if not fit and ((x0 - self.off_x) / self.disp_w < self.u_min or y0 / 1080 < self.v_min):
@@ -107,9 +127,9 @@ class Screen:
                 cx = min(max(cx, lo_x), hi_x) if lo_x <= hi_x else (lo_x + hi_x) / 2
                 cy = min(max(cy, lo_y), hi_y) if lo_y <= hi_y else (lo_y + hi_y) / 2
                 cx, cy = min(max(cx, -lx), lx), min(max(cy, -ly), ly)
-            if fit or 540 + cy + (y1 - 540) * z <= BOTTOM or z >= ZMAX:
+            if fit or 540 + cy + (y1 - 540) * z <= BOTTOM or z >= zmax:
                 break
-            z = min(ZMAX, z + 0.1)
+            z = min(zmax, z + 0.1)
         if not fit and z < ZMIN_USE and 540 + (y1 - 540) <= BOTTOM and zmin <= 1.0:
             return NO_ZOOM
         return (round(z, 4), round(cx, 1), round(cy, 1))
@@ -214,6 +234,8 @@ def main():
     slide_labels = set(cfg.get("slide_labels", []))
     slide_rect = S.rect01(cfg["slide_rect"]) if cfg.get("slide_rect") else None
     private = cfg.get("private", [])
+    face = cfg.get("burned_face")
+    face_fixed = []
 
     screen_table = load_screen_table(plan_p)
     known = {lab.strip() for _, _, lab, _ in screen_table}
@@ -268,6 +290,19 @@ def main():
             pz = S.place(fr["rect_px"], zmin=zmin, bounds=slide_rect if in_slide else None)
             if pz is None:                               # 左の一覧にかかる箱：寄せず、その所の元の寄り（スライドの大きさ）のまま
                 pz = base_at(s)
+            if face and pz != NO_ZOOM and S.face_peek(pz, face) > FACE_PEEK_MAX:
+                # burned_face（AI動画編集 v006）：寄せると焼き込みの顔の丸が元の丸の外にはみ出して見える → 倍率を下げる。だめなら寄せない
+                alt, zt = None, round(pz[0] - 0.05, 4)
+                while zt >= ZMIN_USE:
+                    q = S.place(fr["rect_px"], zmin=zmin, bounds=slide_rect if in_slide else None, zmax=zt)
+                    if q is None:
+                        break
+                    if q == NO_ZOOM or S.face_peek(q, face) <= FACE_PEEK_MAX:
+                        alt = q
+                        break
+                    zt = round(zt - 0.05, 4)
+                face_fixed.append((s, fr.get("id_from"), pz[0], alt[0] if alt else None))
+                pz = alt if alt is not None else base_at(s)
             tg.append((max(s, A), min(e, B), pz, fr["rect_px"][3] > BOTTOM))   # 最後＝字幕の下の箱を持ち上げる寄り
         if tg and tg[0][0] - A <= HEAD_TOL:              # 区間の頭から 12コマ以内に始まる赤枠の寄りは、区間の頭から（寄る前の画が数コマ映らないように）
             tg[0] = (A,) + tg[0][1:]
@@ -394,8 +429,12 @@ def main():
         new.append(dict(fr, png=png, rect_px=[round(v) for v in rect], start=s * FT, end=e * FT, zoom=list(p) if p != NO_ZOOM else None))
     zoom_rec = {"how": f"tools/red_frames/screen_zoom.py --settings {settings_p}",
                 "states": [[a_, b_, list(p)] for a_, b_, p in states_all if p != NO_ZOOM],
-                "ramps": [[a_, b_] for a_, b_, _, _ in ramps_all], "skipped_private": [[a_, h] for a_, h in skipped]}
+                "ramps": [[a_, b_] for a_, b_, _, _ in ramps_all], "skipped_private": [[a_, h] for a_, h in skipped],
+                "face_fixed": [[a_, i_, z0_, z1_] for a_, i_, z0_, z1_ in face_fixed]}
     zs = [x for x in states_all if x[2] != NO_ZOOM]
+    if face:
+        print(f"焼き込みの顔の丸がはみ出すので倍率を下げた・寄せなかった所 {len(face_fixed)}：" + "、".join(
+            f"{a_ / FPS // 60:.0f}:{a_ / FPS % 60:04.1f}（{i_} {z0_:.2f}→{('寄せない' if z1_ is None else f'{z1_:.2f}')}）" for a_, i_, z0_, z1_ in face_fixed[:20]))
     print(f"人名・社内の数字が入るので寄せなかった所 {len(skipped)}：" + "、".join(f"{a_ / FPS // 60:.0f}:{a_ / FPS % 60:04.1f}{h}" for a_, h in skipped[:12]))
     print(f"画面の寄り：寄せた所 {len(zs)}（{sum(b_ - a_ for a_, b_, _ in zs) / FPS / 60:.1f}分）・動き {len(ramps_all)}・"
           f"キーフレームを書いたクリップ {n_kf}／画面のクリップ {n}・赤枠 {len(new)}（寄りが動く前で切った {trimmed}・寄せた画面の外で描かない {len(dropped)} {dropped}）")
