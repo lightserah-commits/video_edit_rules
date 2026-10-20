@@ -85,6 +85,8 @@ def main():
     changed = sorted(set(edited))
     if bash and turn_ts:
         changed = sorted(set(changed) | set(changed_since(turn_ts, limit=200)))
+    # 日誌と一時置き場（Git に入れない）だけの書き込みでは止めない（2026-10-20、7つの型。毎朝の予定タスクが日誌を書く）
+    changed = [p for p in changed if not p.startswith(("days" + os.sep, "inbox" + os.sep))]
     if not changed:
         return 0
 
