@@ -4,7 +4,8 @@
 
   ⑥ 字幕に無い言葉 … 字幕の頭ではない声（前の字幕を出したまま続く区切り・区切りの中の字幕の頭より前の語）のまとまりが、
      その時に出ている字幕の文字にほとんど無い（合う文字が --match 未満）。字幕の頭からのまとまりは、字幕の言い換えがあるので見ない。
-     フィラー（えー・あの・まあ・うーん・えっと など）は数えない。台本の行のメモ（「  # …」）にその語を書いてある所・文字を出さない行（u-）は
+     話し癖のフィラー（あの・まあ・うん など）は数えない。言いよどみ（えー・えっと・あのー・うーん・あー。08 の cut.remove「フィラー（言いよどみ）」）は
+     数える（2026-10-20 から。残っていたら切る。区切りの語に出ない言いよどみは tools/find_fillers.py で見る）。台本の行のメモ（「  # …」）にその語を書いてある所・文字を出さない行（u-）は
      「決めてある」として数えない（例「言いかけの『俺が』を出さない（音は切らない）」）
   ⑦ 切ると決めた言葉の端 … 台本の「x A..B」で切ると決めた区切りの語の声が、残した区間に --min 秒以上残っている（切る位置がずれた）
 
@@ -29,6 +30,13 @@ import numpy as np
 FPS = 30000 / 1001
 FILLERS = {"えー", "えーと", "えっと", "えと", "あの", "あのー", "あのう", "まあ", "まぁ", "まー", "うーん", "うん", "んー", "ん",
            "え", "あ", "ま", "ああ", "あー", "えぇ", "ええ", "うー", "おー", "お"}
+HESITATION = re.compile(r"^(え+ー+っ?と?|えっと|えと|あのー+|あのう|うー+ん|んー+|あー+)$")   # 言いよどみ（数える。2026-10-20）
+
+
+def skip_filler(w):
+    """数えないフィラー（話し癖・短い反応）か。言いよどみは数える（norm は「ー」を消すので、消す前の形で見る）"""
+    raw = unicodedata.normalize("NFKC", w or "").strip(" 、。,.")
+    return norm(w) in FILLERS and not HESITATION.match(raw)
 
 
 def norm(s):
@@ -150,7 +158,7 @@ def main():
             for k in range(i0, i1):
                 s, e, w = ws[k]
                 cut_words.add((u, k))
-                if e - s < 0.04 or norm(w) in FILLERS:
+                if e - s < 0.04 or skip_filler(w):
                     continue
                 v, t = kept_voice(s + 0.02, e - 0.02)
                 if v >= a.min:
@@ -179,7 +187,7 @@ def main():
         for p, q in zip(bounds, bounds[1:]):
             if p in hs:
                 continue                               # 字幕の頭から始まるまとまり（字幕の文字そのもの）
-            piece = [(k, ws[k]) for k in range(p, q) if (u, k) not in cut_words and norm(ws[k][2]) not in FILLERS]
+            piece = [(k, ws[k]) for k in range(p, q) if (u, k) not in cut_words and not skip_filler(ws[k][2])]
             if not piece:
                 continue
             s, e = piece[0][1][0], piece[-1][1][1]
