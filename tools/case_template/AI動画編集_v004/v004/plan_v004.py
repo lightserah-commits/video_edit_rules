@@ -38,11 +38,11 @@ def part(name):
 
 
 # 溜め：オチ・ツッコミ・短い反応の前は、間を 0.35秒残す（08 の pauses.keep_as_tame）。字幕ID を1行に1つ
-TAME = [x.split("|")[0].strip() for x in part("TAME").splitlines() if x.strip() and not x.startswith("#")]
+TAME = [x.split("  #", 1)[0].split("|")[0].strip() for x in part("TAME").splitlines() if x.strip() and not x.startswith("#")]   # 2026-10-21：行の後ろの注記（「  # …」）を外す
 # 溜めの秒（TAME の2列目が数の時だけ。無ければ cuts_plan の TAME_HEAD＝0.35秒）
 TAME_SEC = {}
 for _x in part("TAME").splitlines():
-    _p = _x.split("|")
+    _p = _x.split("  #", 1)[0].split("|")
     if len(_p) >= 2 and _x.strip() and not _x.startswith("#"):
         try:
             TAME_SEC[_p[0].strip()] = float(_p[1])
@@ -50,7 +50,7 @@ for _x in part("TAME").splitlines():
             pass
 
 # 画面を映す字幕の範囲：最初の字幕|最後の字幕|左上の札（07 の demo_label）|理由（07 の to_screen のどれか）
-SCREEN = [tuple((r.split("|") + ["", "", "", ""])[:4]) for r in part("SCREEN").splitlines() if r.strip() and not r.startswith("#")]
+SCREEN = [tuple((r.split("  #", 1)[0].rstrip().split("|") + ["", "", "", ""])[:4]) for r in part("SCREEN").splitlines() if r.strip() and not r.startswith("#")]   # 2026-10-21：行の後ろの注記（「  # …」）を外す
 
 
 import json as _json
