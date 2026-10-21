@@ -127,7 +127,7 @@ def rows(block, n):
     for line in block.strip().splitlines():
         if not line.strip() or line.startswith("#"):
             continue
-        parts = line.split("|")
+        parts = line.split("  #", 1)[0].rstrip().split("|")   # 2026-10-21：行の後ろの注記（「  # …」）を外す（1018 v002・v003 は右上の話題タイトルに注記が文字で出ていた）
         parts += [""] * (n - len(parts))
         out.append(parts[:n])
     return out

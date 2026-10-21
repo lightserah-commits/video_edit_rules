@@ -15,3 +15,4 @@ echo "## 流れ"; python3 $T/flow_table.py $P --seq $S --label V6=字幕 --label
 echo "## フォント"; python3 $T/font_fix.py --scan $P | tail -3
 echo "## 画角の変わり目"; python3 _work/check_gakaku.py | head -12
 echo "## 構造"; python3 $T/check_deco.py $P --seq $S --camera V1 --cover V2 --visual V3-V5,V7,V9-V10,V12-V16 --se A4 --titles V8 --after $HL --out checks_deco.json | tail -25
+echo "## 字幕に無い言葉・切ると決めた言葉の端"; $PY $T/check_stray_words.py --ver "$PWD" | tail -3   # 2026-10-21：工程9 の表の⑥⑦（1018 は v002・v003 で動かしていなかった）
