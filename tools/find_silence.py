@@ -4,11 +4,13 @@
 （「なんでこんなミスするの」「２度と起きない様にしろ」）。find_laugh_gaps.py は文字起こしに語が無い所を探すので、無音に文字起こしが語を書いた所
 （ささやき・機械の音・書き起こしの誤り）を拾えなかった。ここでは文字起こしを使わず、声の大きさ（analysis/camera_env.npy＝10ms ごとの dB）だけで見る。
 
-  ~/Desktop/video_edit_rules/env/bin/python tools/find_silence.py --ver "<edit/vNNN>" [--min 1.5] [--out 一覧.md]
+  ~/Desktop/video_edit_rules/env/bin/python tools/find_silence.py --ver "<edit/vNNN>" [--min 1.0] [--read 0.5] [--out 一覧.md]
 
   - 残している区間（_work/cuts_vNNN.json の keep_frames）の中で、声の大きさが「声のしきい値（cuts の params.voice_thr_db）＋6dB」より小さい所が
-    --min 秒（既定 1.5）以上続く所を、版の時刻・素材の秒・その時の画面（図解・全体挿入の画像・画面を映す区間・最後の30秒）つきで出す
-  - 「残してよい見込み」：図解の中（声に合わせて組んだ動き）・最後の30秒（挨拶・手を振る）。それ以外は「切る候補」
+    --min 秒（既定 1.0。08 の pauses「0.5〜1.0秒残してよいのは溜めだけ」なので、1.0秒以上は溜めでも長すぎる）以上続く所を、版の時刻・素材の秒・その時の画面（図解・全体挿入の画像・画面を映す区間・最後の30秒）つきで出す
+  - 「残してよい見込み」は最後の30秒（挨拶・手を振る）だけ。図解の中も切る候補（08 の pauses.laugh_gaps「図解にする区間の中も、ほかの所と同じに詰める」。
+    小川さんが v002 で椅子と石の図解の中を8か所切った。2026-10-21 小川さん「図解も詰めるよ、基本、俺のカットから何を学んだんだよ」）。
+    図解の中を詰めた時は、部品の出るコマを付け替えて描き直す（1018 v004 の _work/remap_zukai_v004.py の形）
   - 切る候補が1つでもあれば終了コード 1（検査の合格にしない）。残すなら、理由を台本の行のメモか cuts_plan の注記に書いてから --allow 素材の秒 で外す
   決めるのは人（AI）：画面で黙って待つ所は、結果が出る所（話し出す直前）だけ 0.5〜1秒残して詰める（08 の pauses.screen）。
   顔や手で演じている所（keep_face）・溜め（keep_as_tame）は、コマを見て残す長さを決める
@@ -31,7 +33,8 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--ver", required=True, help="版のフォルダ edit/vNNN")
     ap.add_argument("--env", help="10ms ごとの声の大きさ（省略で <edit>/analysis/camera_env.npy）")
-    ap.add_argument("--min", type=float, default=1.5, help="この秒以上声の無い所を出す（既定 1.5）")
+    ap.add_argument("--min", type=float, default=1.0, help="この秒以上声の無い所を切る候補にする（既定 1.0）")
+    ap.add_argument("--read", type=float, default=0.5, help="この秒以上 --min 未満は「溜めか読む」として一覧に出す（合否には数えない。既定 0.5）")
     ap.add_argument("--margin", type=float, default=6.0, help="声のしきい値に足す dB（既定 6）")
     ap.add_argument("--allow", nargs="*", type=float, default=[], help="残すと決めた所の素材の秒（±0.5秒）")
     ap.add_argument("--out", help="一覧（.md）の書き先（省略で <版>/_work/silence_vNNN.md）")
@@ -63,30 +66,32 @@ def main():
             while j < len(q) and q[j]:
                 j += 1
             dur = (j - k) / 100
-            if dur >= a.min:
+            if dur >= a.read:
                 tl = (t + k / 100 * FPS) / FPS
                 src = (i0 + k) / 100
                 why = ""
                 for s, e, key in diag:
                     if s <= tl < e:
-                        why = f"図解 {key} の中（残してよい見込み）"
+                        why = f"図解 {key} の中（詰めて、図解の部品のコマを付け替える）"
                 for s, e, key in full:
                     if s <= tl < e and not why:
                         why = f"全体挿入の画像 {key} の間"
                 if tl > end_tl - 30 and not why:
                     why = "最後の30秒（挨拶・手を振る。残してよい見込み）"
-                ok = "残してよい見込み" in why or any(abs(src - x) <= 0.5 for x in a.allow)
+                if dur < a.min and not why.startswith("最後"):
+                    why = "溜めか読む（0.5〜1.0秒。溜め＝オチ・言い切りの前・擬音の後、顔や手で演じている所なら残す。ほかは詰める）" + (f"・{why}" if why else "")
+                ok = "残してよい見込み" in why or dur < a.min or any(abs(src - x) <= 0.5 for x in a.allow)
                 rows.append(dict(tl=tl, dur=dur, src=src, why=why or "切る候補", ok=ok))
             k = j
         t += b - c
     out = a.out or os.path.join(V, "_work", f"silence_{tag}.md")
     bad = [r for r in rows if not r["ok"]]
     with open(out, "w", encoding="utf-8") as f:
-        f.write(f"# 声の無い所 {a.min}秒以上（{tag}）\n\n声の大きさ：analysis/camera_env.npy が {thr:.1f}dB（声のしきい値＋{a.margin:g}dB）より小さい。文字起こしは使っていない。**全部未聴取**\n\n")
+        f.write(f"# 声の無い所 {a.read}秒以上（{tag}。{a.min}秒以上は切る候補）\n\n声の大きさ：analysis/camera_env.npy が {thr:.1f}dB（声のしきい値＋{a.margin:g}dB）より小さい。文字起こしは使っていない。**全部未聴取**\n\n")
         f.write(f"- 切る候補 {len(bad)}（合わせて {sum(r['dur'] for r in bad):.1f}秒）・残してよい見込み {len(rows) - len(bad)}\n\n| 版の時刻 | 秒 | 素材の秒 | 見立て |\n|---|---|---|---|\n")
         for r in rows:
             f.write(f"| {fm(r['tl'])} | {r['dur']:.1f} | {r['src']:.1f} | {r['why']}{'（allow）' if r['ok'] and '見込み' not in r['why'] else ''} |\n")
-    print(f"声の無い所 {a.min}秒以上：{len(rows)}（切る候補 {len(bad)}・{sum(r['dur'] for r in bad):.1f}秒）→ {out}")
+    print(f"声の無い所 {a.read}秒以上：{len(rows)}（切る候補＝{a.min}秒以上 {len(bad)}・{sum(r['dur'] for r in bad):.1f}秒／溜めか読む {sum(1 for r in rows if r['dur'] < a.min)}）→ {out}")
     for r in bad:
         print(f"  {fm(r['tl'])}  {r['dur']:.1f}秒  素材 {r['src']:.1f}  {r['why']}")
     sys.exit(1 if bad else 0)
