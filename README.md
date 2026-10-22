@@ -48,6 +48,7 @@ AI への入口は `CLAUDE.md`（最初にやること・守ること・どこ�
 | `flow_table.py` | 字幕・問い・強調・図解・説明・カットを見る順に並べた一覧（考えずに分かるかを読む。`動画の土台.md`） |
 | `check_slivers.py`・`check_chops.py`・`check_deco.py`・`check_timeline.py`・`dump_timeline.py`・`check_blackout.py` | 検査（切れ端／声の途中で切れたつなぎ目／SE の開始・右上タイトル・15秒以上何もない区間／変えてはいけない基準との比べ／基準の書き出し／書き出した mp4 の暗転）。使い方は `編集の依頼文.md` の工程9・10 |
 | `check_gakaku.py` | 画角が変わるコマ（寄り・引きの入りと出、画面の出入り）でテロップが残る・先に出る・またぐ所（`04` の zoom.gakaku_check。工程9。V2 の無効のクリップは数えない） |
+| `check_card_fit.py` | 章の帯の項目名カード（T093・T018）の文字が白い箱（1600px）からはみ出していないか（`06` の principle。工程9） |
 | `prproj_motion.py` | .prproj のクリップのスケール・位置・無効を読む（check_gakaku・diff_user_edits が使う） |
 | `red_frames/` | 画面共有の赤枠（`07` の read_frame）：画面の画像と文字認識 → 束 → AI が決める → 確かめの絵 → 反証 → 時刻の赤枠 → 赤枠の所へ画面を寄せる（screen_zoom.py）（`red_frames/README.md`） |
 | `zukai/` | 動く図解と画像（`09`）：HTML で描いて透明の動画とワイプにする・字幕の時刻・カットが変わった時のずらし（`zukai/README.md`） |

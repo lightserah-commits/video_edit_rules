@@ -36,6 +36,8 @@ FONT_SWAP = [("HiraKakuStdN-W8", "HiraginoSans-W8")]   # build_library.py と同
 HERE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_TYPES = os.path.join(HERE, "..", "見本", "分類", "types.json")
 DEFAULT_INDEX = os.path.join(HERE, "..", "見本", "テロップ見本集_目次.json")
+CARD_TYPES = ("T093", "T018")          # 項目名カード（06 の principle：文字の横幅が 1600px を超える時だけ縮める）
+CARD_MAX_W, CARD_W_FACTOR = 1600.0, 1.67
 
 
 def snap(sec, frame_t=FRAME_T):
@@ -85,13 +87,29 @@ class Library:
                                  texts=self._texts(type_id, texts))
         if size is not None:
             self._size(new, type_id, size, pattern)
+        if type_id in CARD_TYPES and size in (None, "auto"):   # 大きさを数で指定した時は、その大きさのまま
+            self._fit_card(new, type_id)
         return new
 
-    def _size(self, item, type_id, size, pattern):
+    def _tools(self):
         import telop_size
         if self._size_tools is None:
             self._size_tools = (telop_size.load_rules(), telop_size.Fonts())
-        rules, fonts = self._size_tools
+        return self._size_tools
+
+    def _fit_card(self, item, type_id):
+        """項目名カードの文字が白い箱からはみ出す時だけ、収まるまで縮める（06 の principle。1021 v003 で入れた）"""
+        import telop_size
+        m = telop_size.measure(self.pj, item, self._tools()[1])
+        w = max((x for x, _ in m["lines"]), default=0) / CARD_W_FACTOR
+        if w > CARD_MAX_W:
+            self.pj.scale_font_sizes(item, CARD_MAX_W / w)
+        self.size_log.append({"type": type_id, "rule": "項目名カードの横幅", "width_px": round(w),
+                              "scale": round(min(1.0, CARD_MAX_W / w), 3) if w else 1.0, "notes": []})
+
+    def _size(self, item, type_id, size, pattern):
+        import telop_size
+        rules, fonts = self._tools()
         styles = self.type_by_id[type_id]["styles"] if type_id in self.type_by_id else []
         if size == "auto":
             info = telop_size.auto_size(self.pj, item, styles, pattern, rules, fonts)
