@@ -23,6 +23,9 @@
   案件の値（settings。JSON。省くと <版>/_work/screen_zoom.json。札は plan_vNNN.py の SCREEN の3列目＝plan_parts/dNN_SCREEN.txt の札）：
     chrome_labels  上の帯を映さない大きさに寄せたままにする区間の札（Chrome などブラウザの画面）
     skip_labels    寄せない区間の札（社内の人名・お客さん・社内の数字が大きく映る所）
+    chrome_ids・skip_ids  上の2つを、札でなく字幕の範囲 [[最初の字幕ID, 最後の字幕ID], …]（台本の順）で書く。1つの札の区間の途中で画面が替わる時に。
+                   skip の所の赤枠は描くが、寄りの計算に入れない。2026-10-26 1025 v004：288「これでこうやってやって」で
+                   Addness の右のメニューを開くのに、284〜287 の寄りが続いてメニューが端で切れた（小川さん「全体を見れるように」）→ 288 を両方に
     slide_labels   スライドの区間の札（無ければ []）。ある時は slide_rect（スライドの所。画面の 0〜1 の [x0, y0, x1, y1]）も
     private        寄せた時に画面に入ると困る文字（人名・社内の数字・アカウント名・決済の URL など。部分一致）
     top_cut        寄せた時に映さない画面の上の割合（既定 0.12＝メニューバー・アドレス欄）
@@ -58,7 +61,7 @@ HOLD_GAP = round(2.0 * FPS)
 MIN_STATE = round(1.5 * FPS)                   # これより短い寄りは付けない（前の寄りのまま）。1秒ごとに寄りが変わると目が回る
 STROKE, COLOR = 8, (255, 30, 30, 255)
 NO_ZOOM = (1.0, 0.0, 0.0)
-KEYS = {"chrome_labels", "skip_labels", "slide_labels", "slide_rect", "private", "top_cut", "left_cut", "memo", "burned_face"}
+KEYS = {"chrome_labels", "skip_labels", "chrome_ids", "skip_ids", "slide_labels", "slide_rect", "private", "top_cut", "left_cut", "memo", "burned_face"}
 FACE_PEEK_MAX = 300                            # burned_face：寄せた顔の丸が元の丸の外に見えてよい広さ（px²。端の数 px まで）
 
 
@@ -252,10 +255,16 @@ def main():
     ctl = mp["caption_tl"]
     _, nxt = RC.caption_order(mp, capj)
     order = [c["id"] for c in capj["captions"]] if isinstance(capj, dict) else [c["id"] for c in capj]   # タイムラインの順ではなく字幕の表（台本）の順。SCREEN の範囲は継ぎ目をまたがない
+    bad_ids = [r for r in cfg.get("chrome_ids", []) + cfg.get("skip_ids", []) if len(r) != 2 or r[0] not in order or r[1] not in order]
+    if bad_ids:
+        print(f"！ settings の chrome_ids・skip_ids のうち字幕の表に無い範囲（効かない）：{bad_ids}")
     zoom_skip = set()
     for first, last, label, _why in screen_table:          # 寄せない区間の字幕
         if label.strip() in skip_labels and first in order and last in order:
             zoom_skip.update(order[order.index(first):order.index(last) + 1])
+    for r in cfg.get("skip_ids", []):
+        if r not in bad_ids:
+            zoom_skip.update(order[order.index(r[0]):order.index(r[1]) + 1])
     slides, chromes = [], []
     for first, last, label, _why in screen_table:
         if first in ctl and last in nxt:
@@ -263,6 +272,9 @@ def main():
                 slides.append((ctl[first], nxt[last]))
             if label.strip() in chrome_labels:
                 chromes.append((ctl[first], nxt[last]))
+    for r in cfg.get("chrome_ids", []):
+        if r not in bad_ids and r[0] in ctl and r[1] in nxt:
+            chromes.append((ctl[r[0]], nxt[r[1]]))
     base_slide = S.place(slide_rect, fit=(1920 * 0.98, 1080)) if slide_rect else None
     # grok v002 2回目 R2：Chrome の画面は、上の帯（アドレス欄の共有 URL・ブックマークバー）が映らない大きさに寄せたままにする（ぼかしではない）
     base_chrome = S.place((S.off_x, S.v_min * 1080, S.off_x + S.disp_w, 1080), fit=(1920, 1080))
