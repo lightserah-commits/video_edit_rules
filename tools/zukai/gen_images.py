@@ -16,7 +16,11 @@
     s0 = S("161"); r = lambda c: S(c) - s0
     spec("I01", "スパイク", "161", S("172"), [photo("p1", "img_spike_side.jpg", 510, 110, 900, 600, 0, r("162")), …],
          [(0, "ピピ"), (r("162"), "ピピ")], "161「…」横の写真 → 162「…」裏の写真")
-  使える名前：S(字幕ID)・E(字幕ID)（字幕の頭・終わりのコマ）・spec・photo・card・text・arrow・cross・tl・ZUKAI（図解のフォルダ）・OUT・json
+  使える名前：S(字幕ID)・E(字幕ID)（字幕の頭・終わりのコマ）・W(字幕ID, "言葉"[, asr="文字起こしの書き方"])（その字幕の中で言葉が聞こえ始めるコマ）・
+    spec・photo・card・text・arrow・cross・tl・ZUKAI（図解のフォルダ）・OUT・json
+  部品・区間の頭は字幕の頭（S）ではなく、その言葉の聞こえ始め（W）で書く（2026-10-27 1026 v003：S＋定数で書いた画像が、カットの直しの後に
+    声より 0.5〜3.4秒ずれた。言う前に出た物もあった。小川さん「図解のタイミングとか発声と会ってない」）。spec の前に呼んだ W は
+    <図解のフォルダ>/I??/beats.json（"f"＝画像の頭からのコマ）に書くので、tools/zukai/check_sync.py が今のカットの声と比べられる
   画像は <図解のフォルダ>/assets/ に置き、名前だけ書く（ページからは ../assets/名前）。例：examples/images_spec_example.py
 """
 import argparse
@@ -90,12 +94,16 @@ def cross(pid, x, y, size, f0, f1=None):
 
 
 SPECS = {}
+PENDING = []          # spec の前に呼んだ W（字幕ID・言葉・文字起こしの書き方・タイムラインのコマ）。spec が受け取って beats.json に書く
 
 
-def spec(key, title, anchor, end_f, parts, se, story, exit="fade"):
+def spec(key, title, anchor, end_f, parts, se, story, exit="fade", offset=0):
     """exit：最後まで出ている部品の消え方。"fade"（既定）＝最後の 15コマ（0.5秒）で薄くなる（02 の P13 image_exit）。
-    "cut"＝そのコマでパッと消す（image_exit の例外：画角の変化と同じコマで出て、その変化が終わるコマで一緒に消える時だけ）"""
-    SPECS[key] = dict(title=title, anchor=anchor, end_f=end_f, parts=parts, se=se, story=story, exit=exit)
+    "cut"＝そのコマでパッと消す（image_exit の例外：画角の変化と同じコマで出て、その変化が終わるコマで一緒に消える時だけ）
+    offset：画像の区間の頭を、目印の字幕の頭から何コマ後にするか（既定 0。部品の f0・SE のコマはこの頭から数える）。
+      目印の字幕の頭が図解の終わりと重なる時に、図解が消えた後から出す（2026-10-26 1025 v003 の I01：字幕 188 の頭が図解 Z3 の終わりと 24コマ重なった）"""
+    SPECS[key] = dict(title=title, anchor=anchor, end_f=end_f, parts=parts, se=se, story=story, exit=exit, offset=offset, words=list(PENDING))
+    PENDING.clear()
 
 
 EXIT_FADE = 15
@@ -111,7 +119,7 @@ def _auto_fade(h):
 
 def write(zdir, tl, key):
     sp = SPECS[key]
-    s0 = tl.caps[sp["anchor"]]["s"]
+    s0 = tl.caps[sp["anchor"]]["s"] + sp.get("offset", 0)
     n = sp["end_f"] - s0
     d = zdir / key
     d.mkdir(parents=True, exist_ok=True)
@@ -123,10 +131,23 @@ def write(zdir, tl, key):
             f'<link rel="stylesheet" href="../lib/zukai.css"><script src="../lib/zukai.js"></script>\n<style>{CSS}</style>\n</head><body>\n'
             f'{html}<script>\nwindow.ZUKAI = {{ frames: {n} }};\n{js}</script></body></html>\n')
     (d / "page.html").write_text(page, encoding="utf-8")
-    dj = {"key": key, "title": sp["title"], "start_f": s0, "end_f": sp["end_f"], "anchor": {"cap": sp["anchor"], "f": s0},
+    dj = {"key": key, "title": sp["title"], "start_f": s0, "end_f": sp["end_f"], "anchor": {"cap": sp["anchor"], "f": tl.caps[sp["anchor"]]["s"]},   # anchor.f は目印の字幕の頭（offset を足さない。make_zukai・shift.py がずらす量を anchor から測る）
           "wipe": {"show": False}, "se": [{"f": f, "se": s, "why": "画像が出る"} for f, s in sp["se"]], "hide_caption_ids": [],
           "removes": "", "checks": [5, max(6, n // 2), n - 5], "story": sp["story"]}
     (d / "diagram.json").write_text(json.dumps(dj, ensure_ascii=False, indent=1), encoding="utf-8")
+    seen, beats = set(), []
+    for cid, word, asr, f in sp.get("words", []):
+        if (cid, word) in seen:
+            continue
+        seen.add((cid, word))
+        b = {"part": f"w{len(beats) + 1}", "cap_id": cid, "word": word, "f": f - s0}
+        if asr:
+            b["asr"] = asr
+        beats.append(b)
+    if beats:
+        (d / "beats.json").write_text(json.dumps(beats, ensure_ascii=False, indent=1), encoding="utf-8")
+    elif (d / "beats.json").exists():
+        (d / "beats.json").unlink()
     print(f"{key}: {ts(s0)}〜{ts(sp['end_f'])}（{n}コマ）{sp['title']}")
     f0s = [int(v) for v in re.findall(r'data-f0="(-?\d+)"', html)]
     if f0s and min(f0s) > 0:
@@ -150,7 +171,16 @@ def main():
     path = Path(a.spec) if a.spec else K.zukai / "images_spec.py"
     if not path.exists():
         raise SystemExit(f"{path} が無い（tools/zukai/examples/images_spec_example.py を見て書く）")
-    env = {"S": lambda c: tl.caps[c]["s"], "E": lambda c: tl.caps[c]["e"], "spec": spec, "photo": photo, "card": card, "text": text,
+    from check_sync import Words
+    words = Words(tl)
+
+    def W(cid, word, asr=None):
+        f, why = words.onset(str(cid), word, asr)
+        if f is None:
+            raise SystemExit(f"W({cid!r}, {word!r})：{why}")
+        PENDING.append((str(cid), word, asr, f))
+        return f
+    env = {"S": lambda c: tl.caps[c]["s"], "E": lambda c: tl.caps[c]["e"], "W": W, "spec": spec, "photo": photo, "card": card, "text": text,
            "arrow": arrow, "cross": cross, "tl": tl, "ZUKAI": K.zukai, "OUT": K.out, "json": json, "__file__": str(path)}
     exec(compile(path.read_text(encoding="utf-8"), str(path), "exec"), env)
     for k in a.keys or sorted(SPECS):

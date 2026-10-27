@@ -31,6 +31,7 @@ def main():
                   and (K.out / p.name / "manifest.json").exists())
     if a.keys:
         dirs = [p for p in dirs if p.name in a.keys]
+    failed = []                                      # 1026 v003：1つ目（I06）で止まって残りを見ず、組み立ての grep が止まったことを隠した。全部見てから止まる
     for ddir in dirs:
         k = ddir.name
         d = json.load(open(ddir / "diagram.json", encoding="utf-8"))
@@ -40,11 +41,23 @@ def main():
         sh = now - d["anchor"]["f"]
         S, E = d["start_f"] + sh, d["end_f"] + sh
         assert m["tl_start_f"] in (d["start_f"] + m.get("shift", 0), d["start_f"]), (k, m["tl_start_f"], d["start_f"])
-        old = [list(x) for x in m["src_ranges"]]
+        def merged(rs):   # 接している区間（カメラのクリップを分けただけ。1021 v001：強調の寄りを聞こえ始めで分けた split）は1つに数える
+            out = []
+            for a, b in rs:
+                if out and out[-1][1] == a:
+                    out[-1][1] = b
+                else:
+                    out.append([a, b])
+            return out
+        # 比べる相手は「描いた時」の素材のコマ（overlay と同じフォルダの manifest）。版の manifest の src_ranges は前に時刻を手で直した時に
+        # 書き換わっていることがある（1026 v003：11:09 のカットに書き換えた表と比べて、v001 で描いた Z2〜Z6 を「ずらすだけで合う」とした）
+        dp = Path(m.get("overlay", {}).get("file", "")).parent / "manifest.json"
+        ref = json.load(open(dp, encoding="utf-8"))["src_ranges"] if dp.exists() else m["src_ranges"]
+        old = merged([list(x) for x in ref])
 
         def try_src(S_, E_):
             try:
-                return [list(x) for x in src_ranges(tl, S_, E_)]
+                return merged([list(x) for x in src_ranges(tl, S_, E_)])
             except AssertionError:
                 return None
         src = try_src(S, E)
@@ -55,7 +68,10 @@ def main():
                     S, E, sh = S + d_, E + d_, sh + d_
                     src = old
                     break
-        assert src == old, f"{k}：図解の区間の素材のコマが変わった（描き直しが要る）{old} → {src}"
+        if src != old:
+            print(f"!! {k}：図解の区間の素材のコマが変わった（描き直しが要る。時刻だけずらしても声と合わない）{old} → {src}")
+            failed.append(k)
+            continue
         hide = d.get("hide_caption_ids", "auto")
         if hide == "auto":
             hide = [i for i in tl.ids if tl.caps[i]["s"] < E and S < tl.caps[i]["e"]]
@@ -72,6 +88,9 @@ def main():
         d["start_f"], d["end_f"] = S, E
         d["anchor"]["f"] = now                       # 次に回した時のずらしは 0（start_f は素材で合わせた S）
         json.dump(d, open(ddir / "diagram.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    if failed:
+        print(f"!! 描き直しが要る {len(failed)}個：{' '.join(failed)}（make_zukai.py で部品の時刻を今のカットの声に付け直して描く。確かめは check_sync.py）")
+        sys.exit(1)
 
 
 if __name__ == "__main__":

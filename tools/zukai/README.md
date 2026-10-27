@@ -69,6 +69,11 @@ dots v002 の図解（小川さん OK）と同じ作り方を、環境設定 v00
    - 「!!」の注意（画面の端・ワイプに重なる・画面を映している所に重なる）は直す
    - `out/<KEY>/previews/` の画像（カメラ＋図解＋ワイプを重ねた絵。Premiere のリニア合成に近い見え方）を全部見て、読めるか・重ならないか・言葉と合うかを確かめる。`動き_<KEY>.mp4` は半分の大きさの動き（音なし）
    - 別の AI に反証してもらう（髪の上が切れる・顔にかかる・言っていない字・出るのが言葉より遅い）
+4'. 部品と声を合わせる（2026-10-27 1026 v003 から。小川さん「図解のタイミングとか発声と会ってない」）：部品ごとに「どの字幕のどの言葉で出すか」を
+   `<KEY>/beats.json`（`[{"part": "ima", "cap_id": "96", "word": "今"}, …, {"part": "END", "cap_id": "132", "at": "cap"}]`）に書き、
+   `python3 tools/zukai/retime.py --ver <版> [--dry] <KEY>` で page.html の const F・frames と diagram.json を言葉の聞こえ始めから付け直してから描く。
+   カットが変わって区間の中が変わったら、retime.py → make_zukai.py で描き直す（時刻をずらすだけでは合わない）。
+   描いた後は `python3 tools/zukai/check_sync.py --ver <版> [KEY …]`（部品と声のずれ。-0.15〜+0.30秒の外と、描いた時と今のカットの差を落第にする）で 0 にする
 5. 組み立て：build が `out/<KEY>/manifest.json` を読み、Z* は V15 に overlay・V16 に wipe、I*・L* は V16 に overlay を置く。make が `hide_caption_ids` の字幕・右上タイトルを外し、`se_events` を鳴らす
    （manifest の中身は make_zukai.py の build() の最後）
 
@@ -76,10 +81,13 @@ dots v002 の図解（小川さん OK）と同じ作り方を、環境設定 v00
 
 `<図解のフォルダ>/images_spec.py` に1か所1行で書き（`examples/images_spec_example.py`）、`python3 tools/zukai/gen_images.py --ver <版> [I01 …]` で page.html と diagram.json を作る
 （黒い板・ワイプなし）。そのあと `make_zukai.py I01`。写真は白い縁・角丸・影でポンと出す、ロゴは白いカードで流れてくる、言葉の頭に出す。顔・右上のタイトル・強調の帯にかけない。
+部品と区間の頭は、字幕の頭からの定数（`S("22") + 28`）ではなく `W("字幕ID", "言葉"[, asr="文字起こしの書き方"])`（その言葉の聞こえ始め）で書く。
+W は `I??/beats.json` に残り、`check_sync.py` が今のカットの声と比べる（1026 v003：S＋定数の画像が、カットの直しの後に 0.5〜3.4秒ずれた）
 
 ## カットが変わった時
 
-- 字幕が動いただけ：`python3 tools/zukai/shift.py --ver <新しい版> [--dry]`（描き直さず manifest と diagram.json の時刻を直す。区間の素材のコマが変わったら止まる＝描き直し）
+- 字幕が動いただけ：`python3 tools/zukai/shift.py --ver <新しい版> [--dry]`（描き直さず manifest と diagram.json の時刻を直す。区間の素材のコマが描いた時から変わった物があれば、全部を見てから終了コード 1 で止まる＝描き直し。組み立てのスクリプトでこの失敗を隠さない）
+- 組み立ての後：`check_sync.py` で部品と声のずれを数える（落第 0 で渡す）
 - 図解の頭がカットより数コマ後で、素のカメラが一瞬出る：`python3 tools/zukai/head_pad.py --ver <版> <KEY>`（目印の字幕の頭まで。overlay・wipe は新しい名前）
 - 新しい版のフォルダに図解を写して使う時は、`out/` の manifest が前の版の overlay を指したままでよい（ファイルは前の版のフォルダに残す）
 
@@ -90,7 +98,9 @@ dots v002 の図解（小川さん OK）と同じ作り方を、環境設定 v00
 | `make_zukai.py` | 描く → overlay・wipe・確かめの画像・manifest（`--check`・`--previews`・`--name=auto`） |
 | `tl.py` | タイムラインのコマと字幕・言葉の時刻 |
 | `gen_images.py` | 画像を出す所の page.html・diagram.json（`images_spec.py` から） |
-| `shift.py` | 字幕が動いた分だけ時刻をずらす（描き直さない） |
+| `shift.py` | 字幕が動いた分だけ時刻をずらす（描き直さない。描き直しが要る物があれば止まる） |
+| `retime.py` | beats.json（部品ごとの字幕と言葉）から、図解の部品の出るコマを今の版の声に付け直す |
+| `check_sync.py` | 図解・画像の部品と声のずれ・描いた時と今のカットの差を数える（工程9） |
 | `head_pad.py` | 図解の頭を数コマ前へ倒す（描き直さない） |
 | `run_zukai.py` | make_zukai.py を順に回す（止まったらやり直す） |
 | `case.py` | 案件・版の置き場所を決める |
