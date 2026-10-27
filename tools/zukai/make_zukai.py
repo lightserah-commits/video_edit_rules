@@ -78,7 +78,9 @@ def make_base(work, S, E, src, cam):
     """図解の区間のカメラ（版と同じカットで素材からつなぎ直したもの）。ワイプと確かめの画像の元"""
     base = work / "base.mp4"
     n = E - S
-    if base.exists() and count_frames(base) == n:
+    srcf = work / "base_src.json"                   # 2026-10-27 1026 v004：作った時の素材のコマ。コマ数だけ見て使い回すと、区間が2コマ動いて
+    #                                                  長さが同じ時に古い base（＝古いワイプ。Z3 のワイプが声より2コマ早い）を使った
+    if base.exists() and count_frames(base) == n and srcf.exists() and json.load(open(srcf)) == [list(x) for x in src]:
         return base
     if not Path(cam).exists():
         raise SystemExit(f"カメラが無い：{cam}（--cam で渡す）")
@@ -90,6 +92,7 @@ def make_base(work, S, E, src, cam):
          "-c:v", "libx264", "-crf", "12", "-preset", "fast", "-threads", "2", "-pix_fmt", "yuv420p", base])
     got = count_frames(base)
     assert got == n, f"カメラのコマ数が合わない {got}/{n}"
+    json.dump([list(x) for x in src], open(srcf, "w"))
     return base
 
 
