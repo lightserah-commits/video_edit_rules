@@ -312,6 +312,10 @@ def build(key, mode=""):
                 raise SystemExit(f"{overlay.name} はもうある（上書きしない。別の名前か --name=auto）")
         print(f"  overlay の名前：{overlay.name}")
     wipe = odir / "wipe.mp4"
+    if NAME and overlay.name.startswith("overlay"):
+        # 2026-10-27 1026 v004：描き直した wipe を同じ名前（wipe.mp4）で上書きしたら、前の組み立てを開いていた Premiere が古いファイルの情報のまま
+        #   Media Encoder の書き出しが「フレーム 17 の取得エラー」で止まった。overlay と同じく新しい名前（overlay_r3.mov → wipe_r3.mp4）で書く
+        wipe = odir / (overlay.stem.replace("overlay", "wipe", 1) + ".mp4")
     crop = d.get("wipe", {}).get("crop")
     how = "diagram.json の crop"
     if wipe_show and not crop:

@@ -65,7 +65,8 @@ dots v002 の図解（小川さん OK）と同じ作り方を、環境設定 v00
    - 公式のロゴや画面・写真は `<図解のフォルダ>/assets/` に置いて `../assets/名前` で読む。どこから取ったかを `assets/出どころ.md` に書く（使う許しの範囲も）
    - CSS の animation・transition・setTimeout・Math.random・Date は使わない（コマごとに同じ絵にならない）
 4. 作る：`python3 tools/zukai/make_zukai.py --ver <版> <KEY>`（採寸だけなら `--check`、描いたコマのまま画像だけ作り直すなら `--previews`。
-   作り直しで前の overlay を残すなら `--name=auto`）。いくつも作る時・Chrome が止まる時は `run_zukai.py`（420秒で打ち切って3回まで）
+   作り直しで前の overlay を残すなら `--name=auto`。この時 wipe も overlay と同じ番号の新しい名前〈overlay_r3.mov → wipe_r3.mp4〉で書く。
+   同じ名前で上書きすると、前の組み立てを開いていた Premiere が古いファイルの情報のまま、書き出しが「フレームの取得エラー」で止まった＝1026 v004）。いくつも作る時・Chrome が止まる時は `run_zukai.py`（420秒で打ち切って3回まで）
    - 「!!」の注意（画面の端・ワイプに重なる・画面を映している所に重なる）は直す
    - `out/<KEY>/previews/` の画像（カメラ＋図解＋ワイプを重ねた絵。Premiere のリニア合成に近い見え方）を全部見て、読めるか・重ならないか・言葉と合うかを確かめる。`動き_<KEY>.mp4` は半分の大きさの動き（音なし）
    - 別の AI に反証してもらう（髪の上が切れる・顔にかかる・言っていない字・出るのが言葉より遅い）
