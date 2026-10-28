@@ -17,6 +17,7 @@
   --quality low|medium|high（既定 medium。試しは low、仕上げは high）・--n 1〜4・--dry（送らずに中身だけ見る）
   --ref 顔.png（何枚でも）：参考の画像を渡して作る（images/edits）。演者の顔を似せる時（2026-10-12 小川さん「演者の顔を必要であれば参考元に」）。
     --fidelity は gpt-image-2.5-flare では使えない（既定 none）。参考の画像は OpenAI に送られるので、ユーザーが許した人の顔だけにする
+  --mask 顔だけ透明.png：1枚目の --ref の絵の、透明にした所だけ描き直す（images/edits の mask。1枚目と同じ大きさの PNG。2026-10-28 1026 v005 顔の再現係）
   --moderation low|auto（既定 low＝API の検査を緩くする。2026-10-21 ユーザー「lowで行ける様にしてほしい」。auto は API の既定で、機種名だけで断られた 1017 v008）。
     --ref の時（images/edits）は API がこの設定を受け付けないので送らない（auto のまま）
 """
@@ -110,6 +111,7 @@ def main():
     ap.add_argument("--ref", action="append", default=[], help="参考の画像（何回でも）。あれば images/edits で作る")
     ap.add_argument("--fidelity", default="none", choices=["high", "low", "none"], help="--ref の顔の寄せ方（none＝送らない。gpt-image-2.5-flare は受け付けない 2026-10-12）")
     ap.add_argument("--moderation", default="low", choices=["low", "auto"], help="API の検査の強さ（既定 low＝緩く。--ref の時は送らない）")
+    ap.add_argument("--mask", help="描き直す所を透明にした PNG（1枚目の --ref と同じ大きさ。透明の所だけ描き直す。images/edits の mask）")
     a = ap.parse_args()
 
     now = dt.datetime.now()
@@ -134,8 +136,10 @@ def main():
             "background": a.background, "output_format": a.format, "n": a.n}
     if not a.ref:
         body["moderation"] = a.moderation      # images/edits は受け付けない（公式の API の説明、2026-10-21 確認）
+    if a.mask and not a.ref:
+        ap.error("--mask は --ref（描き直す元の絵を1枚目に）と一緒に使う")
     if a.dry:
-        print(json.dumps(dict(body, ref=a.ref), ensure_ascii=False, indent=2))
+        print(json.dumps(dict(body, ref=a.ref, input_fidelity=a.fidelity, mask=a.mask), ensure_ascii=False, indent=2))
         print(f"置く所：{folder}　今月：${spent:.3f}")
         return
 
@@ -154,6 +158,10 @@ def main():
             mt = mimetypes.guess_type(rp.name)[0] or "image/png"
             parts.append(f'--{bnd}\r\nContent-Disposition: form-data; name="image[]"; filename="{rp.name}"\r\n'
                          f'Content-Type: {mt}\r\n\r\n'.encode() + rp.read_bytes() + b"\r\n")
+        if a.mask:
+            mp = Path(os.path.expanduser(a.mask))
+            parts.append(f'--{bnd}\r\nContent-Disposition: form-data; name="mask"; filename="{mp.name}"\r\n'
+                         f'Content-Type: image/png\r\n\r\n'.encode() + mp.read_bytes() + b"\r\n")
         parts.append(f"--{bnd}--\r\n".encode())
         req = urllib.request.Request(API_EDIT, data=b"".join(parts), method="POST",
                                      headers={"Authorization": f"Bearer {api_key()}", "Content-Type": f"multipart/form-data; boundary={bnd}"})
