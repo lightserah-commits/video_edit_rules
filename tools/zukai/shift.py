@@ -40,6 +40,10 @@ def main():
         now = tl.caps[d["anchor"]["cap"]]["s"]
         sh = now - d["anchor"]["f"]
         S, E = d["start_f"] + sh, d["end_f"] + sh
+        hp = (m.get("head_pad") or {}).get("frames", 0)   # 2026-10-28 1026 v005：head_pad.py で頭を前倒しした図解（manifest の tl_start_f が diagram.json より hp コマ前）
+        if hp and m["tl_start_f"] == d["start_f"] - hp and sh == 0:
+            print(f"{k}: 頭を {hp}コマ前倒し済み（head_pad）・ずれ 0 なのでそのまま")
+            continue
         assert m["tl_start_f"] in (d["start_f"] + m.get("shift", 0), d["start_f"]), (k, m["tl_start_f"], d["start_f"])
         def merged(rs):   # 接している区間（カメラのクリップを分けただけ。1021 v001：強調の寄りを聞こえ始めで分けた split）は1つに数える
             out = []
