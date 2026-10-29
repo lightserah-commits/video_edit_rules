@@ -44,7 +44,13 @@ def main():
         if hp and m["tl_start_f"] == d["start_f"] - hp and sh == 0:
             print(f"{k}: 頭を {hp}コマ前倒し済み（head_pad）・ずれ 0 なのでそのまま")
             continue
-        assert m["tl_start_f"] in (d["start_f"] + m.get("shift", 0), d["start_f"]), (k, m["tl_start_f"], d["start_f"])
+        if hp and m["tl_start_f"] == d["start_f"] - hp:
+            # 2026-10-29 1027 v001：head_pad した図解より前でカットが変わった時も止めずに、前倒しを保ったまま全体をずらす
+            #   （manifest の src_ranges は head_pad.py が前倒しした区間で書き直してあるので、比べる区間も前倒しした頭から）
+            S -= hp
+        else:
+            hp = 0
+            assert m["tl_start_f"] in (d["start_f"] + m.get("shift", 0), d["start_f"]), (k, m["tl_start_f"], d["start_f"])
         def merged(rs):   # 接している区間（カメラのクリップを分けただけ。1021 v001：強調の寄りを聞こえ始めで分けた split）は1つに数える
             out = []
             for a, b in rs:
@@ -89,7 +95,7 @@ def main():
         m.update({"tl_start_f": S, "tl_end_f": E, "tl_start": ts(S), "tl_end": ts(E), "hide_caption_ids": hide,
                   "shifted": {"frames": sh, "anchor": d["anchor"]["cap"], "ver": K.ver.name, "how": "tools/zukai/shift.py（描き直さず時刻だけ）"}})
         json.dump(m, open(mp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-        d["start_f"], d["end_f"] = S, E
+        d["start_f"], d["end_f"] = S + hp, E          # head_pad した図解は diagram.json を前倒しする前の頭のまま持つ
         d["anchor"]["f"] = now                       # 次に回した時のずらしは 0（start_f は素材で合わせた S）
         json.dump(d, open(ddir / "diagram.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     if failed:
