@@ -29,6 +29,9 @@
     slide_labels   スライドの区間の札（無ければ []）。ある時は slide_rect（スライドの所。画面の 0〜1 の [x0, y0, x1, y1]）も
     private        寄せた時に画面に入ると困る文字（人名・社内の数字・アカウント名・決済の URL など。部分一致）
     top_cut        寄せた時に映さない画面の上の割合（既定 0.12＝メニューバー・アドレス欄）
+    chrome_top_cut Chrome の区間（chrome_labels・chrome_ids）だけ、上をこの割合まで切る（省くと top_cut。横が少しはみ出しても上の帯を切る）。
+                   2026-10-30 1029 v003：Chrome の窓が別の窓の下にあり、ブックマークの帯（0.148〜0.171）が top_cut 0.124 より下に映った。
+                   アドレス欄の URL も 0.124 の線にかかって private に当たり、Chrome の区間ごと寄せなくなっていた → 0.175
     left_cut       寄せた時に映さない画面の左の割合（既定 0.165＝左の一覧＝会話の履歴など）。箱がここにかかる時は寄せない
     burned_face    画面録画に焼き込まれた顔の丸（Loom の顔の丸など）。[真ん中 x, 真ん中 y, 半径]（画面録画の素材の px）。書いた時は、寄せた画面で
                    その丸が「寄せていない時の丸の所」の外に見える寄せ方を避ける（倍率を 0.05 ずつ下げ、だめなら寄せない）。顔は別に重ねる
@@ -61,7 +64,7 @@ HOLD_GAP = round(2.0 * FPS)
 MIN_STATE = round(1.5 * FPS)                   # これより短い寄りは付けない（前の寄りのまま）。1秒ごとに寄りが変わると目が回る
 STROKE, COLOR = 8, (255, 30, 30, 255)
 NO_ZOOM = (1.0, 0.0, 0.0)
-KEYS = {"chrome_labels", "skip_labels", "chrome_ids", "skip_ids", "slide_labels", "slide_rect", "private", "top_cut", "left_cut", "memo", "burned_face"}
+KEYS = {"chrome_labels", "skip_labels", "chrome_ids", "skip_ids", "slide_labels", "slide_rect", "private", "top_cut", "chrome_top_cut", "left_cut", "memo", "burned_face"}
 FACE_PEEK_MAX = 300                            # burned_face：寄せた顔の丸が元の丸の外に見えてよい広さ（px²。端の数 px まで）
 
 
@@ -278,6 +281,10 @@ def main():
     base_slide = S.place(slide_rect, fit=(1920 * 0.98, 1080)) if slide_rect else None
     # grok v002 2回目 R2：Chrome の画面は、上の帯（アドレス欄の共有 URL・ブックマークバー）が映らない大きさに寄せたままにする（ぼかしではない）
     base_chrome = S.place((S.off_x, S.v_min * 1080, S.off_x + S.disp_w, 1080), fit=(1920, 1080))
+    ct = cfg.get("chrome_top_cut")
+    if ct:                                        # 1029 v003（2026-10-30）：上を ct まで切り、下の端を画面の下にそろえる（横は真ん中。はみ出す分は左右に）
+        zc = 1 / (1 - ct)
+        base_chrome = (round(zc, 4), 0.0, round(-540 - zc * (ct * 1080 - 540), 1))
     frames = sorted(rfj["frames"], key=lambda f: f["start"])
     states_all, ramps_all = [], []
     priv = private_boxes(ocr_dir, private)
