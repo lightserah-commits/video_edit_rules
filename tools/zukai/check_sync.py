@@ -113,6 +113,9 @@ def main():
         if a.keys and k not in a.keys:
             continue
         S, E = m["tl_start_f"], m["tl_end_f"]
+        # 2026-10-29 1027 v001：頭に1コマ目を足した overlay（head_pad.py の head_pad.frames・案件の道具が書く pad_head_f）は、
+        #   部品のコマ（page.html の F）が足した分だけ後ろにある。足した分を数えないと、部品と SE が足したコマ数だけ早く・遅く出た（I04・Z1・Z2・Z4）
+        S_parts = S + (m.get("head_pad") or {}).get("frames", 0) + int(m.get("pad_head_f", 0))
         drawn_p = Path(m.get("overlay", {}).get("file", "")).parent / "manifest.json"
         dm = json.load(open(drawn_p, encoding="utf-8")) if drawn_p.exists() else m
         r = {"key": k, "range": f"{ts(S)}〜{ts(E)}", "drawn": str(drawn_p), "beats": [], "unmeasured": []}
@@ -154,9 +157,11 @@ def main():
             for b in json.load(open(bp, encoding="utf-8")):
                 f0 = b.get("f", dF0.get(b["part"]))
                 if f0 is not None and b["part"] != "END":
-                    by_f.setdefault(S + int(f0), b)
+                    by_f.setdefault(S_parts + int(f0), b)
         for ev in m.get("se_events", []):
             b = by_f.get(ev["tl_f"])
+            if not b and S_parts != S and ev["tl_f"] == S:   # head_pad.py は出だしの SE も足した頭へ動かす。頭の部品と同じ物差しで測る
+                b = by_f.get(S_parts)
             if b:
                 rows.append(("SE " + ev.get("se", ""), ev["tl_f"], str(b["cap_id"]), b.get("word", ""), b.get("asr"), b.get("pad", 0), b.get("at")))
                 continue
@@ -175,7 +180,7 @@ def main():
                 if f is None:
                     r["unmeasured"].append({"part": b["part"], "at": "", "why": "F の表に無い"})
                     continue
-                rows.append((b["part"], S + int(f), str(b["cap_id"]), b.get("word", ""), b.get("asr"), b.get("pad", 0), b.get("at")))
+                rows.append((b["part"], S_parts + int(f), str(b["cap_id"]), b.get("word", ""), b.get("asr"), b.get("pad", 0), b.get("at")))
         for part, f, cid, q, hint, pad, at in rows:
             if at == "cap":                              # 字幕の頭に付けた部品：今の版の字幕の頭と比べる（カットが変わったら分かる）
                 c_ = tl.caps.get(cid)
