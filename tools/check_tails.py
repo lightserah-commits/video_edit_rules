@@ -107,7 +107,9 @@ def main():
         wj = json.load(open(a.words))
         segs = wj["segments"] if isinstance(wj, dict) else wj
         off = a.words_offset if a.words_offset is not None else hl / a.fps
-        all_words = sorted([w["start"] - off, w["end"] - off, w["word"]] for s in segs for w in s.get("words", []))
+        # 2026-10-29 1027 v001：find_fillers.py --mp4 の文字起こし（<mp4>_filler_asr.json）は語が [始め, 終わり, 語] の並び。辞書の形と両方読む
+        all_words = sorted([(w[0] if isinstance(w, list) else w["start"]) - off, (w[1] if isinstance(w, list) else w["end"]) - off,
+                            w[2] if isinstance(w, list) else w["word"]] for s in segs for w in s.get("words", []))
         aw_start = [w[0] for w in all_words]
     rows, n_ok, n_cmp, n_mid = [], 0, 0, 0
     for k in range(1, len(keep)):
