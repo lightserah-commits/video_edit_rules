@@ -32,6 +32,10 @@
     chrome_top_cut Chrome の区間（chrome_labels・chrome_ids）だけ、上をこの割合まで切る（省くと top_cut。横が少しはみ出しても上の帯を切る）。
                    2026-10-30 1029 v003：Chrome の窓が別の窓の下にあり、ブックマークの帯（0.148〜0.171）が top_cut 0.124 より下に映った。
                    アドレス欄の URL も 0.124 の線にかかって private に当たり、Chrome の区間ごと寄せなくなっていた → 0.175
+    top_ok_ids     字幕の範囲 [[最初の字幕ID, 最後の字幕ID], …]。この字幕の赤枠だけ、上の帯（top_cut）にかかる箱も、上の帯ごと映して寄せる。
+                   2026-10-30 1029 v004：Claude のアプリの会話の頭（送った頼み）やファイルの一覧の頭を囲んだ枠が top_cut 0.124 の線より上から始まり、
+                   「上の帯にかかる箱」で寄せていなかった（339・1036・1124・1285）。上の帯は会話の見出しだけで、小川さんが Chrome の上の帯も
+                   映ってよいとした（判断シート Q4）ので、寄せていない赤枠を寄せる（Q5）ためにこの字幕だけ上の帯を映す
     left_cut       寄せた時に映さない画面の左の割合（既定 0.165＝左の一覧＝会話の履歴など）。箱がここにかかる時は寄せない
     burned_face    画面録画に焼き込まれた顔の丸（Loom の顔の丸など）。[真ん中 x, 真ん中 y, 半径]（画面録画の素材の px）。書いた時は、寄せた画面で
                    その丸が「寄せていない時の丸の所」の外に見える寄せ方を避ける（倍率を 0.05 ずつ下げ、だめなら寄せない）。顔は別に重ねる
@@ -64,7 +68,7 @@ HOLD_GAP = round(2.0 * FPS)
 MIN_STATE = round(1.5 * FPS)                   # これより短い寄りは付けない（前の寄りのまま）。1秒ごとに寄りが変わると目が回る
 STROKE, COLOR = 8, (255, 30, 30, 255)
 NO_ZOOM = (1.0, 0.0, 0.0)
-KEYS = {"chrome_labels", "skip_labels", "chrome_ids", "skip_ids", "slide_labels", "slide_rect", "private", "top_cut", "chrome_top_cut", "left_cut", "memo", "burned_face"}
+KEYS = {"chrome_labels", "skip_labels", "chrome_ids", "skip_ids", "top_ok_ids", "slide_labels", "slide_rect", "private", "top_cut", "chrome_top_cut", "left_cut", "memo", "burned_face"}
 FACE_PEEK_MAX = 300                            # burned_face：寄せた顔の丸が元の丸の外に見えてよい広さ（px²。端の数 px まで）
 
 
@@ -258,9 +262,9 @@ def main():
     ctl = mp["caption_tl"]
     _, nxt = RC.caption_order(mp, capj)
     order = [c["id"] for c in capj["captions"]] if isinstance(capj, dict) else [c["id"] for c in capj]   # タイムラインの順ではなく字幕の表（台本）の順。SCREEN の範囲は継ぎ目をまたがない
-    bad_ids = [r for r in cfg.get("chrome_ids", []) + cfg.get("skip_ids", []) if len(r) != 2 or r[0] not in order or r[1] not in order]
+    bad_ids = [r for r in cfg.get("chrome_ids", []) + cfg.get("skip_ids", []) + cfg.get("top_ok_ids", []) if len(r) != 2 or r[0] not in order or r[1] not in order]
     if bad_ids:
-        print(f"！ settings の chrome_ids・skip_ids のうち字幕の表に無い範囲（効かない）：{bad_ids}")
+        print(f"！ settings の chrome_ids・skip_ids・top_ok_ids のうち字幕の表に無い範囲（効かない）：{bad_ids}")
     zoom_skip = set()
     for first, last, label, _why in screen_table:          # 寄せない区間の字幕
         if label.strip() in skip_labels and first in order and last in order:
@@ -268,6 +272,11 @@ def main():
     for r in cfg.get("skip_ids", []):
         if r not in bad_ids:
             zoom_skip.update(order[order.index(r[0]):order.index(r[1]) + 1])
+    top_ok = set()                                       # 上の帯ごと映して寄せる赤枠の字幕（1029 v004）
+    for r in cfg.get("top_ok_ids", []):
+        if r not in bad_ids:
+            top_ok.update(order[order.index(r[0]):order.index(r[1]) + 1])
+    S_top = Screen(sw, sh, 0.0, cfg.get("left_cut", 0.165)) if top_ok else None
     slides, chromes = [], []
     for first, last, label, _why in screen_table:
         if first in ctl and last in nxt:
@@ -306,14 +315,15 @@ def main():
                 continue
             zmin = base_at(s)[0]
             in_slide = any(a <= s < b for a, b in slides)
-            pz = S.place(fr["rect_px"], zmin=zmin, bounds=slide_rect if in_slide else None)
+            SS = S_top if S_top and (fr["id_from"] in top_ok or fr["id_to"] in top_ok) else S
+            pz = SS.place(fr["rect_px"], zmin=zmin, bounds=slide_rect if in_slide else None)
             if pz is None:                               # 左の一覧にかかる箱：寄せず、その所の元の寄り（スライドの大きさ）のまま
                 pz = base_at(s)
             if face and pz != NO_ZOOM and S.face_peek(pz, face) > FACE_PEEK_MAX:
                 # burned_face（AI動画編集 v006）：寄せると焼き込みの顔の丸が元の丸の外にはみ出して見える → 倍率を下げる。だめなら寄せない
                 alt, zt = None, round(pz[0] - 0.05, 4)
                 while zt >= ZMIN_USE:
-                    q = S.place(fr["rect_px"], zmin=zmin, bounds=slide_rect if in_slide else None, zmax=zt)
+                    q = SS.place(fr["rect_px"], zmin=zmin, bounds=slide_rect if in_slide else None, zmax=zt)
                     if q is None:
                         break
                     if q == NO_ZOOM or S.face_peek(q, face) <= FACE_PEEK_MAX:
