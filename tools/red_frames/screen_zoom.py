@@ -36,6 +36,13 @@
                    2026-10-30 1029 v004：Claude のアプリの会話の頭（送った頼み）やファイルの一覧の頭を囲んだ枠が top_cut 0.124 の線より上から始まり、
                    「上の帯にかかる箱」で寄せていなかった（339・1036・1124・1285）。上の帯は会話の見出しだけで、小川さんが Chrome の上の帯も
                    映ってよいとした（判断シート Q4）ので、寄せていない赤枠を寄せる（Q5）ためにこの字幕だけ上の帯を映す
+    fixed_zoom     [{"ids": [最初の字幕ID, 最後の字幕ID], "zoom": [倍率, cx, cy], "ramp_after": true/false}, …]。この字幕の赤枠は、計算せずにこの寄りにする
+                   （短い枠が前の寄りを引き継いで端で切れる所を、全部の枠が入る1つの寄りにまとめる時に）。ramp_after：この寄りから元の大きさへ戻る時、
+                   戻る動き（0.3秒）を最後の枠の後に置く（既定は枠の終わりの手前に置くので、短い枠が 0.3秒削られる）。
+                   2026-10-30 1029 v004 確かめ係：339〜365・1042〜1044 で、短い枠が前の寄りを引き継いで上の端で切れた／1037 が 0.37秒になった
+    jump_ids       字幕の範囲 [[最初の字幕ID, 最後の字幕ID], …]。この字幕で終わる赤枠（id_to）の寄りに変わる時、手前（前の枠の終わりから 2秒以内）に
+                   画面のクリップの切れ目があれば、その切れ目で一気に変える（流さない）。画面が別の物に替わる所に使う。
+                   2026-10-30 1029 v004 確かめ係：1088 で画面が替わった後も 2倍のまま 0.3秒残り、その後 端から端へ斜めに流れた
     left_cut       寄せた時に映さない画面の左の割合（既定 0.165＝左の一覧＝会話の履歴など）。箱がここにかかる時は寄せない
     burned_face    画面録画に焼き込まれた顔の丸（Loom の顔の丸など）。[真ん中 x, 真ん中 y, 半径]（画面録画の素材の px）。書いた時は、寄せた画面で
                    その丸が「寄せていない時の丸の所」の外に見える寄せ方を避ける（倍率を 0.05 ずつ下げ、だめなら寄せない）。顔は別に重ねる
@@ -68,7 +75,7 @@ HOLD_GAP = round(2.0 * FPS)
 MIN_STATE = round(1.5 * FPS)                   # これより短い寄りは付けない（前の寄りのまま）。1秒ごとに寄りが変わると目が回る
 STROKE, COLOR = 8, (255, 30, 30, 255)
 NO_ZOOM = (1.0, 0.0, 0.0)
-KEYS = {"chrome_labels", "skip_labels", "chrome_ids", "skip_ids", "top_ok_ids", "slide_labels", "slide_rect", "private", "top_cut", "chrome_top_cut", "left_cut", "memo", "burned_face"}
+KEYS = {"chrome_labels", "skip_labels", "chrome_ids", "skip_ids", "top_ok_ids", "fixed_zoom", "jump_ids", "slide_labels", "slide_rect", "private", "top_cut", "chrome_top_cut", "left_cut", "memo", "burned_face"}
 FACE_PEEK_MAX = 300                            # burned_face：寄せた顔の丸が元の丸の外に見えてよい広さ（px²。端の数 px まで）
 
 
@@ -277,6 +284,30 @@ def main():
         if r not in bad_ids:
             top_ok.update(order[order.index(r[0]):order.index(r[1]) + 1])
     S_top = Screen(sw, sh, 0.0, cfg.get("left_cut", 0.165)) if top_ok else None
+    fixed, ramp_after = {}, set()                        # 字幕 → 決めた寄り（1029 v004）
+    for g in cfg.get("fixed_zoom", []):
+        a_, b_ = g["ids"]
+        if a_ not in order or b_ not in order:
+            print(f"！ fixed_zoom の字幕が表に無い（効かない）：{g['ids']}")
+            continue
+        pz_ = tuple(float(v) for v in g["zoom"])
+        for c in order[order.index(a_):order.index(b_) + 1]:
+            fixed[c] = pz_
+        if g.get("ramp_after"):
+            ramp_after.add(pz_)
+    jump_set = set()
+    for r in cfg.get("jump_ids", []):
+        if r[0] in order and r[1] in order:
+            jump_set.update(order[order.index(r[0]):order.index(r[1]) + 1])
+        else:
+            print(f"！ jump_ids の字幕が表に無い（効かない）：{r}")
+    jump_starts = set()
+    clip_starts = []
+    if jump_set:
+        _x = open(xml_p, encoding="utf-8").read()
+        clip_starts = sorted(int(m_.group(1)) for m_ in re.finditer(
+            r'<clipitem id="clip-\d+"><name>' + re.escape(args.clip) + r'</name><enabled>TRUE</enabled>.*?<start>(\d+)</start>', _x, re.S))
+    jumps = 0
     slides, chromes = [], []
     for first, last, label, _why in screen_table:
         if first in ctl and last in nxt:
@@ -311,11 +342,16 @@ def main():
             s, e = fr["start"] // FT, fr["end"] // FT
             if e <= A or s >= B:
                 continue
+            if fr["id_to"] in jump_set:
+                jump_starts.add(max(s, A))
             if fr["id_from"] in zoom_skip or fr["id_to"] in zoom_skip:
                 continue
             zmin = base_at(s)[0]
             in_slide = any(a <= s < b for a, b in slides)
             SS = S_top if S_top and (fr["id_from"] in top_ok or fr["id_to"] in top_ok) else S
+            if fr["id_from"] in fixed or fr["id_to"] in fixed:
+                tg.append((max(s, A), min(e, B), fixed.get(fr["id_from"]) or fixed[fr["id_to"]], True))   # True：1.5秒より短くても前の寄りにしない
+                continue
             pz = SS.place(fr["rect_px"], zmin=zmin, bounds=slide_rect if in_slide else None)
             if pz is None:                               # 左の一覧にかかる箱：寄せず、その所の元の寄り（スライドの大きさ）のまま
                 pz = base_at(s)
@@ -379,10 +415,24 @@ def main():
             if merged and merged[-1][1] == p:
                 continue
             merged.append([f, p])
+        jump_k = set()
+        for k in range(1, len(merged)):
+            f = merged[k][0]
+            if merged[k - 1][1] in ramp_after and merged[k][1] == NO_ZOOM:      # 戻る動きを枠の後に（fixed_zoom の ramp_after）
+                nxt = merged[k + 1][0] if k + 1 < len(merged) else B
+                merged[k][0] = min(f + RAMP, nxt - 1)
+                continue
+            if clip_starts and f in jump_starts:         # 切れ目で一気に変える（jump_ids）
+                pe = max([e_ for s_, e_, _, _ in tg if e_ <= f], default=merged[k - 1][0])
+                cands = [c for c in clip_starts if max(pe, merged[k - 1][0] + 1) <= c <= f]
+                if cands and f - max(cands) <= HOLD_GAP:
+                    merged[k][0] = max(cands)
+                    jump_k.add(k)
+        jumps += len(jump_k)
         for k, (f, p) in enumerate(merged):
             e = merged[k + 1][0] if k + 1 < len(merged) else B
             states_all.append((f, e, p))
-            if k > 0:
+            if k > 0 and k not in jump_k:
                 r0 = max(merged[k - 1][0] + 1, f - RAMP)
                 ramps_all.append((r0, f, merged[k - 1][1], p))
     states_all.sort()
@@ -466,6 +516,7 @@ def main():
             f"{a_ / FPS // 60:.0f}:{a_ / FPS % 60:04.1f}（{i_} {z0_:.2f}→{('寄せない' if z1_ is None else f'{z1_:.2f}')}）" for a_, i_, z0_, z1_ in face_fixed[:20]))
     print(f"人名・社内の数字が入るので寄せなかった所 {len(skipped)}：" + "、".join(f"{a_ / FPS // 60:.0f}:{a_ / FPS % 60:04.1f}{h}" for a_, h in skipped[:12]))
     print(f"画面の寄り：寄せた所 {len(zs)}（{sum(b_ - a_ for a_, b_, _ in zs) / FPS / 60:.1f}分）・動き {len(ramps_all)}・"
+          f"切れ目で一気に変えた {jumps}・決めた寄りの字幕 {len(fixed)}・"
           f"キーフレームを書いたクリップ {n_kf}／画面のクリップ {n}・赤枠 {len(new)}（寄りが動く前で切った {trimmed}・寄せた画面の外で描かない {len(dropped)} {dropped}）")
     if args.dry:
         print("（--dry：XML・red_frames.json・PNG・土台の表は書いていない）")
