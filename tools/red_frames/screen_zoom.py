@@ -324,9 +324,10 @@ def main():
         _m = re.search(r'<file id="[^"]+">(?:(?!</file>).)*?<pathurl>([^<]+)</pathurl>', _x[_x.find("<name>" + args.clip + "</name>"):], re.S)
         _media = urllib.parse.unquote(_m.group(1).replace("file://", "")) if _m else None
 
-        def _gray(n):
-            r_ = subprocess.run(["ffmpeg", "-v", "error", "-ss", f"{(n + 0.5) * 1001 / 30000:.4f}", "-i", _media, "-frames:v", "1",
-                                 "-vf", "scale=192:120,format=gray", "-f", "rawvideo", "-"], capture_output=True).stdout
+        def _gray(n):        # 素材のコマ n（-i の前の -ss だけだと n+1 や 1コマずれた物が来る。2026-10-31 r7 の確かめ係：25:09.44 を「絵が替わる」と取り違えた）
+            r_ = subprocess.run(["ffmpeg", "-v", "error", "-ss", f"{max(0.0, n * 1001 / 30000 - 2.0):.4f}", "-copyts", "-i", _media, "-frames:v", "1",
+                                 "-vf", f"select=gte(t\\,{(n - 0.5) * 1001 / 30000:.5f}),scale=192:120,format=gray", "-f", "rawvideo", "-"],
+                                capture_output=True).stdout
             return np.frombuffer(r_, dtype=np.uint8).astype(np.float32) if len(r_) == 192 * 120 else None
         same = []
         for c0, last_, in_ in _cand:
