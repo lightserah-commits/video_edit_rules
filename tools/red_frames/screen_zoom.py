@@ -40,9 +40,12 @@
                    （短い枠が前の寄りを引き継いで端で切れる所を、全部の枠が入る1つの寄りにまとめる時に）。ramp_after：この寄りから元の大きさへ戻る時、
                    戻る動き（0.3秒）を最後の枠の後に置く（既定は枠の終わりの手前に置くので、短い枠が 0.3秒削られる）。
                    2026-10-30 1029 v004 確かめ係：339〜365・1042〜1044 で、短い枠が前の寄りを引き継いで上の端で切れた／1037 が 0.37秒になった
-    jump_ids       字幕の範囲 [[最初の字幕ID, 最後の字幕ID], …]。この字幕で終わる赤枠（id_to）の寄りに変わる時、手前（前の枠の終わりから 2秒以内）に
-                   画面のクリップの切れ目があれば、その切れ目で一気に変える（流さない）。画面が別の物に替わる所に使う。
+    jump_ids       字幕の範囲 [[最初の字幕ID, 最後の字幕ID], …]。この字幕の赤枠（id_from か id_to。2026-10-31 r6 から id_from も見る）の寄りに変わる時、
+                   手前（前の枠の終わりから 2秒以内）に画面のクリップの切れ目があれば、その切れ目で一気に変える（流さない）。画面が別の物に替わる所に使う。
                    2026-10-30 1029 v004 確かめ係：1088 で画面が替わった後も 2倍のまま 0.3秒残り、その後 端から端へ斜めに流れた
+    jump_in_ramp   true の時、寄りの動き（0.3秒）の途中か終わりに、画面の素材が飛ぶクリップの切れ目がある所は、動かさずにその切れ目で一気に変える。
+                   2026-10-31 1029 v004 r5 確かめ係：寄りの動きが切れ目をまたぎ、前の画面の上で寄り始めた（1285）・make が赤枠の頭を切れ目へ前に出して、
+                   寄りきる 2〜3コマ前から枠が文からずれて出た（1092・1124・551・1032 など 20 か所ほど）。省くと今までと同じ
     left_cut       寄せた時に映さない画面の左の割合（既定 0.165＝左の一覧＝会話の履歴など）。箱がここにかかる時は寄せない
     burned_face    画面録画に焼き込まれた顔の丸（Loom の顔の丸など）。[真ん中 x, 真ん中 y, 半径]（画面録画の素材の px）。書いた時は、寄せた画面で
                    その丸が「寄せていない時の丸の所」の外に見える寄せ方を避ける（倍率を 0.05 ずつ下げ、だめなら寄せない）。顔は別に重ねる
@@ -56,8 +59,11 @@ import importlib.util
 import json
 import os
 import re
+import subprocess
 import sys
+import urllib.parse
 
+import numpy as np
 from PIL import Image, ImageDraw
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -75,7 +81,7 @@ HOLD_GAP = round(2.0 * FPS)
 MIN_STATE = round(1.5 * FPS)                   # これより短い寄りは付けない（前の寄りのまま）。1秒ごとに寄りが変わると目が回る
 STROKE, COLOR = 8, (255, 30, 30, 255)
 NO_ZOOM = (1.0, 0.0, 0.0)
-KEYS = {"chrome_labels", "skip_labels", "chrome_ids", "skip_ids", "top_ok_ids", "fixed_zoom", "jump_ids", "slide_labels", "slide_rect", "private", "top_cut", "chrome_top_cut", "left_cut", "memo", "burned_face"}
+KEYS = {"chrome_labels", "skip_labels", "chrome_ids", "skip_ids", "top_ok_ids", "fixed_zoom", "jump_ids", "jump_in_ramp", "slide_labels", "slide_rect", "private", "top_cut", "chrome_top_cut", "left_cut", "memo", "burned_face"}
 FACE_PEEK_MAX = 300                            # burned_face：寄せた顔の丸が元の丸の外に見えてよい広さ（px²。端の数 px まで）
 
 
@@ -303,11 +309,37 @@ def main():
             print(f"！ jump_ids の字幕が表に無い（効かない）：{r}")
     jump_starts = set()
     clip_starts = []
+    jump_in_ramp = bool(cfg.get("jump_in_ramp"))
+    true_cuts = []                                       # 素材が飛ぶ画面のクリップの頭（jump_in_ramp）
+    _x = open(xml_p, encoding="utf-8").read()
+    _clips = sorted((int(m_.group(2)), int(m_.group(3)), int(m_.group(4)), m_.group(1) == "TRUE") for m_ in re.finditer(
+        r'<clipitem id="clip-\d+"><name>' + re.escape(args.clip) + r'</name><enabled>(TRUE|FALSE)</enabled>.*?<start>(\d+)</start><end>(\d+)</end><in>(\d+)</in>', _x, re.S))
+    _en = [c for c in _clips if c[3]]
     if jump_set:
-        _x = open(xml_p, encoding="utf-8").read()
-        clip_starts = sorted(int(m_.group(1)) for m_ in re.finditer(
-            r'<clipitem id="clip-\d+"><name>' + re.escape(args.clip) + r'</name><enabled>TRUE</enabled>.*?<start>(\d+)</start>', _x, re.S))
+        clip_starts = [c[0] for c in _en]
+    _cand = [(c_[0], p_[2] + (p_[1] - p_[0]) - 1, c_[2]) for p_, c_ in zip(_en, _en[1:])
+             if not (c_[0] == p_[1] and c_[2] == p_[2] + (p_[1] - p_[0]))]
+    if jump_in_ramp and _cand:
+        # 素材が飛んでも絵が同じ切れ目（止まった画面の上で声だけ切った所）は一気にしない（2026-10-31 1029 r6：12:56.88・24:33.74 で同じ絵が 148px・170px 跳んだ）
+        _m = re.search(r'<file id="[^"]+">(?:(?!</file>).)*?<pathurl>([^<]+)</pathurl>', _x[_x.find("<name>" + args.clip + "</name>"):], re.S)
+        _media = urllib.parse.unquote(_m.group(1).replace("file://", "")) if _m else None
+
+        def _gray(n):
+            r_ = subprocess.run(["ffmpeg", "-v", "error", "-ss", f"{(n + 0.5) * 1001 / 30000:.4f}", "-i", _media, "-frames:v", "1",
+                                 "-vf", "scale=192:120,format=gray", "-f", "rawvideo", "-"], capture_output=True).stdout
+            return np.frombuffer(r_, dtype=np.uint8).astype(np.float32) if len(r_) == 192 * 120 else None
+        same = []
+        for c0, last_, in_ in _cand:
+            g0, g1 = (_gray(last_), _gray(in_)) if _media and os.path.exists(_media) else (None, None)
+            if g0 is not None and g1 is not None and float(np.abs(g0 - g1).mean()) < 1.5:
+                same.append(c0)
+            else:
+                true_cuts.append(c0)
+        print(f"素材が飛ぶ画面の切れ目 {len(_cand)}（絵が替わる {len(true_cuts)}・絵が同じで一気にしない {len(same)}）")
+    else:
+        true_cuts = [c0 for c0, _, _ in _cand]
     jumps = 0
+    jump_pts = []                                        # 一気に変えた所（その前の赤枠はここで終える）
     slides, chromes = [], []
     for first, last, label, _why in screen_table:
         if first in ctl and last in nxt:
@@ -342,7 +374,7 @@ def main():
             s, e = fr["start"] // FT, fr["end"] // FT
             if e <= A or s >= B:
                 continue
-            if fr["id_to"] in jump_set:
+            if fr["id_to"] in jump_set or fr["id_from"] in jump_set:      # 2026-10-31：203〜204 の枠（id_from 203）が jump_ids 203 で効かなかった
                 jump_starts.add(max(s, A))
             if fr["id_from"] in zoom_skip or fr["id_to"] in zoom_skip:
                 continue
@@ -428,7 +460,15 @@ def main():
                 if cands and f - max(cands) <= HOLD_GAP:
                     merged[k][0] = max(cands)
                     jump_k.add(k)
+                    continue
+            if jump_in_ramp:                             # 寄りの動きが素材の飛ぶ切れ目をまたぐ所は、その切れ目で一気に（jump_in_ramp）
+                r0_ = max(merged[k - 1][0] + 1, f - RAMP)
+                cands = [c for c in true_cuts if r0_ < c <= f]
+                if cands:
+                    merged[k][0] = max(cands)
+                    jump_k.add(k)
         jumps += len(jump_k)
+        jump_pts.extend(merged[k][0] for k in jump_k)
         for k, (f, p) in enumerate(merged):
             e = merged[k + 1][0] if k + 1 < len(merged) else B
             states_all.append((f, e, p))
@@ -484,13 +524,39 @@ def main():
         n_kf += 1
         return m.group(1) + motion_kf([(cin + (f - s), p) for f, p in vals]) + m.group(6)   # when はクリップの素材の時刻（in 点から）
     xml2, n = pat.subn(repl, xml)
+    # 区間の頭の前の、無効にしてある画面のクリップ（素材が頭へ続いている 12コマまで）にも、頭の寄りを書く。
+    #   make の [35] がカメラの短い切れ端を無効にして、ここを有効にして画面を前に出すことがある（2026-10-31 1029 r5：1057 の頭の 9コマが
+    #   元の大きさのまま 2倍の位置に赤枠が出て、9コマ目で一気に 2倍になった）。無効のままなら映らないので、ほかの案件の見え方は変わらない
+    lead = {}
+    for A, B in mp["screen_spans"]:
+        p_ = params_at(A)
+        head = [c for c in _en if c[0] == A]
+        if p_ == NO_ZOOM or not head:
+            continue
+        cur = head[0]
+        while True:
+            prev = [c for c in _clips if not c[3] and c[1] == cur[0] and c[2] + (c[1] - c[0]) == cur[2] and A - c[0] <= HEAD_TOL]
+            if not prev:
+                break
+            cur = prev[0]
+            lead[(cur[0], cur[1])] = p_
+    pat_off = re.compile(r'(<clipitem id="clip-\d+"><name>' + re.escape(args.clip) + r'</name><enabled>FALSE</enabled>(?:(?!</clipitem>).)*?<start>(\d+)</start><end>(\d+)</end><in>(\d+)</in>(?:(?!</clipitem>).)*?)'
+                         r'(<filter><effect><name>Basic Motion</name>(?:(?!</clipitem>).)*?</effect></filter>)(</clipitem>)', re.S)
+
+    def repl_off(m):
+        k_ = (int(m.group(2)), int(m.group(3)))
+        return m.group(1) + static(lead[k_]) + m.group(6) if k_ in lead else m.group(0)
+    if lead:
+        xml2, n_lead = pat_off.subn(repl_off, xml2)
+        print(f"区間の頭の前の無効な画面のクリップに頭の寄りを書いた {len(lead)}（make の [35] で有効になる所）")
     # ---- 赤枠を寄りに合わせて描き直す ----
     out_dir = os.path.join(os.path.dirname(rfj_p), "red_frames")
     new, trimmed, dropped, draw = [], 0, [], []
     for k, fr in enumerate(frames):
         s, e = fr["start"] // FT, fr["end"] // FT
         s = max([s] + [r1 for r0, r1, _, _ in ramps_all if r0 < s < r1])     # 寄りが動いている間に始まる赤枠は、寄りきってから
-        cut = [r0 for r0, r1, _, _ in ramps_all if s < r0 < e]
+        s = min([s] + [c for c in jump_pts if c < s < c + 6])     # 一気に変えた所のすぐ後（0.2秒未満）に始まる枠は、変えた所から（2026-10-31 1029 r6：12:54.54 で前の枠 553 がそこで終わり、556 まで 4コマ枠が消えた）
+        cut = [r0 for r0, r1, _, _ in ramps_all if s < r0 < e] + [c for c in jump_pts if s < c < e]   # 一気に変えた所をまたぐ枠も、そこで終える（jump_in_ramp）
         if cut:
             e = min(cut)
             trimmed += 1
