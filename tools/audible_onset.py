@@ -202,19 +202,30 @@ def transcribe(wav, out_json, model=None, preset=None):
     with wave.open(wav, "rb") as w:
         total = w.getnframes() / w.getframerate()
     tokens, log, t, i = [], [], 0.0, 0
+    # GPU（Metal）で動かない時は、そこから後は CPU（-ng）で流す。2026-11-01：MTZ のセットアップで whisper.cpp 1.9.5・ggml 0.28.0 に
+    # 上がり、macOS 15.7.3 の Air で Metal の部品を作れずに止まった（-ng なら turbo で音の長さの約4割の時間）
+    no_gpu = []
     with tempfile.TemporaryDirectory() as tmp:
         while t < total:
             part, base = os.path.join(tmp, f"c{i:03d}.wav"), os.path.join(tmp, f"c{i:03d}")
             subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(t), "-t", str(CHUNK_SEC + CHUNK_OVERLAP), "-i", wav,
                             "-c", "copy", part], check=True)
-            try:      # -mc 0：前の文に引きずられて同じ言葉をくり返す誤認識を防ぐ
-                subprocess.run(["whisper-cli", "-m", model, "-l", "ja", "-nfa", "-mc", "0", "-dtw", preset, "-ojf", "-of", base, part],
-                               stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, timeout=900, check=True)
-            except subprocess.TimeoutExpired:
-                raise SystemExit(f"{t:.0f}秒からのかけらの文字起こしが15分で終わらなかった（{model}）")
-            except subprocess.CalledProcessError as e:
-                tail = "\n".join((e.stderr or b"").decode("utf-8", errors="replace").strip().splitlines()[-5:])
-                raise SystemExit(f"{t:.0f}秒からのかけらで whisper-cli が失敗した（終了コード {e.returncode}）:\n{tail}")
+            while True:
+                try:      # -mc 0：前の文に引きずられて同じ言葉をくり返す誤認識を防ぐ
+                    subprocess.run(["whisper-cli", *no_gpu, "-m", model, "-l", "ja", "-nfa", "-mc", "0", "-dtw", preset,
+                                    "-ojf", "-of", base, part],
+                                   stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, timeout=900, check=True)
+                    break
+                except subprocess.TimeoutExpired:
+                    raise SystemExit(f"{t:.0f}秒からのかけらの文字起こしが15分で終わらなかった（{model}）")
+                except subprocess.CalledProcessError as e:
+                    err = (e.stderr or b"").decode("utf-8", errors="replace")
+                    if not no_gpu and re.search(r"ggml_metal\w*: error|failed to initialize MTL", err):
+                        no_gpu = ["-ng"]
+                        print("whisper-cli が GPU（Metal）で動かないので、CPU（-ng）でやり直す（遅くなる）", file=sys.stderr)
+                        continue
+                    tail = "\n".join(err.strip().splitlines()[-5:])
+                    raise SystemExit(f"{t:.0f}秒からのかけらで whisper-cli が失敗した（終了コード {e.returncode}）:\n{tail}")
             d = json.loads(open(base + ".json", "rb").read().decode("utf-8", errors="replace"))
             lo, hi = t + (CHUNK_OVERLAP / 2 if i > 0 else 0.0), t + CHUNK_SEC + CHUNK_OVERLAP / 2
             n = 0
