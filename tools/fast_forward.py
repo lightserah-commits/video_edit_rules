@@ -146,7 +146,9 @@ def main():
                             "-vf", "scale=in_range=pc:out_color_matrix=bt709:out_range=tv,format=yuv420p",
                             "-c:v", "libx264", "-crf", "14", "-preset", "medium",
                             "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709", "-color_range", "tv",
-                            "-c:a", "aac", "-b:a", "320k", "-shortest", a.dest], stdin=subprocess.PIPE)
+                            "-c:a", "aac", "-b:a", "320k", a.dest], stdin=subprocess.PIPE)
+    # 2026-11-01 さらささん v002：-shortest を付けていたら、AAC の音（2.261秒）が映像（69コマ＝2.302秒）より短く、最後の1コマが落ちた
+    #   （B24・B26・B27・B41 が 68コマになり、69コマの枠に置いた最後のコマが黒くなった）。音は上で dur ちょうどに揃えてあるので切らない
     states = []
     for i, f in enumerate(frames):
         k = (i // a.icon_step) % 3 + 1          # 1=左 2=真ん中 3=右
@@ -155,6 +157,10 @@ def main():
     enc.stdin.close()
     if enc.wait() != 0:
         sys.exit("書き出しに失敗した")
+    got = int(subprocess.run(["ffprobe", "-v", "error", "-count_frames", "-select_streams", "v:0", "-show_entries",
+                              "stream=nb_read_frames", "-of", "csv=p=0", a.dest], capture_output=True, text=True).stdout.strip())
+    if got != n:
+        sys.exit(f"書き出したコマ数が {got}（{n} のはず）")
     for p in (a_raw, a_out):
         os.remove(p)
 
