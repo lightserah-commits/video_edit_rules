@@ -12,7 +12,7 @@
 | `finish.py`＋`finish.jsx` | 確認の画像を書き出す（`--jobs`）。`--dissolve 15` の時だけ右上タイトル（V8・V9）の頭にディゾルブを付けて**保存**（既定は付けない・保存しない） |
 | `review_jobs_fixed.py` | 組み立ての記録（vNNN_記録.json）から、直した所だけの確認の画像の一覧を作る（finish の `--jobs`） |
 | `close.py`＋`close.jsx` | 保存せずに閉じる。閉じる前に .prproj の保存時刻と md5 が AI の最後の組み立て（`--record` の記録）と同じか、開いているシーケンスのクリップが .prproj と同じかを見て、違えば止まる |
-| `export.py`＋`export_ame.jsx` | Media Encoder で mp4（YouTube 1080p HD）。出力がもうあれば止まる。保存しない |
+| `export.py`＋`export_ame.jsx` | Media Encoder で mp4（YouTube 1080p HD）。`--light` で途中の版の確認用（720p・平均 2Mbps・瞬間の上限 8Mbps・音 192kbps。出力は `…_light.mp4`）。出力がもうあれば止まる。保存しない |
 | `pan.py`＋`pan.jsx` | 本編の締めのつなぎ目（「ということで今回は」の頭）に Premiere Composer の Pan [Left] を付けて**保存**し、閉じる（02 の transitions.closing_pan。毎回）。先に Composer のパネルを一度開く。プロジェクトが開いていたら何もしない。元：1015claude project開設 v007 の `_work/apply_pan.py`（2026-10-16。tools の形にしたものは `--dry` と `node --check` だけ確かめた・Premiere では未確認） |
 | `_common.py` | 共通（パス・名前を JSON の文字にして埋め込む・フォントの確かめ・md5） |
 

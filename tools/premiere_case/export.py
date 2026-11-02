@@ -3,18 +3,47 @@
 どの案件でも使える道具）。書き出しが終わったかは Media Encoder の画面か、出力のファイルの大きさが止まったかで見る。
 元：環境設定 v004 の _work/export.py ＋ export_ame_v004.jsx。
 
-  python3 tools/premiere_case/export.py --proj <版>/<案件>_vNNN.prproj --seq <シーケンス名> [--out <版>/<案件>_vNNN.mp4] [--preset <.epr>] [--dry]
+  python3 tools/premiere_case/export.py --proj <版>/<案件>_vNNN.prproj --seq <シーケンス名> [--light] [--out <版>/<案件>_vNNN.mp4] [--preset <.epr>] [--dry]
+  --light：途中の版の確認用（720p・平均 2Mbps・瞬間の上限 8Mbps・音 192kbps。35分で約0.5GB）。出力の名前は …_light.mp4 になり、tools/review_server.py の一覧に出る
   出力がもうあれば止まる（上書きしない）。Premiere を使う前と後にチャットで知らせる
 """
 import argparse
 import glob
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import _common as C  # noqa: E402
 
-PRESET_GLOB = "/Applications/Adobe Premiere Pro */Adobe Premiere Pro *.app/Contents/MediaIO/systempresets/4E49434B_48323634/YouTube 1080p HD.epr"
+PRESET_DIR = "/Applications/Adobe Premiere Pro */Adobe Premiere Pro *.app/Contents/MediaIO/systempresets/4E49434B_48323634/"
+PRESET_GLOB = PRESET_DIR + "YouTube 1080p HD.epr"
+LIGHT_BASE_GLOB = PRESET_DIR + "YouTube 720p HD.epr"
+LIGHT_PRESET = os.path.expanduser("~/.video_edit_rules/light_720p.epr")
+LIGHT_ID = "7c1f0a52-3d44-4e8b-9a61-2f6b8d10e720"
+# 動きの激しい所を測って決めた値（2026-11-02 Addness bfa3aa1e-b76b-481d-a2e2-07da9739d8ca）。上限 3Mbps だと早回しで崩れる
+LIGHT_PARAMS = {"ADBEVideoMinBitrate": "1.", "ADBEVideoTargetBitrate": "2.", "ADBEVideoMaxBitrate": "8.", "ADBEAudioBitrate": "192"}
+
+
+def make_light_preset():
+    """入っている Premiere の YouTube 720p HD の設定から、ビットレートだけ変えた設定を作る"""
+    base = next(iter(sorted(glob.glob(LIGHT_BASE_GLOB), reverse=True)), None)
+    if not base:
+        raise SystemExit("書き出しの設定（YouTube 720p HD.epr）が見つからない。--preset で渡す")
+    with open(base, encoding="utf-8", newline="") as f:
+        s = f.read()
+    for key, val in LIGHT_PARAMS.items():
+        s, n = re.subn(rf"(<ParamIdentifier>{key}</ParamIdentifier>.*?<ParamValue>).*?(</ParamValue>)",
+                       lambda m: m.group(1) + val + m.group(2), s, count=1, flags=re.S)
+        if n != 1:
+            raise SystemExit(f"{base} に {key} が無い（Premiere の版で変わった？）")
+    s = re.sub(r"<PresetID>.*?</PresetID>", f"<PresetID>{LIGHT_ID}</PresetID>", s, count=1)
+    s = re.sub(r"<PresetName>.*?</PresetName>", "<PresetName>途中の確認 720p</PresetName>", s, count=1)
+    s = re.sub(r"<PresetComments>.*?</PresetComments>", "<PresetComments></PresetComments>", s, count=1)
+    os.makedirs(os.path.dirname(LIGHT_PRESET), exist_ok=True)
+    with open(LIGHT_PRESET, "w", encoding="utf-8", newline="") as f:
+        f.write(s)
+    return LIGHT_PRESET
 
 
 def main():
@@ -23,14 +52,19 @@ def main():
     ap.add_argument("--seq", required=True)
     ap.add_argument("--out", help="出力の mp4（既定 .prproj と同じ場所・同じ名前の .mp4）")
     ap.add_argument("--preset", help="書き出しの設定（.epr。既定 Premiere の YouTube 1080p HD）")
+    ap.add_argument("--light", action="store_true", help="途中の版の確認用に軽く書き出す（720p・平均 2Mbps）")
     ap.add_argument("--skip-font-check", action="store_true")
     ap.add_argument("--dry", action="store_true")
     a = ap.parse_args()
+    if a.light and a.preset:
+        raise SystemExit("--light と --preset は一緒に使わない")
     proj = C.need_file(a.proj)
     out = os.path.abspath(a.out or os.path.splitext(proj)[0] + ".mp4")
+    if a.light and not out.endswith("_light.mp4"):
+        out = os.path.splitext(out)[0] + "_light.mp4"
     if os.path.exists(out):
         raise SystemExit(f"{out} がもうある（上書きしない）")
-    preset = a.preset or next(iter(sorted(glob.glob(PRESET_GLOB), reverse=True)), None)
+    preset = make_light_preset() if a.light else a.preset or next(iter(sorted(glob.glob(PRESET_GLOB), reverse=True)), None)
     if not preset or not os.path.exists(preset):
         raise SystemExit("書き出しの設定（YouTube 1080p HD.epr）が見つからない。--preset で渡す")
     js = C.script("export_ame.jsx", {"__PROJ__": proj, "__SEQ__": a.seq, "__OUT__": out, "__PRESET__": preset})
