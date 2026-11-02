@@ -378,6 +378,125 @@ def asr_candidate2(tokens, starts, text, t, prev_text=None, window=1.5):
     return min((starts[ti] for sc, ti in ms if sc >= top), key=lambda st: abs(st - t))
 
 
+
+# ---- 語の幅を枠にして、声の谷の後の立ち上がりで字幕の頭を決める（2026-11-02 1101 v001 の調べ。案件の timing_report.md の「直し方」）----
+# mlx の語の頭は「前の語の終わり」で、声より中央 5.4コマ早い。言いよどみも語の幅に飲み込む。多数決をやめて次の順にする：
+#   1) mlx の語の幅 [s, e] を「この語はこの中にある」という枠にする
+#   2) DTW の候補が枠の中（s−0.05〜e+0.20）なら、DTW の近くの谷の後の立ち上がり
+#   3) 枠の外か候補が無ければ、枠の中で一番深い谷の後の立ち上がり
+#   4) どちらも無ければ None（今の値のまま「要確認」）。谷の条件は後ろ 0.12秒の山との差 8dB 以上（試しの値。AI が決めた数字）
+class BandEnv:
+    """150〜4000Hz の 5ms ごとの大きさ（dB）を、必要な所だけ計算する。wav は 16kHz・モノラルかステレオの 16bit"""
+    def __init__(self, wav, lo=150, hi=4000, hop=0.005, win=0.010):
+        self.w = wave.open(wav, "rb")
+        self.r, self.n, self.ch, self.sw = self.w.getframerate(), self.w.getnframes(), self.w.getnchannels(), self.w.getsampwidth()
+        self.lo, self.hi, self.hop, self.win = lo, hi, hop, win
+
+    def _get(self, t0, t1):
+        import numpy as np
+        a, b = max(0, int(t0 * self.r)), min(self.n, int(t1 * self.r))
+        self.w.setpos(a)
+        x = np.frombuffer(self.w.readframes(b - a), dtype="<i2").astype(float) / 32768
+        if self.ch == 2:
+            x = x.reshape(-1, 2).mean(axis=1)
+        return a / self.r, x
+
+    def env(self, t0, t1):
+        import numpy as np
+        from scipy.signal import butter, sosfiltfilt
+        base, x = self._get(t0 - 0.05, t1 + 0.05)
+        y = sosfiltfilt(butter(4, [self.lo, self.hi], btype="band", fs=self.r, output="sos"), x)
+        h, w = int(self.hop * self.r), int(self.win * self.r)
+        n = max(0, (len(y) - w) // h)
+        e = np.array([10 * np.log10(np.mean(y[i * h:i * h + w] ** 2) + 1e-12) for i in range(n)])
+        ts = base + np.arange(n) * self.hop + self.hop
+        m = (ts >= t0) & (ts <= t1)
+        return ts[m], e[m]
+
+
+def _smooth(e, k=3):
+    import numpy as np
+    return np.convolve(e, np.ones(k) / k, mode="same")
+
+
+def onset_from_valley(E, c, before=0.28, after=0.14, rise_db=8.0):
+    """c の前後で「谷（前後 25ms で一番小さい）」を探し、谷の後の立ち上がりの秒を返す。無ければ None"""
+    ts, e = E.env(c - before - 0.12, c + after + 0.20)
+    if len(e) < 20:
+        return None
+    es = _smooth(e)
+    best = None
+    for i in range(3, len(es) - 8):
+        t = ts[i]
+        if t < c - before or t > c + after or es[i] > es[max(0, i - 5):i + 6].min() + 1e-9:
+            continue
+        depth = es[i:i + 24].max() - es[i]
+        back = es[max(0, i - 24):i + 1].max() - es[i]
+        if depth < rise_db:
+            continue
+        score = min(depth, 25) + 0.5 * min(back, 25) - 30 * abs(t - c)
+        if best is None or score > best[0]:
+            best = (score, i, depth)
+    if best is None:
+        return None
+    _, i, depth = best
+    j, target = i, es[i] + max(3.0, depth * 0.2)
+    while j < len(es) - 1 and es[j] < target:
+        j += 1
+    return float(ts[j])
+
+
+def onset_in_span(E, s, e, rise_db=8.0):
+    """語の幅 [s, e] の中で一番深い谷の後の立ち上がりの秒を返す。無ければ None"""
+    end = max(e, s + 0.12) + 0.06
+    ts, en = E.env(s - 0.02, end + 0.15)
+    if len(en) < 10:
+        return None
+    es = _smooth(en)
+    best = None
+    for k in range(3, len(es) - 6):
+        if ts[k] > end or ts[k] < s or es[k] > es[max(0, k - 5):k + 6].min() + 1e-9:
+            continue
+        depth = es[k:k + 24].max() - es[k]
+        if depth < rise_db or es[max(0, k - 24):k + 1].max() - es[k] < 3:
+            continue
+        if best is None or es[k] < best[0]:
+            best = (es[k], k, depth)
+    if best is None:
+        return None
+    _, k, depth = best
+    j, target = k, es[k] + max(3.0, depth * 0.2)
+    while j < len(es) - 1 and es[j] < target:
+        j += 1
+    return float(ts[j])
+
+
+def load_mlx_words(path):
+    """mlx_whisper の JSON（区切りの一覧。words つき）を (頭, 終わり, 語) の並びにする"""
+    return sorted((w["start"], w["end"], w["word"]) for s in json.load(open(path, encoding="utf-8")) for w in s.get("words", []))
+
+
+def word_window_onset(E, words, word_starts, asr, dtw_cand=None):
+    """字幕の最初の語の聞こえ始めを決める。返す値 (秒, 決め方) か (None, 理由)。asr＝字幕の頭の語の mlx の時刻"""
+    import bisect
+    i = bisect.bisect_left(word_starts, asr - 0.03)
+    if i < len(words) and abs(words[i][0] - asr) <= 0.2:
+        s, e, _ = words[i]
+        if dtw_cand is not None and s - 0.05 <= dtw_cand <= e + 0.20:
+            r = onset_from_valley(E, dtw_cand)
+            if r is not None:
+                return r, "語の幅＋DTW の近くの谷"
+        r = onset_in_span(E, s, e)
+        if r is not None:
+            return r, "語の幅の中の谷"
+        return None, "語の幅に谷が無い"
+    if dtw_cand is not None and abs(dtw_cand - asr) <= 0.8:
+        r = onset_from_valley(E, dtw_cand)
+        if r is not None and abs(r - asr) <= 0.8:
+            return r, "DTW の近くの谷（語の幅なし）"
+    return None, "語の幅も DTW も無い"
+
+
 def check_prproj(a):
     from native_prproj import Prproj, TPS
     pj = Prproj.load(a.project)
