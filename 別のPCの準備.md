@@ -10,7 +10,7 @@
   - 送る前に：`python3 -m py_compile tools/*.py .claude/hooks/*.py`、`git status` で入るものを確かめる（案件の素材・書き出し・100MB を超えるもの・鍵が無いこと）。見本集を直した時は、先に `python3 tools/build_parts.py` で部品集を作り直す（`見本/テロップ部品集.prproj`・`見本/テロップ部品集_元.json`・`素材/画像/` は入れる）
   - 送ったら、Addness の「このiMacでも…」（6f519c35-55fd-4683-89a5-cf77c90d42e5）の本文に、送った版（コミットの短いID）と中身を1行で書く
 - リポジトリは `lightserah-commits/video_edit_rules`（2026-10-05 から公開：小川さん「上司に共有しないといけなくて、一旦公開して」。社内の情報も見えるので、共有が済んだら非公開に戻すか決める）
-- **Git に入れないもの**（`.gitignore`。PC へはフォルダのコピーで運ぶ）：案件（案件フォルダは各 PC の `~/Desktop/みかみ案件依頼書/` など）・`work` のリンク・Mac ごとの設定（`.claude/settings.local.json`）・Addness の記録（`.claude/addness/` は `goals.json` 以外）・`見本/確認/`・Premiere のキャッシュ・`env/`・`models/`・`完成版/`・`上司の資料/`・`環境/フォント/`・`環境/PremiereComposer/`（社内の資料・フォント・有料の部品を公開のリポジトリに上げない）
+- **Git に入れないもの**（`.gitignore`。PC へはフォルダのコピーで運ぶ）：一番新しい雛形 `tools/case_template/1027_v003/`（台本・字幕に社外の話が入っている可能性があるので。2026-11-03 小川さん）・案件（案件フォルダは各 PC の `~/Desktop/みかみ案件依頼書/` など）・`work` のリンク・Mac ごとの設定（`.claude/settings.local.json`）・Addness の記録（`.claude/addness/` は `goals.json` 以外）・`見本/確認/`・Premiere のキャッシュ・`env/`・`models/`・`完成版/`・`上司の資料/`・`環境/フォント/`・`環境/PremiereComposer/`（社内の資料・フォント・有料の部品を公開のリポジトリに上げない）
 - **置き場所はどの PC でも `~/Desktop/video_edit_rules`**。案件のスクリプト（`ROOT = os.path.expanduser("~/Desktop/video_edit_rules")`）と Premiere のプロジェクトがこの場所を見る。フォルダの中の道具は自分の置き場所から決めるので、別の所に置いても動くが、その時は準備のスクリプトが `~/Desktop/video_edit_rules` にリンクを作る
 - 場所の書き方：このフォルダからの相対か `~/` で書く（PC ごとにユーザー名が違う。Air は `yoshizawakouichi`、iMac は `addness`）
 - **鍵はフォルダに入れない**（2026-10-17 小川さん）。OpenAI の API キーは Mac のキーチェーン、YouTube は `~/.video_edit_rules/youtube/`。PC ごとに入れ直す（下の 2）
