@@ -22,7 +22,7 @@ quality_reference:   # 品質の基準（お手本）
   videos:
     - name: 完成版（みかみさんCH0726_最終）の本編「AI使いこなす習慣7選」（33分）
       project: ~/Desktop/video_edit_rules/完成版/コピー_みかみさんCH0726_1/みかみさんCH0726_最終.prproj
-      note: Premiere で開く時は、フォント名を置き換えたコピー ~/Movies/video_edit_cases/gamen_kyoyu_20260926/analysis/ルール調査/ref1/mikami_final_ff.prproj（「フォントを解決」が出ない）
+      note: Premiere で開く時は、フォント名を置き換えたコピー 完成版/ルール調査_gamen_kyoyu/ref1/mikami_final_ff.prproj（「フォントを解決」が出ない）
     - name: 2本目「AI時代に消える仕事残る仕事」
       project: ~/Desktop/video_edit_rules/完成版/コピー_AI時代に消える仕事残る仕事/AI時代に消える仕事残る仕事.prproj
       note: 開く時は …/ルール調査/ref2/ai_jidai_copy_ff.prproj（カメラは …/ref2/export_ref2b.py が ~/Downloads の IMG_*.MOV につなぎ直す。元の参照は「IMG_1598.MOV.mov」と拡張子が二重）

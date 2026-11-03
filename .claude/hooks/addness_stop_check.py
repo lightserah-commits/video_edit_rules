@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Stop フック：このターンでファイルを変えたのに Addness に書いていなければ、1回だけ止めて記録を促す。
+案件の edit/vNNN/ に 確認_vNNN.md か mp4 ができたターンも1回だけ止めて、タスクを閉じるよう促す（フックは Addness を読めない）。
 
 - 「書いた」＝ Addness の書き込みツール（WRITE_TOOL_RE）か、記録係 addness-kiroku を呼んだ
 - 「ファイルを変えた」＝ プロジェクト内への Edit/Write、または Bash を使ったターンでプロジェクト内のファイルが更新された
@@ -11,8 +12,8 @@ import sys
 from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(__file__))
-from addness_common import (GOALS_JSON, PROJECT, RECORDER_AGENT, STATE_DIR, WRITE_TOOL_RE, changed_since, load_json,
-                            save_json)
+from addness_common import (GOALS_JSON, PROJECT, RECORDER_AGENT, STATE_DIR, WRITE_TOOL_RE, case_edit_dirs,
+                            changed_since, load_json, save_json)
 
 EDIT_TOOLS = {"Edit", "Write", "MultiEdit", "NotebookEdit"}
 
@@ -34,6 +35,22 @@ def parse_ts(s):
         return datetime.fromisoformat(s.replace("Z", "+00:00")).timestamp()
     except Exception:
         return None
+
+
+def new_deliverables(turn_ts):
+    """このターンに案件の edit/vNNN/ へできた 確認_vNNN.md と mp4 の名前（案件名/ファイル名）"""
+    if not turn_ts:
+        return []
+    out = []
+    for name, edit in case_edit_dirs().items():
+        for pattern in ("v[0-9]*/確認_v*.md", "v[0-9]*/*.mp4"):
+            for p in edit.glob(pattern):
+                try:
+                    if p.stat().st_mtime >= turn_ts:
+                        out.append(f"{name}/{p.name}")
+                except OSError:
+                    pass
+    return sorted(out)
 
 
 def main():
@@ -61,6 +78,20 @@ def main():
         return 0
     turn_id = rows[start].get("uuid", str(start))
     turn_ts = parse_ts(rows[start].get("timestamp", ""))
+
+    # 版ができたターンは、案件のタスクを閉じてから終える（2026-11-03。記憶に書くだけでは閉じ忘れが直らなかった）
+    made = new_deliverables(turn_ts)
+    if made:
+        state_file = STATE_DIR / f"stop_tree_{hook.get('session_id', 'unknown')}.json"
+        state = load_json(state_file, {})
+        if state.get("blocked_turn") != turn_id:
+            save_json(state_file, {"blocked_turn": turn_id})
+            sys.stderr.write(
+                "【Addness】このターンで版の成果物ができた（" + "、".join(made[:4]) + "）。\n"
+                "案件のゴールのタスクを get_goal_tree で全部読み、できている段を閉じ、閉じられない段に理由を書いてから終える"
+                "（小川さんに渡す前は型の 11d）。別のセッションの成果物なら、その旨を一言添えて終えてよい。\n"
+            )
+            return 2
 
     recorded, edited, bash = False, [], 0
     for row in rows[start + 1:]:
