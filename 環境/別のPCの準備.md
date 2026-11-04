@@ -12,6 +12,7 @@
 - リポジトリは `lightserah-commits/video_edit_rules`（2026-10-05 から公開：小川さん「上司に共有しないといけなくて、一旦公開して」。社内の情報も見えるので、共有が済んだら非公開に戻すか決める）
 - **Git に入れないもの**（`.gitignore`。PC へはフォルダのコピーで運ぶ）：雛形 `tools/case_template/` の全部（台本・字幕に社外の話が入っている可能性があるので。2026-11-03・2026-11-04 小川さん）・AI メモリの控え `環境/AIメモリ/`（2026-11-04 小川さん）・案件（案件フォルダは各 PC の `~/Desktop/みかみ案件依頼書/` など）・`work` のリンク・Mac ごとの設定（`.claude/settings.local.json`）・Addness の記録（`.claude/addness/` は `goals.json` 以外）・`見本/確認/`・Premiere のキャッシュ・`env/`・`models/`・`完成版/`・`上司の資料/`・`環境/フォント/`・`環境/PremiereComposer/`（社内の資料・フォント・有料の部品を公開のリポジトリに上げない）
 - **2026-11-04 の整理を別の PC で取り込む時**：`tools/case_template/` の3組（環境設定_v004・セキュリティ_v005・AI動画編集_v004）と `環境/AIメモリ/` は Git から外したので、`git pull` でその PC のフォルダから消える。雛形はこの Air からコピーする（Claude の本物の AI メモリは消えない）
+- **2026-11-04 に依頼文と 08 を分けた分を別の PC で取り込む時**：`git pull` で `ルール/工程/` と `ルール/08_カット.yaml`・`ルール/08_字幕.yaml` が入る。Git に入らない雛形の指示文（`tools/case_template/1027_v003/v003/_work/agent_prompts/`）は古い場所を指したままなので、この Air からコピーする
 - **この Air の実物は `~/Desktop/仕事/video_edit_rules`**（2026-11-03 から。`~/Desktop/` の同じ名前は Finder から隠したリンクで、消すと道具と Premiere の参照が止まる）
 - **置き場所はどの PC でも `~/Desktop/video_edit_rules`**。案件のスクリプト（`ROOT = os.path.expanduser("~/Desktop/video_edit_rules")`）と Premiere のプロジェクトがこの場所を見る。フォルダの中の道具は自分の置き場所から決めるので、別の所に置いても動くが、その時は準備のスクリプトが `~/Desktop/video_edit_rules` にリンクを作る
 - 場所の書き方：このフォルダからの相対か `~/` で書く（PC ごとにユーザー名が違う。Air は `yoshizawakouichi`、iMac は `addness`）

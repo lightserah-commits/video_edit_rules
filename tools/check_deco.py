@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""装飾の検査（編集の依頼文.md の工程9）。元は work/gamen_kyoyu_20260926/analysis/check_deco.py。
+"""装飾の検査（ルール/工程/09_検査.md）。元は work/gamen_kyoyu_20260926/analysis/check_deco.py。
 
   - SE の開始が、どのテロップ・画像・画面の開始とも合っていないもの（01 手順5：SE は装飾テロップの開始フレーム）
   - カメラのクリップのズーム（スケールが100でないもの）の数

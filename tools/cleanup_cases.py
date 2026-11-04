@@ -18,7 +18,7 @@
   python3 tools/cleanup_cases.py                         全案件の一覧（何も動かさない）
   python3 tools/cleanup_cases.py 案件名 --trash 途中 前の書き出し 使っていない
   python3 tools/cleanup_cases.py 案件名 --done --trash 終わった案件
-タイミング（編集の依頼文.md の「片付け」）：版ができたら「途中」、次の版ができたら「前の書き出し」「使っていない」、
+タイミング（ルール/工程/13_納品と片付け.md の「片付け」）：版ができたら「途中」、次の版ができたら「前の書き出し」「使っていない」、
 案件が終わったら「終わった案件」（最終の書き出しを人が別の場所に保存してから）。
 """
 import argparse

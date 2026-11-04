@@ -30,7 +30,7 @@ root_goal.id が空なら、Addness には書かず 2 だけして、sync_log �
   for name, p in sorted(a.case_edit_dirs().items()): print('案件', name, p)
   "
   ```
-  出てくるのは、ルールのファイル（`作業状況.md`・00〜09・`編集の依頼文.md`・`見本/…`。ROOT からのパス）と、案件の記録（`[案件ID] 00_案件メモ.md`・`[案件ID] vNNN/確認_vNNN.md`。その案件の作業場 edit/ の中のパス）。案件の作業場は goals.json（と cases_local.json）の `cases.<案件ID>.edit`（`~/` で書いてある）。このMacに無い案件は出てこないので飛ばしてよい（iMac の案件は iMac の AI が Addness に直接書く）
+  出てくるのは、ルールのファイル（`作業状況.md`・00〜09・`編集の依頼文.md`・`ルール/工程/`・`見本/…`。ROOT からのパス）と、案件の記録（`[案件ID] 00_案件メモ.md`・`[案件ID] vNNN/確認_vNNN.md`。その案件の作業場 edit/ の中のパス）。案件の作業場は goals.json（と cases_local.json）の `cases.<案件ID>.edit`（`~/` で書いてある）。このMacに無い案件は出てこないので飛ばしてよい（iMac の案件は iMac の AI が Addness に直接書く）
 - 中身を読み、書き先のゴールの本文（read_goal_detail）と AIメモリ（list_goal_memories）を読んで、Addness にまだ無い版・決定・分かったこと・未確認・次の作業だけを、addness-kiroku.md の書き方で本文と AIメモリに書く（source_client は claude-code-scheduled）。書き先：
   - `[案件ID]` の記録 → `cases.<案件ID>.id` のゴール
   - `作業状況.md` → 案件ごとの状況はその案件のゴール、全体のこと（判断待ち・ハマりどころ）は root_goal

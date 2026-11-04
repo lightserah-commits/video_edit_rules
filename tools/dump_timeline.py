@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """シーケンスの全クリップ（トラック・開始/終了・素材名・in/out・無効化・文字）をJSONに書き出す。
-途中の版から始める案件で「変えてはいけない基準」を残すのに使う（編集の依頼文.md の工程1）。
+途中の版から始める案件で「変えてはいけない基準」を残すのに使う（ルール/工程/01_受付と起点.md）。
 元は work/gamen_kyoyu_20260926/analysis/dump_timeline.py。
 
 使い方: python3 tools/dump_timeline.py <prproj> <シーケンス名> <出力.json>
