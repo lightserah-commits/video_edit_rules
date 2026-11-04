@@ -1,5 +1,5 @@
 # 画像を出す所の書き方の例（tools/zukai/gen_images.py が読む。案件では <図解のフォルダ>/images_spec.py に書く）。
-# 環境設定 v004 の I01・I03・I07 から（字幕ID と画像の名前はその案件のもの。全部は tools/case_template/環境設定_v004/v004/zukai/gen_images.py）。
+# 環境設定 v004 の I01・I03・I07 から（字幕ID と画像の名前はその案件のもの。全部は tools/case_template/古い版/環境設定_v004/v004/zukai/gen_images.py）。
 # 使える名前：S(字幕ID)・E(字幕ID)・spec・photo・card・text・arrow・cross・tl・ZUKAI・OUT・json
 # 置き方の決まり：顔・右上のタイトル・強調の黒い帯・問いの札にかけない。比べる2枚は上端・下端をそろえる。言葉の頭に出す
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """案件の作業場の片付け。作業場は、小川さんが指定した案件フォルダ（素材入り）の中の edit/（場所は
-.claude/addness/goals.json の cases[].edit）。古い案件は ~/Movies/video_edit_cases/（video_edit_rules/work のリンク）の下。
+.claude/addness/goals.json の cases[].edit）。
 消してよいものを種類ごとに一覧にし、容量を出す。--trash を付けた時だけ、その種類を macOS のゴミ箱に移す
 （完全には消さない。ゴミ箱を空にするのは人がやる）。2026-09-28 小川さん指示。
 

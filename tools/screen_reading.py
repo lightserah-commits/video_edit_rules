@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """画面共有の動画で、①画面の中を読み上げている所（赤枠を出す所）と、②個人のパソコンの中身が見える所（ブラーをかける所）を探す。
-07_画面共有とワイプ.yaml の read_frame・blur の道具。2026-09-26 画面解説の案件で作ったもの（work/gamen_kaisetsu_20260926/v006/red_frames.py）を一般にした。
+ルール/07_画面共有とワイプ.yaml の read_frame・blur の道具。2026-09-26 画面解説の案件で作ったもの（work/gamen_kaisetsu_20260926/v006/red_frames.py）を一般にした。
 
   frames  … 画面を映している字幕ごとに、その時の画面の画像（字幕の頭から 25% と 75% の2枚）を書き出す
   ocr     … 画像を Mac の文字認識（tools/screen_ocr.swift）で読む（1枚 2〜3秒）

@@ -53,7 +53,7 @@ class Library:
         self.lib_seq = self.pj.sequence(self.index["sequence"])
         self.samples = {s["id"]: s for s in self.index["samples"]}
         self.type_by_id = {t["id"]: t for t in self.types["telop_types"]}
-        self.size_log = []          # add_telop で大きさを決めた記録（06_テロップの大きさ.yaml）
+        self.size_log = []          # add_telop で大きさを決めた記録（ルール/06_テロップの大きさ.yaml）
         self._size_tools = None
 
     # --- 見本の実物を探す ---
@@ -77,7 +77,7 @@ class Library:
         return texts
 
     def add_telop(self, seq, type_id, texts, start, duration=None, track=None, size="auto", pattern=None):
-        """size: "auto"（06_テロップの大きさ.yaml の決まりで文字の大きさを決める。既定）／ None（見本の大きさのまま）／
+        """size: "auto"（ルール/06_テロップの大きさ.yaml の決まりで文字の大きさを決める。既定）／ None（見本の大きさのまま）／
         数（その大きさ。文字の大きさ×テロップ全体の拡大率）。
         pattern: パターンID。スタイルが同じでも大きさが違うとき（シュールの再現シーン＝"P16"）に渡す。"""
         item, src_track = self.sample_item(type_id)

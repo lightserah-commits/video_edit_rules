@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """別のPC（Mac）で、このフォルダをコピーするだけで今と同じ編集環境にする（2026-10-17 小川さん「コピー&ペーストで俺と同じ環境が手に入る様に」）。
-手順と決まりは `別のPCの準備.md`。どの Mac でも /usr/bin/python3（3.9）で動く。
+手順と決まりは `環境/別のPCの準備.md`。どの Mac でも /usr/bin/python3（3.9）で動く。
 
 使い方:
   python3 tools/setup_mac.py                 … 確かめるだけ（何も変えない）。足りないものと入れ方を出す
@@ -394,7 +394,7 @@ def pack():
 
 
 def main():
-    ap = argparse.ArgumentParser(description="別のPCで今と同じ編集環境にする（別のPCの準備.md）")
+    ap = argparse.ArgumentParser(description="別のPCで今と同じ編集環境にする（環境/別のPCの準備.md）")
     ap.add_argument("--install", action="store_true", help="足りないものを入れる（1つずつ聞く）")
     ap.add_argument("--yes", action="store_true", help="聞かずに入れる（AI が流す時。先にチャットで OK をもらう）")
     ap.add_argument("--only", help="入れるものを絞る（カンマ区切り：" + ",".join(s[0] for s in STEPS) + "）")

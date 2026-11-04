@@ -40,12 +40,12 @@ RECORDER_AGENT = "addness-kiroku"
 
 # ローカルの記録（Addness に反映すべき中身が書かれるファイル）
 RULE_FILES = [
-    "作業状況.md", "編集の依頼文.md", "README.md", "上司の資料/README.md", "01_判断フロー.md",
-    "02_演出パターン.yaml", "03_SEカタログ.yaml", "04_ズーム・BGM・テンポ.yaml", "05_アニメーション.yaml",
-    "06_テロップの大きさ.yaml", "07_画面共有とワイプ.yaml", "08_カットと字幕の追加ルール.yaml", "09_図解.md",
+    "作業状況.md", "記録/ハマりどころ.md", "記録/判断待ち.md", "記録/案件の一覧.md", "編集の依頼文.md", "tools/README.md", "README.md", "上司の資料/README.md", "ルール/01_判断フロー.md",
+    "ルール/02_演出パターン.yaml", "ルール/03_SEカタログ.yaml", "ルール/04_ズーム・BGM・テンポ.yaml", "ルール/05_アニメーション.yaml",
+    "ルール/06_テロップの大きさ.yaml", "ルール/07_画面共有とワイプ.yaml", "ルール/08_カットと字幕の追加ルール.yaml", "ルール/09_図解.md",
     "見本/README.md", "見本/型一覧.md",
-    "CLAUDE.md", "索引.md", "変更履歴.md", "Addnessと働く.md", "別のPCの準備.md", "実例/根拠と実例.md",
-    "動画の土台.md", "実例/実演お手本/分析.md",
+    "CLAUDE.md", "索引.md", "記録/変更履歴.md", "Addnessと働く.md", "環境/別のPCの準備.md", "実例/根拠と実例.md",
+    "ルール/動画の土台.md", "実例/実演お手本/分析.md",
 ]
 
 # 変更を数えないもの（素材・Premiere の副産物・フックの状態）
@@ -131,7 +131,7 @@ def changed_since(ts, limit=None):
                 pass
         if limit and len(found) >= limit:
             break
-    # work は案件置き場（~/Movies/video_edit_cases/）へのリンクで os.walk は入らないので、案件の記録（00_案件メモ.md・確認_vNNN.md）だけ見る
+    # 案件はこのフォルダの外にあって os.walk は入らないので、案件の記録（00_案件メモ.md・確認_vNNN.md）だけ見る
     for rel, mt in local_records():
         if rel.startswith("[") and mt > ts and rel not in found:
             found.append(rel)

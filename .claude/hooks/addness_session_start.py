@@ -30,9 +30,6 @@ def main():
         lines.append(f"- 全体のゴール：{root.get('title', '')}（{root['id']}）")
     else:
         lines.append("- 全体のゴールがまだ無い。" + (goals.get("pending") or "置き場をユーザーと決めて作る"))
-        parent = (goals.get("parent_goal") or {}).get("id")
-        if parent:
-            lines.append(f"  → get_goal で {parent} を見て、「閲覧のみ」の注意が消えていたら .claude/addness/起票待ち.md のとおりに作る")
     cases = goals.get("cases") or {}
     for name, g in cases.items():
         lines.append(f"- 案件 {name}：{g.get('title', '')}（{g.get('id', '')}）")

@@ -2,7 +2,7 @@
 """XMLで読み込んだテロップに、Premiere内でアニメーション（出方の動き）を付ける（試作）。
 
 Final Cut Pro 7 XML には Premiere 専用エフェクト（トランスフォーム・指向性ブラー・色かぶり補正・ストロボ）が載らないため、
-読み込んだ後に MCP Bridge 経由でエフェクトを足し、キーフレームを打つ。値は 05_アニメーション.yaml の実測値。
+読み込んだ後に MCP Bridge 経由でエフェクトを足し、キーフレームを打つ。値は ルール/05_アニメーション.yaml の実測値。
 
 使い方（Pythonから）:
   from telop_animate import animate

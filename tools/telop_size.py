@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""テロップの大きさを、06_テロップの大きさ.yaml の決まりで自動で決める。
+"""テロップの大きさを、ルール/06_テロップの大きさ.yaml の決まりで自動で決める。
 
   1. テロップの文字を、実際のフォント（このMacに入っているもの）で測る
   2. スタイルの「基本の大きさ」で置く。一番長い行が「短い一言の文字数」以下なら倍率を掛ける（上限まで）
@@ -25,7 +25,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from native_prproj import run_styles  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-RULES_PATH = os.path.join(HERE, "..", "06_テロップの大きさ.yaml")
+RULES_PATH = os.path.join(HERE, "..", "ルール/06_テロップの大きさ.yaml")
 FONT_DIRS = [
     os.path.expanduser("~/Library/Application Support/Adobe/CoreSync/plugins/livetype"),   # Adobe Fonts（隠しフォルダ）
     os.path.expanduser("~/Library/Fonts"),
@@ -37,7 +37,7 @@ FONT_SUBSTITUTE = {"HiraKakuStdN-W8": "HiraginoSans-W8"}
 SPACES = " 　\t"
 
 
-# ---------- 決まり（06_テロップの大きさ.yaml の common と by_style だけを読む） ----------
+# ---------- 決まり（ルール/06_テロップの大きさ.yaml の common と by_style だけを読む） ----------
 def load_rules(path=RULES_PATH):
     common, by_style, section = {}, {}, None
     with open(path, encoding="utf-8") as f:
@@ -55,7 +55,7 @@ def load_rules(path=RULES_PATH):
                 k, v = s.strip().split(":", 1)
                 v = v.strip()
                 if not (v.startswith("{") and v.endswith("}")):
-                    raise ValueError(f"06_テロップの大きさ.yaml の by_style の書き方が違います: {line.strip()}")
+                    raise ValueError(f"ルール/06_テロップの大きさ.yaml の by_style の書き方が違います: {line.strip()}")
                 row = {}
                 for part in v[1:-1].split(","):
                     kk, vv = part.split(":", 1)
@@ -66,7 +66,7 @@ def load_rules(path=RULES_PATH):
                 by_style[k.strip()] = row
     for key in ("横幅の上限", "画面の幅", "短い一言の文字数", "2行にする縮み"):
         if key not in common:
-            raise ValueError(f"06_テロップの大きさ.yaml の common に {key} がありません")
+            raise ValueError(f"ルール/06_テロップの大きさ.yaml の common に {key} がありません")
     return {"common": common, "by_style": by_style}
 
 
@@ -229,7 +229,7 @@ def measure(pj, item, fonts):
 
 
 def auto_size(pj, item, styles, pattern=None, rules=None, fonts=None):
-    """06_テロップの大きさ.yaml の決まりで文字の大きさを書き換える。決まりの無いスタイルは変えない。
+    """ルール/06_テロップの大きさ.yaml の決まりで文字の大きさを書き換える。決まりの無いスタイルは変えない。
     戻り値: 何をしたか（大きさ・横幅・注意）"""
     rules = rules or load_rules()
     fonts = fonts or Fonts()
