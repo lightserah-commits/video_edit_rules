@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """強調テロップが出る瞬間と、強調に書いた最初の言葉が聞こえ始める瞬間の差を出す（読むだけ・音は出さない）。
-決まりは ルール/01_判断フロー.md の「出す時刻」（2026-10-02）：出る瞬間＝書いた最初の言葉の聞こえ始め。それより前には出さない。
+決まりは ルール/01_判断フロー.md の「出す時刻」（2026-10-02・2026-11-04）：出る瞬間＝書いた最初の言葉の聞こえ始め。ただし聞こえ始めが直前のカットから 12コマ以内なら、カットと同じコマ。
 
 使い方:
   python3 tools/check_kyocho_timing.py 版.prproj --seq シーケンス名 --track V7 \
@@ -8,7 +8,7 @@
     --track  強調テロップの段（02 の output_tracks。複数は V7,V8）
     --asr    素材の文字起こし（語ごとの時刻 words つき。実例/カット調査/scripts/transcribe_raw.py の形）。素材名は A1 のクリップ名
     --wav    素材の声（16kHz・1ch。tools/audible_onset.py extract）。あれば語の頭を波形で合わせ直す
-合格: 書いた最初の言葉より 0.1秒以上早く出るもの 0件（文字起こしの誤りで出たものは、波形・画像で確かめて理由を書く）。
+合格: 書いた最初の言葉より 0.1秒以上早く出るもの 0件（カットと同じコマに置いて、聞こえ始めがカットから 12コマ以内の物は数えない。文字起こしの誤りで出たものは、波形・画像で確かめて理由を書く）。
      0.3秒以上遅いものは読んで決める（お手本は聞こえ始めと同時か 0.1〜0.3秒あと）。
 2行のテロップの2行目は、1行目と同時に出るので測らない。書いた言葉が文字起こしに見つからないものは「測れない」。
 """
@@ -20,9 +20,11 @@ import sys
 import wave
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from check_telop_cut import BASE_FPS, find_cuts, near  # noqa: E402
 from dump_timeline import dump  # noqa: E402
 
 TPS = 254016000000
+AT_CUT_K = 12          # 聞こえ始めがカットからこのコマ数以内なら、カットと同じコマに出してよい（29.97fps のコマ数）
 NORM = re.compile(r"[\s\r　、。！!？?…「」『』｢｣（）()・/／〜~ｗw↑←→※〈〉＜＞<>【】:：]")
 
 
@@ -65,6 +67,7 @@ def main():
     asr = {k: words(v) for k, v in (x.split("=", 1) for x in a.asr)}
     dbs = {k: env_db(v) for k, v in (x.split("=", 1) for x in a.wav)}
     tl = dump(a.prproj, a.seq); fps = tl["fps"]
+    cuts = find_cuts(tl["tracks"].get("A1", []), fps)
     # タイムラインのコマ → (素材名, 素材の秒)
     srcmap = {}
     for r in tl["tracks"].get("A1", []):
@@ -99,13 +102,15 @@ def main():
         on = wave_onset(dbs[nm], best) if nm in dbs else best
         d = round(sec - on, 2)
         row["差"] = d
-        row["結果"] = "早い" if d <= -.1 else ("遅い" if d > .3 else "○")
+        off = near(cuts, r["start_f"])
+        at_cut = off is not None and abs(off) * BASE_FPS / fps < 1.5 and -d * BASE_FPS <= AT_CUT_K + .5
+        row["結果"] = "カットと同じコマ" if at_cut and d < 0 else ("早い" if d <= -.1 else ("遅い" if d > .3 else "○"))
         res.append(row)
     early = [x for x in res if x.get("結果") == "早い"]; late = [x for x in res if x.get("結果") == "遅い"]
-    ok = [x for x in res if x.get("結果") == "○"]; nm_ = [x for x in res if "差" not in x]
+    ok = [x for x in res if x.get("結果") == "○"]; nm_ = [x for x in res if "差" not in x]; at_ = [x for x in res if x.get("結果") == "カットと同じコマ"]
     for x in early + late:
         print(f"{x['時刻']}\t{x['結果']}\t{x['差']:+.2f}秒\t{x['文字']}")
-    print(f"# 強調 {len(res)}件：○ {len(ok)}・早い（0.1秒以上前）{len(early)}・遅い（0.3秒より後）{len(late)}・測れない {len(nm_)}", file=sys.stderr)
+    print(f"# 強調 {len(res)}件：○ {len(ok)}・カットと同じコマ {len(at_)}・早い（0.1秒以上前）{len(early)}・遅い（0.3秒より後）{len(late)}・測れない {len(nm_)}", file=sys.stderr)
     if a.out:
         json.dump(res, open(a.out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     sys.exit(1 if early else 0)

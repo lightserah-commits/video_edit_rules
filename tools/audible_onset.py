@@ -497,6 +497,39 @@ def word_window_onset(E, words, word_starts, asr, dtw_cand=None):
     return None, "語の幅も DTW も無い"
 
 
+def snap_heads_to_cuts(heads, cuts, fps=30000 / 1001, k=12, near=6, min_show=6):
+    """テロップの頭をカットへ寄せる（08 の captions.timing の ①。2026-11-04 完成版2本の実測から）。音は見ない。k・near・min_show は 29.97fps のコマ数。
+      頭がカットの後ろ k コマ以内 → カットへ（そのカットの後ろで一番前のテロップだけ）
+      頭がカットの前 near コマ以内 → カットへ（次のテロップがカットより min_show コマ以上後ろにある時だけ）
+    heads＝{番号: 頭のコマ}。返す値 (新しい heads, 動かした物 [(番号, 前のコマ, 後のコマ)], カットの前後 2〜near コマに残った物 [(番号, コマ, カットからのコマ数)])"""
+    import bisect
+    cuts = sorted(set(cuts))
+    u = 29.97 / fps
+    order = sorted(heads, key=heads.get)
+    out, moved, left = dict(heads), [], []
+    prev = None
+    for n, h in enumerate(order):
+        f = heads[h]
+        i = bisect.bisect_right(cuts, f) - 1
+        to = None
+        if i >= 0 and 0 < (f - cuts[i]) * u <= k + 0.5 and (prev is None or prev < cuts[i]):
+            to = cuts[i]
+        elif i + 1 < len(cuts) and 0 < (cuts[i + 1] - f) * u <= near + 0.5:
+            nxt = heads[order[n + 1]] if n + 1 < len(order) else None
+            if nxt is None or (nxt - cuts[i + 1]) * u >= min_show:
+                to = cuts[i + 1]
+        if to is not None:
+            out[h] = to
+            moved.append((h, f, to))
+        else:
+            d = [f - c for c in cuts[max(0, i):i + 2]]
+            d = min(d, key=abs) if d else None
+            if d is not None and 1.5 < abs(d) * u <= near + 0.5:
+                left.append((h, f, d))
+        prev = out[h]
+    return out, moved, left
+
+
 def check_prproj(a):
     from native_prproj import Prproj, TPS
     pj = Prproj.load(a.project)
