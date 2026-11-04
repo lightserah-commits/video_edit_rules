@@ -1,0 +1,43 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>途中の版の確認</title>
+<style>
+:root{--bg:#16181c;--fg:#e8e8e8;--sub:#9aa0a6;--line:#34373d;--btn:#2a2d33}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 -apple-system,"Hiragino Sans",sans-serif}
+#stage{position:relative;width:min(100vw,calc((100vh - 96px)*16/9));aspect-ratio:16/9;margin:0 auto;background:#000}
+#stage video,#stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+#bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:8px 16px}
+#seek{flex:1 1 100%;width:100%}
+button,select{background:var(--btn);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:4px 10px;font:inherit}
+#tc{font-variant-numeric:tabular-nums;min-width:9em}
+.sub{color:var(--sub)}
+</style></head><body>
+<div id="stage"><video id="v" src="light.mp4" muted playsinline preload="auto"></video><canvas id="c" width="1920" height="1080"></canvas></div>
+<div id="bar">
+<input id="seek" type="range" min="0" max="1" step="0.001" value="0" aria-label="再生位置">
+<button id="play">再生</button><button id="back">1コマ戻る</button><button id="next">1コマ進む</button>
+<span id="tc">00:00:00</span>
+<label><input id="tel" type="checkbox" checked> テロップ</label>
+<label><input id="snd" type="checkbox"> 音を出す</label>
+<select id="ch" aria-label="章へ移動"><option value="">章へ移動</option></select>
+<span class="sub">音は「音を出す」を押すまで鳴りません。軽い映像です。最後の版は Premiere で書き出します。</span>
+</div>
+<script src="telop.js"></script><script src="telops_data.js"></script><script>
+const FPS=30000/1001,v=document.getElementById('v'),cv=document.getElementById('c'),ctx=cv.getContext('2d'),seek=document.getElementById('seek'),tc=document.getElementById('tc');
+window.__stat={n:0,sum:0,max:0};let dragging=false;
+const items=DATA.items,fonts=[...new Set(items.flatMap(i=>i.layers.flatMap(l=>l.style?l.style.runs.map(r=>r.font):[])).filter(Boolean))];
+function draw(t){const a=performance.now();ctx.clearRect(0,0,1920,1080);if(document.getElementById('tel').checked)TelopView.draw(ctx,items,t,DATA.over);const d=performance.now()-a;const s=window.__stat;s.n++;s.sum+=d;if(d>s.max)s.max=d;
+ const f=Math.round(t*FPS),ss=Math.floor(t),m=Math.floor(ss/60);tc.textContent=`${String(m).padStart(2,'0')}:${String(ss%60).padStart(2,'0')}.${String(f%30).padStart(2,'0')}（${f}コマ）`;if(!dragging&&v.duration)seek.value=t/v.duration;window.__lastDrawn=t}
+function loop(_now,meta){draw(meta.mediaTime+0.25/FPS);v.requestVideoFrameCallback(loop)}
+// 文字の絵は要る所だけ持つ（全部持つと 1GB を超える）
+setInterval(()=>{const t=v.currentTime;for(const it of items)if(it.end<t-10||it.start>t+30)for(const l of it.layers)delete l._s},5000);
+Promise.all(fonts.map(f=>document.fonts.load(`90px "${f}"`))).then(()=>{v.requestVideoFrameCallback(loop);draw(0);window.__ready=true});
+v.addEventListener('seeked',()=>draw(v.currentTime));
+document.getElementById('play').onclick=()=>v.paused?v.play():v.pause();
+v.addEventListener('play',()=>document.getElementById('play').textContent='止める');v.addEventListener('pause',()=>document.getElementById('play').textContent='再生');
+const step=k=>{v.pause();v.currentTime=(Math.round(v.currentTime*FPS)+k+0.25)/FPS};
+document.getElementById('back').onclick=()=>step(-1);document.getElementById('next').onclick=()=>step(1);
+seek.oninput=()=>{dragging=true;v.currentTime=seek.value*v.duration};seek.onchange=()=>{dragging=false};
+document.getElementById('tel').onchange=()=>draw(v.currentTime);document.getElementById('snd').onchange=e=>{v.muted=!e.target.checked};
+const ch=document.getElementById('ch');for(const it of items){const l=it.layers.find(x=>x.style&&x.style.runs.some(r=>/^第\d+章/.test(r.text)));if(l){const o=document.createElement('option');o.value=it.start;const nm=it.layers.filter(x=>x.style).map(x=>x.style.runs.map(r=>r.text).join('')).join(' ');const ss=Math.floor(it.start);o.textContent=`${Math.floor(ss/60)}:${String(ss%60).padStart(2,'0')} ${nm}`;ch.appendChild(o)}}
+ch.onchange=()=>{if(ch.value)v.currentTime=+ch.value};
+document.addEventListener('keydown',e=>{if(e.code==='Space'){e.preventDefault();v.paused?v.play():v.pause()}if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)});
+</script></body></html>

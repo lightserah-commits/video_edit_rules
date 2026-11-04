@@ -1,0 +1,19 @@
+<!doctype html><meta charset="utf-8"><style>html,body{margin:0;background:transparent}canvas{display:block}
+.pre{position:absolute;left:-9999px}</style>
+<canvas id="c" width="1920" height="1080"></canvas><div class="pre" id="p"></div>
+<script src="telop.js"></script><script src="telops_data.js"></script><script>
+const c=document.getElementById('c').getContext('2d');
+window.renderAt=async(t,bgUrl)=>{c.clearRect(0,0,1920,1080);
+ const need=[...new Set(DATA.items.filter(i=>t>=i.start&&t<i.end).flatMap(i=>i.layers.flatMap(l=>l.style?l.style.runs.map(r=>r.font):[])).filter(Boolean))];
+ await Promise.all(need.map(f=>document.fonts.load(`90px "${f}"`)));
+ TelopView.draw(c,DATA.items,t);return need};
+window.itemsAt=async(t)=>{const out=[];const cv=document.createElement('canvas');cv.width=1920;cv.height=1080;const x=cv.getContext('2d',{willReadFrequently:true});
+ const act=DATA.items.map((it,i)=>[it,i]).filter(([it])=>t>=it.start&&t<it.end);
+ const need=[...new Set(act.flatMap(([i])=>i.layers.flatMap(l=>l.style?l.style.runs.map(r=>r.font):[])).filter(Boolean))];
+ await Promise.all(need.map(f=>document.fonts.load(`90px "${f}"`)));
+ for(const [it,i] of act){x.clearRect(0,0,1920,1080);TelopView.drawOne(x,it,t);const d=x.getImageData(0,0,1920,1080).data;let x0=1920,y0=1080,x1=-1,y1=-1;
+  for(let yy=0;yy<1080;yy+=1){for(let xx=0;xx<1920;xx+=1){if(d[(yy*1920+xx)*4+3]>8){if(xx<x0)x0=xx;if(xx>x1)x1=xx;if(yy<y0)y0=yy;if(yy>y1)y1=yy;}}}
+  if(x1<0)continue;const w=x1-x0+1,h=y1-y0+1;const c2=document.createElement('canvas');c2.width=w;c2.height=h;c2.getContext('2d').drawImage(cv,x0,y0,w,h,0,0,w,h);
+  out.push({idx:i,track:it.track,start:it.start,end:it.end,bbox:[x0,y0,x1,y1],text:it.layers.map(l=>l.style?l.style.runs.map(r=>r.text).join(''):'').join('/'),keyed:!!(it.effects.length||it.fades.length),png:c2.toDataURL('image/png')});}
+ return out};
+window.__ready=true;</script>
