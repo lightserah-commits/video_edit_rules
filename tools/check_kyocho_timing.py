@@ -5,7 +5,7 @@
 使い方:
   python3 tools/check_kyocho_timing.py 版.prproj --seq シーケンス名 --track V7 \
       --asr 素材名=文字起こし.json [--wav 素材名=声16k.wav] [--out checks_kyocho_timing.json]
-    --track  強調テロップの段（02 の output_tracks。複数は V7,V8）
+    --track  強調テロップの段（02 の output_tracks。複数は V7,V8）。札の段（V12,V13,V14）も同じ見方で測れる（問いの札の頭の「Q:」は外して探す）
     --asr    素材の文字起こし（語ごとの時刻 words つき。実例/カット調査/scripts/transcribe_raw.py の形）。素材名は A1 のクリップ名
     --wav    素材の声（16kHz・1ch。tools/audible_onset.py extract）。あれば語の頭を波形で合わせ直す
 合格: 書いた最初の言葉より 0.1秒以上早く出るもの 0件（カットと同じコマに置いて、聞こえ始めがカットから 12コマ以内の物は数えない。文字起こしの誤りで出たものは、波形・画像で確かめて理由を書く）。
@@ -79,13 +79,13 @@ def main():
     for tr in a.track.split(","):
         for r in tl["tracks"].get(tr, []):
             t = "".join(r.get("texts") or [])
-            if r["muted"] or len(NORM.sub("", t)) < 2:
+            if r["muted"] or len(NORM.sub("", t)) < 2 or "AI指示中" in t:
                 continue
             tel.append(r)
     res = []
     for r in tel:
         text = "／".join(x.replace("\r", "／") for x in r["texts"])
-        first = NORM.sub("", r["texts"][0].split("\r")[0]).lower()
+        first = NORM.sub("", re.sub(r"^\s*Q[:：]", "", r["texts"][0].split("\r")[0])).lower()
         at = r["start_f"] / fps
         row = {"時刻": f"{int(at // 60):02d}:{at % 60:05.2f}", "文字": text}
         if r["start_f"] not in srcmap:
