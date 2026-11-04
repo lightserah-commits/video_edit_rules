@@ -53,7 +53,7 @@ LOUD = 20.0          # 部屋の音よりこれだけ大きい声は、はっき
 LOOK = 1.5           # つなぎ目の前後を見る長さ（秒）
 BASE_LOOK = 0.4      # その場の底を、つなぎ目の前後この長さの中で探す
 TAIL_KEEP = 0.03     # 語尾が平らな所に着いてから残す（小川さんは声の際から 0.02〜0.06秒）
-HEAD_KEEP = 0.04     # 言い出しの上がり始めの前に残す（小川さんが詰めた所は声の際から 0.02〜0.06秒）
+HEAD_KEEP = 0.02     # 言い出しの上がり始めの前に残す（完成版2本の入りの中央は坂の始まりの 0.01〜0.02秒手前。2026-11-04 小川さん Q5 B で 0.04 から変えた。未聴取）
 REACH = 0.5          # 語尾の坂を素材の後ろへ探す長さ（これより長く下がらない時は、語尾ではなく次の語）
 RISE = 12.0          # 下がる途中でこれだけ上がり、はっきりした声になったら、次の語が始まった（語尾の中の揺れは数えない）
 LONG_PCT = 95        # 「目立って長い」平らな所＝その録音の平らな所の長さの、長い方から5%（1025・1026 の手の直しに一番近かった）
@@ -202,7 +202,7 @@ def audible_flats(w, keep):
     return out
 
 
-def plan_flats(w, keep, cap_starts=(), mode="long", keep_ranges=()):
+def plan_flats(w, keep, cap_starts=(), mode="long", keep_ranges=(), long_sec=None):
     """詰める平らな所と、詰める素材の範囲（08 の pauses.rule）。
     mode="long"（既定。08 の pauses.rule）：どこでも「目立って長い」物（その録音の平らな所の長さの長い方から5%より長い）だけ、坂まで詰める
               （1025・1026 の手の直しでは、小川さんはつなぎ目の長い平らな所をほぼ全部詰め、短い所は2〜8%しか詰めていなかった）
@@ -226,6 +226,8 @@ def plan_flats(w, keep, cap_starts=(), mode="long", keep_ranges=()):
     allv = [f["len"] for f in fl if f["len"] >= 0.06]
     long_mid = float(np.percentile(mid, LONG_PCT)) if mid else 1e9
     long_all = float(np.percentile(allv, LONG_PCT)) if allv else 1e9
+    if long_sec is not None:                         # 詰めた後に測り直すと線が下がって詰める案が0にならないので、1回目の線を渡せる（check_cut_list.py）
+        long_all = long_sec
     cuts = []
     for f in fl:
         bnd = f["at_join"] or f["at_caption"]
@@ -274,6 +276,7 @@ def main():
     ap.add_argument("--from", dest="lo", type=float, default=0.0, help="素材の秒（これより前は見ない）")
     ap.add_argument("--to", dest="hi", type=float, default=1e9, help="素材の秒（これより後ろは見ない）")
     ap.add_argument("--fps", type=float, default=FPS)
+    ap.add_argument("--long-sec", type=float, help="「目立って長い」の線（秒）を測らずに渡す（--mode long。詰めた後の測り直しで線が下がらないように）")
     ap.add_argument("--out", help="一覧（tsv）")
     ap.add_argument("--json", help="結果（json。cuts＝詰める素材の範囲、joins＝つなぎ目の坂の見立て）")
     a = ap.parse_args()
@@ -286,7 +289,7 @@ def main():
     if a.captions:
         cj = json.load(open(a.captions))
         caps = [c["src"] for c in (cj["captions"] if isinstance(cj, dict) else cj) if c.get("src") is not None]
-    cuts, flats, long_ = plan_flats(w, keep, caps, a.mode, kr)
+    cuts, flats, long_ = plan_flats(w, keep, caps, a.mode, kr, a.long_sec)
     joins = []
     tl, tls = 0.0, []
     for x, y in keep:

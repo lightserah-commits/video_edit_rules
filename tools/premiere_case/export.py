@@ -9,6 +9,7 @@
 """
 import argparse
 import glob
+import json
 import os
 import re
 import sys
@@ -46,6 +47,33 @@ def make_light_preset():
     return LIGHT_PRESET
 
 
+def cut_list_gate(proj, skip):
+    """渡す前の止め方（08 の cut.before_handing）：tools/check_cut_list.py が通っていない版は書き出さない。AI のカット（_work/cuts_vNNN.json）が無い版は見ない"""
+    V = os.path.dirname(proj)
+    tag = os.path.basename(V)
+    cuts = os.path.join(V, "_work", f"cuts_{tag}.json")
+    if not os.path.exists(cuts):
+        return
+    if skip:
+        print(f"カットの検査の一覧を見ずに書き出す：{skip}")
+        return
+    rec_p = os.path.join(V, "_work", f"cut_list_{tag}.json")
+    rec = json.load(open(rec_p, encoding="utf-8")) if os.path.exists(rec_p) else None
+    if not rec:
+        why = "まだ動かしていない"
+    elif rec.get("cuts_mtime", 0) < os.path.getmtime(cuts):
+        why = "カットを組み直した後に動かしていない"
+    elif rec.get("stage") != "all":
+        why = "組み立ての前の結果しか無い（--before-build を付けずに動かす）"
+    elif not rec.get("ok"):
+        why = f"未処理 {rec.get('unresolved')}・動かしていない検査 {rec.get('not_run')}"
+    else:
+        return
+    raise SystemExit(f"カットの検査の一覧が通っていないので書き出さない：{why}\n"
+                     f"  ~/Desktop/video_edit_rules/env/bin/python tools/check_cut_list.py --ver \"{V}\"\n"
+                     "  小川さんの手のカットの版など、この一覧が当てはまらない時だけ --skip-cut-list \"理由\"")
+
+
 def main():
     ap = argparse.ArgumentParser(description="Media Encoder で mp4 に書き出す")
     ap.add_argument("--proj", required=True)
@@ -54,11 +82,13 @@ def main():
     ap.add_argument("--preset", help="書き出しの設定（.epr。既定 Premiere の YouTube 1080p HD）")
     ap.add_argument("--light", action="store_true", help="途中の版の確認用に軽く書き出す（720p・平均 2Mbps）")
     ap.add_argument("--skip-font-check", action="store_true")
+    ap.add_argument("--skip-cut-list", metavar="理由", help="カットの検査の一覧を見ずに書き出す（小川さんの手のカットの版など。理由を書く）")
     ap.add_argument("--dry", action="store_true")
     a = ap.parse_args()
     if a.light and a.preset:
         raise SystemExit("--light と --preset は一緒に使わない")
     proj = C.need_file(a.proj)
+    cut_list_gate(proj, a.skip_cut_list)
     out = os.path.abspath(a.out or os.path.splitext(proj)[0] + ".mp4")
     if a.light and not out.endswith("_light.mp4"):
         out = os.path.splitext(out)[0] + "_light.mp4"
