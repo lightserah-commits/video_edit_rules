@@ -23,6 +23,7 @@
 | `audible_onset.py` | 声が聞こえ始める瞬間を波形から測り、字幕の開始と比べる（発音同期）。声の WAV も作る（extract）。語の時刻つきの文字起こし（transcribe：small を3分ずつ -dtw） |
 | `make_voice_comp.sh` | 声の作業用コピーに +17dB・コンプレッサー・リミッターを掛けた wav を作る（`04` の bgm.balance.limiter。完成版の大きさまで上げても割れない） |
 | `decoration_report.py` | 途中の版から始める時（B）に、今ある装飾を抜き出す。完成版から実例を抜き出すのにも使う |
+| `mtz_bridge.py` | 安藤さんの MTZ（`~/Downloads/MTZ`。声の頭にカットとテロップを合わせる道具）を作業用コピーに流し（`run`）、その結果を工程3のカット候補（`mtz_cuts.json` の keep_frames・`カット候補_MTZ.csv`）と工程4の字幕候補（`mtz_captions.json` の src・`字幕候補_MTZ.csv`）の下書きにする（`convert`）。切れ端・字の途中の切れ目・17字超えを数える（`check`）。出力は動画の横の `〈名前〉_MTZ/こちらの形/`。下書きはそのまま使わず 08 で読んで決める。話者分けは MTZ 0.8.1 に無い（2026-11-05） |
 
 同期は雛形の `scripts/sync_measure.py`。
 
