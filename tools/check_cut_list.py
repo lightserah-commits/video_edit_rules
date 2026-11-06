@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""カットの検査を1つの一覧にして、未処理が残っていたら止める（08 の cut.before_handing。2026-11-04 小川さん「残っていたら渡さない」）。
+"""カットの検査を1つの一覧にする。止めるのは「止める」検査（切れ端・音のブツッ）の未処理だけで、ほかは数を出して知らせる（08 の cut.before_handing。
+2026-11-04 小川さん「残っていたら渡さない」→ 2026-11-06 小川さん「この案で入れて」：機械で決まる物だけ止める。工程9 の「止める／知らせる」）。
 
 見る物と、未処理の決め方（素材の秒は全部 <edit/vNNN>/_work/cuts_vNNN.json の今のカットに対して）：
   声の無い所       find_silence.py を動かす。1.0秒以上の切る候補
@@ -15,12 +16,13 @@
   fillers・tails・checks_* は文字起こしか .prproj が要るので、ここでは動かさない。無いか、カットより古い時は「動かしていない」として止める（動かすコマンドは ルール/工程/09_検査.md）。
   wave_shape の shaky・chop は耳で決める所なので止めず、「聴いてもらう」に分けて一覧に出す（工程11 の聴いてほしい時刻に入れる）。
 
-未処理を0にするには、切るか、残す理由を <edit/vNNN>/_work/cut_keep.tsv に書く（検査の名前<TAB>秒<TAB>理由。±0.5秒で合う物が「残す」になる。秒は一覧の「素材の秒」の列をそのまま写す。音のブツッは版の秒が入る）。
+止める検査（切れ端・音のブツッ）の未処理を0にするには、切るか、残す理由を <edit/vNNN>/_work/cut_keep.tsv に書く（小川さんの手のカットの切れ目は「小川さんの手のカット」と書いて残す）。知らせる検査は、同じ書き方で残す理由を書いてもよいし、数と時刻を確認_vNNN.md の「不足」に書いて渡してもよい。
+未処理を0にする書き方：切るか、残す理由を <edit/vNNN>/_work/cut_keep.tsv に書く（検査の名前<TAB>秒<TAB>理由。±0.5秒で合う物が「残す」になる。秒は一覧の「素材の秒」の列をそのまま写す。音のブツッは版の秒が入る）。
 入りの間（声が線を超えるまでの秒・入りの点の高さ）は報告のために出すだけで、止めない。
 
   ~/Desktop/video_edit_rules/env/bin/python tools/check_cut_list.py --ver "<edit/vNNN>" [--before-build]
 
-出す物：<版>/_work/cut_list_vNNN.md・.tsv・.json（.json は premiere_case/export.py が見る）。未処理が1つでもあれば終了コード 1。
+出す物：<版>/_work/cut_list_vNNN.md・.tsv・.json（.json は premiere_case/export.py が見る）。止める検査の未処理か、止める検査を動かしていない時だけ終了コード 1。
 音は聴いていない（波形と文字起こしだけ）。
 """
 import argparse
@@ -43,6 +45,9 @@ MATCH_SEC = 0.5
 REF_HEAD = "完成版2本：声まで中央 0.03〜0.04秒・入りの高さ 部屋の音より +10〜11dB"   # 2026-11-04 元の素材で測った（実例/根拠と実例.md の「つなぎ目の実測」）
 OK_CODES = (0, 1)                 # どの検査も、出た物があれば 1 で終わる
 
+
+
+STOP_CHECKS = ("切れ端", "音のブツッ")   # 2026-11-06：渡す前に止めるのはこの2つ（工程9 の「止める」）。ほかは数を出して知らせる
 
 def mmss(t):
     return f"{int(t // 60)}:{t % 60:05.2f}"
@@ -228,9 +233,11 @@ def main():
     env = np.load(env_p)
     kf = json.load(open(cuts_p, encoding="utf-8"))["keep_frames"]
     hs = head_stats(env, kf)
-    ok = not todo and not not_run
+    todo_stop = [x for x in todo if x["check"] in STOP_CHECKS]
+    not_run_stop = [n for n, _ in not_run if n in STOP_CHECKS]
+    ok = not todo_stop and not not_run_stop     # 2026-11-06：止めるのは機械で決まる物だけ（工程9 の「止める」）
 
-    L = [f"# カットの検査の一覧（{tag}）", "", f"**{'通った：未処理 0' if ok else f'止める：未処理 {len(todo)}・動かしていない検査 {len(not_run)}'}**。音は聴いていない（全部未聴取）。", "",
+    L = [f"# カットの検査の一覧（{tag}）", "", f"**{'通った' if ok else f'止める：止める検査の未処理 {len(todo_stop)}・動かしていない止める検査 {len(not_run_stop)}'}**（知らせる：未処理 {len(todo) - len(todo_stop)}・動かしていない {len(not_run) - len(not_run_stop)}）。音は聴いていない（全部未聴取）。", "",
          "| 検査 | 出た数 | 理由つきで残す | 未処理 |", "|---|---|---|---|"]
     L += [f"| {n} | {c} | {k} | {t} |" for n, c, k, t in table]
     L += [f"| {n} | 動かしていない | | {e} |" for n, e in not_run]
@@ -249,11 +256,11 @@ def main():
         for state_name, rows in (("未処理", todo), ("聴いてもらう", listen), ("残す", kept)):
             for x in rows:
                 f.write("\t".join([state_name, x["check"], str(x["tl"]), str(x["src"]), str(x["text"]).replace("\t", " "), x.get("why") or ""]) + "\n")
-    json.dump({"ok": ok, "stage": "before_build" if a.before_build else "all", "unresolved": len(todo), "not_run": [n for n, _ in not_run],
+    json.dump({"ok": ok, "stage": "before_build" if a.before_build else "all", "unresolved": len(todo), "unresolved_stop": len(todo_stop), "not_run_stop": not_run_stop, "not_run": [n for n, _ in not_run],
                "cuts_mtime": cuts_mtime, "checked_at": time.strftime("%Y-%m-%d %H:%M"), "counts": {n: t for n, _, _, t in table}, "listen": len(listen), "head": hs},
               open(base + ".json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
-    print(f"カットの検査：{'通った' if ok else '止める'}（未処理 {len(todo)}・聴いてもらう {len(listen)}・動かしていない {len(not_run)}）")
+    print(f"カットの検査：{'通った' if ok else '止める'}（止める検査の未処理 {len(todo_stop)}・知らせる未処理 {len(todo) - len(todo_stop)}・聴いてもらう {len(listen)}・動かしていない {len(not_run)}）")
     for n, c, k, t in table:
         print(f"  {n}：出た {c}・残す {k}・未処理 {t}")
     for n, e in not_run:

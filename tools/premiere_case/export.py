@@ -48,7 +48,8 @@ def make_light_preset():
 
 
 def cut_list_gate(proj, skip):
-    """渡す前の止め方（08 の cut.before_handing）：tools/check_cut_list.py が通っていない版は書き出さない。AI のカット（_work/cuts_vNNN.json）が無い版は見ない"""
+    """渡す前の止め方（08 の cut.before_handing）：tools/check_cut_list.py の「止める」検査（切れ端・音のブツッ）が残っている版は書き出さない。
+    知らせる検査の未処理は数を出して書き出す（2026-11-06）。AI のカット（_work/cuts_vNNN.json）が無い版は見ない"""
     V = os.path.dirname(proj)
     tag = os.path.basename(V)
     cuts = os.path.join(V, "_work", f"cuts_{tag}.json")
@@ -66,8 +67,11 @@ def cut_list_gate(proj, skip):
     elif rec.get("stage") != "all":
         why = "組み立ての前の結果しか無い（--before-build を付けずに動かす）"
     elif not rec.get("ok"):
-        why = f"未処理 {rec.get('unresolved')}・動かしていない検査 {rec.get('not_run')}"
+        why = f"止める検査の未処理 {rec.get('unresolved_stop', rec.get('unresolved'))}・動かしていない止める検査 {rec.get('not_run_stop', rec.get('not_run'))}"
     else:
+        n_ = rec.get("unresolved", 0) - rec.get("unresolved_stop", 0)
+        if n_:
+            print(f"カットの検査の一覧：知らせる未処理 {n_}（確認_{tag}.md の「不足」に書いて渡す）")
         return
     raise SystemExit(f"カットの検査の一覧が通っていないので書き出さない：{why}\n"
                      f"  ~/Desktop/video_edit_rules/env/bin/python tools/check_cut_list.py --ver \"{V}\"\n"
