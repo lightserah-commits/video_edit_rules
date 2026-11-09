@@ -9,7 +9,7 @@
   - 真ん中に ▶▶▶（白い線の三角3つ。1つ 幅160×高さ190・間隔150・線 7px）。白く塗った三角が左 → 真ん中 → 右と --icon-step コマ（既定 20）ごとに移り、また左へ
   - 横の帯のノイズ：1コマに 26〜46本、太さ 4〜40px・長さ 120〜760px の帯を、横にずらして写すか1列を引き伸ばして重ねる（--seed で同じ形をもう一度作れる）
   - 音：同じ倍率で速くする（高さも上がる。テープの早送り）。大きさは --lufs（既定 -30。声は約 -23〜-25）。頭と終わりに 20・30ms のフェード
-  - 書き出し：--dest の mp4（1920×1080・29.97fps・H.264・bt709・AAC）と、同じ名前の .json（倍率・コマ数・秒・三角の位置の記録）
+  - 書き出し：--dest の mp4（1920×1080・29.97fps（--fps で変える）・H.264・bt709・AAC）と、同じ名前の .json（倍率・コマ数・秒・三角の位置の記録）
   決めるのは人（AI）：どこを早回しにするか（08 の pauses.screen・02 の P19）。Premiere ではこの mp4 をカメラのトラックに1本のクリップとして置き、
   早回しの間は字幕・強調・図解を出さない。この道具は音を聴けないので、音は未聴取として小川さんに聴いてもらう
 """
@@ -23,6 +23,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
 FPS = 30000 / 1001
+FPS_ARG = "30000/1001"   # --fps で変える（2026-11-10 セミナーのアーカイブ：素材が 25fps）
 W, H = 1920, 1080
 
 
@@ -120,7 +121,12 @@ def main():
     ap.add_argument("--icon-step", type=int, default=20, help="白い三角が隣へ移るコマ数（既定 20＝見本の約0.65秒）")
     ap.add_argument("--lufs", type=float, default=-30.0, help="早回しの音の大きさ（既定 -30）")
     ap.add_argument("--seed", type=int, default=1029, help="ノイズの形の種")
+    ap.add_argument("--fps", default="30000/1001", help="書き出しのコマの速さ（既定 30000/1001＝29.97。25fps のシーケンスなら 25）")
     a = ap.parse_args()
+    global FPS, FPS_ARG
+    FPS_ARG = a.fps
+    num, _, den = a.fps.partition("/")
+    FPS = float(num) / float(den or 1)
 
     span = a.t_out - a.t_in
     speed = a.speed or max(2, round(span / a.sec))
@@ -142,7 +148,7 @@ def main():
 
     icons, box = make_icons()
     enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
-                            "-r", "30000/1001", "-i", "-", "-i", a_out,
+                            "-r", FPS_ARG, "-i", "-", "-i", a_out,
                             "-vf", "scale=in_range=pc:out_color_matrix=bt709:out_range=tv,format=yuv420p",
                             "-c:v", "libx264", "-crf", "14", "-preset", "medium",
                             "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709", "-color_range", "tv",
@@ -164,7 +170,7 @@ def main():
     for p in (a_raw, a_out):
         os.remove(p)
 
-    rec = {"src": a.src, "in": a.t_in, "out": a.t_out, "speed": speed, "frames": n, "sec": round(dur, 3),
+    rec = {"fps": FPS_ARG, "src": a.src, "in": a.t_in, "out": a.t_out, "speed": speed, "frames": n, "sec": round(dur, 3),
            "audio_gain_db": round(gain, 2), "lufs": a.lufs, "seed": a.seed, "icon_step": a.icon_step,
            "icon_box": box, "icon_state_per_frame": states, "dest": a.dest}
     json.dump(rec, open(stem + ".json", "w"), ensure_ascii=False, indent=1)
