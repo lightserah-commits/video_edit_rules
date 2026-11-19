@@ -5,6 +5,9 @@
   2つが ±2コマで一致した字幕で「字幕 − 声」を出す。プラス＝字幕が声より早い。字幕の頭を決める道具（audible_onset.word_window_onset）と同じ波形の見方なので、
   カットの切れ目へ寄せた分・手で動かした分・文字が変わった分のずれが主に出る。時刻を使わない確かめは別に要る。
   カットと同じコマに置いた字幕は、決まり（08 の captions.timing の ①）で声より早いので、声の途中の字幕と分けて数える。コマは 29.97fps に直した数。
+  2026-11-19 から：カットと同じコマに置いた字幕のうち、2つの物差しがどちらも 6コマ以上早い物を一覧に出す（合格の数には入れない。1つずつ読んで、
+  入りの余計な音を切るか、字幕を声の聞こえ始めへ遅らせるかを決める。08 の captions.timing の check）。1116 v001 で小川さんが指した「どんな稼ぎ方でもいいの?」（+7コマ）
+  「こういうのが一番いいんですよ」（+13コマ）は、この道具が 7.1コマ・13.5コマと測っていたのに、カットのコマの字幕として数えずに渡っていた。
   合格：声の途中の字幕で声より5コマ以上早い物が 10% 以下（完成版の字幕だけで測ると 15%・4%。段ごと当てると 14.6%・10.7%）。超えると終了コード 1。5コマ以上の物は全部読んで、直すか理由を書く。
   python3 tools/check_onset_sync.py 版.prproj --seq 名前 --media camera_CFR2997.mov --wav camera.wav --mlx asr_camera.json --dtw asr_dtw.json --tracks V6,V7 --cuts vNNN/_work/cuts_vNNN.json --out checks_onset.json
 """
@@ -21,6 +24,7 @@ from dump_timeline import dump  # noqa: E402
 
 TPS = 254016000000
 EARLY_LIMIT = 10.0     # 声の途中の字幕で、声より5コマ以上早い物の上限（%）
+AT_CUT_EARLY = 6.0     # カットと同じコマに置いた字幕で、2つの物差しがどちらもこのコマ数以上早い物を一覧に出す（知らせるだけ。2026-11-19）
 
 
 def main():
@@ -87,8 +91,14 @@ def main():
         n = max(1, len(b))
         summary[tr] = {"clips": len(rows), "both": len(at) + len(mid), "at_cut": len(at), "at_cut_over12": sum(x["r1"] > 12.5 for x in at), "mid": len(b), "median": b[len(b) // 2] if b else None,
                        "early5_pct": round(100 * sum(x >= 5 for x in b) / n, 1), "early9_pct": round(100 * sum(x >= 9 for x in b) / n, 1), "late5_pct": round(100 * sum(x <= -5 for x in b) / n, 1)}
+        at_early = [x for x in rows if x["at_cut"] and x["r1"] is not None and x["r2"] is not None and min(x["r1"], x["r2"]) >= AT_CUT_EARLY]
+        summary[tr]["at_cut_early6"] = len(at_early)
+        for x in at_early:
+            x["at_cut_early"] = True
         out[tr] = rows
         print(tr, summary[tr])
+        for x in at_early:
+            print("  カットのコマで早い", f"{x['sec']:8.2f}秒", f"{x['r1']:+.1f}コマ・{x['r2']:+.1f}コマ", x["text"])
         for x in mid:
             if x["r1"] >= 5 or x["r1"] <= -5:
                 print("  早い" if x["r1"] >= 5 else "  遅い", f"{x['sec']:8.2f}秒", f"{x['r1']:+.1f}コマ", x["text"])

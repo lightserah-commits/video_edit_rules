@@ -10,10 +10,13 @@
   語尾の坂         同じ。tail（語尾の坂の途中で切れている）
   言い出しの坂     同じ。head（坂の始まりから2コマ以上後ろから入っている）
   フィラー         fillers_vNNN.tsv の「声も切る」で切る区間がある物。谷なしは切れないので止めない（08 の remove「フィラー」）
-  語尾             tails*.tsv の一番新しい物の「語尾が聞こえない」
+  語尾             tails*.tsv の一番新しい物の「語尾が聞こえない」「頭が聞こえない」。「切った物」の列が「間」（間を詰めただけのつなぎ目）の行は数だけ出し、未処理に入れない
+                   （2026-11-19：小川さんが戻した語尾・語頭は、中身・相づち・言い直し・フィラーを切ったつなぎ目に集まる。1116 は中身 47 のうち 9・間 175 のうち 1）
   音のブツッ       checks_chops.json（--before-build の時は見ない）
   切れ端           checks_slivers.json（--before-build の時は見ない）
-  fillers・tails・checks_* は文字起こしか .prproj が要るので、ここでは動かさない。無いか、カットより古い時は「動かしていない」として止める（動かすコマンドは ルール/工程/09_検査.md）。
+  fillers・tails・checks_* は文字起こしか .prproj が要るので、ここでは動かさない。無いか、カットより古い時は「動かしていない」と出す（動かすコマンドは ルール/工程/09_検査.md）。
+  「動かしていない」で止めるのは、切れ端・音のブツッと、渡す前（--before-build を付けない時）のフィラー・語尾（2026-11-19 から。1115・1116 の v001 は、フィラーと語尾が
+  「動かしていない」のまま通って渡り、語尾の欠け「ステージ2」の「2」・「お願いします」の「す」・「でさ」の「さ」を小川さんが手で戻した）。
   wave_shape の shaky・chop は耳で決める所なので止めず、「聴いてもらう」に分けて一覧に出す（工程11 の聴いてほしい時刻に入れる）。
 
 止める検査（切れ端・音のブツッ）の未処理を0にするには、切るか、残す理由を <edit/vNNN>/_work/cut_keep.tsv に書く（小川さんの手のカットの切れ目は「小川さんの手のカット」と書いて残す）。知らせる検査は、同じ書き方で残す理由を書いてもよいし、数と時刻を確認_vNNN.md の「不足」に書いて渡してもよい。
@@ -48,6 +51,7 @@ OK_CODES = (0, 1)                 # どの検査も、出た物があれば 1 �
 
 
 STOP_CHECKS = ("切れ端", "音のブツッ")   # 2026-11-06：渡す前に止めるのはこの2つ（工程9 の「止める」）。ほかは数を出して知らせる
+MUST_RUN = ("フィラー", "語尾")          # 2026-11-19：渡す前に「動かしていない」だと止める検査（出た物は知らせるだけ。動かすのは機械で決まる）
 
 def mmss(t):
     return f"{int(t // 60)}:{t % 60:05.2f}"
@@ -109,12 +113,16 @@ def filler_items(path):
 
 
 def tail_items(path):
-    items = []
+    """語尾・頭が聞こえない行。「切った物」が「間」の行（間を詰めただけのつなぎ目）は数だけ返す"""
+    items, only_gap = [], 0
     for r in tsv_rows(path):
-        if r.get("見立て") == "語尾が聞こえない":
-            sec = next((v for k, v in r.items() if k.startswith("素材の秒")), "")      # 列の名前は「素材の秒（左の終わり→…」。値の左の数が語尾の所
-            items.append(dict(tl=r["版の時刻（ハイライト無し）"], src=fnum(sec), text=f"字幕{r['字幕']} {r['字幕の文']} {r.get('欠けた字', '')}"))
-    return items
+        if r.get("見立て") in ("語尾が聞こえない", "頭が聞こえない"):
+            if r.get("切った物") == "間":
+                only_gap += 1
+                continue
+            sec = next((v for k, v in r.items() if k.startswith("素材の秒")), "")      # 値の左の数が、語尾なら左の終わり・頭なら右の頭
+            items.append(dict(tl=r["版の時刻（ハイライト無し）"], src=fnum(sec), text=f"{r['見立て']} 字幕{r['字幕']} {r['字幕の文']} {r.get('欠けた字', '')}"))
+    return items, only_gap
 
 
 def head_stats(env, keep):
@@ -206,8 +214,9 @@ def main():
     if fresh(p, "フィラー"):
         checks["フィラー"], cannot = filler_items(p)
     tails = sorted(glob.glob(os.path.join(W, "tails*.tsv")), key=os.path.getmtime)
+    tail_gap = 0
     if fresh(tails[-1] if tails else None, "語尾"):
-        checks["語尾"] = tail_items(tails[-1])
+        checks["語尾"], tail_gap = tail_items(tails[-1])
     if not a.before_build:
         p = os.path.join(V, "checks_chops.json")
         if fresh(p, "音のブツッ"):
@@ -234,7 +243,7 @@ def main():
     kf = json.load(open(cuts_p, encoding="utf-8"))["keep_frames"]
     hs = head_stats(env, kf)
     todo_stop = [x for x in todo if x["check"] in STOP_CHECKS]
-    not_run_stop = [n for n, _ in not_run if n in STOP_CHECKS]
+    not_run_stop = [n for n, _ in not_run if n in STOP_CHECKS or (not a.before_build and n in MUST_RUN)]
     ok = not todo_stop and not not_run_stop     # 2026-11-06：止めるのは機械で決まる物だけ（工程9 の「止める」）
 
     L = [f"# カットの検査の一覧（{tag}）", "", f"**{'通った' if ok else f'止める：止める検査の未処理 {len(todo_stop)}・動かしていない止める検査 {len(not_run_stop)}'}**（知らせる：未処理 {len(todo) - len(todo_stop)}・動かしていない {len(not_run) - len(not_run_stop)}）。音は聴いていない（全部未聴取）。", "",
@@ -245,6 +254,8 @@ def main():
         L += ["", f"入りの間（報告だけ）：声まで中央 {hs['to_voice']:.2f}秒・入りの高さ 部屋の音より +{hs['height']:.1f}dB（つなぎ目 {hs['joins']}）。{REF_HEAD}"]
     if cannot:
         L += ["", f"フィラーの谷なし {len(cannot)}（声がつながっていて切れないので、字幕から抜くだけ。08 の remove「フィラー」）"]
+    if tail_gap:
+        L += ["", f"語尾・頭が聞こえない（間を詰めただけのつなぎ目）{tail_gap}（数だけ。文字起こしの揺れが多い。一覧は tails*.tsv）"]
     for title, rows in (("未処理（切るか、残す理由を _work/cut_keep.tsv に書く）", todo), ("聴いてもらう（工程11 の聴いてほしい時刻に入れる）", listen), ("理由つきで残した物", kept)):
         if rows:
             L += ["", f"## {title}", "", "| 検査 | 版の時刻 | 素材の秒 | 中身 |" + (" 理由 |" if rows is kept else ""), "|---|---|---|---|" + ("---|" if rows is kept else "")]
